@@ -12,14 +12,14 @@
  * Do not edit the class manually.
  */
 
-#import "CaaSCartaoResponse.h"
 #import "CaaSDesbloquearCartaoResponse.h"
+#import "CaaSCartaoResponse.h"
 #import "CaaSConsultarExtratoContaResponse.h"
 #import "CaaSPessoaFisicaResponse.h"
 #import "CaaSConsultarSaldoLimitesResponse.h"
 #import "CaaSConsultarCartaoResponse.h"
-#import "CaaSContaResponse.h"
 #import "CaaSExtratoResponse.h"
+#import "CaaSContaResponse.h"
 #import "CaaSCancelarCartaoResponse.h"
 #import "CaaSSaldoLimiteResponse.h"
 

@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return CaaSContaResponse*
--(NSNumber*) consultarContaUsingGET1WithCompletionBlock :(NSNumber*) idEmissor 
+-(NSNumber*) consultarContaUsingGETWithCompletionBlock :(NSNumber*) idEmissor 
      idConta:(NSNumber*) idConta 
     
     completionHandler: (void (^)(CaaSContaResponse* output, NSError* error))completionBlock;

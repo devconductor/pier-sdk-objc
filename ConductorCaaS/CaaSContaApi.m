@@ -78,7 +78,7 @@ static CaaSContaApi* singletonAPI = nil;
 ///
 ///  @returns CaaSContaResponse*
 ///
--(NSNumber*) consultarContaUsingGET1WithCompletionBlock: (NSNumber*) idEmissor
+-(NSNumber*) consultarContaUsingGETWithCompletionBlock: (NSNumber*) idEmissor
          idConta: (NSNumber*) idConta
         
         completionHandler: (void (^)(CaaSContaResponse* output, NSError* error))completionBlock { 
@@ -87,12 +87,12 @@ static CaaSContaApi* singletonAPI = nil;
     
     // verify the required parameter 'idEmissor' is set
     if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarContaUsingGET1`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarContaUsingGET`"];
     }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarContaUsingGET1`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarContaUsingGET`"];
     }
     
 

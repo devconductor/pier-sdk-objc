@@ -4,7 +4,6 @@
 #import "CaaSDesbloquearCartaoResponse.h"
 #import "CaaSConsultarExtratoContaResponse.h"
 #import "CaaSConsultarSaldoLimitesResponse.h"
-#import "CaaSContaResponse.h"
 #import "CaaSObject.h"
 #import "CaaSApiClient.h"
 
@@ -126,23 +125,6 @@
      idCartao:(NSNumber*) idCartao 
     
     completionHandler: (void (^)(CaaSConsultarSaldoLimitesResponse* output, NSError* error))completionBlock;
-    
-
-
-///
-///
-/// /contas/{idConta}
-/// Consulte informaÃ§Ãµes de uma determinada conta
-///
-/// @param idEmissor ID do Emissor
-/// @param idConta ID da Conta
-/// 
-///
-/// @return CaaSContaResponse*
--(NSNumber*) consultarContaUsingGETWithCompletionBlock :(NSNumber*) idEmissor 
-     idConta:(NSNumber*) idConta 
-    
-    completionHandler: (void (^)(CaaSContaResponse* output, NSError* error))completionBlock;
     
 
 
