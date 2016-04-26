@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "ConductorCaaS"
-    s.version          = "0.0.1-SNAPSHOT"
+    s.version          = "0.0.1"
 
     s.summary          = "CaaS - Conductor as a Service"
     s.description      = <<-DESC
