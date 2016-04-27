@@ -1,4 +1,4 @@
-# ConductorCaaS
+# ConductorPier
 
 ## Requirements
 
@@ -9,7 +9,7 @@ The API client library requires ARC (Automatic Reference Counting) to be enabled
 To install it, put the API client library in your project and then simply add the following line to your Podfile:
 
 ```ruby
-pod "ConductorCaaS", :path => "/path/to/lib"
+pod "ConductorPier", :path => "/path/to/lib"
 ```
 
 ## Recommendation
