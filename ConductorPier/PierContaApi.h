@@ -25,7 +25,6 @@
 /// /contas/buscar
 /// Consulte contas filtrando pelos campos id do emissor, n\u00C3\u00BAmero do cart\u00C3\u00A3o, nome ou CPF/CNPJ 
 ///
-/// @param idEmissor ID do Emissor
 /// @param nome Nome
 /// @param cpf CPF (opcional caso nao informe o n\u00C3\u00BAmero do cart\u00C3\u00A3o ou id da conta)
 /// @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o (opcional caso n\u00C3\u00A3o informa o cpf ou id da conta)
@@ -33,8 +32,7 @@
 /// 
 ///
 /// @return PierConsultarContaResponse*
--(NSNumber*) buscarContaUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    nome: (NSString*) nome
+-(NSNumber*) buscarContaUsingGETWithNome: (NSString*) nome
     cpf: (NSString*) cpf
     numeroCartao: (NSString*) numeroCartao
     idConta: (NSNumber*) idConta
@@ -46,13 +44,11 @@
 /// /contas/{idConta}
 /// Consulte informa\u00C3\u00A7\u00C3\u00B5es de uma determinada conta
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta
 /// 
 ///
 /// @return PierContaResponse*
--(NSNumber*) consultarContaUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarContaUsingGETWithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 

@@ -14,21 +14,20 @@
  * Do not edit the class manually.
  */
 
-@interface PierCartaoResponseApi: NSObject
+@interface PierCartaoApi: NSObject
 
 @property(nonatomic, assign)PierApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(PierApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(PierCartaoResponseApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(PierCartaoResponseApi*) sharedAPI;
++(PierCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(PierCartaoApi*) sharedAPI;
 ///
 ///
 /// /contas/{idConta}/cartoes/{idCartao}/cancelar
 /// Cancelar um determinado cart\u00C3\u00A3o
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar
 /// @param motivo Motivo do cancelamento
@@ -36,8 +35,7 @@
 /// 
 ///
 /// @return PierCancelarCartaoResponse*
--(NSNumber*) cancelarCartaoUsingPOSTWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) cancelarCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     motivo: (NSNumber*) motivo
     observacao: (NSString*) observacao
@@ -49,15 +47,13 @@
 /// /contas/{idConta}/cartoes/{idCartao}
 /// Consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado cart\u00C3\u00A3o de uma conta
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta que pertence o cart\u00C3\u00A3o
 /// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar
 /// @param numeroCartao N\u00C3\u00BAmero do Cart\u00C3\u00A3o que deseja consultar (opcional)
 /// 
 ///
 /// @return PierConsultarCartaoResponse*
--(NSNumber*) consultarCartaoUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarCartaoUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     numeroCartao: (NSString*) numeroCartao
     completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler;
@@ -68,13 +64,11 @@
 /// /contas/{idConta}/cartoes
 /// Consultar todos os cart\u00C3\u00B5es de uma determinada conta
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta
 /// 
 ///
 /// @return PierConsultarCartaoResponse*
--(NSNumber*) consultarCartoesUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarCartoesUsingGETWithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler;
 
 
@@ -83,15 +77,13 @@
 /// /contas/{idConta}/cartoes/{idCartao}/faturas
 /// Consulte os extratos/faturas do cart\u00C3\u00A3o de uma determinada conta
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o extrato
 /// @param dataVencimento Data limite para o vencimento das transa\u00C3\u00A7\u00C3\u00B5es
 /// 
 ///
 /// @return PierConsultarExtratoContaResponse*
--(NSNumber*) consultarExtratoFaturasUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarExtratoFaturasUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierConsultarExtratoContaResponse* output, NSError* error)) handler;
@@ -102,14 +94,12 @@
 /// /contas/{idConta}/cartoes/{idCartao}/limites
 /// Consulte os limites de um determinado cart\u00C3\u00A3o
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite
 /// 
 ///
 /// @return PierConsultarSaldoLimitesResponse*
--(NSNumber*) consultarSaldosLimitesUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarSaldosLimitesUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     completionHandler: (void (^)(PierConsultarSaldoLimitesResponse* output, NSError* error)) handler;
 
@@ -119,15 +109,13 @@
 /// /contas/{idConta}/cartoes/{idCartao}/desbloquear
 /// Desbloquear cart\u00C3\u00A3o de uma determinada conta
 ///
-/// @param idEmissor ID do Emissor
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite
 /// @param codigoSegurancao C\u00C3\u00B3digo seguran\u00C3\u00A7a do cart\u00C3\u00A3o
 /// 
 ///
 /// @return PierDesbloquearCartaoResponse*
--(NSNumber*) desbloquearCartaoUsingPOSTWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) desbloquearCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     codigoSegurancao: (NSString*) codigoSegurancao
     completionHandler: (void (^)(PierDesbloquearCartaoResponse* output, NSError* error)) handler;

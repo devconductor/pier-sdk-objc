@@ -12,6 +12,9 @@
  * Do not edit the class manually.
  */
 
+#import "PierAuthToken.h"
+#import "PierBody.h"
+#import "PierBodyAccessToken.h"
 #import "PierCancelarCartaoResponse.h"
 #import "PierCartaoResponse.h"
 #import "PierConsultarCartaoResponse.h"
@@ -22,6 +25,7 @@
 #import "PierContaCartaoResponse.h"
 #import "PierContaResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
+#import "PierExtraInfo.h"
 #import "PierExtratoResponse.h"
 #import "PierPessoaFisicaResponse.h"
 #import "PierSaldoLimiteResponse.h"

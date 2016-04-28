@@ -1,4 +1,4 @@
-#import "PierCartaoResponseApi.h"
+#import "PierCartaoApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierCancelarCartaoResponse.h"
 #import "PierConsultarCartaoResponse.h"
@@ -7,13 +7,13 @@
 #import "PierDesbloquearCartaoResponse.h"
 
 
-@interface PierCartaoResponseApi ()
+@interface PierCartaoApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierCartaoResponseApi
+@implementation PierCartaoApi
 
-static PierCartaoResponseApi* singletonAPI = nil;
+static PierCartaoApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -41,19 +41,19 @@ static PierCartaoResponseApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierCartaoResponseApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierCartaoResponseApi alloc] init];
+        singletonAPI = [[PierCartaoApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierCartaoResponseApi*) sharedAPI {
++(PierCartaoApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierCartaoResponseApi alloc] init];
+        singletonAPI = [[PierCartaoApi alloc] init];
     }
     return singletonAPI;
 }
@@ -76,8 +76,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}/cartoes/{idCartao}/cancelar
 /// Cancelar um determinado cart\u00C3\u00A3o
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar 
@@ -88,18 +86,12 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 ///  @returns PierCancelarCartaoResponse*
 ///
--(NSNumber*) cancelarCartaoUsingPOSTWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) cancelarCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     motivo: (NSNumber*) motivo
     observacao: (NSString*) observacao
     completionHandler: (void (^)(PierCancelarCartaoResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `cancelarCartaoUsingPOST`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -150,9 +142,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     
 
     // HTTP header `Accept`
@@ -205,8 +194,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}/cartoes/{idCartao}
 /// Consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado cart\u00C3\u00A3o de uma conta
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta que pertence o cart\u00C3\u00A3o 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar 
@@ -215,17 +202,11 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 ///  @returns PierConsultarCartaoResponse*
 ///
--(NSNumber*) consultarCartaoUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarCartaoUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     numeroCartao: (NSString*) numeroCartao
     completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarCartaoUsingGET`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -258,9 +239,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     if (numeroCartao != nil) {
         headerParams[@"numeroCartao"] = numeroCartao;
     }
@@ -316,21 +294,13 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}/cartoes
 /// Consultar todos os cart\u00C3\u00B5es de uma determinada conta
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta 
 ///
 ///  @returns PierConsultarCartaoResponse*
 ///
--(NSNumber*) consultarCartoesUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarCartoesUsingGETWithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarCartoesUsingGET`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -355,9 +325,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     
 
     // HTTP header `Accept`
@@ -410,8 +377,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}/cartoes/{idCartao}/faturas
 /// Consulte os extratos/faturas do cart\u00C3\u00A3o de uma determinada conta
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o extrato 
@@ -420,17 +385,11 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 ///  @returns PierConsultarExtratoContaResponse*
 ///
--(NSNumber*) consultarExtratoFaturasUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarExtratoFaturasUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierConsultarExtratoContaResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarExtratoFaturasUsingGET`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -472,9 +431,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     
 
     // HTTP header `Accept`
@@ -527,24 +483,16 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}/cartoes/{idCartao}/limites
 /// Consulte os limites de um determinado cart\u00C3\u00A3o
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite 
 ///
 ///  @returns PierConsultarSaldoLimitesResponse*
 ///
--(NSNumber*) consultarSaldosLimitesUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarSaldosLimitesUsingGETWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     completionHandler: (void (^)(PierConsultarSaldoLimitesResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarSaldosLimitesUsingGET`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -577,9 +525,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     
 
     // HTTP header `Accept`
@@ -632,8 +577,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}/cartoes/{idCartao}/desbloquear
 /// Desbloquear cart\u00C3\u00A3o de uma determinada conta
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite 
@@ -642,17 +585,11 @@ static PierCartaoResponseApi* singletonAPI = nil;
 ///
 ///  @returns PierDesbloquearCartaoResponse*
 ///
--(NSNumber*) desbloquearCartaoUsingPOSTWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) desbloquearCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     codigoSegurancao: (NSString*) codigoSegurancao
     completionHandler: (void (^)(PierDesbloquearCartaoResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `desbloquearCartaoUsingPOST`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -690,9 +627,6 @@ static PierCartaoResponseApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     if (codigoSegurancao != nil) {
         headerParams[@"codigoSegurancao"] = codigoSegurancao;
     }

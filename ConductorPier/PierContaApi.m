@@ -73,8 +73,6 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// /contas/buscar
 /// Consulte contas filtrando pelos campos id do emissor, n\u00C3\u00BAmero do cart\u00C3\u00A3o, nome ou CPF/CNPJ 
-///  @param idEmissor ID do Emissor 
-///
 ///  @param nome Nome (optional)
 ///
 ///  @param cpf CPF (opcional caso nao informe o n\u00C3\u00BAmero do cart\u00C3\u00A3o ou id da conta) (optional)
@@ -85,18 +83,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierConsultarContaResponse*
 ///
--(NSNumber*) buscarContaUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    nome: (NSString*) nome
+-(NSNumber*) buscarContaUsingGETWithNome: (NSString*) nome
     cpf: (NSString*) cpf
     numeroCartao: (NSString*) numeroCartao
     idConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierConsultarContaResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `buscarContaUsingGET`"];
-    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/buscar"];
@@ -129,9 +121,6 @@ static PierContaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     
 
     // HTTP header `Accept`
@@ -184,21 +173,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// /contas/{idConta}
 /// Consulte informa\u00C3\u00A7\u00C3\u00B5es de uma determinada conta
-///  @param idEmissor ID do Emissor 
-///
 ///  @param idConta ID da Conta 
 ///
 ///  @returns PierContaResponse*
 ///
--(NSNumber*) consultarContaUsingGETWithIdEmissor: (NSNumber*) idEmissor
-    idConta: (NSNumber*) idConta
+-(NSNumber*) consultarContaUsingGETWithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'idEmissor' is set
-    if (idEmissor == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEmissor` when calling `consultarContaUsingGET`"];
-    }
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
@@ -223,9 +204,6 @@ static PierContaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (idEmissor != nil) {
-        headerParams[@"idEmissor"] = idEmissor;
-    }
     
 
     // HTTP header `Accept`
