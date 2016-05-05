@@ -114,7 +114,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}/cartoes/{idCartao}/cancelar"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/cancelar"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -219,7 +219,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}/cartoes/{idCartao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -308,7 +308,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}/cartoes"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -407,7 +407,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}/cartoes/{idCartao}/faturas"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/faturas"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -505,7 +505,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}/cartoes/{idCartao}/limites"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/limites"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -607,7 +607,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}/cartoes/{idCartao}/desbloquear"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/desbloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {

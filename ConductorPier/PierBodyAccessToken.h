@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierBody.h"
+#import "PierAuthToken.h"
 
 
 @protocol PierBodyAccessToken
@@ -16,6 +16,10 @@
 @interface PierBodyAccessToken : PierObject
 
 
-@property(nonatomic) PierBody* body;
+@property(nonatomic) PierAuthToken* authToken;
+
+@property(nonatomic) NSString* action;
+
+@property(nonatomic) NSString* user;
 
 @end

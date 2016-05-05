@@ -32,5 +32,18 @@
     completionHandler: (void (^)(PierBodyAccessToken* output, NSError* error)) handler;
 
 
+///
+///
+/// /tokens/validar
+/// 
+///
+/// @param bodyAccessToken bodyAccessToken
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) validarUsingPOSTWithBodyAccessToken: (PierBodyAccessToken*) bodyAccessToken
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
 
 @end

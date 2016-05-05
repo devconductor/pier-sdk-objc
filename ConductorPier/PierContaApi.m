@@ -91,7 +91,7 @@ static PierContaApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/buscar"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/buscar"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -187,7 +187,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/v1/contas/{idConta}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {

@@ -114,6 +114,13 @@
                        @"key": @"access_token",
                        @"value": [self getApiKeyWithPrefix:@"access_token"]
                    },
+               @"client_id":
+                   @{
+                       @"type": @"api_key",
+                       @"in": @"header",
+                       @"key": @"client_id",
+                       @"value": [self getApiKeyWithPrefix:@"client_id"]
+                   },
                };
 }
 

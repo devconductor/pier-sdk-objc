@@ -13,7 +13,6 @@
  */
 
 #import "PierAuthToken.h"
-#import "PierBody.h"
 #import "PierBodyAccessToken.h"
 #import "PierCancelarCartaoResponse.h"
 #import "PierCartaoResponse.h"

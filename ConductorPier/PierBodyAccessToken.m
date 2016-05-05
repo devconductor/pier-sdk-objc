@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"body": @"body" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"AuthToken": @"authToken", @"action": @"action", @"user": @"user" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"body"];
+  NSArray *optionalProperties = @[@"authToken", @"action", @"user"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
