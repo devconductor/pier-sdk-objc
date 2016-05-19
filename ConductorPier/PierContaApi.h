@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "PierConsultarContaResponse.h"
 #import "PierContaResponse.h"
+#import "PierConsultarExtratoContaResponse.h"
+#import "PierConsultarSaldoLimitesResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -50,6 +52,34 @@
 /// @return PierContaResponse*
 -(NSNumber*) consultarContaUsingGETWithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// /contas/{idConta}/faturas
+/// Consulte os extratos/faturas de uma determinada conta
+///
+/// @param idConta ID da Conta
+/// @param dataVencimento Data limite para o vencimento das transa\u00C3\u00A7\u00C3\u00B5es
+/// 
+///
+/// @return PierConsultarExtratoContaResponse*
+-(NSNumber*) consultarExtratoFaturasUsingGETWithIdConta: (NSNumber*) idConta
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(PierConsultarExtratoContaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// /contas/{idConta}/limites
+/// Consulte os limites de uma determinada conta
+///
+/// @param idConta ID da Conta
+/// 
+///
+/// @return PierConsultarSaldoLimitesResponse*
+-(NSNumber*) consultarSaldosLimitesUsingGETWithIdConta: (NSNumber*) idConta
+    completionHandler: (void (^)(PierConsultarSaldoLimitesResponse* output, NSError* error)) handler;
 
 
 

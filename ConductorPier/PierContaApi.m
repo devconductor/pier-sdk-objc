@@ -2,6 +2,8 @@
 #import "PierQueryParamCollection.h"
 #import "PierConsultarContaResponse.h"
 #import "PierContaResponse.h"
+#import "PierConsultarExtratoContaResponse.h"
+#import "PierConsultarSaldoLimitesResponse.h"
 
 
 @interface PierContaApi ()
@@ -249,6 +251,184 @@ static PierContaApi* singletonAPI = nil;
                               responseType: @"PierContaResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierContaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// /contas/{idConta}/faturas
+/// Consulte os extratos/faturas de uma determinada conta
+///  @param idConta ID da Conta 
+///
+///  @param dataVencimento Data limite para o vencimento das transa\u00C3\u00A7\u00C3\u00B5es 
+///
+///  @returns PierConsultarExtratoContaResponse*
+///
+-(NSNumber*) consultarExtratoFaturasUsingGETWithIdConta: (NSNumber*) idConta
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(PierConsultarExtratoContaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarExtratoFaturasUsingGET`"];
+    }
+    
+    // verify the required parameter 'dataVencimento' is set
+    if (dataVencimento == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimento` when calling `consultarExtratoFaturasUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/faturas"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        pathParams[@"idConta"] = idConta;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (dataVencimento != nil) {
+        
+        queryParams[@"dataVencimento"] = dataVencimento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierConsultarExtratoContaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierConsultarExtratoContaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// /contas/{idConta}/limites
+/// Consulte os limites de uma determinada conta
+///  @param idConta ID da Conta 
+///
+///  @returns PierConsultarSaldoLimitesResponse*
+///
+-(NSNumber*) consultarSaldosLimitesUsingGETWithIdConta: (NSNumber*) idConta
+    completionHandler: (void (^)(PierConsultarSaldoLimitesResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarSaldosLimitesUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/limites"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        pathParams[@"idConta"] = idConta;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierConsultarSaldoLimitesResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierConsultarSaldoLimitesResponse*)data, error);
                            }
           ];
 }

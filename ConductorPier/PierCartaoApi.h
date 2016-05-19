@@ -1,8 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierCancelarCartaoResponse.h"
 #import "PierConsultarCartaoResponse.h"
-#import "PierConsultarExtratoContaResponse.h"
-#import "PierConsultarSaldoLimitesResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -25,17 +23,17 @@
 +(PierCartaoApi*) sharedAPI;
 ///
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/cancelar
-/// Cancelar um determinado cart\u00C3\u00A3o
+/// /contas/{idConta}/cartoes/{idCartao}/bloquear
+/// Bloquear um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
 /// @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar
-/// @param motivo Motivo do cancelamento
-/// @param observacao Alguma observa\u00C3\u00A7\u00C3\u00A3o para o cancelamento
+/// @param motivo Motivo do bloqueio
+/// @param observacao Alguma observa\u00C3\u00A7\u00C3\u00A3o para o bloqueio
 /// 
 ///
 /// @return PierCancelarCartaoResponse*
--(NSNumber*) cancelarCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) bloquearCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     motivo: (NSNumber*) motivo
     observacao: (NSString*) observacao
@@ -70,38 +68,6 @@
 /// @return PierConsultarCartaoResponse*
 -(NSNumber*) consultarCartoesUsingGETWithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// /contas/{idConta}/cartoes/{idCartao}/faturas
-/// Consulte os extratos/faturas do cart\u00C3\u00A3o de uma determinada conta
-///
-/// @param idConta ID da Conta
-/// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o extrato
-/// @param dataVencimento Data limite para o vencimento das transa\u00C3\u00A7\u00C3\u00B5es
-/// 
-///
-/// @return PierConsultarExtratoContaResponse*
--(NSNumber*) consultarExtratoFaturasUsingGETWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierConsultarExtratoContaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// /contas/{idConta}/cartoes/{idCartao}/limites
-/// Consulte os limites de um determinado cart\u00C3\u00A3o
-///
-/// @param idConta ID da Conta
-/// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite
-/// 
-///
-/// @return PierConsultarSaldoLimitesResponse*
--(NSNumber*) consultarSaldosLimitesUsingGETWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierConsultarSaldoLimitesResponse* output, NSError* error)) handler;
 
 
 ///

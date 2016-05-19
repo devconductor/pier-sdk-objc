@@ -2,8 +2,6 @@
 #import "PierQueryParamCollection.h"
 #import "PierCancelarCartaoResponse.h"
 #import "PierConsultarCartaoResponse.h"
-#import "PierConsultarExtratoContaResponse.h"
-#import "PierConsultarSaldoLimitesResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
 
 
@@ -74,19 +72,19 @@ static PierCartaoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/cancelar
-/// Cancelar um determinado cart\u00C3\u00A3o
+/// /contas/{idConta}/cartoes/{idCartao}/bloquear
+/// Bloquear um determinado cart\u00C3\u00A3o
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar 
 ///
-///  @param motivo Motivo do cancelamento 
+///  @param motivo Motivo do bloqueio 
 ///
-///  @param observacao Alguma observa\u00C3\u00A7\u00C3\u00A3o para o cancelamento 
+///  @param observacao Alguma observa\u00C3\u00A7\u00C3\u00A3o para o bloqueio (optional)
 ///
 ///  @returns PierCancelarCartaoResponse*
 ///
--(NSNumber*) cancelarCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) bloquearCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
     idCartao: (NSNumber*) idCartao
     motivo: (NSNumber*) motivo
     observacao: (NSString*) observacao
@@ -95,26 +93,21 @@ static PierCartaoApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `cancelarCartaoUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `bloquearCartaoUsingPOST`"];
     }
     
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `cancelarCartaoUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `bloquearCartaoUsingPOST`"];
     }
     
     // verify the required parameter 'motivo' is set
     if (motivo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `motivo` when calling `cancelarCartaoUsingPOST`"];
-    }
-    
-    // verify the required parameter 'observacao' is set
-    if (observacao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `observacao` when calling `cancelarCartaoUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `motivo` when calling `bloquearCartaoUsingPOST`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/cancelar"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/bloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -375,213 +368,13 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/faturas
-/// Consulte os extratos/faturas do cart\u00C3\u00A3o de uma determinada conta
-///  @param idConta ID da Conta 
-///
-///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o extrato 
-///
-///  @param dataVencimento Data limite para o vencimento das transa\u00C3\u00A7\u00C3\u00B5es 
-///
-///  @returns PierConsultarExtratoContaResponse*
-///
--(NSNumber*) consultarExtratoFaturasUsingGETWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierConsultarExtratoContaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarExtratoFaturasUsingGET`"];
-    }
-    
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarExtratoFaturasUsingGET`"];
-    }
-    
-    // verify the required parameter 'dataVencimento' is set
-    if (dataVencimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimento` when calling `consultarExtratoFaturasUsingGET`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/faturas"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"idConta"] = idConta;
-    }
-    if (idCartao != nil) {
-        pathParams[@"idCartao"] = idCartao;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (dataVencimento != nil) {
-        
-        queryParams[@"dataVencimento"] = dataVencimento;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierConsultarExtratoContaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierConsultarExtratoContaResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// /contas/{idConta}/cartoes/{idCartao}/limites
-/// Consulte os limites de um determinado cart\u00C3\u00A3o
-///  @param idConta ID da Conta 
-///
-///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite 
-///
-///  @returns PierConsultarSaldoLimitesResponse*
-///
--(NSNumber*) consultarSaldosLimitesUsingGETWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierConsultarSaldoLimitesResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarSaldosLimitesUsingGET`"];
-    }
-    
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarSaldosLimitesUsingGET`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/limites"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"idConta"] = idConta;
-    }
-    if (idCartao != nil) {
-        pathParams[@"idCartao"] = idCartao;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierConsultarSaldoLimitesResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierConsultarSaldoLimitesResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// /contas/{idConta}/cartoes/{idCartao}/desbloquear
 /// Desbloquear cart\u00C3\u00A3o de uma determinada conta
 ///  @param idConta ID da Conta 
 ///
 ///  @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite 
 ///
-///  @param codigoSegurancao C\u00C3\u00B3digo seguran\u00C3\u00A7a do cart\u00C3\u00A3o 
+///  @param codigoSegurancao C\u00C3\u00B3digo seguran\u00C3\u00A7a do cart\u00C3\u00A3o (optional)
 ///
 ///  @returns PierDesbloquearCartaoResponse*
 ///
@@ -599,11 +392,6 @@ static PierCartaoApi* singletonAPI = nil;
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `desbloquearCartaoUsingPOST`"];
-    }
-    
-    // verify the required parameter 'codigoSegurancao' is set
-    if (codigoSegurancao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoSegurancao` when calling `desbloquearCartaoUsingPOST`"];
     }
     
 
