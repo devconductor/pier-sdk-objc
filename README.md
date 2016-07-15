@@ -18,6 +18,6 @@ It's recommended to create an instance of ApiClient per thread in a multithreade
 
 ## Author
 
-contato@conductor.com.br
+pierlabs@conductor.com.br
 
 

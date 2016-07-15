@@ -3,6 +3,7 @@
 #import "PierCancelarCartaoResponse.h"
 #import "PierConsultarCartaoResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
+#import "PierEmbossadoCartaoResponse.h"
 
 
 @interface PierCartaoApi ()
@@ -72,7 +73,7 @@ static PierCartaoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/bloquear
+/// Bloqueia um cart\u00C3\u00A3o
 /// Bloquear um determinado cart\u00C3\u00A3o
 ///  @param idConta ID da Conta 
 ///
@@ -107,7 +108,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/bloquear"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}/bloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -185,7 +186,7 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// /contas/{idConta}/cartoes/{idCartao}
+/// Retorna um cart\u00C3\u00A3o
 /// Consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado cart\u00C3\u00A3o de uma conta
 ///  @param idConta ID da Conta que pertence o cart\u00C3\u00A3o 
 ///
@@ -212,7 +213,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -285,7 +286,7 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// /contas/{idConta}/cartoes
+/// Retorna todos os cart\u00C3\u00B5es
 /// Consultar todos os cart\u00C3\u00B5es de uma determinada conta
 ///  @param idConta ID da Conta 
 ///
@@ -301,7 +302,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -368,7 +369,7 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/desbloquear
+/// Desbloqueia um cart\u00C3\u00A3o
 /// Desbloquear cart\u00C3\u00A3o de uma determinada conta
 ///  @param idConta ID da Conta 
 ///
@@ -395,7 +396,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/contas/{idConta}/cartoes/{idCartao}/desbloquear"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}/desbloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -463,6 +464,100 @@ static PierCartaoApi* singletonAPI = nil;
                               responseType: @"PierDesbloquearCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierDesbloquearCartaoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Embossado
+/// N\u00C3\u00B3s informe caso tenha embossado algum cart\u00C3\u00A3o.
+///  @param idConta ID da Conta 
+///
+///  @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar 
+///
+///  @returns PierEmbossadoCartaoResponse*
+///
+-(NSNumber*) embossadoCartaoUsingPUTWithIdConta: (NSNumber*) idConta
+    idCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierEmbossadoCartaoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `embossadoCartaoUsingPUT`"];
+    }
+    
+    // verify the required parameter 'idCartao' is set
+    if (idCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `embossadoCartaoUsingPUT`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}/embossado"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        pathParams[@"idConta"] = idConta;
+    }
+    if (idCartao != nil) {
+        pathParams[@"idCartao"] = idCartao;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierEmbossadoCartaoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierEmbossadoCartaoResponse*)data, error);
                            }
           ];
 }

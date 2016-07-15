@@ -86,7 +86,7 @@ static PierTokenApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/tokens/callback"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/tokens/callback"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -166,7 +166,7 @@ static PierTokenApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/tokens/validar"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/tokens/validar"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {

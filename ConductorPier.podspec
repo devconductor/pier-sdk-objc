@@ -9,9 +9,9 @@
 
 Pod::Spec.new do |s|
     s.name             = "ConductorPier"
-    s.version          = "1.0.0"
+    s.version          = "1.1.0"
 
-    s.summary          = "CaaS - Conductor as a Service"
+    s.summary          = "PIER Labs"
     s.description      = <<-DESC
                          Gest\u00C3\u00A3o de pagamento eletr\u00C3\u00B4nicos como servi\u00C3\u00A7o
                          DESC

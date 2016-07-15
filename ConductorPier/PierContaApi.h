@@ -24,7 +24,7 @@
 +(PierContaApi*) sharedAPI;
 ///
 ///
-/// /contas/buscar
+/// Buscar contas
 /// Consulte contas filtrando pelos campos id do emissor, n\u00C3\u00BAmero do cart\u00C3\u00A3o, nome ou CPF/CNPJ 
 ///
 /// @param nome Nome
@@ -43,7 +43,7 @@
 
 ///
 ///
-/// /contas/{idConta}
+/// Retorna uma conta
 /// Consulte informa\u00C3\u00A7\u00C3\u00B5es de uma determinada conta
 ///
 /// @param idConta ID da Conta
@@ -56,8 +56,8 @@
 
 ///
 ///
-/// /contas/{idConta}/faturas
-/// Consulte os extratos/faturas de uma determinada conta
+/// Retorna os extratos
+/// Consulte os extratos de uma determinada conta
 ///
 /// @param idConta ID da Conta
 /// @param dataVencimento Data limite para o vencimento das transa\u00C3\u00A7\u00C3\u00B5es
@@ -71,7 +71,7 @@
 
 ///
 ///
-/// /contas/{idConta}/limites
+/// Retorna o limite
 /// Consulte os limites de uma determinada conta
 ///
 /// @param idConta ID da Conta

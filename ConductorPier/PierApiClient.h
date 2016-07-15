@@ -24,6 +24,7 @@
 #import "PierContaCartaoResponse.h"
 #import "PierContaResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
+#import "PierEmbossadoCartaoResponse.h"
 #import "PierExtraInfo.h"
 #import "PierExtratoResponse.h"
 #import "PierPessoaFisicaResponse.h"

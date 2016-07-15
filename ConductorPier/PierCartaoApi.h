@@ -2,6 +2,7 @@
 #import "PierCancelarCartaoResponse.h"
 #import "PierConsultarCartaoResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
+#import "PierEmbossadoCartaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -23,7 +24,7 @@
 +(PierCartaoApi*) sharedAPI;
 ///
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/bloquear
+/// Bloqueia um cart\u00C3\u00A3o
 /// Bloquear um determinado cart\u00C3\u00A3o
 ///
 /// @param idConta ID da Conta
@@ -42,7 +43,7 @@
 
 ///
 ///
-/// /contas/{idConta}/cartoes/{idCartao}
+/// Retorna um cart\u00C3\u00A3o
 /// Consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado cart\u00C3\u00A3o de uma conta
 ///
 /// @param idConta ID da Conta que pertence o cart\u00C3\u00A3o
@@ -59,7 +60,7 @@
 
 ///
 ///
-/// /contas/{idConta}/cartoes
+/// Retorna todos os cart\u00C3\u00B5es
 /// Consultar todos os cart\u00C3\u00B5es de uma determinada conta
 ///
 /// @param idConta ID da Conta
@@ -72,7 +73,7 @@
 
 ///
 ///
-/// /contas/{idConta}/cartoes/{idCartao}/desbloquear
+/// Desbloqueia um cart\u00C3\u00A3o
 /// Desbloquear cart\u00C3\u00A3o de uma determinada conta
 ///
 /// @param idConta ID da Conta
@@ -85,6 +86,21 @@
     idCartao: (NSNumber*) idCartao
     codigoSegurancao: (NSString*) codigoSegurancao
     completionHandler: (void (^)(PierDesbloquearCartaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Embossado
+/// N\u00C3\u00B3s informe caso tenha embossado algum cart\u00C3\u00A3o.
+///
+/// @param idConta ID da Conta
+/// @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar
+/// 
+///
+/// @return PierEmbossadoCartaoResponse*
+-(NSNumber*) embossadoCartaoUsingPUTWithIdConta: (NSNumber*) idConta
+    idCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierEmbossadoCartaoResponse* output, NSError* error)) handler;
 
 
 
