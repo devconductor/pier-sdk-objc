@@ -93,7 +93,7 @@ static PierContaApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/buscar"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/buscar"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -189,7 +189,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -280,7 +280,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/faturas"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/faturas"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -367,7 +367,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/limites"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/limites"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {

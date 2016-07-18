@@ -108,7 +108,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}/bloquear"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/cartoes/{idCartao}/bloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -213,7 +213,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/cartoes/{idCartao}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -302,7 +302,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/cartoes"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -396,7 +396,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}/desbloquear"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/cartoes/{idCartao}/desbloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -493,7 +493,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1.1/contas/{idConta}/cartoes/{idCartao}/embossado"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{idConta}/cartoes/{idCartao}/embossado"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
