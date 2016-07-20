@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "ConductorPier"
-    s.version          = "1.1.0"
+    s.version          = "2.0.0"
 
     s.summary          = "PIER Labs"
     s.description      = <<-DESC
