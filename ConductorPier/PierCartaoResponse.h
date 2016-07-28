@@ -51,6 +51,8 @@
 
 @property(nonatomic) NSNumber* idProduto;
 
+@property(nonatomic) NSString* nomePlastico;
+
 @property(nonatomic) NSString* numeroCartao;
 
 @property(nonatomic) NSString* numeroCartaoReal;
