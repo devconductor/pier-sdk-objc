@@ -19,11 +19,11 @@
 
 @property(nonatomic) NSString* cpf;
 
-@property(nonatomic) NSString* dataCadastroConta;
+@property(nonatomic) NSDate* dataCadastroConta;
 
-@property(nonatomic) NSString* dataEmissaoIdentidade;
+@property(nonatomic) NSDate* dataEmissaoIdentidade;
 
-@property(nonatomic) NSString* dataNascimento;
+@property(nonatomic) NSDate* dataNascimento;
 
 @property(nonatomic) NSString* dddCelular;
 
