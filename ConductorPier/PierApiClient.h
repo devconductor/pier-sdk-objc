@@ -25,8 +25,13 @@
 #import "PierContaResponse.h"
 #import "PierDesbloquearCartaoResponse.h"
 #import "PierEmbossadoCartaoResponse.h"
+#import "PierEstGioCartO.h"
 #import "PierExtraInfo.h"
 #import "PierExtratoResponse.h"
+#import "PierListaDeEstGiosCartEs.h"
+#import "PierListaDeOrigensComerciais.h"
+#import "PierListaDeStatusCartEs.h"
+#import "PierOrigemComercial.h"
 #import "PierPessoaFisicaResponse.h"
 #import "PierSaldoLimiteResponse.h"
 
