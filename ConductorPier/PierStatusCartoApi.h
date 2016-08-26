@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "PierEstGioCartO.h"
+#import "PierStatusCartO.h"
 #import "PierListaDeStatusCartEs.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -28,9 +28,9 @@
 /// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierEstGioCartO*
+/// @return PierStatusCartO*
 -(NSNumber*) consultarStatusCartaoUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
-    completionHandler: (void (^)(PierEstGioCartO* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierStatusCartO* output, NSError* error)) handler;
 
 
 ///
@@ -40,9 +40,22 @@
 ///
 /// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id).
 /// @param nome Nome atribu\u00C3\u00ADdo ao Status de Entrega do Cart\u00C3\u00A3o.
+/// @param flagAlteraStatus Quanto ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo n\u00C3\u00A3o ter\u00C3\u00A3o seu idStatusCartao Alterado, fazendo com que o Cart\u00C3\u00A3o atual possa continuar sendo utilizado at\u00C3\u00A9 o desbloqueio de um novo cart\u00C3\u00A3o.
+/// @param flagDesbloqueio Quando ativa, indica que Cart\u00C3\u00B5es com este idStatusCartao poder\u00C3\u00A3o ser Desbloqueados.
+/// @param flagReversaoDesbloqueio Quando ativa, indica que o cart\u00C3\u00A3o, mesmo tendo sido bloqueado, poder\u00C3\u00A1 ter o processo desfeito.
 /// @param idStatusDestinoDesbloqueio Indica qual o idStatusCartao que deve ser atribu\u00C3\u00ADdo a um idCartao quando ele for desbloqueado.
-/// @param cancelaConta Indica que Cart\u00C3\u00B5es com este idStatusCartao podem ter a sua conta Cancelada.
-/// @param permiteDesbloqueio Indica que Cart\u00C3\u00B5es com este idStatusCartao podem ser Desbloqueados.
+/// @param flagCancelaCartao Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o o cart\u00C3\u00A3o Cancelado. 
+/// @param flagReversaoCancelamento Quando ativa, indica que o cart\u00C3\u00A3o, mesmo tendo sido cancelado, poder\u00C3\u00A1 ter o processo desfeito.
+/// @param flagEmiteProvisorio Quando ativa, indica que os portadores que tiverem seus cart\u00C3\u00B5es associados a idStatusCartao com esta flag poder\u00C3\u00A3o solicitar a emiss\u00C3\u00A3o de um cart\u00C3\u00A3o provis\u00C3\u00B3rio at\u00C3\u00A9 que um novo cart\u00C3\u00A3o definitivo seja recebido. 
+/// @param flagCancelaConta Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o a conta Cancelada.
+/// @param idStatusDestinoConta Indica qual o idStatusConta que ser\u00C3\u00A1 atribu\u00C3\u00ADdo ao idConta que tiver o Cartao do titular da mesma cancelado por um idStatusCartao que recomenda o cancelamento da conta.
+/// @param flagReemiteCartao Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o um novo cart\u00C3\u00A3o automaticamente gerado.
+/// @param flagCobraTarifa Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o a cobran\u00C3\u00A7a de tarifa lan\u00C3\u00A7ada junto a gera\u00C3\u00A7\u00C3\u00A3o do novo cart\u00C3\u00A3o, desde que o Produto ao qual o cart\u00C3\u00A3o pertence possua o respectivo par\u00C3\u00A2metro configurado.
+/// @param flagOrigemTransferencia Quando ativa, indica que Cart\u00C3\u00B5es com este idStatusCartao podem realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9ditos/d\u00C3\u00A9bitos para outros cart\u00C3\u00B5es.
+/// @param flagDestinoTransferencia Quando ativa, indica que Cart\u00C3\u00B5es com este idStatusCartao podem receber transfer\u00C3\u00AAncias de cr\u00C3\u00A9ditos/d\u00C3\u00A9bitos oriundos de outros cart\u00C3\u00B5es.
+/// @param flagCadastroSenha Quando ativa, indica se poder\u00C3\u00A1 ser realizado o cadastro de uma senha para o Cart\u00C3\u00A3o.
+/// @param flagCadastroNovaSenha Quando ativa, indica que os Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o a senha atual exclu\u00C3\u00ADda.
+/// @param flagExcecaoBandeira Quando ativa, indica que os Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo dever\u00C3\u00A3o ter a respectiva informa\u00C3\u00A7\u00C3\u00A3o de mudan\u00C3\u00A7a de status inclu\u00C3\u00ADda no arquivo de exce\u00C3\u00A7\u00C3\u00A3o da Bandeira, a fim de manter atualizado o cadastro do cart\u00C3\u00A3o nela para nortear o que fazer com as transa\u00C3\u00A7\u00C3\u00B5es quando o autorizador estiver indispon\u00C3\u00ADvel.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
@@ -50,9 +63,22 @@
 /// @return PierListaDeStatusCartEs*
 -(NSNumber*) listarStatusCartoesUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
     nome: (NSString*) nome
+    flagAlteraStatus: (NSString*) flagAlteraStatus
+    flagDesbloqueio: (NSString*) flagDesbloqueio
+    flagReversaoDesbloqueio: (NSString*) flagReversaoDesbloqueio
     idStatusDestinoDesbloqueio: (NSNumber*) idStatusDestinoDesbloqueio
-    cancelaConta: (NSString*) cancelaConta
-    permiteDesbloqueio: (NSString*) permiteDesbloqueio
+    flagCancelaCartao: (NSString*) flagCancelaCartao
+    flagReversaoCancelamento: (NSString*) flagReversaoCancelamento
+    flagEmiteProvisorio: (NSString*) flagEmiteProvisorio
+    flagCancelaConta: (NSString*) flagCancelaConta
+    idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
+    flagReemiteCartao: (NSString*) flagReemiteCartao
+    flagCobraTarifa: (NSString*) flagCobraTarifa
+    flagOrigemTransferencia: (NSString*) flagOrigemTransferencia
+    flagDestinoTransferencia: (NSString*) flagDestinoTransferencia
+    flagCadastroSenha: (NSString*) flagCadastroSenha
+    flagCadastroNovaSenha: (NSString*) flagCadastroNovaSenha
+    flagExcecaoBandeira: (NSString*) flagExcecaoBandeira
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierListaDeStatusCartEs* output, NSError* error)) handler;

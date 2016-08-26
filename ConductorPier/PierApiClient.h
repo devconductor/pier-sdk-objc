@@ -16,6 +16,8 @@
 #import "PierBodyAccessToken.h"
 #import "PierCancelarCartaoResponse.h"
 #import "PierCartaoResponse.h"
+#import "PierCartaoResponseOld.h"
+#import "PierChronology.h"
 #import "PierConsultarCartaoResponse.h"
 #import "PierConsultarContaCartaoResponse.h"
 #import "PierConsultarContaResponse.h"
@@ -28,12 +30,17 @@
 #import "PierEstGioCartO.h"
 #import "PierExtraInfo.h"
 #import "PierExtratoResponse.h"
+#import "PierListaDeCartEs.h"
 #import "PierListaDeEstGiosCartEs.h"
 #import "PierListaDeOrigensComerciais.h"
+#import "PierListaDePessoas.h"
 #import "PierListaDeStatusCartEs.h"
+#import "PierLocalDateTime.h"
 #import "PierOrigemComercial.h"
+#import "PierPessoa.h"
 #import "PierPessoaFisicaResponse.h"
 #import "PierSaldoLimiteResponse.h"
+#import "PierStatusCartO.h"
 
 
 @class PierConfiguration;

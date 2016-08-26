@@ -1,6 +1,6 @@
-#import "PierCartaoResponse.h"
+#import "PierLocalDateTime.h"
 
-@implementation PierCartaoResponse
+@implementation PierLocalDateTime
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"arquivoImpressao": @"arquivoImpressao", @"codigoDesbloqueio": @"codigoDesbloqueio", @"dataEstagioCartao": @"dataEstagioCartao", @"dataGeracao": @"dataGeracao", @"dataImpressao": @"dataImpressao", @"dataStatusCartao": @"dataStatusCartao", @"dataValidade": @"dataValidade", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagProvisorio": @"flagProvisorio", @"id": @"_id", @"idConta": @"idConta", @"idEstagioCartao": @"idEstagioCartao", @"idPessoa": @"idPessoa", @"idStatusCartao": @"idStatusCartao", @"numeroCartao": @"numeroCartao", @"portador": @"portador" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"chronology": @"chronology", @"dayOfMonth": @"dayOfMonth", @"dayOfWeek": @"dayOfWeek", @"dayOfYear": @"dayOfYear", @"hour": @"hour", @"minute": @"minute", @"month": @"month", @"monthValue": @"monthValue", @"nano": @"nano", @"second": @"second", @"year": @"year" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"chronology", @"dayOfMonth", @"dayOfWeek", @"dayOfYear", @"hour", @"minute", @"month", @"monthValue", @"nano", @"second", @"year"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

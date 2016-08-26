@@ -1,6 +1,6 @@
 #import "PierStatusCartoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierEstGioCartO.h"
+#import "PierStatusCartO.h"
 #import "PierListaDeStatusCartEs.h"
 
 
@@ -75,10 +75,10 @@ static PierStatusCartoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status de Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).  
 ///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierEstGioCartO*
+///  @returns PierStatusCartO*
 ///
 -(NSNumber*) consultarStatusCartaoUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
-    completionHandler: (void (^)(PierEstGioCartO* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierStatusCartO* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idStatusCartao' is set
@@ -146,9 +146,9 @@ static PierStatusCartoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEstGioCartO*"
+                              responseType: @"PierStatusCartO*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEstGioCartO*)data, error);
+                               handler((PierStatusCartO*)data, error);
                            }
           ];
 }
@@ -160,11 +160,37 @@ static PierStatusCartoApi* singletonAPI = nil;
 ///
 ///  @param nome Nome atribu\u00C3\u00ADdo ao Status de Entrega do Cart\u00C3\u00A3o. (optional)
 ///
+///  @param flagAlteraStatus Quanto ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo n\u00C3\u00A3o ter\u00C3\u00A3o seu idStatusCartao Alterado, fazendo com que o Cart\u00C3\u00A3o atual possa continuar sendo utilizado at\u00C3\u00A9 o desbloqueio de um novo cart\u00C3\u00A3o. (optional)
+///
+///  @param flagDesbloqueio Quando ativa, indica que Cart\u00C3\u00B5es com este idStatusCartao poder\u00C3\u00A3o ser Desbloqueados. (optional)
+///
+///  @param flagReversaoDesbloqueio Quando ativa, indica que o cart\u00C3\u00A3o, mesmo tendo sido bloqueado, poder\u00C3\u00A1 ter o processo desfeito. (optional)
+///
 ///  @param idStatusDestinoDesbloqueio Indica qual o idStatusCartao que deve ser atribu\u00C3\u00ADdo a um idCartao quando ele for desbloqueado. (optional)
 ///
-///  @param cancelaConta Indica que Cart\u00C3\u00B5es com este idStatusCartao podem ter a sua conta Cancelada. (optional)
+///  @param flagCancelaCartao Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o o cart\u00C3\u00A3o Cancelado.  (optional)
 ///
-///  @param permiteDesbloqueio Indica que Cart\u00C3\u00B5es com este idStatusCartao podem ser Desbloqueados. (optional)
+///  @param flagReversaoCancelamento Quando ativa, indica que o cart\u00C3\u00A3o, mesmo tendo sido cancelado, poder\u00C3\u00A1 ter o processo desfeito. (optional)
+///
+///  @param flagEmiteProvisorio Quando ativa, indica que os portadores que tiverem seus cart\u00C3\u00B5es associados a idStatusCartao com esta flag poder\u00C3\u00A3o solicitar a emiss\u00C3\u00A3o de um cart\u00C3\u00A3o provis\u00C3\u00B3rio at\u00C3\u00A9 que um novo cart\u00C3\u00A3o definitivo seja recebido.  (optional)
+///
+///  @param flagCancelaConta Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o a conta Cancelada. (optional)
+///
+///  @param idStatusDestinoConta Indica qual o idStatusConta que ser\u00C3\u00A1 atribu\u00C3\u00ADdo ao idConta que tiver o Cartao do titular da mesma cancelado por um idStatusCartao que recomenda o cancelamento da conta. (optional)
+///
+///  @param flagReemiteCartao Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o um novo cart\u00C3\u00A3o automaticamente gerado. (optional)
+///
+///  @param flagCobraTarifa Quando ativa, indica que Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o a cobran\u00C3\u00A7a de tarifa lan\u00C3\u00A7ada junto a gera\u00C3\u00A7\u00C3\u00A3o do novo cart\u00C3\u00A3o, desde que o Produto ao qual o cart\u00C3\u00A3o pertence possua o respectivo par\u00C3\u00A2metro configurado. (optional)
+///
+///  @param flagOrigemTransferencia Quando ativa, indica que Cart\u00C3\u00B5es com este idStatusCartao podem realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9ditos/d\u00C3\u00A9bitos para outros cart\u00C3\u00B5es. (optional)
+///
+///  @param flagDestinoTransferencia Quando ativa, indica que Cart\u00C3\u00B5es com este idStatusCartao podem receber transfer\u00C3\u00AAncias de cr\u00C3\u00A9ditos/d\u00C3\u00A9bitos oriundos de outros cart\u00C3\u00B5es. (optional)
+///
+///  @param flagCadastroSenha Quando ativa, indica se poder\u00C3\u00A1 ser realizado o cadastro de uma senha para o Cart\u00C3\u00A3o. (optional)
+///
+///  @param flagCadastroNovaSenha Quando ativa, indica que os Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo ter\u00C3\u00A3o a senha atual exclu\u00C3\u00ADda. (optional)
+///
+///  @param flagExcecaoBandeira Quando ativa, indica que os Cart\u00C3\u00B5es que tiverem este idStatusCartao atribu\u00C3\u00ADdo dever\u00C3\u00A3o ter a respectiva informa\u00C3\u00A7\u00C3\u00A3o de mudan\u00C3\u00A7a de status inclu\u00C3\u00ADda no arquivo de exce\u00C3\u00A7\u00C3\u00A3o da Bandeira, a fim de manter atualizado o cadastro do cart\u00C3\u00A3o nela para nortear o que fazer com as transa\u00C3\u00A7\u00C3\u00B5es quando o autorizador estiver indispon\u00C3\u00ADvel. (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
@@ -174,9 +200,22 @@ static PierStatusCartoApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarStatusCartoesUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
     nome: (NSString*) nome
+    flagAlteraStatus: (NSString*) flagAlteraStatus
+    flagDesbloqueio: (NSString*) flagDesbloqueio
+    flagReversaoDesbloqueio: (NSString*) flagReversaoDesbloqueio
     idStatusDestinoDesbloqueio: (NSNumber*) idStatusDestinoDesbloqueio
-    cancelaConta: (NSString*) cancelaConta
-    permiteDesbloqueio: (NSString*) permiteDesbloqueio
+    flagCancelaCartao: (NSString*) flagCancelaCartao
+    flagReversaoCancelamento: (NSString*) flagReversaoCancelamento
+    flagEmiteProvisorio: (NSString*) flagEmiteProvisorio
+    flagCancelaConta: (NSString*) flagCancelaConta
+    idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
+    flagReemiteCartao: (NSString*) flagReemiteCartao
+    flagCobraTarifa: (NSString*) flagCobraTarifa
+    flagOrigemTransferencia: (NSString*) flagOrigemTransferencia
+    flagDestinoTransferencia: (NSString*) flagDestinoTransferencia
+    flagCadastroSenha: (NSString*) flagCadastroSenha
+    flagCadastroNovaSenha: (NSString*) flagCadastroNovaSenha
+    flagExcecaoBandeira: (NSString*) flagExcecaoBandeira
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierListaDeStatusCartEs* output, NSError* error)) handler {
@@ -202,17 +241,69 @@ static PierStatusCartoApi* singletonAPI = nil;
         
         queryParams[@"nome"] = nome;
     }
+    if (flagAlteraStatus != nil) {
+        
+        queryParams[@"flag_altera_status"] = flagAlteraStatus;
+    }
+    if (flagDesbloqueio != nil) {
+        
+        queryParams[@"flag_desbloqueio"] = flagDesbloqueio;
+    }
+    if (flagReversaoDesbloqueio != nil) {
+        
+        queryParams[@"flag_reversao_desbloqueio"] = flagReversaoDesbloqueio;
+    }
     if (idStatusDestinoDesbloqueio != nil) {
         
         queryParams[@"id_status_destino_desbloqueio"] = idStatusDestinoDesbloqueio;
     }
-    if (cancelaConta != nil) {
+    if (flagCancelaCartao != nil) {
         
-        queryParams[@"cancela_conta"] = cancelaConta;
+        queryParams[@"flag_cancela_cartao"] = flagCancelaCartao;
     }
-    if (permiteDesbloqueio != nil) {
+    if (flagReversaoCancelamento != nil) {
         
-        queryParams[@"permite_desbloqueio"] = permiteDesbloqueio;
+        queryParams[@"flag_reversao_cancelamento"] = flagReversaoCancelamento;
+    }
+    if (flagEmiteProvisorio != nil) {
+        
+        queryParams[@"flag_emite_provisorio"] = flagEmiteProvisorio;
+    }
+    if (flagCancelaConta != nil) {
+        
+        queryParams[@"flag_cancela_conta"] = flagCancelaConta;
+    }
+    if (idStatusDestinoConta != nil) {
+        
+        queryParams[@"id_status_destino_conta"] = idStatusDestinoConta;
+    }
+    if (flagReemiteCartao != nil) {
+        
+        queryParams[@"flag_reemite_cartao"] = flagReemiteCartao;
+    }
+    if (flagCobraTarifa != nil) {
+        
+        queryParams[@"flag_cobra_tarifa"] = flagCobraTarifa;
+    }
+    if (flagOrigemTransferencia != nil) {
+        
+        queryParams[@"flag_origem_transferencia"] = flagOrigemTransferencia;
+    }
+    if (flagDestinoTransferencia != nil) {
+        
+        queryParams[@"flag_destino_transferencia"] = flagDestinoTransferencia;
+    }
+    if (flagCadastroSenha != nil) {
+        
+        queryParams[@"flag_cadastro_senha"] = flagCadastroSenha;
+    }
+    if (flagCadastroNovaSenha != nil) {
+        
+        queryParams[@"flag_cadastro_nova_senha"] = flagCadastroNovaSenha;
+    }
+    if (flagExcecaoBandeira != nil) {
+        
+        queryParams[@"flag_excecao_bandeira"] = flagExcecaoBandeira;
     }
     if (page != nil) {
         

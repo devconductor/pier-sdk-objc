@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierCartaoResponse.h"
+#import "PierCartaoResponseOld.h"
 
 
 @protocol PierConsultarCartaoResponse
@@ -16,7 +16,7 @@
 @interface PierConsultarCartaoResponse : PierObject
 
 
-@property(nonatomic) NSArray<PierCartaoResponse>* cartoes;
+@property(nonatomic) NSArray<PierCartaoResponseOld>* cartoes;
 
 @property(nonatomic) NSNumber* codigoRetorno;
 

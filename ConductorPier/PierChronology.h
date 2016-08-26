@@ -7,16 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "PierStatusCartO.h"
 
 
-@protocol PierListaDeStatusCartEs
+@protocol PierChronology
 @end
 
-@interface PierListaDeStatusCartEs : PierObject
+@interface PierChronology : PierObject
 
-/* Lista de status cart\u00C3\u00B5es [optional]
- */
-@property(nonatomic) NSArray<PierStatusCartO>* statusCartoes;
+
+@property(nonatomic) NSString* calendarType;
+
+@property(nonatomic) NSString* _id;
 
 @end

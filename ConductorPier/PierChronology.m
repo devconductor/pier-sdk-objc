@@ -1,6 +1,6 @@
-#import "PierCartaoResponse.h"
+#import "PierChronology.h"
 
-@implementation PierCartaoResponse
+@implementation PierChronology
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"arquivoImpressao": @"arquivoImpressao", @"codigoDesbloqueio": @"codigoDesbloqueio", @"dataEstagioCartao": @"dataEstagioCartao", @"dataGeracao": @"dataGeracao", @"dataImpressao": @"dataImpressao", @"dataStatusCartao": @"dataStatusCartao", @"dataValidade": @"dataValidade", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagProvisorio": @"flagProvisorio", @"id": @"_id", @"idConta": @"idConta", @"idEstagioCartao": @"idEstagioCartao", @"idPessoa": @"idPessoa", @"idStatusCartao": @"idStatusCartao", @"numeroCartao": @"numeroCartao", @"portador": @"portador" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"calendarType": @"calendarType", @"id": @"_id" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"calendarType", @"_id"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
