@@ -1,7 +1,7 @@
 #import "PierEstagioCartaoApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierEstagioCartao.h"
-#import "PierListaEstagiosCartoes.h"
+#import "PierPageEstagiosCartoes.h"
 
 
 @interface PierEstagioCartaoApi ()
@@ -164,13 +164,13 @@ static PierEstagioCartaoApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierListaEstagiosCartoes*
+///  @returns PierPageEstagiosCartoes*
 ///
 -(NSNumber*) listarEstagiosCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaEstagiosCartoes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageEstagiosCartoes* output, NSError* error)) handler {
 
     
 
@@ -246,9 +246,9 @@ static PierEstagioCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaEstagiosCartoes*"
+                              responseType: @"PierPageEstagiosCartoes*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaEstagiosCartoes*)data, error);
+                               handler((PierPageEstagiosCartoes*)data, error);
                            }
           ];
 }

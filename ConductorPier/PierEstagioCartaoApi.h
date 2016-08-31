@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierEstagioCartao.h"
-#import "PierListaEstagiosCartoes.h"
+#import "PierPageEstagiosCartoes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -44,12 +44,12 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierListaEstagiosCartoes*
+/// @return PierPageEstagiosCartoes*
 -(NSNumber*) listarEstagiosCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaEstagiosCartoes* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageEstagiosCartoes* output, NSError* error)) handler;
 
 
 

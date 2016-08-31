@@ -1,6 +1,6 @@
-#import "PierListaEstagiosCartoes.h"
+#import "PierPageEstagiosCartoes.h"
 
-@implementation PierListaEstagiosCartoes
+@implementation PierPageEstagiosCartoes
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"estagiosCartoes": @"estagiosCartoes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"estagioCartoes": @"estagioCartoes" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"estagiosCartoes"];
+  NSArray *optionalProperties = @[@"estagioCartoes"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
