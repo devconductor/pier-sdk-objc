@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierPageImplOfEstagioCartao.h"
+#import "PierPageApiOfEstagioCartao.h"
 
 
 @protocol PierPageEstagiosCartoes
@@ -16,6 +16,6 @@
 @interface PierPageEstagiosCartoes : PierObject
 
 
-@property(nonatomic) PierPageImplOfEstagioCartao* estagioCartoes;
+@property(nonatomic) PierPageApiOfEstagioCartao* estagioCartoes;
 
 @end
