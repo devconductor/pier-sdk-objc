@@ -156,7 +156,7 @@ static PierCartoApi* singletonAPI = nil;
 ///
 /// Lista os Cart\u00C3\u00B5es gerados pelo Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es existentes na base do emissor.
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). (optional)
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). (optional)
 ///
 ///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id). (optional)
 ///
@@ -164,11 +164,15 @@ static PierCartoApi* singletonAPI = nil;
 ///
 ///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o cart\u00C3\u00A3o pertence (id). (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o cart\u00C3\u00A3o pertence (id). (optional)
+///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o cart\u00C3\u00A3o pertence (id) (optional)
 ///
-///  @param portador Indica qual \u00C3\u00A9 a rela\u00C3\u00A7\u00C3\u00A3o do portador do cart\u00C3\u00A3o com a conta. Quando \u00E2\u0080\u00981\u00E2\u0080\u0099, corresponde ao seu titular. Quando diferente disso, corresponde a um cart\u00C3\u00A3o adicional. (optional)
+///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id). (optional)
+///
+///  @param portador Indica qual \u00C3\u00A9 a rela\u00C3\u00A7\u00C3\u00A3o do portador do cart\u00C3\u00A3o com a conta. Quando '1', corresponde ao seu titular. Quando diferente disso, corresponde a um cart\u00C3\u00A3o adicional. (optional)
 ///
 ///  @param numeroCartao Apresenta o n\u00C3\u00BAmero do cart\u00C3\u00A3o. (optional)
+///
+///  @param nomeImpresso Apresenta o nome impresso no cart\u00C3\u00A3o. (optional)
 ///
 ///  @param dataGeracao Apresenta a data em que o cart\u00C3\u00A3o foi gerado. (optional)
 ///
@@ -176,7 +180,7 @@ static PierCartoApi* singletonAPI = nil;
 ///
 ///  @param dataEstagioCartao Apresenta a data em que o idEstagioCartao atual do cart\u00C3\u00A3o fora aplicado, quando houver. (optional)
 ///
-///  @param dataValidade Apresenta a data de validade do cart\u00C3\u00A3o em formato AAAA-MM, quando houver. (optional)
+///  @param dataValidade Apresenta a data de validade do cart\u00C3\u00A3o em formato MMAAAA, quando houver. (optional)
 ///
 ///  @param dataImpressao Apresenta a data em que o cart\u00C3\u00A3o fora impresso, caso impress\u00C3\u00A3o em loja, ou a data em que ele fora inclu\u00C3\u00ADdo no arquivo para impress\u00C3\u00A3o via gr\u00C3\u00A1fica. (optional)
 ///
@@ -194,18 +198,20 @@ static PierCartoApi* singletonAPI = nil;
 ///
 ///  @returns PierListaDeCartEs*
 ///
--(NSNumber*) listarUsingGETWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
     idConta: (NSNumber*) idConta
     idPessoa: (NSNumber*) idPessoa
+    idProduto: (NSNumber*) idProduto
     portador: (NSNumber*) portador
     numeroCartao: (NSString*) numeroCartao
-    dataGeracao: (NSString*) dataGeracao
-    dataStatusCartao: (NSString*) dataStatusCartao
-    dataEstagioCartao: (NSString*) dataEstagioCartao
+    nomeImpresso: (NSString*) nomeImpresso
+    dataGeracao: (NSDate*) dataGeracao
+    dataStatusCartao: (NSDate*) dataStatusCartao
+    dataEstagioCartao: (NSDate*) dataEstagioCartao
     dataValidade: (NSString*) dataValidade
-    dataImpressao: (NSString*) dataImpressao
+    dataImpressao: (NSDate*) dataImpressao
     arquivoImpressao: (NSString*) arquivoImpressao
     flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
     flagProvisorio: (NSNumber*) flagProvisorio
@@ -227,25 +233,29 @@ static PierCartoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
+    if (_id != nil) {
         
-        queryParams[@"id_cartao"] = idCartao;
+        queryParams[@"id"] = _id;
     }
     if (idStatusCartao != nil) {
         
-        queryParams[@"id_status_cartao"] = idStatusCartao;
+        queryParams[@"idStatusCartao"] = idStatusCartao;
     }
     if (idEstagioCartao != nil) {
         
-        queryParams[@"id_estagio_cartao"] = idEstagioCartao;
+        queryParams[@"idEstagioCartao"] = idEstagioCartao;
     }
     if (idConta != nil) {
         
-        queryParams[@"id_conta"] = idConta;
+        queryParams[@"idConta"] = idConta;
     }
     if (idPessoa != nil) {
         
-        queryParams[@"id_pessoa"] = idPessoa;
+        queryParams[@"idPessoa"] = idPessoa;
+    }
+    if (idProduto != nil) {
+        
+        queryParams[@"idProduto"] = idProduto;
     }
     if (portador != nil) {
         
@@ -253,43 +263,47 @@ static PierCartoApi* singletonAPI = nil;
     }
     if (numeroCartao != nil) {
         
-        queryParams[@"numero_cartao"] = numeroCartao;
+        queryParams[@"numeroCartao"] = numeroCartao;
+    }
+    if (nomeImpresso != nil) {
+        
+        queryParams[@"nomeImpresso"] = nomeImpresso;
     }
     if (dataGeracao != nil) {
         
-        queryParams[@"data_geracao"] = dataGeracao;
+        queryParams[@"dataGeracao"] = dataGeracao;
     }
     if (dataStatusCartao != nil) {
         
-        queryParams[@"data_status_cartao"] = dataStatusCartao;
+        queryParams[@"dataStatusCartao"] = dataStatusCartao;
     }
     if (dataEstagioCartao != nil) {
         
-        queryParams[@"data_estagio_cartao"] = dataEstagioCartao;
+        queryParams[@"dataEstagioCartao"] = dataEstagioCartao;
     }
     if (dataValidade != nil) {
         
-        queryParams[@"data_validade"] = dataValidade;
+        queryParams[@"dataValidade"] = dataValidade;
     }
     if (dataImpressao != nil) {
         
-        queryParams[@"data_impressao"] = dataImpressao;
+        queryParams[@"dataImpressao"] = dataImpressao;
     }
     if (arquivoImpressao != nil) {
         
-        queryParams[@"arquivo_impressao"] = arquivoImpressao;
+        queryParams[@"arquivoImpressao"] = arquivoImpressao;
     }
     if (flagImpressaoOrigemComercial != nil) {
         
-        queryParams[@"flag_impressao_origem_comercial"] = flagImpressaoOrigemComercial;
+        queryParams[@"flagImpressaoOrigemComercial"] = flagImpressaoOrigemComercial;
     }
     if (flagProvisorio != nil) {
         
-        queryParams[@"flag_provisorio"] = flagProvisorio;
+        queryParams[@"flagProvisorio"] = flagProvisorio;
     }
     if (codigoDesbloqueio != nil) {
         
-        queryParams[@"codigo_desbloqueio"] = codigoDesbloqueio;
+        queryParams[@"codigoDesbloqueio"] = codigoDesbloqueio;
     }
     if (page != nil) {
         

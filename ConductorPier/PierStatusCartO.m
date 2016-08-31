@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagAlteraStatus": @"flagAlteraStatus", @"flagCadastroNovaSenha": @"flagCadastroNovaSenha", @"flagCadastroSenha": @"flagCadastroSenha", @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaConta": @"flagCancelaConta", @"flagCobraTarifa": @"flagCobraTarifa", @"flagDesbloqueio": @"flagDesbloqueio", @"flagDestinoTransferencia": @"flagDestinoTransferencia", @"flagEmiteProvisorio": @"flagEmiteProvisorio", @"flagExcecaoBandeira": @"flagExcecaoBandeira", @"flagOrigemTransferencia": @"flagOrigemTransferencia", @"flagReemiteCartao": @"flagReemiteCartao", @"flagReversaoCancelamento": @"flagReversaoCancelamento", @"flagReversaoDesbloqueio": @"flagReversaoDesbloqueio", @"id": @"_id", @"idStatusDestinoConta": @"idStatusDestinoConta", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"nome": @"nome" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagAlteraStatus": @"flagAlteraStatus", @"flagCadastroNovaSenha": @"flagCadastroNovaSenha", @"flagCancelaConta": @"flagCancelaConta", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"flagCobraTarifa": @"flagCobraTarifa", @"flagDestinoTransferencia": @"flagDestinoTransferencia", @"flagEmiteProvisorio": @"flagEmiteProvisorio", @"flagExcecaoBandeira": @"flagExcecaoBandeira", @"flagOrigemTransferencia": @"flagOrigemTransferencia", @"flagReemiteCartao": @"flagReemiteCartao", @"id": @"_id", @"idStatusDestinoConta": @"idStatusDestinoConta", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"nome": @"nome" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"flagCancelaNoDesbloqueio", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

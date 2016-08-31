@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierCartaoResponse.h"
+#import "PierCartO.h"
 
 
 @protocol PierListaDeCartEs
@@ -17,6 +17,6 @@
 
 /* Lista de cart\u00C3\u00B5es [optional]
  */
-@property(nonatomic) NSArray<PierCartaoResponse>* cartoes;
+@property(nonatomic) NSArray<PierCartO>* cartoes;
 
 @end
