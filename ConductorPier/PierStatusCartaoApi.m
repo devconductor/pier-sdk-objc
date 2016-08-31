@@ -1,16 +1,16 @@
-#import "PierStatusCartoApi.h"
+#import "PierStatusCartaoApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierStatusCartao.h"
 #import "PierListaStatusCartoes.h"
 
 
-@interface PierStatusCartoApi ()
+@interface PierStatusCartaoApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierStatusCartoApi
+@implementation PierStatusCartaoApi
 
-static PierStatusCartoApi* singletonAPI = nil;
+static PierStatusCartaoApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static PierStatusCartoApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierStatusCartoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierStatusCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierStatusCartoApi alloc] init];
+        singletonAPI = [[PierStatusCartaoApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierStatusCartoApi*) sharedAPI {
++(PierStatusCartaoApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierStatusCartoApi alloc] init];
+        singletonAPI = [[PierStatusCartaoApi alloc] init];
     }
     return singletonAPI;
 }

@@ -11,15 +11,15 @@
  * Do not edit the class manually.
  */
 
-@interface PierStatusCartoApi: NSObject
+@interface PierStatusCartaoApi: NSObject
 
 @property(nonatomic, assign)PierApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(PierApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(PierStatusCartoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(PierStatusCartoApi*) sharedAPI;
++(PierStatusCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(PierStatusCartaoApi*) sharedAPI;
 ///
 ///
 /// Apresenta os dados de um determinado Status Cart\u00C3\u00A3o 
