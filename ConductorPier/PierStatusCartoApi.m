@@ -1,7 +1,7 @@
 #import "PierStatusCartoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierStatusCartO.h"
-#import "PierListaDeStatusCartEs.h"
+#import "PierStatusCartao.h"
+#import "PierListaStatusCartoes.h"
 
 
 @interface PierStatusCartoApi ()
@@ -75,10 +75,10 @@ static PierStatusCartoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status de Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).  
 ///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierStatusCartO*
+///  @returns PierStatusCartao*
 ///
 -(NSNumber*) consultarStatusCartaoUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
-    completionHandler: (void (^)(PierStatusCartO* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierStatusCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idStatusCartao' is set
@@ -146,9 +146,9 @@ static PierStatusCartoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierStatusCartO*"
+                              responseType: @"PierStatusCartao*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierStatusCartO*)data, error);
+                               handler((PierStatusCartao*)data, error);
                            }
           ];
 }
@@ -188,7 +188,7 @@ static PierStatusCartoApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierListaDeStatusCartEs*
+///  @returns PierListaStatusCartoes*
 ///
 -(NSNumber*) listarStatusCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
@@ -206,7 +206,7 @@ static PierStatusCartoApi* singletonAPI = nil;
     flagExcecaoBandeira: (NSNumber*) flagExcecaoBandeira
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaDeStatusCartEs* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierListaStatusCartoes* output, NSError* error)) handler {
 
     
 
@@ -330,9 +330,9 @@ static PierStatusCartoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaDeStatusCartEs*"
+                              responseType: @"PierListaStatusCartoes*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaDeStatusCartEs*)data, error);
+                               handler((PierListaStatusCartoes*)data, error);
                            }
           ];
 }

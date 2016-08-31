@@ -1,8 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierCancelarCartaoResponse.h"
-#import "PierConsultarCartaoResponse.h"
-#import "PierDesbloquearCartaoResponse.h"
-#import "PierEmbossadoCartaoResponse.h"
+#import "PierOrigemComercial.h"
+#import "PierListaCartoes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -24,83 +22,66 @@
 +(PierCartaoApi*) sharedAPI;
 ///
 ///
-/// Bloqueia um cart\u00C3\u00A3o
-/// Bloquear um determinado cart\u00C3\u00A3o
+/// Apresenta os dados de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es b\u00C3\u00A1sicas de um determinado Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
-/// @param idConta ID da Conta
-/// @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar
-/// @param motivo Motivo do bloqueio
-/// @param observacao Alguma observa\u00C3\u00A7\u00C3\u00A3o para o bloqueio
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierCancelarCartaoResponse*
--(NSNumber*) bloquearCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    motivo: (NSNumber*) motivo
-    observacao: (NSString*) observacao
-    completionHandler: (void (^)(PierCancelarCartaoResponse* output, NSError* error)) handler;
+/// @return PierOrigemComercial*
+-(NSNumber*) consultarUsingGETWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Retorna um cart\u00C3\u00A3o
-/// Consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado cart\u00C3\u00A3o de uma conta
+/// Lista os Cart\u00C3\u00B5es gerados pelo Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es existentes na base do emissor.
 ///
-/// @param idConta ID da Conta que pertence o cart\u00C3\u00A3o
-/// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar
-/// @param numeroCartao N\u00C3\u00BAmero do Cart\u00C3\u00A3o que deseja consultar (opcional)
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id).
+/// @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o cart\u00C3\u00A3o pertence (id).
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o cart\u00C3\u00A3o pertence (id)
+/// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id).
+/// @param portador Indica qual \u00C3\u00A9 a rela\u00C3\u00A7\u00C3\u00A3o do portador do cart\u00C3\u00A3o com a conta. Quando &#39;1&#39;, corresponde ao seu titular. Quando diferente disso, corresponde a um cart\u00C3\u00A3o adicional.
+/// @param numeroCartao Apresenta o n\u00C3\u00BAmero do cart\u00C3\u00A3o.
+/// @param nomeImpresso Apresenta o nome impresso no cart\u00C3\u00A3o.
+/// @param dataGeracao Apresenta a data em que o cart\u00C3\u00A3o foi gerado.
+/// @param dataStatusCartao Apresenta a data em que o idStatusCartao atual do cart\u00C3\u00A3o fora aplicado, quando houver.
+/// @param dataEstagioCartao Apresenta a data em que o idEstagioCartao atual do cart\u00C3\u00A3o fora aplicado, quando houver.
+/// @param dataValidade Apresenta a data de validade do cart\u00C3\u00A3o em formato MMAAAA, quando houver.
+/// @param dataImpressao Apresenta a data em que o cart\u00C3\u00A3o fora impresso, caso impress\u00C3\u00A3o em loja, ou a data em que ele fora inclu\u00C3\u00ADdo no arquivo para impress\u00C3\u00A3o via gr\u00C3\u00A1fica.
+/// @param arquivoImpressao Apresenta o nome do arquivo onde o cart\u00C3\u00A3o fora inclu\u00C3\u00ADdo para impress\u00C3\u00A3o por uma gr\u00C3\u00A1fica, quando houver.
+/// @param flagImpressaoOrigemComercial Quando ativa, indica que o cart\u00C3\u00A3o fora impresso na Origem Comercial.
+/// @param flagProvisorio Quando ativa, indica que o cart\u00C3\u00A3o \u00C3\u00A9 provis\u00C3\u00B3rio. Ou seja, \u00C3\u00A9 um cart\u00C3\u00A3o para uso tempor\u00C3\u00A1rio quando se deseja permitir que o cliente transacione sem que ele tenha recebido um cart\u00C3\u00A3o definitivo.
+/// @param codigoDesbloqueio Apresenta um c\u00C3\u00B3digo espec\u00C3\u00ADfico para ser utilizado como vari\u00C3\u00A1vel no processo de desbloqueio do cart\u00C3\u00A3o para emissores que querem usar esta funcionalidade.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierConsultarCartaoResponse*
--(NSNumber*) consultarCartaoUsingGETWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
+/// @return PierListaCartoes*
+-(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
+    idStatusCartao: (NSNumber*) idStatusCartao
+    idEstagioCartao: (NSNumber*) idEstagioCartao
+    idConta: (NSNumber*) idConta
+    idPessoa: (NSNumber*) idPessoa
+    idProduto: (NSNumber*) idProduto
+    portador: (NSNumber*) portador
     numeroCartao: (NSString*) numeroCartao
-    completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Retorna todos os cart\u00C3\u00B5es
-/// Consultar todos os cart\u00C3\u00B5es de uma determinada conta
-///
-/// @param idConta ID da Conta
-/// 
-///
-/// @return PierConsultarCartaoResponse*
--(NSNumber*) consultarCartoesUsingGETWithIdConta: (NSNumber*) idConta
-    completionHandler: (void (^)(PierConsultarCartaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Desbloqueia um cart\u00C3\u00A3o
-/// Desbloquear cart\u00C3\u00A3o de uma determinada conta
-///
-/// @param idConta ID da Conta
-/// @param idCartao ID do Cart\u00C3\u00A3o que deseja consultar o saldo/limite
-/// @param codigoSegurancao C\u00C3\u00B3digo seguran\u00C3\u00A7a do cart\u00C3\u00A3o
-/// 
-///
-/// @return PierDesbloquearCartaoResponse*
--(NSNumber*) desbloquearCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    codigoSegurancao: (NSString*) codigoSegurancao
-    completionHandler: (void (^)(PierDesbloquearCartaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Embossado
-/// N\u00C3\u00B3s informe caso tenha embossado algum cart\u00C3\u00A3o.
-///
-/// @param idConta ID da Conta
-/// @param idCartao ID do Cart\u00C3\u00A3o que deseja cancelar
-/// 
-///
-/// @return PierEmbossadoCartaoResponse*
--(NSNumber*) embossadoCartaoUsingPUTWithIdConta: (NSNumber*) idConta
-    idCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierEmbossadoCartaoResponse* output, NSError* error)) handler;
+    nomeImpresso: (NSString*) nomeImpresso
+    dataGeracao: (NSDate*) dataGeracao
+    dataStatusCartao: (NSDate*) dataStatusCartao
+    dataEstagioCartao: (NSDate*) dataEstagioCartao
+    dataValidade: (NSString*) dataValidade
+    dataImpressao: (NSDate*) dataImpressao
+    arquivoImpressao: (NSString*) arquivoImpressao
+    flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
+    flagProvisorio: (NSNumber*) flagProvisorio
+    codigoDesbloqueio: (NSString*) codigoDesbloqueio
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierListaCartoes* output, NSError* error)) handler;
 
 
 

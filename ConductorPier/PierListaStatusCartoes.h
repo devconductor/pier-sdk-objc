@@ -7,16 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "PierPessoa.h"
+#import "PierStatusCartao.h"
 
 
-@protocol PierListaDePessoas
+@protocol PierListaStatusCartoes
 @end
 
-@interface PierListaDePessoas : PierObject
+@interface PierListaStatusCartoes : PierObject
 
-/* Lista de pessoas [optional]
+/* Lista de status cart\u00C3\u00B5es [optional]
  */
-@property(nonatomic) NSArray<PierPessoa>* pessoas;
+@property(nonatomic) NSArray<PierStatusCartao>* statusCartoes;
 
 @end

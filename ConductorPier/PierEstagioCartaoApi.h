@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierEstGioCartO.h"
-#import "PierListaDeEstGiosCartEs.h"
+#import "PierEstagioCartao.h"
+#import "PierListaEstagiosCartoes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -11,15 +11,15 @@
  * Do not edit the class manually.
  */
 
-@interface PierEstgioCartoApi: NSObject
+@interface PierEstagioCartaoApi: NSObject
 
 @property(nonatomic, assign)PierApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(PierApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(PierEstgioCartoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(PierEstgioCartoApi*) sharedAPI;
++(PierEstagioCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(PierEstagioCartaoApi*) sharedAPI;
 ///
 ///
 /// Apresenta os dados de um determinado Estagio Cart\u00C3\u00A3o 
@@ -28,9 +28,9 @@
 /// @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierEstGioCartO*
+/// @return PierEstagioCartao*
 -(NSNumber*) consultarEstagioCartaoUsingGETWithIdEstagioCartao: (NSNumber*) idEstagioCartao
-    completionHandler: (void (^)(PierEstGioCartO* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler;
 
 
 ///
@@ -44,12 +44,12 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierListaDeEstGiosCartEs*
+/// @return PierListaEstagiosCartoes*
 -(NSNumber*) listarEstagiosCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaDeEstGiosCartEs* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierListaEstagiosCartoes* output, NSError* error)) handler;
 
 
 

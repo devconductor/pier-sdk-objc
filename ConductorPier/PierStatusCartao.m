@@ -1,6 +1,6 @@
-#import "PierListaDeEstGiosCartEs.h"
+#import "PierStatusCartao.h"
 
-@implementation PierListaDeEstGiosCartEs
+@implementation PierStatusCartao
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"estagiosCartoes": @"estagiosCartoes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagAlteraStatus": @"flagAlteraStatus", @"flagCadastroNovaSenha": @"flagCadastroNovaSenha", @"flagCancelaConta": @"flagCancelaConta", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"flagCobraTarifa": @"flagCobraTarifa", @"flagDestinoTransferencia": @"flagDestinoTransferencia", @"flagEmiteProvisorio": @"flagEmiteProvisorio", @"flagExcecaoBandeira": @"flagExcecaoBandeira", @"flagOrigemTransferencia": @"flagOrigemTransferencia", @"flagReemiteCartao": @"flagReemiteCartao", @"id": @"_id", @"idStatusDestinoConta": @"idStatusDestinoConta", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"nome": @"nome" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"estagiosCartoes"];
+  NSArray *optionalProperties = @[@"flagCancelaNoDesbloqueio", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

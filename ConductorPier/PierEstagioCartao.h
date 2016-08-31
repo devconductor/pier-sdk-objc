@@ -7,16 +7,18 @@
  * Do not edit the class manually.
  */
 
-#import "PierStatusCartO.h"
 
 
-@protocol PierListaDeStatusCartEs
+@protocol PierEstagioCartao
 @end
 
-@interface PierListaDeStatusCartEs : PierObject
+@interface PierEstagioCartao : PierObject
 
-/* Lista de status cart\u00C3\u00B5es [optional]
+/* Id do est\u00C3\u00A1gio cart\u00C3\u00A3o 
  */
-@property(nonatomic) NSArray<PierStatusCartO>* statusCartoes;
+@property(nonatomic) NSNumber* _id;
+/* Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o 
+ */
+@property(nonatomic) NSString* nome;
 
 @end

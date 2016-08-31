@@ -1,6 +1,6 @@
-#import "PierListaDeCartEs.h"
+#import "PierListaCartoes.h"
 
-@implementation PierListaDeCartEs
+@implementation PierListaCartoes
 
 - (instancetype)init {
   self = [super init];

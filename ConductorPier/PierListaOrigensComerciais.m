@@ -1,6 +1,6 @@
-#import "PierEstGioCartO.h"
+#import "PierListaOrigensComerciais.h"
 
-@implementation PierEstGioCartO
+@implementation PierListaOrigensComerciais
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"origensComerciais": @"origensComerciais" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"origensComerciais"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

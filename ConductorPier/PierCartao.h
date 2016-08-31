@@ -9,10 +9,10 @@
 
 
 
-@protocol PierCartO
+@protocol PierCartao
 @end
 
-@interface PierCartO : PierObject
+@interface PierCartao : PierObject
 
 /* Apresenta o nome do arquivo onde o cart\u00C3\u00A3o fora inclu\u00C3\u00ADdo para impress\u00C3\u00A3o por uma gr\u00C3\u00A1fica, quando houver. [optional]
  */

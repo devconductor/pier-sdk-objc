@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierStatusCartO.h"
-#import "PierListaDeStatusCartEs.h"
+#import "PierStatusCartao.h"
+#import "PierListaStatusCartoes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -28,9 +28,9 @@
 /// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierStatusCartO*
+/// @return PierStatusCartao*
 -(NSNumber*) consultarStatusCartaoUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
-    completionHandler: (void (^)(PierStatusCartO* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierStatusCartao* output, NSError* error)) handler;
 
 
 ///
@@ -56,7 +56,7 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierListaDeStatusCartEs*
+/// @return PierListaStatusCartoes*
 -(NSNumber*) listarStatusCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraStatus: (NSNumber*) flagAlteraStatus
@@ -73,7 +73,7 @@
     flagExcecaoBandeira: (NSNumber*) flagExcecaoBandeira
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaDeStatusCartEs* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierListaStatusCartoes* output, NSError* error)) handler;
 
 
 

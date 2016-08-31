@@ -1,16 +1,16 @@
-#import "PierEstgioCartoApi.h"
+#import "PierEstagioCartaoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierEstGioCartO.h"
-#import "PierListaDeEstGiosCartEs.h"
+#import "PierEstagioCartao.h"
+#import "PierListaEstagiosCartoes.h"
 
 
-@interface PierEstgioCartoApi ()
+@interface PierEstagioCartaoApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierEstgioCartoApi
+@implementation PierEstagioCartaoApi
 
-static PierEstgioCartoApi* singletonAPI = nil;
+static PierEstagioCartaoApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static PierEstgioCartoApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierEstgioCartoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierEstagioCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierEstgioCartoApi alloc] init];
+        singletonAPI = [[PierEstagioCartaoApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierEstgioCartoApi*) sharedAPI {
++(PierEstagioCartaoApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierEstgioCartoApi alloc] init];
+        singletonAPI = [[PierEstagioCartaoApi alloc] init];
     }
     return singletonAPI;
 }
@@ -75,10 +75,10 @@ static PierEstgioCartoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).  
 ///  @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierEstGioCartO*
+///  @returns PierEstagioCartao*
 ///
 -(NSNumber*) consultarEstagioCartaoUsingGETWithIdEstagioCartao: (NSNumber*) idEstagioCartao
-    completionHandler: (void (^)(PierEstGioCartO* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idEstagioCartao' is set
@@ -146,9 +146,9 @@ static PierEstgioCartoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEstGioCartO*"
+                              responseType: @"PierEstagioCartao*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEstGioCartO*)data, error);
+                               handler((PierEstagioCartao*)data, error);
                            }
           ];
 }
@@ -156,32 +156,22 @@ static PierEstgioCartoApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gios do Cart\u00C3\u00A3o 
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gio de Entrega que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
-///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o 
+///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
 ///
-///  @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o 
+///  @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierListaDeEstGiosCartEs*
+///  @returns PierListaEstagiosCartoes*
 ///
 -(NSNumber*) listarEstagiosCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaDeEstGiosCartEs* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierListaEstagiosCartoes* output, NSError* error)) handler {
 
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarEstagiosCartoesUsingGET`"];
-    }
-    
-    // verify the required parameter 'nome' is set
-    if (nome == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `listarEstagiosCartoesUsingGET`"];
-    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/estagios-cartoes"];
@@ -256,9 +246,9 @@ static PierEstgioCartoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaDeEstGiosCartEs*"
+                              responseType: @"PierListaEstagiosCartoes*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaDeEstGiosCartEs*)data, error);
+                               handler((PierListaEstagiosCartoes*)data, error);
                            }
           ];
 }

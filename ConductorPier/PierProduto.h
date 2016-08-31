@@ -9,16 +9,19 @@
 
 
 
-@protocol PierEstGioCartO
+@protocol PierProduto
 @end
 
-@interface PierEstGioCartO : PierObject
+@interface PierProduto : PierObject
 
-/* Id do est\u00C3\u00A1gio cart\u00C3\u00A3o 
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). 
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o 
+/* Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto. 
  */
 @property(nonatomic) NSString* nome;
+/* Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). 
+ */
+@property(nonatomic) NSString* status;
 
 @end

@@ -9,10 +9,10 @@
 
 
 
-@protocol PierStatusCartO
+@protocol PierStatusCartao
 @end
 
-@interface PierStatusCartO : PierObject
+@interface PierStatusCartao : PierObject
 
 /* Quando ativa, indica que ao ser atribu\u00C3\u00ADdo um idStatusCartao com essa caracter\u00C3\u00ADstica, o cart\u00C3\u00A3o ter\u00C3\u00A1 o seu idStatusCartao alterado para o que fora escolhido. Caso contr\u00C3\u00A1rio, o idStatusCartao s\u00C3\u00B3 ser\u00C3\u00A1 alterado ap\u00C3\u00B3s o desbloqueio de um novo cart\u00C3\u00A3o do mesmo Portador e Conta. 
  */
