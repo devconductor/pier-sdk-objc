@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierPageApiOfEstagioCartao.h"
+#import "PierEstagioCartao.h"
 
 
 @protocol PierPageEstagiosCartoes
@@ -16,6 +16,32 @@
 @interface PierPageEstagiosCartoes : PierObject
 
 
-@property(nonatomic) PierPageApiOfEstagioCartao* estagioCartoes;
+@property(nonatomic) NSArray<PierEstagioCartao>* content;
+
+@property(nonatomic) NSNumber* first;
+
+@property(nonatomic) NSNumber* firstPage;
+
+@property(nonatomic) NSNumber* hasContent;
+
+@property(nonatomic) NSNumber* hasNextPage;
+
+@property(nonatomic) NSNumber* hasPreviousPage;
+
+@property(nonatomic) NSNumber* last;
+
+@property(nonatomic) NSNumber* nextPage;
+
+@property(nonatomic) NSNumber* number;
+
+@property(nonatomic) NSNumber* numberOfElements;
+
+@property(nonatomic) NSNumber* previousPage;
+
+@property(nonatomic) NSNumber* size;
+
+@property(nonatomic) NSNumber* totalElements;
+
+@property(nonatomic) NSNumber* totalPages;
 
 @end

@@ -34,7 +34,6 @@
 #import "PierListaProdutos.h"
 #import "PierListaStatusCartoes.h"
 #import "PierOrigemComercial.h"
-#import "PierPageApiOfEstagioCartao.h"
 #import "PierPageEstagiosCartoes.h"
 #import "PierPessoaFisicaResponse.h"
 #import "PierProduto.h"
