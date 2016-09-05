@@ -1,7 +1,7 @@
 #import "PierOrigemComercialApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierOrigemComercial.h"
-#import "PierListaOrigensComerciais.h"
+#import "PierPageOrigensComerciais.h"
 
 
 @interface PierOrigemComercialApi ()
@@ -166,14 +166,14 @@ static PierOrigemComercialApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierListaOrigensComerciais*
+///  @returns PierPageOrigensComerciais*
 ///
 -(NSNumber*) listarOrigensComerciaisUsingGETWithIdOrigemComercial: (NSNumber*) idOrigemComercial
     nome: (NSString*) nome
     status: (NSString*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaOrigensComerciais* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageOrigensComerciais* output, NSError* error)) handler {
 
     
 
@@ -253,9 +253,9 @@ static PierOrigemComercialApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaOrigensComerciais*"
+                              responseType: @"PierPageOrigensComerciais*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaOrigensComerciais*)data, error);
+                               handler((PierPageOrigensComerciais*)data, error);
                            }
           ];
 }

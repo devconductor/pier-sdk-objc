@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierStatusCartao.h"
-#import "PierListaStatusCartoes.h"
+#import "PierPageStatusCartoes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -56,7 +56,7 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierListaStatusCartoes*
+/// @return PierPageStatusCartoes*
 -(NSNumber*) listarStatusCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraStatus: (NSNumber*) flagAlteraStatus
@@ -73,7 +73,7 @@
     flagExcecaoBandeira: (NSNumber*) flagExcecaoBandeira
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaStatusCartoes* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler;
 
 
 

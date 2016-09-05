@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierOrigemComercial.h"
-#import "PierListaOrigensComerciais.h"
+#import "PierPagePessoas.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -49,7 +49,7 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierListaOrigensComerciais*
+/// @return PierPagePessoas*
 -(NSNumber*) listarUsingGET1WithIdPessoa: (NSNumber*) idPessoa
     nome: (NSString*) nome
     tipo: (NSString*) tipo
@@ -59,7 +59,7 @@
     cnpj2: (NSString*) cnpj2
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaOrigensComerciais* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler;
 
 
 

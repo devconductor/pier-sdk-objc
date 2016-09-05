@@ -1,6 +1,6 @@
-#import "PierListaStatusCartoes.h"
+#import "PierPessoa.h"
 
-@implementation PierListaStatusCartoes
+@implementation PierPessoa
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"statusCartoes": @"statusCartoes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"cnpj": @"cnpj", @"cpf": @"cpf", @"dataNascimento": @"dataNascimento", @"id": @"_id", @"nome": @"nome", @"sexo": @"sexo", @"tipo": @"tipo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"statusCartoes"];
+  NSArray *optionalProperties = @[@"cnpj", @"cpf", @"dataNascimento", @"sexo", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

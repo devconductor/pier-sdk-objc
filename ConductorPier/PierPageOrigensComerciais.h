@@ -7,16 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "PierProduto.h"
+#import "PierOrigemComercial.h"
 
 
-@protocol PierListaProdutos
+@protocol PierPageOrigensComerciais
 @end
 
-@interface PierListaProdutos : PierObject
+@interface PierPageOrigensComerciais : PierObject
 
 
-@property(nonatomic) NSArray<PierProduto>* content;
+@property(nonatomic) NSArray<PierOrigemComercial>* content;
 
 @property(nonatomic) NSNumber* first;
 

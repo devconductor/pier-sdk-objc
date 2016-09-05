@@ -1,7 +1,7 @@
 #import "PierCartaoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierOrigemComercial.h"
-#import "PierListaCartoes.h"
+#import "PierCartao.h"
+#import "PierPageCartoes.h"
 
 
 @interface PierCartaoApi ()
@@ -75,10 +75,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es b\u00C3\u00A1sicas de um determinado Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierOrigemComercial*
+///  @returns PierCartao*
 ///
 -(NSNumber*) consultarUsingGETWithIdCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idCartao' is set
@@ -146,9 +146,92 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierOrigemComercial*"
+                              responseType: @"PierCartao*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierOrigemComercial*)data, error);
+                               handler((PierCartao*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza o desbloqueio de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///
+///  @returns PierCartao*
+///
+-(NSNumber*) debloquearUsingGETWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idCartao' is set
+    if (idCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `debloquearUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/desbloqueio"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idCartao != nil) {
+        pathParams[@"id_cartao"] = idCartao;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartao*)data, error);
                            }
           ];
 }
@@ -196,7 +279,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierListaCartoes*
+///  @returns PierPageCartoes*
 ///
 -(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao
@@ -218,7 +301,7 @@ static PierCartaoApi* singletonAPI = nil;
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaCartoes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
 
     
 
@@ -358,9 +441,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaCartoes*"
+                              responseType: @"PierPageCartoes*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaCartoes*)data, error);
+                               handler((PierPageCartoes*)data, error);
                            }
           ];
 }

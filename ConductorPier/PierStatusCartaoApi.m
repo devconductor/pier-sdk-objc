@@ -1,7 +1,7 @@
 #import "PierStatusCartaoApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierStatusCartao.h"
-#import "PierListaStatusCartoes.h"
+#import "PierPageStatusCartoes.h"
 
 
 @interface PierStatusCartaoApi ()
@@ -188,7 +188,7 @@ static PierStatusCartaoApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierListaStatusCartoes*
+///  @returns PierPageStatusCartoes*
 ///
 -(NSNumber*) listarStatusCartoesUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
@@ -206,7 +206,7 @@ static PierStatusCartaoApi* singletonAPI = nil;
     flagExcecaoBandeira: (NSNumber*) flagExcecaoBandeira
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaStatusCartoes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler {
 
     
 
@@ -330,9 +330,9 @@ static PierStatusCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaStatusCartoes*"
+                              responseType: @"PierPageStatusCartoes*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaStatusCartoes*)data, error);
+                               handler((PierPageStatusCartoes*)data, error);
                            }
           ];
 }

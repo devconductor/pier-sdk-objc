@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierOrigemComercial.h"
-#import "PierListaCartoes.h"
+#import "PierCartao.h"
+#import "PierPageCartoes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -28,9 +28,22 @@
 /// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierOrigemComercial*
+/// @return PierCartao*
 -(NSNumber*) consultarUsingGETWithIdCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o desbloqueio de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierCartao*
+-(NSNumber*) debloquearUsingGETWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
 
 
 ///
@@ -60,7 +73,7 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
-/// @return PierListaCartoes*
+/// @return PierPageCartoes*
 -(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
@@ -81,7 +94,7 @@
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierListaCartoes* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler;
 
 
 
