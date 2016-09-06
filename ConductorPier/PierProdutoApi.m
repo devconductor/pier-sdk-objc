@@ -156,11 +156,11 @@ static PierProdutoApi* singletonAPI = nil;
 ///
 /// Lista os Produtos do Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor. 
-///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id) (optional)
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
 ///
-///  @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto (optional)
+///  @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto. (optional)
 ///
-///  @param status Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). (optional)
+///  @param status Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
@@ -168,7 +168,7 @@ static PierProdutoApi* singletonAPI = nil;
 ///
 ///  @returns PierListaProdutos*
 ///
--(NSNumber*) listarProdutosUsingGETWithIdProduto: (NSNumber*) idProduto
+-(NSNumber*) listarProdutosUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSString*) status
     page: (NSNumber*) page
@@ -188,9 +188,9 @@ static PierProdutoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idProduto != nil) {
+    if (_id != nil) {
         
-        queryParams[@"id_produto"] = idProduto;
+        queryParams[@"id"] = _id;
     }
     if (nome != nil) {
         

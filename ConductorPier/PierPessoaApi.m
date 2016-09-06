@@ -156,7 +156,7 @@ static PierPessoaApi* singletonAPI = nil;
 ///
 /// Lista as Pessoas cadastradas no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). (optional)
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). (optional)
 ///
 ///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. (optional)
 ///
@@ -168,7 +168,7 @@ static PierPessoaApi* singletonAPI = nil;
 ///
 ///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. (optional)
 ///
-///  @param cnpj2 N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
+///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
@@ -176,13 +176,13 @@ static PierPessoaApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoas*
 ///
--(NSNumber*) listarUsingGET1WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
     dataNascimento: (NSDate*) dataNascimento
-    cnpj2: (NSString*) cnpj2
+    sexo: (NSString*) sexo
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler {
@@ -200,9 +200,9 @@ static PierPessoaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idPessoa != nil) {
+    if (_id != nil) {
         
-        queryParams[@"id_pessoa"] = idPessoa;
+        queryParams[@"id"] = _id;
     }
     if (nome != nil) {
         
@@ -222,11 +222,11 @@ static PierPessoaApi* singletonAPI = nil;
     }
     if (dataNascimento != nil) {
         
-        queryParams[@"data_nascimento"] = dataNascimento;
+        queryParams[@"dataNascimento"] = dataNascimento;
     }
-    if (cnpj2 != nil) {
+    if (sexo != nil) {
         
-        queryParams[@"cnpj"] = cnpj2;
+        queryParams[@"sexo"] = sexo;
     }
     if (page != nil) {
         

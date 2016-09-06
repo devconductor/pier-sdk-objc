@@ -156,11 +156,11 @@ static PierOrigemComercialApi* singletonAPI = nil;
 ///
 /// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para listar Origens Comerciais 
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Origens Comerciais existentes na base do emissor.
-///  @param idOrigemComercial ID da Origem Comercial (optional)
+///  @param _id Id da origem comercial (optional)
 ///
-///  @param nome Nome da Origem Comercial (optional)
+///  @param nome Nome da origem comercial (optional)
 ///
-///  @param status Status da Origem Comercial (optional)
+///  @param status Status da origem comercial (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
@@ -168,7 +168,7 @@ static PierOrigemComercialApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOrigensComerciais*
 ///
--(NSNumber*) listarOrigensComerciaisUsingGETWithIdOrigemComercial: (NSNumber*) idOrigemComercial
+-(NSNumber*) listarOrigensComerciaisUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSString*) status
     page: (NSNumber*) page
@@ -188,9 +188,9 @@ static PierOrigemComercialApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idOrigemComercial != nil) {
+    if (_id != nil) {
         
-        queryParams[@"id_origem_comercial"] = idOrigemComercial;
+        queryParams[@"id"] = _id;
     }
     if (nome != nil) {
         

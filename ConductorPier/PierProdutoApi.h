@@ -38,15 +38,15 @@
 /// Lista os Produtos do Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor. 
 ///
-/// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
-/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto
-/// @param status Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
+/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
+/// @param status Representa o Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
 /// @return PierListaProdutos*
--(NSNumber*) listarProdutosUsingGETWithIdProduto: (NSNumber*) idProduto
+-(NSNumber*) listarProdutosUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSString*) status
     page: (NSNumber*) page
