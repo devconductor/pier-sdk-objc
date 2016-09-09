@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "PierLimiteDisponibilidade.h"
+#import "PierLimites.h"
+#import "PierPortador.h"
+#import "PierSaldos.h"
 #import "PierCartao.h"
 #import "PierPageCartoes.h"
 #import "PierObject.h"
@@ -29,9 +31,35 @@
 /// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierLimiteDisponibilidade*
+/// @return PierLimites*
 -(NSNumber*) consultarLimiteUsingGETWithIdCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierLimites* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados do Portador do Cart\u00C3\u00A3o 
+/// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es do Portador de um determinado Cart\u00C3\u00A3o a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierPortador*
+-(NSNumber*) consultarPortadorUsingGETWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierPortador* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os saldos dispon\u00C3\u00ADveis para o Portador do Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite consultar os saldos dispon\u00C3\u00ADveis para uso pelo Portador de um determinado Cart\u00C3\u00A3o, seja ele o titular da conta ou um adicional, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierSaldos*
+-(NSNumber*) consultarSaldoUsingGETWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierSaldos* output, NSError* error)) handler;
 
 
 ///
@@ -71,7 +99,7 @@
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o cart\u00C3\u00A3o pertence (id).
 /// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o cart\u00C3\u00A3o pertence (id)
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id).
-/// @param portador Indica qual \u00C3\u00A9 a rela\u00C3\u00A7\u00C3\u00A3o do portador do cart\u00C3\u00A3o com a conta. Quando &#39;1&#39;, corresponde ao seu titular. Quando diferente disso, corresponde a um cart\u00C3\u00A3o adicional.
+/// @param tipoPortador Indica qual \u00C3\u00A9 a rela\u00C3\u00A7\u00C3\u00A3o do portador do cart\u00C3\u00A3o com a conta. Quando &#39;1&#39;, corresponde ao seu titular. Quando diferente disso, corresponde a um cart\u00C3\u00A3o adicional.
 /// @param numeroCartao Apresenta o n\u00C3\u00BAmero do cart\u00C3\u00A3o.
 /// @param nomeImpresso Apresenta o nome impresso no cart\u00C3\u00A3o.
 /// @param dataGeracao Apresenta a data em que o cart\u00C3\u00A3o foi gerado.
@@ -94,7 +122,7 @@
     idConta: (NSNumber*) idConta
     idPessoa: (NSNumber*) idPessoa
     idProduto: (NSNumber*) idProduto
-    portador: (NSNumber*) portador
+    tipoPortador: (NSString*) tipoPortador
     numeroCartao: (NSString*) numeroCartao
     nomeImpresso: (NSString*) nomeImpresso
     dataGeracao: (NSDate*) dataGeracao

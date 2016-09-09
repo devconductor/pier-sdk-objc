@@ -1,6 +1,6 @@
 #import "PierProdutoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierOrigemComercial.h"
+#import "PierProduto.h"
 #import "PierListaProdutos.h"
 
 
@@ -71,14 +71,14 @@ static PierProdutoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para consultar uma determinada Origem Comercial 
-/// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). 
+/// Apresenta os dados de um determinado Produto.
+/// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id) 
 ///
-///  @returns PierOrigemComercial*
+///  @returns PierProduto*
 ///
 -(NSNumber*) consultarProdutoUsingGETWithIdProduto: (NSNumber*) idProduto
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierProduto* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idProduto' is set
@@ -87,7 +87,7 @@ static PierProdutoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/produtos/{id_origem_comercial}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/produtos/{id_produto}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -146,9 +146,9 @@ static PierProdutoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierOrigemComercial*"
+                              responseType: @"PierProduto*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierOrigemComercial*)data, error);
+                               handler((PierProduto*)data, error);
                            }
           ];
 }
@@ -170,7 +170,7 @@ static PierProdutoApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarProdutosUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
-    status: (NSString*) status
+    status: (NSNumber*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler {

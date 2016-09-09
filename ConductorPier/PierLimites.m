@@ -1,6 +1,6 @@
-#import "PierLimiteDisponibilidade.h"
+#import "PierLimites.h"
 
-@implementation PierLimiteDisponibilidade
+@implementation PierLimites
 
 - (instancetype)init {
   self = [super init];

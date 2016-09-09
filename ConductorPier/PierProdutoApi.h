@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "PierOrigemComercial.h"
+#import "PierProduto.h"
 #import "PierListaProdutos.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -22,15 +22,15 @@
 +(PierProdutoApi*) sharedAPI;
 ///
 ///
-/// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para consultar uma determinada Origem Comercial 
-/// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). 
+/// Apresenta os dados de um determinado Produto.
+/// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
 /// 
 ///
-/// @return PierOrigemComercial*
+/// @return PierProduto*
 -(NSNumber*) consultarProdutoUsingGETWithIdProduto: (NSNumber*) idProduto
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierProduto* output, NSError* error)) handler;
 
 
 ///
@@ -48,7 +48,7 @@
 /// @return PierListaProdutos*
 -(NSNumber*) listarProdutosUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
-    status: (NSString*) status
+    status: (NSNumber*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler;

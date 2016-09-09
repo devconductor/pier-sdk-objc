@@ -22,6 +22,6 @@
 @property(nonatomic) NSString* nome;
 /* Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). 
  */
-@property(nonatomic) NSString* status;
+@property(nonatomic) NSNumber* status;
 
 @end

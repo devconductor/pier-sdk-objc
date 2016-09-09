@@ -1,6 +1,6 @@
 #import "PierPessoaApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierOrigemComercial.h"
+#import "PierPessoa.h"
 #import "PierPagePessoas.h"
 
 
@@ -71,23 +71,23 @@ static PierPessoaApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para consultar uma determinada Origem Comercial 
-/// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). 
-///  @param idOrigemComercial ID da Origem Comercial 
+/// Apresenta os dados de uma determinada Pessoa.
+/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
+///  @param idPessoa ID da Origem Comercial 
 ///
-///  @returns PierOrigemComercial*
+///  @returns PierPessoa*
 ///
--(NSNumber*) consultarUsingGET1WithIdOrigemComercial: (NSNumber*) idOrigemComercial
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET1WithIdPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idOrigemComercial' is set
-    if (idOrigemComercial == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idOrigemComercial` when calling `consultarUsingGET1`"];
+    // verify the required parameter 'idPessoa' is set
+    if (idPessoa == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `consultarUsingGET1`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas/{id_origem_comercial}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas/{id_pessoa}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -95,8 +95,8 @@ static PierPessoaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idOrigemComercial != nil) {
-        pathParams[@"id_origem_comercial"] = idOrigemComercial;
+    if (idPessoa != nil) {
+        pathParams[@"id_pessoa"] = idPessoa;
     }
     
 
@@ -146,9 +146,9 @@ static PierPessoaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierOrigemComercial*"
+                              responseType: @"PierPessoa*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierOrigemComercial*)data, error);
+                               handler((PierPessoa*)data, error);
                            }
           ];
 }

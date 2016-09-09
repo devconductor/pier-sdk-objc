@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"arquivoImpressao": @"arquivoImpressao", @"codigoDesbloqueio": @"codigoDesbloqueio", @"dataEstagioCartao": @"dataEstagioCartao", @"dataGeracao": @"dataGeracao", @"dataImpressao": @"dataImpressao", @"dataStatusCartao": @"dataStatusCartao", @"dataValidade": @"dataValidade", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagProvisorio": @"flagProvisorio", @"id": @"_id", @"idConta": @"idConta", @"idEstagioCartao": @"idEstagioCartao", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idStatusCartao": @"idStatusCartao", @"nomeImpresso": @"nomeImpresso", @"numeroCartao": @"numeroCartao", @"portador": @"portador" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"arquivoImpressao": @"arquivoImpressao", @"codigoDesbloqueio": @"codigoDesbloqueio", @"dataEstagioCartao": @"dataEstagioCartao", @"dataGeracao": @"dataGeracao", @"dataImpressao": @"dataImpressao", @"dataStatusCartao": @"dataStatusCartao", @"dataValidade": @"dataValidade", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagProvisorio": @"flagProvisorio", @"id": @"_id", @"idConta": @"idConta", @"idEstagioCartao": @"idEstagioCartao", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idStatusCartao": @"idStatusCartao", @"nomeImpresso": @"nomeImpresso", @"numeroCartao": @"numeroCartao", @"tipoPortador": @"tipoPortador" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"arquivoImpressao", @"codigoDesbloqueio", @"dataEstagioCartao", @"dataGeracao", @"dataImpressao", @"dataStatusCartao", @"dataValidade", @"flagImpressaoOrigemComercial", @"flagProvisorio", @"_id", @"idConta", @"idEstagioCartao", @"idPessoa", @"idProduto", @"idStatusCartao", @"nomeImpresso", @"numeroCartao", @"portador"];
+  NSArray *optionalProperties = @[@"arquivoImpressao", @"codigoDesbloqueio", @"dataEstagioCartao", @"dataGeracao", @"dataImpressao", @"dataStatusCartao", @"dataValidade", @"flagImpressaoOrigemComercial", @"flagProvisorio", @"_id", @"idConta", @"idEstagioCartao", @"idPessoa", @"idProduto", @"idStatusCartao", @"nomeImpresso", @"numeroCartao", @"tipoPortador"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

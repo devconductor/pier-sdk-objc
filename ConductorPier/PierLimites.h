@@ -9,10 +9,10 @@
 
 
 
-@protocol PierLimiteDisponibilidade
+@protocol PierLimites
 @end
 
-@interface PierLimiteDisponibilidade : PierObject
+@interface PierLimites : PierObject
 
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Limite Disponibilidade (id). 
  */
@@ -25,8 +25,7 @@
 @property(nonatomic) NSNumber* limiteExterno;
 
 @property(nonatomic) NSNumber* limiteExtra;
-/* Campo que  
- */
+
 @property(nonatomic) NSNumber* limiteGlobal;
 
 @property(nonatomic) NSNumber* limiteInternacionalCompra;

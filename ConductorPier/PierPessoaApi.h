@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "PierOrigemComercial.h"
+#import "PierPessoa.h"
 #import "PierPagePessoas.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -22,15 +22,15 @@
 +(PierPessoaApi*) sharedAPI;
 ///
 ///
-/// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para consultar uma determinada Origem Comercial 
-/// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). 
+/// Apresenta os dados de uma determinada Pessoa.
+/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
 ///
-/// @param idOrigemComercial ID da Origem Comercial
+/// @param idPessoa ID da Origem Comercial
 /// 
 ///
-/// @return PierOrigemComercial*
--(NSNumber*) consultarUsingGET1WithIdOrigemComercial: (NSNumber*) idOrigemComercial
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler;
+/// @return PierPessoa*
+-(NSNumber*) consultarUsingGET1WithIdPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
 
 
 ///
