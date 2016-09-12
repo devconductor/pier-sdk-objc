@@ -32,7 +32,7 @@
 /* Apresenta a data em que o idStatusCartao atual do cart\u00C3\u00A3o fora aplicado, quando houver. [optional]
  */
 @property(nonatomic) NSDate* dataStatusCartao;
-/* Apresenta a data de validade do cart\u00C3\u00A3o em formato MMAAAA, quando houver. [optional]
+/* Apresenta a data de validade do cart\u00C3\u00A3o em formato yyyy-MM, quando houver. [optional]
  */
 @property(nonatomic) NSDate* dataValidade;
 /* Quando ativa, indica que o cart\u00C3\u00A3o fora impresso na Origem Comercial. [optional]

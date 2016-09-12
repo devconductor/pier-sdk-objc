@@ -22,6 +22,6 @@
 @property(nonatomic) NSString* nome;
 /* Status da origem comercial 
  */
-@property(nonatomic) NSString* status;
+@property(nonatomic) NSNumber* status;
 
 @end

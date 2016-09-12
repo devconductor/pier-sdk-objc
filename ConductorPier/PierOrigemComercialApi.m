@@ -170,7 +170,7 @@ static PierOrigemComercialApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarOrigensComerciaisUsingGETWithId: (NSNumber*) _id
     nome: (NSString*) nome
-    status: (NSString*) status
+    status: (NSNumber*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageOrigensComerciais* output, NSError* error)) handler {
