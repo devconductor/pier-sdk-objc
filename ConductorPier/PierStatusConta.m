@@ -1,6 +1,6 @@
-#import "PierSaldos.h"
+#import "PierStatusConta.h"
 
-@implementation PierSaldos
+@implementation PierStatusConta
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"saldoDisponivelCompra": @"saldoDisponivelCompra", @"saldoDisponivelCompraInternacional": @"saldoDisponivelCompraInternacional", @"saldoDisponivelExterno": @"saldoDisponivelExterno", @"saldoDisponivelExtra": @"saldoDisponivelExtra", @"saldoDisponivelGlobal": @"saldoDisponivelGlobal", @"saldoDisponivelMensal": @"saldoDisponivelMensal", @"saldoDisponivelParcelado": @"saldoDisponivelParcelado", @"saldoDisponivelParcelas": @"saldoDisponivelParcelas", @"saldoDisponivelSaque": @"saldoDisponivelSaque", @"saldoDisponivelSaqueInternacional": @"saldoDisponivelSaqueInternacional", @"saldoPontosFidelidade": @"saldoPontosFidelidade" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagAlteraLimite": @"flagAlteraLimite", @"id": @"_id", @"mensagemConsultaNegada": @"mensagemConsultaNegada", @"nome": @"nome" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"mensagemConsultaNegada", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -1,8 +1,7 @@
 #import "PierCartaoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierLimites.h"
+#import "PierLimiteDisponibilidade.h"
 #import "PierPortador.h"
-#import "PierSaldos.h"
 #import "PierCartao.h"
 #import "PierPageCartoes.h"
 
@@ -78,19 +77,19 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para o Portador de um determinado Cart\u00C3\u00A3o, seja ele o titular da conta ou um adicional, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 ///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierLimites*
+///  @returns PierLimiteDisponibilidade*
 ///
--(NSNumber*) consultarLimiteUsingGETWithIdCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierLimites* output, NSError* error)) handler {
+-(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarLimiteUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarLimiteDisponibilidadeUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/limites"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/limites-disponibilidades"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -149,9 +148,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLimites*"
+                              responseType: @"PierLimiteDisponibilidade*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLimites*)data, error);
+                               handler((PierLimiteDisponibilidade*)data, error);
                            }
           ];
 }
@@ -235,89 +234,6 @@ static PierCartaoApi* singletonAPI = nil;
                               responseType: @"PierPortador*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPortador*)data, error);
-                           }
-          ];
-}
-
-///
-/// Apresenta os saldos dispon\u00C3\u00ADveis para o Portador do Cart\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite consultar os saldos dispon\u00C3\u00ADveis para uso pelo Portador de um determinado Cart\u00C3\u00A3o, seja ele o titular da conta ou um adicional, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
-///
-///  @returns PierSaldos*
-///
--(NSNumber*) consultarSaldoUsingGETWithIdCartao: (NSNumber*) idCartao
-    completionHandler: (void (^)(PierSaldos* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarSaldoUsingGET`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/saldos-disponiveis"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierSaldos*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierSaldos*)data, error);
                            }
           ];
 }
@@ -503,7 +419,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id). (optional)
 ///
-///  @param tipoPortador Indica qual \u00C3\u00A9 a rela\u00C3\u00A7\u00C3\u00A3o do portador do cart\u00C3\u00A3o com a conta. Quando '1', corresponde ao seu titular. Quando diferente disso, corresponde a um cart\u00C3\u00A3o adicional. (optional)
+///  @param tipoPortador Apresenta o tipo do Portador do cart\u00C3\u00A3o, sendo: ('T': Titular, 'A': Adicional). (optional)
 ///
 ///  @param numeroCartao Apresenta o n\u00C3\u00BAmero do cart\u00C3\u00A3o. (optional)
 ///

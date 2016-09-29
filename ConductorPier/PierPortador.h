@@ -38,7 +38,8 @@
 /* Apresenta o nome a ser impresso no cart\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-
+/* Apresenta o tipo do Portador do cart\u00C3\u00A3o, sendo: ('T': Titular, 'A': Adicional). [optional]
+ */
 @property(nonatomic) NSString* tipoPortador;
 
 @end

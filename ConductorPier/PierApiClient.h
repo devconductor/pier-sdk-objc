@@ -29,7 +29,7 @@
 #import "PierEstagioCartao.h"
 #import "PierExtraInfo.h"
 #import "PierExtratoResponse.h"
-#import "PierLimites.h"
+#import "PierLimiteDisponibilidade.h"
 #import "PierListaProdutos.h"
 #import "PierOrigemComercial.h"
 #import "PierPageCartoes.h"
@@ -37,13 +37,14 @@
 #import "PierPageOrigensComerciais.h"
 #import "PierPagePessoas.h"
 #import "PierPageStatusCartoes.h"
+#import "PierPageStatusContas.h"
 #import "PierPessoa.h"
 #import "PierPessoaFisicaResponse.h"
 #import "PierPortador.h"
 #import "PierProduto.h"
 #import "PierSaldoLimiteResponse.h"
-#import "PierSaldos.h"
 #import "PierStatusCartao.h"
+#import "PierStatusConta.h"
 
 
 @class PierConfiguration;
