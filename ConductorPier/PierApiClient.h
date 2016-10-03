@@ -38,6 +38,7 @@
 #import "PierPagePessoas.h"
 #import "PierPageStatusCartoes.h"
 #import "PierPageStatusContas.h"
+#import "PierPageStatusImpressao.h"
 #import "PierPessoa.h"
 #import "PierPessoaFisicaResponse.h"
 #import "PierPortador.h"
@@ -45,6 +46,7 @@
 #import "PierSaldoLimiteResponse.h"
 #import "PierStatusCartao.h"
 #import "PierStatusConta.h"
+#import "PierStatusImpressao.h"
 
 
 @class PierConfiguration;
