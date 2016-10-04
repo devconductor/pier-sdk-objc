@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PierHistoricoImpressaoCartao.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierPortador.h"
 #import "PierCartao.h"
@@ -22,6 +23,21 @@
 -(unsigned long) requestQueueSize;
 +(PierCartaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
 +(PierCartaoApi*) sharedAPI;
+///
+///
+/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o.
+/// 
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param idStatusImpressao Id .
+/// 
+///
+/// @return PierHistoricoImpressaoCartao*
+-(NSNumber*) alterarStatusImpressaoUsingPUTWithIdCartao: (NSNumber*) idCartao
+    idStatusImpressao: (NSNumber*) idStatusImpressao
+    completionHandler: (void (^)(PierHistoricoImpressaoCartao* output, NSError* error)) handler;
+
+
 ///
 ///
 /// Apresenta os limites do Portador do Cart\u00C3\u00A3o

@@ -1,5 +1,6 @@
 #import "PierCartaoApi.h"
 #import "PierQueryParamCollection.h"
+#import "PierHistoricoImpressaoCartao.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierPortador.h"
 #import "PierCartao.h"
@@ -71,6 +72,100 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 #pragma mark - Api Methods
+
+///
+/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o.
+/// 
+///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///
+///  @param idStatusImpressao Id . 
+///
+///  @returns PierHistoricoImpressaoCartao*
+///
+-(NSNumber*) alterarStatusImpressaoUsingPUTWithIdCartao: (NSNumber*) idCartao
+    idStatusImpressao: (NSNumber*) idStatusImpressao
+    completionHandler: (void (^)(PierHistoricoImpressaoCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idCartao' is set
+    if (idCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `alterarStatusImpressaoUsingPUT`"];
+    }
+    
+    // verify the required parameter 'idStatusImpressao' is set
+    if (idStatusImpressao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusImpressao` when calling `alterarStatusImpressaoUsingPUT`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/impressao/{id_status_impressao} "];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idCartao != nil) {
+        pathParams[@"id_cartao"] = idCartao;
+    }
+    if (idStatusImpressao != nil) {
+        pathParams[@"id_status_impressao"] = idStatusImpressao;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierHistoricoImpressaoCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierHistoricoImpressaoCartao*)data, error);
+                           }
+          ];
+}
 
 ///
 /// Apresenta os limites do Portador do Cart\u00C3\u00A3o
