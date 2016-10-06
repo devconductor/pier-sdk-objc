@@ -21,7 +21,7 @@
 +(PierTokenApi*) sharedAPI;
 ///
 ///
-/// /tokens/callback
+/// /api/tokens/callback
 /// 
 ///
 /// @param bodyAccessToken bodyAccessToken
@@ -34,7 +34,7 @@
 
 ///
 ///
-/// /tokens/validar
+/// /api/tokens/validar
 /// 
 ///
 /// @param bodyAccessToken bodyAccessToken

@@ -70,7 +70,7 @@ static PierTokenApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// /tokens/callback
+/// /api/tokens/callback
 /// 
 ///  @param bodyAccessToken bodyAccessToken 
 ///
@@ -150,7 +150,7 @@ static PierTokenApi* singletonAPI = nil;
 }
 
 ///
-/// /tokens/validar
+/// /api/tokens/validar
 /// 
 ///  @param bodyAccessToken bodyAccessToken 
 ///

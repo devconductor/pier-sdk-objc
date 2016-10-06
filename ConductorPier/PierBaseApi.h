@@ -21,7 +21,7 @@
 +(PierBaseApi*) sharedAPI;
 ///
 ///
-/// /bases/clear
+/// /api/bases/clear
 /// 
 ///
 /// 
