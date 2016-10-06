@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagAlteraStatus": @"flagAlteraStatus", @"flagCadastroNovaSenha": @"flagCadastroNovaSenha", @"flagCancelaConta": @"flagCancelaConta", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"flagCobraTarifa": @"flagCobraTarifa", @"flagDestinoTransferencia": @"flagDestinoTransferencia", @"flagEmiteProvisorio": @"flagEmiteProvisorio", @"flagExcecaoBandeira": @"flagExcecaoBandeira", @"flagOrigemTransferencia": @"flagOrigemTransferencia", @"flagReemiteCartao": @"flagReemiteCartao", @"id": @"_id", @"idStatusDestinoConta": @"idStatusDestinoConta", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"nome": @"nome" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"flagCobraTarifa": @"flagCobraTarifa", @"id": @"_id", @"idStatusDestinoConta": @"idStatusDestinoConta", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"nome": @"nome" }];
 }
 
 /**
