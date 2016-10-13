@@ -22,7 +22,7 @@
 +(PierProdutoApi*) sharedAPI;
 ///
 ///
-/// Apresenta os dados de um determinado Produto.
+/// Apresenta os dados de um determinado Produto
 /// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
@@ -36,7 +36,7 @@
 ///
 ///
 /// Lista os Produtos do Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor. 
+/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
 /// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
