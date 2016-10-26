@@ -45,7 +45,7 @@
 /// 
 ///
 /// @return PierPageStatusImpressao*
--(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit

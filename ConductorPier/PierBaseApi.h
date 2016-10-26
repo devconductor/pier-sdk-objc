@@ -21,7 +21,7 @@
 +(PierBaseApi*) sharedAPI;
 ///
 ///
-/// /api/bases/clear
+/// Limpar mapa de bases
 /// 
 ///
 /// 

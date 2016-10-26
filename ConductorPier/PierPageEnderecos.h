@@ -7,16 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "PierStatusImpressao.h"
+#import "PierEndereco.h"
 
 
-@protocol PierPageStatusImpressao
+@protocol PierPageEnderecos
 @end
 
-@interface PierPageStatusImpressao : PierObject
+@interface PierPageEnderecos : PierObject
 
 
-@property(nonatomic) NSArray<PierStatusImpressao>* content;
+@property(nonatomic) NSArray<PierEndereco>* content;
 
 @property(nonatomic) NSNumber* first;
 

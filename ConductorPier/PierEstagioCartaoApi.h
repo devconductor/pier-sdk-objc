@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierEstagioCartao*
--(NSNumber*) consultarEstagioCartaoUsingGETWithIdEstagioCartao: (NSNumber*) idEstagioCartao
+-(NSNumber*) consultarEstagioCartaoUsingGET1WithIdEstagioCartao: (NSNumber*) idEstagioCartao
     completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler;
 
 

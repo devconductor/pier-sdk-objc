@@ -70,7 +70,7 @@ static PierBaseApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// /api/bases/clear
+/// Limpar mapa de bases
 /// 
 ///  @returns PierBodyAccessToken*
 ///

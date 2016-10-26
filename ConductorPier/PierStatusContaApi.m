@@ -170,7 +170,7 @@ static PierStatusContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusContas*
 ///
--(NSNumber*) listarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada

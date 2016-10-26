@@ -176,7 +176,7 @@ static PierPessoaApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoas*
 ///
--(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET2WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
