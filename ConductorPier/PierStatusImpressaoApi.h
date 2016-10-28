@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierStatusImpressao*
--(NSNumber*) consultarUsingGET3WithIdStatusImpressao: (NSNumber*) idStatusImpressao
+-(NSNumber*) consultarUsingGET5WithIdStatusImpressao: (NSNumber*) idStatusImpressao
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler;
 
 
@@ -45,7 +45,7 @@
 /// 
 ///
 /// @return PierPageStatusImpressao*
--(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit

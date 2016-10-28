@@ -77,13 +77,13 @@ static PierStatusContaApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusConta*
 ///
--(NSNumber*) consultarUsingGET2WithIdStatusConta: (NSNumber*) idStatusConta
+-(NSNumber*) consultarUsingGET4WithIdStatusConta: (NSNumber*) idStatusConta
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idStatusConta' is set
     if (idStatusConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusConta` when calling `consultarUsingGET2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusConta` when calling `consultarUsingGET4`"];
     }
     
 
@@ -170,7 +170,7 @@ static PierStatusContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusContas*
 ///
--(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada

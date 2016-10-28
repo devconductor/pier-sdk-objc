@@ -77,13 +77,13 @@ static PierEstagioCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierEstagioCartao*
 ///
--(NSNumber*) consultarEstagioCartaoUsingGET1WithIdEstagioCartao: (NSNumber*) idEstagioCartao
+-(NSNumber*) consultarEstagioCartaoUsingGETWithIdEstagioCartao: (NSNumber*) idEstagioCartao
     completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idEstagioCartao' is set
     if (idEstagioCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstagioCartao` when calling `consultarEstagioCartaoUsingGET1`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstagioCartao` when calling `consultarEstagioCartaoUsingGET`"];
     }
     
 

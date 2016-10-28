@@ -17,7 +17,7 @@
 /* Apresenta nome do bairro [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) [optional]
+/* Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' [optional]
  */
 @property(nonatomic) NSString* cep;
 /* Apresenta nome da cidade [optional]
@@ -46,7 +46,7 @@
 @property(nonatomic) NSString* logradouro;
 /* Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o [optional]
  */
-@property(nonatomic) NSString* numero;
+@property(nonatomic) NSNumber* numero;
 /* Apresenta nome do Pais [optional]
  */
 @property(nonatomic) NSString* pais;

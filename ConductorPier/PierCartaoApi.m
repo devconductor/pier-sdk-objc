@@ -1,9 +1,9 @@
 #import "PierCartaoApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierHistoricoImpressaoCartao.h"
+#import "PierCartao.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierPortador.h"
-#import "PierCartao.h"
 #import "PierPageCartoes.h"
 
 
@@ -163,6 +163,113 @@ static PierCartaoApi* singletonAPI = nil;
                               responseType: @"PierHistoricoImpressaoCartao*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierHistoricoImpressaoCartao*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza o bloqueio de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o do bloqueio (tempor\u00C3\u00A1rio) ou do cancelamento (definitivo) de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). Para isso, \u00C3\u00A9 preciso informar qual o motivo deste bloqueio que nada mais \u00C3\u00A9 do que atribuir um novo StatusCartao para ele dentre as op\u00C3\u00A7\u00C3\u00B5es praticadas pelo emissor.
+///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///
+///  @param idStatus C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Novo Status Cart\u00C3\u00A3o. 
+///
+///  @param observacao Texto informando uma observa\u00C3\u00A7\u00C3\u00A3o sobre o bloqueio. 
+///
+///  @returns PierCartao*
+///
+-(NSNumber*) bloquearUsingPUTWithIdCartao: (NSNumber*) idCartao
+    idStatus: (NSNumber*) idStatus
+    observacao: (NSString*) observacao
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idCartao' is set
+    if (idCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `bloquearUsingPUT`"];
+    }
+    
+    // verify the required parameter 'idStatus' is set
+    if (idStatus == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatus` when calling `bloquearUsingPUT`"];
+    }
+    
+    // verify the required parameter 'observacao' is set
+    if (observacao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `observacao` when calling `bloquearUsingPUT`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/bloqueio"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idCartao != nil) {
+        pathParams[@"id_cartao"] = idCartao;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idStatus != nil) {
+        
+        queryParams[@"id_status"] = idStatus;
+    }
+    if (observacao != nil) {
+        
+        queryParams[@"observacao"] = observacao;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartao*)data, error);
                            }
           ];
 }

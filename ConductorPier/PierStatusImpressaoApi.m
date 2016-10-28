@@ -77,13 +77,13 @@ static PierStatusImpressaoApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusImpressao*
 ///
--(NSNumber*) consultarUsingGET3WithIdStatusImpressao: (NSNumber*) idStatusImpressao
+-(NSNumber*) consultarUsingGET5WithIdStatusImpressao: (NSNumber*) idStatusImpressao
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idStatusImpressao' is set
     if (idStatusImpressao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusImpressao` when calling `consultarUsingGET3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusImpressao` when calling `consultarUsingGET5`"];
     }
     
 
@@ -166,7 +166,7 @@ static PierStatusImpressaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressao*
 ///
--(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit

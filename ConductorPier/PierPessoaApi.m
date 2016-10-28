@@ -77,13 +77,13 @@ static PierPessoaApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoa*
 ///
--(NSNumber*) consultarUsingGET1WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) consultarUsingGET3WithIdPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idPessoa' is set
     if (idPessoa == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `consultarUsingGET1`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `consultarUsingGET3`"];
     }
     
 
@@ -176,7 +176,7 @@ static PierPessoaApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoas*
 ///
--(NSNumber*) listarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf

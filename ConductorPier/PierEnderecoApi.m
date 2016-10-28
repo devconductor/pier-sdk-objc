@@ -71,15 +71,15 @@ static PierEnderecoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Realiza o cadastro de um novo Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Endere\u00C3\u00A7o na base de dados do Emissor.
+/// Atualiza os dados de um determinado Endere\u00C3\u00A7o
+/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um ou mais registros ligados a um determinado Endere\u00C3\u00A7o.
 ///  @param _id id 
 ///
 ///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
 ///
 ///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
 ///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) (optional)
+///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' (optional)
 ///
 ///  @param logradouro Apresenta o nome do Logradouro (optional)
 ///
@@ -104,7 +104,7 @@ static PierEnderecoApi* singletonAPI = nil;
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
-    numero: (NSString*) numero
+    numero: (NSNumber*) numero
     complemento: (NSString*) complemento
     pontoReferencia: (NSString*) pontoReferencia
     bairro: (NSString*) bairro
@@ -238,13 +238,13 @@ static PierEnderecoApi* singletonAPI = nil;
 ///
 ///  @returns PierEndereco*
 ///
--(NSNumber*) consultarEstagioCartaoUsingGETWithIdEndereco: (NSNumber*) idEndereco
+-(NSNumber*) consultarUsingGET2WithIdEndereco: (NSNumber*) idEndereco
     completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idEndereco' is set
     if (idEndereco == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEndereco` when calling `consultarEstagioCartaoUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEndereco` when calling `consultarUsingGET2`"];
     }
     
 
@@ -351,12 +351,12 @@ static PierEnderecoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEnderecos*
 ///
--(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET2WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
-    numero: (NSString*) numero
+    numero: (NSNumber*) numero
     complemento: (NSString*) complemento
     pontoReferencia: (NSString*) pontoReferencia
     bairro: (NSString*) bairro
@@ -505,7 +505,7 @@ static PierEnderecoApi* singletonAPI = nil;
 ///
 ///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
 ///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) (optional)
+///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' (optional)
 ///
 ///  @param logradouro Apresenta o nome do Logradouro (optional)
 ///
@@ -529,7 +529,7 @@ static PierEnderecoApi* singletonAPI = nil;
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
-    numero: (NSString*) numero
+    numero: (NSNumber*) numero
     complemento: (NSString*) complemento
     pontoReferencia: (NSString*) pontoReferencia
     bairro: (NSString*) bairro

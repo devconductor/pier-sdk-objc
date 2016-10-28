@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierPessoa*
--(NSNumber*) consultarUsingGET1WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) consultarUsingGET3WithIdPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
 
 
@@ -50,7 +50,7 @@
 /// 
 ///
 /// @return PierPagePessoas*
--(NSNumber*) listarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf

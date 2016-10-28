@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierStatusConta*
--(NSNumber*) consultarUsingGET2WithIdStatusConta: (NSNumber*) idStatusConta
+-(NSNumber*) consultarUsingGET4WithIdStatusConta: (NSNumber*) idStatusConta
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler;
 
 
@@ -47,7 +47,7 @@
 /// 
 ///
 /// @return PierPageStatusContas*
--(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
