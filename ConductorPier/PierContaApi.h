@@ -21,6 +21,21 @@
 +(PierContaApi*) sharedAPI;
 ///
 ///
+/// Alterar vencimento
+/// Esse recurso permite alterar o vencimento de uma conta especifica.
+///
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param novoDiaVencimento Novo dia de vencimento.
+/// 
+///
+/// @return PierConta*
+-(NSNumber*) alterarVencimentoUsingPUTWithIdConta: (NSNumber*) idConta
+    novoDiaVencimento: (NSNumber*) novoDiaVencimento
+    completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta dados de uma determinada conta
 /// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -34,8 +49,8 @@
 
 ///
 ///
-/// Lista contas existentes na base de dados do Emissor.
-/// Este m\u00C3\u00A9todo permite listar contas existentes na base de dados do Emissor.
+/// Lista contas existentes na base de dados do Emissor
+/// Este recurso permite listar contas existentes na base de dados do Emissor.
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
 /// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id).
@@ -46,6 +61,7 @@
 /// @param melhorDiaCompra Apresenta o melhor dia de compra.
 /// @param dataStatusConta Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela.
 /// @param dataCadastro Apresenta a data em que o cart\u00C3\u00A3o foi gerado.
+/// @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
@@ -60,6 +76,7 @@
     melhorDiaCompra: (NSNumber*) melhorDiaCompra
     dataStatusConta: (NSDate*) dataStatusConta
     dataCadastro: (NSDate*) dataCadastro
+    dataUltimaAlteracaoVencimento: (NSDate*) dataUltimaAlteracaoVencimento
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;

@@ -1,16 +1,16 @@
-#import "PierStatusContaApi.h"
+#import "PierTipoTelefoneApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierStatusConta.h"
-#import "PierPageStatusContas.h"
+#import "PierTipoTelefone.h"
+#import "PierPageTipoTelefones.h"
 
 
-@interface PierStatusContaApi ()
+@interface PierTipoTelefoneApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierStatusContaApi
+@implementation PierTipoTelefoneApi
 
-static PierStatusContaApi* singletonAPI = nil;
+static PierTipoTelefoneApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static PierStatusContaApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierStatusContaApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierTipoTelefoneApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierStatusContaApi alloc] init];
+        singletonAPI = [[PierTipoTelefoneApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierStatusContaApi*) sharedAPI {
++(PierTipoTelefoneApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierStatusContaApi alloc] init];
+        singletonAPI = [[PierTipoTelefoneApi alloc] init];
     }
     return singletonAPI;
 }
@@ -71,23 +71,23 @@ static PierStatusContaApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Apresenta os dados de um determinado Status Conta
-/// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status Conta a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idStatusConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). 
+/// Apresenta os dados de um determinado Tipo de Telefone
+/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id) 
 ///
-///  @returns PierStatusConta*
+///  @returns PierTipoTelefone*
 ///
--(NSNumber*) consultarUsingGET4WithIdStatusConta: (NSNumber*) idStatusConta
-    completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET8WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+    completionHandler: (void (^)(PierTipoTelefone* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idStatusConta' is set
-    if (idStatusConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusConta` when calling `consultarUsingGET4`"];
+    // verify the required parameter 'idTipoTelefone' is set
+    if (idTipoTelefone == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTipoTelefone` when calling `consultarUsingGET8`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-contas/{id_status_conta}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-telefones/{id_tipo_telefone}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -95,8 +95,8 @@ static PierStatusContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idStatusConta != nil) {
-        pathParams[@"id_status_conta"] = idStatusConta;
+    if (idTipoTelefone != nil) {
+        pathParams[@"id_tipo_telefone"] = idTipoTelefone;
     }
     
 
@@ -146,41 +146,35 @@ static PierStatusContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierStatusConta*"
+                              responseType: @"PierTipoTelefone*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierStatusConta*)data, error);
+                               handler((PierTipoTelefone*)data, error);
                            }
           ];
 }
 
 ///
-/// Lista os Status Contas cadastrados para o Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). (optional)
+/// Lista os Tipos de Telefones
+/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
 ///
-///  @param nome Nome atribu\u00C3\u00ADdo ao Status da Conta. (optional)
-///
-///  @param flagAlteraLimite Par\u00C3\u00A2metro que define se o Status da Conta permite realizar a Altera\u00C3\u00A7\u00C3\u00A3o de Limites do Portador, sendo: 0: Inativo e 1: Ativo. (optional)
-///
-///  @param mensagemConsultaNegada Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades. (optional)
+///  @param nome Nome do Tipo do Telefone (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierPageStatusContas*
+///  @returns PierPageTipoTelefones*
 ///
--(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET9WithId: (NSNumber*) _id
     nome: (NSString*) nome
-    flagAlteraLimite: (NSNumber*) flagAlteraLimite
-    mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoTelefones* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-contas"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-telefones"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -198,14 +192,6 @@ static PierStatusContaApi* singletonAPI = nil;
     if (nome != nil) {
         
         queryParams[@"nome"] = nome;
-    }
-    if (flagAlteraLimite != nil) {
-        
-        queryParams[@"flagAlteraLimite"] = flagAlteraLimite;
-    }
-    if (mensagemConsultaNegada != nil) {
-        
-        queryParams[@"mensagemConsultaNegada"] = mensagemConsultaNegada;
     }
     if (page != nil) {
         
@@ -260,9 +246,9 @@ static PierStatusContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusContas*"
+                              responseType: @"PierPageTipoTelefones*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusContas*)data, error);
+                               handler((PierPageTipoTelefones*)data, error);
                            }
           ];
 }

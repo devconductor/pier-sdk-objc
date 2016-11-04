@@ -1,15 +1,16 @@
-#import "PierContaApi.h"
+#import "PierTelefoneApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierConta.h"
+#import "PierTelefone.h"
+#import "PierPageTelefones.h"
 
 
-@interface PierContaApi ()
+@interface PierTelefoneApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierContaApi
+@implementation PierTelefoneApi
 
-static PierContaApi* singletonAPI = nil;
+static PierTelefoneApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -37,19 +38,19 @@ static PierContaApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierContaApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierTelefoneApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierContaApi alloc] init];
+        singletonAPI = [[PierTelefoneApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierContaApi*) sharedAPI {
++(PierTelefoneApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierContaApi alloc] init];
+        singletonAPI = [[PierTelefoneApi alloc] init];
     }
     return singletonAPI;
 }
@@ -70,31 +71,23 @@ static PierContaApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Alterar vencimento
-/// Esse recurso permite alterar o vencimento de uma conta especifica.
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Apresenta os dados de um determinado Telefone
+/// Este m\u00C3\u00A9todo permite consultar um determinado Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param idTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
 ///
-///  @param novoDiaVencimento Novo dia de vencimento. 
+///  @returns PierTelefone*
 ///
-///  @returns PierConta*
-///
--(NSNumber*) alterarVencimentoUsingPUTWithIdConta: (NSNumber*) idConta
-    novoDiaVencimento: (NSNumber*) novoDiaVencimento
-    completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET6WithIdTelefone: (NSNumber*) idTelefone
+    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarVencimentoUsingPUT`"];
-    }
-    
-    // verify the required parameter 'novoDiaVencimento' is set
-    if (novoDiaVencimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `novoDiaVencimento` when calling `alterarVencimentoUsingPUT`"];
+    // verify the required parameter 'idTelefone' is set
+    if (idTelefone == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTelefone` when calling `consultarUsingGET6`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/alterar-vencimento"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones/{id_telefone}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -102,95 +95,8 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"id_conta"] = idConta;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (novoDiaVencimento != nil) {
-        
-        queryParams[@"novo_dia_vencimento"] = novoDiaVencimento;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierConta*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierConta*)data, error);
-                           }
-          ];
-}
-
-///
-/// Apresenta dados de uma determinada conta
-/// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
-///
-///  @returns PierConta*
-///
--(NSNumber*) consultarUsingGET1WithIdConta: (NSNumber*) idConta
-    completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET1`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"id_conta"] = idConta;
+    if (idTelefone != nil) {
+        pathParams[@"id_telefone"] = idTelefone;
     }
     
 
@@ -240,59 +146,50 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierConta*"
+                              responseType: @"PierTelefone*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierConta*)data, error);
+                               handler((PierTelefone*)data, error);
                            }
           ];
 }
 
 ///
-/// Lista contas existentes na base de dados do Emissor
-/// Este recurso permite listar contas existentes na base de dados do Emissor.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
+/// Lista os Telefones cadastrados no Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). (optional)
 ///
-///  @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id). (optional)
+///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
 ///
-///  @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id) que deu origem a Conta. (optional)
+///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence. (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Titular da Conta (id). (optional)
+///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
 ///
-///  @param idStatusConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id). (optional)
+///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
 ///
-///  @param diaVencimento Apresenta o dia de vencimento. (optional)
+///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
 ///
-///  @param melhorDiaCompra Apresenta o melhor dia de compra. (optional)
-///
-///  @param dataStatusConta Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela. (optional)
-///
-///  @param dataCadastro Apresenta a data em que o cart\u00C3\u00A3o foi gerado. (optional)
-///
-///  @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. (optional)
+///  @param status Apresenta o Status do Telefone, onde: '0': Inativo e '1': Ativo (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @returns PierConta*
+///  @returns PierPageTelefones*
 ///
--(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
-    idProduto: (NSNumber*) idProduto
-    idOrigemComercial: (NSNumber*) idOrigemComercial
+-(NSNumber*) listarUsingGET7WithId: (NSNumber*) _id
+    idTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
-    idStatusConta: (NSNumber*) idStatusConta
-    diaVencimento: (NSNumber*) diaVencimento
-    melhorDiaCompra: (NSNumber*) melhorDiaCompra
-    dataStatusConta: (NSDate*) dataStatusConta
-    dataCadastro: (NSDate*) dataCadastro
-    dataUltimaAlteracaoVencimento: (NSDate*) dataUltimaAlteracaoVencimento
+    ddd: (NSString*) ddd
+    telefone: (NSString*) telefone
+    ramal: (NSString*) ramal
+    status: (NSNumber*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTelefones* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -307,41 +204,29 @@ static PierContaApi* singletonAPI = nil;
         
         queryParams[@"id"] = _id;
     }
-    if (idProduto != nil) {
+    if (idTipoTelefone != nil) {
         
-        queryParams[@"idProduto"] = idProduto;
-    }
-    if (idOrigemComercial != nil) {
-        
-        queryParams[@"idOrigemComercial"] = idOrigemComercial;
+        queryParams[@"idTipoTelefone"] = idTipoTelefone;
     }
     if (idPessoa != nil) {
         
         queryParams[@"idPessoa"] = idPessoa;
     }
-    if (idStatusConta != nil) {
+    if (ddd != nil) {
         
-        queryParams[@"idStatusConta"] = idStatusConta;
+        queryParams[@"ddd"] = ddd;
     }
-    if (diaVencimento != nil) {
+    if (telefone != nil) {
         
-        queryParams[@"diaVencimento"] = diaVencimento;
+        queryParams[@"telefone"] = telefone;
     }
-    if (melhorDiaCompra != nil) {
+    if (ramal != nil) {
         
-        queryParams[@"melhorDiaCompra"] = melhorDiaCompra;
+        queryParams[@"ramal"] = ramal;
     }
-    if (dataStatusConta != nil) {
+    if (status != nil) {
         
-        queryParams[@"dataStatusConta"] = dataStatusConta;
-    }
-    if (dataCadastro != nil) {
-        
-        queryParams[@"dataCadastro"] = dataCadastro;
-    }
-    if (dataUltimaAlteracaoVencimento != nil) {
-        
-        queryParams[@"dataUltimaAlteracaoVencimento"] = dataUltimaAlteracaoVencimento;
+        queryParams[@"status"] = status;
     }
     if (page != nil) {
         
@@ -396,9 +281,116 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierConta*"
+                              responseType: @"PierPageTelefones*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierConta*)data, error);
+                               handler((PierPageTelefones*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza o cadastro de um novo Telefone
+/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
+///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
+///
+///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence. (optional)
+///
+///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
+///
+///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
+///
+///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
+///
+///  @returns PierTelefone*
+///
+-(NSNumber*) salvarUsingPOST1WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+    idPessoa: (NSNumber*) idPessoa
+    ddd: (NSString*) ddd
+    telefone: (NSString*) telefone
+    ramal: (NSString*) ramal
+    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idTipoTelefone != nil) {
+        
+        queryParams[@"idTipoTelefone"] = idTipoTelefone;
+    }
+    if (idPessoa != nil) {
+        
+        queryParams[@"idPessoa"] = idPessoa;
+    }
+    if (ddd != nil) {
+        
+        queryParams[@"ddd"] = ddd;
+    }
+    if (telefone != nil) {
+        
+        queryParams[@"telefone"] = telefone;
+    }
+    if (ramal != nil) {
+        
+        queryParams[@"ramal"] = ramal;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTelefone*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTelefone*)data, error);
                            }
           ];
 }

@@ -1,6 +1,6 @@
-#import "PierConta.h"
+#import "PierPageTelefones.h"
 
-@implementation PierConta
+@implementation PierPageTelefones
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataCadastro": @"dataCadastro", @"dataStatusConta": @"dataStatusConta", @"dataUltimaAlteracaoVencimento": @"dataUltimaAlteracaoVencimento", @"diaVencimento": @"diaVencimento", @"id": @"_id", @"idOrigemComercial": @"idOrigemComercial", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idStatusConta": @"idStatusConta", @"melhorDiaCompra": @"melhorDiaCompra" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataCadastro", @"dataStatusConta", @"dataUltimaAlteracaoVencimento", @"diaVencimento", @"_id", @"idOrigemComercial", @"idPessoa", @"idProduto", @"idStatusConta", @"melhorDiaCompra"];
+  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

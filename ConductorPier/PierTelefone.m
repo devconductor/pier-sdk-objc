@@ -1,6 +1,6 @@
-#import "PierConta.h"
+#import "PierTelefone.h"
 
-@implementation PierConta
+@implementation PierTelefone
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataCadastro": @"dataCadastro", @"dataStatusConta": @"dataStatusConta", @"dataUltimaAlteracaoVencimento": @"dataUltimaAlteracaoVencimento", @"diaVencimento": @"diaVencimento", @"id": @"_id", @"idOrigemComercial": @"idOrigemComercial", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idStatusConta": @"idStatusConta", @"melhorDiaCompra": @"melhorDiaCompra" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"ddd": @"ddd", @"id": @"_id", @"idPessoa": @"idPessoa", @"idTipoTelefone": @"idTipoTelefone", @"ramal": @"ramal", @"status": @"status", @"telefone": @"telefone" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataCadastro", @"dataStatusConta", @"dataUltimaAlteracaoVencimento", @"diaVencimento", @"_id", @"idOrigemComercial", @"idPessoa", @"idProduto", @"idStatusConta", @"melhorDiaCompra"];
+  NSArray *optionalProperties = @[@"ddd", @"_id", @"idPessoa", @"idTipoTelefone", @"ramal", @"status", @"telefone"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

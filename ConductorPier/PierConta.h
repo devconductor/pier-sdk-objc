@@ -20,6 +20,9 @@
 /* Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela. [optional]
  */
 @property(nonatomic) NSDate* dataStatusConta;
+/* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
+ */
+@property(nonatomic) NSDate* dataUltimaAlteracaoVencimento;
 /* Apresenta o dia de vencimento. [optional]
  */
 @property(nonatomic) NSNumber* diaVencimento;

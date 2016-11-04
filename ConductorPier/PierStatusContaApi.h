@@ -47,7 +47,7 @@
 /// 
 ///
 /// @return PierPageStatusContas*
--(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada

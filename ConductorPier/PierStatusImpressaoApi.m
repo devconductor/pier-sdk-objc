@@ -166,7 +166,7 @@ static PierStatusImpressaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressao*
 ///
--(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET6WithId: (NSNumber*) _id
     nome: (NSString*) nome
     page: (NSNumber*) page
     limit: (NSNumber*) limit

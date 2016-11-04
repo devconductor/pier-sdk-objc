@@ -28,15 +28,22 @@
 #import "PierPageEstagiosCartoes.h"
 #import "PierPageOrigensComerciais.h"
 #import "PierPagePessoas.h"
+#import "PierPagePortador.h"
 #import "PierPageStatusCartoes.h"
 #import "PierPageStatusContas.h"
 #import "PierPageStatusImpressao.h"
+#import "PierPageTelefones.h"
+#import "PierPageTipoTelefones.h"
+#import "PierPageTiposEndereco.h"
 #import "PierPessoa.h"
 #import "PierPortador.h"
 #import "PierProduto.h"
 #import "PierStatusCartao.h"
 #import "PierStatusConta.h"
 #import "PierStatusImpressao.h"
+#import "PierTelefone.h"
+#import "PierTipoEndereco.h"
+#import "PierTipoTelefone.h"
 
 
 @class PierConfiguration;
