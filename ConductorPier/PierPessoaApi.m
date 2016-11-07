@@ -71,9 +71,145 @@ static PierPessoaApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
+/// Atualiza os dados de uma determinada Pessoa
+/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
+///  @param _id ID da Pessoa 
+///
+///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+///
+///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
+///
+///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
+///
+///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
+///
+///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. (optional)
+///
+///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
+///
+///  @returns PierPessoa*
+///
+-(NSNumber*) alterarUsingPUT1WithId: (NSNumber*) _id
+    nome: (NSString*) nome
+    tipo: (NSString*) tipo
+    cpf: (NSString*) cpf
+    cnpj: (NSString*) cnpj
+    dataNascimento: (NSDate*) dataNascimento
+    sexo: (NSString*) sexo
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT1`"];
+    }
+    
+    // verify the required parameter 'nome' is set
+    if (nome == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `alterarUsingPUT1`"];
+    }
+    
+    // verify the required parameter 'tipo' is set
+    if (tipo == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `alterarUsingPUT1`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
+    }
+    if (tipo != nil) {
+        
+        queryParams[@"tipo"] = tipo;
+    }
+    if (cpf != nil) {
+        
+        queryParams[@"cpf"] = cpf;
+    }
+    if (cnpj != nil) {
+        
+        queryParams[@"cnpj"] = cnpj;
+    }
+    if (dataNascimento != nil) {
+        
+        queryParams[@"dataNascimento"] = dataNascimento;
+    }
+    if (sexo != nil) {
+        
+        queryParams[@"sexo"] = sexo;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPessoa*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPessoa*)data, error);
+                           }
+          ];
+}
+
+///
 /// Apresenta os dados de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
-///  @param idPessoa ID da Origem Comercial 
+///  @param idPessoa ID da Pessoa 
 ///
 ///  @returns PierPessoa*
 ///
@@ -284,6 +420,130 @@ static PierPessoaApi* singletonAPI = nil;
                               responseType: @"PierPagePessoas*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPagePessoas*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza o cadastro de um nova Pessoa
+/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova Pessoa na base de dados do Emissor.
+///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+///
+///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
+///
+///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
+///
+///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
+///
+///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. (optional)
+///
+///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
+///
+///  @returns PierPessoa*
+///
+-(NSNumber*) salvarUsingPOST1WithNome: (NSString*) nome
+    tipo: (NSString*) tipo
+    cpf: (NSString*) cpf
+    cnpj: (NSString*) cnpj
+    dataNascimento: (NSDate*) dataNascimento
+    sexo: (NSString*) sexo
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'nome' is set
+    if (nome == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `salvarUsingPOST1`"];
+    }
+    
+    // verify the required parameter 'tipo' is set
+    if (tipo == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `salvarUsingPOST1`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
+    }
+    if (tipo != nil) {
+        
+        queryParams[@"tipo"] = tipo;
+    }
+    if (cpf != nil) {
+        
+        queryParams[@"cpf"] = cpf;
+    }
+    if (cnpj != nil) {
+        
+        queryParams[@"cnpj"] = cnpj;
+    }
+    if (dataNascimento != nil) {
+        
+        queryParams[@"dataNascimento"] = dataNascimento;
+    }
+    if (sexo != nil) {
+        
+        queryParams[@"sexo"] = sexo;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPessoa*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPessoa*)data, error);
                            }
           ];
 }

@@ -22,10 +22,35 @@
 +(PierPessoaApi*) sharedAPI;
 ///
 ///
+/// Atualiza os dados de uma determinada Pessoa
+/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
+///
+/// @param _id ID da Pessoa
+/// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
+/// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
+/// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
+/// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ.
+/// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
+/// 
+///
+/// @return PierPessoa*
+-(NSNumber*) alterarUsingPUT1WithId: (NSNumber*) _id
+    nome: (NSString*) nome
+    tipo: (NSString*) tipo
+    cpf: (NSString*) cpf
+    cnpj: (NSString*) cnpj
+    dataNascimento: (NSDate*) dataNascimento
+    sexo: (NSString*) sexo
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os dados de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
 ///
-/// @param idPessoa ID da Origem Comercial
+/// @param idPessoa ID da Pessoa
 /// 
 ///
 /// @return PierPessoa*
@@ -60,6 +85,29 @@
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cadastro de um nova Pessoa
+/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova Pessoa na base de dados do Emissor.
+///
+/// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
+/// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
+/// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
+/// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ.
+/// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
+/// 
+///
+/// @return PierPessoa*
+-(NSNumber*) salvarUsingPOST1WithNome: (NSString*) nome
+    tipo: (NSString*) tipo
+    cpf: (NSString*) cpf
+    cnpj: (NSString*) cnpj
+    dataNascimento: (NSDate*) dataNascimento
+    sexo: (NSString*) sexo
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
 
 
 

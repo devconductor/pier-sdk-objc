@@ -303,7 +303,7 @@ static PierTelefoneApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefone*
 ///
--(NSNumber*) salvarUsingPOST1WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST2WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
