@@ -15,6 +15,7 @@
 #import "PierAuthToken.h"
 #import "PierBodyAccessToken.h"
 #import "PierCartao.h"
+#import "PierCartaoImpressao.h"
 #import "PierConta.h"
 #import "PierEndereco.h"
 #import "PierEstagioCartao.h"

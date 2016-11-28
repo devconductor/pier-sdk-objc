@@ -1,6 +1,7 @@
 #import "PierContaApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierConta.h"
+#import "PierCartaoImpressao.h"
 
 
 @interface PierContaApi ()
@@ -243,6 +244,100 @@ static PierContaApi* singletonAPI = nil;
                               responseType: @"PierConta*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierConta*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o para impress\u00C3\u00A3o avulsa
+/// 
+///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
+///  @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+///
+///  @returns PierCartaoImpressao*
+///
+-(NSNumber*) gerarCartaoUsingPUTWithIdConta: (NSNumber*) idConta
+    idPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `gerarCartaoUsingPUT`"];
+    }
+    
+    // verify the required parameter 'idPessoa' is set
+    if (idPessoa == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `gerarCartaoUsingPUT`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/pessoas/{id_pessoa}/gerar-cartao"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        pathParams[@"id_conta"] = idConta;
+    }
+    if (idPessoa != nil) {
+        pathParams[@"id_pessoa"] = idPessoa;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartaoImpressao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartaoImpressao*)data, error);
                            }
           ];
 }

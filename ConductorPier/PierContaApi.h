@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierConta.h"
+#import "PierCartaoImpressao.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -45,6 +46,21 @@
 /// @return PierConta*
 -(NSNumber*) consultarUsingGET1WithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o para impress\u00C3\u00A3o avulsa
+/// 
+///
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
+/// 
+///
+/// @return PierCartaoImpressao*
+-(NSNumber*) gerarCartaoUsingPUTWithIdConta: (NSNumber*) idConta
+    idPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler;
 
 
 ///
