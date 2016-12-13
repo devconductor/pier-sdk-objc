@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataCadastroPortador": @"dataCadastroPortador", @"dataCancelamentoPortador": @"dataCancelamentoPortador", @"flagAtivo": @"flagAtivo", @"idConta": @"idConta", @"idParentesco": @"idParentesco", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idTipoCartao": @"idTipoCartao", @"nomeImpresso": @"nomeImpresso", @"tipoPortador": @"tipoPortador" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataCadastroPortador": @"dataCadastroPortador", @"dataCancelamentoPortador": @"dataCancelamentoPortador", @"flagAtivo": @"flagAtivo", @"idConta": @"idConta", @"idImagem": @"idImagem", @"idParentesco": @"idParentesco", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idTipoCartao": @"idTipoCartao", @"nomeImpresso": @"nomeImpresso", @"tipoPortador": @"tipoPortador" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataCadastroPortador", @"dataCancelamentoPortador", @"flagAtivo", @"idConta", @"idParentesco", @"idPessoa", @"idProduto", @"idTipoCartao", @"nomeImpresso", @"tipoPortador"];
+  NSArray *optionalProperties = @[@"dataCadastroPortador", @"dataCancelamentoPortador", @"flagAtivo", @"idConta", @"idImagem", @"idParentesco", @"idPessoa", @"idProduto", @"idTipoCartao", @"nomeImpresso", @"tipoPortador"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
