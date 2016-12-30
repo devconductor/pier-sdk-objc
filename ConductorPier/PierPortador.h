@@ -26,9 +26,6 @@
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id). [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da imagem do cart\u00C3\u00A3o. [optional]
- */
-@property(nonatomic) NSNumber* idImagem;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco (id) [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;

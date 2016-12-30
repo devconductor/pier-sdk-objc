@@ -36,6 +36,7 @@
 #import "PierPageTelefones.h"
 #import "PierPageTipoTelefones.h"
 #import "PierPageTiposEndereco.h"
+#import "PierPageWebHooks.h"
 #import "PierPessoa.h"
 #import "PierPortador.h"
 #import "PierProduto.h"
@@ -45,6 +46,7 @@
 #import "PierTelefone.h"
 #import "PierTipoEndereco.h"
 #import "PierTipoTelefone.h"
+#import "PierWebHook.h"
 
 
 @class PierConfiguration;

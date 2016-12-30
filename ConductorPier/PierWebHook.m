@@ -1,6 +1,6 @@
-#import "PierPortador.h"
+#import "PierWebHook.h"
 
-@implementation PierPortador
+@implementation PierWebHook
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataCadastroPortador": @"dataCadastroPortador", @"dataCancelamentoPortador": @"dataCancelamentoPortador", @"flagAtivo": @"flagAtivo", @"idConta": @"idConta", @"idParentesco": @"idParentesco", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"idTipoCartao": @"idTipoCartao", @"nomeImpresso": @"nomeImpresso", @"tipoPortador": @"tipoPortador" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"evento": @"evento", @"id": @"_id", @"metodo": @"metodo", @"url": @"url" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataCadastroPortador", @"dataCancelamentoPortador", @"flagAtivo", @"idConta", @"idParentesco", @"idPessoa", @"idProduto", @"idTipoCartao", @"nomeImpresso", @"tipoPortador"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
