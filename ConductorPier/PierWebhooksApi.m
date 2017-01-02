@@ -194,21 +194,21 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 /// Consultar Webhook
 /// Este m\u00C3\u00A9todo permite que sejam consultado um webhook do emissor atrav\u00C3\u00A9s de um id especifico
-///  @param idWebhook C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id). 
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) consultarUsingGET9WithIdWebhook: (NSNumber*) idWebhook
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idWebhook' is set
-    if (idWebhook == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idWebhook` when calling `consultarUsingGET9`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks/{id_webhook}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -216,8 +216,8 @@ static PierWebhooksApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idWebhook != nil) {
-        pathParams[@"id_webhook"] = idWebhook;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
