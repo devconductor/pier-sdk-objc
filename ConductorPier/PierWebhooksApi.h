@@ -33,7 +33,7 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
     evento: (PierObject*) evento
     metodo: (PierObject*) metodo
     url: (NSString*) url

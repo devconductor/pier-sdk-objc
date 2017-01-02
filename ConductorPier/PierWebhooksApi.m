@@ -84,7 +84,7 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
     evento: (PierObject*) evento
     metodo: (PierObject*) metodo
     url: (NSString*) url
@@ -93,22 +93,22 @@ static PierWebhooksApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT3`"];
     }
     
     // verify the required parameter 'evento' is set
     if (evento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `evento` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `evento` when calling `alterarUsingPUT3`"];
     }
     
     // verify the required parameter 'metodo' is set
     if (metodo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `metodo` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `metodo` when calling `alterarUsingPUT3`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT3`"];
     }
     
 
