@@ -4,6 +4,7 @@
 #import "PierLimiteDisponibilidade.h"
 #import "PierPortador.h"
 #import "PierPageCartoes.h"
+#import "PierValidaCartao.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -40,6 +41,21 @@
 
 ///
 ///
+/// Realiza a atribui\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o pr\u00C3\u00A9-pago a uma pessoa.
+/// Esta m\u00C3\u00A9todo tem como permite que um cart\u00C3\u00A3o de cr\u00C3\u00A9dito impresso de forma avulsa e an\u00C3\u00B4nimo seja atribu\u00C3\u00ADdo a uma pessoa para que esta passe a ser a portadora titular deste cart\u00C3\u00A3o.
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id)
+/// @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de uma Pessoa (id).
+/// 
+///
+/// @return PierCartao*
+-(NSNumber*) atribuirPessoaUsingPUTWithIdCartao: (NSNumber*) idCartao
+    idPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+
+
+///
+///
 /// Realiza o bloqueio de um determinado Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o do bloqueio (tempor\u00C3\u00A1rio) ou do cancelamento (definitivo) de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). Para isso, \u00C3\u00A9 preciso informar qual o motivo deste bloqueio que nada mais \u00C3\u00A9 do que atribuir um novo StatusCartao para ele dentre as op\u00C3\u00A7\u00C3\u00B5es praticadas pelo emissor.
 ///
@@ -53,6 +69,21 @@
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cadastro ou altera\u00C3\u00A7\u00C3\u00A3o da senha de um Cart\u00C3\u00A3o
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que o portador de um determinado cart\u00C3\u00A3o possa definir uma senha, a sua escolha
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param senha Senha para ser cadastrada ou alterada.
+/// 
+///
+/// @return NSString*
+-(NSNumber*) cadastrarAlterarSenhaUsingPUTWithIdCartao: (NSNumber*) idCartao
+    senha: (NSString*) senha
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
@@ -156,6 +187,91 @@
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite validar um Cart\u00C3\u00A3o Bandeirado a partir do chip
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele.
+///
+/// @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado.
+/// @param criptograma Criptograma do cart\u00C3\u00A3o no formato de55
+/// 
+///
+/// @return PierValidaCartao*
+-(NSNumber*) validarCartaoChipBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    criptograma: (NSString*) criptograma
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite validar um Cart\u00C3\u00A3o bandeirado a partir dos dados Impressos
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele.
+///
+/// @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado.
+/// @param nomePortador Nome do portador do cart\u00C3\u00A3o
+/// @param dataValidade Data de validade do cart\u00C3\u00A3o no formato yyyy-MM
+/// @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros
+/// 
+///
+/// @return PierValidaCartao*
+-(NSNumber*) validarCartaoDigitadoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    nomePortador: (NSString*) nomePortador
+    dataValidade: (NSString*) dataValidade
+    codigoSeguranca: (NSString*) codigoSeguranca
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite validar um Cart\u00C3\u00A3o a partir dos dados Impressos
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele.
+///
+/// @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado.
+/// @param nomePortador Nome do portador do cart\u00C3\u00A3o
+/// @param dataValidade Data de validade do cart\u00C3\u00A3o no formato yyyy-MM
+/// @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros
+/// 
+///
+/// @return PierValidaCartao*
+-(NSNumber*) validarCartaoDigitadoNaoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    nomePortador: (NSString*) nomePortador
+    dataValidade: (NSString*) dataValidade
+    codigoSeguranca: (NSString*) codigoSeguranca
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite validar um Cart\u00C3\u00A3o Bandeirado a partir da Tarja
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele.
+///
+/// @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado.
+/// @param trilha1 Trilha 1 do cart\u00C3\u00A3o a ser validado
+/// @param trilha2 Trilha 2 do cart\u00C3\u00A3o a ser validado
+/// 
+///
+/// @return PierValidaCartao*
+-(NSNumber*) validarCartaoTarjaBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    trilha1: (NSString*) trilha1
+    trilha2: (NSString*) trilha2
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite validar a senha de um Cart\u00C3\u00A3o
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir validar que a senha informada pelo portador de um determinado cart\u00C3\u00A3o est\u00C3\u00A1 correta.
+///
+/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param senha Senha para ser validada.
+/// 
+///
+/// @return NSString*
+-(NSNumber*) validarSenhaUsingPOSTWithIdCartao: (NSNumber*) idCartao
+    senha: (NSString*) senha
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 

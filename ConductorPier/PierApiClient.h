@@ -46,6 +46,7 @@
 #import "PierTelefone.h"
 #import "PierTipoEndereco.h"
 #import "PierTipoTelefone.h"
+#import "PierValidaCartao.h"
 #import "PierWebHook.h"
 
 
