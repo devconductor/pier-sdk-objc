@@ -1,6 +1,7 @@
 #import "PierContaApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierConta.h"
+#import "PierLimiteDisponibilidade.h"
 #import "PierCartaoImpressao.h"
 
 
@@ -73,7 +74,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// Alterar limite
 /// Esse recurso permite realizar a altera\u00C3\u00A7\u00C3\u00A3o dos Limites de uma determinada Conta.
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
 ///
 ///  @param limiteGlobal Apresenta o valor do limite de cr\u00C3\u00A9dito que o portador do cart\u00C3\u00A3o possui. 
 ///
@@ -101,7 +102,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierConta*
 ///
--(NSNumber*) alterarLimiteUsingPUTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarLimiteUsingPUTWithId: (NSNumber*) _id
     limiteGlobal: (NSNumber*) limiteGlobal
     limiteCompra: (NSNumber*) limiteCompra
     limiteParcelado: (NSNumber*) limiteParcelado
@@ -117,9 +118,9 @@ static PierContaApi* singletonAPI = nil;
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarLimiteUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarLimiteUsingPUT`"];
     }
     
     // verify the required parameter 'limiteGlobal' is set
@@ -183,7 +184,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/alterar-limites"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/alterar-limites"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -191,8 +192,8 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"id_conta"] = idConta;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -300,20 +301,20 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// Alterar vencimento
 /// Esse recurso permite alterar o vencimento de uma conta especifica.
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
 ///
 ///  @param novoDiaVencimento Novo dia de vencimento. 
 ///
 ///  @returns PierConta*
 ///
--(NSNumber*) alterarVencimentoUsingPUTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarVencimentoUsingPUTWithId: (NSNumber*) _id
     novoDiaVencimento: (NSNumber*) novoDiaVencimento
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarVencimentoUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarVencimentoUsingPUT`"];
     }
     
     // verify the required parameter 'novoDiaVencimento' is set
@@ -322,7 +323,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/alterar-vencimento"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/alterar-vencimento"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -330,8 +331,8 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"id_conta"] = idConta;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -393,23 +394,23 @@ static PierContaApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta dados de uma determinada conta
-/// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Apresenta os limites da conta
+/// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierConta*
+///  @returns PierLimiteDisponibilidade*
 ///
--(NSNumber*) consultarUsingGET1WithIdConta: (NSNumber*) idConta
-    completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
+-(NSNumber*) consultarLimiteDisponibilidadeUsingGET1WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET1`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarLimiteDisponibilidadeUsingGET1`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/limites-disponibilidades"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -417,8 +418,91 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"id_conta"] = idConta;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLimiteDisponibilidade*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLimiteDisponibilidade*)data, error);
+                           }
+          ];
+}
+
+///
+/// Apresenta dados de uma determinada conta
+/// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
+///  @returns PierConta*
+///
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -478,20 +562,20 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o para impress\u00C3\u00A3o avulsa
 /// 
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
 ///
 ///  @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
 ///
 ///  @returns PierCartaoImpressao*
 ///
--(NSNumber*) gerarCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) gerarCartaoUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idConta' is set
-    if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `gerarCartaoUsingPOST`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `gerarCartaoUsingPOST`"];
     }
     
     // verify the required parameter 'idPessoa' is set
@@ -500,7 +584,7 @@ static PierContaApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/pessoas/{id_pessoa}/gerar-cartao"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/pessoas/{id_pessoa}/gerar-cartao"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -508,8 +592,8 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idConta != nil) {
-        pathParams[@"id_conta"] = idConta;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     if (idPessoa != nil) {
         pathParams[@"id_pessoa"] = idPessoa;
@@ -572,6 +656,10 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// Lista contas existentes na base de dados do Emissor
 /// Este recurso permite listar contas existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
 ///
 ///  @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id). (optional)
@@ -592,13 +680,11 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierConta*
 ///
--(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     idProduto: (NSNumber*) idProduto
     idOrigemComercial: (NSNumber*) idOrigemComercial
     idPessoa: (NSNumber*) idPessoa
@@ -608,8 +694,6 @@ static PierContaApi* singletonAPI = nil;
     dataStatusConta: (NSDate*) dataStatusConta
     dataCadastro: (NSDate*) dataCadastro
     dataUltimaAlteracaoVencimento: (NSDate*) dataUltimaAlteracaoVencimento
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
 
     
@@ -625,6 +709,14 @@ static PierContaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -664,14 +756,6 @@ static PierContaApi* singletonAPI = nil;
     if (dataUltimaAlteracaoVencimento != nil) {
         
         queryParams[@"dataUltimaAlteracaoVencimento"] = dataUltimaAlteracaoVencimento;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

@@ -77,29 +77,24 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Realiza a altera\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que uma Aplica\u00C3\u00A7\u00C3\u00A3o que realize a impress\u00C3\u00A3o de cart\u00C3\u00B5es possa indicar que um determinado idCartao fora impresso ou est\u00C3\u00A1 em processo de impress\u00C3\u00A3o. Para isso, basta informar o respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id) que deseja ter seu um determinado id_status_impressao atribu\u00C3\u00ADdo a ele. Por padr\u00C3\u00A3o, cart\u00C3\u00B5es provis\u00C3\u00B3rios ou que j\u00C3\u00A1 tenham sido inclu\u00C3\u00ADdos em um arquivo para impress\u00C3\u00A3o via gr\u00C3\u00A1fica ter\u00C3\u00A3o esta requisi\u00C3\u00A7\u00C3\u00A3o negada, se utilizada.
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @param idStatusImpressao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status Impress\u00C3\u00A3o (Id). 
+///  @param idStatusImpressao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status Impress\u00C3\u00A3o (Id). (optional)
 ///
 ///  @returns PierHistoricoImpressaoCartao*
 ///
--(NSNumber*) alterarStatusImpressaoUsingPUTWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) alterarStatusImpressaoUsingPUTWithId: (NSNumber*) _id
     idStatusImpressao: (NSNumber*) idStatusImpressao
     completionHandler: (void (^)(PierHistoricoImpressaoCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `alterarStatusImpressaoUsingPUT`"];
-    }
-    
-    // verify the required parameter 'idStatusImpressao' is set
-    if (idStatusImpressao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusImpressao` when calling `alterarStatusImpressaoUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarStatusImpressaoUsingPUT`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/impressao/{id_status_impressao} "];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/alterar-status-impressao"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -107,15 +102,16 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
-    }
-    if (idStatusImpressao != nil) {
-        pathParams[@"id_status_impressao"] = idStatusImpressao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idStatusImpressao != nil) {
+        
+        queryParams[@"id_status_impressao"] = idStatusImpressao;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -169,22 +165,22 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza a atribui\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o pr\u00C3\u00A9-pago a uma pessoa.
-/// Esta m\u00C3\u00A9todo tem como permite que um cart\u00C3\u00A3o de cr\u00C3\u00A9dito impresso de forma avulsa e an\u00C3\u00B4nimo seja atribu\u00C3\u00ADdo a uma pessoa para que esta passe a ser a portadora titular deste cart\u00C3\u00A3o.
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id) 
+/// Realiza a atribui\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o pr\u00C3\u00A9-pago a uma pessoa
+/// Esta m\u00C3\u00A9todo permite que um cart\u00C3\u00A3o pr\u00C3\u00A9-pago impresso de forma avulsa e an\u00C3\u00B4nimo seja atribu\u00C3\u00ADdo a uma pessoa para que esta passe a ser a portadora titular dele.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id) 
 ///
 ///  @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de uma Pessoa (id). 
 ///
 ///  @returns PierCartao*
 ///
--(NSNumber*) atribuirPessoaUsingPUTWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) atribuirPessoaUsingPUTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `atribuirPessoaUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atribuirPessoaUsingPUT`"];
     }
     
     // verify the required parameter 'idPessoa' is set
@@ -193,7 +189,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/atribuir-pessoa"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/atribuir-pessoa"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -201,8 +197,8 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -266,7 +262,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Realiza o bloqueio de um determinado Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o do bloqueio (tempor\u00C3\u00A1rio) ou do cancelamento (definitivo) de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). Para isso, \u00C3\u00A9 preciso informar qual o motivo deste bloqueio que nada mais \u00C3\u00A9 do que atribuir um novo StatusCartao para ele dentre as op\u00C3\u00A7\u00C3\u00B5es praticadas pelo emissor.
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @param idStatus C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Novo Status Cart\u00C3\u00A3o. 
 ///
@@ -274,15 +270,15 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierCartao*
 ///
--(NSNumber*) bloquearUsingPUTWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) bloquearUsingPUTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `bloquearUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `bloquearUsingPUT`"];
     }
     
     // verify the required parameter 'idStatus' is set
@@ -296,7 +292,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/bloqueio"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/bloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -304,8 +300,8 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -373,20 +369,20 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Realiza o cadastro ou altera\u00C3\u00A7\u00C3\u00A3o da senha de um Cart\u00C3\u00A3o
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que o portador de um determinado cart\u00C3\u00A3o possa definir uma senha a sua escolha.
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @param senha Senha para ser cadastrada ou alterada. 
 ///
 ///  @returns NSString*
 ///
--(NSNumber*) cadastrarAlterarSenhaUsingPUTWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) cadastrarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
     senha: (NSString*) senha
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `cadastrarAlterarSenhaUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `cadastrarAlterarSenhaUsingPUT`"];
     }
     
     // verify the required parameter 'senha' is set
@@ -395,7 +391,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/alterar-senha"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/alterar-senha"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -406,9 +402,9 @@ static PierCartaoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
+    if (_id != nil) {
         
-        queryParams[@"id_cartao"] = idCartao;
+        queryParams[@"id"] = _id;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -468,21 +464,21 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Apresenta os limites do Portador do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para o Portador de um determinado Cart\u00C3\u00A3o, seja ele o titular da conta ou um adicional, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierLimiteDisponibilidade*
 ///
--(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarLimiteDisponibilidadeUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarLimiteDisponibilidadeUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/limites-disponibilidades"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/limites-disponibilidades"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -490,8 +486,8 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -551,21 +547,21 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Apresenta os dados do Portador do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es do Portador de um determinado Cart\u00C3\u00A3o a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierPortador*
 ///
--(NSNumber*) consultarPortadorUsingGETWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarPortadorUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPortador* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarPortadorUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarPortadorUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/portadores"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/portadores"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -573,8 +569,8 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -634,21 +630,21 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es b\u00C3\u00A1sicas de um determinado Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierCartao*
 ///
--(NSNumber*) consultarUsingGETWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -656,8 +652,8 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -717,21 +713,21 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Realiza o desbloqueio de um determinado Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierCartao*
 ///
--(NSNumber*) desbloquearUsingPUTWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) desbloquearUsingPUTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `desbloquearUsingPUT`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `desbloquearUsingPUT`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/desbloqueio"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/desbloquear"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -739,8 +735,8 @@ static PierCartaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
-        pathParams[@"id_cartao"] = idCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -798,8 +794,168 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
+/// Permite listar os Lotes de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pago
+/// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais (id). (optional)
+///
+///  @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id). (optional)
+///
+///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
+///
+///  @param idTipoCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Cart\u00C3\u00A3o (id). (optional)
+///
+///  @param idImagem C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Imagem (id). (optional)
+///
+///  @param idEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). (optional)
+///
+///  @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. (optional)
+///
+///  @param dataCadastroLote Data de Cadastro do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais. (optional)
+///
+///  @param usuarioCadastro Nome do Usu\u00C3\u00A1rio que criou o Lote. (optional)
+///
+///  @param flagProcessado Indica o Status de Processamento do Lote. (optional)
+///
+///  @returns PierPageCartoes*
+///
+-(NSNumber*) listarLotesCartoesPrePagosUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    idOrigemComercial: (NSNumber*) idOrigemComercial
+    idProduto: (NSNumber*) idProduto
+    idTipoCartao: (NSNumber*) idTipoCartao
+    idImagem: (NSNumber*) idImagem
+    idEndereco: (NSNumber*) idEndereco
+    quantidadeCartoes: (NSNumber*) quantidadeCartoes
+    dataCadastroLote: (NSDate*) dataCadastroLote
+    usuarioCadastro: (NSString*) usuarioCadastro
+    flagProcessado: (NSNumber*) flagProcessado
+    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/pre-pagos/lotes"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (idOrigemComercial != nil) {
+        
+        queryParams[@"idOrigemComercial"] = idOrigemComercial;
+    }
+    if (idProduto != nil) {
+        
+        queryParams[@"idProduto"] = idProduto;
+    }
+    if (idTipoCartao != nil) {
+        
+        queryParams[@"idTipoCartao"] = idTipoCartao;
+    }
+    if (idImagem != nil) {
+        
+        queryParams[@"idImagem"] = idImagem;
+    }
+    if (idEndereco != nil) {
+        
+        queryParams[@"idEndereco"] = idEndereco;
+    }
+    if (quantidadeCartoes != nil) {
+        
+        queryParams[@"quantidadeCartoes"] = quantidadeCartoes;
+    }
+    if (dataCadastroLote != nil) {
+        
+        queryParams[@"dataCadastroLote"] = dataCadastroLote;
+    }
+    if (usuarioCadastro != nil) {
+        
+        queryParams[@"usuarioCadastro"] = usuarioCadastro;
+    }
+    if (flagProcessado != nil) {
+        
+        queryParams[@"flagProcessado"] = flagProcessado;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageCartoes*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageCartoes*)data, error);
+                           }
+          ];
+}
+
+///
 /// Lista os Cart\u00C3\u00B5es gerados pelo Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es existentes na base do emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). (optional)
 ///
 ///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id). (optional)
@@ -836,13 +992,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param codigoDesbloqueio Apresenta um c\u00C3\u00B3digo espec\u00C3\u00ADfico para ser utilizado como vari\u00C3\u00A1vel no processo de desbloqueio do cart\u00C3\u00A3o para emissores que querem usar esta funcionalidade. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageCartoes*
 ///
--(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
     idConta: (NSNumber*) idConta
@@ -860,8 +1014,6 @@ static PierCartaoApi* singletonAPI = nil;
     flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
 
     
@@ -877,6 +1029,14 @@ static PierCartaoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -949,14 +1109,6 @@ static PierCartaoApi* singletonAPI = nil;
         
         queryParams[@"codigoDesbloqueio"] = codigoDesbloqueio;
     }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -1010,8 +1162,8 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// Permite validar um Cart\u00C3\u00A3o Mastercard a partir do chip
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem o criptograma gerado a partir da leitura de um chip EMV de um Cart\u00C3\u00A3o Mastercard a fim de verificar a sua autenticidade.
+/// Permite validar um Cart\u00C3\u00A3o com bandeira Mastercard a partir do chip
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem o criptograma gerado a partir da leitura de um chip EMV de um Cart\u00C3\u00A3o com bandeira Mastercard a fim de verificar a sua autenticidade. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o antes de permitir que o portador realize transa\u00C3\u00A7\u00C3\u00B5es diversas, como as de compra e saque na modalidade d\u00C3\u00A9bito em conta corrente, dentre outras.
 ///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
 ///
 ///  @param criptograma Criptograma do cart\u00C3\u00A3o no formato de55 
@@ -1034,7 +1186,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar/chip"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar-chip"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1047,7 +1199,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if (numeroCartao != nil) {
         
-        queryParams[@"numeroCartao"] = numeroCartao;
+        queryParams[@"numero_cartao"] = numeroCartao;
     }
     if (criptograma != nil) {
         
@@ -1107,7 +1259,7 @@ static PierCartaoApi* singletonAPI = nil;
 
 ///
 /// Permite validar um Cart\u00C3\u00A3o bandeirado a partir dos dados Impressos
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele.
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o para a realiza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es e-commerce ou por meio de Centrais de Atendimento Eletr\u00C3\u00B4nico (URA), dentre outras.
 ///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
 ///
 ///  @param nomePortador Nome do portador do cart\u00C3\u00A3o 
@@ -1146,7 +1298,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar/digitado"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar-digitado"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1159,19 +1311,19 @@ static PierCartaoApi* singletonAPI = nil;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if (numeroCartao != nil) {
         
-        queryParams[@"numeroCartao"] = numeroCartao;
+        queryParams[@"numero_cartao"] = numeroCartao;
     }
     if (nomePortador != nil) {
         
-        queryParams[@"nomePortador"] = nomePortador;
+        queryParams[@"nome_portador"] = nomePortador;
     }
     if (dataValidade != nil) {
         
-        queryParams[@"dataValidade"] = dataValidade;
+        queryParams[@"data_validade"] = dataValidade;
     }
     if (codigoSeguranca != nil) {
         
-        queryParams[@"codigoSeguranca"] = codigoSeguranca;
+        queryParams[@"codigo_seguranca"] = codigoSeguranca;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1227,7 +1379,7 @@ static PierCartaoApi* singletonAPI = nil;
 
 ///
 /// Permite validar um Cart\u00C3\u00A3o a partir dos dados Impressos
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele.
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o para a realiza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es e-commerce ou por meio de Centrais de Atendimento Eletr\u00C3\u00B4nico (URA), dentre outras.
 ///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
 ///
 ///  @param nomePortador Nome do portador do cart\u00C3\u00A3o 
@@ -1266,7 +1418,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/nao-bandeirados/validar/digitado"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/nao-bandeirados/validar-digitado"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1279,19 +1431,19 @@ static PierCartaoApi* singletonAPI = nil;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if (numeroCartao != nil) {
         
-        queryParams[@"numeroCartao"] = numeroCartao;
+        queryParams[@"numero_cartao"] = numeroCartao;
     }
     if (nomePortador != nil) {
         
-        queryParams[@"nomePortador"] = nomePortador;
+        queryParams[@"nome_portador"] = nomePortador;
     }
     if (dataValidade != nil) {
         
-        queryParams[@"dataValidade"] = dataValidade;
+        queryParams[@"data_validade"] = dataValidade;
     }
     if (codigoSeguranca != nil) {
         
-        queryParams[@"codigoSeguranca"] = codigoSeguranca;
+        queryParams[@"codigo_seguranca"] = codigoSeguranca;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1347,7 +1499,7 @@ static PierCartaoApi* singletonAPI = nil;
 
 ///
 /// Permite validar um Cart\u00C3\u00A3o Bandeirado a partir da Tarja
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir da leitura da tarja magn\u00C3\u00A9tica do mesmo.
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir da leitura da tarja magn\u00C3\u00A9tica do mesmo. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o antes de permitir que o portador realize transa\u00C3\u00A7\u00C3\u00B5es diversas, como as de compra e saque na modalidade d\u00C3\u00A9bito em conta corrente, dentre outras.
 ///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
 ///
 ///  @param trilha1 Trilha 1 do cart\u00C3\u00A3o a ser validado 
@@ -1378,7 +1530,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar/tarja"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar-tarja"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1391,7 +1543,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
     if (numeroCartao != nil) {
         
-        queryParams[@"numeroCartao"] = numeroCartao;
+        queryParams[@"numero_cartao"] = numeroCartao;
     }
     if (trilha1 != nil) {
         
@@ -1456,29 +1608,29 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 /// Permite validar a senha de um Cart\u00C3\u00A3o
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir validar que a senha informada pelo portador de um determinado cart\u00C3\u00A3o est\u00C3\u00A1 correta.
-///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @param senha Senha para ser validada. 
 ///
 ///  @returns NSString*
 ///
--(NSNumber*) validarSenhaUsingPOSTWithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) validarSenhaUsingGETWithId: (NSNumber*) _id
     senha: (NSString*) senha
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idCartao' is set
-    if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `validarSenhaUsingPOST`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `validarSenhaUsingGET`"];
     }
     
     // verify the required parameter 'senha' is set
     if (senha == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senha` when calling `validarSenhaUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senha` when calling `validarSenhaUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/validar-senha"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/validar-senha"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1489,9 +1641,9 @@ static PierCartaoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idCartao != nil) {
+    if (_id != nil) {
         
-        queryParams[@"id_cartao"] = idCartao;
+        queryParams[@"id"] = _id;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1531,7 +1683,7 @@ static PierCartaoApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"GET"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

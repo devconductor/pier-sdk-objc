@@ -40,6 +40,7 @@
 #import "PierPessoa.h"
 #import "PierPortador.h"
 #import "PierProduto.h"
+#import "PierSMS.h"
 #import "PierStatusCartao.h"
 #import "PierStatusConta.h"
 #import "PierStatusImpressao.h"

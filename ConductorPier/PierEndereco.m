@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"bairro": @"bairro", @"cep": @"cep", @"cidade": @"cidade", @"complemento": @"complemento", @"dataInclusao": @"dataInclusao", @"dataUltimaAtualizacao": @"dataUltimaAtualizacao", @"id": @"_id", @"idPessoa": @"idPessoa", @"idTipoEndereco": @"idTipoEndereco", @"logradouro": @"logradouro", @"numero": @"numero", @"pais": @"pais", @"pontoReferencia": @"pontoReferencia", @"uf": @"uf" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idPessoa": @"idPessoa", @"idTipoEndereco": @"idTipoEndereco", @"cep": @"cep", @"logradouro": @"logradouro", @"numero": @"numero", @"complemento": @"complemento", @"pontoReferencia": @"pontoReferencia", @"bairro": @"bairro", @"cidade": @"cidade", @"uf": @"uf", @"pais": @"pais", @"dataInclusao": @"dataInclusao", @"dataUltimaAtualizacao": @"dataUltimaAtualizacao" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"bairro", @"cep", @"cidade", @"complemento", @"dataInclusao", @"dataUltimaAtualizacao", @"_id", @"idPessoa", @"idTipoEndereco", @"logradouro", @"numero", @"pais", @"pontoReferencia", @"uf"];
+  NSArray *optionalProperties = @[@"_id", @"idPessoa", @"idTipoEndereco", @"cep", @"logradouro", @"numero", @"complemento", @"pontoReferencia", @"bairro", @"cidade", @"uf", @"pais", @"dataInclusao", @"dataUltimaAtualizacao"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

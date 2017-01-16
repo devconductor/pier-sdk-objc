@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"flagCobraTarifa": @"flagCobraTarifa", @"id": @"_id", @"idStatusDestinoConta": @"idStatusDestinoConta", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"nome": @"nome" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"idStatusDestinoConta": @"idStatusDestinoConta", @"flagCobraTarifa": @"flagCobraTarifa" }];
 }
 
 /**

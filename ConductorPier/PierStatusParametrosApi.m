@@ -79,21 +79,21 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Estagio Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierEstagioCartao*
 ///
--(NSNumber*) consultarEstagioCartaoUsingGETWithIdEstagioCartao: (NSNumber*) idEstagioCartao
+-(NSNumber*) consultarEstagioCartaoUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idEstagioCartao' is set
-    if (idEstagioCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstagioCartao` when calling `consultarEstagioCartaoUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarEstagioCartaoUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/estagios-cartoes/{id_estagio_cartao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/estagios-cartoes/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -101,8 +101,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idEstagioCartao != nil) {
-        pathParams[@"id_estagio_cartao"] = idEstagioCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -162,21 +162,21 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Status Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status de Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierStatusCartao*
 ///
--(NSNumber*) consultarStatusCartaoUsingGETWithIdStatusCartao: (NSNumber*) idStatusCartao
+-(NSNumber*) consultarStatusCartaoUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusCartao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idStatusCartao' is set
-    if (idStatusCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusCartao` when calling `consultarStatusCartaoUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarStatusCartaoUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-cartoes/{id_status_cartao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-cartoes/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -184,8 +184,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idStatusCartao != nil) {
-        pathParams[@"id_status_cartao"] = idStatusCartao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -245,21 +245,21 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Status Conta
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status Conta a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idStatusConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). 
 ///
 ///  @returns PierStatusConta*
 ///
--(NSNumber*) consultarUsingGET4WithIdStatusConta: (NSNumber*) idStatusConta
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idStatusConta' is set
-    if (idStatusConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusConta` when calling `consultarUsingGET4`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET4`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-contas/{id_status_conta}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-contas/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -267,8 +267,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idStatusConta != nil) {
-        pathParams[@"id_status_conta"] = idStatusConta;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -328,21 +328,21 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Status Impress\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idStatusImpressao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
 ///  @returns PierStatusImpressao*
 ///
--(NSNumber*) consultarUsingGET5WithIdStatusImpressao: (NSNumber*) idStatusImpressao
+-(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idStatusImpressao' is set
-    if (idStatusImpressao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idStatusImpressao` when calling `consultarUsingGET5`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-impressoes/{id_status_impressao}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-impressoes/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -350,8 +350,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idStatusImpressao != nil) {
-        pathParams[@"id_status_impressao"] = idStatusImpressao;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -411,20 +411,20 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gios do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gio de Entrega que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
-///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
-///
-///  @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
-///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
+///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
+///
+///  @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
+///
 ///  @returns PierPageEstagiosCartoes*
 ///
--(NSNumber*) listarEstagiosCartoesUsingGETWithId: (NSNumber*) _id
-    nome: (NSString*) nome
-    page: (NSNumber*) page
+-(NSNumber*) listarEstagiosCartoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
     completionHandler: (void (^)(PierPageEstagiosCartoes* output, NSError* error)) handler {
 
     
@@ -440,14 +440,6 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -455,6 +447,14 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -511,6 +511,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Status do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que sejam listadas as possibilidades de Status que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id)  (optional)
 ///
 ///  @param nome Nome atribu\u00C3\u00ADdo ao Status de Entrega do Cart\u00C3\u00A3o. (optional)
@@ -525,21 +529,17 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param flagCobraTarifa Quando ativa, indica que cart\u00C3\u00B5es que tiverem um idStatusCartao atribu\u00C3\u00ADdo com essa caracter\u00C3\u00ADstica, incluir\u00C3\u00A3o a cobran\u00C3\u00A7a de uma tarifa para a conta de acordo com os valores definidos nos par\u00C3\u00A2metros do emissor. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageStatusCartoes*
 ///
--(NSNumber*) listarStatusCartoesUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarStatusCartoesUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     nome: (NSString*) nome
     flagCancelaCartao: (NSNumber*) flagCancelaCartao
     flagCancelaNoDesbloqueio: (NSNumber*) flagCancelaNoDesbloqueio
     idStatusDestinoDesbloqueio: (NSNumber*) idStatusDestinoDesbloqueio
     idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler {
 
     
@@ -555,6 +555,14 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -582,14 +590,6 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (flagCobraTarifa != nil) {
         
         queryParams[@"flagCobraTarifa"] = flagCobraTarifa;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -646,6 +646,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista os Status Contas cadastrados para o Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). (optional)
 ///
 ///  @param nome Nome atribu\u00C3\u00ADdo ao Status da Conta. (optional)
@@ -654,18 +658,14 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param mensagemConsultaNegada Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageStatusContas*
 ///
--(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler {
 
     
@@ -681,6 +681,14 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -696,14 +704,6 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (mensagemConsultaNegada != nil) {
         
         queryParams[@"mensagemConsultaNegada"] = mensagemConsultaNegada;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -760,20 +760,20 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
-///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
-///
-///  @param nome Nome do status impress\u00C3\u00A3o (optional)
-///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
+///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
+///
+///  @param nome Nome do status impress\u00C3\u00A3o (optional)
+///
 ///  @returns PierPageStatusImpressao*
 ///
--(NSNumber*) listarUsingGET6WithId: (NSNumber*) _id
-    nome: (NSString*) nome
-    page: (NSNumber*) page
+-(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
     completionHandler: (void (^)(PierPageStatusImpressao* output, NSError* error)) handler {
 
     
@@ -789,14 +789,6 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -804,6 +796,14 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

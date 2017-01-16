@@ -14,35 +14,35 @@
 
 @interface PierConta : PierObject
 
-/* Apresenta a data em que o cart\u00C3\u00A3o foi gerado. [optional]
- */
-@property(nonatomic) NSDate* dataCadastro;
-/* Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela. [optional]
- */
-@property(nonatomic) NSDate* dataStatusConta;
-/* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
- */
-@property(nonatomic) NSDate* dataUltimaAlteracaoVencimento;
-/* Apresenta o dia de vencimento. [optional]
- */
-@property(nonatomic) NSNumber* diaVencimento;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id). [optional]
+ */
+@property(nonatomic) NSNumber* idProduto;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id) que deu origem a Conta. [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Titular da Conta (id). [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id). [optional]
- */
-@property(nonatomic) NSNumber* idProduto;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id). [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
+/* Apresenta o dia de vencimento. [optional]
+ */
+@property(nonatomic) NSNumber* diaVencimento;
 /* Apresenta o melhor dia de compra. [optional]
  */
 @property(nonatomic) NSNumber* melhorDiaCompra;
+/* Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela. [optional]
+ */
+@property(nonatomic) NSDate* dataStatusConta;
+/* Apresenta a data em que o cart\u00C3\u00A3o foi gerado. [optional]
+ */
+@property(nonatomic) NSDate* dataCadastro;
+/* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
+ */
+@property(nonatomic) NSDate* dataUltimaAlteracaoVencimento;
 
 @end

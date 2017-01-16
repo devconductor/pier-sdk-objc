@@ -495,21 +495,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para consultar uma determinada Origem Comercial
 /// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idOrigemComercial ID da Origem Comercial 
+///  @param _id ID da Origem Comercial 
 ///
 ///  @returns PierOrigemComercial*
 ///
--(NSNumber*) consultarOrigemComercialUsingGETWithIdOrigemComercial: (NSNumber*) idOrigemComercial
+-(NSNumber*) consultarOrigemComercialUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idOrigemComercial' is set
-    if (idOrigemComercial == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idOrigemComercial` when calling `consultarOrigemComercialUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarOrigemComercialUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/origens-comerciais/{id_origem_comercial}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/origens-comerciais/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -517,8 +517,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idOrigemComercial != nil) {
-        pathParams[@"id_origem_comercial"] = idOrigemComercial;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -578,21 +578,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Produto
 /// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id) 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id) 
 ///
 ///  @returns PierProduto*
 ///
--(NSNumber*) consultarProdutoUsingGETWithIdProduto: (NSNumber*) idProduto
+-(NSNumber*) consultarProdutoUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProduto* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idProduto' is set
-    if (idProduto == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idProduto` when calling `consultarProdutoUsingGET`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarProdutoUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/produtos/{id_produto}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/produtos/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -600,8 +600,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idProduto != nil) {
-        pathParams[@"id_produto"] = idProduto;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -661,21 +661,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Endere\u00C3\u00A7o
 /// Este m\u00C3\u00A9todo permite consultar um determinado Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). 
 ///
 ///  @returns PierEndereco*
 ///
--(NSNumber*) consultarUsingGET2WithIdEndereco: (NSNumber*) idEndereco
+-(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idEndereco' is set
-    if (idEndereco == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEndereco` when calling `consultarUsingGET2`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET2`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos/{id_endereco}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -683,8 +683,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idEndereco != nil) {
-        pathParams[@"id_endereco"] = idEndereco;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -744,21 +744,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
-///  @param idPessoa ID da Pessoa 
+///  @param _id ID da Pessoa 
 ///
 ///  @returns PierPessoa*
 ///
--(NSNumber*) consultarUsingGET3WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idPessoa' is set
-    if (idPessoa == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `consultarUsingGET3`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas/{id_pessoa}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -766,8 +766,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idPessoa != nil) {
-        pathParams[@"id_pessoa"] = idPessoa;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -827,21 +827,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Telefone
 /// Este m\u00C3\u00A9todo permite consultar um determinado Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
 ///
 ///  @returns PierTelefone*
 ///
--(NSNumber*) consultarUsingGET6WithIdTelefone: (NSNumber*) idTelefone
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idTelefone' is set
-    if (idTelefone == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTelefone` when calling `consultarUsingGET6`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones/{id_telefone}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -849,8 +849,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idTelefone != nil) {
-        pathParams[@"id_telefone"] = idTelefone;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -910,21 +910,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Tipo de Endere\u00C3\u00A7o
 /// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) 
 ///
 ///  @returns PierTipoEndereco*
 ///
--(NSNumber*) consultarUsingGET7WithIdTipoEndereco: (NSNumber*) idTipoEndereco
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEndereco* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idTipoEndereco' is set
-    if (idTipoEndereco == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTipoEndereco` when calling `consultarUsingGET7`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-endereco/{id_tipo_endereco}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-enderecos/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -932,8 +932,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idTipoEndereco != nil) {
-        pathParams[@"id_tipo_endereco"] = idTipoEndereco;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -993,21 +993,21 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Apresenta os dados de um determinado Tipo de Telefone
 /// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id) 
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id) 
 ///
 ///  @returns PierTipoTelefone*
 ///
--(NSNumber*) consultarUsingGET8WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefone* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'idTipoTelefone' is set
-    if (idTipoTelefone == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTipoTelefone` when calling `consultarUsingGET8`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET8`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-telefones/{id_tipo_telefone}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-telefones/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1015,8 +1015,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (idTipoTelefone != nil) {
-        pathParams[@"id_tipo_telefone"] = idTipoTelefone;
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
@@ -1076,23 +1076,23 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para listar Origens Comerciais
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Origens Comerciais existentes na base do emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id Id da origem comercial (optional)
 ///
 ///  @param nome Nome da origem comercial (optional)
 ///
 ///  @param status Status da origem comercial (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageOrigensComerciais*
 ///
--(NSNumber*) listarOrigensComerciaisUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarOrigensComerciaisUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSNumber*) status
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageOrigensComerciais* output, NSError* error)) handler {
 
     
@@ -1108,6 +1108,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -1119,14 +1127,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (status != nil) {
         
         queryParams[@"status"] = status;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1183,23 +1183,23 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista os Produtos do Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
 ///
 ///  @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto. (optional)
 ///
 ///  @param status Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierListaProdutos*
 ///
--(NSNumber*) listarProdutosUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarProdutosUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSNumber*) status
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler {
 
     
@@ -1215,6 +1215,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -1226,14 +1234,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (status != nil) {
         
         queryParams[@"status"] = status;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1290,6 +1290,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista os Endere\u00C3\u00A7os cadastrados para o Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). (optional)
 ///
 ///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
@@ -1318,13 +1322,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageEnderecos*
 ///
--(NSNumber*) listarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -1338,8 +1340,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     pais: (NSString*) pais
     dataInclusao: (NSDate*) dataInclusao
     dataUltimaAtualizacao: (NSDate*) dataUltimaAtualizacao
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageEnderecos* output, NSError* error)) handler {
 
     
@@ -1355,6 +1355,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -1411,14 +1419,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
         
         queryParams[@"dataUltimaAtualizacao"] = dataUltimaAtualizacao;
     }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -1474,6 +1474,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista as Pessoas cadastradas no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). (optional)
 ///
 ///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. (optional)
@@ -1488,21 +1492,17 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPagePessoas*
 ///
--(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
     dataNascimento: (NSDate*) dataNascimento
     sexo: (NSString*) sexo
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler {
 
     
@@ -1518,6 +1518,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -1545,14 +1553,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (sexo != nil) {
         
         queryParams[@"sexo"] = sexo;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1609,6 +1609,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista os Portadores existentes
 /// Este m\u00C3\u00A9todo permite que sejam listados os portadores cadastrados na base do emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id). (optional)
 ///
 ///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
@@ -1631,13 +1635,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPagePortador*
 ///
--(NSNumber*) listarUsingGET4WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idConta: (NSNumber*) idConta
     idProduto: (NSNumber*) idProduto
     idPessoa: (NSNumber*) idPessoa
     idParentesco: (NSNumber*) idParentesco
@@ -1648,8 +1650,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     flagAtivo: (NSNumber*) flagAtivo
     dataCadastroPortador: (NSDate*) dataCadastroPortador
     dataCancelamentoPortador: (NSDate*) dataCancelamentoPortador
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPagePortador* output, NSError* error)) handler {
 
     
@@ -1665,6 +1665,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (idConta != nil) {
         
         queryParams[@"idConta"] = idConta;
@@ -1708,14 +1716,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (dataCancelamentoPortador != nil) {
         
         queryParams[@"dataCancelamentoPortador"] = dataCancelamentoPortador;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1772,6 +1772,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista os Telefones cadastrados no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). (optional)
 ///
 ///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
@@ -1786,21 +1790,17 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param status Apresenta o Status do Telefone, onde: '0': Inativo e '1': Ativo (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageTelefones*
 ///
--(NSNumber*) listarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
     status: (NSNumber*) status
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTelefones* output, NSError* error)) handler {
 
     
@@ -1816,6 +1816,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -1843,14 +1851,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (status != nil) {
         
         queryParams[@"status"] = status;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1907,25 +1907,25 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00B5es de Tipos de Endere\u00C3\u00A7os do Emissor 
 /// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) (optional)
-///
-///  @param nome Nome do Tipo do Endere\u00C3\u00A7o (optional)
-///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) (optional)
+///
+///  @param nome Nome do Tipo do Endere\u00C3\u00A7o (optional)
+///
 ///  @returns PierPageTiposEndereco*
 ///
--(NSNumber*) listarUsingGET8WithId: (NSNumber*) _id
-    nome: (NSString*) nome
-    page: (NSNumber*) page
+-(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
     completionHandler: (void (^)(PierPageTiposEndereco* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-endereco"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-enderecos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1936,14 +1936,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -1951,6 +1943,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -2007,20 +2007,20 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 /// Lista os Tipos de Telefones
 /// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
-///
-///  @param nome Nome do Tipo do Telefone (optional)
-///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
+///
+///  @param nome Nome do Tipo do Telefone (optional)
+///
 ///  @returns PierPageTipoTelefones*
 ///
--(NSNumber*) listarUsingGET9WithId: (NSNumber*) _id
-    nome: (NSString*) nome
-    page: (NSNumber*) page
+-(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
     completionHandler: (void (^)(PierPageTipoTelefones* output, NSError* error)) handler {
 
     
@@ -2036,14 +2036,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -2051,6 +2043,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

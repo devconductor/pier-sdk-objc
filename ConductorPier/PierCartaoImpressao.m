@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"cpf": @"cpf", @"cvv2": @"cvv2", @"dataGeracao": @"dataGeracao", @"dataValidade": @"dataValidade", @"idBandeira": @"idBandeira", @"idCartao": @"idCartao", @"idConta": @"idConta", @"idPessoa": @"idPessoa", @"idTipoCartao": @"idTipoCartao", @"nomeEmpregador": @"nomeEmpregador", @"nomeEmpresa": @"nomeEmpresa", @"nomeEmpresaBeneficio": @"nomeEmpresaBeneficio", @"nomeOrigemComercial": @"nomeOrigemComercial", @"nomePlastico": @"nomePlastico", @"numeroAgencia": @"numeroAgencia", @"numeroCartao": @"numeroCartao", @"numeroContaCorente": @"numeroContaCorente", @"tipoPortador": @"tipoPortador", @"trilha1": @"trilha1", @"trilha2": @"trilha2", @"trilhaCVV1": @"trilhaCVV1", @"trilhaCVV2": @"trilhaCVV2" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"idPessoa": @"idPessoa", @"idCartao": @"idCartao", @"idBandeira": @"idBandeira", @"idTipoCartao": @"idTipoCartao", @"numeroCartao": @"numeroCartao", @"nomePlastico": @"nomePlastico", @"cvv2": @"cvv2", @"dataGeracao": @"dataGeracao", @"dataValidade": @"dataValidade", @"nomeOrigemComercial": @"nomeOrigemComercial", @"nomeEmpresa": @"nomeEmpresa", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorente": @"numeroContaCorente", @"nomeEmpresaBeneficio": @"nomeEmpresaBeneficio", @"cpf": @"cpf", @"tipoPortador": @"tipoPortador", @"nomeEmpregador": @"nomeEmpregador", @"trilha1": @"trilha1", @"trilha2": @"trilha2", @"trilhaCVV1": @"trilhaCVV1", @"trilhaCVV2": @"trilhaCVV2" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"cpf", @"cvv2", @"dataGeracao", @"dataValidade", @"idBandeira", @"idCartao", @"idConta", @"idPessoa", @"idTipoCartao", @"nomeEmpregador", @"nomeEmpresa", @"nomeEmpresaBeneficio", @"nomeOrigemComercial", @"nomePlastico", @"numeroAgencia", @"numeroCartao", @"numeroContaCorente", @"tipoPortador", @"trilha1", @"trilha2", @"trilhaCVV1", @"trilhaCVV2"];
+  NSArray *optionalProperties = @[@"idConta", @"idPessoa", @"idCartao", @"idBandeira", @"idTipoCartao", @"numeroCartao", @"nomePlastico", @"cvv2", @"dataGeracao", @"dataValidade", @"nomeOrigemComercial", @"nomeEmpresa", @"numeroAgencia", @"numeroContaCorente", @"nomeEmpresaBeneficio", @"cpf", @"tipoPortador", @"nomeEmpregador", @"trilha1", @"trilha2", @"trilhaCVV1", @"trilhaCVV2"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

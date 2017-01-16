@@ -1,6 +1,5 @@
 #import "PierWebhooksApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierObject.h"
 #import "PierWebHook.h"
 #import "PierPageWebHooks.h"
 
@@ -85,8 +84,8 @@ static PierWebhooksApi* singletonAPI = nil;
 ///  @returns PierWebHook*
 ///
 -(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
-    evento: (PierObject*) evento
-    metodo: (PierObject*) metodo
+    evento: (NSString*) evento
+    metodo: (NSString*) metodo
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
@@ -277,6 +276,10 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 /// Lista os Webhooks
 /// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
 ///  @param _id Id do WebHook (optional)
 ///
 ///  @param evento Evento a ser chamado pelo WebHook (optional)
@@ -285,18 +288,14 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @param url URL que a ser consumida pelo WebHook (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
 ///  @returns PierPageWebHooks*
 ///
--(NSNumber*) listarUsingGET10WithId: (NSNumber*) _id
-    evento: (PierObject*) evento
-    metodo: (PierObject*) metodo
-    url: (NSString*) url
-    page: (NSNumber*) page
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    evento: (NSString*) evento
+    metodo: (NSString*) metodo
+    url: (NSString*) url
     completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler {
 
     
@@ -312,6 +311,14 @@ static PierWebhooksApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
     if (_id != nil) {
         
         queryParams[@"id"] = _id;
@@ -327,14 +334,6 @@ static PierWebhooksApi* singletonAPI = nil;
     if (url != nil) {
         
         queryParams[@"url"] = url;
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -399,8 +398,8 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) salvarUsingPOST3WithEvento: (PierObject*) evento
-    metodo: (PierObject*) metodo
+-(NSNumber*) salvarUsingPOST3WithEvento: (NSString*) evento
+    metodo: (NSString*) metodo
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 

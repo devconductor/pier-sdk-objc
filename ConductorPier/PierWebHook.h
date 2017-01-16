@@ -14,12 +14,12 @@
 
 @interface PierWebHook : PierObject
 
-/* Evento a ser chamado pelo WebHook 
- */
-@property(nonatomic) NSString* evento;
 /* Id do WebHook 
  */
 @property(nonatomic) NSNumber* _id;
+/* Evento a ser chamado pelo WebHook 
+ */
+@property(nonatomic) NSString* evento;
 /* M\u00C3\u00A9todo que a ser chamado pelo WebHook 
  */
 @property(nonatomic) NSString* metodo;

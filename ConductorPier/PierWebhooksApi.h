@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "PierObject.h"
 #import "PierWebHook.h"
 #import "PierPageWebHooks.h"
 #import "PierObject.h"
@@ -34,8 +33,8 @@
 ///
 /// @return PierWebHook*
 -(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
-    evento: (PierObject*) evento
-    metodo: (PierObject*) metodo
+    evento: (NSString*) evento
+    metodo: (NSString*) metodo
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 
@@ -58,21 +57,21 @@
 /// Lista os Webhooks
 /// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
 ///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// @param _id Id do WebHook
 /// @param evento Evento a ser chamado pelo WebHook
 /// @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook
 /// @param url URL que a ser consumida pelo WebHook
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
 /// @return PierPageWebHooks*
--(NSNumber*) listarUsingGET10WithId: (NSNumber*) _id
-    evento: (PierObject*) evento
-    metodo: (PierObject*) metodo
-    url: (NSString*) url
-    page: (NSNumber*) page
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    evento: (NSString*) evento
+    metodo: (NSString*) metodo
+    url: (NSString*) url
     completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler;
 
 
@@ -87,8 +86,8 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) salvarUsingPOST3WithEvento: (PierObject*) evento
-    metodo: (PierObject*) metodo
+-(NSNumber*) salvarUsingPOST3WithEvento: (NSString*) evento
+    metodo: (NSString*) metodo
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 

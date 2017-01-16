@@ -14,14 +14,14 @@
 
 @interface PierValidaCartao : PierObject
 
-/* Criptograma de resposta [optional]
- */
-@property(nonatomic) NSString* criptogramaResposta;
 /* Descri\u00C3\u00A7\u00C3\u00A3o do status do cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* statusCartao;
 /* Descri\u00C3\u00A7\u00C3\u00A3o do status da conta [optional]
  */
 @property(nonatomic) NSString* statusConta;
+/* Criptograma de resposta [optional]
+ */
+@property(nonatomic) NSString* criptogramaResposta;
 
 @end

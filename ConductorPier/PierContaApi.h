@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierConta.h"
+#import "PierLimiteDisponibilidade.h"
 #import "PierCartaoImpressao.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -25,7 +26,7 @@
 /// Alterar limite
 /// Esse recurso permite realizar a altera\u00C3\u00A7\u00C3\u00A3o dos Limites de uma determinada Conta.
 ///
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// @param limiteGlobal Apresenta o valor do limite de cr\u00C3\u00A9dito que o portador do cart\u00C3\u00A3o possui.
 /// @param limiteCompra Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador possui para uso exclusivo em Compras Nacionais.
 /// @param limiteParcelado Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador possui para realizar transa\u00C3\u00A7\u00C3\u00B5es de compras parceladas.
@@ -41,7 +42,7 @@
 /// 
 ///
 /// @return PierConta*
--(NSNumber*) alterarLimiteUsingPUTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarLimiteUsingPUTWithId: (NSNumber*) _id
     limiteGlobal: (NSNumber*) limiteGlobal
     limiteCompra: (NSNumber*) limiteCompra
     limiteParcelado: (NSNumber*) limiteParcelado
@@ -62,14 +63,27 @@
 /// Alterar vencimento
 /// Esse recurso permite alterar o vencimento de uma conta especifica.
 ///
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// @param novoDiaVencimento Novo dia de vencimento.
 /// 
 ///
 /// @return PierConta*
--(NSNumber*) alterarVencimentoUsingPUTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarVencimentoUsingPUTWithId: (NSNumber*) _id
     novoDiaVencimento: (NSNumber*) novoDiaVencimento
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os limites da conta
+/// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierLimiteDisponibilidade*
+-(NSNumber*) consultarLimiteDisponibilidadeUsingGET1WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler;
 
 
 ///
@@ -77,11 +91,11 @@
 /// Apresenta dados de uma determinada conta
 /// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// 
 ///
 /// @return PierConta*
--(NSNumber*) consultarUsingGET1WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
 
 
@@ -90,12 +104,12 @@
 /// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o para impress\u00C3\u00A3o avulsa
 /// 
 ///
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
 /// 
 ///
 /// @return PierCartaoImpressao*
--(NSNumber*) gerarCartaoUsingPOSTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) gerarCartaoUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler;
 
@@ -105,6 +119,8 @@
 /// Lista contas existentes na base de dados do Emissor
 /// Este recurso permite listar contas existentes na base de dados do Emissor.
 ///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
 /// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id).
 /// @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id) que deu origem a Conta.
@@ -115,12 +131,12 @@
 /// @param dataStatusConta Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela.
 /// @param dataCadastro Apresenta a data em que o cart\u00C3\u00A3o foi gerado.
 /// @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
 /// @return PierConta*
--(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
     idProduto: (NSNumber*) idProduto
     idOrigemComercial: (NSNumber*) idOrigemComercial
     idPessoa: (NSNumber*) idPessoa
@@ -130,8 +146,6 @@
     dataStatusConta: (NSDate*) dataStatusConta
     dataCadastro: (NSDate*) dataCadastro
     dataUltimaAlteracaoVencimento: (NSDate*) dataUltimaAlteracaoVencimento
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
 
 
