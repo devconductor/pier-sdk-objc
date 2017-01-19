@@ -26,5 +26,8 @@
 /* Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades. [optional]
  */
 @property(nonatomic) NSString* mensagemConsultaNegada;
+/* Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. [optional]
+ */
+@property(nonatomic) NSNumber* flagPermiteNovaViaCartao;
 
 @end

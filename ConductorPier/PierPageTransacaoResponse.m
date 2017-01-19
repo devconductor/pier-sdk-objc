@@ -1,6 +1,6 @@
-#import "PierStatusCartao.h"
+#import "PierPageTransacaoResponse.h"
 
-@implementation PierStatusCartao
+@implementation PierPageTransacaoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"idStatusDestinoConta": @"idStatusDestinoConta", @"flagCobraTarifa": @"flagCobraTarifa", @"flagPermiteNovaViaCartao": @"flagPermiteNovaViaCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"flagCancelaNoDesbloqueio", @"flagPermiteNovaViaCartao"];
+  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

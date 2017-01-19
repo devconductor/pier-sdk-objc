@@ -1,6 +1,6 @@
-#import "PierStatusCartao.h"
+#import "PierFatura.h"
 
-@implementation PierStatusCartao
+@implementation PierFatura
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"idStatusDestinoConta": @"idStatusDestinoConta", @"flagCobraTarifa": @"flagCobraTarifa", @"flagPermiteNovaViaCartao": @"flagPermiteNovaViaCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataVencimento": @"dataVencimento", @"saldoFaturaAnterior": @"saldoFaturaAnterior", @"saldoMulta": @"saldoMulta", @"saldoCompras": @"saldoCompras", @"saldoPagamentos": @"saldoPagamentos", @"saldoTarifas": @"saldoTarifas", @"saldoDebitos": @"saldoDebitos", @"saldoCreditos": @"saldoCreditos", @"saldoAtualFinal": @"saldoAtualFinal", @"valorMinimoFatura": @"valorMinimoFatura", @"flagEmiteFatura": @"flagEmiteFatura" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"flagCancelaNoDesbloqueio", @"flagPermiteNovaViaCartao"];
+  NSArray *optionalProperties = @[@"dataVencimento", @"saldoFaturaAnterior", @"saldoMulta", @"saldoCompras", @"saldoPagamentos", @"saldoTarifas", @"saldoDebitos", @"saldoCreditos", @"saldoAtualFinal", @"valorMinimoFatura", @"flagEmiteFatura"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

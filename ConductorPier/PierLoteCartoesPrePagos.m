@@ -1,6 +1,6 @@
-#import "PierStatusCartao.h"
+#import "PierLoteCartoesPrePagos.h"
 
-@implementation PierStatusCartao
+@implementation PierLoteCartoesPrePagos
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"idStatusDestinoConta": @"idStatusDestinoConta", @"flagCobraTarifa": @"flagCobraTarifa", @"flagPermiteNovaViaCartao": @"flagPermiteNovaViaCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"idTipoCartao": @"idTipoCartao", @"idImagem": @"idImagem", @"idEndereco": @"idEndereco", @"quantidadeCartoes": @"quantidadeCartoes", @"dataCadastro": @"dataCadastro", @"usuarioCadastro": @"usuarioCadastro", @"statusProcessamento": @"statusProcessamento" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"flagCancelaNoDesbloqueio", @"flagPermiteNovaViaCartao"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

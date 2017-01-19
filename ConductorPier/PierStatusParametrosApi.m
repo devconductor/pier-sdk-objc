@@ -529,6 +529,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param flagCobraTarifa Quando ativa, indica que cart\u00C3\u00B5es que tiverem um idStatusCartao atribu\u00C3\u00ADdo com essa caracter\u00C3\u00ADstica, incluir\u00C3\u00A3o a cobran\u00C3\u00A7a de uma tarifa para a conta de acordo com os valores definidos nos par\u00C3\u00A2metros do emissor. (optional)
 ///
+///  @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a solicita\u00C3\u00A7\u00C3\u00A3o de uma nova via, sendo: 0: Inativo e 1: Ativo. (optional)
+///
 ///  @returns PierPageStatusCartoes*
 ///
 -(NSNumber*) listarStatusCartoesUsingGETWithPage: (NSNumber*) page
@@ -540,6 +542,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     idStatusDestinoDesbloqueio: (NSNumber*) idStatusDestinoDesbloqueio
     idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
+    flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler {
 
     
@@ -590,6 +593,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (flagCobraTarifa != nil) {
         
         queryParams[@"flagCobraTarifa"] = flagCobraTarifa;
+    }
+    if (flagPermiteNovaViaCartao != nil) {
+        
+        queryParams[@"flagPermiteNovaViaCartao"] = flagPermiteNovaViaCartao;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -658,6 +665,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param mensagemConsultaNegada Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades. (optional)
 ///
+///  @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
+///
 ///  @returns PierPageStatusContas*
 ///
 -(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
@@ -666,6 +675,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
+    flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler {
 
     
@@ -704,6 +714,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (mensagemConsultaNegada != nil) {
         
         queryParams[@"mensagemConsultaNegada"] = mensagemConsultaNegada;
+    }
+    if (flagPermiteNovaViaCartao != nil) {
+        
+        queryParams[@"flagPermiteNovaViaCartao"] = flagPermiteNovaViaCartao;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

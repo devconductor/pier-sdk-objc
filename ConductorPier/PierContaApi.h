@@ -2,6 +2,8 @@
 #import "PierConta.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierCartaoImpressao.h"
+#import "PierFatura.h"
+#import "PierPageTransacaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -116,6 +118,25 @@
 
 ///
 ///
+/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
+/// 
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
+/// @param dataVencimento Data de Vencimento da Fatura.
+/// 
+///
+/// @return PierFatura*
+-(NSNumber*) listarFaturasUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    dataVencimento: (NSDate*) dataVencimento
+    completionHandler: (void (^)(PierFatura* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista contas existentes na base de dados do Emissor
 /// Este recurso permite listar contas existentes na base de dados do Emissor.
 ///
@@ -147,6 +168,23 @@
     dataCadastro: (NSDate*) dataCadastro
     dataUltimaAlteracaoVencimento: (NSDate*) dataUltimaAlteracaoVencimento
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite listar todas as transa\u00C3\u00A7\u00C3\u00B5es da Conta
+/// 
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// 
+///
+/// @return PierPageTransacaoResponse*
+-(NSNumber*) transacoesUsingPOSTWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idConta: (NSNumber*) idConta
+    completionHandler: (void (^)(PierPageTransacaoResponse* output, NSError* error)) handler;
 
 
 

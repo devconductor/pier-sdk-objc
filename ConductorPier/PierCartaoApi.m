@@ -4,6 +4,7 @@
 #import "PierCartao.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierPortador.h"
+#import "PierLoteCartoesPrePagos.h"
 #import "PierPageCartoes.h"
 #import "PierValidaCartao.h"
 
@@ -798,6 +799,203 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
+/// Permite gerar um novo Lote de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pago
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores gerem uma determinada quantidade de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pagos, de forma n\u00C3\u00A3o nominal, os quais poder\u00C3\u00A3o ser comercializados e posteriormente vinculados a um cliente que o adquirir. Para isso, al\u00C3\u00A9m de definir quantos cart\u00C3\u00B5es dever\u00C3\u00A3o ser gerados, ser\u00C3\u00A1 poss\u00C3\u00ADvel definir qual a Origem Comercial, o Produto, o Tipo do Cart\u00C3\u00A3o, a Imagem e o Endere\u00C3\u00A7o para entrega dos Cart\u00C3\u00B5es presentes no lote gerado. Por padr\u00C3\u00A3o, todos os cart\u00C3\u00B5es ser\u00C3\u00A3o associados a um idPessoa fict\u00C3\u00ADcio e receber\u00C3\u00A1 um idConta \u00C3\u00BAnico para cada um deles. Feito isso, os Cart\u00C3\u00B5es gerados por esta opera\u00C3\u00A7\u00C3\u00A3o seguir\u00C3\u00A3o os mesmos processos de impress\u00C3\u00A3o via gr\u00C3\u00A1fica previamente definidos entre o Emissor e a Conductor.
+///  @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id). (optional)
+///
+///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
+///
+///  @param idTipoCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Cart\u00C3\u00A3o (id). (optional)
+///
+///  @param idImagem C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Imagem (id). (optional)
+///
+///  @param idEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). (optional)
+///
+///  @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. (optional)
+///
+///  @returns PierLoteCartoesPrePagos*
+///
+-(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithIdOrigemComercial: (NSNumber*) idOrigemComercial
+    idProduto: (NSNumber*) idProduto
+    idTipoCartao: (NSNumber*) idTipoCartao
+    idImagem: (NSNumber*) idImagem
+    idEndereco: (NSNumber*) idEndereco
+    quantidadeCartoes: (NSNumber*) quantidadeCartoes
+    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/pre-pagos/lotes"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idOrigemComercial != nil) {
+        
+        queryParams[@"idOrigemComercial"] = idOrigemComercial;
+    }
+    if (idProduto != nil) {
+        
+        queryParams[@"idProduto"] = idProduto;
+    }
+    if (idTipoCartao != nil) {
+        
+        queryParams[@"idTipoCartao"] = idTipoCartao;
+    }
+    if (idImagem != nil) {
+        
+        queryParams[@"idImagem"] = idImagem;
+    }
+    if (idEndereco != nil) {
+        
+        queryParams[@"idEndereco"] = idEndereco;
+    }
+    if (quantidadeCartoes != nil) {
+        
+        queryParams[@"quantidadeCartoes"] = quantidadeCartoes;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLoteCartoesPrePagos*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLoteCartoesPrePagos*)data, error);
+                           }
+          ];
+}
+
+///
+/// Gerar uma nova via de Cart\u00C3\u00A3o
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores ou seus clientes possam solicitar a gera\u00C3\u00A7\u00C3\u00A3o de uma nova via de Cart\u00C3\u00A3o que ser\u00C3\u00A1 encaminhando para impress\u00C3\u00A3o e postagem de acordo com os fluxos padr\u00C3\u00B5es j\u00C3\u00A1 definidos pelo emissor. Para isso, \u00C3\u00A9 preciso que o cliente j\u00C3\u00A1 possua um cart\u00C3\u00A3o gerado e informar o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o deste (idCartao) para que ele possa utilizar esta opera\u00C3\u00A7\u00C3\u00A3o. Assim, esta funcionalidade se aplica apenas para a gera\u00C3\u00A7\u00C3\u00A3o de cart\u00C3\u00B5es f\u00C3\u00ADsicos.
+///  @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id) 
+///
+///  @returns PierCartao*
+///
+-(NSNumber*) gerarNovaViaUsingPOSTWithIdCartao: (NSNumber*) idCartao
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idCartao' is set
+    if (idCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `gerarNovaViaUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id_cartao}/gerar-nova-via"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idCartao != nil) {
+        pathParams[@"id_cartao"] = idCartao;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartao*)data, error);
+                           }
+          ];
+}
+
+///
 /// Permite listar os Lotes de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pago
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
@@ -818,11 +1016,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. (optional)
 ///
-///  @param dataCadastroLote Data de Cadastro do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais. (optional)
+///  @param dataCadastro Data de Cadastro do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais. (optional)
 ///
 ///  @param usuarioCadastro Nome do Usu\u00C3\u00A1rio que criou o Lote. (optional)
 ///
-///  @param flagProcessado Indica o Status de Processamento do Lote. (optional)
+///  @param statusProcessamento Indica o Status de Processamento do Lote. (optional)
 ///
 ///  @returns PierPageCartoes*
 ///
@@ -835,9 +1033,9 @@ static PierCartaoApi* singletonAPI = nil;
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
-    dataCadastroLote: (NSDate*) dataCadastroLote
+    dataCadastro: (NSDate*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
-    flagProcessado: (NSNumber*) flagProcessado
+    statusProcessamento: (NSNumber*) statusProcessamento
     completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
 
     
@@ -889,17 +1087,17 @@ static PierCartaoApi* singletonAPI = nil;
         
         queryParams[@"quantidadeCartoes"] = quantidadeCartoes;
     }
-    if (dataCadastroLote != nil) {
+    if (dataCadastro != nil) {
         
-        queryParams[@"dataCadastroLote"] = dataCadastroLote;
+        queryParams[@"dataCadastro"] = dataCadastro;
     }
     if (usuarioCadastro != nil) {
         
         queryParams[@"usuarioCadastro"] = usuarioCadastro;
     }
-    if (flagProcessado != nil) {
+    if (statusProcessamento != nil) {
         
-        queryParams[@"flagProcessado"] = flagProcessado;
+        queryParams[@"statusProcessamento"] = statusProcessamento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

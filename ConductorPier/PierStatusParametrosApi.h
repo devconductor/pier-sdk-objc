@@ -111,6 +111,7 @@
 /// @param idStatusDestinoDesbloqueio Indica qual o idStatusCartao que ser\u00C3\u00A1 atribu\u00C3\u00ADdo aos cart\u00C3\u00B5es que forem cancelados devido ao desbloqueio de um novo cart\u00C3\u00A3o.
 /// @param idStatusDestinoConta Indica qual o idStatusCartao que ser\u00C3\u00A1 atribu\u00C3\u00ADdo a conta, caso ela seja cancelada devido ao bloqueio de um cart\u00C3\u00A3o quando for utilizado um idStatusCartao no processo de Bloqueio que possua essa caracter\u00C3\u00ADstica.
 /// @param flagCobraTarifa Quando ativa, indica que cart\u00C3\u00B5es que tiverem um idStatusCartao atribu\u00C3\u00ADdo com essa caracter\u00C3\u00ADstica, incluir\u00C3\u00A3o a cobran\u00C3\u00A7a de uma tarifa para a conta de acordo com os valores definidos nos par\u00C3\u00A2metros do emissor.
+/// @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a solicita\u00C3\u00A7\u00C3\u00A3o de uma nova via, sendo: 0: Inativo e 1: Ativo.
 /// 
 ///
 /// @return PierPageStatusCartoes*
@@ -123,6 +124,7 @@
     idStatusDestinoDesbloqueio: (NSNumber*) idStatusDestinoDesbloqueio
     idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
+    flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler;
 
 
@@ -137,6 +139,7 @@
 /// @param nome Nome atribu\u00C3\u00ADdo ao Status da Conta.
 /// @param flagAlteraLimite Par\u00C3\u00A2metro que define se o Status da Conta permite realizar a Altera\u00C3\u00A7\u00C3\u00A3o de Limites do Portador, sendo: 0: Inativo e 1: Ativo.
 /// @param mensagemConsultaNegada Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades.
+/// @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo.
 /// 
 ///
 /// @return PierPageStatusContas*
@@ -146,6 +149,7 @@
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
+    flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler;
 
 
