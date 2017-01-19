@@ -658,25 +658,30 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// Listar Faturas da Conta
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
 ///
 ///  @param dataVencimento Data de Vencimento da Fatura. (optional)
 ///
 ///  @returns PierFatura*
 ///
--(NSNumber*) listarFaturasUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     dataVencimento: (NSDate*) dataVencimento
     completionHandler: (void (^)(PierFatura* output, NSError* error)) handler {
 
     
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarFaturasUsingGET`"];
+    }
+    
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/faturas"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/faturas"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -684,6 +689,9 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
@@ -694,10 +702,6 @@ static PierContaApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
     }
     if (dataVencimento != nil) {
         
@@ -922,14 +926,14 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransacaoResponse*
 ///
--(NSNumber*) transacoesUsingPOSTWithPage: (NSNumber*) page
+-(NSNumber*) transacoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierPageTransacaoResponse* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id_conta}/timeline"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/timeline"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -987,7 +991,7 @@ static PierContaApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"GET"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

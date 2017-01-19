@@ -121,16 +121,16 @@
 /// Listar Faturas da Conta
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
 ///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
 /// @param dataVencimento Data de Vencimento da Fatura.
 /// 
 ///
 /// @return PierFatura*
--(NSNumber*) listarFaturasUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     dataVencimento: (NSDate*) dataVencimento
     completionHandler: (void (^)(PierFatura* output, NSError* error)) handler;
 
@@ -181,7 +181,7 @@
 /// 
 ///
 /// @return PierPageTransacaoResponse*
--(NSNumber*) transacoesUsingPOSTWithPage: (NSNumber*) page
+-(NSNumber*) transacoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierPageTransacaoResponse* output, NSError* error)) handler;
