@@ -918,19 +918,24 @@ static PierContaApi* singletonAPI = nil;
 ///
 /// Permite listar uma linha do tempo com os eventos da conta
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir a listagem, em formato de timeline, dos eventos vinculados a uma detemrinada conta. Transa\u00C3\u00A7\u00C3\u00B5es, fechamento da fatura, pagamentos, gera\u00C3\u00A7\u00C3\u00A3o de cart\u00C3\u00B5es e altera\u00C3\u00A7\u00C3\u00A3o de limite s\u00C3\u00A3o exemplos de eventos contemplados por esta funcionalidade. Neste m\u00C3\u00A9todo, as opera\u00C3\u00A7\u00C3\u00B5es s\u00C3\u00A3o ordenadas de forma decrescente.
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). (optional)
-///
 ///  @returns PierPageTransacaoResponse*
 ///
--(NSNumber*) transacoesUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) transacoesUsingGETWithId: (NSNumber*) _id
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
-    idConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierPageTransacaoResponse* output, NSError* error)) handler {
 
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `transacoesUsingGET`"];
+    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/timeline"];
@@ -941,6 +946,9 @@ static PierContaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
@@ -951,10 +959,6 @@ static PierContaApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
-    }
-    if (idConta != nil) {
-        
-        queryParams[@"idConta"] = idConta;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
