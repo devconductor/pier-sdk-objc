@@ -6,14 +6,15 @@
 #import "PierProduto.h"
 #import "PierTipoEndereco.h"
 #import "PierTipoTelefone.h"
+#import "PierHistoricoTelefone.h"
 #import "PierPageOrigensComerciais.h"
 #import "PierListaProdutos.h"
+#import "PierPageTipoTelefones.h"
 #import "PierPageEnderecos.h"
 #import "PierPagePessoas.h"
 #import "PierPagePortador.h"
 #import "PierPageTelefones.h"
 #import "PierPageTiposEndereco.h"
-#import "PierPageTipoTelefones.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -78,7 +79,7 @@
 /// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
 /// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
 /// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
-/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ.
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
 /// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
 /// 
 ///
@@ -149,7 +150,7 @@
 /// 
 ///
 /// @return PierEndereco*
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler;
 
 
@@ -162,7 +163,7 @@
 /// 
 ///
 /// @return PierPessoa*
--(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
 
 
@@ -175,7 +176,7 @@
 /// 
 ///
 /// @return PierTelefone*
--(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
 
 
@@ -188,7 +189,7 @@
 /// 
 ///
 /// @return PierTipoEndereco*
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEndereco* output, NSError* error)) handler;
 
 
@@ -201,8 +202,21 @@
 /// 
 ///
 /// @return PierTipoTelefone*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefone* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar altera\u00C3\u00A7\u00C3\u00B5es de telefones realizadas nos \u00C3\u00BAltimos 60 dias
+/// Este m\u00C3\u00A9todo permite verificar quais os telefones de um determinado que cliente que sofreram altera\u00C3\u00A7\u00C3\u00A3o nos \u00C3\u00BAltimos 60 dias.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
+/// 
+///
+/// @return PierHistoricoTelefone*
+-(NSNumber*) listarHistoricoTelefonesUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierHistoricoTelefone* output, NSError* error)) handler;
 
 
 ///
@@ -249,6 +263,25 @@
 
 ///
 ///
+/// Lista os Tipos de Telefones
+/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
+/// @param nome Nome do Tipo do Telefone
+/// 
+///
+/// @return PierPageTipoTelefones*
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
+    completionHandler: (void (^)(PierPageTipoTelefones* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista os Endere\u00C3\u00A7os cadastrados para o Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
 ///
@@ -271,7 +304,7 @@
 /// 
 ///
 /// @return PierPageEnderecos*
--(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
@@ -307,7 +340,7 @@
 /// 
 ///
 /// @return PierPagePessoas*
--(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -332,7 +365,6 @@
 /// @param idParentesco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco (id)
 /// @param tipoPortador Apresenta o tipo do Portador do cart\u00C3\u00A3o, sendo: (&#39;T&#39;: Titular, &#39;A&#39;: Adicional).
 /// @param nomeImpresso Apresenta o nome a ser impresso no cart\u00C3\u00A3o.
-/// @param idImagem Apresenta o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da imagem do cart\u00C3\u00A3o.
 /// @param idTipoCartao Apresenta o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do cart\u00C3\u00A3o (id), que ser\u00C3\u00A1 utilizado para gerar os cart\u00C3\u00B5es deste portador, vinculados a sua respectiva conta atrav\u00C3\u00A9s do campo idConta.
 /// @param flagAtivo Quanto ativa, indica que o cadastro do Portador est\u00C3\u00A1 ativo, em emissores que realizam este tipo de gest\u00C3\u00A3o.
 /// @param dataCadastroPortador Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o.
@@ -340,7 +372,7 @@
 /// 
 ///
 /// @return PierPagePortador*
--(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
     idProduto: (NSNumber*) idProduto
@@ -348,7 +380,6 @@
     idParentesco: (NSNumber*) idParentesco
     tipoPortador: (NSString*) tipoPortador
     nomeImpresso: (NSString*) nomeImpresso
-    idImagem: (NSNumber*) idImagem
     idTipoCartao: (NSNumber*) idTipoCartao
     flagAtivo: (NSNumber*) flagAtivo
     dataCadastroPortador: (NSDate*) dataCadastroPortador
@@ -373,7 +404,7 @@
 /// 
 ///
 /// @return PierPageTelefones*
--(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
@@ -397,30 +428,11 @@
 /// 
 ///
 /// @return PierPageTiposEndereco*
--(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTiposEndereco* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista os Tipos de Telefones
-/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
-/// @param nome Nome do Tipo do Telefone
-/// 
-///
-/// @return PierPageTipoTelefones*
 -(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTipoTelefones* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTiposEndereco* output, NSError* error)) handler;
 
 
 ///
@@ -442,7 +454,7 @@
 /// 
 ///
 /// @return PierEndereco*
--(NSNumber*) salvarUsingPOSTWithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST1WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
@@ -465,12 +477,12 @@
 /// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
 /// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
 /// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
-/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ.
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
 /// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
 /// 
 ///
 /// @return PierPessoa*
--(NSNumber*) salvarUsingPOST1WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST2WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
@@ -492,7 +504,7 @@
 /// 
 ///
 /// @return PierTelefone*
--(NSNumber*) salvarUsingPOST2WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST3WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone

@@ -1,6 +1,6 @@
-#import "PierFatura.h"
+#import "PierNotificacaoPushResponse.h"
 
-@implementation PierFatura
+@implementation PierNotificacaoPushResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataVencimento": @"dataVencimento", @"saldoFaturaAnterior": @"saldoFaturaAnterior", @"saldoMulta": @"saldoMulta", @"saldoCompras": @"saldoCompras", @"saldoPagamentos": @"saldoPagamentos", @"saldoTarifas": @"saldoTarifas", @"saldoDebitos": @"saldoDebitos", @"saldoCreditos": @"saldoCreditos", @"saldoAtualFinal": @"saldoAtualFinal", @"valorMinimoFatura": @"valorMinimoFatura", @"flagEmiteFatura": @"flagEmiteFatura" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataEnvio": @"dataEnvio", @"idEmissor": @"idEmissor", @"evento": @"evento", @"status": @"status", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"tokenDispositivo": @"tokenDispositivo", @"titulo": @"titulo", @"conteudo": @"conteudo", @"plataforma": @"plataforma", @"protocolo": @"protocolo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataVencimento", @"saldoFaturaAnterior", @"saldoMulta", @"saldoCompras", @"saldoPagamentos", @"saldoTarifas", @"saldoDebitos", @"saldoCreditos", @"saldoAtualFinal", @"valorMinimoFatura", @"flagEmiteFatura"];
+  NSArray *optionalProperties = @[@"dataEnvio", @"idEmissor", @"evento", @"status", @"plataforma", @"protocolo"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

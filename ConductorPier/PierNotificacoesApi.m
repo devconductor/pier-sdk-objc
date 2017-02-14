@@ -1,6 +1,12 @@
 #import "PierNotificacoesApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierSMS.h"
+#import "PierPagePush.h"
+#import "PierPageSMS.h"
+#import "PierPushFCMEGCM.h"
+#import "PierNotificacaoSMSResponse.h"
+#import "PierPushAPNS.h"
+#import "PierNotificacaoSMSBody.h"
 
 
 @interface PierNotificacoesApi ()
@@ -72,7 +78,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Atualizar SMS
 /// Esse recurso permite atualizar o status do SMS do emissor
-///  @param seuNum Seu n\u00C3\u00BAmero 
+///  @param nsu Seu n\u00C3\u00BAmero 
 ///
 ///  @param status Status 
 ///
@@ -84,7 +90,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @returns PierSMS*
 ///
--(NSNumber*) atualizarSMSUsingPUTWithSeuNum: (NSString*) seuNum
+-(NSNumber*) atualizarSMSUsingPOSTWithNsu: (NSString*) nsu
     status: (NSString*) status
     data: (NSString*) data
     textoStatus: (NSString*) textoStatus
@@ -92,29 +98,29 @@ static PierNotificacoesApi* singletonAPI = nil;
     completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'seuNum' is set
-    if (seuNum == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `seuNum` when calling `atualizarSMSUsingPUT`"];
+    // verify the required parameter 'nsu' is set
+    if (nsu == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nsu` when calling `atualizarSMSUsingPOST`"];
     }
     
     // verify the required parameter 'status' is set
     if (status == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `status` when calling `atualizarSMSUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `status` when calling `atualizarSMSUsingPOST`"];
     }
     
     // verify the required parameter 'data' is set
     if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `atualizarSMSUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `atualizarSMSUsingPOST`"];
     }
     
     // verify the required parameter 'textoStatus' is set
     if (textoStatus == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `textoStatus` when calling `atualizarSMSUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `textoStatus` when calling `atualizarSMSUsingPOST`"];
     }
     
     // verify the required parameter 'operadora' is set
     if (operadora == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `operadora` when calling `atualizarSMSUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `operadora` when calling `atualizarSMSUsingPOST`"];
     }
     
 
@@ -129,25 +135,25 @@ static PierNotificacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (seuNum != nil) {
+    if (nsu != nil) {
         
-        queryParams[@"SeuNum"] = seuNum;
+        queryParams[@"nsu"] = nsu;
     }
     if (status != nil) {
         
-        queryParams[@"Status"] = status;
+        queryParams[@"status"] = status;
     }
     if (data != nil) {
         
-        queryParams[@"Data"] = data;
+        queryParams[@"data"] = data;
     }
     if (textoStatus != nil) {
         
-        queryParams[@"TextoStatus"] = textoStatus;
+        queryParams[@"texto_status"] = textoStatus;
     }
     if (operadora != nil) {
         
-        queryParams[@"Operadora"] = operadora;
+        queryParams[@"operadora"] = operadora;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -184,7 +190,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -202,39 +208,16 @@ static PierNotificacoesApi* singletonAPI = nil;
 }
 
 ///
-/// Responder SMS
-/// Esse recurso permite atualizar a resposta do SMS, fornecida pedo usu\u00C3\u00A1rio
-///  @param seunum Seu n\u00C3\u00BAmero 
+/// Limpar Acessos
+/// Esse recurso permite limpar a lista de emissores que possuem acesso a envio de SMS pela TWW.
+///  @returns NSString*
 ///
-///  @param data Data 
-///
-///  @param textoSmsMo TextoStatus 
-///
-///  @returns PierSMS*
-///
--(NSNumber*) responderSMSUsingPUTWithSeunum: (NSString*) seunum
-    data: (NSString*) data
-    textoSmsMo: (NSString*) textoSmsMo
-    completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
+-(NSNumber*) limparAcessoTWWUsingGETWithCompletionHandler: 
+    (void (^)(NSString* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'seunum' is set
-    if (seunum == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `seunum` when calling `responderSMSUsingPUT`"];
-    }
-    
-    // verify the required parameter 'data' is set
-    if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `responderSMSUsingPUT`"];
-    }
-    
-    // verify the required parameter 'textoSmsMo' is set
-    if (textoSmsMo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `textoSmsMo` when calling `responderSMSUsingPUT`"];
-    }
-    
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms/responder"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms/limpar"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -245,17 +228,126 @@ static PierNotificacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (seunum != nil) {
-        
-        queryParams[@"Seunum"] = seunum;
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
     }
-    if (data != nil) {
-        
-        queryParams[@"Data"] = data;
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
     }
-    if (textoSmsMo != nil) {
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
+                           }
+          ];
+}
+
+///
+/// Listar Push
+/// Esse recurso permite listar os Pushes do emissor
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
+///  @param dataEnvio Apresenta a data e em que o registro foi enviado para o dispositivo. (optional)
+///
+///  @param evento Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
+///
+///  @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
+///
+///  @param plataforma Plataforma de Push notifications. (optional)
+///
+///  @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es (optional)
+///
+///  @returns PierPagePush*
+///
+-(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    dataEnvio: (NSDate*) dataEnvio
+    evento: (NSString*) evento
+    status: (NSString*) status
+    plataforma: (NSString*) plataforma
+    protocolo: (NSString*) protocolo
+    completionHandler: (void (^)(PierPagePush* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/push"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
         
-        queryParams[@"TextoSmsMo"] = textoSmsMo;
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (dataEnvio != nil) {
+        
+        queryParams[@"dataEnvio"] = dataEnvio;
+    }
+    if (evento != nil) {
+        
+        queryParams[@"evento"] = evento;
+    }
+    if (status != nil) {
+        
+        queryParams[@"status"] = status;
+    }
+    if (plataforma != nil) {
+        
+        queryParams[@"plataforma"] = plataforma;
+    }
+    if (protocolo != nil) {
+        
+        queryParams[@"protocolo"] = protocolo;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -292,7 +384,236 @@ static PierNotificacoesApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPagePush*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPagePush*)data, error);
+                           }
+          ];
+}
+
+///
+/// Listar SMS
+/// Esse recurso permite listar os SMS do emissor
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
+///  @param dataInclusao Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado (optional)
+///
+///  @param evento Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
+///
+///  @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
+///
+///  @param operadora Nome da operadora a qual a notifica\u00C3\u00A7\u00C3\u00A3o foi enviada. (optional)
+///
+///  @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es (optional)
+///
+///  @returns PierPageSMS*
+///
+-(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    dataInclusao: (NSDate*) dataInclusao
+    evento: (NSString*) evento
+    status: (NSString*) status
+    operadora: (NSString*) operadora
+    protocolo: (NSString*) protocolo
+    completionHandler: (void (^)(PierPageSMS* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (dataInclusao != nil) {
+        
+        queryParams[@"dataInclusao"] = dataInclusao;
+    }
+    if (evento != nil) {
+        
+        queryParams[@"evento"] = evento;
+    }
+    if (status != nil) {
+        
+        queryParams[@"status"] = status;
+    }
+    if (operadora != nil) {
+        
+        queryParams[@"operadora"] = operadora;
+    }
+    if (protocolo != nil) {
+        
+        queryParams[@"protocolo"] = protocolo;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageSMS*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageSMS*)data, error);
+                           }
+          ];
+}
+
+///
+/// Responder SMS
+/// Esse recurso permite atualizar a resposta do SMS, fornecida pedo usu\u00C3\u00A1rio
+///  @param nsu Seu n\u00C3\u00BAmero 
+///
+///  @param data Data 
+///
+///  @param resposta TextoStatus 
+///
+///  @returns PierSMS*
+///
+-(NSNumber*) responderSMSUsingPOSTWithNsu: (NSString*) nsu
+    data: (NSString*) data
+    resposta: (NSString*) resposta
+    completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'nsu' is set
+    if (nsu == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nsu` when calling `responderSMSUsingPOST`"];
+    }
+    
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `responderSMSUsingPOST`"];
+    }
+    
+    // verify the required parameter 'resposta' is set
+    if (resposta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `responderSMSUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms/responder"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (nsu != nil) {
+        
+        queryParams[@"nsu"] = nsu;
+    }
+    if (data != nil) {
+        
+        queryParams[@"data"] = data;
+    }
+    if (resposta != nil) {
+        
+        queryParams[@"resposta"] = resposta;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -305,6 +626,326 @@ static PierNotificacoesApi* singletonAPI = nil;
                               responseType: @"PierSMS*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierSMS*)data, error);
+                           }
+          ];
+}
+
+///
+/// Enviar Push FCM
+/// Esse recurso permite enviar Push para um determinado dipositivo movel atrav\u00C3\u00A9s da plataforma FCM (Firebase Cloud Messaging).
+///  @param pushPersists pushPersists 
+///
+///  @returns PierNotificacaoSMSResponse*
+///
+-(NSNumber*) salvarPushFCMUsingPOSTWithPushPersists: (NSArray<PierPushFCMEGCM>*) pushPersists
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'pushPersists' is set
+    if (pushPersists == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pushPersists` when calling `salvarPushFCMUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/push/fcm"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = pushPersists;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierNotificacaoSMSResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierNotificacaoSMSResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Enviar Push GCM
+/// Esse recurso permite enviar Push para um determinado dipositivo movel atrav\u00C3\u00A9s da plataforma GCM (Google Cloud Messaging).
+///  @param pushPersists pushPersists 
+///
+///  @returns PierNotificacaoSMSResponse*
+///
+-(NSNumber*) salvarPushGCMUsingPOSTWithPushPersists: (NSArray<PierPushFCMEGCM>*) pushPersists
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'pushPersists' is set
+    if (pushPersists == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pushPersists` when calling `salvarPushGCMUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/push/gcm"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = pushPersists;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierNotificacaoSMSResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierNotificacaoSMSResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Enviar Push APNS
+/// Esse recurso permite enviar Push para um determinado dipositivo movel atrav\u00C3\u00A9s da plataforma APNS (Apple Push Notification Service).
+///  @param pushPersists pushPersists 
+///
+///  @returns PierNotificacaoSMSResponse*
+///
+-(NSNumber*) salvarPushUsingPOSTWithPushPersists: (NSArray<PierPushAPNS>*) pushPersists
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'pushPersists' is set
+    if (pushPersists == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pushPersists` when calling `salvarPushUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/push/apns"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = pushPersists;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierNotificacaoSMSResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierNotificacaoSMSResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Enviar SMS
+/// Esse recurso permite enviar uma lista de SMS.
+///  @param listaSMS listaSMS 
+///
+///  @returns PierNotificacaoSMSResponse*
+///
+-(NSNumber*) salvarSMSUsingPOSTWithListaSMS: (NSArray<PierNotificacaoSMSBody>*) listaSMS
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'listaSMS' is set
+    if (listaSMS == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `listaSMS` when calling `salvarSMSUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = listaSMS;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierNotificacaoSMSResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierNotificacaoSMSResponse*)data, error);
                            }
           ];
 }

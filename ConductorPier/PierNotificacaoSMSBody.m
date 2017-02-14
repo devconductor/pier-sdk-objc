@@ -1,6 +1,6 @@
-#import "PierValidaCartao.h"
+#import "PierNotificacaoSMSBody.h"
 
-@implementation PierValidaCartao
+@implementation PierNotificacaoSMSBody
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idStatusCartao": @"idStatusCartao", @"statusCartao": @"statusCartao", @"idStatusConta": @"idStatusConta", @"statusConta": @"statusConta", @"idConta": @"idConta", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"criptogramaResposta": @"criptogramaResposta" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsu": @"nsu", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"celular": @"celular", @"conteudo": @"conteudo", @"dataAgendamento": @"dataAgendamento", @"evento": @"evento" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idStatusCartao", @"statusCartao", @"idStatusConta", @"statusConta", @"idConta", @"numeroAgencia", @"numeroContaCorrente", @"criptogramaResposta"];
+  NSArray *optionalProperties = @[@"dataAgendamento", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -1,16 +1,15 @@
-#import "PierWebhooksApi.h"
+#import "PierFraudesApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierWebHook.h"
-#import "PierPageWebHooks.h"
+#import "PierAtendimentoCliente.h"
 
 
-@interface PierWebhooksApi ()
+@interface PierFraudesApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierWebhooksApi
+@implementation PierFraudesApi
 
-static PierWebhooksApi* singletonAPI = nil;
+static PierFraudesApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +37,19 @@ static PierWebhooksApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierWebhooksApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierFraudesApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierWebhooksApi alloc] init];
+        singletonAPI = [[PierFraudesApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierWebhooksApi*) sharedAPI {
++(PierFraudesApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierWebhooksApi alloc] init];
+        singletonAPI = [[PierFraudesApi alloc] init];
     }
     return singletonAPI;
 }
@@ -71,143 +70,23 @@ static PierWebhooksApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Alterar Webhook
-/// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
-///  @param _id C\u00C3\u00B3digo identificador do Webhook 
+/// Apresenta os dados de um determinado Atendimento
+/// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Atendimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (idAtendimento).
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do atendimento cliente (id). 
 ///
-///  @param evento Evento a ser chamado pelo WebHook 
+///  @returns PierAtendimentoCliente*
 ///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook 
-///
-///  @param url URL que a ser consumida pelo WebHook 
-///
-///  @returns PierWebHook*
-///
--(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
-    evento: (NSString*) evento
-    metodo: (NSString*) metodo
-    url: (NSString*) url
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT3`"];
-    }
-    
-    // verify the required parameter 'evento' is set
-    if (evento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `evento` when calling `alterarUsingPUT3`"];
-    }
-    
-    // verify the required parameter 'metodo' is set
-    if (metodo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `metodo` when calling `alterarUsingPUT3`"];
-    }
-    
-    // verify the required parameter 'url' is set
-    if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (evento != nil) {
-        
-        queryParams[@"evento"] = evento;
-    }
-    if (metodo != nil) {
-        
-        queryParams[@"metodo"] = metodo;
-    }
-    if (url != nil) {
-        
-        queryParams[@"url"] = url;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierWebHook*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHook*)data, error);
-                           }
-          ];
-}
-
-///
-/// Consultar Webhook
-/// Este m\u00C3\u00A9todo permite que sejam consultado um webhook do emissor atrav\u00C3\u00A9s de um id especifico
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id). 
-///
-///  @returns PierWebHook*
-///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -266,41 +145,44 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierWebHook*"
+                              responseType: @"PierAtendimentoCliente*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHook*)data, error);
+                               handler((PierAtendimentoCliente*)data, error);
                            }
           ];
 }
 
 ///
-/// Lista os Webhooks
-/// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
+/// Lista todos os atendimentos
+/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @param _id Id do WebHook (optional)
+///  @param idAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Atendimento (id) (optional)
 ///
-///  @param evento Evento a ser chamado pelo WebHook (optional)
+///  @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id) (optional)
 ///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook (optional)
+///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
 ///
-///  @param url URL que a ser consumida pelo WebHook (optional)
+///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
 ///
-///  @returns PierPageWebHooks*
+///  @param dataAtendimento Apresenta a data em que o Atendimento foi realizado. (optional)
 ///
--(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
+///  @returns PierAtendimentoCliente*
+///
+-(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    evento: (NSString*) evento
-    metodo: (NSString*) metodo
-    url: (NSString*) url
-    completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler {
+    idAtendimento: (NSNumber*) idAtendimento
+    idTipoAtendimento: (NSNumber*) idTipoAtendimento
+    idConta: (NSNumber*) idConta
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSDate*) dataAtendimento
+    completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -319,21 +201,25 @@ static PierWebhooksApi* singletonAPI = nil;
         
         queryParams[@"limit"] = limit;
     }
-    if (_id != nil) {
+    if (idAtendimento != nil) {
         
-        queryParams[@"id"] = _id;
+        queryParams[@"idAtendimento"] = idAtendimento;
     }
-    if (evento != nil) {
+    if (idTipoAtendimento != nil) {
         
-        queryParams[@"evento"] = evento;
+        queryParams[@"idTipoAtendimento"] = idTipoAtendimento;
     }
-    if (metodo != nil) {
+    if (idConta != nil) {
         
-        queryParams[@"metodo"] = metodo;
+        queryParams[@"idConta"] = idConta;
     }
-    if (url != nil) {
+    if (nomeAtendente != nil) {
         
-        queryParams[@"url"] = url;
+        queryParams[@"nomeAtendente"] = nomeAtendente;
+    }
+    if (dataAtendimento != nil) {
+        
+        queryParams[@"dataAtendimento"] = dataAtendimento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -380,47 +266,47 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageWebHooks*"
+                              responseType: @"PierAtendimentoCliente*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageWebHooks*)data, error);
+                               handler((PierAtendimentoCliente*)data, error);
                            }
           ];
 }
 
 ///
-/// Salvar Webhook
-/// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
-///  @param evento Evento a ser chamado pelo WebHook 
+/// Cadastro um novo Atendimento do tipo Gen\u00C3\u00A9rico para uma Conta
+/// 
+///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o Atendimento est\u00C3\u00A1 associado (optional)
 ///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook 
+///  @param conteudoAtendimento Apresenta as informa\u00C3\u00A7\u00C3\u00B5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00C3\u00A7\u00C3\u00B5es relacionadas ao Atendimento. (optional)
 ///
-///  @param url URL que a ser consumida pelo WebHook 
+///  @param detalhesAtendimento Apresenta os detalhes lan\u00C3\u00A7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento. (optional)
 ///
-///  @returns PierWebHook*
+///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
 ///
--(NSNumber*) salvarUsingPOST4WithEvento: (NSString*) evento
-    metodo: (NSString*) metodo
-    url: (NSString*) url
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
+///  @param dataAtendimento Apresenta a data em que o Atendimento foi realizado. (optional)
+///
+///  @param dataAgendamento Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data para processamento ou a data para retorno do Atendimento. (optional)
+///
+///  @param dataHoraInicioAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. (optional)
+///
+///  @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. (optional)
+///
+///  @returns PierAtendimentoCliente*
+///
+-(NSNumber*) salvarUsingPOSTWithIdConta: (NSNumber*) idConta
+    conteudoAtendimento: (NSString*) conteudoAtendimento
+    detalhesAtendimento: (NSString*) detalhesAtendimento
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSDate*) dataAtendimento
+    dataAgendamento: (NSDate*) dataAgendamento
+    dataHoraInicioAtendimento: (NSDate*) dataHoraInicioAtendimento
+    dataHoraFimAtendimento: (NSDate*) dataHoraFimAtendimento
+    completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'evento' is set
-    if (evento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `evento` when calling `salvarUsingPOST4`"];
-    }
-    
-    // verify the required parameter 'metodo' is set
-    if (metodo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `metodo` when calling `salvarUsingPOST4`"];
-    }
-    
-    // verify the required parameter 'url' is set
-    if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST4`"];
-    }
-    
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -431,17 +317,37 @@ static PierWebhooksApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (evento != nil) {
+    if (idConta != nil) {
         
-        queryParams[@"evento"] = evento;
+        queryParams[@"idConta"] = idConta;
     }
-    if (metodo != nil) {
+    if (conteudoAtendimento != nil) {
         
-        queryParams[@"metodo"] = metodo;
+        queryParams[@"conteudoAtendimento"] = conteudoAtendimento;
     }
-    if (url != nil) {
+    if (detalhesAtendimento != nil) {
         
-        queryParams[@"url"] = url;
+        queryParams[@"detalhesAtendimento"] = detalhesAtendimento;
+    }
+    if (nomeAtendente != nil) {
+        
+        queryParams[@"nomeAtendente"] = nomeAtendente;
+    }
+    if (dataAtendimento != nil) {
+        
+        queryParams[@"dataAtendimento"] = dataAtendimento;
+    }
+    if (dataAgendamento != nil) {
+        
+        queryParams[@"dataAgendamento"] = dataAgendamento;
+    }
+    if (dataHoraInicioAtendimento != nil) {
+        
+        queryParams[@"dataHoraInicioAtendimento"] = dataHoraInicioAtendimento;
+    }
+    if (dataHoraFimAtendimento != nil) {
+        
+        queryParams[@"dataHoraFimAtendimento"] = dataHoraFimAtendimento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -488,9 +394,9 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierWebHook*"
+                              responseType: @"PierAtendimentoCliente*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHook*)data, error);
+                               handler((PierAtendimentoCliente*)data, error);
                            }
           ];
 }

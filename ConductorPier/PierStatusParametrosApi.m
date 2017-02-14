@@ -249,13 +249,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusConta*
 ///
--(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET4`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
     }
     
 
@@ -332,13 +332,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusImpressao*
 ///
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 
@@ -669,7 +669,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusContas*
 ///
--(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -784,7 +784,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressao*
 ///
--(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome

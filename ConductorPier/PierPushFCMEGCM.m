@@ -1,6 +1,6 @@
-#import "PierValidaCartao.h"
+#import "PierPushFCMEGCM.h"
 
-@implementation PierValidaCartao
+@implementation PierPushFCMEGCM
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idStatusCartao": @"idStatusCartao", @"statusCartao": @"statusCartao", @"idStatusConta": @"idStatusConta", @"statusConta": @"statusConta", @"idConta": @"idConta", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"criptogramaResposta": @"criptogramaResposta" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"tokenDispositivo": @"tokenDispositivo", @"tokenServidor": @"tokenServidor", @"titulo": @"titulo", @"conteudo": @"conteudo", @"evento": @"evento", @"icone": @"icone", @"som": @"som", @"cor": @"cor" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idStatusCartao", @"statusCartao", @"idStatusConta", @"statusConta", @"idConta", @"numeroAgencia", @"numeroContaCorrente", @"criptogramaResposta"];
+  NSArray *optionalProperties = @[@"icone", @"som", @"cor"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

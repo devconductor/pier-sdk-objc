@@ -639,13 +639,13 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierCartao*
 ///
--(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
     }
     
 
@@ -1196,7 +1196,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCartoes*
 ///
--(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao

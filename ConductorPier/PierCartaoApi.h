@@ -122,7 +122,7 @@
 /// 
 ///
 /// @return PierCartao*
--(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
 
 
@@ -238,7 +238,7 @@
 /// 
 ///
 /// @return PierPageCartoes*
--(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao

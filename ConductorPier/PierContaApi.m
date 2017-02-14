@@ -3,7 +3,7 @@
 #import "PierConta.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierCartaoImpressao.h"
-#import "PierFatura.h"
+#import "PierFaturaResponse.h"
 #import "PierPageTransacaoResponse.h"
 
 
@@ -485,13 +485,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierConta*
 ///
--(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET2`"];
     }
     
 
@@ -563,15 +563,18 @@ static PierContaApi* singletonAPI = nil;
 
 ///
 /// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o para impress\u00C3\u00A3o avulsa
-/// 
+/// Este recurso permite que seja gerado um novo Cart\u00C3\u00A3o para um determinado Portador que esteja vinculado a uma Conta. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id), o idPessoa do Portador e o idTipoPlastico do Cart\u00C3\u00A3o que dever\u00C3\u00A1 ser gerado para impress\u00C3\u00A3o. Esta funcionalidade poder\u00C3\u00A1 ser utilizada para realizar a impress\u00C3\u00A3o de cart\u00C3\u00B5es em Lojas, Quiosques, Escrit\u00C3\u00B3rios, Terminais de Auto Atendimento, ou outro local que o Emissor escolher, desde que se possua uma impressora de Cart\u00C3\u00B5es habilidade para o fazer, no local.
 ///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
 ///
 ///  @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+///
+///  @param idTipoPlastico C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do TipoPlastico (id). (optional)
 ///
 ///  @returns PierCartaoImpressao*
 ///
 -(NSNumber*) gerarCartaoUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
+    idTipoPlastico: (NSNumber*) idTipoPlastico
     completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler {
 
     
@@ -603,6 +606,10 @@ static PierContaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idTipoPlastico != nil) {
+        
+        queryParams[@"id_tipo_plastico"] = idTipoPlastico;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -666,13 +673,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento Data de Vencimento da Fatura. (optional)
 ///
-///  @returns PierFatura*
+///  @returns PierFaturaResponse*
 ///
 -(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSDate*) dataVencimento
-    completionHandler: (void (^)(PierFatura* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierFaturaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -752,9 +759,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierFatura*"
+                              responseType: @"PierFaturaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierFatura*)data, error);
+                               handler((PierFaturaResponse*)data, error);
                            }
           ];
 }
@@ -788,7 +795,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierConta*
 ///
--(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idProduto: (NSNumber*) idProduto
