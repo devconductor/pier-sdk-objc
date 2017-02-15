@@ -34,6 +34,7 @@
 #import "PierPageCartoes.h"
 #import "PierPageEnderecos.h"
 #import "PierPageEstagiosCartoes.h"
+#import "PierPageFaturas.h"
 #import "PierPageOrigensComerciais.h"
 #import "PierPagePessoas.h"
 #import "PierPagePortador.h"

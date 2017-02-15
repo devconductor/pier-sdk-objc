@@ -3,7 +3,7 @@
 #import "PierConta.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierCartaoImpressao.h"
-#import "PierFaturaResponse.h"
+#import "PierPageFaturas.h"
 #import "PierPageTransacaoResponse.h"
 
 
@@ -673,13 +673,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento Data de Vencimento da Fatura. (optional)
 ///
-///  @returns PierFaturaResponse*
+///  @returns PierPageFaturas*
 ///
 -(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSDate*) dataVencimento
-    completionHandler: (void (^)(PierFaturaResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageFaturas* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -759,9 +759,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierFaturaResponse*"
+                              responseType: @"PierPageFaturas*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierFaturaResponse*)data, error);
+                               handler((PierPageFaturas*)data, error);
                            }
           ];
 }

@@ -2,7 +2,7 @@
 #import "PierConta.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierCartaoImpressao.h"
-#import "PierFaturaResponse.h"
+#import "PierPageFaturas.h"
 #import "PierPageTransacaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -129,12 +129,12 @@
 /// @param dataVencimento Data de Vencimento da Fatura.
 /// 
 ///
-/// @return PierFaturaResponse*
+/// @return PierPageFaturas*
 -(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSDate*) dataVencimento
-    completionHandler: (void (^)(PierFaturaResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageFaturas* output, NSError* error)) handler;
 
 
 ///
