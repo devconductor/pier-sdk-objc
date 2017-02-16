@@ -31,6 +31,7 @@
 #import "PierNotificacaoSMSBody.h"
 #import "PierNotificacaoSMSResponse.h"
 #import "PierOrigemComercial.h"
+#import "PierPageAtendimentoClientes.h"
 #import "PierPageCartoes.h"
 #import "PierPageEnderecos.h"
 #import "PierPageEstagiosCartoes.h"
@@ -47,6 +48,7 @@
 #import "PierPageTipoTelefones.h"
 #import "PierPageTiposEndereco.h"
 #import "PierPageTransacaoResponse.h"
+#import "PierPageTransferencias.h"
 #import "PierPageWebHooks.h"
 #import "PierPessoa.h"
 #import "PierPortador.h"
@@ -61,6 +63,7 @@
 #import "PierTipoEndereco.h"
 #import "PierTipoTelefone.h"
 #import "PierTransacaoResponse.h"
+#import "PierTransferencia.h"
 #import "PierValidaCartao.h"
 #import "PierWebHook.h"
 

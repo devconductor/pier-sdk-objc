@@ -14,6 +14,9 @@
 
 @interface PierSMS : PierObject
 
+/* C\u00C3\u00B3digo Identificador. [optional]
+ */
+@property(nonatomic) NSNumber* _id;
 /* N\u00C3\u00BAmero sequencial \u00C3\u00BAnico. [optional]
  */
 @property(nonatomic) NSNumber* nsu;
@@ -26,6 +29,9 @@
 /* Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o 
  */
 @property(nonatomic) NSString* status;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do status de envio da notifica\u00C3\u00A7\u00C3\u00A3o 
+ */
+@property(nonatomic) NSString* descricaoStatus;
 /* C\u00C3\u00B3digo identificado da pessoa 
  */
 @property(nonatomic) NSNumber* idPessoa;
@@ -35,9 +41,15 @@
 /* Apresenta o celular a ser eviado o SMS no formato 5588999999999 ou 5588999999999 
  */
 @property(nonatomic) NSString* celular;
+/* Apresenta a operadora do celular a ser eviado o SMS 
+ */
+@property(nonatomic) NSString* operadora;
 /* Apresenta o texto da notifica\u00C3\u00A7\u00C3\u00A3o a ser enviado 
  */
 @property(nonatomic) NSString* conteudo;
+/* Apresenta o texto da resposta da notifica\u00C3\u00A7\u00C3\u00A3o que foi enviada 
+ */
+@property(nonatomic) NSString* resposta;
 /* Apresenta a data e hora em que ser\u00C3\u00A1 enviado a notifica\u00C3\u00A7\u00C3\u00A3o 
  */
 @property(nonatomic) NSDate* dataAgendamento;

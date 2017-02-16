@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierAtendimentoCliente.h"
+#import "PierPageAtendimentoClientes.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -46,7 +47,7 @@
 /// @param dataAtendimento Apresenta a data em que o Atendimento foi realizado.
 /// 
 ///
-/// @return PierAtendimentoCliente*
+/// @return PierPageAtendimentoClientes*
 -(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idAtendimento: (NSNumber*) idAtendimento
@@ -54,7 +55,7 @@
     idConta: (NSNumber*) idConta
     nomeAtendente: (NSString*) nomeAtendente
     dataAtendimento: (NSDate*) dataAtendimento
-    completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageAtendimentoClientes* output, NSError* error)) handler;
 
 
 ///

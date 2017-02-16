@@ -48,18 +48,6 @@
 
 ///
 ///
-/// Limpar Acessos
-/// Esse recurso permite limpar a lista de emissores que possuem acesso a envio de SMS pela TWW.
-///
-/// 
-///
-/// @return NSString*
--(NSNumber*) limparAcessoTWWUsingGETWithCompletionHandler: 
-    (void (^)(NSString* output, NSError* error)) handler;
-
-
-///
-///
 /// Listar Push
 /// Esse recurso permite listar os Pushes do emissor
 ///

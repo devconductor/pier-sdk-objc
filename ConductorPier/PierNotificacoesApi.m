@@ -78,15 +78,15 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Atualizar SMS
 /// Esse recurso permite atualizar o status do SMS do emissor
-///  @param nsu Seu n\u00C3\u00BAmero 
+///  @param nsu Seu n\u00C3\u00BAmero (optional)
 ///
-///  @param status Status 
+///  @param status Status (optional)
 ///
-///  @param data Data 
+///  @param data Data (optional)
 ///
-///  @param textoStatus TextoStatus 
+///  @param textoStatus TextoStatus (optional)
 ///
-///  @param operadora Operadora 
+///  @param operadora Operadora (optional)
 ///
 ///  @returns PierSMS*
 ///
@@ -97,31 +97,6 @@ static PierNotificacoesApi* singletonAPI = nil;
     operadora: (NSString*) operadora
     completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'nsu' is set
-    if (nsu == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nsu` when calling `atualizarSMSUsingPOST`"];
-    }
-    
-    // verify the required parameter 'status' is set
-    if (status == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `status` when calling `atualizarSMSUsingPOST`"];
-    }
-    
-    // verify the required parameter 'data' is set
-    if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `atualizarSMSUsingPOST`"];
-    }
-    
-    // verify the required parameter 'textoStatus' is set
-    if (textoStatus == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `textoStatus` when calling `atualizarSMSUsingPOST`"];
-    }
-    
-    // verify the required parameter 'operadora' is set
-    if (operadora == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `operadora` when calling `atualizarSMSUsingPOST`"];
-    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms/atualizar-status"];
@@ -203,79 +178,6 @@ static PierNotificacoesApi* singletonAPI = nil;
                               responseType: @"PierSMS*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierSMS*)data, error);
-                           }
-          ];
-}
-
-///
-/// Limpar Acessos
-/// Esse recurso permite limpar a lista de emissores que possuem acesso a envio de SMS pela TWW.
-///  @returns NSString*
-///
--(NSNumber*) limparAcessoTWWUsingGETWithCompletionHandler: 
-    (void (^)(NSString* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms/limpar"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"NSString*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((NSString*)data, error);
                            }
           ];
 }
@@ -525,11 +427,11 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Responder SMS
 /// Esse recurso permite atualizar a resposta do SMS, fornecida pedo usu\u00C3\u00A1rio
-///  @param nsu Seu n\u00C3\u00BAmero 
+///  @param nsu Seu n\u00C3\u00BAmero (optional)
 ///
-///  @param data Data 
+///  @param data Data (optional)
 ///
-///  @param resposta TextoStatus 
+///  @param resposta TextoStatus (optional)
 ///
 ///  @returns PierSMS*
 ///
@@ -538,21 +440,6 @@ static PierNotificacoesApi* singletonAPI = nil;
     resposta: (NSString*) resposta
     completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'nsu' is set
-    if (nsu == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nsu` when calling `responderSMSUsingPOST`"];
-    }
-    
-    // verify the required parameter 'data' is set
-    if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `responderSMSUsingPOST`"];
-    }
-    
-    // verify the required parameter 'resposta' is set
-    if (resposta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `responderSMSUsingPOST`"];
-    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/sms/responder"];

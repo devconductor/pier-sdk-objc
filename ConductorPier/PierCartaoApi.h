@@ -27,6 +27,21 @@
 +(PierCartaoApi*) sharedAPI;
 ///
 ///
+/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha de um Cart\u00C3\u00A3o
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que o portador de um determinado cart\u00C3\u00A3o possa definir uma senha a sua escolha.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param senha Senha para ser cadastrada ou alterada.
+/// 
+///
+/// @return NSString*
+-(NSNumber*) alterarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
+    senha: (NSString*) senha
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
+///
+///
 /// Realiza a altera\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que uma Aplica\u00C3\u00A7\u00C3\u00A3o que realize a impress\u00C3\u00A3o de cart\u00C3\u00B5es possa indicar que um determinado idCartao fora impresso ou est\u00C3\u00A1 em processo de impress\u00C3\u00A3o. Para isso, basta informar o respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id) que deseja ter seu um determinado id_status_impressao atribu\u00C3\u00ADdo a ele. Por padr\u00C3\u00A3o, cart\u00C3\u00B5es provis\u00C3\u00B3rios ou que j\u00C3\u00A1 tenham sido inclu\u00C3\u00ADdos em um arquivo para impress\u00C3\u00A3o via gr\u00C3\u00A1fica ter\u00C3\u00A3o esta requisi\u00C3\u00A7\u00C3\u00A3o negada, se utilizada.
 ///
@@ -74,7 +89,7 @@
 
 ///
 ///
-/// Realiza o cadastro ou altera\u00C3\u00A7\u00C3\u00A3o da senha de um Cart\u00C3\u00A3o
+/// Realiza o cadastro da senha de um Cart\u00C3\u00A3o
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que o portador de um determinado cart\u00C3\u00A3o possa definir uma senha a sua escolha.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
@@ -82,7 +97,7 @@
 /// 
 ///
 /// @return NSString*
--(NSNumber*) cadastrarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
+-(NSNumber*) cadastrarAlterarSenhaUsingPOSTWithId: (NSNumber*) _id
     senha: (NSString*) senha
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 

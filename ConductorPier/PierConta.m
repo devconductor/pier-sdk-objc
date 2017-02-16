@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idProduto": @"idProduto", @"idOrigemComercial": @"idOrigemComercial", @"idPessoa": @"idPessoa", @"idStatusConta": @"idStatusConta", @"diaVencimento": @"diaVencimento", @"melhorDiaCompra": @"melhorDiaCompra", @"dataStatusConta": @"dataStatusConta", @"dataCadastro": @"dataCadastro", @"dataUltimaAlteracaoVencimento": @"dataUltimaAlteracaoVencimento" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idProduto": @"idProduto", @"idOrigemComercial": @"idOrigemComercial", @"idPessoa": @"idPessoa", @"idStatusConta": @"idStatusConta", @"diaVencimento": @"diaVencimento", @"melhorDiaCompra": @"melhorDiaCompra", @"dataStatusConta": @"dataStatusConta", @"dataCadastro": @"dataCadastro", @"dataUltimaAlteracaoVencimento": @"dataUltimaAlteracaoVencimento", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idProduto", @"idOrigemComercial", @"idPessoa", @"idStatusConta", @"diaVencimento", @"melhorDiaCompra", @"dataStatusConta", @"dataCadastro", @"dataUltimaAlteracaoVencimento"];
+  NSArray *optionalProperties = @[@"_id", @"idProduto", @"idOrigemComercial", @"idPessoa", @"idStatusConta", @"diaVencimento", @"melhorDiaCompra", @"dataStatusConta", @"dataCadastro", @"dataUltimaAlteracaoVencimento", @"numeroAgencia", @"numeroContaCorrente"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

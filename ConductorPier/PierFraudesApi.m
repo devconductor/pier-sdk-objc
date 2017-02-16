@@ -1,6 +1,7 @@
 #import "PierFraudesApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierAtendimentoCliente.h"
+#import "PierPageAtendimentoClientes.h"
 
 
 @interface PierFraudesApi ()
@@ -169,7 +170,7 @@ static PierFraudesApi* singletonAPI = nil;
 ///
 ///  @param dataAtendimento Apresenta a data em que o Atendimento foi realizado. (optional)
 ///
-///  @returns PierAtendimentoCliente*
+///  @returns PierPageAtendimentoClientes*
 ///
 -(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -178,7 +179,7 @@ static PierFraudesApi* singletonAPI = nil;
     idConta: (NSNumber*) idConta
     nomeAtendente: (NSString*) nomeAtendente
     dataAtendimento: (NSDate*) dataAtendimento
-    completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageAtendimentoClientes* output, NSError* error)) handler {
 
     
 
@@ -266,9 +267,9 @@ static PierFraudesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierAtendimentoCliente*"
+                              responseType: @"PierPageAtendimentoClientes*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierAtendimentoCliente*)data, error);
+                               handler((PierPageAtendimentoClientes*)data, error);
                            }
           ];
 }

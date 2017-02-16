@@ -76,6 +76,100 @@ static PierCartaoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
+/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha de um Cart\u00C3\u00A3o
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que o portador de um determinado cart\u00C3\u00A3o possa definir uma senha a sua escolha.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///
+///  @param senha Senha para ser cadastrada ou alterada. 
+///
+///  @returns NSString*
+///
+-(NSNumber*) alterarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
+    senha: (NSString*) senha
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarAlterarSenhaUsingPUT`"];
+    }
+    
+    // verify the required parameter 'senha' is set
+    if (senha == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senha` when calling `alterarAlterarSenhaUsingPUT`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/alterar-senha"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    if (senha != nil) {
+        headerParams[@"senha"] = senha;
+    }
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
+                           }
+          ];
+}
+
+///
 /// Realiza a altera\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que uma Aplica\u00C3\u00A7\u00C3\u00A3o que realize a impress\u00C3\u00A3o de cart\u00C3\u00B5es possa indicar que um determinado idCartao fora impresso ou est\u00C3\u00A1 em processo de impress\u00C3\u00A3o. Para isso, basta informar o respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id) que deseja ter seu um determinado id_status_impressao atribu\u00C3\u00ADdo a ele. Por padr\u00C3\u00A3o, cart\u00C3\u00B5es provis\u00C3\u00B3rios ou que j\u00C3\u00A1 tenham sido inclu\u00C3\u00ADdos em um arquivo para impress\u00C3\u00A3o via gr\u00C3\u00A1fica ter\u00C3\u00A3o esta requisi\u00C3\u00A7\u00C3\u00A3o negada, se utilizada.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
@@ -373,7 +467,7 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza o cadastro ou altera\u00C3\u00A7\u00C3\u00A3o da senha de um Cart\u00C3\u00A3o
+/// Realiza o cadastro da senha de um Cart\u00C3\u00A3o
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que o portador de um determinado cart\u00C3\u00A3o possa definir uma senha a sua escolha.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
@@ -381,23 +475,23 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns NSString*
 ///
--(NSNumber*) cadastrarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
+-(NSNumber*) cadastrarAlterarSenhaUsingPOSTWithId: (NSNumber*) _id
     senha: (NSString*) senha
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `cadastrarAlterarSenhaUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `cadastrarAlterarSenhaUsingPOST`"];
     }
     
     // verify the required parameter 'senha' is set
     if (senha == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senha` when calling `cadastrarAlterarSenhaUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senha` when calling `cadastrarAlterarSenhaUsingPOST`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/alterar-senha"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/cadastrar-senha"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -449,7 +543,7 @@ static PierCartaoApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

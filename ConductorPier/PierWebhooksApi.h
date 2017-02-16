@@ -48,7 +48,7 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 
 
@@ -66,7 +66,7 @@
 /// 
 ///
 /// @return PierPageWebHooks*
--(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     evento: (NSString*) evento

@@ -1,6 +1,6 @@
-#import "PierSMS.h"
+#import "PierTransferencia.h"
 
-@implementation PierSMS
+@implementation PierTransferencia
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nsu": @"nsu", @"idEmissor": @"idEmissor", @"evento": @"evento", @"status": @"status", @"descricaoStatus": @"descricaoStatus", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"celular": @"celular", @"operadora": @"operadora", @"conteudo": @"conteudo", @"resposta": @"resposta", @"dataAgendamento": @"dataAgendamento", @"quantidadeTentativasEnvio": @"quantidadeTentativasEnvio", @"dataInclusao": @"dataInclusao", @"dataAlteracaoStatus": @"dataAlteracaoStatus", @"protocolo": @"protocolo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"dataTransferencia": @"dataTransferencia", @"idContaOrigem": @"idContaOrigem", @"nomePessoaOrigem": @"nomePessoaOrigem", @"idContaDestino": @"idContaDestino", @"nomePessoaDestino": @"nomePessoaDestino", @"valorTransferencia": @"valorTransferencia", @"valorTarifa": @"valorTarifa" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"nsu", @"idEmissor", @"evento", @"protocolo"];
+  NSArray *optionalProperties = @[@"_id", @"dataTransferencia", @"idContaOrigem", @"nomePessoaOrigem", @"idContaDestino", @"nomePessoaDestino", @"valorTransferencia", @"valorTarifa"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

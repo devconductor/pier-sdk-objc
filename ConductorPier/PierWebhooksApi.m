@@ -197,13 +197,13 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -290,7 +290,7 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierPageWebHooks*
 ///
--(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     evento: (NSString*) evento

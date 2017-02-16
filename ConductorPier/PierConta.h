@@ -44,5 +44,11 @@
 /* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
  */
 @property(nonatomic) NSDate* dataUltimaAlteracaoVencimento;
+/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
+ */
+@property(nonatomic) NSNumber* numeroAgencia;
+/* N\u00C3\u00BAmero da conta corrente. [optional]
+ */
+@property(nonatomic) NSString* numeroContaCorrente;
 
 @end
