@@ -17,9 +17,9 @@
 /* Id do WebHook 
  */
 @property(nonatomic) NSNumber* _id;
-/* Evento a ser chamado pelo WebHook 
+/* TipoEvento a ser chamado pelo WebHook 
  */
-@property(nonatomic) NSString* evento;
+@property(nonatomic) NSString* tipoEvento;
 /* M\u00C3\u00A9todo que a ser chamado pelo WebHook 
  */
 @property(nonatomic) NSString* metodo;

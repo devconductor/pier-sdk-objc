@@ -47,6 +47,9 @@
 /* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
+/* Apresenta o valor da renda comprovada [optional]
+ */
+@property(nonatomic) NSNumber* valorRenda;
 /* N\u00C3\u00BAmero da conta corrente. [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;

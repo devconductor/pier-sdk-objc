@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nsu": @"nsu", @"idEmissor": @"idEmissor", @"evento": @"evento", @"status": @"status", @"descricaoStatus": @"descricaoStatus", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"celular": @"celular", @"operadora": @"operadora", @"conteudo": @"conteudo", @"resposta": @"resposta", @"dataAgendamento": @"dataAgendamento", @"quantidadeTentativasEnvio": @"quantidadeTentativasEnvio", @"dataInclusao": @"dataInclusao", @"dataAlteracaoStatus": @"dataAlteracaoStatus", @"protocolo": @"protocolo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nsu": @"nsu", @"idEmissor": @"idEmissor", @"tipoEvento": @"tipoEvento", @"status": @"status", @"descricaoStatus": @"descricaoStatus", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"celular": @"celular", @"operadora": @"operadora", @"conteudo": @"conteudo", @"resposta": @"resposta", @"dataAgendamento": @"dataAgendamento", @"quantidadeTentativasEnvio": @"quantidadeTentativasEnvio", @"dataInclusao": @"dataInclusao", @"dataAlteracaoStatus": @"dataAlteracaoStatus", @"protocolo": @"protocolo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"nsu", @"idEmissor", @"evento", @"protocolo"];
+  NSArray *optionalProperties = @[@"_id", @"nsu", @"idEmissor", @"tipoEvento", @"protocolo"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

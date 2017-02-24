@@ -14,47 +14,29 @@
 
 @interface PierFaturaResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador da fatura. [optional]
+/* C\u00C3\u00B3digo identificador do tipo de boleto. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo identificador da conta. [optional]
+/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de boleto. [optional]
  */
-@property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo identificador do produto. [optional]
+@property(nonatomic) NSString* descricao;
+/* C\u00C3\u00B3digo identificador do banco. [optional]
  */
-@property(nonatomic) NSNumber* idProduto;
-/* Data de vencimento da fatura. [optional]
+@property(nonatomic) NSNumber* banco;
+/* Faixa permitida para cria\u00C3\u00A7\u00C3\u00A3o do nosso n\u00C3\u00BAmero. [optional]
  */
-@property(nonatomic) NSDate* dataVencimento;
-/* Saldo da fatura anterior. [optional]
+@property(nonatomic) NSNumber* faixaNossoNumero;
+/* N\u00C3\u00BAmero minimo para o nosso n\u00C3\u00BAmero. [optional]
  */
-@property(nonatomic) NSNumber* saldoFaturaAnterior;
-/* Saldo total da Multa lan\u00C3\u00A7ada na Fatura atual. [optional]
+@property(nonatomic) NSNumber* minNossoNumero;
+/* N\u00C3\u00BAmero m\u00C3\u00A1ximo para o nosso n\u00C3\u00BAmero. [optional]
  */
-@property(nonatomic) NSNumber* saldoMulta;
-/* Saldo total das compras lan\u00C3\u00A7adas na fatura atual. [optional]
+@property(nonatomic) NSNumber* maxNossoNumero;
+/* Tamanho do nosso n\u00C3\u00BAmero. [optional]
  */
-@property(nonatomic) NSNumber* saldoCompras;
-/* Saldo total dos pagamentos lan\u00C3\u00A7ados na fatura atual. [optional]
+@property(nonatomic) NSNumber* tamNossoNumero;
+/* \u00C3\u009Altimo nosso n\u00C3\u00BAmero utilizado. [optional]
  */
-@property(nonatomic) NSNumber* saldoPagamentos;
-/* Saldo total das tarifas lan\u00C3\u00A7adas na fatura atual. [optional]
- */
-@property(nonatomic) NSNumber* saldoTarifas;
-/* Saldo total dos d\u00C3\u00A9bitos lan\u00C3\u00A7ados na fatura atual. [optional]
- */
-@property(nonatomic) NSNumber* saldoDebitos;
-/* Saldo total dos cr\u00C3\u00A9dito lan\u00C3\u00A7ados na fatura atual. [optional]
- */
-@property(nonatomic) NSNumber* saldoCreditos;
-/* Salto total devedor da fatura atual. [optional]
- */
-@property(nonatomic) NSNumber* saldoAtualFinal;
-/* Valor m\u00C3\u00ADnimo para pagamento da fatura. [optional]
- */
-@property(nonatomic) NSNumber* valorMinimoFatura;
-/* Quando ativa, indica que fora emitida uma fatura. [optional]
- */
-@property(nonatomic) NSNumber* flagEmiteFatura;
+@property(nonatomic) NSNumber* ultimoNossoNumero;
 
 @end

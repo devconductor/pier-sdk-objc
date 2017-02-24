@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsu": @"nsu", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"celular": @"celular", @"conteudo": @"conteudo", @"dataAgendamento": @"dataAgendamento", @"evento": @"evento" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsu": @"nsu", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"celular": @"celular", @"conteudo": @"conteudo", @"dataAgendamento": @"dataAgendamento", @"tipoEvento": @"tipoEvento" }];
 }
 
 /**

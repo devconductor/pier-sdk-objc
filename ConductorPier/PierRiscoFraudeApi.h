@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "PierAtendimentoCliente.h"
+#import "PierRiscoFraudeDetalhadoResponse.h"
 #import "PierPageAtendimentoClientes.h"
+#import "PierRiscoFraudeResponsePage.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -11,15 +13,15 @@
  * Do not edit the class manually.
  */
 
-@interface PierFraudesApi: NSObject
+@interface PierRiscoFraudeApi: NSObject
 
 @property(nonatomic, assign)PierApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(PierApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(PierFraudesApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(PierFraudesApi*) sharedAPI;
++(PierRiscoFraudeApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(PierRiscoFraudeApi*) sharedAPI;
 ///
 ///
 /// Apresenta os dados de um determinado Atendimento
@@ -31,6 +33,32 @@
 /// @return PierAtendimentoCliente*
 -(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar uma transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude
+/// Consulta os detalhes de uma transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
+/// 
+///
+/// @return PierRiscoFraudeDetalhadoResponse*
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Receber Risco Fraude
+/// Receber risco fraude
+///
+/// @param detalhadoResponses detalhadoResponses
+/// 
+///
+/// @return NSString*
+-(NSNumber*) informarRiscoFraudeUsingPOSTWithDetalhadoResponses: (NSArray<PierRiscoFraudeDetalhadoResponse>*) detalhadoResponses
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
@@ -56,6 +84,51 @@
     nomeAtendente: (NSString*) nomeAtendente
     dataAtendimento: (NSDate*) dataAtendimento
     completionHandler: (void (^)(PierPageAtendimentoClientes* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar as transa\u00C3\u00A7\u00C3\u00B5es com resolu\u00C3\u00A7\u00C3\u00A3o de risco fraude pendente
+/// Este recurso permite que sejam listados os riscos de fraudes existentes
+///
+/// @param idConta Id Conta
+/// @param confirmacaoFraude Confirma\u00C3\u00A7\u00C3\u00A3o da fraude
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// 
+///
+/// @return PierRiscoFraudeResponsePage*
+-(NSNumber*) listarUsingGET8WithIdConta: (NSNumber*) idConta
+    confirmacaoFraude: (NSString*) confirmacaoFraude
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierRiscoFraudeResponsePage* output, NSError* error)) handler;
+
+
+///
+///
+/// Negar autenticidade da transa\u00C3\u00A7\u00C3\u00A3o com risco de fraude
+/// Nega a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
+/// 
+///
+/// @return PierRiscoFraudeDetalhadoResponse*
+-(NSNumber*) negarUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Reconhecer a transa\u00C3\u00A7\u00C3\u00A3o com risco de fraude
+/// Confirma a autenticidade da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
+/// 
+///
+/// @return PierRiscoFraudeDetalhadoResponse*
+-(NSNumber*) reconhecerUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
 
 
 ///

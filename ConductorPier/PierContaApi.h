@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "PierConta.h"
+#import "PierDividaClienteResponse.h"
+#import "PierFaturaResponse.h"
 #import "PierLimiteDisponibilidade.h"
+#import "PierPageTransferencias.h"
 #import "PierCartaoImpressao.h"
 #import "PierPageFaturas.h"
 #import "PierPageTransacaoResponse.h"
@@ -77,6 +80,42 @@
 
 ///
 ///
+/// Consultar a d\u00C3\u00ADvida atualizada do cliente
+/// Este recurso consulta a d\u00C3\u00ADvida atualizada do cliente
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id)
+/// @param dataVencimento Data do vencimento
+/// @param idEscritorioCobranca C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do escrit\u00C3\u00B3rio de cobran\u00C3\u00A7a
+/// 
+///
+/// @return PierDividaClienteResponse*
+-(NSNumber*) consultarDividaAtualizadaClienteUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idConta: (NSNumber*) idConta
+    dataVencimento: (NSDate*) dataVencimento
+    idEscritorioCobranca: (NSNumber*) idEscritorioCobranca
+    completionHandler: (void (^)(PierDividaClienteResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta dados de uma determinada fatura consignada
+/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar uma fatura, atrav\u00C3\u00A9s do id da conta e o id da fatura.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idHistorico C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da fatura (idHistorico).
+/// 
+///
+/// @return PierFaturaResponse*
+-(NSNumber*) consultarFaturaConsignadaUsingGETWithId: (NSNumber*) _id
+    idHistorico: (NSNumber*) idHistorico
+    completionHandler: (void (^)(PierFaturaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os limites da conta
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 ///
@@ -90,6 +129,21 @@
 
 ///
 ///
+/// Consulta os detalhes de uma determinada transfer\u00C3\u00AAncia
+/// Este m\u00C3\u00A9todo permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada entre contas.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idTransferencia C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id_transferencia).
+/// 
+///
+/// @return PierPageTransferencias*
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+    idTransferencia: (NSNumber*) idTransferencia
+    completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta dados de uma determinada conta
 /// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -97,7 +151,7 @@
 /// 
 ///
 /// @return PierConta*
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
 
 
@@ -116,6 +170,25 @@
     idPessoa: (NSNumber*) idPessoa
     idTipoPlastico: (NSNumber*) idTipoPlastico
     completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar Faturas consignadas da Conta
+/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param dataVencimeno Apresenta a data de vencimento da fatura.
+/// 
+///
+/// @return PierPageFaturas*
+-(NSNumber*) listarFaturasConsignadasUsingGETWithId: (NSNumber*) _id
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    dataVencimeno: (NSDate*) dataVencimeno
+    completionHandler: (void (^)(PierPageFaturas* output, NSError* error)) handler;
 
 
 ///
@@ -139,6 +212,33 @@
 
 ///
 ///
+/// Lista as transfer\u00C3\u00AAncias de cr\u00C3\u00A9dito realizadas pela conta
+/// Este m\u00C3\u00A9todo permite que sejam listadas as transfer\u00C3\u00AAncias de cr\u00C3\u00A9dito realizadas pela conta existentes na base do emissor.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param idTransferencia C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id).
+/// @param idContaOrigem C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta em que o valor ser\u00C3\u00A1 debitado para a transfer\u00C3\u00AAncia. (id).
+/// @param idContaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta em que o valor ser\u00C3\u00A1 creditado para a transfer\u00C3\u00AAncia. (id).
+/// @param valorTransferencia Valor estabelecido para ser transferido.
+/// @param dataTransferencia Data estabelecida para ocorrer a transfer\u00C3\u00AAncia.
+/// 
+///
+/// @return PierPageTransferencias*
+-(NSNumber*) listarUsingGET15WithId: (NSNumber*) _id
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idTransferencia: (NSNumber*) idTransferencia
+    idContaOrigem: (NSNumber*) idContaOrigem
+    idContaDestino: (NSNumber*) idContaDestino
+    valorTransferencia: (NSNumber*) valorTransferencia
+    dataTransferencia: (NSDate*) dataTransferencia
+    completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista contas existentes na base de dados do Emissor
 /// Este recurso permite listar contas existentes na base de dados do Emissor.
 ///
@@ -157,7 +257,7 @@
 /// 
 ///
 /// @return PierConta*
--(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idProduto: (NSNumber*) idProduto
@@ -187,6 +287,23 @@
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTransacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza uma transfer\u00C3\u00AAncia de Cr\u00C3\u00A9dito para outro cliente do mesmo Emissor
+/// Este m\u00C3\u00A9todo permite que um portador de um cart\u00C3\u00A3o possa realizar auma transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para outro cliente do mesmo emissor.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do cliente portador do cart\u00C3\u00A3o que ser\u00C3\u00A1 debitado (id).
+/// @param idContaDestino C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do cliente portador do cart\u00C3\u00A3o que ser\u00C3\u00A1 creditado (id).
+/// @param valorTransferencia Valor da Transfer\u00C3\u00AAncia.
+/// 
+///
+/// @return PierPageTransferencias*
+-(NSNumber*) transferirUsingPOSTWithId: (NSNumber*) _id
+    idContaDestino: (NSNumber*) idContaDestino
+    valorTransferencia: (NSNumber*) valorTransferencia
+    completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler;
 
 
 

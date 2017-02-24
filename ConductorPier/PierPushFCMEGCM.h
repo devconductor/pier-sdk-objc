@@ -32,9 +32,9 @@
 /* Apresenta o texto da notifica\u00C3\u00A7\u00C3\u00A3o a ser enviado. 
  */
 @property(nonatomic) NSString* conteudo;
-/* Apresenta o evento a qual pertence a notifica\u00C3\u00A7\u00C3\u00A3o 
+/* Apresenta o tipoEvento a qual pertence a notifica\u00C3\u00A7\u00C3\u00A3o 
  */
-@property(nonatomic) NSString* evento;
+@property(nonatomic) NSString* tipoEvento;
 /* Apresenta o nome do icone a ser apresentado no push. [optional]
  */
 @property(nonatomic) NSString* icone;

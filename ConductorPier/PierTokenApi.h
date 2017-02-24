@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "PierToken.h"
 #import "PierBodyAccessToken.h"
+#import "PierPageBases.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -21,6 +23,31 @@
 +(PierTokenApi*) sharedAPI;
 ///
 ///
+/// Alterar token
+/// Este recurso permite que seja modificado um token j\u00C3\u00A1 cadastrado
+///
+/// @param _id C\u00C3\u00B3digo identificador do token
+/// @param token Token
+/// @param base C\u00C3\u00B3digo identificador da base
+/// @param owner Owner do token
+/// @param status Status do token
+/// @param criadoPor Descri\u00C3\u00A7\u00C3\u00A3o de quem criou o token
+/// @param alteradoPor Descri\u00C3\u00A7\u00C3\u00A3o de quem alterou o token
+/// 
+///
+/// @return PierToken*
+-(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
+    token: (NSString*) token
+    base: (NSNumber*) base
+    owner: (NSString*) owner
+    status: (NSString*) status
+    criadoPor: (NSString*) criadoPor
+    alteradoPor: (NSString*) alteradoPor
+    completionHandler: (void (^)(PierToken* output, NSError* error)) handler;
+
+
+///
+///
 /// /api/tokens/callback
 /// 
 ///
@@ -30,6 +57,75 @@
 /// @return PierBodyAccessToken*
 -(NSNumber*) callbackUsingPOSTWithBodyAccessToken: (PierBodyAccessToken*) bodyAccessToken
     completionHandler: (void (^)(PierBodyAccessToken* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar token
+/// Este recurso permite que seja consultado um token do emissor atrav\u00C3\u00A9s de um id especifico
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do token (id).
+/// 
+///
+/// @return PierToken*
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierToken* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar tokens
+/// Este recurso permite que sejam listados os tokens existentes
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param _id C\u00C3\u00B3digo identificador do token
+/// @param token Token
+/// @param base C\u00C3\u00B3digo identificador da base
+/// @param owner Owner do token
+/// @param status Status do token
+/// @param criadoPor Descri\u00C3\u00A7\u00C3\u00A3o de quem criou o token
+/// @param dataCriacao Data de cria\u00C3\u00A7\u00C3\u00A3o do token
+/// @param alteradoPor Descri\u00C3\u00A7\u00C3\u00A3o de quem alterou o token
+/// @param dataModificacao Data de modifica\u00C3\u00A7\u00C3\u00A3o do token
+/// 
+///
+/// @return PierPageBases*
+-(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    token: (NSString*) token
+    base: (NSNumber*) base
+    owner: (NSString*) owner
+    status: (NSString*) status
+    criadoPor: (NSString*) criadoPor
+    dataCriacao: (NSDate*) dataCriacao
+    alteradoPor: (NSString*) alteradoPor
+    dataModificacao: (NSDate*) dataModificacao
+    completionHandler: (void (^)(PierPageBases* output, NSError* error)) handler;
+
+
+///
+///
+/// Salvar token
+/// Este recurso permite que seja adicionado um novo token
+///
+/// @param token Token
+/// @param base C\u00C3\u00B3digo identificador da base
+/// @param owner Owner do token
+/// @param status Status do token
+/// @param criadoPor Descri\u00C3\u00A7\u00C3\u00A3o de quem criou o token
+/// @param alteradoPor Descri\u00C3\u00A7\u00C3\u00A3o de quem alterou o token
+/// 
+///
+/// @return PierToken*
+-(NSNumber*) salvarUsingPOST5WithToken: (NSString*) token
+    base: (NSNumber*) base
+    owner: (NSString*) owner
+    status: (NSString*) status
+    criadoPor: (NSString*) criadoPor
+    alteradoPor: (NSString*) alteradoPor
+    completionHandler: (void (^)(PierToken* output, NSError* error)) handler;
 
 
 ///

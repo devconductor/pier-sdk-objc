@@ -54,10 +54,6 @@
 
 @property(nonatomic) NSString* tipoEstabelecimento;
 
-@property(nonatomic) NSString* latitude;
-
-@property(nonatomic) NSString* longetude;
-
 @property(nonatomic) NSNumber* idGrupoMCC;
 
 @property(nonatomic) NSNumber* flagSolicitouContestacao;

@@ -54,7 +54,7 @@
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// @param dataEnvio Apresenta a data e em que o registro foi enviado para o dispositivo.
-/// @param evento Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o
+/// @param tipoEvento Nome do tipoEvento da notifica\u00C3\u00A7\u00C3\u00A3o
 /// @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o
 /// @param plataforma Plataforma de Push notifications.
 /// @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es
@@ -64,7 +64,7 @@
 -(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     dataEnvio: (NSDate*) dataEnvio
-    evento: (NSString*) evento
+    tipoEvento: (NSString*) tipoEvento
     status: (NSString*) status
     plataforma: (NSString*) plataforma
     protocolo: (NSString*) protocolo
@@ -79,7 +79,7 @@
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// @param dataInclusao Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado
-/// @param evento Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o
+/// @param tipoEvento Nome do tipoEvento da notifica\u00C3\u00A7\u00C3\u00A3o
 /// @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o
 /// @param operadora Nome da operadora a qual a notifica\u00C3\u00A7\u00C3\u00A3o foi enviada.
 /// @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es
@@ -89,7 +89,7 @@
 -(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInclusao: (NSDate*) dataInclusao
-    evento: (NSString*) evento
+    tipoEvento: (NSString*) tipoEvento
     status: (NSString*) status
     operadora: (NSString*) operadora
     protocolo: (NSString*) protocolo

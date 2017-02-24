@@ -26,15 +26,13 @@
 /// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
 ///
 /// @param _id C\u00C3\u00B3digo identificador do Webhook
-/// @param evento Evento a ser chamado pelo WebHook
-/// @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook
+/// @param tipoEvento TipoEvento a ser chamado pelo WebHook
 /// @param url URL que a ser consumida pelo WebHook
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
-    evento: (NSString*) evento
-    metodo: (NSString*) metodo
+-(NSNumber*) alterarUsingPUT7WithId: (NSNumber*) _id
+    tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 
@@ -48,7 +46,7 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 
 
@@ -60,16 +58,16 @@
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// @param _id Id do WebHook
-/// @param evento Evento a ser chamado pelo WebHook
+/// @param tipoEvento TipoEvento a ser chamado pelo WebHook
 /// @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook
 /// @param url URL que a ser consumida pelo WebHook
 /// 
 ///
 /// @return PierPageWebHooks*
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
-    evento: (NSString*) evento
+    tipoEvento: (NSString*) tipoEvento
     metodo: (NSString*) metodo
     url: (NSString*) url
     completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler;
@@ -80,14 +78,12 @@
 /// Salvar Webhook
 /// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
 ///
-/// @param evento Evento a ser chamado pelo WebHook
-/// @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook
+/// @param tipoEvento TipoEvento a ser chamado pelo WebHook
 /// @param url URL que a ser consumida pelo WebHook
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) salvarUsingPOST4WithEvento: (NSString*) evento
-    metodo: (NSString*) metodo
+-(NSNumber*) salvarUsingPOST7WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 

@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "PierBase.h"
 #import "PierBodyAccessToken.h"
+#import "PierPageBases.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -21,6 +23,37 @@
 +(PierBaseApi*) sharedAPI;
 ///
 ///
+/// Alterar base
+/// Este recurso permite que seja modificado uma base j\u00C3\u00A1 cadastrada
+///
+/// @param _id C\u00C3\u00B3digo identificador da base
+/// @param servidor IP do servidor
+/// @param usuario Nome do usu\u00C3\u00A1rio
+/// @param senha Senha
+/// @param nomeBase Nome da base
+/// @param senhaCriptografada senha Criptografada
+/// @param domain Dom\u00C3\u00ADnio da base
+/// @param nomeBaseControleAcesso Nome da base de controle acesso
+/// @param servidorControleAcesso Servidor do controle de acesso
+/// @param idEmissor C\u00C3\u00B3digo do identificador do emissor
+/// 
+///
+/// @return PierBase*
+-(NSNumber*) alterarUsingPUTWithId: (NSNumber*) _id
+    servidor: (NSString*) servidor
+    usuario: (NSString*) usuario
+    senha: (NSString*) senha
+    nomeBase: (NSString*) nomeBase
+    senhaCriptografada: (NSNumber*) senhaCriptografada
+    domain: (NSString*) domain
+    nomeBaseControleAcesso: (NSString*) nomeBaseControleAcesso
+    servidorControleAcesso: (NSString*) servidorControleAcesso
+    idEmissor: (NSNumber*) idEmissor
+    completionHandler: (void (^)(PierBase* output, NSError* error)) handler;
+
+
+///
+///
 /// Limpar mapa de bases
 /// 
 ///
@@ -29,6 +62,83 @@
 /// @return PierBodyAccessToken*
 -(NSNumber*) clearUsingGETWithCompletionHandler: 
     (void (^)(PierBodyAccessToken* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar base
+/// Este recurso permite que seja consultada uma base do emissor atrav\u00C3\u00A9s de um id especifico
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da base (id).
+/// 
+///
+/// @return PierBase*
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierBase* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar bases
+/// Este recurso permite que sejam listadas as bases existentes
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param _id C\u00C3\u00B3digo identificador da base
+/// @param servidor IP do servidor
+/// @param usuario Nome do usu\u00C3\u00A1rio
+/// @param senha Senha
+/// @param nomeBase Nome da base
+/// @param senhaCriptografada senha Criptografada
+/// @param domain Dom\u00C3\u00ADnio da base
+/// @param nomeBaseControleAcesso Nome da base de controle acesso
+/// @param idEmissor C\u00C3\u00B3digo do identificador do emissor
+/// @param servidorControleAcesso Servidor do controle de acesso
+/// 
+///
+/// @return PierPageBases*
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    servidor: (NSString*) servidor
+    usuario: (NSString*) usuario
+    senha: (NSString*) senha
+    nomeBase: (NSString*) nomeBase
+    senhaCriptografada: (NSNumber*) senhaCriptografada
+    domain: (NSString*) domain
+    nomeBaseControleAcesso: (NSString*) nomeBaseControleAcesso
+    idEmissor: (NSNumber*) idEmissor
+    servidorControleAcesso: (NSString*) servidorControleAcesso
+    completionHandler: (void (^)(PierPageBases* output, NSError* error)) handler;
+
+
+///
+///
+/// Salvar base
+/// Este recurso permite que seja adicionado uma nova base
+///
+/// @param servidor IP do servidor
+/// @param usuario Nome do usu\u00C3\u00A1rio
+/// @param senha Senha
+/// @param nomeBase Nome da base
+/// @param senhaCriptografada senha Criptografada
+/// @param domain Dom\u00C3\u00ADnio da base
+/// @param nomeBaseControleAcesso Nome da base de controle acesso
+/// @param servidorControleAcesso Servidor do controle de acesso
+/// @param idEmissor C\u00C3\u00B3digo do identificador do emissor
+/// 
+///
+/// @return PierBase*
+-(NSNumber*) salvarUsingPOST1WithServidor: (NSString*) servidor
+    usuario: (NSString*) usuario
+    senha: (NSString*) senha
+    nomeBase: (NSString*) nomeBase
+    senhaCriptografada: (NSNumber*) senhaCriptografada
+    domain: (NSString*) domain
+    nomeBaseControleAcesso: (NSString*) nomeBaseControleAcesso
+    servidorControleAcesso: (NSString*) servidorControleAcesso
+    idEmissor: (NSNumber*) idEmissor
+    completionHandler: (void (^)(PierBase* output, NSError* error)) handler;
 
 
 

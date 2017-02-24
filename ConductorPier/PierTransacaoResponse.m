@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"ultimaParcelaLancada": @"ultimaParcelaLancada", @"id": @"_id", @"idConta": @"idConta", @"idTipoRegistro": @"idTipoRegistro", @"ordem": @"ordem", @"idTransacao": @"idTransacao", @"descricao": @"descricao", @"status": @"status", @"descricaoStatus": @"descricaoStatus", @"valor": @"valor", @"valorDolar": @"valorDolar", @"quantidadeParcelas": @"quantidadeParcelas", @"valorParcela": @"valorParcela", @"dataEvento": @"dataEvento", @"estabelecimento": @"estabelecimento", @"flagCredito": @"flagCredito", @"tipoEstabelecimento": @"tipoEstabelecimento", @"latitude": @"latitude", @"longetude": @"longetude", @"idGrupoMCC": @"idGrupoMCC", @"flagSolicitouContestacao": @"flagSolicitouContestacao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"ultimaParcelaLancada": @"ultimaParcelaLancada", @"id": @"_id", @"idConta": @"idConta", @"idTipoRegistro": @"idTipoRegistro", @"ordem": @"ordem", @"idTransacao": @"idTransacao", @"descricao": @"descricao", @"status": @"status", @"descricaoStatus": @"descricaoStatus", @"valor": @"valor", @"valorDolar": @"valorDolar", @"quantidadeParcelas": @"quantidadeParcelas", @"valorParcela": @"valorParcela", @"dataEvento": @"dataEvento", @"estabelecimento": @"estabelecimento", @"flagCredito": @"flagCredito", @"tipoEstabelecimento": @"tipoEstabelecimento", @"idGrupoMCC": @"idGrupoMCC", @"flagSolicitouContestacao": @"flagSolicitouContestacao" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"ultimaParcelaLancada", @"_id", @"idConta", @"idTipoRegistro", @"ordem", @"idTransacao", @"descricao", @"status", @"descricaoStatus", @"valor", @"valorDolar", @"quantidadeParcelas", @"valorParcela", @"dataEvento", @"estabelecimento", @"flagCredito", @"tipoEstabelecimento", @"latitude", @"longetude", @"idGrupoMCC", @"flagSolicitouContestacao"];
+  NSArray *optionalProperties = @[@"ultimaParcelaLancada", @"_id", @"idConta", @"idTipoRegistro", @"ordem", @"idTransacao", @"descricao", @"status", @"descricaoStatus", @"valor", @"valorDolar", @"quantidadeParcelas", @"valorParcela", @"dataEvento", @"estabelecimento", @"flagCredito", @"tipoEstabelecimento", @"idGrupoMCC", @"flagSolicitouContestacao"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

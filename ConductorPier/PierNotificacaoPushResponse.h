@@ -20,9 +20,9 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do emissor (id). [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Nome do tipoEvento da notifica\u00C3\u00A7\u00C3\u00A3o [optional]
  */
-@property(nonatomic) NSString* evento;
+@property(nonatomic) NSString* tipoEvento;
 /* Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* status;

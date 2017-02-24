@@ -32,8 +32,8 @@
 /* Apresenta a data e hora em que ser\u00C3\u00A1 enviado a notifica\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSDate* dataAgendamento;
-/* Apresenta o evento a qual pertence a notifica\u00C3\u00A7\u00C3\u00A3o 
+/* Apresenta o tipoEvento a qual pertence a notifica\u00C3\u00A7\u00C3\u00A3o 
  */
-@property(nonatomic) NSString* evento;
+@property(nonatomic) NSString* tipoEvento;
 
 @end

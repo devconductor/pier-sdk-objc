@@ -191,7 +191,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @param dataEnvio Apresenta a data e em que o registro foi enviado para o dispositivo. (optional)
 ///
-///  @param evento Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
+///  @param tipoEvento Nome do tipoEvento da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
 ///
 ///  @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
 ///
@@ -204,7 +204,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 -(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     dataEnvio: (NSDate*) dataEnvio
-    evento: (NSString*) evento
+    tipoEvento: (NSString*) tipoEvento
     status: (NSString*) status
     plataforma: (NSString*) plataforma
     protocolo: (NSString*) protocolo
@@ -235,9 +235,9 @@ static PierNotificacoesApi* singletonAPI = nil;
         
         queryParams[@"dataEnvio"] = dataEnvio;
     }
-    if (evento != nil) {
+    if (tipoEvento != nil) {
         
-        queryParams[@"evento"] = evento;
+        queryParams[@"tipoEvento"] = tipoEvento;
     }
     if (status != nil) {
         
@@ -312,7 +312,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @param dataInclusao Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado (optional)
 ///
-///  @param evento Nome do evento da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
+///  @param tipoEvento Nome do tipoEvento da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
 ///
 ///  @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
 ///
@@ -325,7 +325,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 -(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInclusao: (NSDate*) dataInclusao
-    evento: (NSString*) evento
+    tipoEvento: (NSString*) tipoEvento
     status: (NSString*) status
     operadora: (NSString*) operadora
     protocolo: (NSString*) protocolo
@@ -356,9 +356,9 @@ static PierNotificacoesApi* singletonAPI = nil;
         
         queryParams[@"dataInclusao"] = dataInclusao;
     }
-    if (evento != nil) {
+    if (tipoEvento != nil) {
         
-        queryParams[@"evento"] = evento;
+        queryParams[@"tipoEvento"] = tipoEvento;
     }
     if (status != nil) {
         

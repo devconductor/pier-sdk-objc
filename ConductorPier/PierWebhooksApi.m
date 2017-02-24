@@ -75,43 +75,35 @@ static PierWebhooksApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
 ///  @param _id C\u00C3\u00B3digo identificador do Webhook 
 ///
-///  @param evento Evento a ser chamado pelo WebHook 
-///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook 
+///  @param tipoEvento TipoEvento a ser chamado pelo WebHook 
 ///
 ///  @param url URL que a ser consumida pelo WebHook 
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
-    evento: (NSString*) evento
-    metodo: (NSString*) metodo
+-(NSNumber*) alterarUsingPUT7WithId: (NSNumber*) _id
+    tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT7`"];
     }
     
-    // verify the required parameter 'evento' is set
-    if (evento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `evento` when calling `alterarUsingPUT3`"];
-    }
-    
-    // verify the required parameter 'metodo' is set
-    if (metodo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `metodo` when calling `alterarUsingPUT3`"];
+    // verify the required parameter 'tipoEvento' is set
+    if (tipoEvento == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `alterarUsingPUT7`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT7`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -119,20 +111,15 @@ static PierWebhooksApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
+    if (tipoEvento != nil) {
         
-        queryParams[@"id"] = _id;
-    }
-    if (evento != nil) {
-        
-        queryParams[@"evento"] = evento;
-    }
-    if (metodo != nil) {
-        
-        queryParams[@"metodo"] = metodo;
+        queryParams[@"tipoEvento"] = tipoEvento;
     }
     if (url != nil) {
         
@@ -197,13 +184,13 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
     }
     
 
@@ -282,7 +269,7 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @param _id Id do WebHook (optional)
 ///
-///  @param evento Evento a ser chamado pelo WebHook (optional)
+///  @param tipoEvento TipoEvento a ser chamado pelo WebHook (optional)
 ///
 ///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook (optional)
 ///
@@ -290,10 +277,10 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierPageWebHooks*
 ///
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
-    evento: (NSString*) evento
+    tipoEvento: (NSString*) tipoEvento
     metodo: (NSString*) metodo
     url: (NSString*) url
     completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler {
@@ -323,9 +310,9 @@ static PierWebhooksApi* singletonAPI = nil;
         
         queryParams[@"id"] = _id;
     }
-    if (evento != nil) {
+    if (tipoEvento != nil) {
         
-        queryParams[@"evento"] = evento;
+        queryParams[@"tipoEvento"] = tipoEvento;
     }
     if (metodo != nil) {
         
@@ -390,33 +377,25 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 /// Salvar Webhook
 /// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
-///  @param evento Evento a ser chamado pelo WebHook 
-///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook 
+///  @param tipoEvento TipoEvento a ser chamado pelo WebHook 
 ///
 ///  @param url URL que a ser consumida pelo WebHook 
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) salvarUsingPOST4WithEvento: (NSString*) evento
-    metodo: (NSString*) metodo
+-(NSNumber*) salvarUsingPOST7WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'evento' is set
-    if (evento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `evento` when calling `salvarUsingPOST4`"];
-    }
-    
-    // verify the required parameter 'metodo' is set
-    if (metodo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `metodo` when calling `salvarUsingPOST4`"];
+    // verify the required parameter 'tipoEvento' is set
+    if (tipoEvento == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST7`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST4`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST7`"];
     }
     
 
@@ -431,13 +410,9 @@ static PierWebhooksApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (evento != nil) {
+    if (tipoEvento != nil) {
         
-        queryParams[@"evento"] = evento;
-    }
-    if (metodo != nil) {
-        
-        queryParams[@"metodo"] = metodo;
+        queryParams[@"tipoEvento"] = tipoEvento;
     }
     if (url != nil) {
         
