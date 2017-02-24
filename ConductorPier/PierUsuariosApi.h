@@ -39,7 +39,7 @@
 
 ///
 ///
-/// Alterar os usu\u00C3\u00A1rios cadastrados na base do PIER
+/// Alterar os usu\u00C3\u00A1rios cadastrados
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -67,7 +67,7 @@
 
 ///
 ///
-/// Lista os Usu\u00C3\u00A1rios cadastrados na base do PIER
+/// Lista os Usu\u00C3\u00A1rios cadastrados
 /// Este m\u00C3\u00A9todo permite que sejam listados os usu\u00C3\u00A1rios existentes na base do PIER.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
@@ -105,8 +105,8 @@
 
 ///
 ///
-/// Cadastrar Usu\u00C3\u00A1rio na base do PIER
-/// Esse recurso permite cadastrar usu\u00C3\u00A1rios na base do PIER.
+/// Cadastrar Usu\u00C3\u00A1rio
+/// Esse recurso permite cadastrar usu\u00C3\u00A1rios.
 ///
 /// @param persist persist
 /// 

@@ -212,8 +212,8 @@
 
 ///
 ///
-/// Lista as transfer\u00C3\u00AAncias de cr\u00C3\u00A9dito realizadas pela conta
-/// Este m\u00C3\u00A9todo permite que sejam listadas as transfer\u00C3\u00AAncias de cr\u00C3\u00A9dito realizadas pela conta existentes na base do emissor.
+/// Lista as transfer\u00C3\u00AAncias realizadas pela conta
+/// Este m\u00C3\u00A9todo permite que sejam listadas as transfer\u00C3\u00AAncias realizadas pela conta existentes na base do emissor.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
