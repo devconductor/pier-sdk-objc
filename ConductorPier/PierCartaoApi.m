@@ -1570,6 +1570,8 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param codigoDesbloqueio Apresenta um c\u00C3\u00B3digo espec\u00C3\u00ADfico para ser utilizado como vari\u00C3\u00A1vel no processo de desbloqueio do cart\u00C3\u00A3o para emissores que querem usar esta funcionalidade. (optional)
 ///
+///  @param sequencialCartao N\u00C3\u00BAmero sequencial do cart\u00C3\u00A3o (optional)
+///
 ///  @returns PierPageCartoes*
 ///
 -(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
@@ -1591,6 +1593,7 @@ static PierCartaoApi* singletonAPI = nil;
     flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
+    sequencialCartao: (NSNumber*) sequencialCartao
     completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
 
     
@@ -1681,6 +1684,10 @@ static PierCartaoApi* singletonAPI = nil;
     if (codigoDesbloqueio != nil) {
         
         queryParams[@"codigoDesbloqueio"] = codigoDesbloqueio;
+    }
+    if (sequencialCartao != nil) {
+        
+        queryParams[@"sequencialCartao"] = sequencialCartao;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

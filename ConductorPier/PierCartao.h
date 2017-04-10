@@ -68,5 +68,8 @@
 /* Apresenta um c\u00C3\u00B3digo espec\u00C3\u00ADfico para ser utilizado como vari\u00C3\u00A1vel no processo de desbloqueio do cart\u00C3\u00A3o para emissores que querem usar esta funcionalidade. [optional]
  */
 @property(nonatomic) NSString* codigoDesbloqueio;
+/* N\u00C3\u00BAmero sequencial do cart\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSNumber* sequencialCartao;
 
 @end
