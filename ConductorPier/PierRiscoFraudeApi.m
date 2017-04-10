@@ -162,13 +162,13 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierRiscoFraudeDetalhadoResponse*
 ///
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
     }
     
 
@@ -325,8 +325,6 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @param idAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Atendimento (id) (optional)
-///
 ///  @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id) (optional)
 ///
 ///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
@@ -339,7 +337,6 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    idAtendimento: (NSNumber*) idAtendimento
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
     idConta: (NSNumber*) idConta
     nomeAtendente: (NSString*) nomeAtendente
@@ -366,10 +363,6 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
-    }
-    if (idAtendimento != nil) {
-        
-        queryParams[@"idAtendimento"] = idAtendimento;
     }
     if (idTipoAtendimento != nil) {
         
@@ -452,7 +445,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierRiscoFraudeResponsePage*
 ///
--(NSNumber*) listarUsingGET8WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET11WithIdConta: (NSNumber*) idConta
     confirmacaoFraude: (NSString*) confirmacaoFraude
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -461,12 +454,12 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET11`"];
     }
     
     // verify the required parameter 'confirmacaoFraude' is set
     if (confirmacaoFraude == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `confirmacaoFraude` when calling `listarUsingGET8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `confirmacaoFraude` when calling `listarUsingGET11`"];
     }
     
 
@@ -726,13 +719,15 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
 ///
-///  @param dataAtendimento Apresenta a data em que o Atendimento foi realizado. (optional)
+///  @param dataAtendimento Apresenta a data e hora em que o Atendimento foi realizado no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
-///  @param dataAgendamento Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data para processamento ou a data para retorno do Atendimento. (optional)
+///  @param dataAgendamento Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data e hora para processamento ou a data e hora para retorno do Atendimento no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
-///  @param dataHoraInicioAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. (optional)
+///  @param dataHoraInicioAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
-///  @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. (optional)
+///  @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///
+///  @param flagFilaFraude Flag fila fraude (optional)
 ///
 ///  @returns PierAtendimentoCliente*
 ///
@@ -744,6 +739,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     dataAgendamento: (NSDate*) dataAgendamento
     dataHoraInicioAtendimento: (NSDate*) dataHoraInicioAtendimento
     dataHoraFimAtendimento: (NSDate*) dataHoraFimAtendimento
+    flagFilaFraude: (NSNumber*) flagFilaFraude
     completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler {
 
     
@@ -790,6 +786,10 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     if (dataHoraFimAtendimento != nil) {
         
         queryParams[@"dataHoraFimAtendimento"] = dataHoraFimAtendimento;
+    }
+    if (flagFilaFraude != nil) {
+        
+        queryParams[@"flagFilaFraude"] = flagFilaFraude;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

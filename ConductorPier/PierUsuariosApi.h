@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "PierUsuario.h"
+#import "PierUsuarioUpdate.h"
+#import "PierUsuarioResponse.h"
 #import "PierPageUsuarios.h"
+#import "PierUsuarioPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -39,17 +41,17 @@
 
 ///
 ///
-/// Alterar os usu\u00C3\u00A1rios cadastrados
+/// Altera os usu\u00C3\u00A1rios cadastrados
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
 /// @param update update
 /// 
 ///
-/// @return PierUsuario*
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
-    update: (PierUsuario*) update
-    completionHandler: (void (^)(PierUsuario* output, NSError* error)) handler;
+/// @return PierUsuarioResponse*
+-(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
+    update: (PierUsuarioUpdate*) update
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
 ///
@@ -60,9 +62,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
 /// 
 ///
-/// @return PierUsuario*
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierUsuario* output, NSError* error)) handler;
+/// @return PierUsuarioResponse*
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
 ///
@@ -72,7 +74,6 @@
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id Id do Usuario
 /// @param nome Nome do Usuario
 /// @param cpf CPF do Usuario
 /// @param email Email do Usuario
@@ -80,9 +81,8 @@
 /// 
 ///
 /// @return PierPageUsuarios*
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     nome: (NSString*) nome
     cpf: (NSString*) cpf
     email: (NSString*) email
@@ -105,15 +105,15 @@
 
 ///
 ///
-/// Cadastrar Usu\u00C3\u00A1rio
+/// Cadastra Usu\u00C3\u00A1rio
 /// Esse recurso permite cadastrar usu\u00C3\u00A1rios.
 ///
 /// @param persist persist
 /// 
 ///
-/// @return PierUsuario*
--(NSNumber*) salvarUsingPOST6WithPersist: (PierUsuario*) persist
-    completionHandler: (void (^)(PierUsuario* output, NSError* error)) handler;
+/// @return PierUsuarioResponse*
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierUsuarioPersist*) persist
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
 ///

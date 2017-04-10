@@ -5,8 +5,8 @@
 #import "PierStatusImpressao.h"
 #import "PierPageEstagiosCartoes.h"
 #import "PierPageStatusCartoes.h"
-#import "PierPageStatusImpressao.h"
 #import "PierPageStatusContas.h"
+#import "PierPageStatusImpressao.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -61,7 +61,7 @@
 /// 
 ///
 /// @return PierStatusConta*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler;
 
 
@@ -74,7 +74,7 @@
 /// 
 ///
 /// @return PierStatusImpressao*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler;
 
 
@@ -130,25 +130,6 @@
 
 ///
 ///
-/// Lista as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o
-/// @param nome Nome do status impress\u00C3\u00A3o
-/// 
-///
-/// @return PierPageStatusImpressao*
--(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageStatusImpressao* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista os Status Contas cadastrados para o Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
 ///
@@ -162,7 +143,7 @@
 /// 
 ///
 /// @return PierPageStatusContas*
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -170,6 +151,25 @@
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o
+/// @param nome Nome do status impress\u00C3\u00A3o
+/// 
+///
+/// @return PierPageStatusImpressao*
+-(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
+    completionHandler: (void (^)(PierPageStatusImpressao* output, NSError* error)) handler;
 
 
 

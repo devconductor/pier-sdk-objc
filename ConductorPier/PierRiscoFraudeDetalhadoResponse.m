@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoResolucao": @"idTipoResolucao", @"descricaoTipoResolucao": @"descricaoTipoResolucao", @"flagAltoRisco": @"flagAltoRisco", @"idConta": @"idConta", @"idCartao": @"idCartao", @"idProduto": @"idProduto", @"idTransacao": @"idTransacao", @"dataTransacao": @"dataTransacao", @"valorTransacao": @"valorTransacao", @"codigoMoedaOrigem": @"codigoMoedaOrigem", @"valorOrigem": @"valorOrigem", @"codigoMoedaDestino": @"codigoMoedaDestino", @"valorDestino": @"valorDestino", @"nomeEstabelecimento": @"nomeEstabelecimento", @"idPais": @"idPais", @"codigoRespostaAutorizador": @"codigoRespostaAutorizador", @"descricaoRespostaAutorizador": @"descricaoRespostaAutorizador", @"codigoRespostaFraude": @"codigoRespostaFraude", @"descricaoRespostaFraude": @"descricaoRespostaFraude", @"origemTransacao": @"origemTransacao", @"codigoModoEntradaTerminal": @"codigoModoEntradaTerminal", @"descricaoModoEntradaTerminal": @"descricaoModoEntradaTerminal" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoResolucao": @"idTipoResolucao", @"descricaoTipoResolucao": @"descricaoTipoResolucao", @"flagAltoRisco": @"flagAltoRisco", @"idConta": @"idConta", @"idCartao": @"idCartao", @"idProduto": @"idProduto", @"idTransacao": @"idTransacao", @"dataTransacao": @"dataTransacao", @"valorTransacao": @"valorTransacao", @"codigoMoedaOrigem": @"codigoMoedaOrigem", @"valorOrigem": @"valorOrigem", @"codigoMoedaDestino": @"codigoMoedaDestino", @"valorDestino": @"valorDestino", @"nomeEstabelecimento": @"nomeEstabelecimento", @"idPais": @"idPais", @"codigoRespostaAutorizador": @"codigoRespostaAutorizador", @"descricaoRespostaAutorizador": @"descricaoRespostaAutorizador", @"codigoRespostaFraude": @"codigoRespostaFraude", @"descricaoRespostaFraude": @"descricaoRespostaFraude", @"origemTransacao": @"origemTransacao", @"codigoModoEntradaTerminal": @"codigoModoEntradaTerminal", @"descricaoModoEntradaTerminal": @"descricaoModoEntradaTerminal", @"cpf": @"cpf", @"cnpj": @"cnpj", @"email": @"email", @"tefefones": @"tefefones" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idTipoResolucao", @"descricaoTipoResolucao", @"flagAltoRisco", @"idConta", @"idCartao", @"idProduto", @"idTransacao", @"dataTransacao", @"valorTransacao", @"codigoMoedaOrigem", @"valorOrigem", @"codigoMoedaDestino", @"valorDestino", @"nomeEstabelecimento", @"idPais", @"codigoRespostaAutorizador", @"descricaoRespostaAutorizador", @"codigoRespostaFraude", @"descricaoRespostaFraude", @"origemTransacao", @"codigoModoEntradaTerminal", @"descricaoModoEntradaTerminal"];
+  NSArray *optionalProperties = @[@"_id", @"idTipoResolucao", @"descricaoTipoResolucao", @"flagAltoRisco", @"idConta", @"idCartao", @"idProduto", @"idTransacao", @"dataTransacao", @"valorTransacao", @"codigoMoedaOrigem", @"valorOrigem", @"codigoMoedaDestino", @"valorDestino", @"nomeEstabelecimento", @"idPais", @"codigoRespostaAutorizador", @"descricaoRespostaAutorizador", @"codigoRespostaFraude", @"descricaoRespostaFraude", @"origemTransacao", @"codigoModoEntradaTerminal", @"descricaoModoEntradaTerminal", @"cpf", @"cnpj", @"email", @"tefefones"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

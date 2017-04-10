@@ -32,8 +32,20 @@
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. [optional]
  */
 @property(nonatomic) NSDate* dataNascimento;
+/* N\u00C3\u00BAmero da Identidade [optional]
+ */
+@property(nonatomic) NSString* numeroIdentidade;
+/* Org\u00C3\u00A3o expedidor do RG. [optional]
+ */
+@property(nonatomic) NSString* orgaoExpedidorIdentidade;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). [optional]
  */
 @property(nonatomic) NSString* sexo;
+/* Sigla da Unidade Federativa de onde foi expedido a Identidade [optional]
+ */
+@property(nonatomic) NSString* unidadeFederativaIdentidade;
+/* Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd [optional]
+ */
+@property(nonatomic) NSDate* dataEmissaoIdentidade;
 
 @end

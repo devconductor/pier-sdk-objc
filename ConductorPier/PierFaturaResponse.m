@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"descricao": @"descricao", @"banco": @"banco", @"faixaNossoNumero": @"faixaNossoNumero", @"minNossoNumero": @"minNossoNumero", @"maxNossoNumero": @"maxNossoNumero", @"tamNossoNumero": @"tamNossoNumero", @"ultimoNossoNumero": @"ultimoNossoNumero" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idConta": @"idConta", @"idProduto": @"idProduto", @"dataVencimento": @"dataVencimento", @"saldoFaturaAnterior": @"saldoFaturaAnterior", @"saldoMulta": @"saldoMulta", @"saldoCompras": @"saldoCompras", @"saldoPagamentos": @"saldoPagamentos", @"saldoTarifas": @"saldoTarifas", @"saldoDebitos": @"saldoDebitos", @"saldoCreditos": @"saldoCreditos", @"saldoAtualFinal": @"saldoAtualFinal", @"valorMinimoFatura": @"valorMinimoFatura", @"flagEmiteFatura": @"flagEmiteFatura" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"descricao", @"banco", @"faixaNossoNumero", @"minNossoNumero", @"maxNossoNumero", @"tamNossoNumero", @"ultimoNossoNumero"];
+  NSArray *optionalProperties = @[@"_id", @"idConta", @"idProduto", @"dataVencimento", @"saldoFaturaAnterior", @"saldoMulta", @"saldoCompras", @"saldoPagamentos", @"saldoTarifas", @"saldoDebitos", @"saldoCreditos", @"saldoAtualFinal", @"valorMinimoFatura", @"flagEmiteFatura"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

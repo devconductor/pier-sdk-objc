@@ -9,12 +9,12 @@
 
 
 
-@protocol PierUsuario
+@protocol PierUsuarioResponse
 @end
 
-@interface PierUsuario : PierObject
+@interface PierUsuarioResponse : PierObject
 
-/* Id do Usu\u00C3\u00A1rio 
+/* Id do Usu\u00C3\u00A1rio [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Nome do Usu\u00C3\u00A1rio [optional]
@@ -32,9 +32,6 @@
 /* Email do Usu\u00C3\u00A1rio 
  */
 @property(nonatomic) NSString* email;
-/* Apresenta a senha do usu\u00C3\u00A1rio. [optional]
- */
-@property(nonatomic) NSString* senha;
 /* Status do Usu\u00C3\u00A1rio [optional]
  */
 @property(nonatomic) NSString* status;

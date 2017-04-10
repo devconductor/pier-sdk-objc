@@ -1,6 +1,6 @@
-#import "PierUsuario.h"
+#import "PierTipoOportunidadeAUDResponse.h"
 
-@implementation PierUsuario
+@implementation PierTipoOportunidadeAUDResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"login": @"login", @"idEmissor": @"idEmissor", @"cpf": @"cpf", @"email": @"email", @"senha": @"senha", @"status": @"status", @"dataCriacao": @"dataCriacao", @"dataModificacao": @"dataModificacao", @"tentativasIncorretas": @"tentativasIncorretas" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"rev": @"rev", @"revType": @"revType", @"revDate": @"revDate", @"id": @"_id", @"descricao": @"descricao", @"flagAtivo": @"flagAtivo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nome", @"idEmissor", @"cpf", @"senha", @"status", @"dataCriacao", @"dataModificacao", @"tentativasIncorretas"];
+  NSArray *optionalProperties = @[@"rev", @"revType", @"revDate", @"_id", @"descricao", @"flagAtivo"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

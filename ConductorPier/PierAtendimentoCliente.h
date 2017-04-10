@@ -44,13 +44,13 @@
 /* Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. [optional]
  */
 @property(nonatomic) NSDate* dataHoraFimAtendimento;
-/* Apresenta a data em que o Atendimento foi realizado. [optional]
+/* Apresenta a data e hora em que o Atendimento foi realizado. [optional]
  */
 @property(nonatomic) NSDate* dataAtendimento;
-/* Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data para processamento ou a data para retorno do Atendimento. [optional]
+/* Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data e hora para processamento ou a data para retorno do Atendimento. [optional]
  */
 @property(nonatomic) NSDate* dataAgendamento;
-/* Quando utilizado, apresenta a data em que a solicita\u00C3\u00A7\u00C3\u00A3o registrada no Atendimento fora processada. [optional]
+/* Quando utilizado, apresenta a data e hora em que a solicita\u00C3\u00A7\u00C3\u00A3o registrada no Atendimento fora processada. [optional]
  */
 @property(nonatomic) NSDate* dataProcessamento;
 /* Quando aplic\u00C3\u00A1vel, de acordo com o Indica se o Processamento da solicita\u00C3\u00A7\u00C3\u00A3o fora realizado. [optional]

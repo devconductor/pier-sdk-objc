@@ -9,10 +9,10 @@
 
 
 
-@protocol PierProduto
+@protocol PierProdutoDetalhesResponse
 @end
 
-@interface PierProduto : PierObject
+@interface PierProdutoDetalhesResponse : PierObject
 
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). 
  */
@@ -23,5 +23,11 @@
 /* Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). 
  */
 @property(nonatomic) NSNumber* status;
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence. [optional]
+ */
+@property(nonatomic) NSNumber* idFantasiaBasica;
+/* Descri\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica a qual o produto pertence. [optional]
+ */
+@property(nonatomic) NSString* fantasiaBasica;
 
 @end

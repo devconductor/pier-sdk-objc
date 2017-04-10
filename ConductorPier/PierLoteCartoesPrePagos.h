@@ -34,7 +34,7 @@
 @property(nonatomic) NSNumber* idEndereco;
 /* N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. 
  */
-@property(nonatomic) NSNumber* quantidadeCartoes;
+@property(nonatomic) NSNumber* quantidade;
 /* Data de cadastro do lote de cart\u00C3\u00B5es pr\u00C3\u00A9-pagos. 
  */
 @property(nonatomic) NSDate* dataCadastro;

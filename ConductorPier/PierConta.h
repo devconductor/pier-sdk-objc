@@ -53,5 +53,8 @@
 /* N\u00C3\u00BAmero da conta corrente. [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
+/* Forma de envio da fatura. [optional]
+ */
+@property(nonatomic) NSString* formaEnvioFatura;
 
 @end

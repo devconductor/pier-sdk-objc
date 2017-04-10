@@ -3,8 +3,11 @@
 #import "PierHistoricoImpressaoCartao.h"
 #import "PierCartao.h"
 #import "PierLimiteDisponibilidade.h"
-#import "PierPortador.h"
 #import "PierLoteCartoesPrePagos.h"
+#import "PierPortador.h"
+#import "PierLinkTransferenciaBancariaResponse_.h"
+#import "PierPageLoteCartoesPrePagosResponse.h"
+#import "PierLinkPageTransferenciaBancariaResponse_.h"
 #import "PierPageCartoes.h"
 #import "PierValidaCartao.h"
 
@@ -644,6 +647,89 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
+/// Permite consultar um determinado Lote de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pago
+/// Este m\u00C3\u00A9todo permite consultar os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor atrav\u00C3\u00A9s do id do lote.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do lote de cart\u00C3\u00B5es (id) 
+///
+///  @returns PierLoteCartoesPrePagos*
+///
+-(NSNumber*) consultarLotesCartoesPrePagosUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarLotesCartoesPrePagosUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/lotes-cartoes-pre-pagos/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLoteCartoesPrePagos*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLoteCartoesPrePagos*)data, error);
+                           }
+          ];
+}
+
+///
 /// Apresenta os dados do Portador do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es do Portador de um determinado Cart\u00C3\u00A3o a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
@@ -810,6 +896,107 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
+/// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria
+/// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada entre contas. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
+///  @param _id Id Cart\u00C3\u00A3o 
+///
+///  @param idTransferencia Id Transfer\u00C3\u00AAncia 
+///
+///  @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id) (optional)
+///
+///  @returns PierLinkTransferenciaBancariaResponse_*
+///
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+    idTransferencia: (NSNumber*) idTransferencia
+    idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
+    completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
+    }
+    
+    // verify the required parameter 'idTransferencia' is set
+    if (idTransferencia == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET20`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/transferencias-creditos-contas-bancarias/{id_transferencia}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    if (idTransferencia != nil) {
+        pathParams[@"id_transferencia"] = idTransferencia;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idContaBancariaDestino != nil) {
+        
+        queryParams[@"id_conta_bancaria_destino"] = idContaBancariaDestino;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLinkTransferenciaBancariaResponse_*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLinkTransferenciaBancariaResponse_*)data, error);
+                           }
+          ];
+}
+
+///
 /// Realiza o desbloqueio de um determinado Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
@@ -919,7 +1106,7 @@ static PierCartaoApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/pre-pagos/lotes"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/lotes-cartoes-pre-pagos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1096,8 +1283,6 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais (id). (optional)
-///
 ///  @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id). (optional)
 ///
 ///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
@@ -1116,11 +1301,10 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param statusProcessamento Indica o Status de Processamento do Lote. (optional)
 ///
-///  @returns PierPageCartoes*
+///  @returns PierPageLoteCartoesPrePagosResponse*
 ///
 -(NSNumber*) listarLotesCartoesPrePagosUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     idOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
     idTipoCartao: (NSNumber*) idTipoCartao
@@ -1130,11 +1314,11 @@ static PierCartaoApi* singletonAPI = nil;
     dataCadastro: (NSDate*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
-    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/pre-pagos/lotes"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/lotes-cartoes-pre-pagos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1152,10 +1336,6 @@ static PierCartaoApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
     }
     if (idOrigemComercial != nil) {
         
@@ -1238,9 +1418,113 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageCartoes*"
+                              responseType: @"PierPageLoteCartoesPrePagosResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageCartoes*)data, error);
+                               handler((PierPageLoteCartoesPrePagosResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Listar as transfer\u00C3\u00AAncias banc\u00C3\u00A1rias realizadas
+/// Este recurso tem como objetivo permitir que o portador de um Cart\u00C3\u00A3o possa consultar uma lista das Transfer\u00C3\u00AAncias Banc\u00C3\u00A1rias para os Favorecidos cadastrados.
+///  @param _id Id Cart\u00C3\u00A3o 
+///
+///  @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id) (optional)
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
+///  @returns PierLinkPageTransferenciaBancariaResponse_*
+///
+-(NSNumber*) listarUsingGET19WithId: (NSNumber*) _id
+    idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierLinkPageTransferenciaBancariaResponse_* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET19`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/transferencias-creditos-contas-bancarias"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idContaBancariaDestino != nil) {
+        
+        queryParams[@"id_conta_bancaria_destino"] = idContaBancariaDestino;
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLinkPageTransferenciaBancariaResponse_*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLinkPageTransferenciaBancariaResponse_*)data, error);
                            }
           ];
 }
@@ -1251,8 +1535,6 @@ static PierCartaoApi* singletonAPI = nil;
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). (optional)
 ///
 ///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id). (optional)
 ///
@@ -1292,7 +1574,6 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
     idConta: (NSNumber*) idConta
@@ -1332,10 +1613,6 @@ static PierCartaoApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
     }
     if (idStatusCartao != nil) {
         
@@ -1453,6 +1730,237 @@ static PierCartaoApi* singletonAPI = nil;
                               responseType: @"PierPageCartoes*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPageCartoes*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria entre bancos / contas
+/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para outro cliente do mesmo emissor. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta de destino.
+///  @param _id Id Cart\u00C3\u00A3o 
+///
+///  @param dataCompra Data da transfer\u00C3\u00AAncia 
+///
+///  @param proximoVencimentoPadrao Dia do vencimento padr\u00C3\u00A3o da fatura 
+///
+///  @param proximoVencimentoReal Data do vencimento real da fatura 
+///
+///  @param valorCompra Valor da transfer\u00C3\u00AAncia 
+///
+///  @param nomeFavorecido Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+///
+///  @param documentoFavorecido N\u00C3\u00BAmero do CPF ou CNPJ. 
+///
+///  @param banco C\u00C3\u00B3digo do banco 
+///
+///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia 
+///
+///  @param numeroConta N\u00C3\u00BAmero da conta 
+///
+///  @param flagContaPoupanca Sinaliza se conta banc\u00C3\u00A1ria \u00C3\u00A9 poupan\u00C3\u00A7a (1: Poupan\u00C3\u00A7a, 0: Conta corrente) 
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///
+///  @param digitoAgencia D\u00C3\u00ADgito da ag\u00C3\u00AAncia (optional)
+///
+///  @param digitoConta D\u00C3\u00ADgito da conta (optional)
+///
+///  @returns PierLinkTransferenciaBancariaResponse_*
+///
+-(NSNumber*) transferirUsingPOSTWithId: (NSNumber*) _id
+    dataCompra: (NSDate*) dataCompra
+    proximoVencimentoPadrao: (NSDate*) proximoVencimentoPadrao
+    proximoVencimentoReal: (NSDate*) proximoVencimentoReal
+    valorCompra: (NSNumber*) valorCompra
+    nomeFavorecido: (NSString*) nomeFavorecido
+    documentoFavorecido: (NSString*) documentoFavorecido
+    banco: (NSNumber*) banco
+    numeroAgencia: (NSString*) numeroAgencia
+    numeroConta: (NSString*) numeroConta
+    flagContaPoupanca: (NSNumber*) flagContaPoupanca
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    digitoAgencia: (NSString*) digitoAgencia
+    digitoConta: (NSString*) digitoConta
+    completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'dataCompra' is set
+    if (dataCompra == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataCompra` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'proximoVencimentoPadrao' is set
+    if (proximoVencimentoPadrao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `proximoVencimentoPadrao` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'proximoVencimentoReal' is set
+    if (proximoVencimentoReal == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `proximoVencimentoReal` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'valorCompra' is set
+    if (valorCompra == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `valorCompra` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'nomeFavorecido' is set
+    if (nomeFavorecido == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nomeFavorecido` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'documentoFavorecido' is set
+    if (documentoFavorecido == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `documentoFavorecido` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'banco' is set
+    if (banco == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `banco` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'numeroAgencia' is set
+    if (numeroAgencia == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroAgencia` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'numeroConta' is set
+    if (numeroConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroConta` when calling `transferirUsingPOST`"];
+    }
+    
+    // verify the required parameter 'flagContaPoupanca' is set
+    if (flagContaPoupanca == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `flagContaPoupanca` when calling `transferirUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/transferencias-creditos-contas-bancarias"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (dataCompra != nil) {
+        
+        queryParams[@"dataCompra"] = dataCompra;
+    }
+    if (proximoVencimentoPadrao != nil) {
+        
+        queryParams[@"proximoVencimentoPadrao"] = proximoVencimentoPadrao;
+    }
+    if (proximoVencimentoReal != nil) {
+        
+        queryParams[@"proximoVencimentoReal"] = proximoVencimentoReal;
+    }
+    if (valorCompra != nil) {
+        
+        queryParams[@"valorCompra"] = valorCompra;
+    }
+    if (nomeFavorecido != nil) {
+        
+        queryParams[@"nomeFavorecido"] = nomeFavorecido;
+    }
+    if (documentoFavorecido != nil) {
+        
+        queryParams[@"documentoFavorecido"] = documentoFavorecido;
+    }
+    if (banco != nil) {
+        
+        queryParams[@"banco"] = banco;
+    }
+    if (numeroAgencia != nil) {
+        
+        queryParams[@"numeroAgencia"] = numeroAgencia;
+    }
+    if (digitoAgencia != nil) {
+        
+        queryParams[@"digitoAgencia"] = digitoAgencia;
+    }
+    if (numeroConta != nil) {
+        
+        queryParams[@"numeroConta"] = numeroConta;
+    }
+    if (digitoConta != nil) {
+        
+        queryParams[@"digitoConta"] = digitoConta;
+    }
+    if (flagContaPoupanca != nil) {
+        
+        queryParams[@"flagContaPoupanca"] = flagContaPoupanca;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"access_token"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLinkTransferenciaBancariaResponse_*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLinkTransferenciaBancariaResponse_*)data, error);
                            }
           ];
 }

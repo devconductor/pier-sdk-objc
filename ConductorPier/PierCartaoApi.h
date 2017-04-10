@@ -2,8 +2,11 @@
 #import "PierHistoricoImpressaoCartao.h"
 #import "PierCartao.h"
 #import "PierLimiteDisponibilidade.h"
-#import "PierPortador.h"
 #import "PierLoteCartoesPrePagos.h"
+#import "PierPortador.h"
+#import "PierLinkTransferenciaBancariaResponse_.h"
+#import "PierPageLoteCartoesPrePagosResponse.h"
+#import "PierLinkPageTransferenciaBancariaResponse_.h"
 #import "PierPageCartoes.h"
 #import "PierValidaCartao.h"
 #import "PierObject.h"
@@ -117,6 +120,19 @@
 
 ///
 ///
+/// Permite consultar um determinado Lote de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pago
+/// Este m\u00C3\u00A9todo permite consultar os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor atrav\u00C3\u00A9s do id do lote.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do lote de cart\u00C3\u00B5es (id)
+/// 
+///
+/// @return PierLoteCartoesPrePagos*
+-(NSNumber*) consultarLotesCartoesPrePagosUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os dados do Portador do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es do Portador de um determinado Cart\u00C3\u00A3o a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 ///
@@ -139,6 +155,23 @@
 /// @return PierCartao*
 -(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria
+/// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada entre contas. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
+///
+/// @param _id Id Cart\u00C3\u00A3o
+/// @param idTransferencia Id Transfer\u00C3\u00AAncia
+/// @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id)
+/// 
+///
+/// @return PierLinkTransferenciaBancariaResponse_*
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+    idTransferencia: (NSNumber*) idTransferencia
+    idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
+    completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler;
 
 
 ///
@@ -197,7 +230,6 @@
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais (id).
 /// @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id).
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
 /// @param idTipoCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Cart\u00C3\u00A3o (id).
@@ -209,10 +241,9 @@
 /// @param statusProcessamento Indica o Status de Processamento do Lote.
 /// 
 ///
-/// @return PierPageCartoes*
+/// @return PierPageLoteCartoesPrePagosResponse*
 -(NSNumber*) listarLotesCartoesPrePagosUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     idOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
     idTipoCartao: (NSNumber*) idTipoCartao
@@ -222,7 +253,26 @@
     dataCadastro: (NSDate*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
-    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar as transfer\u00C3\u00AAncias banc\u00C3\u00A1rias realizadas
+/// Este recurso tem como objetivo permitir que o portador de um Cart\u00C3\u00A3o possa consultar uma lista das Transfer\u00C3\u00AAncias Banc\u00C3\u00A1rias para os Favorecidos cadastrados.
+///
+/// @param _id Id Cart\u00C3\u00A3o
+/// @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id)
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// 
+///
+/// @return PierLinkPageTransferenciaBancariaResponse_*
+-(NSNumber*) listarUsingGET19WithId: (NSNumber*) _id
+    idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierLinkPageTransferenciaBancariaResponse_* output, NSError* error)) handler;
 
 
 ///
@@ -232,7 +282,6 @@
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id).
 /// @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o cart\u00C3\u00A3o pertence (id).
@@ -255,7 +304,6 @@
 /// @return PierPageCartoes*
 -(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
     idConta: (NSNumber*) idConta
@@ -274,6 +322,47 @@
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler;
+
+
+///
+///
+/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria entre bancos / contas
+/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para outro cliente do mesmo emissor. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta de destino.
+///
+/// @param _id Id Cart\u00C3\u00A3o
+/// @param dataCompra Data da transfer\u00C3\u00AAncia
+/// @param proximoVencimentoPadrao Dia do vencimento padr\u00C3\u00A3o da fatura
+/// @param proximoVencimentoReal Data do vencimento real da fatura
+/// @param valorCompra Valor da transfer\u00C3\u00AAncia
+/// @param nomeFavorecido Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
+/// @param documentoFavorecido N\u00C3\u00BAmero do CPF ou CNPJ.
+/// @param banco C\u00C3\u00B3digo do banco
+/// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia
+/// @param numeroConta N\u00C3\u00BAmero da conta
+/// @param flagContaPoupanca Sinaliza se conta banc\u00C3\u00A1ria \u00C3\u00A9 poupan\u00C3\u00A7a (1: Poupan\u00C3\u00A7a, 0: Conta corrente)
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param digitoAgencia D\u00C3\u00ADgito da ag\u00C3\u00AAncia
+/// @param digitoConta D\u00C3\u00ADgito da conta
+/// 
+///
+/// @return PierLinkTransferenciaBancariaResponse_*
+-(NSNumber*) transferirUsingPOSTWithId: (NSNumber*) _id
+    dataCompra: (NSDate*) dataCompra
+    proximoVencimentoPadrao: (NSDate*) proximoVencimentoPadrao
+    proximoVencimentoReal: (NSDate*) proximoVencimentoReal
+    valorCompra: (NSNumber*) valorCompra
+    nomeFavorecido: (NSString*) nomeFavorecido
+    documentoFavorecido: (NSString*) documentoFavorecido
+    banco: (NSNumber*) banco
+    numeroAgencia: (NSString*) numeroAgencia
+    numeroConta: (NSString*) numeroConta
+    flagContaPoupanca: (NSNumber*) flagContaPoupanca
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    digitoAgencia: (NSString*) digitoAgencia
+    digitoConta: (NSString*) digitoConta
+    completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler;
 
 
 ///

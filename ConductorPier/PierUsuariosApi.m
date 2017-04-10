@@ -1,7 +1,9 @@
 #import "PierUsuariosApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierUsuario.h"
+#import "PierUsuarioUpdate.h"
+#import "PierUsuarioResponse.h"
 #import "PierPageUsuarios.h"
+#import "PierUsuarioPersist.h"
 
 
 @interface PierUsuariosApi ()
@@ -176,27 +178,27 @@ static PierUsuariosApi* singletonAPI = nil;
 }
 
 ///
-/// Alterar os usu\u00C3\u00A1rios cadastrados
+/// Altera os usu\u00C3\u00A1rios cadastrados
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id). 
 ///
 ///  @param update update 
 ///
-///  @returns PierUsuario*
+///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
-    update: (PierUsuario*) update
-    completionHandler: (void (^)(PierUsuario* output, NSError* error)) handler {
+-(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
+    update: (PierUsuarioUpdate*) update
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT9`"];
     }
     
     // verify the required parameter 'update' is set
     if (update == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT9`"];
     }
     
 
@@ -259,9 +261,9 @@ static PierUsuariosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierUsuario*"
+                              responseType: @"PierUsuarioResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierUsuario*)data, error);
+                               handler((PierUsuarioResponse*)data, error);
                            }
           ];
 }
@@ -271,15 +273,15 @@ static PierUsuariosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado Usu\u00C3\u00A1rio a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id). 
 ///
-///  @returns PierUsuario*
+///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierUsuario* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
     }
     
 
@@ -342,9 +344,9 @@ static PierUsuariosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierUsuario*"
+                              responseType: @"PierUsuarioResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierUsuario*)data, error);
+                               handler((PierUsuarioResponse*)data, error);
                            }
           ];
 }
@@ -356,8 +358,6 @@ static PierUsuariosApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
-///  @param _id Id do Usuario (optional)
-///
 ///  @param nome Nome do Usuario (optional)
 ///
 ///  @param cpf CPF do Usuario (optional)
@@ -368,9 +368,8 @@ static PierUsuariosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageUsuarios*
 ///
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
     nome: (NSString*) nome
     cpf: (NSString*) cpf
     email: (NSString*) email
@@ -397,10 +396,6 @@ static PierUsuariosApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
     }
     if (nome != nil) {
         
@@ -554,19 +549,19 @@ static PierUsuariosApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastrar Usu\u00C3\u00A1rio
+/// Cadastra Usu\u00C3\u00A1rio
 /// Esse recurso permite cadastrar usu\u00C3\u00A1rios.
 ///  @param persist persist 
 ///
-///  @returns PierUsuario*
+///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) salvarUsingPOST6WithPersist: (PierUsuario*) persist
-    completionHandler: (void (^)(PierUsuario* output, NSError* error)) handler {
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierUsuarioPersist*) persist
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST8`"];
     }
     
 
@@ -626,9 +621,9 @@ static PierUsuariosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierUsuario*"
+                              responseType: @"PierUsuarioResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierUsuario*)data, error);
+                               handler((PierUsuarioResponse*)data, error);
                            }
           ];
 }

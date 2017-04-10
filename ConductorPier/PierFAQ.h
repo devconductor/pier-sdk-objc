@@ -16,7 +16,7 @@
 
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da FAQ (id). [optional]
  */
-@property(nonatomic) NSNumber* idFaq;
+@property(nonatomic) NSNumber* _id;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Emissor de qual a FAQ \u00C3\u00A9 relacionada (id). [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;

@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierTelefone.h"
 
 
 @protocol PierRiscoFraudeDetalhadoResponse
@@ -83,5 +84,17 @@
 /* Descri\u00C3\u00A7\u00C3\u00A3o do modo de origem da captura da Transa\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* descricaoModoEntradaTerminal;
+/* N\u00C3\u00BAmero do CPF da Pessoa portadora do Cart\u00C3\u00A3o, quando for do tipo Pessoa F\u00C3\u00ADsica [optional]
+ */
+@property(nonatomic) NSString* cpf;
+/* N\u00C3\u00BAmero do CNPJ da Pessoa portadora do Cart\u00C3\u00A3o, quanto for do tipo Pessoa Jur\u00C3\u00ADdica [optional]
+ */
+@property(nonatomic) NSString* cnpj;
+/* Endere\u00C3\u00A7o de email da Pessoa portadora do Cart\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSString* email;
+/* Lista contendo idTipoTelefone, tipoTelefone (Descricao), DDD, Numero, Ramal associados a Pessoa portadora do Cart\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSArray<PierTelefone>* tefefones;
 
 @end

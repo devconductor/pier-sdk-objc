@@ -1,6 +1,6 @@
-#import "PierProduto.h"
+#import "PierProdutoResponse.h"
 
-@implementation PierProduto
+@implementation PierProdutoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"status": @"status" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"status": @"status", @"idFantasiaBasica": @"idFantasiaBasica" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"idFantasiaBasica"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
