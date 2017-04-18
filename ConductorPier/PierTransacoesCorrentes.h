@@ -40,13 +40,13 @@
 @property(nonatomic) NSString* nomePortador;
 /* Data em que a Transa\u00C3\u00A7\u00C3\u00A3o foi realizada sob o padr\u00C3\u00A3o de Tempo Universal Coordenado (UTC). [optional]
  */
-@property(nonatomic) NSString* dataTransacaoUTC;
+@property(nonatomic) NSDate* dataTransacaoUTC;
 /* Data de Faturamento da Transa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSDate* dataFaturamento;
 /* Data de Vencimento da Fatura. [optional]
  */
-@property(nonatomic) NSString* dataVencimento;
+@property(nonatomic) NSDate* dataVencimento;
 /* Descreve o modo utilizado para realizar a leitura dos dados do cart\u00C3\u00A3o para realizar a Transa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* modoEntradaTransacao;
@@ -59,12 +59,12 @@
 /* Valor da Transa\u00C3\u00A7\u00C3\u00A3o em Real (BRL). [optional]
  */
 @property(nonatomic) NSNumber* valorBRL;
-/* Valor do D\u00C3\u00B3lar Americano (USD) convertido em Real (BRL). [optional]
- */
-@property(nonatomic) NSNumber* cotacaoUSD;
 /* Valor da Transa\u00C3\u00A7\u00C3\u00A3o em D\u00C3\u00B3lar Americano (USD). [optional]
  */
 @property(nonatomic) NSNumber* valorUSD;
+/* Valor do D\u00C3\u00B3lar Americano (USD) convertido em Real (BRL). [optional]
+ */
+@property(nonatomic) NSNumber* cotacaoUSD;
 /* Data de Fechamento da Cota\u00C3\u00A7\u00C3\u00A3o do D\u00C3\u00B3lar Americano (USD). [optional]
  */
 @property(nonatomic) NSDate* dataCotacaoUSD;

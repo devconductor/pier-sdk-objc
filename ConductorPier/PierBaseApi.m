@@ -74,7 +74,7 @@ static PierBaseApi* singletonAPI = nil;
 /// 
 ///  @returns PierBodyAccessToken*
 ///
--(NSNumber*) clearUsingPOSTWithCompletionHandler: 
+-(NSNumber*) limparUsingPOSTWithCompletionHandler: 
     (void (^)(PierBodyAccessToken* output, NSError* error)) handler {
 
     

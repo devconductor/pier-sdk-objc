@@ -26,6 +26,7 @@
 #import "PierDetalheOportunidadePersist.h"
 #import "PierDetalheOportunidadeResponse.h"
 #import "PierDetalheOportunidadeUpdate.h"
+#import "PierDetalhesFaturaConsignadaResponse.h"
 #import "PierDetalhesFaturaResponse.h"
 #import "PierDividaClienteResponse.h"
 #import "PierEndereco.h"

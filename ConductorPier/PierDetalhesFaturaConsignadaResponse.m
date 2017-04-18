@@ -1,6 +1,6 @@
-#import "PierDetalheOportunidadePersist.h"
+#import "PierDetalhesFaturaConsignadaResponse.h"
 
-@implementation PierDetalheOportunidadePersist
+@implementation PierDetalhesFaturaConsignadaResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nomeCampo": @"nomeCampo", @"conteudo": @"conteudo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"faturaConsignadaResponse": @"faturaConsignadaResponse", @"transacoes": @"transacoes" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"faturaConsignadaResponse", @"transacoes"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
