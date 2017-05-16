@@ -75,7 +75,7 @@
 /// 
 ///
 /// @return PierPageAtendimentoClientes*
--(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
     idConta: (NSNumber*) idConta
@@ -96,7 +96,7 @@
 /// 
 ///
 /// @return PierRiscoFraudeResponsePage*
--(NSNumber*) listarUsingGET11WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
     confirmacaoFraude: (NSString*) confirmacaoFraude
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -112,7 +112,7 @@
 /// 
 ///
 /// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) negarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) negarUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -125,7 +125,7 @@
 /// 
 ///
 /// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) reconhecerUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) reconhecerUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -146,7 +146,7 @@
 /// 
 ///
 /// @return PierAtendimentoCliente*
--(NSNumber*) salvarUsingPOSTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) salvarUsingPOST1WithIdConta: (NSNumber*) idConta
     conteudoAtendimento: (NSString*) conteudoAtendimento
     detalhesAtendimento: (NSString*) detalhesAtendimento
     nomeAtendente: (NSString*) nomeAtendente

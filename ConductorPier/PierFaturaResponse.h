@@ -92,5 +92,11 @@
 /* Apresenta a soma de todos os seguros cobrados na fatura do cliente. 
  */
 @property(nonatomic) NSNumber* totalServicos;
+/* Apresenta a soma de todos os valores parcelados + compras nacionais. 
+ */
+@property(nonatomic) NSNumber* totalParceladoNacionais;
+/* Apresenta a soma de todos os valores parcelados + compras internacionais. 
+ */
+@property(nonatomic) NSNumber* totalParceladoInternacionais;
 
 @end

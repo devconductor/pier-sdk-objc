@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierTransacaoResponse.h"
+#import "PierTransacaoCorrenteResponse.h"
 
 
 @protocol PierPageTransacaoResponse
@@ -16,7 +16,7 @@
 @interface PierPageTransacaoResponse : PierObject
 
 
-@property(nonatomic) NSArray<PierTransacaoResponse>* content;
+@property(nonatomic) NSArray<PierTransacaoCorrenteResponse>* content;
 
 @property(nonatomic) NSNumber* first;
 

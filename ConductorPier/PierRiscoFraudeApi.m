@@ -127,7 +127,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -210,7 +210,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -290,7 +290,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -335,7 +335,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierPageAtendimentoClientes*
 ///
--(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
     idConta: (NSNumber*) idConta
@@ -404,7 +404,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -445,7 +445,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierRiscoFraudeResponsePage*
 ///
--(NSNumber*) listarUsingGET11WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
     confirmacaoFraude: (NSString*) confirmacaoFraude
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -454,12 +454,12 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET14`"];
     }
     
     // verify the required parameter 'confirmacaoFraude' is set
     if (confirmacaoFraude == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `confirmacaoFraude` when calling `listarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `confirmacaoFraude` when calling `listarUsingGET14`"];
     }
     
 
@@ -514,7 +514,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -549,13 +549,13 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierRiscoFraudeDetalhadoResponse*
 ///
--(NSNumber*) negarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) negarUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `negarUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `negarUsingPOST`"];
     }
     
 
@@ -597,7 +597,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -608,7 +608,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -632,13 +632,13 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierRiscoFraudeDetalhadoResponse*
 ///
--(NSNumber*) reconhecerUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) reconhecerUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `reconhecerUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `reconhecerUsingPOST`"];
     }
     
 
@@ -680,7 +680,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -691,7 +691,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -731,7 +731,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierAtendimentoCliente*
 ///
--(NSNumber*) salvarUsingPOSTWithIdConta: (NSNumber*) idConta
+-(NSNumber*) salvarUsingPOST1WithIdConta: (NSNumber*) idConta
     conteudoAtendimento: (NSString*) conteudoAtendimento
     detalhesAtendimento: (NSString*) detalhesAtendimento
     nomeAtendente: (NSString*) nomeAtendente
@@ -815,7 +815,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];

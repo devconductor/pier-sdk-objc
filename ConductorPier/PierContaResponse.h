@@ -9,10 +9,10 @@
 
 
 
-@protocol PierConta
+@protocol PierContaResponse
 @end
 
-@interface PierConta : PierObject
+@interface PierContaResponse : PierObject
 
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). [optional]
  */
@@ -44,17 +44,8 @@
 /* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
  */
 @property(nonatomic) NSDate* dataUltimaAlteracaoVencimento;
-/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
- */
-@property(nonatomic) NSNumber* numeroAgencia;
 /* Apresenta o valor da renda comprovada [optional]
  */
 @property(nonatomic) NSNumber* valorRenda;
-/* N\u00C3\u00BAmero da conta corrente. [optional]
- */
-@property(nonatomic) NSString* numeroContaCorrente;
-/* Forma de envio da fatura. [optional]
- */
-@property(nonatomic) NSString* formaEnvioFatura;
 
 @end

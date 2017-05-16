@@ -149,7 +149,7 @@ static PierWebhooksApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -232,7 +232,7 @@ static PierWebhooksApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -277,7 +277,7 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierPageWebHooks*
 ///
--(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
@@ -346,7 +346,7 @@ static PierWebhooksApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -383,19 +383,19 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) salvarUsingPOST9WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST13WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
     // verify the required parameter 'tipoEvento' is set
     if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST13`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST13`"];
     }
     
 
@@ -442,7 +442,7 @@ static PierWebhooksApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];

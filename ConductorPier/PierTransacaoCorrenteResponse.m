@@ -1,6 +1,6 @@
-#import "PierTransacaoResponse.h"
+#import "PierTransacaoCorrenteResponse.h"
 
-@implementation PierTransacaoResponse
+@implementation PierTransacaoCorrenteResponse
 
 - (instancetype)init {
   self = [super init];

@@ -64,7 +64,7 @@
 /// 
 ///
 /// @return PierPageWebHooks*
--(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
@@ -83,7 +83,7 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) salvarUsingPOST9WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST13WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 

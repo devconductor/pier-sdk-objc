@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"https://localhost/";
+        self.host = @"http://localhost/";
         self.username = @"";
         self.password = @"";
         self.tempFolderPath = nil;
@@ -107,20 +107,6 @@
 
 - (NSDictionary *) authSettings {
     return @{
-               @"access_token":
-                   @{
-                       @"type": @"api_key",
-                       @"in": @"header",
-                       @"key": @"access_token",
-                       @"value": [self getApiKeyWithPrefix:@"access_token"]
-                   },
-               @"client_id":
-                   @{
-                       @"type": @"api_key",
-                       @"in": @"header",
-                       @"key": @"client_id",
-                       @"value": [self getApiKeyWithPrefix:@"client_id"]
-                   },
                };
 }
 

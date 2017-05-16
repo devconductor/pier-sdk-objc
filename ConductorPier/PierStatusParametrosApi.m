@@ -131,7 +131,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -214,7 +214,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -297,7 +297,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -380,7 +380,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -480,7 +480,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -622,7 +622,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -669,7 +669,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusContas*
 ///
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -743,7 +743,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -784,7 +784,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressao*
 ///
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -843,7 +843,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];

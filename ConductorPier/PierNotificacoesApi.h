@@ -83,6 +83,7 @@
 /// @param status Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o
 /// @param operadora Nome da operadora a qual a notifica\u00C3\u00A7\u00C3\u00A3o foi enviada.
 /// @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es
+/// @param nsu Apresenta o nsu da notifica\u00C3\u00A7\u00C3\u00A3o
 /// 
 ///
 /// @return PierPageSMS*
@@ -93,6 +94,7 @@
     status: (NSString*) status
     operadora: (NSString*) operadora
     protocolo: (NSString*) protocolo
+    nsu: (NSNumber*) nsu
     completionHandler: (void (^)(PierPageSMS* output, NSError* error)) handler;
 
 

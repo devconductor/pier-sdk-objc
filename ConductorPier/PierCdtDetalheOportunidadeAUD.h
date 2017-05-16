@@ -31,4 +31,6 @@
 
 @property(nonatomic) NSNumber* revType;
 
+@property(nonatomic) NSString* revUser;
+
 @end

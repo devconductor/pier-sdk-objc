@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierConta.h"
+#import "PierContaResponse.h"
 
 
 @protocol PierPageContas
@@ -16,7 +16,7 @@
 @interface PierPageContas : PierObject
 
 
-@property(nonatomic) NSArray<PierConta>* content;
+@property(nonatomic) NSArray<PierContaResponse>* content;
 
 @property(nonatomic) NSNumber* first;
 

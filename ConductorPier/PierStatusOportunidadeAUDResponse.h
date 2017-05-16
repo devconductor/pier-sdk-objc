@@ -29,6 +29,9 @@
 /* C\u00C3\u00B3digo identificador do TipoOportunidade [optional]
  */
 @property(nonatomic) NSNumber* idTipoOportunidade;
+/* Nome do status oportunidade [optional]
+ */
+@property(nonatomic) NSString* nome;
 /* Descricao do StatusOportunidade [optional]
  */
 @property(nonatomic) NSString* descricao;

@@ -2,12 +2,14 @@
 #import "PierQueryParamCollection.h"
 #import "PierHistoricoImpressaoCartao.h"
 #import "PierCartao.h"
+#import "PierTransacaoOnUsResponse.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierLoteCartoesPrePagos.h"
 #import "PierPortador.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
 #import "PierPageCartoes.h"
 #import "PierValidaCartao.h"
+#import "PierValidaSenhaCartao.h"
 
 
 @interface PierCartaoApi ()
@@ -142,7 +144,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -237,7 +239,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -290,7 +292,7 @@ static PierCartaoApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/atribuir-pessoa"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/atribuir-titular"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -332,7 +334,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -439,7 +441,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -533,7 +535,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -557,6 +559,89 @@ static PierCartaoApi* singletonAPI = nil;
                               responseType: @"NSString*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((NSString*)data, error);
+                           }
+          ];
+}
+
+///
+/// Consultar Detalhes do Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite que seja consultado os dados necessarios de um cart\u00C3\u00A3o para executar servi\u00C3\u00A7os de autoriza\u00C3\u00A7\u00C3\u00A3o.
+///  @param _id id 
+///
+///  @returns PierTransacaoOnUsResponse*
+///
+-(NSNumber*) consultarDadosCartaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarDadosCartaoUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/consultar-dados-reais"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTransacaoOnUsResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTransacaoOnUsResponse*)data, error);
                            }
           ];
 }
@@ -616,7 +701,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -699,7 +784,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -782,7 +867,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -865,7 +950,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -877,6 +962,89 @@ static PierCartaoApi* singletonAPI = nil;
     
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartao*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza o desbloqueio de um cart\u00C3\u00A3o bloqueado por tentativas de senha incorretas
+/// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o que foi bloqueado por tentativas de senha incorretas, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
+///
+///  @returns PierCartao*
+///
+-(NSNumber*) desbloquearSenhaIncorretaUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `desbloquearSenhaIncorretaUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/desbloquear-senha-incorreta"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -948,7 +1116,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1062,7 +1230,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1145,7 +1313,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1294,7 +1462,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1367,7 +1535,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCartoes*
 ///
--(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
@@ -1506,7 +1674,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1535,31 +1703,271 @@ static PierCartaoApi* singletonAPI = nil;
 }
 
 ///
-/// Permite validar um Cart\u00C3\u00A3o com bandeira Mastercard a partir do chip
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem o criptograma gerado a partir da leitura de um chip EMV de um Cart\u00C3\u00A3o com bandeira Mastercard a fim de verificar a sua autenticidade. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o antes de permitir que o portador realize transa\u00C3\u00A7\u00C3\u00B5es diversas, como as de compra e saque na modalidade d\u00C3\u00A9bito em conta corrente, dentre outras.
+/// Permite validar os dados impressos em um cart\u00C3\u00A3o bandeirado
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o para a realiza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es e-commerce ou por meio de Centrais de Atendimento Eletr\u00C3\u00B4nico (URA), dentre outras.
+///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
+///
+///  @param nomePortador Nome do portador do cart\u00C3\u00A3o 
+///
+///  @param dataValidade Data de validade do cart\u00C3\u00A3o no formato yyyy-MM 
+///
+///  @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros 
+///
+///  @returns PierValidaCartao*
+///
+-(NSNumber*) validarDadosImpressosBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    nomePortador: (NSString*) nomePortador
+    dataValidade: (NSString*) dataValidade
+    codigoSeguranca: (NSString*) codigoSeguranca
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'numeroCartao' is set
+    if (numeroCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarDadosImpressosBandeiradoUsingGET`"];
+    }
+    
+    // verify the required parameter 'nomePortador' is set
+    if (nomePortador == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nomePortador` when calling `validarDadosImpressosBandeiradoUsingGET`"];
+    }
+    
+    // verify the required parameter 'dataValidade' is set
+    if (dataValidade == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataValidade` when calling `validarDadosImpressosBandeiradoUsingGET`"];
+    }
+    
+    // verify the required parameter 'codigoSeguranca' is set
+    if (codigoSeguranca == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoSeguranca` when calling `validarDadosImpressosBandeiradoUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/validar-dados-impressos-bandeirados"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (numeroCartao != nil) {
+        
+        queryParams[@"numero_cartao"] = numeroCartao;
+    }
+    if (nomePortador != nil) {
+        
+        queryParams[@"nome_portador"] = nomePortador;
+    }
+    if (dataValidade != nil) {
+        
+        queryParams[@"data_validade"] = dataValidade;
+    }
+    if (codigoSeguranca != nil) {
+        
+        queryParams[@"codigo_seguranca"] = codigoSeguranca;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierValidaCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierValidaCartao*)data, error);
+                           }
+          ];
+}
+
+///
+/// Permite validar os dados impressos de um cartao n\u00C3\u00A3o bandeirado
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o para a realiza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es e-commerce ou por meio de Centrais de Atendimento Eletr\u00C3\u00B4nico (URA), dentre outras.
+///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
+///
+///  @param nomePortador Nome do portador do cart\u00C3\u00A3o 
+///
+///  @param dataValidade Data de validade do cart\u00C3\u00A3o no formato yyyy-MM 
+///
+///  @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros 
+///
+///  @returns PierValidaCartao*
+///
+-(NSNumber*) validarDadosImpressosNaoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    nomePortador: (NSString*) nomePortador
+    dataValidade: (NSString*) dataValidade
+    codigoSeguranca: (NSString*) codigoSeguranca
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'numeroCartao' is set
+    if (numeroCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarDadosImpressosNaoBandeiradoUsingGET`"];
+    }
+    
+    // verify the required parameter 'nomePortador' is set
+    if (nomePortador == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nomePortador` when calling `validarDadosImpressosNaoBandeiradoUsingGET`"];
+    }
+    
+    // verify the required parameter 'dataValidade' is set
+    if (dataValidade == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataValidade` when calling `validarDadosImpressosNaoBandeiradoUsingGET`"];
+    }
+    
+    // verify the required parameter 'codigoSeguranca' is set
+    if (codigoSeguranca == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoSeguranca` when calling `validarDadosImpressosNaoBandeiradoUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/validar-dados-impressos-nao-bandeirados"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (numeroCartao != nil) {
+        
+        queryParams[@"numero_cartao"] = numeroCartao;
+    }
+    if (nomePortador != nil) {
+        
+        queryParams[@"nome_portador"] = nomePortador;
+    }
+    if (dataValidade != nil) {
+        
+        queryParams[@"data_validade"] = dataValidade;
+    }
+    if (codigoSeguranca != nil) {
+        
+        queryParams[@"codigo_seguranca"] = codigoSeguranca;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierValidaCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierValidaCartao*)data, error);
+                           }
+          ];
+}
+
+///
+/// Permite validar um Cart\u00C3\u00A3o com bandeira Mastercard a partir do de55
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem o DE55 gerado a partir da leitura de um chip EMV de um Cart\u00C3\u00A3o com bandeira Mastercard a fim de verificar a sua autenticidade. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o antes de permitir que o portador realize transa\u00C3\u00A7\u00C3\u00B5es diversas, como as de compra e saque na modalidade d\u00C3\u00A9bito em conta corrente, dentre outras.
 ///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
 ///
 ///  @param criptograma Criptograma do cart\u00C3\u00A3o no formato de55 
 ///
 ///  @returns PierValidaCartao*
 ///
--(NSNumber*) validarCartaoChipBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
+-(NSNumber*) validarDe55CartaoMastercardUsingGETWithNumeroCartao: (NSString*) numeroCartao
     criptograma: (NSString*) criptograma
     completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter 'numeroCartao' is set
     if (numeroCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarCartaoChipBandeiradoUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarDe55CartaoMastercardUsingGET`"];
     }
     
     // verify the required parameter 'criptograma' is set
     if (criptograma == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `criptograma` when calling `validarCartaoChipBandeiradoUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `criptograma` when calling `validarDe55CartaoMastercardUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar-chip"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/validar-de55-mastercard"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1602,355 +2010,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
-                           }
-          ];
-}
-
-///
-/// Permite validar um Cart\u00C3\u00A3o bandeirado a partir dos dados Impressos
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o para a realiza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es e-commerce ou por meio de Centrais de Atendimento Eletr\u00C3\u00B4nico (URA), dentre outras.
-///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
-///
-///  @param nomePortador Nome do portador do cart\u00C3\u00A3o 
-///
-///  @param dataValidade Data de validade do cart\u00C3\u00A3o no formato yyyy-MM 
-///
-///  @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros 
-///
-///  @returns PierValidaCartao*
-///
--(NSNumber*) validarCartaoDigitadoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
-    nomePortador: (NSString*) nomePortador
-    dataValidade: (NSString*) dataValidade
-    codigoSeguranca: (NSString*) codigoSeguranca
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'numeroCartao' is set
-    if (numeroCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarCartaoDigitadoBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'nomePortador' is set
-    if (nomePortador == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nomePortador` when calling `validarCartaoDigitadoBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'dataValidade' is set
-    if (dataValidade == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataValidade` when calling `validarCartaoDigitadoBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'codigoSeguranca' is set
-    if (codigoSeguranca == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoSeguranca` when calling `validarCartaoDigitadoBandeiradoUsingGET`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar-digitado"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (numeroCartao != nil) {
-        
-        queryParams[@"numero_cartao"] = numeroCartao;
-    }
-    if (nomePortador != nil) {
-        
-        queryParams[@"nome_portador"] = nomePortador;
-    }
-    if (dataValidade != nil) {
-        
-        queryParams[@"data_validade"] = dataValidade;
-    }
-    if (codigoSeguranca != nil) {
-        
-        queryParams[@"codigo_seguranca"] = codigoSeguranca;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
-                           }
-          ];
-}
-
-///
-/// Permite validar um Cart\u00C3\u00A3o a partir dos dados Impressos
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir do envio dos dados sens\u00C3\u00ADveis impressos nele. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o para a realiza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es e-commerce ou por meio de Centrais de Atendimento Eletr\u00C3\u00B4nico (URA), dentre outras.
-///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
-///
-///  @param nomePortador Nome do portador do cart\u00C3\u00A3o 
-///
-///  @param dataValidade Data de validade do cart\u00C3\u00A3o no formato yyyy-MM 
-///
-///  @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros 
-///
-///  @returns PierValidaCartao*
-///
--(NSNumber*) validarCartaoDigitadoNaoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
-    nomePortador: (NSString*) nomePortador
-    dataValidade: (NSString*) dataValidade
-    codigoSeguranca: (NSString*) codigoSeguranca
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'numeroCartao' is set
-    if (numeroCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarCartaoDigitadoNaoBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'nomePortador' is set
-    if (nomePortador == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nomePortador` when calling `validarCartaoDigitadoNaoBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'dataValidade' is set
-    if (dataValidade == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataValidade` when calling `validarCartaoDigitadoNaoBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'codigoSeguranca' is set
-    if (codigoSeguranca == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoSeguranca` when calling `validarCartaoDigitadoNaoBandeiradoUsingGET`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/nao-bandeirados/validar-digitado"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (numeroCartao != nil) {
-        
-        queryParams[@"numero_cartao"] = numeroCartao;
-    }
-    if (nomePortador != nil) {
-        
-        queryParams[@"nome_portador"] = nomePortador;
-    }
-    if (dataValidade != nil) {
-        
-        queryParams[@"data_validade"] = dataValidade;
-    }
-    if (codigoSeguranca != nil) {
-        
-        queryParams[@"codigo_seguranca"] = codigoSeguranca;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
-                           }
-          ];
-}
-
-///
-/// Permite validar um Cart\u00C3\u00A3o Bandeirado a partir da Tarja
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir da leitura da tarja magn\u00C3\u00A9tica do mesmo. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o antes de permitir que o portador realize transa\u00C3\u00A7\u00C3\u00B5es diversas, como as de compra e saque na modalidade d\u00C3\u00A9bito em conta corrente, dentre outras.
-///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
-///
-///  @param trilha1 Trilha 1 do cart\u00C3\u00A3o a ser validado 
-///
-///  @param trilha2 Trilha 2 do cart\u00C3\u00A3o a ser validado 
-///
-///  @returns PierValidaCartao*
-///
--(NSNumber*) validarCartaoTarjaBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
-    trilha1: (NSString*) trilha1
-    trilha2: (NSString*) trilha2
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'numeroCartao' is set
-    if (numeroCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarCartaoTarjaBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'trilha1' is set
-    if (trilha1 == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `trilha1` when calling `validarCartaoTarjaBandeiradoUsingGET`"];
-    }
-    
-    // verify the required parameter 'trilha2' is set
-    if (trilha2 == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `trilha2` when calling `validarCartaoTarjaBandeiradoUsingGET`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/bandeirados/validar-tarja"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (numeroCartao != nil) {
-        
-        queryParams[@"numero_cartao"] = numeroCartao;
-    }
-    if (trilha1 != nil) {
-        
-        queryParams[@"trilha1"] = trilha1;
-    }
-    if (trilha2 != nil) {
-        
-        queryParams[@"trilha2"] = trilha2;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1985,11 +2045,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param senha Senha para ser validada. 
 ///
-///  @returns NSString*
+///  @returns PierValidaSenhaCartao*
 ///
 -(NSNumber*) validarSenhaUsingGETWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierValidaSenhaCartao* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2044,7 +2104,7 @@ static PierCartaoApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -2065,9 +2125,117 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSString*"
+                              responseType: @"PierValidaSenhaCartao*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSString*)data, error);
+                               handler((PierValidaSenhaCartao*)data, error);
+                           }
+          ];
+}
+
+///
+/// Permite validar um Cart\u00C3\u00A3o Bandeirado a partir da Tarja
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores validem a autenticidade de um determinado Cart\u00C3\u00A3o a partir da leitura da tarja magn\u00C3\u00A9tica do mesmo. A utiliza\u00C3\u00A7\u00C3\u00A3o desde m\u00C3\u00A9todo tem diversas aplica\u00C3\u00A7\u00C3\u00B5es, sendo a principal delas a de Identifica\u00C3\u00A7\u00C3\u00A3o Positiva do Cart\u00C3\u00A3o antes de permitir que o portador realize transa\u00C3\u00A7\u00C3\u00B5es diversas, como as de compra e saque na modalidade d\u00C3\u00A9bito em conta corrente, dentre outras.
+///  @param numeroCartao N\u00C3\u00BAmero do cart\u00C3\u00A3o a ser validado. 
+///
+///  @param trilha1 Trilha 1 do cart\u00C3\u00A3o a ser validado 
+///
+///  @param trilha2 Trilha 2 do cart\u00C3\u00A3o a ser validado 
+///
+///  @returns PierValidaCartao*
+///
+-(NSNumber*) validarTarjaUsingGETWithNumeroCartao: (NSString*) numeroCartao
+    trilha1: (NSString*) trilha1
+    trilha2: (NSString*) trilha2
+    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'numeroCartao' is set
+    if (numeroCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroCartao` when calling `validarTarjaUsingGET`"];
+    }
+    
+    // verify the required parameter 'trilha1' is set
+    if (trilha1 == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `trilha1` when calling `validarTarjaUsingGET`"];
+    }
+    
+    // verify the required parameter 'trilha2' is set
+    if (trilha2 == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `trilha2` when calling `validarTarjaUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/validar-tarja"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (numeroCartao != nil) {
+        
+        queryParams[@"numero_cartao"] = numeroCartao;
+    }
+    if (trilha1 != nil) {
+        
+        queryParams[@"trilha1"] = trilha1;
+    }
+    if (trilha2 != nil) {
+        
+        queryParams[@"trilha2"] = trilha2;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierValidaCartao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierValidaCartao*)data, error);
                            }
           ];
 }

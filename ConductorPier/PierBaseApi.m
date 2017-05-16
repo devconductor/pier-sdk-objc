@@ -114,7 +114,7 @@ static PierBaseApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];

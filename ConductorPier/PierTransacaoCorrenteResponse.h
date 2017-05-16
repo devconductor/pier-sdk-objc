@@ -9,10 +9,10 @@
 
 
 
-@protocol PierTransacaoResponse
+@protocol PierTransacaoCorrenteResponse
 @end
 
-@interface PierTransacaoResponse : PierObject
+@interface PierTransacaoCorrenteResponse : PierObject
 
 
 @property(nonatomic) NSNumber* ultimaParcelaLancada;

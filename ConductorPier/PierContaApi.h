@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PierAjusteResponse.h"
 #import "PierLimiteDisponibilidade.h"
-#import "PierConta.h"
+#import "PierContaResponse.h"
 #import "PierBoletoDeFatura.h"
 #import "PierDividaClienteResponse.h"
 #import "PierDetalhesFaturaConsignadaResponse.h"
@@ -9,6 +9,7 @@
 #import "PierDetalhesFaturaResponse.h"
 #import "PierLinkTransferenciaBancariaResponse_.h"
 #import "PierPageTransferencias.h"
+#import "PierContaDetalheResponse.h"
 #import "PierCartaoImpressao.h"
 #import "PierPageFaturasConsignadas.h"
 #import "PierPageFaturas.h"
@@ -19,6 +20,7 @@
 #import "PierLinkPageTransferenciaBancariaResponse_.h"
 #import "PierPageContas.h"
 #import "PierPageTransacaoResponse.h"
+#import "PierTransferenciaBancariaPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -47,8 +49,6 @@
 /// @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste.
 /// @param dataAjuste Data do ajuste.
 /// @param valorAjuste Valor do ajuste
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 
 ///
 /// @return PierAjusteResponse*
@@ -56,8 +56,6 @@
     idTipoAjuste: (NSNumber*) idTipoAjuste
     dataAjuste: (NSDate*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
     completionHandler: (void (^)(PierAjusteResponse* output, NSError* error)) handler;
 
 
@@ -100,6 +98,21 @@
 
 ///
 ///
+/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o de uma Pessoa tilular da conta
+/// Esta m\u00C3\u00A9todo permite altera a pessoa de uma conta.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id)
+/// @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de uma Pessoa (id).
+/// 
+///
+/// @return PierContaResponse*
+-(NSNumber*) alterarTitularUsingPOSTWithId: (NSNumber*) _id
+    idPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Realiza a altera\u00C3\u00A7\u00C3\u00A3o do dia de vencimento das faturas da conta
 /// Esse recurso permite alterar o vencimento de uma conta especifica.
 ///
@@ -107,10 +120,10 @@
 /// @param novoDiaVencimento Novo dia de vencimento.
 /// 
 ///
-/// @return PierConta*
+/// @return PierContaResponse*
 -(NSNumber*) alterarVencimentoUsingPUTWithId: (NSNumber*) _id
     novoDiaVencimento: (NSNumber*) novoDiaVencimento
-    completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -166,7 +179,7 @@
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar a fatura consignada em aberto
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimento Data Vencimento.
+/// @param dataVencimento Data Vencimento
 /// 
 ///
 /// @return PierDetalhesFaturaConsignadaResponse*
@@ -211,7 +224,7 @@
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar os detalhes dos lan\u00C3\u00A7amentos futuros de uma fatura vinculados a uma determinada conta.
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimento Data Vencimento.
+/// @param dataVencimento Data Vencimento
 /// 
 ///
 /// @return PierDetalhesFaturaResponse*
@@ -235,8 +248,8 @@
 
 ///
 ///
-/// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria
-/// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada entre contas. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
+/// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria para um banco
+/// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada para uma conta banc\u00C3\u00A1ria. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
 ///
 /// @param _id Id Conta
 /// @param idTransferencia Id Transfer\u00C3\u00AAncia
@@ -273,9 +286,9 @@
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 /// 
 ///
-/// @return PierConta*
+/// @return PierContaDetalheResponse*
 -(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierConta* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -462,7 +475,7 @@
 /// 
 ///
 /// @return PierLinkPageTransferenciaBancariaResponse_*
--(NSNumber*) listarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET22WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -485,7 +498,7 @@
 /// 
 ///
 /// @return PierPageTransferencias*
--(NSNumber*) listarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET23WithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTransferencia: (NSNumber*) idTransferencia
@@ -515,7 +528,7 @@
 /// 
 ///
 /// @return PierPageContas*
--(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
     idOrigemComercial: (NSNumber*) idOrigemComercial
@@ -561,42 +574,16 @@
 
 ///
 ///
-/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria entre bancos / contas
-/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para outro cliente do mesmo emissor. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta de destino.
+/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria do cart\u00C3\u00A3o para contas banc\u00C3\u00A1rias
+/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para uma conta banc\u00C3\u00A1ria. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta banc\u00C3\u00A1ria de destino.
 ///
 /// @param _id Id Conta
-/// @param dataCompra Data da transfer\u00C3\u00AAncia
-/// @param proximoVencimentoPadrao Dia do vencimento padr\u00C3\u00A3o da fatura
-/// @param proximoVencimentoReal Data do vencimento real da fatura
-/// @param valorCompra Valor da transfer\u00C3\u00AAncia
-/// @param nomeFavorecido Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
-/// @param documentoFavorecido N\u00C3\u00BAmero do CPF ou CNPJ.
-/// @param banco C\u00C3\u00B3digo do banco
-/// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia
-/// @param numeroConta N\u00C3\u00BAmero da conta
-/// @param flagContaPoupanca Sinaliza se conta banc\u00C3\u00A1ria \u00C3\u00A9 poupan\u00C3\u00A7a (1: Poupan\u00C3\u00A7a, 0: Conta corrente)
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param digitoAgencia D\u00C3\u00ADgito da ag\u00C3\u00AAncia
-/// @param digitoConta D\u00C3\u00ADgito da conta
+/// @param transferenciaBancariaPersist transferenciaBancariaPersist
 /// 
 ///
 /// @return PierLinkTransferenciaBancariaResponse_*
 -(NSNumber*) transferirUsingPOSTWithId: (NSNumber*) _id
-    dataCompra: (NSDate*) dataCompra
-    proximoVencimentoPadrao: (NSDate*) proximoVencimentoPadrao
-    proximoVencimentoReal: (NSDate*) proximoVencimentoReal
-    valorCompra: (NSNumber*) valorCompra
-    nomeFavorecido: (NSString*) nomeFavorecido
-    documentoFavorecido: (NSString*) documentoFavorecido
-    banco: (NSNumber*) banco
-    numeroAgencia: (NSString*) numeroAgencia
-    numeroConta: (NSString*) numeroConta
-    flagContaPoupanca: (NSNumber*) flagContaPoupanca
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    digitoAgencia: (NSString*) digitoAgencia
-    digitoConta: (NSString*) digitoConta
+    transferenciaBancariaPersist: (PierTransferenciaBancariaPersist*) transferenciaBancariaPersist
     completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler;
 
 
@@ -605,7 +592,7 @@
 /// Realiza uma transfer\u00C3\u00AAncia de Cr\u00C3\u00A9dito para outro cliente do mesmo Emissor
 /// Este m\u00C3\u00A9todo permite que um portador de um cart\u00C3\u00A3o possa realizar auma transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para outro cliente do mesmo emissor.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do cliente portador do cart\u00C3\u00A3o que ser\u00C3\u00A1 debitado (id).
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta do cliente portador do cart\u00C3\u00A3o que ser\u00C3\u00A1 debitado (id).
 /// @param idContaDestino C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do cliente portador do cart\u00C3\u00A3o que ser\u00C3\u00A1 creditado (id).
 /// @param valorTransferencia Valor da Transfer\u00C3\u00AAncia.
 /// 

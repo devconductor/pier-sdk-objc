@@ -14,6 +14,9 @@
 
 @interface PierStatusOportunidade : PierObject
 
+/* Nome do status oportunidade [optional]
+ */
+@property(nonatomic) NSString* nome;
 /* Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade 
  */
 @property(nonatomic) NSString* descricao;

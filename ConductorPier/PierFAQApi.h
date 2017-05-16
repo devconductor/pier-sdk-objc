@@ -98,7 +98,7 @@
 /// 
 ///
 /// @return PierPageFaqs*
--(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq
     pergunta: (NSString*) pergunta

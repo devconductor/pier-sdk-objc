@@ -143,7 +143,7 @@
 /// 
 ///
 /// @return PierPageStatusContas*
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -165,7 +165,7 @@
 /// 
 ///
 /// @return PierPageStatusImpressao*
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome

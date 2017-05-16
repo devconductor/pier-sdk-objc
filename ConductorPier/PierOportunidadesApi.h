@@ -130,8 +130,10 @@
 /// @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
 /// @param _id C\u00C3\u00B3digo identificador do status oportunidade
 /// @param idTipoOportunidade C\u00C3\u00B3digo identificador do tipo oportunidade
+/// @param nome Nome do status oportunidade
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo
+/// @param revUser Usu\u00C3\u00A1rio da auditoria
 /// 
 ///
 /// @return PierPageStatusOprtunidadesAUD*
@@ -141,8 +143,10 @@
     revDate: (NSDate*) revDate
     _id: (NSNumber*) _id
     idTipoOportunidade: (NSNumber*) idTipoOportunidade
+    nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
+    revUser: (NSDate*) revUser
     completionHandler: (void (^)(PierPageStatusOprtunidadesAUD* output, NSError* error)) handler;
 
 
@@ -162,6 +166,7 @@
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa
 /// @param revDate Data da auditoria
 /// @param revType Tipo da auditoria
+/// @param revUser Usu\u00C3\u00A1rio da auditoria
 /// 
 ///
 /// @return PierPageOprtunidadeAUD*
@@ -176,6 +181,7 @@
     flagAtivo: (NSNumber*) flagAtivo
     revDate: (NSDate*) revDate
     revType: (NSDate*) revType
+    revUser: (NSDate*) revUser
     completionHandler: (void (^)(PierPageOprtunidadeAUD* output, NSError* error)) handler;
 
 
@@ -191,6 +197,7 @@
 /// @param _id C\u00C3\u00B3digo identificador do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o
 /// @param flagAtivo Atributo que representa se o tipo oportunidade est\u00C3\u00A1 ativo
+/// @param revUser Usu\u00C3\u00A1rio da auditoria
 /// 
 ///
 /// @return PierPageTipoOprtunidadesAUD*
@@ -201,6 +208,7 @@
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
+    revUser: (NSDate*) revUser
     completionHandler: (void (^)(PierPageTipoOprtunidadesAUD* output, NSError* error)) handler;
 
 
@@ -212,6 +220,7 @@
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param nome Nome do status oportunidade
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo
 /// 
@@ -220,6 +229,7 @@
 -(NSNumber*) listarStatusUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
     completionHandler: (void (^)(PierPageStatusOprtunidades* output, NSError* error)) handler;
@@ -237,7 +247,7 @@
 /// 
 ///
 /// @return PierPageTipoOprtunidades*
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
@@ -261,7 +271,7 @@
 /// 
 ///
 /// @return PierPageOprtunidadesResponse*
--(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
     dataCadastro: (NSDate*) dataCadastro
@@ -290,19 +300,6 @@
 
 ///
 ///
-/// Cadastra as oportunidade
-/// Esse recurso permite cadastrar oportunidades.
-///
-/// @param persist persist
-/// 
-///
-/// @return PierOportunidadeResponse*
--(NSNumber*) salvarUsingPOST3WithPersist: (PierOportunidadePersist*) persist
-    completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Cadastra tipos oportunidades
 /// Esse recurso permite cadastrar tipos oportunidades.
 ///
@@ -310,8 +307,21 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) salvarUsingPOST6WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST10WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cadastra as oportunidade
+/// Esse recurso permite cadastrar oportunidades.
+///
+/// @param persist persist
+/// 
+///
+/// @return PierOportunidadeResponse*
+-(NSNumber*) salvarUsingPOST5WithPersist: (PierOportunidadePersist*) persist
+    completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
 

@@ -155,7 +155,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -246,7 +246,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -337,7 +337,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -431,7 +431,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -514,7 +514,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -597,7 +597,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -640,9 +640,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param idTipoOportunidade C\u00C3\u00B3digo identificador do tipo oportunidade (optional)
 ///
+///  @param nome Nome do status oportunidade (optional)
+///
 ///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade (optional)
 ///
 ///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo (optional)
+///
+///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
 ///
 ///  @returns PierPageStatusOprtunidadesAUD*
 ///
@@ -652,8 +656,10 @@ static PierOportunidadesApi* singletonAPI = nil;
     revDate: (NSDate*) revDate
     _id: (NSNumber*) _id
     idTipoOportunidade: (NSNumber*) idTipoOportunidade
+    nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
+    revUser: (NSDate*) revUser
     completionHandler: (void (^)(PierPageStatusOprtunidadesAUD* output, NSError* error)) handler {
 
     
@@ -693,6 +699,10 @@ static PierOportunidadesApi* singletonAPI = nil;
         
         queryParams[@"idTipoOportunidade"] = idTipoOportunidade;
     }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
+    }
     if (descricao != nil) {
         
         queryParams[@"descricao"] = descricao;
@@ -700,6 +710,10 @@ static PierOportunidadesApi* singletonAPI = nil;
     if (flagAtivo != nil) {
         
         queryParams[@"flagAtivo"] = flagAtivo;
+    }
+    if (revUser != nil) {
+        
+        queryParams[@"revUser"] = revUser;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -725,7 +739,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -778,6 +792,8 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param revType Tipo da auditoria (optional)
 ///
+///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
+///
 ///  @returns PierPageOprtunidadeAUD*
 ///
 -(NSNumber*) listarAuditoriasUsingGETWithPage: (NSNumber*) page
@@ -791,6 +807,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     flagAtivo: (NSNumber*) flagAtivo
     revDate: (NSDate*) revDate
     revType: (NSDate*) revType
+    revUser: (NSDate*) revUser
     completionHandler: (void (^)(PierPageOprtunidadeAUD* output, NSError* error)) handler {
 
     
@@ -850,6 +867,10 @@ static PierOportunidadesApi* singletonAPI = nil;
         
         queryParams[@"revType"] = revType;
     }
+    if (revUser != nil) {
+        
+        queryParams[@"revUser"] = revUser;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -874,7 +895,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -919,6 +940,8 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param flagAtivo Atributo que representa se o tipo oportunidade est\u00C3\u00A1 ativo (optional)
 ///
+///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
+///
 ///  @returns PierPageTipoOprtunidadesAUD*
 ///
 -(NSNumber*) listarAuditoriasUsingGET1WithPage: (NSNumber*) page
@@ -928,6 +951,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
+    revUser: (NSDate*) revUser
     completionHandler: (void (^)(PierPageTipoOprtunidadesAUD* output, NSError* error)) handler {
 
     
@@ -971,6 +995,10 @@ static PierOportunidadesApi* singletonAPI = nil;
         
         queryParams[@"flagAtivo"] = flagAtivo;
     }
+    if (revUser != nil) {
+        
+        queryParams[@"revUser"] = revUser;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -995,7 +1023,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1032,6 +1060,8 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
 ///
+///  @param nome Nome do status oportunidade (optional)
+///
 ///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade (optional)
 ///
 ///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo (optional)
@@ -1041,6 +1071,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 -(NSNumber*) listarStatusUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
     completionHandler: (void (^)(PierPageStatusOprtunidades* output, NSError* error)) handler {
@@ -1074,6 +1105,10 @@ static PierOportunidadesApi* singletonAPI = nil;
         
         queryParams[@"limit"] = limit;
     }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
+    }
     if (descricao != nil) {
         
         queryParams[@"descricao"] = descricao;
@@ -1106,7 +1141,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1147,7 +1182,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoOprtunidades*
 ///
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
@@ -1206,7 +1241,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1257,7 +1292,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOprtunidadesResponse*
 ///
--(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
     dataCadastro: (NSDate*) dataCadastro
@@ -1341,7 +1376,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1432,7 +1467,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1461,99 +1496,19 @@ static PierOportunidadesApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastra as oportunidade
-/// Esse recurso permite cadastrar oportunidades.
-///  @param persist persist 
-///
-///  @returns PierOportunidadeResponse*
-///
--(NSNumber*) salvarUsingPOST3WithPersist: (PierOportunidadePersist*) persist
-    completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'persist' is set
-    if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST3`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/oportunidades"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = persist;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierOportunidadeResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierOportunidadeResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Cadastra tipos oportunidades
 /// Esse recurso permite cadastrar tipos oportunidades.
 ///  @param persist persist 
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST6WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST10WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST10`"];
     }
     
 
@@ -1592,7 +1547,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"access_token"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1616,6 +1571,86 @@ static PierOportunidadesApi* singletonAPI = nil;
                               responseType: @"PierTipoOportunidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierTipoOportunidadeResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cadastra as oportunidade
+/// Esse recurso permite cadastrar oportunidades.
+///  @param persist persist 
+///
+///  @returns PierOportunidadeResponse*
+///
+-(NSNumber*) salvarUsingPOST5WithPersist: (PierOportunidadePersist*) persist
+    completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/oportunidades"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierOportunidadeResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierOportunidadeResponse*)data, error);
                            }
           ];
 }

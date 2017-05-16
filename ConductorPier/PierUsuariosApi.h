@@ -56,6 +56,19 @@
 
 ///
 ///
+/// Ativa os usu\u00C3\u00A1rios cadastrados
+/// Este m\u00C3\u00A9todo realiza a ativa\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
+/// 
+///
+/// @return PierUsuarioResponse*
+-(NSNumber*) ativarUsuarioUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os dados de um determinado Usu\u00C3\u00A1rio
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado Usu\u00C3\u00A1rio a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -64,6 +77,19 @@
 ///
 /// @return PierUsuarioResponse*
 -(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Desativa os usu\u00C3\u00A1rios cadastrados
+/// Este m\u00C3\u00A9todo realiza a desativa\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
+/// 
+///
+/// @return PierUsuarioResponse*
+-(NSNumber*) desativarUsuarioUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
@@ -81,7 +107,7 @@
 /// 
 ///
 /// @return PierPageUsuarios*
--(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     cpf: (NSString*) cpf
@@ -112,7 +138,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) salvarUsingPOST8WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST12WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
