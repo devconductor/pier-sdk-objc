@@ -327,7 +327,7 @@
 /// Lista as contas da pessoa
 /// Permite listar as contas de um pessoa a partir do seu numero na receita federal.
 ///
-/// @param numeroReceitaFederal Id Conta
+/// @param numeroReceitaFederal N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do cliente na Receita Federal (CPF ou CNPJ)
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
 /// 

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idPessoa": @"idPessoa", @"nome": @"nome", @"idProduto": @"idProduto", @"idOrigemComercial": @"idOrigemComercial", @"nomeOrigemComercial": @"nomeOrigemComercial", @"idFantasiaBasica": @"idFantasiaBasica", @"nomeFantasiaBasica": @"nomeFantasiaBasica", @"idStatusConta": @"idStatusConta", @"statusConta": @"statusConta", @"diaVencimento": @"diaVencimento", @"melhorDiaCompra": @"melhorDiaCompra", @"dataStatusConta": @"dataStatusConta", @"valorRenda": @"valorRenda", @"dataCadastro": @"dataCadastro", @"dataUltimaAlteracaoVencimento": @"dataUltimaAlteracaoVencimento", @"dataHoraUltimaCompra": @"dataHoraUltimaCompra", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"formaEnvioFatura": @"formaEnvioFatura", @"titular": @"titular", @"limiteGlobal": @"limiteGlobal", @"limiteSaqueGlobal": @"limiteSaqueGlobal", @"saldoDisponivelGlobal": @"saldoDisponivelGlobal", @"saldoDisponivelSaque": @"saldoDisponivelSaque", @"dataInicioAtraso": @"dataInicioAtraso" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idPessoa": @"idPessoa", @"nome": @"nome", @"idProduto": @"idProduto", @"idOrigemComercial": @"idOrigemComercial", @"nomeOrigemComercial": @"nomeOrigemComercial", @"idFantasiaBasica": @"idFantasiaBasica", @"nomeFantasiaBasica": @"nomeFantasiaBasica", @"idStatusConta": @"idStatusConta", @"statusConta": @"statusConta", @"diaVencimento": @"diaVencimento", @"melhorDiaCompra": @"melhorDiaCompra", @"dataStatusConta": @"dataStatusConta", @"valorRenda": @"valorRenda", @"dataCadastro": @"dataCadastro", @"dataUltimaAlteracaoVencimento": @"dataUltimaAlteracaoVencimento", @"dataHoraUltimaCompra": @"dataHoraUltimaCompra", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"formaEnvioFatura": @"formaEnvioFatura", @"titular": @"titular", @"limiteGlobal": @"limiteGlobal", @"limiteSaqueGlobal": @"limiteSaqueGlobal", @"saldoDisponivelGlobal": @"saldoDisponivelGlobal", @"saldoDisponivelSaque": @"saldoDisponivelSaque", @"diasAtraso": @"diasAtraso" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idPessoa", @"idProduto", @"idOrigemComercial", @"idFantasiaBasica", @"idStatusConta", @"statusConta", @"diaVencimento", @"melhorDiaCompra", @"dataStatusConta", @"valorRenda", @"dataCadastro", @"dataUltimaAlteracaoVencimento", @"dataHoraUltimaCompra", @"numeroAgencia", @"numeroContaCorrente", @"formaEnvioFatura", @"titular", @"dataInicioAtraso"];
+  NSArray *optionalProperties = @[@"_id", @"idPessoa", @"idProduto", @"idOrigemComercial", @"idFantasiaBasica", @"idStatusConta", @"statusConta", @"diaVencimento", @"melhorDiaCompra", @"dataStatusConta", @"valorRenda", @"dataCadastro", @"dataUltimaAlteracaoVencimento", @"dataHoraUltimaCompra", @"numeroAgencia", @"numeroContaCorrente", @"formaEnvioFatura", @"titular", @"diasAtraso"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

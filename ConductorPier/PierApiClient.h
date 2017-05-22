@@ -29,6 +29,7 @@
 #import "PierCdtDetalheOportunidadeAUD.h"
 #import "PierContaDetalheResponse.h"
 #import "PierContaResponse.h"
+#import "PierDadosCartO.h"
 #import "PierDesfazimentoTransacaoOnURequest.h"
 #import "PierDetalheOportunidadePersist.h"
 #import "PierDetalheOportunidadeResponse.h"

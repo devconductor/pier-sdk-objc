@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PierHistoricoImpressaoCartao.h"
 #import "PierCartao.h"
-#import "PierTransacaoOnUsResponse.h"
+#import "PierDadosCartO.h"
 #import "PierLimiteDisponibilidade.h"
 #import "PierLoteCartoesPrePagos.h"
 #import "PierPortador.h"
@@ -113,9 +113,9 @@
 /// @param _id id
 /// 
 ///
-/// @return PierTransacaoOnUsResponse*
+/// @return PierDadosCartO*
 -(NSNumber*) consultarDadosCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierDadosCartO* output, NSError* error)) handler;
 
 
 ///

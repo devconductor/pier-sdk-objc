@@ -89,8 +89,8 @@
 /* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Nacional dentro de cada ciclo de faturamento. 
  */
 @property(nonatomic) NSNumber* saldoDisponivelSaque;
-/* Apresenta a data da ultima cobran\u00C3\u00A7a. [optional]
+/* Apresenta a quantidade de dias que a conta esta em atraso [optional]
  */
-@property(nonatomic) NSDate* dataInicioAtraso;
+@property(nonatomic) NSNumber* diasAtraso;
 
 @end
