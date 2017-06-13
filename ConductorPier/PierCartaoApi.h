@@ -5,6 +5,7 @@
 #import "PierLimiteDisponibilidade.h"
 #import "PierLoteCartoesPrePagos.h"
 #import "PierPortador.h"
+#import "PierCartaoDetalhado.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
 #import "PierPageCartoes.h"
 #import "PierValidaCartao.h"
@@ -114,7 +115,7 @@
 /// 
 ///
 /// @return PierDadosCartO*
--(NSNumber*) consultarDadosCartaoUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarDadosReaisCartaoUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDadosCartO* output, NSError* error)) handler;
 
 
@@ -165,9 +166,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierCartao*
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+/// @return PierCartaoDetalhado*
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoDetalhado* output, NSError* error)) handler;
 
 
 ///
@@ -238,7 +239,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id).
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
 /// @param idTipoCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Cart\u00C3\u00A3o (id).
@@ -259,7 +260,7 @@
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
-    dataCadastro: (NSDate*) dataCadastro
+    dataCadastro: (NSString*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
     completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler;
@@ -271,7 +272,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es existentes na base do emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id).
 /// @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o cart\u00C3\u00A3o pertence (id).
@@ -293,7 +294,7 @@
 /// 
 ///
 /// @return PierPageCartoes*
--(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
@@ -303,11 +304,11 @@
     tipoPortador: (NSString*) tipoPortador
     numeroCartao: (NSString*) numeroCartao
     nomeImpresso: (NSString*) nomeImpresso
-    dataGeracao: (NSDate*) dataGeracao
-    dataStatusCartao: (NSDate*) dataStatusCartao
-    dataEstagioCartao: (NSDate*) dataEstagioCartao
+    dataGeracao: (NSString*) dataGeracao
+    dataStatusCartao: (NSString*) dataStatusCartao
+    dataEstagioCartao: (NSString*) dataEstagioCartao
     dataValidade: (NSString*) dataValidade
-    dataImpressao: (NSDate*) dataImpressao
+    dataImpressao: (NSString*) dataImpressao
     arquivoImpressao: (NSString*) arquivoImpressao
     flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
     flagProvisorio: (NSNumber*) flagProvisorio

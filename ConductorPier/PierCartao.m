@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idStatusCartao": @"idStatusCartao", @"idEstagioCartao": @"idEstagioCartao", @"idConta": @"idConta", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"tipoPortador": @"tipoPortador", @"numeroCartao": @"numeroCartao", @"nomeImpresso": @"nomeImpresso", @"dataGeracao": @"dataGeracao", @"dataStatusCartao": @"dataStatusCartao", @"dataEstagioCartao": @"dataEstagioCartao", @"dataValidade": @"dataValidade", @"dataImpressao": @"dataImpressao", @"arquivoImpressao": @"arquivoImpressao", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagProvisorio": @"flagProvisorio", @"codigoDesbloqueio": @"codigoDesbloqueio", @"sequencialCartao": @"sequencialCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idStatusCartao": @"idStatusCartao", @"idEstagioCartao": @"idEstagioCartao", @"idConta": @"idConta", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"tipoPortador": @"tipoPortador", @"numeroCartao": @"numeroCartao", @"nomeImpresso": @"nomeImpresso", @"dataGeracao": @"dataGeracao", @"dataStatusCartao": @"dataStatusCartao", @"dataEstagioCartao": @"dataEstagioCartao", @"dataValidade": @"dataValidade", @"dataImpressao": @"dataImpressao", @"arquivoImpressao": @"arquivoImpressao", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagVirtual": @"flagVirtual", @"codigoDesbloqueio": @"codigoDesbloqueio", @"sequencialCartao": @"sequencialCartao" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idStatusCartao", @"idEstagioCartao", @"idConta", @"idPessoa", @"idProduto", @"tipoPortador", @"numeroCartao", @"nomeImpresso", @"dataGeracao", @"dataStatusCartao", @"dataEstagioCartao", @"dataValidade", @"dataImpressao", @"arquivoImpressao", @"flagImpressaoOrigemComercial", @"flagProvisorio", @"codigoDesbloqueio", @"sequencialCartao"];
+  NSArray *optionalProperties = @[@"_id", @"idStatusCartao", @"idEstagioCartao", @"idConta", @"idPessoa", @"idProduto", @"tipoPortador", @"numeroCartao", @"nomeImpresso", @"dataGeracao", @"dataStatusCartao", @"dataEstagioCartao", @"dataValidade", @"dataImpressao", @"arquivoImpressao", @"flagImpressaoOrigemComercial", @"flagVirtual", @"codigoDesbloqueio", @"sequencialCartao"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

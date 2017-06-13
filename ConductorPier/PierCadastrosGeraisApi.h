@@ -3,25 +3,27 @@
 #import "PierPessoaDetalheResponse.h"
 #import "PierPessoa.h"
 #import "PierTelefone.h"
-#import "PierOrigemComercial.h"
 #import "PierProdutoDetalhesResponse.h"
+#import "PierParametroProdutoResponse.h"
+#import "PierTaxaAntecipacaoRequest.h"
+#import "PierOrigemComercial.h"
+#import "PierBanco.h"
 #import "PierPageTipoAjuste.h"
 #import "PierPageTipoBoleto.h"
 #import "PierTipoEndereco.h"
 #import "PierTipoTelefone.h"
-#import "PierEstabelecimento.h"
 #import "PierPageContasDetalhe.h"
 #import "PierPageCampoCodificadoDescricao.h"
 #import "PierHistoricoTelefone.h"
 #import "PierPageOrigensComerciais.h"
-#import "PierListaProdutos.h"
 #import "PierPagePessoas.h"
 #import "PierPagePortador.h"
+#import "PierListaProdutos.h"
+#import "PierPageBancos.h"
 #import "PierPageTelefones.h"
 #import "PierPageTiposEndereco.h"
 #import "PierPageTipoTelefones.h"
 #import "PierPageEnderecos.h"
-#import "PierPageEstabelecimentos.h"
 #import "PierPessoaFisicaAprovadaPersist.h"
 #import "PierPessoaFisicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaResponse.h"
@@ -135,12 +137,12 @@
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
-    dataNascimento: (NSDate*) dataNascimento
+    dataNascimento: (NSString*) dataNascimento
     sexo: (NSString*) sexo
     numeroIdentidade: (NSString*) numeroIdentidade
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSDate*) dataEmissaoIdentidade
+    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
     completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
 
 
@@ -167,6 +169,34 @@
 
 ///
 ///
+/// Ativa o par\u00C3\u00A2metro uso exterior para o produto
+/// Este m\u00C3\u00A9todo permite ativar o uso no exterior para o produto atrav\u00C3\u00A9s do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
+/// 
+///
+/// @return PierProdutoDetalhesResponse*
+-(NSNumber*) ativarUsoExteriorUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Configura a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
+/// Este recurso permite configurar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id Id Produto
+/// @param taxaAntecipacaoRequest taxaAntecipacaoRequest
+/// 
+///
+/// @return PierParametroProdutoResponse*
+-(NSNumber*) configurarTaxaAntecipacaoUsingPOSTWithId: (NSNumber*) _id
+    taxaAntecipacaoRequest: (PierTaxaAntecipacaoRequest*) taxaAntecipacaoRequest
+    completionHandler: (void (^)(PierParametroProdutoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Opera\u00C3\u00A7\u00C3\u00A3o utilizada para consultar uma determinada Origem Comercial
 /// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -180,6 +210,47 @@
 
 ///
 ///
+/// Consulta a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
+/// Este recurso permite consultar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id Id Produto
+/// @param tipoTransacao Tipo da Transa\u00C3\u00A7\u00C3\u00A3o (ON-US ou OFF-US)
+/// 
+///
+/// @return PierParametroProdutoResponse*
+-(NSNumber*) consultarTaxaAntecipacaoUsingGETWithId: (NSNumber*) _id
+    tipoTransacao: (NSString*) tipoTransacao
+    completionHandler: (void (^)(PierParametroProdutoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de um determinado Banco
+/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id).
+/// 
+///
+/// @return PierBanco*
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierBanco* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de uma determinada Pessoa
+/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
+///
+/// @param _id ID da Pessoa
+/// 
+///
+/// @return PierPessoa*
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os dados de um determinado Produto
 /// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -187,7 +258,7 @@
 /// 
 ///
 /// @return PierProdutoDetalhesResponse*
--(NSNumber*) consultarProdutoUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
@@ -200,7 +271,7 @@
 /// 
 ///
 /// @return PierTelefone*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
 
 
@@ -210,13 +281,13 @@
 /// Este recurso permite que sejam listados os tipos de ajustes existentes na base de dados do emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo identificador do tipo de ajuste.
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste.
 /// 
 ///
 /// @return PierPageTipoAjuste*
--(NSNumber*) consultarUsingGET14WithPage: (NSNumber*) page
+-(NSNumber*) consultarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
@@ -229,14 +300,14 @@
 /// Este recurso permite que sejam listados os tipos de boletos existentes na base de dados do emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo identificador do tipo de boleto.
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de boleto.
 /// @param banco C\u00C3\u00B3digo identificador do banco.
 /// 
 ///
 /// @return PierPageTipoBoleto*
--(NSNumber*) consultarUsingGET15WithPage: (NSNumber*) page
+-(NSNumber*) consultarUsingGET18WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
@@ -253,7 +324,7 @@
 /// 
 ///
 /// @return PierTipoEndereco*
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEndereco* output, NSError* error)) handler;
 
 
@@ -266,7 +337,7 @@
 /// 
 ///
 /// @return PierTipoTelefone*
--(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefone* output, NSError* error)) handler;
 
 
@@ -279,21 +350,8 @@
 /// 
 ///
 /// @return PierEndereco*
--(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler;
-
-
-///
-///
-/// Consultar estabelecimento por id
-/// Consulta os detalhes de um determinado estabelecimento
-///
-/// @param _id Id
-/// 
-///
-/// @return PierEstabelecimento*
 -(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEstabelecimento* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler;
 
 
 ///
@@ -305,21 +363,21 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Apresenta os dados de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
+/// Desativa o par\u00C3\u00A2metro uso exterior para o produto
+/// Este m\u00C3\u00A9todo permite desativar o uso no exterior para o produto atrav\u00C3\u00A9s do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
-/// @param _id ID da Pessoa
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
 /// 
 ///
-/// @return PierPessoa*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
+/// @return PierProdutoDetalhesResponse*
+-(NSNumber*) desativarUsoExteriorUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
 ///
@@ -329,7 +387,7 @@
 ///
 /// @param numeroReceitaFederal N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do cliente na Receita Federal (CPF ou CNPJ)
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageContasDetalhe*
@@ -345,7 +403,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os Estados C\u00C3\u00ADvis na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricao*
@@ -373,7 +431,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados as nacionalidades na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricao*
@@ -388,7 +446,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados as naturezas de opera\u00C3\u00A7\u00C3\u00B5es na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricao*
@@ -403,7 +461,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Origens Comerciais existentes na base do emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id Id da origem comercial
 /// @param nome Nome da origem comercial
 /// @param status Status da origem comercial
@@ -420,34 +478,11 @@
 
 ///
 ///
-/// Lista os Produtos do Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
-/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
-/// @param status Representa o Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
-/// @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence.
-/// 
-///
-/// @return PierListaProdutos*
--(NSNumber*) listarProdutosUsingGETWithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    nome: (NSString*) nome
-    status: (NSNumber*) status
-    idFantasiaBasica: (NSNumber*) idFantasiaBasica
-    completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista profiss\u00C3\u00B5es
 /// Este m\u00C3\u00A9todo permite que sejam listados as profiss\u00C3\u00B5es na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricao*
@@ -462,7 +497,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas od detalhes das Pessoas existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idPessoa C\u00C3\u00B3digo identificador da pessoa
 /// @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica
 /// @param idEstadoCivil Id Estado civil da pessoa fisica
@@ -476,7 +511,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
@@ -497,7 +532,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id).
 /// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
 /// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
@@ -512,19 +547,19 @@
 /// 
 ///
 /// @return PierPagePessoas*
--(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
-    dataNascimento: (NSDate*) dataNascimento
+    dataNascimento: (NSString*) dataNascimento
     sexo: (NSString*) sexo
     numeroIdentidade: (NSString*) numeroIdentidade
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSDate*) dataEmissaoIdentidade
+    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
     completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler;
 
 
@@ -534,7 +569,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os portadores cadastrados na base do emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id).
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
 /// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id).
@@ -548,7 +583,7 @@
 /// 
 ///
 /// @return PierPagePortador*
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
     idProduto: (NSNumber*) idProduto
@@ -558,9 +593,45 @@
     nomeImpresso: (NSString*) nomeImpresso
     idTipoCartao: (NSNumber*) idTipoCartao
     flagAtivo: (NSNumber*) flagAtivo
-    dataCadastroPortador: (NSDate*) dataCadastroPortador
-    dataCancelamentoPortador: (NSDate*) dataCancelamentoPortador
+    dataCadastroPortador: (NSString*) dataCadastroPortador
+    dataCancelamentoPortador: (NSString*) dataCancelamentoPortador
     completionHandler: (void (^)(PierPagePortador* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os Produtos do Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
+/// @param status Representa o Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
+/// @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence.
+/// 
+///
+/// @return PierListaProdutos*
+-(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    nome: (NSString*) nome
+    status: (NSNumber*) status
+    idFantasiaBasica: (NSNumber*) idFantasiaBasica
+    completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os Bancos cadastrados para o Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os Bancos existentes na base de dados do Emissor.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageBancos*
+-(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageBancos* output, NSError* error)) handler;
 
 
 ///
@@ -569,7 +640,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id).
 /// @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
 /// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence.
@@ -580,7 +651,7 @@
 /// 
 ///
 /// @return PierPageTelefones*
--(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
@@ -598,13 +669,13 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id)
 /// @param nome Nome do Tipo do Endere\u00C3\u00A7o
 /// 
 ///
 /// @return PierPageTiposEndereco*
--(NSNumber*) listarUsingGET18WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET23WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -617,13 +688,13 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
 /// @param nome Nome do Tipo do Telefone
 /// 
 ///
 /// @return PierPageTipoTelefones*
--(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -636,7 +707,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
 /// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id)
 /// @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id)
@@ -654,7 +725,7 @@
 /// 
 ///
 /// @return PierPageEnderecos*
--(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
@@ -668,62 +739,9 @@
     cidade: (NSString*) cidade
     uf: (NSString*) uf
     pais: (NSString*) pais
-    dataInclusao: (NSDate*) dataInclusao
-    dataUltimaAtualizacao: (NSDate*) dataUltimaAtualizacao
+    dataInclusao: (NSString*) dataInclusao
+    dataUltimaAtualizacao: (NSString*) dataUltimaAtualizacao
     completionHandler: (void (^)(PierPageEnderecos* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista Estabelecimentos
-/// Lista todas os Estabelecimentos
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (id).
-/// @param numeroReceitaFederal Apresenta o n\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Receita Federal.
-/// @param nome Nome do Estabelecimento.
-/// @param descricao Raz\u00C3\u00A3o Social do Estabelecimento.
-/// @param nomeFantasia T\u00C3\u00ADtulo Comercial do Estabelecimento.
-/// @param cep C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP).
-/// @param nomeLogradouro Nome do Logradouro.
-/// @param numeroEndereco N\u00C3\u00BAmero do endere\u00C3\u00A7o.
-/// @param complemento Descri\u00C3\u00A7\u00C3\u00B5es complementares referente ao endere\u00C3\u00A7o.
-/// @param bairro Nome do bairro do endere\u00C3\u00A7o.
-/// @param cidade Nome da cidade do endere\u00C3\u00A7o.
-/// @param uf Sigla de identifica\u00C3\u00A7\u00C3\u00A3o da Unidade Federativa do endere\u00C3\u00A7o.
-/// @param pais Nome do pa\u00C3\u00ADs.
-/// @param dataCadastramento Data de Cadastro do Estabelecimento, no formato yyyy-MM-dd.
-/// @param contato Nome da pessoa para contato com o Estabelecimento.
-/// @param email E-mail da pessoa para contato com o Estabelecimento.
-/// @param flagArquivoSecrFazenda Indica se o estabelecimento ser\u00C3\u00A1 inclu\u00C3\u00ADdo no arquivo de registro para a Secretaria da Fazenda Estadual.
-/// @param flagCartaoDigitado Indica se o estabelecimento poder\u00C3\u00A1 originar transa\u00C3\u00A7\u00C3\u00B5es sem a leitura da tarja ou do chip do cart\u00C3\u00A3o.
-/// @param inativo Indica se o estabelecimento est\u00C3\u00A1 inativo.
-/// 
-///
-/// @return PierPageEstabelecimentos*
--(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    numeroReceitaFederal: (NSNumber*) numeroReceitaFederal
-    nome: (NSString*) nome
-    descricao: (NSString*) descricao
-    nomeFantasia: (NSString*) nomeFantasia
-    cep: (NSString*) cep
-    nomeLogradouro: (NSString*) nomeLogradouro
-    numeroEndereco: (NSNumber*) numeroEndereco
-    complemento: (NSString*) complemento
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    dataCadastramento: (NSDate*) dataCadastramento
-    contato: (NSString*) contato
-    email: (NSString*) email
-    flagArquivoSecrFazenda: (NSNumber*) flagArquivoSecrFazenda
-    flagCartaoDigitado: (NSNumber*) flagCartaoDigitado
-    inativo: (NSNumber*) inativo
-    completionHandler: (void (^)(PierPageEstabelecimentos* output, NSError* error)) handler;
 
 
 ///
@@ -750,6 +768,27 @@
 /// @return PierPessoaJuridicaAprovadaResponse*
 -(NSNumber*) salvarPessoaJuridicaAprovadaUsingPOSTWithPessoaPersist: (PierPessoaJuridicaAprovadaPersist*) pessoaPersist
     completionHandler: (void (^)(PierPessoaJuridicaAprovadaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cadastro de um novo Telefone
+/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
+///
+/// @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence.
+/// @param ddd C\u00C3\u00B3digo DDD do telefone (id).
+/// @param telefone N\u00C3\u00BAmero do telefone.
+/// @param ramal N\u00C3\u00BAmero do ramal.
+/// 
+///
+/// @return PierTelefone*
+-(NSNumber*) salvarUsingPOST10WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+    idPessoa: (NSNumber*) idPessoa
+    ddd: (NSString*) ddd
+    telefone: (NSString*) telefone
+    ramal: (NSString*) ramal
+    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
 
 
 ///
@@ -803,7 +842,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST6WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST7WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     profissao: (NSString*) profissao
@@ -834,38 +873,17 @@
 /// 
 ///
 /// @return PierPessoa*
--(NSNumber*) salvarUsingPOST7WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST8WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
-    dataNascimento: (NSDate*) dataNascimento
+    dataNascimento: (NSString*) dataNascimento
     sexo: (NSString*) sexo
     numeroIdentidade: (NSString*) numeroIdentidade
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSDate*) dataEmissaoIdentidade
+    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
     completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
-
-
-///
-///
-/// Realiza o cadastro de um novo Telefone
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
-///
-/// @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
-/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence.
-/// @param ddd C\u00C3\u00B3digo DDD do telefone (id).
-/// @param telefone N\u00C3\u00BAmero do telefone.
-/// @param ramal N\u00C3\u00BAmero do ramal.
-/// 
-///
-/// @return PierTelefone*
--(NSNumber*) salvarUsingPOST9WithIdTipoTelefone: (NSNumber*) idTipoTelefone
-    idPessoa: (NSNumber*) idPessoa
-    ddd: (NSString*) ddd
-    telefone: (NSString*) telefone
-    ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
 
 
 

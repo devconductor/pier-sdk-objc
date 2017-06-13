@@ -187,7 +187,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 /// Esse recurso permite listar os Pushes do emissor
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dataEnvio Apresenta a data e em que o registro foi enviado para o dispositivo. (optional)
 ///
@@ -203,7 +203,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    dataEnvio: (NSDate*) dataEnvio
+    dataEnvio: (NSString*) dataEnvio
     tipoEvento: (NSString*) tipoEvento
     status: (NSString*) status
     plataforma: (NSString*) plataforma
@@ -308,7 +308,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 /// Esse recurso permite listar os SMS do emissor
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dataInclusao Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado (optional)
 ///
@@ -326,7 +326,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 -(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    dataInclusao: (NSDate*) dataInclusao
+    dataInclusao: (NSString*) dataInclusao
     tipoEvento: (NSString*) tipoEvento
     status: (NSString*) status
     operadora: (NSString*) operadora

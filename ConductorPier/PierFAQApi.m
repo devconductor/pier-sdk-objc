@@ -336,13 +336,13 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierFAQ*
 ///
--(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
     }
     
 
@@ -417,7 +417,7 @@ static PierFAQApi* singletonAPI = nil;
 /// Lista todas as FAQs
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idFaq C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da FAQ (id). (optional)
 ///
@@ -435,7 +435,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierPageFaqs*
 ///
--(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq
     pergunta: (NSString*) pergunta

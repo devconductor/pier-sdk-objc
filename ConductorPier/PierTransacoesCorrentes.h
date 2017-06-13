@@ -40,13 +40,13 @@
 @property(nonatomic) NSString* nomePortador;
 /* Data em que a Transa\u00C3\u00A7\u00C3\u00A3o foi realizada sob o padr\u00C3\u00A3o de Tempo Universal Coordenado (UTC). [optional]
  */
-@property(nonatomic) NSDate* dataTransacaoUTC;
+@property(nonatomic) NSString* dataTransacaoUTC;
 /* Data de Faturamento da Transa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
-@property(nonatomic) NSDate* dataFaturamento;
+@property(nonatomic) NSString* dataFaturamento;
 /* Data de Vencimento da Fatura. [optional]
  */
-@property(nonatomic) NSDate* dataVencimento;
+@property(nonatomic) NSString* dataVencimento;
 /* Descreve o modo utilizado para realizar a leitura dos dados do cart\u00C3\u00A3o para realizar a Transa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* modoEntradaTransacao;
@@ -67,7 +67,7 @@
 @property(nonatomic) NSNumber* cotacaoUSD;
 /* Data de Fechamento da Cota\u00C3\u00A7\u00C3\u00A3o do D\u00C3\u00B3lar Americano (USD). [optional]
  */
-@property(nonatomic) NSDate* dataCotacaoUSD;
+@property(nonatomic) NSString* dataCotacaoUSD;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Moeda utilizada na Transa\u00C3\u00A7\u00C3\u00A3o, seguindo padr\u00C3\u00A3o ISO 4217. [optional]
  */
 @property(nonatomic) NSString* codigoMoedaOrigem;
@@ -86,6 +86,12 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da categoria do Estabelecimento. [optional]
  */
 @property(nonatomic) NSNumber* codigoMCC;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do grupo do Estabelecimento. [optional]
+ */
+@property(nonatomic) NSNumber* grupoMCC;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do grupo do Estabelecimento. [optional]
+ */
+@property(nonatomic) NSString* grupoDescricaoMCC;
 /* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento (id). [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;

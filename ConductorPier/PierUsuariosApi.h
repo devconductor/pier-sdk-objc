@@ -76,7 +76,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
@@ -99,7 +99,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os usu\u00C3\u00A1rios existentes na base do PIER.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param nome Nome do Usuario
 /// @param cpf CPF do Usuario
 /// @param email Email do Usuario
@@ -107,7 +107,7 @@
 /// 
 ///
 /// @return PierPageUsuarios*
--(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET29WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     cpf: (NSString*) cpf
@@ -138,7 +138,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) salvarUsingPOST12WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST13WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 

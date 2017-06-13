@@ -14,6 +14,8 @@
 
 @interface PierCartaoImpressao : PierObject
 
+
+@property(nonatomic) NSNumber* flagVirtual;
 /* Apresenta o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id) a qual o cart\u00C3\u00A3o gerado pertence. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
@@ -40,10 +42,10 @@
 @property(nonatomic) NSString* cvv2;
 /* Apresenta a data de emiss\u00C3\u00A3o do Cart\u00C3\u00A3o. [optional]
  */
-@property(nonatomic) NSDate* dataGeracao;
+@property(nonatomic) NSString* dataGeracao;
 /* Apresenta a data de Validade do Cart\u00C3\u00A3o. [optional]
  */
-@property(nonatomic) NSDate* dataValidade;
+@property(nonatomic) NSString* dataValidade;
 /* Apresenta o nome da Origem Comercial que realizou o cadastro do Titular da Conta a qual o Cart\u00C3\u00A3o pertence. [optional]
  */
 @property(nonatomic) NSString* nomeOrigemComercial;

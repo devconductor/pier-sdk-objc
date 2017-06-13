@@ -162,13 +162,13 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @returns PierRiscoFraudeDetalhadoResponse*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
     }
     
 
@@ -323,7 +323,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id) (optional)
 ///
@@ -340,7 +340,7 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
     idConta: (NSNumber*) idConta
     nomeAtendente: (NSString*) nomeAtendente
-    dataAtendimento: (NSDate*) dataAtendimento
+    dataAtendimento: (NSString*) dataAtendimento
     completionHandler: (void (^)(PierPageAtendimentoClientes* output, NSError* error)) handler {
 
     
@@ -441,11 +441,11 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierRiscoFraudeResponsePage*
 ///
--(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET18WithIdConta: (NSNumber*) idConta
     confirmacaoFraude: (NSString*) confirmacaoFraude
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -454,12 +454,12 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET18`"];
     }
     
     // verify the required parameter 'confirmacaoFraude' is set
     if (confirmacaoFraude == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `confirmacaoFraude` when calling `listarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `confirmacaoFraude` when calling `listarUsingGET18`"];
     }
     
 
@@ -735,10 +735,10 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     conteudoAtendimento: (NSString*) conteudoAtendimento
     detalhesAtendimento: (NSString*) detalhesAtendimento
     nomeAtendente: (NSString*) nomeAtendente
-    dataAtendimento: (NSDate*) dataAtendimento
-    dataAgendamento: (NSDate*) dataAgendamento
-    dataHoraInicioAtendimento: (NSDate*) dataHoraInicioAtendimento
-    dataHoraFimAtendimento: (NSDate*) dataHoraFimAtendimento
+    dataAtendimento: (NSString*) dataAtendimento
+    dataAgendamento: (NSString*) dataAgendamento
+    dataHoraInicioAtendimento: (NSString*) dataHoraInicioAtendimento
+    dataHoraFimAtendimento: (NSString*) dataHoraFimAtendimento
     flagFilaFraude: (NSNumber*) flagFilaFraude
     completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler {
 

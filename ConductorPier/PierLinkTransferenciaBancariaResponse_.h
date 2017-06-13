@@ -27,7 +27,7 @@
 @property(nonatomic) NSString* codigoAutorizacao;
 /* Data da autoriza\u00C3\u00A7\u00C3\u00A3o [optional]
  */
-@property(nonatomic) NSDate* dataAutorizacao;
+@property(nonatomic) NSString* dataAutorizacao;
 /* Origem [optional]
  */
 @property(nonatomic) NSString* origem;
@@ -45,7 +45,7 @@
 @property(nonatomic) NSNumber* idCartao;
 /* Data da transfer\u00C3\u00AAncia [optional]
  */
-@property(nonatomic) NSDate* dataCompra;
+@property(nonatomic) NSString* dataCompra;
 /* Valor da transfer\u00C3\u00AAncia [optional]
  */
 @property(nonatomic) NSNumber* valorCompra;
@@ -60,7 +60,7 @@
 @property(nonatomic) NSNumber* idEstabelecimento;
 /* Data do movimento [optional]
  */
-@property(nonatomic) NSDate* dataMovimento;
+@property(nonatomic) NSString* dataMovimento;
 /* Valor da transfer\u00C3\u00AAncia acrescido do valor da tarifa de saque se houver tarifa de saque [optional]
  */
 @property(nonatomic) NSNumber* valorContrato;
@@ -81,14 +81,15 @@
 @property(nonatomic) NSNumber* valorEntrada;
 /* Data do vencimento real da fatura [optional]
  */
-@property(nonatomic) NSDate* dataVencimentoReal;
+@property(nonatomic) NSString* dataVencimentoReal;
 /* Dia do vencimento padr\u00C3\u00A3o da fatura [optional]
  */
 @property(nonatomic) NSString* dataVencimentoPadrao;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id) [optional]
  */
 @property(nonatomic) NSNumber* idContaPortador;
-
+/* Atributo que representa o numero do estabelecimento. [optional]
+ */
 @property(nonatomic) NSNumber* numeroEstabelecimento;
 
 @end

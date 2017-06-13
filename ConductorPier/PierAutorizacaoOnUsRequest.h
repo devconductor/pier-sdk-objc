@@ -14,35 +14,35 @@
 
 @interface PierAutorizacaoOnUsRequest : PierObject
 
-/* N\u00C3\u00BAmero Sequencial \u00C3\u009Anico que identifica a transa\u00C3\u00A7\u00C3\u00A3o no sistema que a originou. [optional]
+/* N\u00C3\u00BAmero Sequencial \u00C3\u009Anico que identifica a transa\u00C3\u00A7\u00C3\u00A3o no sistema que a originou. 
  */
 @property(nonatomic) NSString* nsuOrigem;
-/* C\u00C3\u00B3digo de Processamento que identifica o Tipo da Transa\u00C3\u00A7\u00C3\u00A3o. [optional]
- */
-@property(nonatomic) NSString* codigoProcessamento;
-/* Valor da transa\u00C3\u00A7\u00C3\u00A3o com duas casas decimais para os centavos. [optional]
- */
-@property(nonatomic) NSNumber* valorTransacao;
-/* N\u00C3\u00BAmero Real do Cart\u00C3\u00A3o. [optional]
- */
-@property(nonatomic) NSString* numeroRealCartao;
-/* Data de Validade do Cart\u00C3\u00A3o. Ex: AAMM [optional]
- */
-@property(nonatomic) NSString* dataValidadeCartao;
-/* N\u00C3\u00BAmero do Estabelecimento (N\u00C3\u00BAmero+DV). [optional]
- */
-@property(nonatomic) NSNumber* numeroEstabelecimento;
-/* Apresenta a data e hora local da consulta yyyy-MM-dd'T'HH:mm:ss.SSSZ. Ex: 2000-10-31T01:30:00.000-05:00 [optional]
- */
-@property(nonatomic) NSDate* dataHoraTerminal;
-/* Apresenta a identifica\u00C3\u00A7\u00C3\u00A3o do terminal requisitante [optional]
- */
-@property(nonatomic) NSString* terminalRequisitante;
-/* N\u00C3\u00BAmero de Parcelas. [optional]
+/* N\u00C3\u00BAmero de Parcelas. 
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* C\u00C3\u00B3digo de Seguran\u00C3\u00A7a do Cart\u00C3\u00A3o. [optional]
+/* C\u00C3\u00B3digo de Processamento que identifica o Tipo da Transa\u00C3\u00A7\u00C3\u00A3o. 
  */
-@property(nonatomic) NSNumber* codigoSegurancaCartao;
+@property(nonatomic) NSString* codigoProcessamento;
+/* C\u00C3\u00B3digo de Seguran\u00C3\u00A7a do Cart\u00C3\u00A3o. 
+ */
+@property(nonatomic) NSString* codigoSegurancaCartao;
+/* Valor da transa\u00C3\u00A7\u00C3\u00A3o com duas casas decimais para os centavos. 
+ */
+@property(nonatomic) NSNumber* valorTransacao;
+/* N\u00C3\u00BAmero Real do Cart\u00C3\u00A3o. 
+ */
+@property(nonatomic) NSString* numeroRealCartao;
+/* Data de Validade do Cart\u00C3\u00A3o. Ex: AAMM 
+ */
+@property(nonatomic) NSString* dataValidadeCartao;
+/* N\u00C3\u00BAmero do Estabelecimento (N\u00C3\u00BAmero+DV). 
+ */
+@property(nonatomic) NSNumber* numeroEstabelecimento;
+/* Apresenta a data e hora local da consulta yyyy-MM-dd'T'HH:mm:ss.SSSZ. Ex: 2000-10-31T01:30:00.000-05:00 
+ */
+@property(nonatomic) NSString* dataHoraTerminal;
+/* Apresenta a identifica\u00C3\u00A7\u00C3\u00A3o do terminal requisitante 
+ */
+@property(nonatomic) NSString* terminalRequisitante;
 
 @end

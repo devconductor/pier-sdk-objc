@@ -20,10 +20,10 @@
 @property(nonatomic) NSString* cpf;
 /* Data emiss\u00C3\u00A3o da Identidade [optional]
  */
-@property(nonatomic) NSDate* dataEmissaoIdentidade;
+@property(nonatomic) NSString* dataEmissaoIdentidade;
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
  */
-@property(nonatomic) NSDate* dataNascimento;
+@property(nonatomic) NSString* dataNascimento;
 /* Email do s\u00C3\u00B3cio [optional]
  */
 @property(nonatomic) NSString* email;

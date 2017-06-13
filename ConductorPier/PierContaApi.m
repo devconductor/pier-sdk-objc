@@ -8,6 +8,7 @@
 #import "PierDetalhesFaturaConsignadaResponse.h"
 #import "PierFaturaConsignadaDetalheResponse.h"
 #import "PierDetalhesFaturaResponse.h"
+#import "PierPageTaxasRefinanciamento.h"
 #import "PierLinkTransferenciaBancariaResponse_.h"
 #import "PierPageTransferencias.h"
 #import "PierContaDetalheResponse.h"
@@ -105,7 +106,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 -(NSNumber*) ajustarContaUsingPOSTWithId: (NSNumber*) _id
     idTipoAjuste: (NSNumber*) idTipoAjuste
-    dataAjuste: (NSDate*) dataAjuste
+    dataAjuste: (NSString*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
     completionHandler: (void (^)(PierAjusteResponse* output, NSError* error)) handler {
 
@@ -799,7 +800,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dataVencimento Data do vencimento (optional)
 ///
@@ -810,7 +811,7 @@ static PierContaApi* singletonAPI = nil;
 -(NSNumber*) consultarDividaAtualizadaClienteUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
     idEscritorioCobranca: (NSNumber*) idEscritorioCobranca
     completionHandler: (void (^)(PierDividaClienteResponse* output, NSError* error)) handler {
 
@@ -913,7 +914,7 @@ static PierContaApi* singletonAPI = nil;
 ///  @returns PierDetalhesFaturaConsignadaResponse*
 ///
 -(NSNumber*) consultarFaturaConsignadaAbertaUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierDetalhesFaturaConsignadaResponse* output, NSError* error)) handler {
 
     
@@ -1097,7 +1098,7 @@ static PierContaApi* singletonAPI = nil;
 ///  @returns PierDetalhesFaturaResponse*
 ///
 -(NSNumber*) consultarFaturaUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierDetalhesFaturaResponse* output, NSError* error)) handler {
 
     
@@ -1192,7 +1193,7 @@ static PierContaApi* singletonAPI = nil;
 ///  @returns PierDetalhesFaturaResponse*
 ///
 -(NSNumber*) consultarLancamentosFuturosFaturaUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierDetalhesFaturaResponse* output, NSError* error)) handler {
 
     
@@ -1356,6 +1357,103 @@ static PierContaApi* singletonAPI = nil;
 }
 
 ///
+/// Permite consultar a partir do ID da conta as taxas e tarifas
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores consultem as taxas e tarifas da conta
+///  @param _id ID da conta a ser consultada. 
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @returns PierPageTaxasRefinanciamento*
+///
+-(NSNumber*) consultarTaxasTarifasUsingGETWithId: (NSNumber*) _id
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageTaxasRefinanciamento* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarTaxasTarifasUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/consultar-taxas-tarifas"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageTaxasRefinanciamento*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageTaxasRefinanciamento*)data, error);
+                           }
+          ];
+}
+
+///
 /// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria para um banco
 /// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada para uma conta banc\u00C3\u00A1ria. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
 ///  @param _id Id Conta 
@@ -1366,7 +1464,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierLinkTransferenciaBancariaResponse_*
 ///
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler {
@@ -1374,12 +1472,12 @@ static PierContaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET23`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET20`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET23`"];
     }
     
 
@@ -1465,19 +1563,19 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferencias*
 ///
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET24`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET24`"];
     }
     
 
@@ -1557,13 +1655,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET4`"];
     }
     
 
@@ -1721,21 +1819,15 @@ static PierContaApi* singletonAPI = nil;
 /// Este recurso gera um boleto de recarga
 ///  @param _id Id Conta 
 ///
-///  @param valor  
+///  @param valor Atributo que representa o valor do Boleto Emitido 
 ///
-///  @param dataVencimento  
-///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param dataVencimento Atributo que representa a data de vencimento do boleto 
 ///
 ///  @returns PierBoletoDeFatura*
 ///
 -(NSNumber*) gerarBoletoRecargaUsingPOSTWithId: (NSNumber*) _id
     valor: (NSNumber*) valor
-    dataVencimento: (NSDate*) dataVencimento
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
+    dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierBoletoDeFatura* output, NSError* error)) handler {
 
     
@@ -1769,14 +1861,6 @@ static PierContaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
     if (valor != nil) {
         
         queryParams[@"valor"] = valor;
@@ -1939,13 +2023,108 @@ static PierContaApi* singletonAPI = nil;
 }
 
 ///
+/// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o virtual
+/// Este recurso permite que seja gerado um Cart\u00C3\u00A3o virtual para um determinado Portador que esteja vinculado a uma Conta. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id). Esta funcionalidade poder\u00C3\u00A1 ser utilizada para realizar a cria\u00C3\u00A7\u00C3\u00A3o de cart\u00C3\u00B5es virtuaes atraves de um app.
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
+///  @param dataValidade Data de Validade 
+///
+///  @returns PierCartaoImpressao*
+///
+-(NSNumber*) gerarCartaoVirtualUsingPOSTWithId: (NSNumber*) _id
+    dataValidade: (NSString*) dataValidade
+    completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `gerarCartaoVirtualUsingPOST`"];
+    }
+    
+    // verify the required parameter 'dataValidade' is set
+    if (dataValidade == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataValidade` when calling `gerarCartaoVirtualUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/gerar-cartao-virtual"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (dataValidade != nil) {
+        
+        queryParams[@"dataValidade"] = dataValidade;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartaoImpressao*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartaoImpressao*)data, error);
+                           }
+          ];
+}
+
+///
 /// Lista as faturas consignadas da conta
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
 ///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dataVencimento Apresenta a data de vencimento da fatura. (optional)
 ///
@@ -1954,7 +2133,7 @@ static PierContaApi* singletonAPI = nil;
 -(NSNumber*) listarFaturasConsignadasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierPageFaturasConsignadas* output, NSError* error)) handler {
 
     
@@ -2049,7 +2228,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dataVencimento Data de Vencimento da Fatura. (optional)
 ///
@@ -2058,7 +2237,7 @@ static PierContaApi* singletonAPI = nil;
 -(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierPageFaturas* output, NSError* error)) handler {
 
     
@@ -2153,7 +2332,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageHistoricoEventos*
 ///
@@ -2250,7 +2429,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierLinkPageHistoricoAssessoriaResponse_*
 ///
@@ -2430,13 +2609,19 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @param dataInicio Data de in\u00C3\u00ADcio da consulta do extrato no formato yyyy-MM-dd (Par\u00C3\u00A2mentro Ignorado se dataFim n\u00C3\u00A3o for definida). (optional)
+///
+///  @param dataFim Data fim da consulta do extrato no formato yyyy-MM-dd  (Par\u00C3\u00A2mentro Ignorado se dataInicio n\u00C3\u00A3o for definida). (optional)
 ///
 ///  @returns PierPageTransacoesCorrentes*
 ///
 -(NSNumber*) listarNaoProcessadasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    dataInicio: (NSString*) dataInicio
+    dataFim: (NSString*) dataFim
     completionHandler: (void (^)(PierPageTransacoesCorrentes* output, NSError* error)) handler {
 
     
@@ -2467,6 +2652,14 @@ static PierContaApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
+    }
+    if (dataInicio != nil) {
+        
+        queryParams[@"dataInicio"] = dataInicio;
+    }
+    if (dataFim != nil) {
+        
+        queryParams[@"dataFim"] = dataFim;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -2527,16 +2720,22 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dataVencimento Data de vencimento do extrato no formato yyyy-MM-dd. (optional)
+///
+///  @param dataInicio Data de in\u00C3\u00ADcio da consulta do extrato no formato yyyy-MM-dd (Ignorado quando o par\u00C3\u00A2mentro dataVencimento \u00C3\u00A9 usado). (optional)
+///
+///  @param dataFim Data fim da consulta do extrato no formato yyyy-MM-dd  (Ignorado quando o par\u00C3\u00A2mentro dataVencimento \u00C3\u00A9 usado). (optional)
 ///
 ///  @returns PierPageTransacoesCorrentes*
 ///
 -(NSNumber*) listarProcessadasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    dataVencimento: (NSDate*) dataVencimento
+    dataVencimento: (NSString*) dataVencimento
+    dataInicio: (NSString*) dataInicio
+    dataFim: (NSString*) dataFim
     completionHandler: (void (^)(PierPageTransacoesCorrentes* output, NSError* error)) handler {
 
     
@@ -2571,6 +2770,14 @@ static PierContaApi* singletonAPI = nil;
     if (dataVencimento != nil) {
         
         queryParams[@"dataVencimento"] = dataVencimento;
+    }
+    if (dataInicio != nil) {
+        
+        queryParams[@"dataInicio"] = dataInicio;
+    }
+    if (dataFim != nil) {
+        
+        queryParams[@"dataFim"] = dataFim;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -2633,11 +2840,11 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierLinkPageTransferenciaBancariaResponse_*
 ///
--(NSNumber*) listarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET27WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -2646,7 +2853,7 @@ static PierContaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET22`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET27`"];
     }
     
 
@@ -2735,7 +2942,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idTransferencia C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id). (optional)
 ///
@@ -2749,20 +2956,20 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferencias*
 ///
--(NSNumber*) listarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET28WithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTransferencia: (NSNumber*) idTransferencia
     idContaOrigem: (NSNumber*) idContaOrigem
     idContaDestino: (NSNumber*) idContaDestino
     valorTransferencia: (NSNumber*) valorTransferencia
-    dataTransferencia: (NSDate*) dataTransferencia
+    dataTransferencia: (NSString*) dataTransferencia
     completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET28`"];
     }
     
 
@@ -2865,7 +3072,7 @@ static PierContaApi* singletonAPI = nil;
 /// Este recurso permite listar contas existentes na base de dados do Emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id). (optional)
 ///
@@ -2887,7 +3094,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageContas*
 ///
--(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
     idOrigemComercial: (NSNumber*) idOrigemComercial
@@ -2895,9 +3102,9 @@ static PierContaApi* singletonAPI = nil;
     idStatusConta: (NSNumber*) idStatusConta
     diaVencimento: (NSNumber*) diaVencimento
     melhorDiaCompra: (NSNumber*) melhorDiaCompra
-    dataStatusConta: (NSDate*) dataStatusConta
-    dataCadastro: (NSDate*) dataCadastro
-    dataUltimaAlteracaoVencimento: (NSDate*) dataUltimaAlteracaoVencimento
+    dataStatusConta: (NSString*) dataStatusConta
+    dataCadastro: (NSString*) dataCadastro
+    dataUltimaAlteracaoVencimento: (NSString*) dataUltimaAlteracaoVencimento
     completionHandler: (void (^)(PierPageContas* output, NSError* error)) handler {
 
     
@@ -3099,7 +3306,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageTransacaoResponse*
 ///

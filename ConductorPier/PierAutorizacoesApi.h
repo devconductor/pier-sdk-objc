@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "PierCancelamentoTransacaoOnUsRequest.h"
-#import "PierTransacaoOnUsResponse.h"
 #import "PierAutorizacaoOnUsRequest.h"
-#import "PierDesfazimentoTransacaoOnURequest.h"
+#import "PierTransacaoOnUsResponse.h"
+#import "PierCancelamentoTransacaoOnUsRequest.h"
 #import "PierTransacaoOnUsRequest.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -25,7 +24,20 @@
 +(PierAutorizacoesApi*) sharedAPI;
 ///
 ///
-/// Cancela Transa\u00C3\u00A7\u00C3\u00A3o financeira
+/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira
+/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira.
+///
+/// @param autorizacaoOnUsRequest autorizacaoOnUsRequest
+/// 
+///
+/// @return PierTransacaoOnUsResponse*
+-(NSNumber*) autorizarUsingPOSTWithAutorizacaoOnUsRequest: (PierAutorizacaoOnUsRequest*) autorizacaoOnUsRequest
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira
 /// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o.
 ///
 /// @param cancelamentoRequest cancelamentoRequest
@@ -38,34 +50,20 @@
 
 ///
 ///
-/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira
-/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira.
+/// Retorna c\u00C3\u00B3digos de processamento de autoriza\u00C3\u00A7\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo retorna a lista dos c\u00C3\u00B3digos de processamento para autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es financeiras.
 ///
-/// @param autorizacaoOnUsRequest autorizacaoOnUsRequest
 /// 
 ///
-/// @return PierTransacaoOnUsResponse*
--(NSNumber*) desfazerUsingPOSTWithAutorizacaoOnUsRequest: (PierAutorizacaoOnUsRequest*) autorizacaoOnUsRequest
-    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
+/// @return NSArray* /* NSObject */
+-(NSNumber*) listarCodigosProcessamentoAutorizacaoUsingGETWithCompletionHandler: 
+    (void (^)(NSArray* /* NSObject */ output, NSError* error)) handler;
 
 
 ///
 ///
-/// Desfazimento de Transa\u00C3\u00A7\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite que seja desfeita uma transa\u00C3\u00A7\u00C3\u00A3o.
-///
-/// @param desfazimentoRequest desfazimentoRequest
-/// 
-///
-/// @return PierTransacaoOnUsResponse*
--(NSNumber*) desfazerUsingPOST1WithDesfazimentoRequest: (PierDesfazimentoTransacaoOnURequest*) desfazimentoRequest
-    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Simula Compra Parcelada
-/// Este m\u00C3\u00A9todo permite que seja simulada uma compra parcelada.
+/// Simula planos de pagamento
+/// Este m\u00C3\u00A9todo permite que seja simulada um plano de pagamento.
 ///
 /// @param transacoesRequest transacoesRequest
 /// 

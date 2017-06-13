@@ -61,7 +61,7 @@
 /// 
 ///
 /// @return PierStatusConta*
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler;
 
 
@@ -74,7 +74,7 @@
 /// 
 ///
 /// @return PierStatusImpressao*
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler;
 
 
@@ -84,7 +84,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gio de Entrega que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o
 /// @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o
 /// 
@@ -103,7 +103,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas as possibilidades de Status que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id) 
 /// @param nome Nome atribu\u00C3\u00ADdo ao Status de Entrega do Cart\u00C3\u00A3o.
 /// @param flagCancelaCartao Quando ativa, indica que ao ser atribu\u00C3\u00ADdo um idStatusCartao com essa caracter\u00C3\u00ADstica, o cart\u00C3\u00A3o ter\u00C3\u00A1 o seu idStatusCartao alterado para o que fora escolhido. Caso contr\u00C3\u00A1rio, o idStatusCartao s\u00C3\u00B3 ser\u00C3\u00A1 alterado ap\u00C3\u00B3s o desbloqueio de um novo cart\u00C3\u00A3o do mesmo Portador e Conta.
@@ -134,7 +134,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id).
 /// @param nome Nome atribu\u00C3\u00ADdo ao Status da Conta.
 /// @param flagAlteraLimite Par\u00C3\u00A2metro que define se o Status da Conta permite realizar a Altera\u00C3\u00A7\u00C3\u00A3o de Limites do Portador, sendo: 0: Inativo e 1: Ativo.
@@ -143,7 +143,7 @@
 /// 
 ///
 /// @return PierPageStatusContas*
--(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -159,13 +159,13 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o
 /// @param nome Nome do status impress\u00C3\u00A3o
 /// 
 ///
 /// @return PierPageStatusImpressao*
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome

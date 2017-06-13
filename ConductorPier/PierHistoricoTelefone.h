@@ -28,6 +28,6 @@
 @property(nonatomic) NSString* tipoTelefone;
 /* Apresenta a data que o telefone fora alterado. [optional]
  */
-@property(nonatomic) NSDate* dataModificacao;
+@property(nonatomic) NSString* dataModificacao;
 
 @end

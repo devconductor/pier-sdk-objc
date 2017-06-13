@@ -20,9 +20,6 @@
 /* Apresenta o identificador da plataforma. [optional]
  */
 @property(nonatomic) NSNumber* idPlataformaMobile;
-/* Apresenta o identificador do emissor. [optional]
- */
-@property(nonatomic) NSNumber* idEmissor;
 /* Apresenta o token da aplicacao. [optional]
  */
 @property(nonatomic) NSString* token;

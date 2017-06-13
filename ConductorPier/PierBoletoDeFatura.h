@@ -16,14 +16,15 @@
 
 /* Data do processamento (emiss\u00C3\u00A3o ou faturamento) do boleto [optional]
  */
-@property(nonatomic) NSDate* dataProcessamento;
+@property(nonatomic) NSString* dataProcessamento;
 /* Data do documento (impress\u00C3\u00A3o) [optional]
  */
-@property(nonatomic) NSDate* dataDocumento;
+@property(nonatomic) NSString* dataDocumento;
 /* Data do vencimento [optional]
  */
-@property(nonatomic) NSDate* dataVencimento;
-
+@property(nonatomic) NSString* dataVencimento;
+/* Valor do Boleto. [optional]
+ */
 @property(nonatomic) NSNumber* valorBoleto;
 /* N\u00C3\u00BAmero do documento \u00C3\u00A9 o c\u00C3\u00B3digo informado pelo banco para identifica\u00C3\u00A7\u00C3\u00A3o do cliente [optional]
  */
@@ -31,7 +32,7 @@
 /* Benefici\u00C3\u00A1rio \u00C3\u00A9 a pessoa/empresa que gera o boleto [optional]
  */
 @property(nonatomic) NSString* nomeBeneficiario;
-/* Ag\u00C3\u00AAncia [optional]
+/* Ag\u00C3\u00AAncia. [optional]
  */
 @property(nonatomic) NSString* agencia;
 /* C\u00C3\u00B3digo do benefici\u00C3\u00A1rio [optional]
@@ -73,7 +74,8 @@
 /* Pagador \u00C3\u00A9 a pessoa/empresa que deve pagar o boleto [optional]
  */
 @property(nonatomic) NSString* nomePagador;
-
+/* Documento do Beneficiario. [optional]
+ */
 @property(nonatomic) NSString* documentoBeneficiario;
 /* Documento do pagador (CPF ou CNPJ) [optional]
  */

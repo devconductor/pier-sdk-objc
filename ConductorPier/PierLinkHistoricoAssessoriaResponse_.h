@@ -16,7 +16,7 @@
 
 /* Apresenta a data e hora do hist\u00C3\u00B3rico [optional]
  */
-@property(nonatomic) NSDate* dataHoraHistorico;
+@property(nonatomic) NSString* dataHoraHistorico;
 /* Apresenta o tipo do hist\u00C3\u00B3rico podendo ser ENTRADA ou SAIDA [optional]
  */
 @property(nonatomic) NSString* tipoHistorico;

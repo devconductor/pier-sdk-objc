@@ -44,7 +44,7 @@
 /// 
 ///
 /// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -67,7 +67,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id)
 /// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
 /// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
@@ -80,7 +80,7 @@
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
     idConta: (NSNumber*) idConta
     nomeAtendente: (NSString*) nomeAtendente
-    dataAtendimento: (NSDate*) dataAtendimento
+    dataAtendimento: (NSString*) dataAtendimento
     completionHandler: (void (^)(PierPageAtendimentoClientes* output, NSError* error)) handler;
 
 
@@ -92,11 +92,11 @@
 /// @param idConta Id Conta
 /// @param confirmacaoFraude Confirma\u00C3\u00A7\u00C3\u00A3o da fraude
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierRiscoFraudeResponsePage*
--(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET18WithIdConta: (NSNumber*) idConta
     confirmacaoFraude: (NSString*) confirmacaoFraude
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -150,10 +150,10 @@
     conteudoAtendimento: (NSString*) conteudoAtendimento
     detalhesAtendimento: (NSString*) detalhesAtendimento
     nomeAtendente: (NSString*) nomeAtendente
-    dataAtendimento: (NSDate*) dataAtendimento
-    dataAgendamento: (NSDate*) dataAgendamento
-    dataHoraInicioAtendimento: (NSDate*) dataHoraInicioAtendimento
-    dataHoraFimAtendimento: (NSDate*) dataHoraFimAtendimento
+    dataAtendimento: (NSString*) dataAtendimento
+    dataAgendamento: (NSString*) dataAgendamento
+    dataHoraInicioAtendimento: (NSString*) dataHoraInicioAtendimento
+    dataHoraFimAtendimento: (NSString*) dataHoraFimAtendimento
     flagFilaFraude: (NSNumber*) flagFilaFraude
     completionHandler: (void (^)(PierAtendimentoCliente* output, NSError* error)) handler;
 

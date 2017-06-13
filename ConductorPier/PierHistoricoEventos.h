@@ -19,7 +19,7 @@
 @property(nonatomic) NSNumber* idHistorico;
 /* Data do evento 
  */
-@property(nonatomic) NSDate* dataHistorico;
+@property(nonatomic) NSString* dataHistorico;
 /* Nome do campo alterado 
  */
 @property(nonatomic) NSString* tipoHistorico;

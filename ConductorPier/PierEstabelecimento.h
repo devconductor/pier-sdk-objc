@@ -17,7 +17,7 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Conductor, com dois d\u00C3\u00ADgitos. [optional]
+/* N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Conductor. [optional]
  */
 @property(nonatomic) NSString* numeroEstabelecimento;
 /* Apresenta o n\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Receita Federal. [optional]
@@ -58,7 +58,7 @@
 @property(nonatomic) NSString* pais;
 /* Data de Cadastro do Estabelecimento. [optional]
  */
-@property(nonatomic) NSDate* dataCadastramento;
+@property(nonatomic) NSString* dataCadastramento;
 /* Detalhes espec\u00C3\u00ADficos quanto ao Cadastro do Estabelecimento. [optional]
  */
 @property(nonatomic) NSString* obs;

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroCartao": @"numeroCartao", @"dataValidade": @"dataValidade", @"cvv2": @"cvv2", @"nomePlastico": @"nomePlastico", @"idConta": @"idConta", @"idCartao": @"idCartao", @"status": @"status", @"statusDescricao": @"statusDescricao", @"flagProvisorio": @"flagProvisorio" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagVirtual": @"flagVirtual", @"numeroCartao": @"numeroCartao", @"dataValidade": @"dataValidade", @"cvv2": @"cvv2", @"nomePlastico": @"nomePlastico", @"idConta": @"idConta", @"idCartao": @"idCartao", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorente": @"numeroContaCorente", @"idStatusConta": @"idStatusConta", @"statusConta": @"statusConta", @"idStatusCartao": @"idStatusCartao", @"statusCartao": @"statusCartao" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"numeroCartao", @"dataValidade", @"cvv2", @"nomePlastico", @"idConta", @"idCartao", @"status", @"statusDescricao", @"flagProvisorio"];
+  NSArray *optionalProperties = @[@"flagVirtual", @"numeroCartao", @"dataValidade", @"cvv2", @"nomePlastico", @"idConta", @"idCartao", @"numeroAgencia", @"numeroContaCorente", @"idStatusConta", @"statusConta", @"idStatusCartao", @"statusCartao"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

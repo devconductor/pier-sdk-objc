@@ -28,6 +28,6 @@
 @property(nonatomic) NSString* mensagemHistorico;
 /* Apresenta a data que o registro de Hist\u00C3\u00B3rico de Impress\u00C3\u00A3o de um Cart\u00C3\u00A3o fora inserido. [optional]
  */
-@property(nonatomic) NSDate* dataHistorico;
+@property(nonatomic) NSString* dataHistorico;
 
 @end

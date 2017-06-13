@@ -52,19 +52,19 @@
 @property(nonatomic) NSNumber* melhorDiaCompra;
 /* Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela. [optional]
  */
-@property(nonatomic) NSDate* dataStatusConta;
+@property(nonatomic) NSString* dataStatusConta;
 /* Valor da renda comprovada. [optional]
  */
 @property(nonatomic) NSNumber* valorRenda;
 /* Apresenta a data em que o cart\u00C3\u00A3o foi gerado. [optional]
  */
-@property(nonatomic) NSDate* dataCadastro;
+@property(nonatomic) NSString* dataCadastro;
 /* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
  */
-@property(nonatomic) NSDate* dataUltimaAlteracaoVencimento;
+@property(nonatomic) NSString* dataUltimaAlteracaoVencimento;
 /* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
  */
-@property(nonatomic) NSDate* dataHoraUltimaCompra;
+@property(nonatomic) NSString* dataHoraUltimaCompra;
 /* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;

@@ -52,16 +52,16 @@
 @property(nonatomic) NSString* resposta;
 /* Apresenta a data e hora em que ser\u00C3\u00A1 enviado a notifica\u00C3\u00A7\u00C3\u00A3o 
  */
-@property(nonatomic) NSDate* dataAgendamento;
+@property(nonatomic) NSString* dataAgendamento;
 /* Quantidade de tentativas e envio da notifica\u00C3\u00A7\u00C3\u00A3o 
  */
 @property(nonatomic) NSNumber* quantidadeTentativasEnvio;
 /* Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado 
  */
-@property(nonatomic) NSDate* dataInclusao;
+@property(nonatomic) NSString* dataInclusao;
 /* Apresenta a data e em que o Stattjus do registro foi modificado 
  */
-@property(nonatomic) NSDate* dataAlteracaoStatus;
+@property(nonatomic) NSString* dataAlteracaoStatus;
 /* N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es [optional]
  */
 @property(nonatomic) NSString* protocolo;

@@ -46,7 +46,7 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 
 
@@ -56,7 +56,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id Id do WebHook
 /// @param tipoEvento TipoEvento a ser chamado pelo WebHook
 /// @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook
@@ -64,7 +64,7 @@
 /// 
 ///
 /// @return PierPageWebHooks*
--(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET30WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
@@ -83,7 +83,7 @@
 /// 
 ///
 /// @return PierWebHook*
--(NSNumber*) salvarUsingPOST13WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST14WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
 

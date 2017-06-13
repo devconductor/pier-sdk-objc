@@ -31,7 +31,7 @@
 @property(nonatomic) NSString* cnpj;
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. [optional]
  */
-@property(nonatomic) NSDate* dataNascimento;
+@property(nonatomic) NSString* dataNascimento;
 /* N\u00C3\u00BAmero da Identidade [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
@@ -46,6 +46,6 @@
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
 /* Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd [optional]
  */
-@property(nonatomic) NSDate* dataEmissaoIdentidade;
+@property(nonatomic) NSString* dataEmissaoIdentidade;
 
 @end

@@ -10,8 +10,8 @@
 #import "PierPageOprtunidadeAUD.h"
 #import "PierPageTipoOprtunidadesAUD.h"
 #import "PierPageStatusOprtunidades.h"
-#import "PierPageTipoOprtunidades.h"
 #import "PierPageOprtunidadesResponse.h"
+#import "PierPageTipoOprtunidades.h"
 #import "PierOportunidadePersist.h"
 
 
@@ -466,13 +466,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
     }
     
 
@@ -549,13 +549,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET8`"];
     }
     
 
@@ -630,7 +630,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 /// Este recurso permite listar os status oportunidades.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades (optional)
 ///
@@ -653,13 +653,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 -(NSNumber*) listarAuditoriasStatusUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     revType: (NSNumber*) revType
-    revDate: (NSDate*) revDate
+    revDate: (NSString*) revDate
     _id: (NSNumber*) _id
     idTipoOportunidade: (NSNumber*) idTipoOportunidade
     nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    revUser: (NSDate*) revUser
+    revUser: (NSString*) revUser
     completionHandler: (void (^)(PierPageStatusOprtunidadesAUD* output, NSError* error)) handler {
 
     
@@ -772,7 +772,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 /// Este recurso permite listar as auditorias das oportunidades.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade (optional)
 ///
@@ -799,15 +799,15 @@ static PierOportunidadesApi* singletonAPI = nil;
 -(NSNumber*) listarAuditoriasUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
-    dataCadastro: (NSDate*) dataCadastro
-    dataAtualizacao: (NSDate*) dataAtualizacao
+    dataCadastro: (NSString*) dataCadastro
+    dataAtualizacao: (NSString*) dataAtualizacao
     numeroReceitaFederal: (NSString*) numeroReceitaFederal
-    dataInicioVigencia: (NSDate*) dataInicioVigencia
-    datatFimVigencia: (NSDate*) datatFimVigencia
+    dataInicioVigencia: (NSString*) dataInicioVigencia
+    datatFimVigencia: (NSString*) datatFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
-    revDate: (NSDate*) revDate
-    revType: (NSDate*) revType
-    revUser: (NSDate*) revUser
+    revDate: (NSString*) revDate
+    revType: (NSString*) revType
+    revUser: (NSString*) revUser
     completionHandler: (void (^)(PierPageOprtunidadeAUD* output, NSError* error)) handler {
 
     
@@ -928,7 +928,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 /// Este recurso permite listar os tipos oportunidades.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades (optional)
 ///
@@ -947,11 +947,11 @@ static PierOportunidadesApi* singletonAPI = nil;
 -(NSNumber*) listarAuditoriasUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     revType: (NSNumber*) revType
-    revDate: (NSDate*) revDate
+    revDate: (NSString*) revDate
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    revUser: (NSDate*) revUser
+    revUser: (NSString*) revUser
     completionHandler: (void (^)(PierPageTipoOprtunidadesAUD* output, NSError* error)) handler {
 
     
@@ -1058,7 +1058,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param nome Nome do status oportunidade (optional)
 ///
@@ -1170,111 +1170,11 @@ static PierOportunidadesApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os tipos oportunidades
-/// Este recurso permite listar os tipos oportunidades.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
-///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (optional)
-///
-///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo (optional)
-///
-///  @returns PierPageTipoOprtunidades*
-///
--(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    descricao: (NSString*) descricao
-    flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageTipoOprtunidades* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-oportunidades"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (descricao != nil) {
-        
-        queryParams[@"descricao"] = descricao;
-    }
-    if (flagAtivo != nil) {
-        
-        queryParams[@"flagAtivo"] = flagAtivo;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageTipoOprtunidades*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTipoOprtunidades*)data, error);
-                           }
-          ];
-}
-
-///
 /// Lista as oportunidades
 /// Este recurso permite listar as oportunidades.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade (optional)
 ///
@@ -1292,14 +1192,14 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOprtunidadesResponse*
 ///
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
-    dataCadastro: (NSDate*) dataCadastro
-    dataAtualizacao: (NSDate*) dataAtualizacao
+    dataCadastro: (NSString*) dataCadastro
+    dataAtualizacao: (NSString*) dataAtualizacao
     numeroReceitaFederal: (NSString*) numeroReceitaFederal
-    dataInicioVigencia: (NSDate*) dataInicioVigencia
-    dataFimVigencia: (NSDate*) dataFimVigencia
+    dataInicioVigencia: (NSString*) dataInicioVigencia
+    dataFimVigencia: (NSString*) dataFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
     completionHandler: (void (^)(PierPageOprtunidadesResponse* output, NSError* error)) handler {
 
@@ -1405,6 +1305,106 @@ static PierOportunidadesApi* singletonAPI = nil;
 }
 
 ///
+/// Lista os tipos oportunidades
+/// Este recurso permite listar os tipos oportunidades.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (optional)
+///
+///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo (optional)
+///
+///  @returns PierPageTipoOprtunidades*
+///
+-(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    descricao: (NSString*) descricao
+    flagAtivo: (NSNumber*) flagAtivo
+    completionHandler: (void (^)(PierPageTipoOprtunidades* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-oportunidades"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (descricao != nil) {
+        
+        queryParams[@"descricao"] = descricao;
+    }
+    if (flagAtivo != nil) {
+        
+        queryParams[@"flagAtivo"] = flagAtivo;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageTipoOprtunidades*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageTipoOprtunidades*)data, error);
+                           }
+          ];
+}
+
+///
 /// Cadastra status para o tipo oportunidade
 /// Esse recurso permite cadastrar status para o tipo oportunidade.
 ///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
@@ -1502,13 +1502,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST10WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST11WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST11`"];
     }
     
 
@@ -1582,13 +1582,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST5WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST6WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
     }
     
 

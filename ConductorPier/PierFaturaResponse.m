@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idConta": @"idConta", @"flagEmiteFatura": @"flagEmiteFatura", @"dataVencimentoFatura": @"dataVencimentoFatura", @"valorTotalFatura": @"valorTotalFatura", @"valorFaturaAnterior": @"valorFaturaAnterior", @"valorPagamentoMinimo": @"valorPagamentoMinimo", @"totalComprasNacionais": @"totalComprasNacionais", @"totalComprasInternacionas": @"totalComprasInternacionas", @"totalSaquesNacionais": @"totalSaquesNacionais", @"totalSaquesInternacionais": @"totalSaquesInternacionais", @"totalDebitosNacionais": @"totalDebitosNacionais", @"totalDebitosRecorrentes": @"totalDebitosRecorrentes", @"totalDebitosInternacionais": @"totalDebitosInternacionais", @"totalDebitosDiversosNacionais": @"totalDebitosDiversosNacionais", @"totalDebitosOpcionais": @"totalDebitosOpcionais", @"totalPagamentos": @"totalPagamentos", @"totalCreditosNacionais": @"totalCreditosNacionais", @"totalAjustes": @"totalAjustes", @"totalTarifas": @"totalTarifas", @"totalMulta": @"totalMulta", @"totalJuros": @"totalJuros", @"taxaRotativo": @"taxaRotativo", @"taxaSaque": @"taxaSaque", @"taxaMaximaProximoPeriodo": @"taxaMaximaProximoPeriodo", @"totalServicos": @"totalServicos", @"totalParceladoNacionais": @"totalParceladoNacionais", @"totalParceladoInternacionais": @"totalParceladoInternacionais" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"descricao": @"descricao", @"banco": @"banco", @"faixaNossoNumero": @"faixaNossoNumero", @"minNossoNumero": @"minNossoNumero", @"maxNossoNumero": @"maxNossoNumero", @"tamNossoNumero": @"tamNossoNumero", @"ultimoNossoNumero": @"ultimoNossoNumero" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idConta", @"flagEmiteFatura", @"dataVencimentoFatura", @"valorTotalFatura", @"valorFaturaAnterior", @"valorPagamentoMinimo", @"totalComprasNacionais", @"totalComprasInternacionas", @"totalSaquesNacionais", @"totalSaquesInternacionais", @"totalDebitosNacionais", @"totalDebitosRecorrentes", @"totalDebitosInternacionais", @"totalDebitosDiversosNacionais", @"totalDebitosOpcionais", @"totalPagamentos", @"totalCreditosNacionais", @"totalAjustes", @"totalTarifas", @"totalMulta", @"totalJuros", @"taxaRotativo", @"taxaSaque", @"taxaMaximaProximoPeriodo", ];
+  NSArray *optionalProperties = @[@"_id", @"descricao", @"banco", @"faixaNossoNumero", @"minNossoNumero", @"maxNossoNumero", @"tamNossoNumero", @"ultimoNossoNumero"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

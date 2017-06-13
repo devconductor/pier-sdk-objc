@@ -16,7 +16,7 @@
 
 /* Apresenta a data e em que o registro foi enviado para o dispositivo. [optional]
  */
-@property(nonatomic) NSDate* dataEnvio;
+@property(nonatomic) NSString* dataEnvio;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do emissor (id). [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;

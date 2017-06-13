@@ -6,6 +6,7 @@
 #import "PierLimiteDisponibilidade.h"
 #import "PierLoteCartoesPrePagos.h"
 #import "PierPortador.h"
+#import "PierCartaoDetalhado.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
 #import "PierPageCartoes.h"
 #import "PierValidaCartao.h"
@@ -570,13 +571,13 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierDadosCartO*
 ///
--(NSNumber*) consultarDadosCartaoUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarDadosReaisCartaoUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDadosCartO* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarDadosCartaoUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarDadosReaisCartaoUsingGET`"];
     }
     
 
@@ -900,15 +901,15 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es b\u00C3\u00A1sicas de um determinado Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierCartao*
+///  @returns PierCartaoDetalhado*
 ///
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoDetalhado* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
     }
     
 
@@ -971,9 +972,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartao*"
+                              responseType: @"PierCartaoDetalhado*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartao*)data, error);
+                               handler((PierCartaoDetalhado*)data, error);
                            }
           ];
 }
@@ -1346,7 +1347,7 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id). (optional)
 ///
@@ -1376,7 +1377,7 @@ static PierCartaoApi* singletonAPI = nil;
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
-    dataCadastro: (NSDate*) dataCadastro
+    dataCadastro: (NSString*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
     completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler {
@@ -1495,7 +1496,7 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es existentes na base do emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id). (optional)
 ///
@@ -1535,7 +1536,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCartoes*
 ///
--(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
@@ -1545,11 +1546,11 @@ static PierCartaoApi* singletonAPI = nil;
     tipoPortador: (NSString*) tipoPortador
     numeroCartao: (NSString*) numeroCartao
     nomeImpresso: (NSString*) nomeImpresso
-    dataGeracao: (NSDate*) dataGeracao
-    dataStatusCartao: (NSDate*) dataStatusCartao
-    dataEstagioCartao: (NSDate*) dataEstagioCartao
+    dataGeracao: (NSString*) dataGeracao
+    dataStatusCartao: (NSString*) dataStatusCartao
+    dataEstagioCartao: (NSString*) dataEstagioCartao
     dataValidade: (NSString*) dataValidade
-    dataImpressao: (NSDate*) dataImpressao
+    dataImpressao: (NSString*) dataImpressao
     arquivoImpressao: (NSString*) arquivoImpressao
     flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
     flagProvisorio: (NSNumber*) flagProvisorio

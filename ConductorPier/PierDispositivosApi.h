@@ -53,7 +53,7 @@
 /// Este m\u00C3\u00A9todo permite que sejam listados os dispositivos existentes na base do PIER.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param token Token do Dispositivo
 /// @param idUsuario Identificador do Usu\u00C3\u00A1rio
 /// @param idAplicacaoMobile Identificador da aplica\u00C3\u00A7\u00C3\u00A3o
@@ -62,13 +62,13 @@
 /// 
 ///
 /// @return PierPageDispositivos*
--(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
     idUsuario: (NSNumber*) idUsuario
     idAplicacaoMobile: (NSNumber*) idAplicacaoMobile
-    dataCriacao: (NSDate*) dataCriacao
-    dataDesativacao: (NSDate*) dataDesativacao
+    dataCriacao: (NSString*) dataCriacao
+    dataDesativacao: (NSString*) dataDesativacao
     completionHandler: (void (^)(PierPageDispositivos* output, NSError* error)) handler;
 
 

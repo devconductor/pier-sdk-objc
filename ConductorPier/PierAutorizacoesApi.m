@@ -1,9 +1,8 @@
 #import "PierAutorizacoesApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierCancelamentoTransacaoOnUsRequest.h"
-#import "PierTransacaoOnUsResponse.h"
 #import "PierAutorizacaoOnUsRequest.h"
-#import "PierDesfazimentoTransacaoOnURequest.h"
+#import "PierTransacaoOnUsResponse.h"
+#import "PierCancelamentoTransacaoOnUsRequest.h"
 #import "PierTransacaoOnUsRequest.h"
 
 
@@ -74,7 +73,87 @@ static PierAutorizacoesApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Cancela Transa\u00C3\u00A7\u00C3\u00A3o financeira
+/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira
+/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira.
+///  @param autorizacaoOnUsRequest autorizacaoOnUsRequest 
+///
+///  @returns PierTransacaoOnUsResponse*
+///
+-(NSNumber*) autorizarUsingPOSTWithAutorizacaoOnUsRequest: (PierAutorizacaoOnUsRequest*) autorizacaoOnUsRequest
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'autorizacaoOnUsRequest' is set
+    if (autorizacaoOnUsRequest == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `autorizacaoOnUsRequest` when calling `autorizarUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/autorizar-transacao"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = autorizacaoOnUsRequest;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTransacaoOnUsResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTransacaoOnUsResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira
 /// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o.
 ///  @param cancelamentoRequest cancelamentoRequest 
 ///
@@ -154,23 +233,16 @@ static PierAutorizacoesApi* singletonAPI = nil;
 }
 
 ///
-/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira
-/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira.
-///  @param autorizacaoOnUsRequest autorizacaoOnUsRequest 
+/// Retorna c\u00C3\u00B3digos de processamento de autoriza\u00C3\u00A7\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo retorna a lista dos c\u00C3\u00B3digos de processamento para autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es financeiras.
+///  @returns NSArray* /* NSObject */
 ///
-///  @returns PierTransacaoOnUsResponse*
-///
--(NSNumber*) desfazerUsingPOSTWithAutorizacaoOnUsRequest: (PierAutorizacaoOnUsRequest*) autorizacaoOnUsRequest
-    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler {
+-(NSNumber*) listarCodigosProcessamentoAutorizacaoUsingGETWithCompletionHandler: 
+    (void (^)(NSArray* /* NSObject */ output, NSError* error)) handler {
 
     
-    // verify the required parameter 'autorizacaoOnUsRequest' is set
-    if (autorizacaoOnUsRequest == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `autorizacaoOnUsRequest` when calling `desfazerUsingPOST`"];
-    }
-    
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/autorizar-transacao"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/consultar-codigos-processamento-autorizacao"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -211,12 +283,12 @@ static PierAutorizacoesApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    bodyParam = autorizacaoOnUsRequest;
+    
     
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"GET"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -226,96 +298,16 @@ static PierAutorizacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTransacaoOnUsResponse*"
+                              responseType: @"NSArray* /* NSObject */"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTransacaoOnUsResponse*)data, error);
+                               handler((NSArray* /* NSObject */)data, error);
                            }
           ];
 }
 
 ///
-/// Desfazimento de Transa\u00C3\u00A7\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite que seja desfeita uma transa\u00C3\u00A7\u00C3\u00A3o.
-///  @param desfazimentoRequest desfazimentoRequest 
-///
-///  @returns PierTransacaoOnUsResponse*
-///
--(NSNumber*) desfazerUsingPOST1WithDesfazimentoRequest: (PierDesfazimentoTransacaoOnURequest*) desfazimentoRequest
-    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'desfazimentoRequest' is set
-    if (desfazimentoRequest == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `desfazimentoRequest` when calling `desfazerUsingPOST1`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/desfazer-transacao"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = desfazimentoRequest;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierTransacaoOnUsResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierTransacaoOnUsResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Simula Compra Parcelada
-/// Este m\u00C3\u00A9todo permite que seja simulada uma compra parcelada.
+/// Simula planos de pagamento
+/// Este m\u00C3\u00A9todo permite que seja simulada um plano de pagamento.
 ///  @param transacoesRequest transacoesRequest 
 ///
 ///  @returns PierTransacaoOnUsResponse*

@@ -16,7 +16,7 @@
 
 /* Data vencimento fatura. [optional]
  */
-@property(nonatomic) NSDate* dataVencimento;
+@property(nonatomic) NSString* dataVencimento;
 /* Quantidade de dias em atraso. [optional]
  */
 @property(nonatomic) NSNumber* diasPagamentoAposVencimento;

@@ -168,13 +168,13 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listadas as plataformas mobile existentes na base do PIER.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param nome Nome da Plataforma Mobile (optional)
 ///
 ///  @returns PierPagePlataformasMobile*
 ///
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     completionHandler: (void (^)(PierPagePlataformasMobile* output, NSError* error)) handler {
@@ -263,13 +263,13 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPlataformaMobile*
 ///
--(NSNumber*) salvarUsingPOST8WithPersist: (PierPlataformaMobilePersist*) persist
+-(NSNumber*) salvarUsingPOST9WithPersist: (PierPlataformaMobilePersist*) persist
     completionHandler: (void (^)(PierPlataformaMobile* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST9`"];
     }
     
 

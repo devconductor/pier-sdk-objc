@@ -358,13 +358,13 @@ static PierUsuariosApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET25`"];
     }
     
 
@@ -522,7 +522,7 @@ static PierUsuariosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os usu\u00C3\u00A1rios existentes na base do PIER.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param nome Nome do Usuario (optional)
 ///
@@ -534,7 +534,7 @@ static PierUsuariosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageUsuarios*
 ///
--(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET29WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     cpf: (NSString*) cpf
@@ -721,13 +721,13 @@ static PierUsuariosApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) salvarUsingPOST12WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST13WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST13`"];
     }
     
 

@@ -27,7 +27,7 @@
 @property(nonatomic) NSString* nomeMae;
 /* Data de Nascimento da Pessoa. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
  */
-@property(nonatomic) NSDate* dataNascimento;
+@property(nonatomic) NSString* dataNascimento;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino). [optional]
  */
 @property(nonatomic) NSString* sexo;
@@ -45,7 +45,7 @@
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
 /* Data emiss\u00C3\u00A3o da Identidade no formato aaaa-MM-dd [optional]
  */
-@property(nonatomic) NSDate* dataEmissaoIdentidade;
+@property(nonatomic) NSString* dataEmissaoIdentidade;
 /* Id Estado civil da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;

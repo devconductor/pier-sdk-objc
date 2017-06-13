@@ -43,10 +43,9 @@
 /// Este m\u00C3\u00A9todo permite que sejam listadas as aplicacoes mobile existentes na base do PIER.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id Identificador da Aplicacao Mobile
 /// @param idPlataformaMobile Identificador da Plataforma Mobile
-/// @param idEmissor Identificador do Emissor
 /// 
 ///
 /// @return PierPageAplicacoesMobile*
@@ -54,7 +53,6 @@
     limit: (NSNumber*) limit
     _id: (NSString*) _id
     idPlataformaMobile: (NSNumber*) idPlataformaMobile
-    idEmissor: (NSNumber*) idEmissor
     completionHandler: (void (^)(PierPageAplicacoesMobile* output, NSError* error)) handler;
 
 

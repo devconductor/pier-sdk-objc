@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuOrigem": @"nsuOrigem", @"codigoProcessamento": @"codigoProcessamento", @"valorTransacao": @"valorTransacao", @"numeroRealCartao": @"numeroRealCartao", @"dataValidadeCartao": @"dataValidadeCartao", @"numeroEstabelecimento": @"numeroEstabelecimento", @"dataHoraTerminal": @"dataHoraTerminal", @"terminalRequisitante": @"terminalRequisitante", @"numeroParcelas": @"numeroParcelas", @"codigoSegurancaCartao": @"codigoSegurancaCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuOrigem": @"nsuOrigem", @"numeroParcelas": @"numeroParcelas", @"codigoProcessamento": @"codigoProcessamento", @"codigoSegurancaCartao": @"codigoSegurancaCartao", @"valorTransacao": @"valorTransacao", @"numeroRealCartao": @"numeroRealCartao", @"dataValidadeCartao": @"dataValidadeCartao", @"numeroEstabelecimento": @"numeroEstabelecimento", @"dataHoraTerminal": @"dataHoraTerminal", @"terminalRequisitante": @"terminalRequisitante" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nsuOrigem", @"codigoProcessamento", @"valorTransacao", @"numeroRealCartao", @"dataValidadeCartao", @"numeroEstabelecimento", @"dataHoraTerminal", @"terminalRequisitante", @"numeroParcelas", @"codigoSegurancaCartao"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -37,7 +37,7 @@
 @property(nonatomic) NSNumber* idTransacao;
 /* Data que a transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude foi realizada [optional]
  */
-@property(nonatomic) NSDate* dataTransacao;
+@property(nonatomic) NSString* dataTransacao;
 /* Valor da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude [optional]
  */
 @property(nonatomic) NSNumber* valorTransacao;

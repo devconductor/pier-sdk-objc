@@ -242,7 +242,7 @@ static PierDispositivosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os dispositivos existentes na base do PIER.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param token Token do Dispositivo (optional)
 ///
@@ -256,13 +256,13 @@ static PierDispositivosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDispositivos*
 ///
--(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
     idUsuario: (NSNumber*) idUsuario
     idAplicacaoMobile: (NSNumber*) idAplicacaoMobile
-    dataCriacao: (NSDate*) dataCriacao
-    dataDesativacao: (NSDate*) dataDesativacao
+    dataCriacao: (NSString*) dataCriacao
+    dataDesativacao: (NSString*) dataDesativacao
     completionHandler: (void (^)(PierPageDispositivos* output, NSError* error)) handler {
 
     

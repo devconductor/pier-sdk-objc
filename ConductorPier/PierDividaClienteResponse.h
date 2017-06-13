@@ -19,13 +19,13 @@
 @property(nonatomic) NSNumber* _id;
 /* Data de vencimento da cobran\u00C3\u00A7a [optional]
  */
-@property(nonatomic) NSDate* dataVencimentoFaturaAtraso;
+@property(nonatomic) NSString* dataVencimentoFaturaAtraso;
 /* Quantidade de dias em atraso at\u00C3\u00A9 a data de vencimento da cobran\u00C3\u00A7a [optional]
  */
 @property(nonatomic) NSNumber* quantidadeDiasAtraso;
 /* Data de vencimento do acordo [optional]
  */
-@property(nonatomic) NSDate* dataVencimentoAcordo;
+@property(nonatomic) NSString* dataVencimentoAcordo;
 /* Quantidade de dias em atraso at\u00C3\u00A9 a data de vencimento do acordo [optional]
  */
 @property(nonatomic) NSNumber* quantidadeDiasAtrasoCorrigido;

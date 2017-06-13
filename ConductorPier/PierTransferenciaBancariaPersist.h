@@ -16,13 +16,13 @@
 
 /* Data da transfer\u00C3\u00AAncia 
  */
-@property(nonatomic) NSDate* dataCompra;
+@property(nonatomic) NSString* dataCompra;
 /* Dia do vencimento padr\u00C3\u00A3o da fatura 
  */
-@property(nonatomic) NSDate* proximoVencimentoPadrao;
+@property(nonatomic) NSString* proximoVencimentoPadrao;
 /* Data do vencimento real da fatura 
  */
-@property(nonatomic) NSDate* proximoVencimentoReal;
+@property(nonatomic) NSString* proximoVencimentoReal;
 /* Valor da transfer\u00C3\u00AAncia 
  */
 @property(nonatomic) NSNumber* valorCompra;

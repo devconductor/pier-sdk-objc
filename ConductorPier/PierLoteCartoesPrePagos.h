@@ -37,7 +37,7 @@
 @property(nonatomic) NSNumber* quantidade;
 /* Data de cadastro do lote de cart\u00C3\u00B5es pr\u00C3\u00A9-pagos. 
  */
-@property(nonatomic) NSDate* dataCadastro;
+@property(nonatomic) NSString* dataCadastro;
 /* Nome do usu\u00C3\u00A1rio que criou o lote. 
  */
 @property(nonatomic) NSString* usuarioCadastro;

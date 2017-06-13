@@ -249,13 +249,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusConta*
 ///
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
     }
     
 
@@ -332,13 +332,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusImpressao*
 ///
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
     }
     
 
@@ -413,7 +413,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gio de Entrega que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
 ///
@@ -513,7 +513,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listadas as possibilidades de Status que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id)  (optional)
 ///
@@ -655,7 +655,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). (optional)
 ///
@@ -669,7 +669,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusContas*
 ///
--(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -776,7 +776,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param _id Id do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
 ///
@@ -784,7 +784,7 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressao*
 ///
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome

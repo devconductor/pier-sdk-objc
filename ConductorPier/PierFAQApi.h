@@ -77,7 +77,7 @@
 /// 
 ///
 /// @return PierFAQ*
--(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler;
 
 
@@ -87,7 +87,7 @@
 /// Lista todas as FAQs
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idFaq C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da FAQ (id).
 /// @param pergunta Conte\u00C3\u00BAdo da pergunta.
 /// @param resposta Conte\u00C3\u00BAdo da resposta.
@@ -98,7 +98,7 @@
 /// 
 ///
 /// @return PierPageFaqs*
--(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq
     pergunta: (NSString*) pergunta

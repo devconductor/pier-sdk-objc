@@ -34,7 +34,7 @@
 @property(nonatomic) NSString* inscricaoEstadual;
 /* Data de abertura da empresa, essa data deve ser informada no formato: aaaa-MM-dd. [optional]
  */
-@property(nonatomic) NSDate* dataAberturaEmpresa;
+@property(nonatomic) NSString* dataAberturaEmpresa;
 /* Id da origem comercial [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;

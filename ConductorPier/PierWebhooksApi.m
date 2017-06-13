@@ -184,13 +184,13 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET26`"];
     }
     
 
@@ -265,7 +265,7 @@ static PierWebhooksApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100) (optional)
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param _id Id do WebHook (optional)
 ///
@@ -277,7 +277,7 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierPageWebHooks*
 ///
--(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET30WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
@@ -383,19 +383,19 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHook*
 ///
--(NSNumber*) salvarUsingPOST13WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST14WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
 
     
     // verify the required parameter 'tipoEvento' is set
     if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST13`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST14`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST13`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST14`"];
     }
     
 

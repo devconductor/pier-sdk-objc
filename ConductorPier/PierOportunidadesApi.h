@@ -9,8 +9,8 @@
 #import "PierPageOprtunidadeAUD.h"
 #import "PierPageTipoOprtunidadesAUD.h"
 #import "PierPageStatusOprtunidades.h"
-#import "PierPageTipoOprtunidades.h"
 #import "PierPageOprtunidadesResponse.h"
+#import "PierPageTipoOprtunidades.h"
 #import "PierOportunidadePersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -102,7 +102,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -115,7 +115,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -125,7 +125,7 @@
 /// Este recurso permite listar os status oportunidades.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
 /// @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
 /// @param _id C\u00C3\u00B3digo identificador do status oportunidade
@@ -140,13 +140,13 @@
 -(NSNumber*) listarAuditoriasStatusUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     revType: (NSNumber*) revType
-    revDate: (NSDate*) revDate
+    revDate: (NSString*) revDate
     _id: (NSNumber*) _id
     idTipoOportunidade: (NSNumber*) idTipoOportunidade
     nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    revUser: (NSDate*) revUser
+    revUser: (NSString*) revUser
     completionHandler: (void (^)(PierPageStatusOprtunidadesAUD* output, NSError* error)) handler;
 
 
@@ -156,7 +156,7 @@
 /// Este recurso permite listar as auditorias das oportunidades.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade
 /// @param dataCadastro Data do cadastro da oportunidade
 /// @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade
@@ -173,15 +173,15 @@
 -(NSNumber*) listarAuditoriasUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
-    dataCadastro: (NSDate*) dataCadastro
-    dataAtualizacao: (NSDate*) dataAtualizacao
+    dataCadastro: (NSString*) dataCadastro
+    dataAtualizacao: (NSString*) dataAtualizacao
     numeroReceitaFederal: (NSString*) numeroReceitaFederal
-    dataInicioVigencia: (NSDate*) dataInicioVigencia
-    datatFimVigencia: (NSDate*) datatFimVigencia
+    dataInicioVigencia: (NSString*) dataInicioVigencia
+    datatFimVigencia: (NSString*) datatFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
-    revDate: (NSDate*) revDate
-    revType: (NSDate*) revType
-    revUser: (NSDate*) revUser
+    revDate: (NSString*) revDate
+    revType: (NSString*) revType
+    revUser: (NSString*) revUser
     completionHandler: (void (^)(PierPageOprtunidadeAUD* output, NSError* error)) handler;
 
 
@@ -191,7 +191,7 @@
 /// Este recurso permite listar os tipos oportunidades.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
 /// @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
 /// @param _id C\u00C3\u00B3digo identificador do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o
@@ -204,11 +204,11 @@
 -(NSNumber*) listarAuditoriasUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     revType: (NSNumber*) revType
-    revDate: (NSDate*) revDate
+    revDate: (NSString*) revDate
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    revUser: (NSDate*) revUser
+    revUser: (NSString*) revUser
     completionHandler: (void (^)(PierPageTipoOprtunidadesAUD* output, NSError* error)) handler;
 
 
@@ -219,7 +219,7 @@
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param nome Nome do status oportunidade
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo
@@ -237,30 +237,11 @@
 
 ///
 ///
-/// Lista os tipos oportunidades
-/// Este recurso permite listar os tipos oportunidades.
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade
-/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo
-/// 
-///
-/// @return PierPageTipoOprtunidades*
--(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    descricao: (NSString*) descricao
-    flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageTipoOprtunidades* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista as oportunidades
 /// Este recurso permite listar as oportunidades.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade
 /// @param dataCadastro Data do cadastro da oportunidade
 /// @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade
@@ -271,16 +252,35 @@
 /// 
 ///
 /// @return PierPageOprtunidadesResponse*
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
-    dataCadastro: (NSDate*) dataCadastro
-    dataAtualizacao: (NSDate*) dataAtualizacao
+    dataCadastro: (NSString*) dataCadastro
+    dataAtualizacao: (NSString*) dataAtualizacao
     numeroReceitaFederal: (NSString*) numeroReceitaFederal
-    dataInicioVigencia: (NSDate*) dataInicioVigencia
-    dataFimVigencia: (NSDate*) dataFimVigencia
+    dataInicioVigencia: (NSString*) dataInicioVigencia
+    dataFimVigencia: (NSString*) dataFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
     completionHandler: (void (^)(PierPageOprtunidadesResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os tipos oportunidades
+/// Este recurso permite listar os tipos oportunidades.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade
+/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo
+/// 
+///
+/// @return PierPageTipoOprtunidades*
+-(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    descricao: (NSString*) descricao
+    flagAtivo: (NSNumber*) flagAtivo
+    completionHandler: (void (^)(PierPageTipoOprtunidades* output, NSError* error)) handler;
 
 
 ///
@@ -307,7 +307,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) salvarUsingPOST10WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST11WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -320,7 +320,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) salvarUsingPOST5WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST6WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 

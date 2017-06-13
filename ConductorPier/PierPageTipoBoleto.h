@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierFaturaResponse.h"
 
 
 @protocol PierPageTipoBoleto
@@ -15,7 +16,7 @@
 @interface PierPageTipoBoleto : PierObject
 
 
-@property(nonatomic) NSArray* /* NSObject */ content;
+@property(nonatomic) NSArray<PierFaturaResponse>* content;
 
 @property(nonatomic) NSNumber* first;
 

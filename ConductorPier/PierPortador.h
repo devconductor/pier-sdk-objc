@@ -40,9 +40,9 @@
 @property(nonatomic) NSNumber* flagAtivo;
 /* Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
-@property(nonatomic) NSDate* dataCadastroPortador;
+@property(nonatomic) NSString* dataCadastroPortador;
 /* Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
-@property(nonatomic) NSDate* dataCancelamentoPortador;
+@property(nonatomic) NSString* dataCancelamentoPortador;
 
 @end
