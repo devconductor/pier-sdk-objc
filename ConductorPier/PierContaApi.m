@@ -1,26 +1,26 @@
 #import "PierContaApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierAjusteResponse.h"
-#import "PierLimiteDisponibilidade.h"
+#import "PierLimiteDisponibilidadeResponse.h"
 #import "PierContaResponse.h"
-#import "PierBoletoDeFatura.h"
+#import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
 #import "PierDetalhesFaturaConsignadaResponse.h"
 #import "PierFaturaConsignadaDetalheResponse.h"
 #import "PierDetalhesFaturaResponse.h"
-#import "PierPageTaxasRefinanciamento.h"
-#import "PierLinkTransferenciaBancariaResponse_.h"
-#import "PierPageTransferencias.h"
+#import "PierPageTaxasRefinanciamentoResponse.h"
+#import "PierTransferenciaBancariaResponse.h"
+#import "PierPageTransferenciaResponse.h"
 #import "PierContaDetalheResponse.h"
-#import "PierCartaoImpressao.h"
-#import "PierPageFaturasConsignadas.h"
-#import "PierPageFaturas.h"
-#import "PierPageHistoricoEventos.h"
-#import "PierLinkPageHistoricoAssessoriaResponse_.h"
-#import "PierPageHistoricoAtraso.h"
-#import "PierPageTransacoesCorrentes.h"
-#import "PierLinkPageTransferenciaBancariaResponse_.h"
-#import "PierPageContas.h"
+#import "PierCartaoImpressaoResponse.h"
+#import "PierPageFaturaConsignadaResponse.h"
+#import "PierPageFaturaResponse.h"
+#import "PierPageHistoricoEventosResponse.h"
+#import "PierPageHistoricoAssessoriaResponse.h"
+#import "PierPageHistoricoAtrasoFaturaResponse.h"
+#import "PierPageTransacoesCorrentesResponse.h"
+#import "PierPageTransferenciaBancariaResponse.h"
+#import "PierPageContaResponse.h"
 #import "PierPageTransacaoResponse.h"
 #import "PierTransferenciaBancariaPersist.h"
 
@@ -239,7 +239,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param limiteInternacionalSaquePeriodo Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Internacional dentro de cada ciclo de faturamento. 
 ///
-///  @returns PierLimiteDisponibilidade*
+///  @returns PierLimiteDisponibilidadeResponse*
 ///
 -(NSNumber*) alterarLimiteUsingPUTWithId: (NSNumber*) _id
     limiteGlobal: (NSNumber*) limiteGlobal
@@ -254,7 +254,7 @@ static PierContaApi* singletonAPI = nil;
     limiteInternacionalParcelas: (NSNumber*) limiteInternacionalParcelas
     limiteInternacionalSaqueGlobal: (NSNumber*) limiteInternacionalSaqueGlobal
     limiteInternacionalSaquePeriodo: (NSNumber*) limiteInternacionalSaquePeriodo
-    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -430,9 +430,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLimiteDisponibilidade*"
+                              responseType: @"PierLimiteDisponibilidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLimiteDisponibilidade*)data, error);
+                               handler((PierLimiteDisponibilidadeResponse*)data, error);
                            }
           ];
 }
@@ -715,10 +715,10 @@ static PierContaApi* singletonAPI = nil;
 /// Este recurso consulta um boleto da fatura
 ///  @param _id Id Conta 
 ///
-///  @returns PierBoletoDeFatura*
+///  @returns PierBoletoResponse*
 ///
 -(NSNumber*) consultarBoletoEmitidoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierBoletoDeFatura* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -786,9 +786,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierBoletoDeFatura*"
+                              responseType: @"PierBoletoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierBoletoDeFatura*)data, error);
+                               handler((PierBoletoResponse*)data, error);
                            }
           ];
 }
@@ -1278,10 +1278,10 @@ static PierContaApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 ///  @param _id Id Conta 
 ///
-///  @returns PierLimiteDisponibilidade*
+///  @returns PierLimiteDisponibilidadeResponse*
 ///
 -(NSNumber*) consultarLimiteDisponibilidadeUsingGET1WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1349,9 +1349,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLimiteDisponibilidade*"
+                              responseType: @"PierLimiteDisponibilidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLimiteDisponibilidade*)data, error);
+                               handler((PierLimiteDisponibilidadeResponse*)data, error);
                            }
           ];
 }
@@ -1365,12 +1365,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageTaxasRefinanciamento*
+///  @returns PierPageTaxasRefinanciamentoResponse*
 ///
 -(NSNumber*) consultarTaxasTarifasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageTaxasRefinanciamento* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTaxasRefinanciamentoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1446,9 +1446,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTaxasRefinanciamento*"
+                              responseType: @"PierPageTaxasRefinanciamentoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTaxasRefinanciamento*)data, error);
+                               handler((PierPageTaxasRefinanciamentoResponse*)data, error);
                            }
           ];
 }
@@ -1462,12 +1462,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id) (optional)
 ///
-///  @returns PierLinkTransferenciaBancariaResponse_*
+///  @returns PierTransferenciaBancariaResponse*
 ///
 -(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
-    completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1547,9 +1547,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLinkTransferenciaBancariaResponse_*"
+                              responseType: @"PierTransferenciaBancariaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLinkTransferenciaBancariaResponse_*)data, error);
+                               handler((PierTransferenciaBancariaResponse*)data, error);
                            }
           ];
 }
@@ -1561,11 +1561,11 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param idTransferencia C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id_transferencia). 
 ///
-///  @returns PierPageTransferencias*
+///  @returns PierPageTransferenciaResponse*
 ///
 -(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
-    completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1641,9 +1641,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransferencias*"
+                              responseType: @"PierPageTransferenciaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransferencias*)data, error);
+                               handler((PierPageTransferenciaResponse*)data, error);
                            }
           ];
 }
@@ -1823,12 +1823,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento Atributo que representa a data de vencimento do boleto 
 ///
-///  @returns PierBoletoDeFatura*
+///  @returns PierBoletoResponse*
 ///
 -(NSNumber*) gerarBoletoRecargaUsingPOSTWithId: (NSNumber*) _id
     valor: (NSNumber*) valor
     dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierBoletoDeFatura* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1914,9 +1914,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierBoletoDeFatura*"
+                              responseType: @"PierBoletoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierBoletoDeFatura*)data, error);
+                               handler((PierBoletoResponse*)data, error);
                            }
           ];
 }
@@ -1930,12 +1930,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param idTipoPlastico C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do TipoPlastico (id). (optional)
 ///
-///  @returns PierCartaoImpressao*
+///  @returns PierCartaoImpressaoResponse*
 ///
 -(NSNumber*) gerarCartaoUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoPlastico: (NSNumber*) idTipoPlastico
-    completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2015,9 +2015,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartaoImpressao*"
+                              responseType: @"PierCartaoImpressaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartaoImpressao*)data, error);
+                               handler((PierCartaoImpressaoResponse*)data, error);
                            }
           ];
 }
@@ -2029,11 +2029,11 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataValidade Data de Validade 
 ///
-///  @returns PierCartaoImpressao*
+///  @returns PierCartaoImpressaoResponse*
 ///
 -(NSNumber*) gerarCartaoVirtualUsingPOSTWithId: (NSNumber*) _id
     dataValidade: (NSString*) dataValidade
-    completionHandler: (void (^)(PierCartaoImpressao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2110,9 +2110,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartaoImpressao*"
+                              responseType: @"PierCartaoImpressaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartaoImpressao*)data, error);
+                               handler((PierCartaoImpressaoResponse*)data, error);
                            }
           ];
 }
@@ -2128,13 +2128,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento Apresenta a data de vencimento da fatura. (optional)
 ///
-///  @returns PierPageFaturasConsignadas*
+///  @returns PierPageFaturaConsignadaResponse*
 ///
 -(NSNumber*) listarFaturasConsignadasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageFaturasConsignadas* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageFaturaConsignadaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2214,9 +2214,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageFaturasConsignadas*"
+                              responseType: @"PierPageFaturaConsignadaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageFaturasConsignadas*)data, error);
+                               handler((PierPageFaturaConsignadaResponse*)data, error);
                            }
           ];
 }
@@ -2232,13 +2232,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento Data de Vencimento da Fatura. (optional)
 ///
-///  @returns PierPageFaturas*
+///  @returns PierPageFaturaResponse*
 ///
 -(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageFaturas* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageFaturaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2318,9 +2318,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageFaturas*"
+                              responseType: @"PierPageFaturaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageFaturas*)data, error);
+                               handler((PierPageFaturaResponse*)data, error);
                            }
           ];
 }
@@ -2334,12 +2334,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageHistoricoEventos*
+///  @returns PierPageHistoricoEventosResponse*
 ///
 -(NSNumber*) listarHistoricoAlteracoesLimitesUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageHistoricoEventos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageHistoricoEventosResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2415,9 +2415,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageHistoricoEventos*"
+                              responseType: @"PierPageHistoricoEventosResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageHistoricoEventos*)data, error);
+                               handler((PierPageHistoricoEventosResponse*)data, error);
                            }
           ];
 }
@@ -2431,12 +2431,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierLinkPageHistoricoAssessoriaResponse_*
+///  @returns PierPageHistoricoAssessoriaResponse*
 ///
 -(NSNumber*) listarHistoricoAssessoriaUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierLinkPageHistoricoAssessoriaResponse_* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageHistoricoAssessoriaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2512,9 +2512,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLinkPageHistoricoAssessoriaResponse_*"
+                              responseType: @"PierPageHistoricoAssessoriaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLinkPageHistoricoAssessoriaResponse_*)data, error);
+                               handler((PierPageHistoricoAssessoriaResponse*)data, error);
                            }
           ];
 }
@@ -2524,10 +2524,10 @@ static PierContaApi* singletonAPI = nil;
 /// Este recurso lista o hist\u00C3\u00B3rico do pagamento de faturas em atraso
 ///  @param _id Id Conta 
 ///
-///  @returns PierPageHistoricoAtraso*
+///  @returns PierPageHistoricoAtrasoFaturaResponse*
 ///
 -(NSNumber*) listarHistoricoAtrasosFaturasUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPageHistoricoAtraso* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageHistoricoAtrasoFaturaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2595,9 +2595,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageHistoricoAtraso*"
+                              responseType: @"PierPageHistoricoAtrasoFaturaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageHistoricoAtraso*)data, error);
+                               handler((PierPageHistoricoAtrasoFaturaResponse*)data, error);
                            }
           ];
 }
@@ -2615,14 +2615,14 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataFim Data fim da consulta do extrato no formato yyyy-MM-dd  (Par\u00C3\u00A2mentro Ignorado se dataInicio n\u00C3\u00A3o for definida). (optional)
 ///
-///  @returns PierPageTransacoesCorrentes*
+///  @returns PierPageTransacoesCorrentesResponse*
 ///
 -(NSNumber*) listarNaoProcessadasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInicio: (NSString*) dataInicio
     dataFim: (NSString*) dataFim
-    completionHandler: (void (^)(PierPageTransacoesCorrentes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransacoesCorrentesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2706,9 +2706,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransacoesCorrentes*"
+                              responseType: @"PierPageTransacoesCorrentesResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransacoesCorrentes*)data, error);
+                               handler((PierPageTransacoesCorrentesResponse*)data, error);
                            }
           ];
 }
@@ -2728,7 +2728,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataFim Data fim da consulta do extrato no formato yyyy-MM-dd  (Ignorado quando o par\u00C3\u00A2mentro dataVencimento \u00C3\u00A9 usado). (optional)
 ///
-///  @returns PierPageTransacoesCorrentes*
+///  @returns PierPageTransacoesCorrentesResponse*
 ///
 -(NSNumber*) listarProcessadasUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
@@ -2736,7 +2736,7 @@ static PierContaApi* singletonAPI = nil;
     dataVencimento: (NSString*) dataVencimento
     dataInicio: (NSString*) dataInicio
     dataFim: (NSString*) dataFim
-    completionHandler: (void (^)(PierPageTransacoesCorrentes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransacoesCorrentesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2824,9 +2824,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransacoesCorrentes*"
+                              responseType: @"PierPageTransacoesCorrentesResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransacoesCorrentes*)data, error);
+                               handler((PierPageTransacoesCorrentesResponse*)data, error);
                            }
           ];
 }
@@ -2842,18 +2842,18 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierLinkPageTransferenciaBancariaResponse_*
+///  @returns PierPageTransferenciaBancariaResponse*
 ///
--(NSNumber*) listarUsingGET27WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET28WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierLinkPageTransferenciaBancariaResponse_* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransferenciaBancariaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET27`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET28`"];
     }
     
 
@@ -2928,9 +2928,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLinkPageTransferenciaBancariaResponse_*"
+                              responseType: @"PierPageTransferenciaBancariaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLinkPageTransferenciaBancariaResponse_*)data, error);
+                               handler((PierPageTransferenciaBancariaResponse*)data, error);
                            }
           ];
 }
@@ -2954,9 +2954,9 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataTransferencia Data estabelecida para ocorrer a transfer\u00C3\u00AAncia. (optional)
 ///
-///  @returns PierPageTransferencias*
+///  @returns PierPageTransferenciaResponse*
 ///
--(NSNumber*) listarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET29WithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTransferencia: (NSNumber*) idTransferencia
@@ -2964,12 +2964,12 @@ static PierContaApi* singletonAPI = nil;
     idContaDestino: (NSNumber*) idContaDestino
     valorTransferencia: (NSNumber*) valorTransferencia
     dataTransferencia: (NSString*) dataTransferencia
-    completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET28`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET29`"];
     }
     
 
@@ -3060,9 +3060,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransferencias*"
+                              responseType: @"PierPageTransferenciaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransferencias*)data, error);
+                               handler((PierPageTransferenciaResponse*)data, error);
                            }
           ];
 }
@@ -3092,9 +3092,9 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. (optional)
 ///
-///  @returns PierPageContas*
+///  @returns PierPageContaResponse*
 ///
--(NSNumber*) listarUsingGET6WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
     idOrigemComercial: (NSNumber*) idOrigemComercial
@@ -3105,7 +3105,7 @@ static PierContaApi* singletonAPI = nil;
     dataStatusConta: (NSString*) dataStatusConta
     dataCadastro: (NSString*) dataCadastro
     dataUltimaAlteracaoVencimento: (NSString*) dataUltimaAlteracaoVencimento
-    completionHandler: (void (^)(PierPageContas* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageContaResponse* output, NSError* error)) handler {
 
     
 
@@ -3209,16 +3209,16 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageContas*"
+                              responseType: @"PierPageContaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageContas*)data, error);
+                               handler((PierPageContaResponse*)data, error);
                            }
           ];
 }
 
 ///
-/// Realiza a reativa\u00C3\u00A7\u00C3\u00A3o de contas que foram desativadas por inadimpl\u00C3\u00AAncia
-/// Este recurso permite reativar contas que foram desativadas por inadimpl\u00C3\u00AAncia. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id).
+/// Realiza a reativa\u00C3\u00A7\u00C3\u00A3o de contas.
+/// Este recurso permite reativar contas. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id).
 ///  @param _id Id Conta 
 ///
 ///  @returns NSObject*
@@ -3403,11 +3403,11 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param transferenciaBancariaPersist transferenciaBancariaPersist 
 ///
-///  @returns PierLinkTransferenciaBancariaResponse_*
+///  @returns PierTransferenciaBancariaResponse*
 ///
 -(NSNumber*) transferirUsingPOSTWithId: (NSNumber*) _id
     transferenciaBancariaPersist: (PierTransferenciaBancariaPersist*) transferenciaBancariaPersist
-    completionHandler: (void (^)(PierLinkTransferenciaBancariaResponse_* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -3480,9 +3480,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLinkTransferenciaBancariaResponse_*"
+                              responseType: @"PierTransferenciaBancariaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLinkTransferenciaBancariaResponse_*)data, error);
+                               handler((PierTransferenciaBancariaResponse*)data, error);
                            }
           ];
 }
@@ -3496,12 +3496,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param valorTransferencia Valor da Transfer\u00C3\u00AAncia. 
 ///
-///  @returns PierPageTransferencias*
+///  @returns PierPageTransferenciaResponse*
 ///
 -(NSNumber*) transferirUsingPOST1WithId: (NSNumber*) _id
     idContaDestino: (NSNumber*) idContaDestino
     valorTransferencia: (NSNumber*) valorTransferencia
-    completionHandler: (void (^)(PierPageTransferencias* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -3587,9 +3587,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransferencias*"
+                              responseType: @"PierPageTransferenciaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransferencias*)data, error);
+                               handler((PierPageTransferenciaResponse*)data, error);
                            }
           ];
 }

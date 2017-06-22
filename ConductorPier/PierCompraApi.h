@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierAntecipacaoResponse.h"
-#import "PierPageCompras.h"
+#import "PierPageCompraResponse.h"
 #import "PierAntecipacaoSimuladaResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -27,8 +27,8 @@
 /// Metodo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o.
 ///
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta.
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da compra.
-/// @param quantidadeParcelas Quantidade de parcelas para serem antecipadas (quantidadeParcelas).
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento.
+/// @param quantidadeParcelas Quantidade de parcelas para serem antecipadas.
 /// 
 ///
 /// @return PierAntecipacaoResponse*
@@ -49,27 +49,27 @@
 /// @param idCompra C\u00C3\u00B3digo identificador da Compra.
 /// @param parcelada Indica se a compra \u00C3\u00A9 parcelada.
 /// @param juros Indica se a compra \u00C3\u00A9 com ou sem juros.
-/// @param tipoTransacao Indica se a compra \u00C3\u00A9 ON-US ou OFF-US
+/// @param tipoOrigemTransacao Indica se a compra \u00C3\u00A9 ON-US ou OFF-US
 /// 
 ///
-/// @return PierPageCompras*
--(NSNumber*) listarUsingGET5WithIdConta: (NSNumber*) idConta
+/// @return PierPageCompraResponse*
+-(NSNumber*) listarUsingGET6WithIdConta: (NSNumber*) idConta
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idCompra: (NSNumber*) idCompra
     parcelada: (NSNumber*) parcelada
     juros: (NSNumber*) juros
-    tipoTransacao: (NSString*) tipoTransacao
-    completionHandler: (void (^)(PierPageCompras* output, NSError* error)) handler;
+    tipoOrigemTransacao: (NSString*) tipoOrigemTransacao
+    completionHandler: (void (^)(PierPageCompraResponse* output, NSError* error)) handler;
 
 
 ///
 ///
 /// Simular antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas
-/// Simula a antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas de uma compra, listando todos os planos de parcelamento dispon\u00C3\u00ADveis.
+/// Simula a antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas de um evento, listando todos os planos de parcelamento dispon\u00C3\u00ADveis.
 ///
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da compra.
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta.
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento.
 /// 
 ///
 /// @return PierAntecipacaoSimuladaResponse*

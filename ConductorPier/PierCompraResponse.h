@@ -47,7 +47,7 @@
 @property(nonatomic) NSString* nomeEstabelecimento;
 /* Tipo de transa\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
  */
-@property(nonatomic) NSString* tipoTransacao;
+@property(nonatomic) NSString* tipoOrigemTransacao;
 /* Cidade onde a compra foi realizada. [optional]
  */
 @property(nonatomic) NSString* cidade;

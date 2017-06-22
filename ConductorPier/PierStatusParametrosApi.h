@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
-#import "PierEstagioCartao.h"
-#import "PierStatusCartao.h"
-#import "PierStatusConta.h"
-#import "PierStatusImpressao.h"
-#import "PierPageEstagiosCartoes.h"
-#import "PierPageStatusCartoes.h"
-#import "PierPageStatusContas.h"
-#import "PierPageStatusImpressao.h"
+#import "PierEstagioCartaoResponse.h"
+#import "PierStatusCartaoResponse.h"
+#import "PierStatusContaResponse.h"
+#import "PierStatusImpressaoResponse.h"
+#import "PierPageEstagioCartaoResponse.h"
+#import "PierPageStatusCartaoResponse.h"
+#import "PierPageStatusContaResponse.h"
+#import "PierPageStatusImpressaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -34,9 +34,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierEstagioCartao*
+/// @return PierEstagioCartaoResponse*
 -(NSNumber*) consultarEstagioCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEstagioCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -47,9 +47,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierStatusCartao*
+/// @return PierStatusCartaoResponse*
 -(NSNumber*) consultarStatusCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierStatusCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierStatusCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -60,9 +60,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id).
 /// 
 ///
-/// @return PierStatusConta*
+/// @return PierStatusContaResponse*
 -(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -73,9 +73,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierStatusImpressao*
+/// @return PierStatusImpressaoResponse*
 -(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -89,12 +89,12 @@
 /// @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o
 /// 
 ///
-/// @return PierPageEstagiosCartoes*
+/// @return PierPageEstagioCartaoResponse*
 -(NSNumber*) listarEstagiosCartoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageEstagiosCartoes* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageEstagioCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -112,9 +112,10 @@
 /// @param idStatusDestinoConta Indica qual o idStatusCartao que ser\u00C3\u00A1 atribu\u00C3\u00ADdo a conta, caso ela seja cancelada devido ao bloqueio de um cart\u00C3\u00A3o quando for utilizado um idStatusCartao no processo de Bloqueio que possua essa caracter\u00C3\u00ADstica.
 /// @param flagCobraTarifa Quando ativa, indica que cart\u00C3\u00B5es que tiverem um idStatusCartao atribu\u00C3\u00ADdo com essa caracter\u00C3\u00ADstica, incluir\u00C3\u00A3o a cobran\u00C3\u00A7a de uma tarifa para a conta de acordo com os valores definidos nos par\u00C3\u00A2metros do emissor.
 /// @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a solicita\u00C3\u00A7\u00C3\u00A3o de uma nova via, sendo: 0: Inativo e 1: Ativo.
+/// @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o desbloqueio, sendo: 0: Inativo e 1: Ativo.
 /// 
 ///
-/// @return PierPageStatusCartoes*
+/// @return PierPageStatusCartaoResponse*
 -(NSNumber*) listarStatusCartoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -125,7 +126,8 @@
     idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
-    completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler;
+    flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
+    completionHandler: (void (^)(PierPageStatusCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -140,17 +142,21 @@
 /// @param flagAlteraLimite Par\u00C3\u00A2metro que define se o Status da Conta permite realizar a Altera\u00C3\u00A7\u00C3\u00A3o de Limites do Portador, sendo: 0: Inativo e 1: Ativo.
 /// @param mensagemConsultaNegada Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades.
 /// @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo.
+/// @param flagFazTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite fazer transferencia, sendo: 0: Inativo e 1: Ativo.
+/// @param flagRecebeTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite receber transferencia, sendo: 0: Inativo e 1: Ativo.
 /// 
 ///
-/// @return PierPageStatusContas*
--(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
+/// @return PierPageStatusContaResponse*
+-(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
-    completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler;
+    flagFazTransferencia: (NSNumber*) flagFazTransferencia
+    flagRecebeTransferencia: (NSNumber*) flagRecebeTransferencia
+    completionHandler: (void (^)(PierPageStatusContaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -164,12 +170,12 @@
 /// @param nome Nome do status impress\u00C3\u00A3o
 /// 
 ///
-/// @return PierPageStatusImpressao*
--(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
+/// @return PierPageStatusImpressaoResponse*
+-(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageStatusImpressao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageStatusImpressaoResponse* output, NSError* error)) handler;
 
 
 

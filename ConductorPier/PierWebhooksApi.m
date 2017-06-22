@@ -1,7 +1,7 @@
 #import "PierWebhooksApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierWebHook.h"
-#import "PierPageWebHooks.h"
+#import "PierWebHookResponse.h"
+#import "PierPageWebHookResponse.h"
 
 
 @interface PierWebhooksApi ()
@@ -79,12 +79,12 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @param url URL que a ser consumida pelo WebHook 
 ///
-///  @returns PierWebHook*
+///  @returns PierWebHookResponse*
 ///
 -(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -170,9 +170,9 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierWebHook*"
+                              responseType: @"PierWebHookResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHook*)data, error);
+                               handler((PierWebHookResponse*)data, error);
                            }
           ];
 }
@@ -182,10 +182,10 @@ static PierWebhooksApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam consultado um webhook do emissor atrav\u00C3\u00A9s de um id especifico
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id). 
 ///
-///  @returns PierWebHook*
+///  @returns PierWebHookResponse*
 ///
 -(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -253,9 +253,9 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierWebHook*"
+                              responseType: @"PierWebHookResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHook*)data, error);
+                               handler((PierWebHookResponse*)data, error);
                            }
           ];
 }
@@ -275,15 +275,15 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @param url URL que a ser consumida pelo WebHook (optional)
 ///
-///  @returns PierPageWebHooks*
+///  @returns PierPageWebHookResponse*
 ///
--(NSNumber*) listarUsingGET30WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET31WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     metodo: (NSString*) metodo
     url: (NSString*) url
-    completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageWebHookResponse* output, NSError* error)) handler {
 
     
 
@@ -367,9 +367,9 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageWebHooks*"
+                              responseType: @"PierPageWebHookResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageWebHooks*)data, error);
+                               handler((PierPageWebHookResponse*)data, error);
                            }
           ];
 }
@@ -381,11 +381,11 @@ static PierWebhooksApi* singletonAPI = nil;
 ///
 ///  @param url URL que a ser consumida pelo WebHook 
 ///
-///  @returns PierWebHook*
+///  @returns PierWebHookResponse*
 ///
 -(NSNumber*) salvarUsingPOST14WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'tipoEvento' is set
@@ -463,9 +463,9 @@ static PierWebhooksApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierWebHook*"
+                              responseType: @"PierWebHookResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHook*)data, error);
+                               handler((PierWebHookResponse*)data, error);
                            }
           ];
 }

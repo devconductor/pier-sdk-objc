@@ -17,16 +17,28 @@
 
 /* C\u00C3\u00B3digo identificador da simula\u00C3\u00A7\u00C3\u00A3o de antecipa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
-@property(nonatomic) NSNumber* idSimulacao;
-/* C\u00C3\u00B3digo identificador da compra. [optional]
- */
-@property(nonatomic) NSNumber* idCompra;
+@property(nonatomic) NSNumber* idAntecipacaoSimulada;
 /* C\u00C3\u00B3digo identificador da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
+/* C\u00C3\u00B3digo identificador do evento. [optional]
+ */
+@property(nonatomic) NSNumber* idEventoExterno;
+/* C\u00C3\u00B3digo identificador do tipo do evento. [optional]
+ */
+@property(nonatomic) NSNumber* idTipoTransacao;
+/* Quantidade de parcelas antecip\u00C3\u00A1veis. [optional]
+ */
+@property(nonatomic) NSNumber* qtdeParcelasAntecipaveis;
+/* Valor da parcela. [optional]
+ */
+@property(nonatomic) NSNumber* valorParcela;
 /* Data e hora em que a simula\u00C3\u00A7\u00C3\u00A3o foi feita. [optional]
  */
 @property(nonatomic) NSString* dataHoraSimulacao;
+/* Taxa de antecipa\u00C3\u00A7\u00C3\u00A3o aplicada (ao ano). [optional]
+ */
+@property(nonatomic) NSNumber* taxaAntecipacaoAno;
 /* Detalhes da simula\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSArray<PierAntecipacaoSimuladaDetalhesResponse>* detalhes;

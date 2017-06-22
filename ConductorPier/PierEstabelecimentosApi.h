@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "PierTerminal.h"
-#import "PierEstabelecimento.h"
-#import "PierPageTerminal.h"
-#import "PierPageEstabelecimentos.h"
+#import "PierTerminalResponse.h"
+#import "PierEstabelecimentoResponse.h"
+#import "PierPageEstabelecimentoResponse.h"
+#import "PierPageTerminalResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -30,9 +30,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id).
 /// 
 ///
-/// @return PierTerminal*
+/// @return PierTerminalResponse*
 -(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTerminal* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
 ///
@@ -43,32 +43,9 @@
 /// @param _id Id
 /// 
 ///
-/// @return PierEstabelecimento*
+/// @return PierEstabelecimentoResponse*
 -(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEstabelecimento* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista os Terminais cadastrados no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os terminais existentes na base de dados do Emissor.
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id).
-/// @param terminal C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do terminal.
-/// @param numeroEstabelecimento N\u00C3\u00BAmero do estabelecimento a qual o terminal pertence.
-/// @param idEstabelecimento N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento a qual o terminal pertence.
-/// 
-///
-/// @return PierPageTerminal*
--(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    terminal: (NSString*) terminal
-    numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
-    idEstabelecimento: (NSNumber*) idEstabelecimento
-    completionHandler: (void (^)(PierPageTerminal* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -99,8 +76,8 @@
 /// @param inativo Indica se o estabelecimento est\u00C3\u00A1 inativo.
 /// 
 ///
-/// @return PierPageEstabelecimentos*
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
+/// @return PierPageEstabelecimentoResponse*
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     numeroReceitaFederal: (NSNumber*) numeroReceitaFederal
@@ -121,7 +98,30 @@
     flagArquivoSecrFazenda: (NSNumber*) flagArquivoSecrFazenda
     flagCartaoDigitado: (NSNumber*) flagCartaoDigitado
     inativo: (NSNumber*) inativo
-    completionHandler: (void (^)(PierPageEstabelecimentos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageEstabelecimentoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os Terminais cadastrados no Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os terminais existentes na base de dados do Emissor.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id).
+/// @param terminal C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do terminal.
+/// @param numeroEstabelecimento N\u00C3\u00BAmero do estabelecimento a qual o terminal pertence.
+/// @param idEstabelecimento N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento a qual o terminal pertence.
+/// 
+///
+/// @return PierPageTerminalResponse*
+-(NSNumber*) listarUsingGET23WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    terminal: (NSString*) terminal
+    numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
+    idEstabelecimento: (NSNumber*) idEstabelecimento
+    completionHandler: (void (^)(PierPageTerminalResponse* output, NSError* error)) handler;
 
 
 

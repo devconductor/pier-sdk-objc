@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PierUsuarioUpdate.h"
 #import "PierUsuarioResponse.h"
-#import "PierPageUsuarios.h"
+#import "PierPageUsuarioResponse.h"
 #import "PierUsuarioPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -106,14 +106,14 @@
 /// @param status Status do Usuario
 /// 
 ///
-/// @return PierPageUsuarios*
--(NSNumber*) listarUsingGET29WithPage: (NSNumber*) page
+/// @return PierPageUsuarioResponse*
+-(NSNumber*) listarUsingGET30WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     cpf: (NSString*) cpf
     email: (NSString*) email
     status: (NSString*) status
-    completionHandler: (void (^)(PierPageUsuarios* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageUsuarioResponse* output, NSError* error)) handler;
 
 
 ///

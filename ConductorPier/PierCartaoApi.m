@@ -1,16 +1,16 @@
 #import "PierCartaoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierHistoricoImpressaoCartao.h"
-#import "PierCartao.h"
-#import "PierDadosCartO.h"
-#import "PierLimiteDisponibilidade.h"
-#import "PierLoteCartoesPrePagos.h"
-#import "PierPortador.h"
-#import "PierCartaoDetalhado.h"
+#import "PierHistoricoImpressaoCartaoResponse.h"
+#import "PierCartaoResponse.h"
+#import "PierDadosCartaoResponse.h"
+#import "PierLimiteDisponibilidadeResponse.h"
+#import "PierLoteCartoesPrePagosResponse.h"
+#import "PierPortadorResponse.h"
+#import "PierCartaoDetalheResponse.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
-#import "PierPageCartoes.h"
-#import "PierValidaCartao.h"
-#import "PierValidaSenhaCartao.h"
+#import "PierPageCartaoResponse.h"
+#import "PierValidaCartaoResponse.h"
+#import "PierValidaSenhaCartaoResponse.h"
 
 
 @interface PierCartaoApi ()
@@ -180,11 +180,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param idStatusImpressao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status Impress\u00C3\u00A3o (Id). 
 ///
-///  @returns PierHistoricoImpressaoCartao*
+///  @returns PierHistoricoImpressaoCartaoResponse*
 ///
 -(NSNumber*) alterarStatusImpressaoUsingPUTWithId: (NSNumber*) _id
     idStatusImpressao: (NSNumber*) idStatusImpressao
-    completionHandler: (void (^)(PierHistoricoImpressaoCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierHistoricoImpressaoCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -261,9 +261,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierHistoricoImpressaoCartao*"
+                              responseType: @"PierHistoricoImpressaoCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierHistoricoImpressaoCartao*)data, error);
+                               handler((PierHistoricoImpressaoCartaoResponse*)data, error);
                            }
           ];
 }
@@ -275,11 +275,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de uma Pessoa (id). 
 ///
-///  @returns PierCartao*
+///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) atribuirPessoaUsingPUTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -356,9 +356,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartao*"
+                              responseType: @"PierCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartao*)data, error);
+                               handler((PierCartaoResponse*)data, error);
                            }
           ];
 }
@@ -372,12 +372,12 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param observacao Texto informando uma observa\u00C3\u00A7\u00C3\u00A3o sobre o bloqueio. 
 ///
-///  @returns PierCartao*
+///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) bloquearUsingPUTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -463,9 +463,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartao*"
+                              responseType: @"PierCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartao*)data, error);
+                               handler((PierCartaoResponse*)data, error);
                            }
           ];
 }
@@ -569,10 +569,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que seja consultado os dados necessarios de um cart\u00C3\u00A3o para executar servi\u00C3\u00A7os de autoriza\u00C3\u00A7\u00C3\u00A3o.
 ///  @param _id id 
 ///
-///  @returns PierDadosCartO*
+///  @returns PierDadosCartaoResponse*
 ///
 -(NSNumber*) consultarDadosReaisCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierDadosCartO* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierDadosCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -640,9 +640,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierDadosCartO*"
+                              responseType: @"PierDadosCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierDadosCartO*)data, error);
+                               handler((PierDadosCartaoResponse*)data, error);
                            }
           ];
 }
@@ -652,10 +652,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para o Portador de um determinado Cart\u00C3\u00A3o, seja ele o titular da conta ou um adicional, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierLimiteDisponibilidade*
+///  @returns PierLimiteDisponibilidadeResponse*
 ///
 -(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -723,9 +723,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLimiteDisponibilidade*"
+                              responseType: @"PierLimiteDisponibilidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLimiteDisponibilidade*)data, error);
+                               handler((PierLimiteDisponibilidadeResponse*)data, error);
                            }
           ];
 }
@@ -735,10 +735,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor atrav\u00C3\u00A9s do id do lote.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do lote de cart\u00C3\u00B5es (id) 
 ///
-///  @returns PierLoteCartoesPrePagos*
+///  @returns PierLoteCartoesPrePagosResponse*
 ///
 -(NSNumber*) consultarLotesCartoesPrePagosUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -806,9 +806,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLoteCartoesPrePagos*"
+                              responseType: @"PierLoteCartoesPrePagosResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLoteCartoesPrePagos*)data, error);
+                               handler((PierLoteCartoesPrePagosResponse*)data, error);
                            }
           ];
 }
@@ -818,10 +818,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es do Portador de um determinado Cart\u00C3\u00A3o a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierPortador*
+///  @returns PierPortadorResponse*
 ///
 -(NSNumber*) consultarPortadorUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPortador* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPortadorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -889,9 +889,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPortador*"
+                              responseType: @"PierPortadorResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPortador*)data, error);
+                               handler((PierPortadorResponse*)data, error);
                            }
           ];
 }
@@ -901,10 +901,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es b\u00C3\u00A1sicas de um determinado Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierCartaoDetalhado*
+///  @returns PierCartaoDetalheResponse*
 ///
 -(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartaoDetalhado* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -972,9 +972,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartaoDetalhado*"
+                              responseType: @"PierCartaoDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartaoDetalhado*)data, error);
+                               handler((PierCartaoDetalheResponse*)data, error);
                            }
           ];
 }
@@ -984,10 +984,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o que foi bloqueado por tentativas de senha incorretas, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierCartao*
+///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) desbloquearSenhaIncorretaUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1055,9 +1055,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartao*"
+                              responseType: @"PierCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartao*)data, error);
+                               handler((PierCartaoResponse*)data, error);
                            }
           ];
 }
@@ -1067,10 +1067,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que seja desbloqueado um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierCartao*
+///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) desbloquearUsingPUTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1138,9 +1138,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartao*"
+                              responseType: @"PierCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartao*)data, error);
+                               handler((PierCartaoResponse*)data, error);
                            }
           ];
 }
@@ -1160,7 +1160,7 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. (optional)
 ///
-///  @returns PierLoteCartoesPrePagos*
+///  @returns PierLoteCartoesPrePagosResponse*
 ///
 -(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithIdOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
@@ -1168,7 +1168,7 @@ static PierCartaoApi* singletonAPI = nil;
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
-    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler {
 
     
 
@@ -1252,9 +1252,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierLoteCartoesPrePagos*"
+                              responseType: @"PierLoteCartoesPrePagosResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierLoteCartoesPrePagos*)data, error);
+                               handler((PierLoteCartoesPrePagosResponse*)data, error);
                            }
           ];
 }
@@ -1264,10 +1264,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores ou seus clientes possam solicitar a gera\u00C3\u00A7\u00C3\u00A3o de uma nova via de Cart\u00C3\u00A3o que ser\u00C3\u00A1 encaminhando para impress\u00C3\u00A3o e postagem de acordo com os fluxos padr\u00C3\u00B5es j\u00C3\u00A1 definidos pelo emissor. Para isso, \u00C3\u00A9 preciso que o cliente j\u00C3\u00A1 possua um cart\u00C3\u00A3o gerado e informar o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o deste (idCartao) para que ele possa utilizar esta opera\u00C3\u00A7\u00C3\u00A3o. Assim, esta funcionalidade se aplica apenas para a gera\u00C3\u00A7\u00C3\u00A3o de cart\u00C3\u00B5es f\u00C3\u00ADsicos.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id) 
 ///
-///  @returns PierCartao*
+///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) gerarNovaViaUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1335,9 +1335,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartao*"
+                              responseType: @"PierCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartao*)data, error);
+                               handler((PierCartaoResponse*)data, error);
                            }
           ];
 }
@@ -1534,9 +1534,9 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param sequencialCartao N\u00C3\u00BAmero sequencial do cart\u00C3\u00A3o (optional)
 ///
-///  @returns PierPageCartoes*
+///  @returns PierPageCartaoResponse*
 ///
--(NSNumber*) listarUsingGET4WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET5WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
@@ -1556,7 +1556,7 @@ static PierCartaoApi* singletonAPI = nil;
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     sequencialCartao: (NSNumber*) sequencialCartao
-    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageCartaoResponse* output, NSError* error)) handler {
 
     
 
@@ -1696,9 +1696,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageCartoes*"
+                              responseType: @"PierPageCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageCartoes*)data, error);
+                               handler((PierPageCartaoResponse*)data, error);
                            }
           ];
 }
@@ -1714,13 +1714,13 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros 
 ///
-///  @returns PierValidaCartao*
+///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarDadosImpressosBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'numeroCartao' is set
@@ -1816,9 +1816,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
+                              responseType: @"PierValidaCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
+                               handler((PierValidaCartaoResponse*)data, error);
                            }
           ];
 }
@@ -1834,13 +1834,13 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros 
 ///
-///  @returns PierValidaCartao*
+///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarDadosImpressosNaoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'numeroCartao' is set
@@ -1936,9 +1936,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
+                              responseType: @"PierValidaCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
+                               handler((PierValidaCartaoResponse*)data, error);
                            }
           ];
 }
@@ -1950,11 +1950,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param criptograma Criptograma do cart\u00C3\u00A3o no formato de55 
 ///
-///  @returns PierValidaCartao*
+///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarDe55CartaoMastercardUsingGETWithNumeroCartao: (NSString*) numeroCartao
     criptograma: (NSString*) criptograma
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'numeroCartao' is set
@@ -2032,9 +2032,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
+                              responseType: @"PierValidaCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
+                               handler((PierValidaCartaoResponse*)data, error);
                            }
           ];
 }
@@ -2046,11 +2046,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param senha Senha para ser validada. 
 ///
-///  @returns PierValidaSenhaCartao*
+///  @returns PierValidaSenhaCartaoResponse*
 ///
 -(NSNumber*) validarSenhaUsingGETWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    completionHandler: (void (^)(PierValidaSenhaCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierValidaSenhaCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2126,9 +2126,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierValidaSenhaCartao*"
+                              responseType: @"PierValidaSenhaCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaSenhaCartao*)data, error);
+                               handler((PierValidaSenhaCartaoResponse*)data, error);
                            }
           ];
 }
@@ -2142,12 +2142,12 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param trilha2 Trilha 2 do cart\u00C3\u00A3o a ser validado 
 ///
-///  @returns PierValidaCartao*
+///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarTarjaUsingGETWithNumeroCartao: (NSString*) numeroCartao
     trilha1: (NSString*) trilha1
     trilha2: (NSString*) trilha2
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'numeroCartao' is set
@@ -2234,9 +2234,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierValidaCartao*"
+                              responseType: @"PierValidaCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierValidaCartao*)data, error);
+                               handler((PierValidaCartaoResponse*)data, error);
                            }
           ];
 }

@@ -23,14 +23,23 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da compra [optional]
  */
 @property(nonatomic) NSNumber* idCompra;
-/* Apresenta o numero total de parcelas da comprae [optional]
+/* Apresenta o numero total de parcelas da compra [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelasTotal;
 /* Apresenta o numero de parcelas antecipadas [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelasAntecipadas;
-/* Apresenta o valor das parcelas efetivadas [optional]
+/* Apresenta o valor de cada parcela antecipadas [optional]
  */
-@property(nonatomic) NSNumber* valorParcelas;
+@property(nonatomic) NSNumber* valorParcela;
+/* Apresenta o valor total do desconto [optional]
+ */
+@property(nonatomic) NSNumber* valorDescontoTotal;
+/* Apresenta o valor total com desconto [optional]
+ */
+@property(nonatomic) NSNumber* valorTotalComDesconto;
+/* Apresenta a taxa de desconto [optional]
+ */
+@property(nonatomic) NSNumber* taxaDesconto;
 
 @end

@@ -1,7 +1,7 @@
 #import "PierDispositivosApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierDispositivo.h"
-#import "PierPageDispositivos.h"
+#import "PierDispositivoResponse.h"
+#import "PierPageDispositivoResponse.h"
 #import "PierDispositivoPersist.h"
 
 
@@ -76,10 +76,10 @@ static PierDispositivosApi* singletonAPI = nil;
 /// Esse recurso permite ativar dispositivo.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id). 
 ///
-///  @returns PierDispositivo*
+///  @returns PierDispositivoResponse*
 ///
 -(NSNumber*) ativarUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierDispositivo* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -147,9 +147,9 @@ static PierDispositivosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierDispositivo*"
+                              responseType: @"PierDispositivoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierDispositivo*)data, error);
+                               handler((PierDispositivoResponse*)data, error);
                            }
           ];
 }
@@ -159,10 +159,10 @@ static PierDispositivosApi* singletonAPI = nil;
 /// Esse recurso permite desativar dispositivo.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id). 
 ///
-///  @returns PierDispositivo*
+///  @returns PierDispositivoResponse*
 ///
 -(NSNumber*) desativarUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierDispositivo* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -230,9 +230,9 @@ static PierDispositivosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierDispositivo*"
+                              responseType: @"PierDispositivoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierDispositivo*)data, error);
+                               handler((PierDispositivoResponse*)data, error);
                            }
           ];
 }
@@ -254,16 +254,16 @@ static PierDispositivosApi* singletonAPI = nil;
 ///
 ///  @param dataDesativacao Apresenta a data e em que o registro foi desativado. (optional)
 ///
-///  @returns PierPageDispositivos*
+///  @returns PierPageDispositivoResponse*
 ///
--(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
     idUsuario: (NSNumber*) idUsuario
     idAplicacaoMobile: (NSNumber*) idAplicacaoMobile
     dataCriacao: (NSString*) dataCriacao
     dataDesativacao: (NSString*) dataDesativacao
-    completionHandler: (void (^)(PierPageDispositivos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageDispositivoResponse* output, NSError* error)) handler {
 
     
 
@@ -351,9 +351,9 @@ static PierDispositivosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageDispositivos*"
+                              responseType: @"PierPageDispositivoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageDispositivos*)data, error);
+                               handler((PierPageDispositivoResponse*)data, error);
                            }
           ];
 }
@@ -363,10 +363,10 @@ static PierDispositivosApi* singletonAPI = nil;
 /// Esse recurso permite cadastrar dispositivos.
 ///  @param persist persist 
 ///
-///  @returns PierDispositivo*
+///  @returns PierDispositivoResponse*
 ///
 -(NSNumber*) salvarUsingPOST3WithPersist: (PierDispositivoPersist*) persist
-    completionHandler: (void (^)(PierDispositivo* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
@@ -431,9 +431,9 @@ static PierDispositivosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierDispositivo*"
+                              responseType: @"PierDispositivoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierDispositivo*)data, error);
+                               handler((PierDispositivoResponse*)data, error);
                            }
           ];
 }

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"mcc": @"mcc", @"uf": @"uf", @"idCompra": @"idCompra", @"status": @"status", @"dataCompra": @"dataCompra", @"valorTotalCompra": @"valorTotalCompra", @"valorParcela": @"valorParcela", @"primeiraParcela": @"primeiraParcela", @"numeroParcelas": @"numeroParcelas", @"numeroParcelasAntecipaveis": @"numeroParcelasAntecipaveis", @"nomeEstabelecimento": @"nomeEstabelecimento", @"tipoTransacao": @"tipoTransacao", @"cidade": @"cidade", @"pais": @"pais", @"latitude": @"latitude", @"longitude": @"longitude", @"idGrupoMCC": @"idGrupoMCC", @"descricaoGrupoMCC": @"descricaoGrupoMCC", @"idConta": @"idConta", @"idProduto": @"idProduto", @"descricaoProduto": @"descricaoProduto", @"cartao": @"cartao", @"nomePortadorCartao": @"nomePortadorCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"mcc": @"mcc", @"uf": @"uf", @"idCompra": @"idCompra", @"status": @"status", @"dataCompra": @"dataCompra", @"valorTotalCompra": @"valorTotalCompra", @"valorParcela": @"valorParcela", @"primeiraParcela": @"primeiraParcela", @"numeroParcelas": @"numeroParcelas", @"numeroParcelasAntecipaveis": @"numeroParcelasAntecipaveis", @"nomeEstabelecimento": @"nomeEstabelecimento", @"tipoOrigemTransacao": @"tipoOrigemTransacao", @"cidade": @"cidade", @"pais": @"pais", @"latitude": @"latitude", @"longitude": @"longitude", @"idGrupoMCC": @"idGrupoMCC", @"descricaoGrupoMCC": @"descricaoGrupoMCC", @"idConta": @"idConta", @"idProduto": @"idProduto", @"descricaoProduto": @"descricaoProduto", @"cartao": @"cartao", @"nomePortadorCartao": @"nomePortadorCartao" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"mcc", @"uf", @"idCompra", @"status", @"dataCompra", @"valorTotalCompra", @"valorParcela", @"primeiraParcela", @"numeroParcelas", @"numeroParcelasAntecipaveis", @"nomeEstabelecimento", @"tipoTransacao", @"cidade", @"pais", @"latitude", @"longitude", @"idGrupoMCC", @"descricaoGrupoMCC", @"idConta", @"idProduto", @"descricaoProduto", @"cartao", @"nomePortadorCartao"];
+  NSArray *optionalProperties = @[@"mcc", @"uf", @"idCompra", @"status", @"dataCompra", @"valorTotalCompra", @"valorParcela", @"primeiraParcela", @"numeroParcelas", @"numeroParcelasAntecipaveis", @"nomeEstabelecimento", @"tipoOrigemTransacao", @"cidade", @"pais", @"latitude", @"longitude", @"idGrupoMCC", @"descricaoGrupoMCC", @"idConta", @"idProduto", @"descricaoProduto", @"cartao", @"nomePortadorCartao"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

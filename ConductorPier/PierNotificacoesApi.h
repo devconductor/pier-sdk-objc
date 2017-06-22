@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
-#import "PierSMS.h"
-#import "PierPagePush.h"
-#import "PierPageSMS.h"
-#import "PierPushFCMEGCM.h"
 #import "PierNotificacaoSMSResponse.h"
+#import "PierPagePushResponse.h"
+#import "PierPageSMSResponse.h"
+#import "PierPushFCMEGCM.h"
+#import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
 #import "PierNotificacaoSMSBody.h"
 #import "PierObject.h"
@@ -37,13 +37,13 @@
 /// @param operadora Operadora
 /// 
 ///
-/// @return PierSMS*
+/// @return PierNotificacaoSMSResponse*
 -(NSNumber*) atualizarSMSUsingPOSTWithNsu: (NSString*) nsu
     status: (NSString*) status
     data: (NSString*) data
     textoStatus: (NSString*) textoStatus
     operadora: (NSString*) operadora
-    completionHandler: (void (^)(PierSMS* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
 
 
 ///
@@ -60,7 +60,7 @@
 /// @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es
 /// 
 ///
-/// @return PierPagePush*
+/// @return PierPagePushResponse*
 -(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     dataEnvio: (NSString*) dataEnvio
@@ -68,7 +68,7 @@
     status: (NSString*) status
     plataforma: (NSString*) plataforma
     protocolo: (NSString*) protocolo
-    completionHandler: (void (^)(PierPagePush* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPagePushResponse* output, NSError* error)) handler;
 
 
 ///
@@ -86,7 +86,7 @@
 /// @param nsu Apresenta o nsu da notifica\u00C3\u00A7\u00C3\u00A3o
 /// 
 ///
-/// @return PierPageSMS*
+/// @return PierPageSMSResponse*
 -(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInclusao: (NSString*) dataInclusao
@@ -95,7 +95,7 @@
     operadora: (NSString*) operadora
     protocolo: (NSString*) protocolo
     nsu: (NSNumber*) nsu
-    completionHandler: (void (^)(PierPageSMS* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageSMSResponse* output, NSError* error)) handler;
 
 
 ///
@@ -108,11 +108,11 @@
 /// @param resposta TextoStatus
 /// 
 ///
-/// @return PierSMS*
+/// @return PierNotificacaoSMSResponse*
 -(NSNumber*) responderSMSUsingPOSTWithNsu: (NSString*) nsu
     data: (NSString*) data
     resposta: (NSString*) resposta
-    completionHandler: (void (^)(PierSMS* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
 
 
 ///
@@ -123,9 +123,9 @@
 /// @param pushPersists pushPersists
 /// 
 ///
-/// @return PierNotificacaoSMSResponse*
+/// @return PierNotificacaoResponse*
 -(NSNumber*) salvarPushFCMUsingPOSTWithPushPersists: (NSArray<PierPushFCMEGCM>*) pushPersists
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -136,9 +136,9 @@
 /// @param pushPersists pushPersists
 /// 
 ///
-/// @return PierNotificacaoSMSResponse*
+/// @return PierNotificacaoResponse*
 -(NSNumber*) salvarPushGCMUsingPOSTWithPushPersists: (NSArray<PierPushFCMEGCM>*) pushPersists
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -149,9 +149,9 @@
 /// @param pushPersists pushPersists
 /// 
 ///
-/// @return PierNotificacaoSMSResponse*
+/// @return PierNotificacaoResponse*
 -(NSNumber*) salvarPushUsingPOSTWithPushPersists: (NSArray<PierPushAPNS>*) pushPersists
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -162,9 +162,9 @@
 /// @param listaSMS listaSMS
 /// 
 ///
-/// @return PierNotificacaoSMSResponse*
+/// @return PierNotificacaoResponse*
 -(NSNumber*) salvarSMSUsingPOSTWithListaSMS: (NSArray<PierNotificacaoSMSBody>*) listaSMS
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler;
 
 
 

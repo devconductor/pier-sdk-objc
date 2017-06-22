@@ -1,10 +1,10 @@
 #import "PierNotificacoesApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierSMS.h"
-#import "PierPagePush.h"
-#import "PierPageSMS.h"
-#import "PierPushFCMEGCM.h"
 #import "PierNotificacaoSMSResponse.h"
+#import "PierPagePushResponse.h"
+#import "PierPageSMSResponse.h"
+#import "PierPushFCMEGCM.h"
+#import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
 #import "PierNotificacaoSMSBody.h"
 
@@ -88,14 +88,14 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @param operadora Operadora (optional)
 ///
-///  @returns PierSMS*
+///  @returns PierNotificacaoSMSResponse*
 ///
 -(NSNumber*) atualizarSMSUsingPOSTWithNsu: (NSString*) nsu
     status: (NSString*) status
     data: (NSString*) data
     textoStatus: (NSString*) textoStatus
     operadora: (NSString*) operadora
-    completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
 
     
 
@@ -175,9 +175,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierSMS*"
+                              responseType: @"PierNotificacaoSMSResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierSMS*)data, error);
+                               handler((PierNotificacaoSMSResponse*)data, error);
                            }
           ];
 }
@@ -199,7 +199,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @param protocolo N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es (optional)
 ///
-///  @returns PierPagePush*
+///  @returns PierPagePushResponse*
 ///
 -(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -208,7 +208,7 @@ static PierNotificacoesApi* singletonAPI = nil;
     status: (NSString*) status
     plataforma: (NSString*) plataforma
     protocolo: (NSString*) protocolo
-    completionHandler: (void (^)(PierPagePush* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPagePushResponse* output, NSError* error)) handler {
 
     
 
@@ -296,9 +296,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPagePush*"
+                              responseType: @"PierPagePushResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePush*)data, error);
+                               handler((PierPagePushResponse*)data, error);
                            }
           ];
 }
@@ -322,7 +322,7 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @param nsu Apresenta o nsu da notifica\u00C3\u00A7\u00C3\u00A3o (optional)
 ///
-///  @returns PierPageSMS*
+///  @returns PierPageSMSResponse*
 ///
 -(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -332,7 +332,7 @@ static PierNotificacoesApi* singletonAPI = nil;
     operadora: (NSString*) operadora
     protocolo: (NSString*) protocolo
     nsu: (NSNumber*) nsu
-    completionHandler: (void (^)(PierPageSMS* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageSMSResponse* output, NSError* error)) handler {
 
     
 
@@ -424,9 +424,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageSMS*"
+                              responseType: @"PierPageSMSResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageSMS*)data, error);
+                               handler((PierPageSMSResponse*)data, error);
                            }
           ];
 }
@@ -440,12 +440,12 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @param resposta TextoStatus (optional)
 ///
-///  @returns PierSMS*
+///  @returns PierNotificacaoSMSResponse*
 ///
 -(NSNumber*) responderSMSUsingPOSTWithNsu: (NSString*) nsu
     data: (NSString*) data
     resposta: (NSString*) resposta
-    completionHandler: (void (^)(PierSMS* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
 
     
 
@@ -517,9 +517,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierSMS*"
+                              responseType: @"PierNotificacaoSMSResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierSMS*)data, error);
+                               handler((PierNotificacaoSMSResponse*)data, error);
                            }
           ];
 }
@@ -529,10 +529,10 @@ static PierNotificacoesApi* singletonAPI = nil;
 /// Esse recurso permite enviar Push para um determinado dipositivo movel atrav\u00C3\u00A9s da plataforma FCM (Firebase Cloud Messaging).
 ///  @param pushPersists pushPersists 
 ///
-///  @returns PierNotificacaoSMSResponse*
+///  @returns PierNotificacaoResponse*
 ///
 -(NSNumber*) salvarPushFCMUsingPOSTWithPushPersists: (NSArray<PierPushFCMEGCM>*) pushPersists
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'pushPersists' is set
@@ -597,9 +597,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierNotificacaoSMSResponse*"
+                              responseType: @"PierNotificacaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierNotificacaoSMSResponse*)data, error);
+                               handler((PierNotificacaoResponse*)data, error);
                            }
           ];
 }
@@ -609,10 +609,10 @@ static PierNotificacoesApi* singletonAPI = nil;
 /// Esse recurso permite enviar Push para um determinado dipositivo movel atrav\u00C3\u00A9s da plataforma GCM (Google Cloud Messaging).
 ///  @param pushPersists pushPersists 
 ///
-///  @returns PierNotificacaoSMSResponse*
+///  @returns PierNotificacaoResponse*
 ///
 -(NSNumber*) salvarPushGCMUsingPOSTWithPushPersists: (NSArray<PierPushFCMEGCM>*) pushPersists
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'pushPersists' is set
@@ -677,9 +677,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierNotificacaoSMSResponse*"
+                              responseType: @"PierNotificacaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierNotificacaoSMSResponse*)data, error);
+                               handler((PierNotificacaoResponse*)data, error);
                            }
           ];
 }
@@ -689,10 +689,10 @@ static PierNotificacoesApi* singletonAPI = nil;
 /// Esse recurso permite enviar Push para um determinado dipositivo movel atrav\u00C3\u00A9s da plataforma APNS (Apple Push Notification Service).
 ///  @param pushPersists pushPersists 
 ///
-///  @returns PierNotificacaoSMSResponse*
+///  @returns PierNotificacaoResponse*
 ///
 -(NSNumber*) salvarPushUsingPOSTWithPushPersists: (NSArray<PierPushAPNS>*) pushPersists
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'pushPersists' is set
@@ -757,9 +757,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierNotificacaoSMSResponse*"
+                              responseType: @"PierNotificacaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierNotificacaoSMSResponse*)data, error);
+                               handler((PierNotificacaoResponse*)data, error);
                            }
           ];
 }
@@ -769,10 +769,10 @@ static PierNotificacoesApi* singletonAPI = nil;
 /// Esse recurso permite enviar uma lista de SMS.
 ///  @param listaSMS listaSMS 
 ///
-///  @returns PierNotificacaoSMSResponse*
+///  @returns PierNotificacaoResponse*
 ///
 -(NSNumber*) salvarSMSUsingPOSTWithListaSMS: (NSArray<PierNotificacaoSMSBody>*) listaSMS
-    completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'listaSMS' is set
@@ -837,9 +837,9 @@ static PierNotificacoesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierNotificacaoSMSResponse*"
+                              responseType: @"PierNotificacaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierNotificacaoSMSResponse*)data, error);
+                               handler((PierNotificacaoResponse*)data, error);
                            }
           ];
 }

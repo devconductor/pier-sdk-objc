@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierFAQ.h"
-#import "PierPageFaqs.h"
+#import "PierFaqResponse.h"
+#import "PierPageFaqResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -33,14 +33,14 @@
 /// @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ.
 /// 
 ///
-/// @return PierFAQ*
+/// @return PierFaqResponse*
 -(NSNumber*) adicionarUsingPOSTWithPergunta: (NSString*) pergunta
     resposta: (NSString*) resposta
     relevancia: (NSNumber*) relevancia
     plataforma: (NSString*) plataforma
     categoria: (NSString*) categoria
     status: (NSString*) status
-    completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler;
 
 
 ///
@@ -57,7 +57,7 @@
 /// @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ.
 /// 
 ///
-/// @return PierFAQ*
+/// @return PierFaqResponse*
 -(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
     pergunta: (NSString*) pergunta
     resposta: (NSString*) resposta
@@ -65,7 +65,7 @@
     plataforma: (NSString*) plataforma
     categoria: (NSString*) categoria
     status: (NSString*) status
-    completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler;
 
 
 ///
@@ -76,9 +76,9 @@
 /// @param _id Id
 /// 
 ///
-/// @return PierFAQ*
+/// @return PierFaqResponse*
 -(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler;
 
 
 ///
@@ -97,8 +97,8 @@
 /// @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ.
 /// 
 ///
-/// @return PierPageFaqs*
--(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
+/// @return PierPageFaqResponse*
+-(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq
     pergunta: (NSString*) pergunta
@@ -107,7 +107,7 @@
     plataforma: (NSString*) plataforma
     categoria: (NSString*) categoria
     status: (NSString*) status
-    completionHandler: (void (^)(PierPageFaqs* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageFaqResponse* output, NSError* error)) handler;
 
 
 

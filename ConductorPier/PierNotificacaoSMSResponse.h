@@ -14,11 +14,56 @@
 
 @interface PierNotificacaoSMSResponse : PierObject
 
+/* C\u00C3\u00B3digo Identificador. [optional]
+ */
+@property(nonatomic) NSNumber* _id;
+/* N\u00C3\u00BAmero sequencial \u00C3\u00BAnico. [optional]
+ */
+@property(nonatomic) NSNumber* nsu;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do emissor (id). [optional]
+ */
+@property(nonatomic) NSNumber* idEmissor;
+/* TipoEvento de notifica\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSString* tipoEvento;
+/* Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o 
+ */
+@property(nonatomic) NSString* status;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do status de envio da notifica\u00C3\u00A7\u00C3\u00A3o 
+ */
+@property(nonatomic) NSString* descricaoStatus;
+/* C\u00C3\u00B3digo identificado da pessoa 
+ */
+@property(nonatomic) NSNumber* idPessoa;
+/* C\u00C3\u00B3digo identificador da conta 
+ */
+@property(nonatomic) NSNumber* idConta;
+/* Apresenta o celular a ser eviado o SMS no formato 5588999999999 ou 5588999999999 
+ */
+@property(nonatomic) NSString* celular;
+/* Apresenta a operadora do celular a ser eviado o SMS 
+ */
+@property(nonatomic) NSString* operadora;
+/* Apresenta o texto da notifica\u00C3\u00A7\u00C3\u00A3o a ser enviado 
+ */
+@property(nonatomic) NSString* conteudo;
+/* Apresenta o texto da resposta da notifica\u00C3\u00A7\u00C3\u00A3o que foi enviada 
+ */
+@property(nonatomic) NSString* resposta;
+/* Apresenta a data e hora em que ser\u00C3\u00A1 enviado a notifica\u00C3\u00A7\u00C3\u00A3o 
+ */
+@property(nonatomic) NSString* dataAgendamento;
+/* Quantidade de tentativas e envio da notifica\u00C3\u00A7\u00C3\u00A3o 
+ */
+@property(nonatomic) NSNumber* quantidadeTentativasEnvio;
+/* Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado 
+ */
+@property(nonatomic) NSString* dataInclusao;
+/* Apresenta a data e em que o Stattjus do registro foi modificado 
+ */
+@property(nonatomic) NSString* dataAlteracaoStatus;
 /* N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es [optional]
  */
 @property(nonatomic) NSString* protocolo;
-/* Mensagem de resposta da solicita\u00C3\u00A7\u00C3\u00B5es de envio [optional]
- */
-@property(nonatomic) NSString* mensagem;
 
 @end

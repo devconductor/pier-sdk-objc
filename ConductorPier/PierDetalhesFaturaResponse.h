@@ -8,7 +8,7 @@
  */
 
 #import "PierFaturaResponse.h"
-#import "PierTransacoesCorrentes.h"
+#import "PierTransacoesCorrentesResponse.h"
 
 
 @protocol PierDetalhesFaturaResponse
@@ -21,6 +21,6 @@
 @property(nonatomic) PierFaturaResponse* fatura;
 /* Apresenta as transa\u00C3\u00A7\u00C3\u00B5es relacionadas a fatura. [optional]
  */
-@property(nonatomic) NSArray<PierTransacoesCorrentes>* transacoes;
+@property(nonatomic) NSArray<PierTransacoesCorrentesResponse>* transacoes;
 
 @end

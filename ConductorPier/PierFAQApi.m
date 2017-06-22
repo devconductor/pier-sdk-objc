@@ -1,7 +1,7 @@
 #import "PierFAQApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierFAQ.h"
-#import "PierPageFaqs.h"
+#import "PierFaqResponse.h"
+#import "PierPageFaqResponse.h"
 
 
 @interface PierFAQApi ()
@@ -85,7 +85,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
 ///
-///  @returns PierFAQ*
+///  @returns PierFaqResponse*
 ///
 -(NSNumber*) adicionarUsingPOSTWithPergunta: (NSString*) pergunta
     resposta: (NSString*) resposta
@@ -93,7 +93,7 @@ static PierFAQApi* singletonAPI = nil;
     plataforma: (NSString*) plataforma
     categoria: (NSString*) categoria
     status: (NSString*) status
-    completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'pergunta' is set
@@ -187,9 +187,9 @@ static PierFAQApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierFAQ*"
+                              responseType: @"PierFaqResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierFAQ*)data, error);
+                               handler((PierFaqResponse*)data, error);
                            }
           ];
 }
@@ -211,7 +211,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
 ///
-///  @returns PierFAQ*
+///  @returns PierFaqResponse*
 ///
 -(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
     pergunta: (NSString*) pergunta
@@ -220,7 +220,7 @@ static PierFAQApi* singletonAPI = nil;
     plataforma: (NSString*) plataforma
     categoria: (NSString*) categoria
     status: (NSString*) status
-    completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -322,9 +322,9 @@ static PierFAQApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierFAQ*"
+                              responseType: @"PierFaqResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierFAQ*)data, error);
+                               handler((PierFaqResponse*)data, error);
                            }
           ];
 }
@@ -334,10 +334,10 @@ static PierFAQApi* singletonAPI = nil;
 /// Consulta os detalhes de uma determinada FAQ
 ///  @param _id Id 
 ///
-///  @returns PierFAQ*
+///  @returns PierFaqResponse*
 ///
 -(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierFAQ* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -405,9 +405,9 @@ static PierFAQApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierFAQ*"
+                              responseType: @"PierFaqResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierFAQ*)data, error);
+                               handler((PierFaqResponse*)data, error);
                            }
           ];
 }
@@ -433,9 +433,9 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
 ///
-///  @returns PierPageFaqs*
+///  @returns PierPageFaqResponse*
 ///
--(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq
     pergunta: (NSString*) pergunta
@@ -444,7 +444,7 @@ static PierFAQApi* singletonAPI = nil;
     plataforma: (NSString*) plataforma
     categoria: (NSString*) categoria
     status: (NSString*) status
-    completionHandler: (void (^)(PierPageFaqs* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageFaqResponse* output, NSError* error)) handler {
 
     
 
@@ -540,9 +540,9 @@ static PierFAQApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageFaqs*"
+                              responseType: @"PierPageFaqResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageFaqs*)data, error);
+                               handler((PierPageFaqResponse*)data, error);
                            }
           ];
 }

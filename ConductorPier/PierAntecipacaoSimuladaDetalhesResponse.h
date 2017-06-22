@@ -14,9 +14,6 @@
 
 @interface PierAntecipacaoSimuladaDetalhesResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do detalhe da simula\u00C3\u00A7\u00C3\u00A3o de antecipa\u00C3\u00A7\u00C3\u00A3o. [optional]
- */
-@property(nonatomic) NSNumber* idSimulacaoDetalhe;
 /* Quantidade de parcelas do plano de parcelamento simulado. [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;

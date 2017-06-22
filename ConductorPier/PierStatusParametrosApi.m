@@ -1,13 +1,13 @@
 #import "PierStatusParametrosApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierEstagioCartao.h"
-#import "PierStatusCartao.h"
-#import "PierStatusConta.h"
-#import "PierStatusImpressao.h"
-#import "PierPageEstagiosCartoes.h"
-#import "PierPageStatusCartoes.h"
-#import "PierPageStatusContas.h"
-#import "PierPageStatusImpressao.h"
+#import "PierEstagioCartaoResponse.h"
+#import "PierStatusCartaoResponse.h"
+#import "PierStatusContaResponse.h"
+#import "PierStatusImpressaoResponse.h"
+#import "PierPageEstagioCartaoResponse.h"
+#import "PierPageStatusCartaoResponse.h"
+#import "PierPageStatusContaResponse.h"
+#import "PierPageStatusImpressaoResponse.h"
 
 
 @interface PierStatusParametrosApi ()
@@ -81,10 +81,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierEstagioCartao*
+///  @returns PierEstagioCartaoResponse*
 ///
 -(NSNumber*) consultarEstagioCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEstagioCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierEstagioCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -152,9 +152,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEstagioCartao*"
+                              responseType: @"PierEstagioCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEstagioCartao*)data, error);
+                               handler((PierEstagioCartaoResponse*)data, error);
                            }
           ];
 }
@@ -164,10 +164,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status de Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Entrega do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierStatusCartao*
+///  @returns PierStatusCartaoResponse*
 ///
 -(NSNumber*) consultarStatusCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierStatusCartao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierStatusCartaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -235,9 +235,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierStatusCartao*"
+                              responseType: @"PierStatusCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierStatusCartao*)data, error);
+                               handler((PierStatusCartaoResponse*)data, error);
                            }
           ];
 }
@@ -247,10 +247,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status Conta a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id). 
 ///
-///  @returns PierStatusConta*
+///  @returns PierStatusContaResponse*
 ///
 -(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierStatusConta* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -318,9 +318,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierStatusConta*"
+                              responseType: @"PierStatusContaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierStatusConta*)data, error);
+                               handler((PierStatusContaResponse*)data, error);
                            }
           ];
 }
@@ -330,10 +330,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id). 
 ///
-///  @returns PierStatusImpressao*
+///  @returns PierStatusImpressaoResponse*
 ///
 -(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierStatusImpressao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -401,9 +401,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierStatusImpressao*"
+                              responseType: @"PierStatusImpressaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierStatusImpressao*)data, error);
+                               handler((PierStatusImpressaoResponse*)data, error);
                            }
           ];
 }
@@ -419,13 +419,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param nome Nome do est\u00C3\u00A1gio cart\u00C3\u00A3o (optional)
 ///
-///  @returns PierPageEstagiosCartoes*
+///  @returns PierPageEstagioCartaoResponse*
 ///
 -(NSNumber*) listarEstagiosCartoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageEstagiosCartoes* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageEstagioCartaoResponse* output, NSError* error)) handler {
 
     
 
@@ -501,9 +501,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageEstagiosCartoes*"
+                              responseType: @"PierPageEstagioCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageEstagiosCartoes*)data, error);
+                               handler((PierPageEstagioCartaoResponse*)data, error);
                            }
           ];
 }
@@ -531,7 +531,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a solicita\u00C3\u00A7\u00C3\u00A3o de uma nova via, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @returns PierPageStatusCartoes*
+///  @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o desbloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @returns PierPageStatusCartaoResponse*
 ///
 -(NSNumber*) listarStatusCartoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -543,7 +545,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
     idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
-    completionHandler: (void (^)(PierPageStatusCartoes* output, NSError* error)) handler {
+    flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
+    completionHandler: (void (^)(PierPageStatusCartaoResponse* output, NSError* error)) handler {
 
     
 
@@ -598,6 +601,10 @@ static PierStatusParametrosApi* singletonAPI = nil;
         
         queryParams[@"flagPermiteNovaViaCartao"] = flagPermiteNovaViaCartao;
     }
+    if (flagPermiteDesbloqueio != nil) {
+        
+        queryParams[@"flagPermiteDesbloqueio"] = flagPermiteDesbloqueio;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -643,9 +650,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusCartoes*"
+                              responseType: @"PierPageStatusCartaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusCartoes*)data, error);
+                               handler((PierPageStatusCartaoResponse*)data, error);
                            }
           ];
 }
@@ -667,16 +674,22 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @returns PierPageStatusContas*
+///  @param flagFazTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite fazer transferencia, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
--(NSNumber*) listarUsingGET19WithPage: (NSNumber*) page
+///  @param flagRecebeTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite receber transferencia, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @returns PierPageStatusContaResponse*
+///
+-(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     flagAlteraLimite: (NSNumber*) flagAlteraLimite
     mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
-    completionHandler: (void (^)(PierPageStatusContas* output, NSError* error)) handler {
+    flagFazTransferencia: (NSNumber*) flagFazTransferencia
+    flagRecebeTransferencia: (NSNumber*) flagRecebeTransferencia
+    completionHandler: (void (^)(PierPageStatusContaResponse* output, NSError* error)) handler {
 
     
 
@@ -719,6 +732,14 @@ static PierStatusParametrosApi* singletonAPI = nil;
         
         queryParams[@"flagPermiteNovaViaCartao"] = flagPermiteNovaViaCartao;
     }
+    if (flagFazTransferencia != nil) {
+        
+        queryParams[@"flagFazTransferencia"] = flagFazTransferencia;
+    }
+    if (flagRecebeTransferencia != nil) {
+        
+        queryParams[@"flagRecebeTransferencia"] = flagRecebeTransferencia;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -764,9 +785,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusContas*"
+                              responseType: @"PierPageStatusContaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusContas*)data, error);
+                               handler((PierPageStatusContaResponse*)data, error);
                            }
           ];
 }
@@ -782,13 +803,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param nome Nome do status impress\u00C3\u00A3o (optional)
 ///
-///  @returns PierPageStatusImpressao*
+///  @returns PierPageStatusImpressaoResponse*
 ///
--(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageStatusImpressao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageStatusImpressaoResponse* output, NSError* error)) handler {
 
     
 
@@ -864,9 +885,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusImpressao*"
+                              responseType: @"PierPageStatusImpressaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusImpressao*)data, error);
+                               handler((PierPageStatusImpressaoResponse*)data, error);
                            }
           ];
 }

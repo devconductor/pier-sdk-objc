@@ -1,29 +1,32 @@
 #import <Foundation/Foundation.h>
-#import "PierEndereco.h"
+#import "PierEnderecoResponse.h"
 #import "PierPessoaDetalheResponse.h"
-#import "PierPessoa.h"
-#import "PierTelefone.h"
+#import "PierPessoaResponse.h"
+#import "PierTelefoneResponse.h"
 #import "PierProdutoDetalhesResponse.h"
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
-#import "PierOrigemComercial.h"
-#import "PierBanco.h"
-#import "PierPageTipoAjuste.h"
-#import "PierPageTipoBoleto.h"
-#import "PierTipoEndereco.h"
-#import "PierTipoTelefone.h"
-#import "PierPageContasDetalhe.h"
-#import "PierPageCampoCodificadoDescricao.h"
-#import "PierHistoricoTelefone.h"
-#import "PierPageOrigensComerciais.h"
-#import "PierPagePessoas.h"
-#import "PierPagePortador.h"
-#import "PierListaProdutos.h"
-#import "PierPageBancos.h"
-#import "PierPageTelefones.h"
-#import "PierPageTiposEndereco.h"
-#import "PierPageTipoTelefones.h"
-#import "PierPageEnderecos.h"
+#import "PierOrigemComercialResponse.h"
+#import "PierAtendimentoClienteResponse.h"
+#import "PierBancoResponse.h"
+#import "PierPageTipoAjusteResponse.h"
+#import "PierPageTipoBoletoResponse.h"
+#import "PierTipoEnderecoResponse.h"
+#import "PierTipoTelefoneResponse.h"
+#import "PierPageContaDetalheResponse.h"
+#import "PierPageCampoCodificadoDescricaoResponse.h"
+#import "PierHistoricoTelefoneResponse.h"
+#import "PierPageOrigemComercialResponse.h"
+#import "PierPageAtendimentoClienteResponse.h"
+#import "PierPagePessoaDetalheResponse.h"
+#import "PierPagePessoaResponse.h"
+#import "PierPagePortadorResponse.h"
+#import "PierPageProdutoResponse.h"
+#import "PierPageBancoResponse.h"
+#import "PierPageTelefoneResponse.h"
+#import "PierPageTipoEnderecoResponse.h"
+#import "PierPageTipoTelefoneResponse.h"
+#import "PierPageEnderecoResponse.h"
 #import "PierPessoaFisicaAprovadaPersist.h"
 #import "PierPessoaFisicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaResponse.h"
@@ -66,7 +69,7 @@
 /// @param pais Apresenta nome do Pais
 /// 
 ///
-/// @return PierEndereco*
+/// @return PierEnderecoResponse*
 -(NSNumber*) alterarUsingPUT1WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
@@ -79,7 +82,7 @@
     cidade: (NSString*) cidade
     uf: (NSString*) uf
     pais: (NSString*) pais
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -131,7 +134,7 @@
 /// @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade.
 /// 
 ///
-/// @return PierPessoa*
+/// @return PierPessoaResponse*
 -(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
@@ -143,7 +146,7 @@
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
     dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -158,13 +161,13 @@
 /// @param ramal N\u00C3\u00BAmero do ramal.
 /// 
 ///
-/// @return PierTelefone*
+/// @return PierTelefoneResponse*
 -(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -203,9 +206,9 @@
 /// @param _id ID da Origem Comercial
 /// 
 ///
-/// @return PierOrigemComercial*
+/// @return PierOrigemComercialResponse*
 -(NSNumber*) consultarOrigemComercialUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierOrigemComercialResponse* output, NSError* error)) handler;
 
 
 ///
@@ -225,15 +228,28 @@
 
 ///
 ///
+/// Apresenta os dados de um determinado Atendimento
+/// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Atendimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (idAtendimento).
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do atendimento cliente (id).
+/// 
+///
+/// @return PierAtendimentoClienteResponse*
+-(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os dados de um determinado Banco
 /// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id).
 /// 
 ///
-/// @return PierBanco*
+/// @return PierBancoResponse*
 -(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierBanco* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -244,9 +260,9 @@
 /// @param _id ID da Pessoa
 /// 
 ///
-/// @return PierPessoa*
+/// @return PierPessoaResponse*
 -(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -270,9 +286,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id).
 /// 
 ///
-/// @return PierTelefone*
+/// @return PierTelefoneResponse*
 -(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -286,12 +302,12 @@
 /// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste.
 /// 
 ///
-/// @return PierPageTipoAjuste*
+/// @return PierPageTipoAjusteResponse*
 -(NSNumber*) consultarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
-    completionHandler: (void (^)(PierPageTipoAjuste* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTipoAjusteResponse* output, NSError* error)) handler;
 
 
 ///
@@ -306,13 +322,13 @@
 /// @param banco C\u00C3\u00B3digo identificador do banco.
 /// 
 ///
-/// @return PierPageTipoBoleto*
+/// @return PierPageTipoBoletoResponse*
 -(NSNumber*) consultarUsingGET18WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
     banco: (NSNumber*) banco
-    completionHandler: (void (^)(PierPageTipoBoleto* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTipoBoletoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -323,9 +339,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id)
 /// 
 ///
-/// @return PierTipoEndereco*
+/// @return PierTipoEnderecoResponse*
 -(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTipoEndereco* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -336,9 +352,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id)
 /// 
 ///
-/// @return PierTipoTelefone*
+/// @return PierTipoTelefoneResponse*
 -(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTipoTelefone* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -349,9 +365,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
 /// 
 ///
-/// @return PierEndereco*
+/// @return PierEnderecoResponse*
 -(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -390,11 +406,11 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageContasDetalhe*
+/// @return PierPageContaDetalheResponse*
 -(NSNumber*) listarContasPorPessoaUsingGETWithNumeroReceitaFederal: (NSString*) numeroReceitaFederal
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageContasDetalhe* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageContaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -406,10 +422,10 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageCampoCodificadoDescricao*
+/// @return PierPageCampoCodificadoDescricaoResponse*
 -(NSNumber*) listarEstadosCivisUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -420,9 +436,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
 /// 
 ///
-/// @return PierHistoricoTelefone*
+/// @return PierHistoricoTelefoneResponse*
 -(NSNumber*) listarHistoricoTelefonesUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierHistoricoTelefone* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierHistoricoTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -434,10 +450,10 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageCampoCodificadoDescricao*
+/// @return PierPageCampoCodificadoDescricaoResponse*
 -(NSNumber*) listarNacionalidadesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -449,10 +465,10 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageCampoCodificadoDescricao*
+/// @return PierPageCampoCodificadoDescricaoResponse*
 -(NSNumber*) listarNaturezasOcupacoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -467,13 +483,13 @@
 /// @param status Status da origem comercial
 /// 
 ///
-/// @return PierPageOrigensComerciais*
+/// @return PierPageOrigemComercialResponse*
 -(NSNumber*) listarOrigensComerciaisUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSNumber*) status
-    completionHandler: (void (^)(PierPageOrigensComerciais* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageOrigemComercialResponse* output, NSError* error)) handler;
 
 
 ///
@@ -485,10 +501,33 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageCampoCodificadoDescricao*
+/// @return PierPageCampoCodificadoDescricaoResponse*
 -(NSNumber*) listarProfissoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista todos os atendimentos
+/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id)
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
+/// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
+/// @param dataAtendimento Apresenta a data em que o Atendimento foi realizado.
+/// 
+///
+/// @return PierPageAtendimentoClienteResponse*
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idTipoAtendimento: (NSNumber*) idTipoAtendimento
+    idConta: (NSNumber*) idConta
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSString*) dataAtendimento
+    completionHandler: (void (^)(PierPageAtendimentoClienteResponse* output, NSError* error)) handler;
 
 
 ///
@@ -510,8 +549,8 @@
 /// @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o
 /// 
 ///
-/// @return PierPessoaDetalheResponse*
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+/// @return PierPagePessoaDetalheResponse*
+-(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
@@ -523,7 +562,7 @@
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
     nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPagePessoaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -546,8 +585,8 @@
 /// @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd
 /// 
 ///
-/// @return PierPagePessoas*
--(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
+/// @return PierPagePessoaResponse*
+-(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -560,7 +599,7 @@
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
     dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPagePessoaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -582,8 +621,8 @@
 /// @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o.
 /// 
 ///
-/// @return PierPagePortador*
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+/// @return PierPagePortadorResponse*
+-(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
     idProduto: (NSNumber*) idProduto
@@ -595,7 +634,7 @@
     flagAtivo: (NSNumber*) flagAtivo
     dataCadastroPortador: (NSString*) dataCadastroPortador
     dataCancelamentoPortador: (NSString*) dataCancelamentoPortador
-    completionHandler: (void (^)(PierPagePortador* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPagePortadorResponse* output, NSError* error)) handler;
 
 
 ///
@@ -610,13 +649,13 @@
 /// @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence.
 /// 
 ///
-/// @return PierListaProdutos*
--(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
+/// @return PierPageProdutoResponse*
+-(NSNumber*) listarUsingGET18WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     status: (NSNumber*) status
     idFantasiaBasica: (NSNumber*) idFantasiaBasica
-    completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageProdutoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -628,10 +667,10 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageBancos*
+/// @return PierPageBancoResponse*
 -(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageBancos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageBancoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -650,8 +689,8 @@
 /// @param status Apresenta o Status do Telefone, onde: &#39;0&#39;: Inativo e &#39;1&#39;: Ativo
 /// 
 ///
-/// @return PierPageTelefones*
--(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
+/// @return PierPageTelefoneResponse*
+-(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
@@ -660,7 +699,7 @@
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
     status: (NSNumber*) status
-    completionHandler: (void (^)(PierPageTelefones* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -674,12 +713,12 @@
 /// @param nome Nome do Tipo do Endere\u00C3\u00A7o
 /// 
 ///
-/// @return PierPageTiposEndereco*
--(NSNumber*) listarUsingGET23WithPage: (NSNumber*) page
+/// @return PierPageTipoEnderecoResponse*
+-(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTiposEndereco* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTipoEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -693,12 +732,12 @@
 /// @param nome Nome do Tipo do Telefone
 /// 
 ///
-/// @return PierPageTipoTelefones*
--(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
+/// @return PierPageTipoTelefoneResponse*
+-(NSNumber*) listarUsingGET26WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTipoTelefones* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTipoTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -724,8 +763,8 @@
 /// @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao
 /// 
 ///
-/// @return PierPageEnderecos*
--(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
+/// @return PierPageEnderecoResponse*
+-(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
@@ -741,7 +780,7 @@
     pais: (NSString*) pais
     dataInclusao: (NSString*) dataInclusao
     dataUltimaAtualizacao: (NSString*) dataUltimaAtualizacao
-    completionHandler: (void (^)(PierPageEnderecos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -772,6 +811,35 @@
 
 ///
 ///
+/// Cadastro um novo Atendimento do tipo Gen\u00C3\u00A9rico para uma Conta
+/// 
+///
+/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o Atendimento est\u00C3\u00A1 associado
+/// @param conteudoAtendimento Apresenta as informa\u00C3\u00A7\u00C3\u00B5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00C3\u00A7\u00C3\u00B5es relacionadas ao Atendimento.
+/// @param detalhesAtendimento Apresenta os detalhes lan\u00C3\u00A7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento.
+/// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
+/// @param dataAtendimento Apresenta a data e hora em que o Atendimento foi realizado no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;.
+/// @param dataAgendamento Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data e hora para processamento ou a data e hora para retorno do Atendimento no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;.
+/// @param dataHoraInicioAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;.
+/// @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;.
+/// @param flagFilaFraude Flag fila fraude
+/// 
+///
+/// @return PierAtendimentoClienteResponse*
+-(NSNumber*) salvarUsingPOST1WithIdConta: (NSNumber*) idConta
+    conteudoAtendimento: (NSString*) conteudoAtendimento
+    detalhesAtendimento: (NSString*) detalhesAtendimento
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSString*) dataAtendimento
+    dataAgendamento: (NSString*) dataAgendamento
+    dataHoraInicioAtendimento: (NSString*) dataHoraInicioAtendimento
+    dataHoraFimAtendimento: (NSString*) dataHoraFimAtendimento
+    flagFilaFraude: (NSNumber*) flagFilaFraude
+    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Realiza o cadastro de um novo Telefone
 /// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
 ///
@@ -782,13 +850,13 @@
 /// @param ramal N\u00C3\u00BAmero do ramal.
 /// 
 ///
-/// @return PierTelefone*
+/// @return PierTelefoneResponse*
 -(NSNumber*) salvarUsingPOST10WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -809,7 +877,7 @@
 /// @param pais Apresenta nome do Pais
 /// 
 ///
-/// @return PierEndereco*
+/// @return PierEnderecoResponse*
 -(NSNumber*) salvarUsingPOST4WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -821,7 +889,7 @@
     cidade: (NSString*) cidade
     uf: (NSString*) uf
     pais: (NSString*) pais
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -872,7 +940,7 @@
 /// @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade.
 /// 
 ///
-/// @return PierPessoa*
+/// @return PierPessoaResponse*
 -(NSNumber*) salvarUsingPOST8WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
@@ -883,7 +951,7 @@
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
     dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
 

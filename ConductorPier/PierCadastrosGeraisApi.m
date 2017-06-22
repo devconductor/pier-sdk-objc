@@ -1,30 +1,33 @@
 #import "PierCadastrosGeraisApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierEndereco.h"
+#import "PierEnderecoResponse.h"
 #import "PierPessoaDetalheResponse.h"
-#import "PierPessoa.h"
-#import "PierTelefone.h"
+#import "PierPessoaResponse.h"
+#import "PierTelefoneResponse.h"
 #import "PierProdutoDetalhesResponse.h"
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
-#import "PierOrigemComercial.h"
-#import "PierBanco.h"
-#import "PierPageTipoAjuste.h"
-#import "PierPageTipoBoleto.h"
-#import "PierTipoEndereco.h"
-#import "PierTipoTelefone.h"
-#import "PierPageContasDetalhe.h"
-#import "PierPageCampoCodificadoDescricao.h"
-#import "PierHistoricoTelefone.h"
-#import "PierPageOrigensComerciais.h"
-#import "PierPagePessoas.h"
-#import "PierPagePortador.h"
-#import "PierListaProdutos.h"
-#import "PierPageBancos.h"
-#import "PierPageTelefones.h"
-#import "PierPageTiposEndereco.h"
-#import "PierPageTipoTelefones.h"
-#import "PierPageEnderecos.h"
+#import "PierOrigemComercialResponse.h"
+#import "PierAtendimentoClienteResponse.h"
+#import "PierBancoResponse.h"
+#import "PierPageTipoAjusteResponse.h"
+#import "PierPageTipoBoletoResponse.h"
+#import "PierTipoEnderecoResponse.h"
+#import "PierTipoTelefoneResponse.h"
+#import "PierPageContaDetalheResponse.h"
+#import "PierPageCampoCodificadoDescricaoResponse.h"
+#import "PierHistoricoTelefoneResponse.h"
+#import "PierPageOrigemComercialResponse.h"
+#import "PierPageAtendimentoClienteResponse.h"
+#import "PierPagePessoaDetalheResponse.h"
+#import "PierPagePessoaResponse.h"
+#import "PierPagePortadorResponse.h"
+#import "PierPageProdutoResponse.h"
+#import "PierPageBancoResponse.h"
+#import "PierPageTelefoneResponse.h"
+#import "PierPageTipoEnderecoResponse.h"
+#import "PierPageTipoTelefoneResponse.h"
+#import "PierPageEnderecoResponse.h"
 #import "PierPessoaFisicaAprovadaPersist.h"
 #import "PierPessoaFisicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaResponse.h"
@@ -124,7 +127,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param pais Apresenta nome do Pais (optional)
 ///
-///  @returns PierEndereco*
+///  @returns PierEnderecoResponse*
 ///
 -(NSNumber*) alterarUsingPUT1WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
@@ -138,7 +141,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     cidade: (NSString*) cidade
     uf: (NSString*) uf
     pais: (NSString*) pais
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -251,9 +254,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEndereco*"
+                              responseType: @"PierEnderecoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEndereco*)data, error);
+                               handler((PierEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -429,7 +432,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade. (optional)
 ///
-///  @returns PierPessoa*
+///  @returns PierPessoaResponse*
 ///
 -(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
     nome: (NSString*) nome
@@ -442,7 +445,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
     dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -560,9 +563,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPessoa*"
+                              responseType: @"PierPessoaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoa*)data, error);
+                               handler((PierPessoaResponse*)data, error);
                            }
           ];
 }
@@ -580,14 +583,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
 ///
-///  @returns PierTelefone*
+///  @returns PierTelefoneResponse*
 ///
 -(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -672,9 +675,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTelefone*"
+                              responseType: @"PierTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTelefone*)data, error);
+                               handler((PierTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -858,10 +861,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listados os registros de uma determinada Origem Comercial existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id ID da Origem Comercial 
 ///
-///  @returns PierOrigemComercial*
+///  @returns PierOrigemComercialResponse*
 ///
 -(NSNumber*) consultarOrigemComercialUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierOrigemComercial* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierOrigemComercialResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -929,9 +932,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierOrigemComercial*"
+                              responseType: @"PierOrigemComercialResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierOrigemComercial*)data, error);
+                               handler((PierOrigemComercialResponse*)data, error);
                            }
           ];
 }
@@ -1032,14 +1035,97 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
+/// Apresenta os dados de um determinado Atendimento
+/// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Atendimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (idAtendimento).
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do atendimento cliente (id). 
+///
+///  @returns PierAtendimentoClienteResponse*
+///
+-(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAtendimentoClienteResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAtendimentoClienteResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Apresenta os dados de um determinado Banco
 /// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id). 
 ///
-///  @returns PierBanco*
+///  @returns PierBancoResponse*
 ///
 -(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierBanco* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1107,9 +1193,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierBanco*"
+                              responseType: @"PierBancoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierBanco*)data, error);
+                               handler((PierBancoResponse*)data, error);
                            }
           ];
 }
@@ -1119,10 +1205,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
 ///  @param _id ID da Pessoa 
 ///
-///  @returns PierPessoa*
+///  @returns PierPessoaResponse*
 ///
 -(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1190,9 +1276,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPessoa*"
+                              responseType: @"PierPessoaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoa*)data, error);
+                               handler((PierPessoaResponse*)data, error);
                            }
           ];
 }
@@ -1285,10 +1371,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar um determinado Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
 ///
-///  @returns PierTelefone*
+///  @returns PierTelefoneResponse*
 ///
 -(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1356,9 +1442,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTelefone*"
+                              responseType: @"PierTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTelefone*)data, error);
+                               handler((PierTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -1374,13 +1460,13 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste. (optional)
 ///
-///  @returns PierPageTipoAjuste*
+///  @returns PierPageTipoAjusteResponse*
 ///
 -(NSNumber*) consultarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
-    completionHandler: (void (^)(PierPageTipoAjuste* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoAjusteResponse* output, NSError* error)) handler {
 
     
 
@@ -1456,9 +1542,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTipoAjuste*"
+                              responseType: @"PierPageTipoAjusteResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTipoAjuste*)data, error);
+                               handler((PierPageTipoAjusteResponse*)data, error);
                            }
           ];
 }
@@ -1476,14 +1562,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param banco C\u00C3\u00B3digo identificador do banco. (optional)
 ///
-///  @returns PierPageTipoBoleto*
+///  @returns PierPageTipoBoletoResponse*
 ///
 -(NSNumber*) consultarUsingGET18WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
     banco: (NSNumber*) banco
-    completionHandler: (void (^)(PierPageTipoBoleto* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoBoletoResponse* output, NSError* error)) handler {
 
     
 
@@ -1563,9 +1649,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTipoBoleto*"
+                              responseType: @"PierPageTipoBoletoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTipoBoleto*)data, error);
+                               handler((PierPageTipoBoletoResponse*)data, error);
                            }
           ];
 }
@@ -1575,10 +1661,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) 
 ///
-///  @returns PierTipoEndereco*
+///  @returns PierTipoEnderecoResponse*
 ///
 -(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTipoEndereco* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1646,9 +1732,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTipoEndereco*"
+                              responseType: @"PierTipoEnderecoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTipoEndereco*)data, error);
+                               handler((PierTipoEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -1658,10 +1744,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id) 
 ///
-///  @returns PierTipoTelefone*
+///  @returns PierTipoTelefoneResponse*
 ///
 -(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTipoTelefone* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1729,9 +1815,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTipoTelefone*"
+                              responseType: @"PierTipoTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTipoTelefone*)data, error);
+                               handler((PierTipoTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -1741,10 +1827,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar um determinado Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). 
 ///
-///  @returns PierEndereco*
+///  @returns PierEnderecoResponse*
 ///
 -(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1812,9 +1898,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEndereco*"
+                              responseType: @"PierEnderecoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEndereco*)data, error);
+                               handler((PierEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -1994,12 +2080,12 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageContasDetalhe*
+///  @returns PierPageContaDetalheResponse*
 ///
 -(NSNumber*) listarContasPorPessoaUsingGETWithNumeroReceitaFederal: (NSString*) numeroReceitaFederal
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageContasDetalhe* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageContaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'numeroReceitaFederal' is set
@@ -2076,9 +2162,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageContasDetalhe*"
+                              responseType: @"PierPageContaDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageContasDetalhe*)data, error);
+                               handler((PierPageContaDetalheResponse*)data, error);
                            }
           ];
 }
@@ -2090,11 +2176,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageCampoCodificadoDescricao*
+///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
 -(NSNumber*) listarEstadosCivisUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler {
 
     
 
@@ -2162,9 +2248,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageCampoCodificadoDescricao*"
+                              responseType: @"PierPageCampoCodificadoDescricaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageCampoCodificadoDescricao*)data, error);
+                               handler((PierPageCampoCodificadoDescricaoResponse*)data, error);
                            }
           ];
 }
@@ -2174,10 +2260,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite verificar quais os telefones de um determinado que cliente que sofreram altera\u00C3\u00A7\u00C3\u00A3o nos \u00C3\u00BAltimos 60 dias.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
 ///
-///  @returns PierHistoricoTelefone*
+///  @returns PierHistoricoTelefoneResponse*
 ///
 -(NSNumber*) listarHistoricoTelefonesUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierHistoricoTelefone* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierHistoricoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2245,9 +2331,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierHistoricoTelefone*"
+                              responseType: @"PierHistoricoTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierHistoricoTelefone*)data, error);
+                               handler((PierHistoricoTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -2259,11 +2345,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageCampoCodificadoDescricao*
+///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
 -(NSNumber*) listarNacionalidadesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler {
 
     
 
@@ -2331,9 +2417,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageCampoCodificadoDescricao*"
+                              responseType: @"PierPageCampoCodificadoDescricaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageCampoCodificadoDescricao*)data, error);
+                               handler((PierPageCampoCodificadoDescricaoResponse*)data, error);
                            }
           ];
 }
@@ -2345,11 +2431,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageCampoCodificadoDescricao*
+///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
 -(NSNumber*) listarNaturezasOcupacoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler {
 
     
 
@@ -2417,9 +2503,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageCampoCodificadoDescricao*"
+                              responseType: @"PierPageCampoCodificadoDescricaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageCampoCodificadoDescricao*)data, error);
+                               handler((PierPageCampoCodificadoDescricaoResponse*)data, error);
                            }
           ];
 }
@@ -2437,14 +2523,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param status Status da origem comercial (optional)
 ///
-///  @returns PierPageOrigensComerciais*
+///  @returns PierPageOrigemComercialResponse*
 ///
 -(NSNumber*) listarOrigensComerciaisUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSNumber*) status
-    completionHandler: (void (^)(PierPageOrigensComerciais* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageOrigemComercialResponse* output, NSError* error)) handler {
 
     
 
@@ -2524,9 +2610,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageOrigensComerciais*"
+                              responseType: @"PierPageOrigemComercialResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageOrigensComerciais*)data, error);
+                               handler((PierPageOrigemComercialResponse*)data, error);
                            }
           ];
 }
@@ -2538,11 +2624,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageCampoCodificadoDescricao*
+///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
 -(NSNumber*) listarProfissoesUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageCampoCodificadoDescricao* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler {
 
     
 
@@ -2610,9 +2696,123 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageCampoCodificadoDescricao*"
+                              responseType: @"PierPageCampoCodificadoDescricaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageCampoCodificadoDescricao*)data, error);
+                               handler((PierPageCampoCodificadoDescricaoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista todos os atendimentos
+/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id) (optional)
+///
+///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
+///
+///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
+///
+///  @param dataAtendimento Apresenta a data em que o Atendimento foi realizado. (optional)
+///
+///  @returns PierPageAtendimentoClienteResponse*
+///
+-(NSNumber*) listarUsingGET1WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idTipoAtendimento: (NSNumber*) idTipoAtendimento
+    idConta: (NSNumber*) idConta
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSString*) dataAtendimento
+    completionHandler: (void (^)(PierPageAtendimentoClienteResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (idTipoAtendimento != nil) {
+        
+        queryParams[@"idTipoAtendimento"] = idTipoAtendimento;
+    }
+    if (idConta != nil) {
+        
+        queryParams[@"idConta"] = idConta;
+    }
+    if (nomeAtendente != nil) {
+        
+        queryParams[@"nomeAtendente"] = nomeAtendente;
+    }
+    if (dataAtendimento != nil) {
+        
+        queryParams[@"dataAtendimento"] = dataAtendimento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageAtendimentoClienteResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageAtendimentoClienteResponse*)data, error);
                            }
           ];
 }
@@ -2644,9 +2844,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
 ///
-///  @returns PierPessoaDetalheResponse*
+///  @returns PierPagePessoaDetalheResponse*
 ///
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
@@ -2658,7 +2858,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
     nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPagePessoaDetalheResponse* output, NSError* error)) handler {
 
     
 
@@ -2766,9 +2966,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPessoaDetalheResponse*"
+                              responseType: @"PierPagePessoaDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaDetalheResponse*)data, error);
+                               handler((PierPagePessoaDetalheResponse*)data, error);
                            }
           ];
 }
@@ -2802,9 +3002,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd (optional)
 ///
-///  @returns PierPagePessoas*
+///  @returns PierPagePessoaResponse*
 ///
--(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -2817,7 +3017,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
     dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPagePessoas* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPagePessoaResponse* output, NSError* error)) handler {
 
     
 
@@ -2929,9 +3129,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPagePessoas*"
+                              responseType: @"PierPagePessoaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePessoas*)data, error);
+                               handler((PierPagePessoaResponse*)data, error);
                            }
           ];
 }
@@ -2963,9 +3163,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
-///  @returns PierPagePortador*
+///  @returns PierPagePortadorResponse*
 ///
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
     idProduto: (NSNumber*) idProduto
@@ -2977,7 +3177,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     flagAtivo: (NSNumber*) flagAtivo
     dataCadastroPortador: (NSString*) dataCadastroPortador
     dataCancelamentoPortador: (NSString*) dataCancelamentoPortador
-    completionHandler: (void (^)(PierPagePortador* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPagePortadorResponse* output, NSError* error)) handler {
 
     
 
@@ -3085,9 +3285,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPagePortador*"
+                              responseType: @"PierPagePortadorResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePortador*)data, error);
+                               handler((PierPagePortadorResponse*)data, error);
                            }
           ];
 }
@@ -3105,14 +3305,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence. (optional)
 ///
-///  @returns PierListaProdutos*
+///  @returns PierPageProdutoResponse*
 ///
--(NSNumber*) listarUsingGET17WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET18WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     status: (NSNumber*) status
     idFantasiaBasica: (NSNumber*) idFantasiaBasica
-    completionHandler: (void (^)(PierListaProdutos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageProdutoResponse* output, NSError* error)) handler {
 
     
 
@@ -3192,9 +3392,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierListaProdutos*"
+                              responseType: @"PierPageProdutoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierListaProdutos*)data, error);
+                               handler((PierPageProdutoResponse*)data, error);
                            }
           ];
 }
@@ -3206,11 +3406,11 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageBancos*
+///  @returns PierPageBancoResponse*
 ///
 -(NSNumber*) listarUsingGET2WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageBancos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageBancoResponse* output, NSError* error)) handler {
 
     
 
@@ -3278,9 +3478,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageBancos*"
+                              responseType: @"PierPageBancoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageBancos*)data, error);
+                               handler((PierPageBancoResponse*)data, error);
                            }
           ];
 }
@@ -3306,9 +3506,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param status Apresenta o Status do Telefone, onde: '0': Inativo e '1': Ativo (optional)
 ///
-///  @returns PierPageTelefones*
+///  @returns PierPageTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
@@ -3317,7 +3517,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
     status: (NSNumber*) status
-    completionHandler: (void (^)(PierPageTelefones* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTelefoneResponse* output, NSError* error)) handler {
 
     
 
@@ -3413,9 +3613,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTelefones*"
+                              responseType: @"PierPageTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTelefones*)data, error);
+                               handler((PierPageTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -3431,13 +3631,13 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param nome Nome do Tipo do Endere\u00C3\u00A7o (optional)
 ///
-///  @returns PierPageTiposEndereco*
+///  @returns PierPageTipoEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET23WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTiposEndereco* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoEnderecoResponse* output, NSError* error)) handler {
 
     
 
@@ -3513,9 +3713,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTiposEndereco*"
+                              responseType: @"PierPageTipoEnderecoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTiposEndereco*)data, error);
+                               handler((PierPageTipoEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -3531,13 +3731,13 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param nome Nome do Tipo do Telefone (optional)
 ///
-///  @returns PierPageTipoTelefones*
+///  @returns PierPageTipoTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET26WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTipoTelefones* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoTelefoneResponse* output, NSError* error)) handler {
 
     
 
@@ -3613,9 +3813,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTipoTelefones*"
+                              responseType: @"PierPageTipoTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTipoTelefones*)data, error);
+                               handler((PierPageTipoTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -3655,9 +3855,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao (optional)
 ///
-///  @returns PierPageEnderecos*
+///  @returns PierPageEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
@@ -3673,7 +3873,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     pais: (NSString*) pais
     dataInclusao: (NSString*) dataInclusao
     dataUltimaAtualizacao: (NSString*) dataUltimaAtualizacao
-    completionHandler: (void (^)(PierPageEnderecos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageEnderecoResponse* output, NSError* error)) handler {
 
     
 
@@ -3797,9 +3997,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageEnderecos*"
+                              responseType: @"PierPageEnderecoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageEnderecos*)data, error);
+                               handler((PierPageEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -3965,6 +4165,141 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
+/// Cadastro um novo Atendimento do tipo Gen\u00C3\u00A9rico para uma Conta
+/// 
+///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o Atendimento est\u00C3\u00A1 associado (optional)
+///
+///  @param conteudoAtendimento Apresenta as informa\u00C3\u00A7\u00C3\u00B5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00C3\u00A7\u00C3\u00B5es relacionadas ao Atendimento. (optional)
+///
+///  @param detalhesAtendimento Apresenta os detalhes lan\u00C3\u00A7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento. (optional)
+///
+///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
+///
+///  @param dataAtendimento Apresenta a data e hora em que o Atendimento foi realizado no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///
+///  @param dataAgendamento Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data e hora para processamento ou a data e hora para retorno do Atendimento no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///
+///  @param dataHoraInicioAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///
+///  @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///
+///  @param flagFilaFraude Flag fila fraude (optional)
+///
+///  @returns PierAtendimentoClienteResponse*
+///
+-(NSNumber*) salvarUsingPOST1WithIdConta: (NSNumber*) idConta
+    conteudoAtendimento: (NSString*) conteudoAtendimento
+    detalhesAtendimento: (NSString*) detalhesAtendimento
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSString*) dataAtendimento
+    dataAgendamento: (NSString*) dataAgendamento
+    dataHoraInicioAtendimento: (NSString*) dataHoraInicioAtendimento
+    dataHoraFimAtendimento: (NSString*) dataHoraFimAtendimento
+    flagFilaFraude: (NSNumber*) flagFilaFraude
+    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        
+        queryParams[@"idConta"] = idConta;
+    }
+    if (conteudoAtendimento != nil) {
+        
+        queryParams[@"conteudoAtendimento"] = conteudoAtendimento;
+    }
+    if (detalhesAtendimento != nil) {
+        
+        queryParams[@"detalhesAtendimento"] = detalhesAtendimento;
+    }
+    if (nomeAtendente != nil) {
+        
+        queryParams[@"nomeAtendente"] = nomeAtendente;
+    }
+    if (dataAtendimento != nil) {
+        
+        queryParams[@"dataAtendimento"] = dataAtendimento;
+    }
+    if (dataAgendamento != nil) {
+        
+        queryParams[@"dataAgendamento"] = dataAgendamento;
+    }
+    if (dataHoraInicioAtendimento != nil) {
+        
+        queryParams[@"dataHoraInicioAtendimento"] = dataHoraInicioAtendimento;
+    }
+    if (dataHoraFimAtendimento != nil) {
+        
+        queryParams[@"dataHoraFimAtendimento"] = dataHoraFimAtendimento;
+    }
+    if (flagFilaFraude != nil) {
+        
+        queryParams[@"flagFilaFraude"] = flagFilaFraude;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAtendimentoClienteResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAtendimentoClienteResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Realiza o cadastro de um novo Telefone
 /// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
 ///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
@@ -3977,14 +4312,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
 ///
-///  @returns PierTelefone*
+///  @returns PierTelefoneResponse*
 ///
 -(NSNumber*) salvarUsingPOST10WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefone* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
 
@@ -4064,9 +4399,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTelefone*"
+                              responseType: @"PierTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTelefone*)data, error);
+                               handler((PierTelefoneResponse*)data, error);
                            }
           ];
 }
@@ -4096,7 +4431,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param pais Apresenta nome do Pais (optional)
 ///
-///  @returns PierEndereco*
+///  @returns PierEnderecoResponse*
 ///
 -(NSNumber*) salvarUsingPOST4WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
@@ -4109,7 +4444,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     cidade: (NSString*) cidade
     uf: (NSString*) uf
     pais: (NSString*) pais
-    completionHandler: (void (^)(PierEndereco* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
 
     
 
@@ -4213,9 +4548,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEndereco*"
+                              responseType: @"PierEnderecoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEndereco*)data, error);
+                               handler((PierEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -4385,7 +4720,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade. (optional)
 ///
-///  @returns PierPessoa*
+///  @returns PierPessoaResponse*
 ///
 -(NSNumber*) salvarUsingPOST8WithNome: (NSString*) nome
     tipo: (NSString*) tipo
@@ -4397,7 +4732,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
     unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
     dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoa* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'nome' is set
@@ -4507,9 +4842,9 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPessoa*"
+                              responseType: @"PierPessoaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoa*)data, error);
+                               handler((PierPessoaResponse*)data, error);
                            }
           ];
 }

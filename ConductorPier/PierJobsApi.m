@@ -1,7 +1,7 @@
 #import "PierJobsApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierJob.h"
-#import "PierPageJob.h"
+#import "PierJobResponse.h"
+#import "PierPageJobResponse.h"
 
 
 @interface PierJobsApi ()
@@ -75,10 +75,10 @@ static PierJobsApi* singletonAPI = nil;
 /// Este recurso adiciona o job ao agendador de tarefas.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id). 
 ///
-///  @returns PierJob*
+///  @returns PierJobResponse*
 ///
 -(NSNumber*) ativarJobUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -146,9 +146,9 @@ static PierJobsApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJob*"
+                              responseType: @"PierJobResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJob*)data, error);
+                               handler((PierJobResponse*)data, error);
                            }
           ];
 }
@@ -164,13 +164,13 @@ static PierJobsApi* singletonAPI = nil;
 ///
 ///  @param groovy groovy 
 ///
-///  @returns PierJob*
+///  @returns PierJobResponse*
 ///
 -(NSNumber*) atualizarUsingPUTWithId: (NSNumber*) _id
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -261,9 +261,9 @@ static PierJobsApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJob*"
+                              responseType: @"PierJobResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJob*)data, error);
+                               handler((PierJobResponse*)data, error);
                            }
           ];
 }
@@ -273,10 +273,10 @@ static PierJobsApi* singletonAPI = nil;
 /// Este recurso retira o job do agendador de tarefas.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id). 
 ///
-///  @returns PierJob*
+///  @returns PierJobResponse*
 ///
 -(NSNumber*) desativarJobUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -344,9 +344,9 @@ static PierJobsApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJob*"
+                              responseType: @"PierJobResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJob*)data, error);
+                               handler((PierJobResponse*)data, error);
                            }
           ];
 }
@@ -366,15 +366,15 @@ static PierJobsApi* singletonAPI = nil;
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @returns PierPageJob*
+///  @returns PierPageJobResponse*
 ///
--(NSNumber*) listarUsingGET11WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET12WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageJob* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageJobResponse* output, NSError* error)) handler {
 
     
 
@@ -458,9 +458,9 @@ static PierJobsApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageJob*"
+                              responseType: @"PierPageJobResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageJob*)data, error);
+                               handler((PierPageJobResponse*)data, error);
                            }
           ];
 }
@@ -474,12 +474,12 @@ static PierJobsApi* singletonAPI = nil;
 ///
 ///  @param groovy groovy 
 ///
-///  @returns PierJob*
+///  @returns PierJobResponse*
 ///
 -(NSNumber*) salvarUsingPOST5WithDescricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'descricao' is set
@@ -562,9 +562,9 @@ static PierJobsApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJob*"
+                              responseType: @"PierJobResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJob*)data, error);
+                               handler((PierJobResponse*)data, error);
                            }
           ];
 }

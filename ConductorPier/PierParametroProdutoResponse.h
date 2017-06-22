@@ -19,7 +19,7 @@
 @property(nonatomic) NSNumber* idProduto;
 /* Tipo da Transa\u00C3\u00A7\u00C3\u00A3o (ON_US ou OFF_US). 
  */
-@property(nonatomic) NSString* tipoTransacao;
+@property(nonatomic) NSString* tipoOrigemTransacao;
 /* Descri\u00C3\u00A7\u00C3\u00A3o do Tipo da Transa\u00C3\u00A7\u00C3\u00A3o. 
  */
 @property(nonatomic) NSString* descricao;

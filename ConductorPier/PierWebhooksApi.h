@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierWebHook.h"
-#import "PierPageWebHooks.h"
+#import "PierWebHookResponse.h"
+#import "PierPageWebHookResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -30,11 +30,11 @@
 /// @param url URL que a ser consumida pelo WebHook
 /// 
 ///
-/// @return PierWebHook*
+/// @return PierWebHookResponse*
 -(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
 ///
@@ -45,9 +45,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id).
 /// 
 ///
-/// @return PierWebHook*
+/// @return PierWebHookResponse*
 -(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
 ///
@@ -63,14 +63,14 @@
 /// @param url URL que a ser consumida pelo WebHook
 /// 
 ///
-/// @return PierPageWebHooks*
--(NSNumber*) listarUsingGET30WithPage: (NSNumber*) page
+/// @return PierPageWebHookResponse*
+-(NSNumber*) listarUsingGET31WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     metodo: (NSString*) metodo
     url: (NSString*) url
-    completionHandler: (void (^)(PierPageWebHooks* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageWebHookResponse* output, NSError* error)) handler;
 
 
 ///
@@ -82,10 +82,10 @@
 /// @param url URL que a ser consumida pelo WebHook
 /// 
 ///
-/// @return PierWebHook*
+/// @return PierWebHookResponse*
 -(NSNumber*) salvarUsingPOST14WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
-    completionHandler: (void (^)(PierWebHook* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
 

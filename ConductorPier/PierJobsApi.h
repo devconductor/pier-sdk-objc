@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierJob.h"
-#import "PierPageJob.h"
+#import "PierJobResponse.h"
+#import "PierPageJobResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -28,9 +28,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id).
 /// 
 ///
-/// @return PierJob*
+/// @return PierJobResponse*
 -(NSNumber*) ativarJobUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler;
 
 
 ///
@@ -44,12 +44,12 @@
 /// @param groovy groovy
 /// 
 ///
-/// @return PierJob*
+/// @return PierJobResponse*
 -(NSNumber*) atualizarUsingPUTWithId: (NSNumber*) _id
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler;
 
 
 ///
@@ -60,9 +60,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id).
 /// 
 ///
-/// @return PierJob*
+/// @return PierJobResponse*
 -(NSNumber*) desativarJobUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler;
 
 
 ///
@@ -78,14 +78,14 @@
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierPageJob*
--(NSNumber*) listarUsingGET11WithGroovy: (NSString*) groovy
+/// @return PierPageJobResponse*
+-(NSNumber*) listarUsingGET12WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageJob* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageJobResponse* output, NSError* error)) handler;
 
 
 ///
@@ -98,11 +98,11 @@
 /// @param groovy groovy
 /// 
 ///
-/// @return PierJob*
+/// @return PierJobResponse*
 -(NSNumber*) salvarUsingPOST5WithDescricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
-    completionHandler: (void (^)(PierJob* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler;
 
 
 

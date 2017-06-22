@@ -14,29 +14,89 @@
 
 @interface PierFaturaResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do tipo de boleto. [optional]
+/* C\u00C3\u00B3digo identificador da fatura. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de boleto. [optional]
+/* C\u00C3\u00B3digo identificador da conta. [optional]
  */
-@property(nonatomic) NSString* descricao;
-/* C\u00C3\u00B3digo identificador do banco. [optional]
+@property(nonatomic) NSNumber* idConta;
+/* C\u00C3\u00B3digo identificador da conta a qual a fatura se refere. [optional]
  */
-@property(nonatomic) NSNumber* banco;
-/* Faixa permitida para cria\u00C3\u00A7\u00C3\u00A3o do nosso n\u00C3\u00BAmero. [optional]
+@property(nonatomic) NSNumber* flagEmiteFatura;
+/* Data de vencimento da fatura. [optional]
  */
-@property(nonatomic) NSNumber* faixaNossoNumero;
-/* N\u00C3\u00BAmero minimo para o nosso n\u00C3\u00BAmero. [optional]
+@property(nonatomic) NSString* dataVencimentoFatura;
+/* Valor para pagamento total da fatura. [optional]
  */
-@property(nonatomic) NSNumber* minNossoNumero;
-/* N\u00C3\u00BAmero m\u00C3\u00A1ximo para o nosso n\u00C3\u00BAmero. [optional]
+@property(nonatomic) NSNumber* valorTotalFatura;
+/* Valor total da fatura anterior. [optional]
  */
-@property(nonatomic) NSNumber* maxNossoNumero;
-/* Tamanho do nosso n\u00C3\u00BAmero. [optional]
+@property(nonatomic) NSNumber* valorFaturaAnterior;
+/* Valor m\u00C3\u00ADnimo para pagamento da fatura. [optional]
  */
-@property(nonatomic) NSNumber* tamNossoNumero;
-/* \u00C3\u009Altimo nosso n\u00C3\u00BAmero utilizado. [optional]
+@property(nonatomic) NSNumber* valorPagamentoMinimo;
+/* Valor total das compras nacionais lan\u00C3\u00A7adas na fatura. [optional]
  */
-@property(nonatomic) NSNumber* ultimoNossoNumero;
+@property(nonatomic) NSNumber* totalComprasNacionais;
+/* Valor total das compras internacionais lan\u00C3\u00A7adas na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalComprasInternacionas;
+/* Valor total dos saques nacionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalSaquesNacionais;
+/* Valor total dos saques internacionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalSaquesInternacionais;
+/* Valor total dos d\u00C3\u00A9bitos nacionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalDebitosNacionais;
+/* Valor total dos d\u00C3\u00A9bitos recorrentes lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalDebitosRecorrentes;
+/* Valor total dos d\u00C3\u00A9bitos internacionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalDebitosInternacionais;
+/* Valor total dos d\u00C3\u00A9bitos diversos nacionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalDebitosDiversosNacionais;
+/* Valor total dos d\u00C3\u00A9bitos diversos opcionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalDebitosOpcionais;
+/* Valor total dos pagamentos lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalPagamentos;
+/* Valor total dos cr\u00C3\u00A9ditos nacionais lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalCreditosNacionais;
+/* Valor total dos ajustes lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalAjustes;
+/* Valor total das tarifas lan\u00C3\u00A7adas na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalTarifas;
+/* Valor total da multa lan\u00C3\u00A7ada na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalMulta;
+/* Valor total dos juros de mora lan\u00C3\u00A7ados na fatura. [optional]
+ */
+@property(nonatomic) NSNumber* totalJuros;
+/* Valor percentual da taxa de juros rotativos. [optional]
+ */
+@property(nonatomic) NSNumber* taxaRotativo;
+/* Valor percentual da taxa de saque. [optional]
+ */
+@property(nonatomic) NSNumber* taxaSaque;
+/* Valor m\u00C3\u00A1ximo percentual da taxa de encargos para o pr\u00C3\u00B3ximo per\u00C3\u00ADodo. [optional]
+ */
+@property(nonatomic) NSNumber* taxaMaximaProximoPeriodo;
+/* Apresenta a soma de todos os seguros cobrados na fatura do cliente. 
+ */
+@property(nonatomic) NSNumber* totalServicos;
+/* Apresenta a soma de todos os valores parcelados + compras nacionais. 
+ */
+@property(nonatomic) NSNumber* totalParceladoNacionais;
+/* Apresenta a soma de todos os valores parcelados + compras internacionais. 
+ */
+@property(nonatomic) NSNumber* totalParceladoInternacionais;
 
 @end

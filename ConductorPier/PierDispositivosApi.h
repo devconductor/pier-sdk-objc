@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierDispositivo.h"
-#import "PierPageDispositivos.h"
+#import "PierDispositivoResponse.h"
+#import "PierPageDispositivoResponse.h"
 #import "PierDispositivoPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -29,9 +29,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id).
 /// 
 ///
-/// @return PierDispositivo*
+/// @return PierDispositivoResponse*
 -(NSNumber*) ativarUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierDispositivo* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -42,9 +42,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id).
 /// 
 ///
-/// @return PierDispositivo*
+/// @return PierDispositivoResponse*
 -(NSNumber*) desativarUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierDispositivo* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -61,15 +61,15 @@
 /// @param dataDesativacao Apresenta a data e em que o registro foi desativado.
 /// 
 ///
-/// @return PierPageDispositivos*
--(NSNumber*) listarUsingGET7WithPage: (NSNumber*) page
+/// @return PierPageDispositivoResponse*
+-(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
     idUsuario: (NSNumber*) idUsuario
     idAplicacaoMobile: (NSNumber*) idAplicacaoMobile
     dataCriacao: (NSString*) dataCriacao
     dataDesativacao: (NSString*) dataDesativacao
-    completionHandler: (void (^)(PierPageDispositivos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageDispositivoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -80,9 +80,9 @@
 /// @param persist persist
 /// 
 ///
-/// @return PierDispositivo*
+/// @return PierDispositivoResponse*
 -(NSNumber*) salvarUsingPOST3WithPersist: (PierDispositivoPersist*) persist
-    completionHandler: (void (^)(PierDispositivo* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler;
 
 
 

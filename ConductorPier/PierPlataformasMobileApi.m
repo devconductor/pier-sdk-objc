@@ -1,8 +1,8 @@
 #import "PierPlataformasMobileApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierPlataformaMobile.h"
+#import "PierPlataformaMobileResponse.h"
 #import "PierPlataformaMobileUpdate.h"
-#import "PierPagePlataformasMobile.h"
+#import "PierPagePlataformaMobileResponse.h"
 #import "PierPlataformaMobilePersist.h"
 
 
@@ -79,11 +79,11 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 ///
 ///  @param update update 
 ///
-///  @returns PierPlataformaMobile*
+///  @returns PierPlataformaMobileResponse*
 ///
 -(NSNumber*) atualizarUsingPUT1WithId: (NSNumber*) _id
     update: (PierPlataformaMobileUpdate*) update
-    completionHandler: (void (^)(PierPlataformaMobile* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -156,9 +156,9 @@ static PierPlataformasMobileApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPlataformaMobile*"
+                              responseType: @"PierPlataformaMobileResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPlataformaMobile*)data, error);
+                               handler((PierPlataformaMobileResponse*)data, error);
                            }
           ];
 }
@@ -172,12 +172,12 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 ///
 ///  @param nome Nome da Plataforma Mobile (optional)
 ///
-///  @returns PierPagePlataformasMobile*
+///  @returns PierPagePlataformaMobileResponse*
 ///
--(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPagePlataformasMobile* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPagePlataformaMobileResponse* output, NSError* error)) handler {
 
     
 
@@ -249,9 +249,9 @@ static PierPlataformasMobileApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPagePlataformasMobile*"
+                              responseType: @"PierPagePlataformaMobileResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePlataformasMobile*)data, error);
+                               handler((PierPagePlataformaMobileResponse*)data, error);
                            }
           ];
 }
@@ -261,10 +261,10 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 /// Esse recurso permite cadastrar plataformas mobile.
 ///  @param persist persist 
 ///
-///  @returns PierPlataformaMobile*
+///  @returns PierPlataformaMobileResponse*
 ///
 -(NSNumber*) salvarUsingPOST9WithPersist: (PierPlataformaMobilePersist*) persist
-    completionHandler: (void (^)(PierPlataformaMobile* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
@@ -329,9 +329,9 @@ static PierPlataformasMobileApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPlataformaMobile*"
+                              responseType: @"PierPlataformaMobileResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPlataformaMobile*)data, error);
+                               handler((PierPlataformaMobileResponse*)data, error);
                            }
           ];
 }

@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "PierPlataformaMobile.h"
+#import "PierPlataformaMobileResponse.h"
 #import "PierPlataformaMobileUpdate.h"
-#import "PierPagePlataformasMobile.h"
+#import "PierPagePlataformaMobileResponse.h"
 #import "PierPlataformaMobilePersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -31,10 +31,10 @@
 /// @param update update
 /// 
 ///
-/// @return PierPlataformaMobile*
+/// @return PierPlataformaMobileResponse*
 -(NSNumber*) atualizarUsingPUT1WithId: (NSNumber*) _id
     update: (PierPlataformaMobileUpdate*) update
-    completionHandler: (void (^)(PierPlataformaMobile* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler;
 
 
 ///
@@ -47,11 +47,11 @@
 /// @param nome Nome da Plataforma Mobile
 /// 
 ///
-/// @return PierPagePlataformasMobile*
--(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
+/// @return PierPagePlataformaMobileResponse*
+-(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
-    completionHandler: (void (^)(PierPagePlataformasMobile* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPagePlataformaMobileResponse* output, NSError* error)) handler;
 
 
 ///
@@ -62,9 +62,9 @@
 /// @param persist persist
 /// 
 ///
-/// @return PierPlataformaMobile*
+/// @return PierPlataformaMobileResponse*
 -(NSNumber*) salvarUsingPOST9WithPersist: (PierPlataformaMobilePersist*) persist
-    completionHandler: (void (^)(PierPlataformaMobile* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler;
 
 
 

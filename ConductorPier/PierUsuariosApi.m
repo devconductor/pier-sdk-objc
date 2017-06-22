@@ -2,7 +2,7 @@
 #import "PierQueryParamCollection.h"
 #import "PierUsuarioUpdate.h"
 #import "PierUsuarioResponse.h"
-#import "PierPageUsuarios.h"
+#import "PierPageUsuarioResponse.h"
 #import "PierUsuarioPersist.h"
 
 
@@ -532,15 +532,15 @@ static PierUsuariosApi* singletonAPI = nil;
 ///
 ///  @param status Status do Usuario (optional)
 ///
-///  @returns PierPageUsuarios*
+///  @returns PierPageUsuarioResponse*
 ///
--(NSNumber*) listarUsingGET29WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET30WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     cpf: (NSString*) cpf
     email: (NSString*) email
     status: (NSString*) status
-    completionHandler: (void (^)(PierPageUsuarios* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageUsuarioResponse* output, NSError* error)) handler {
 
     
 
@@ -624,9 +624,9 @@ static PierUsuariosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageUsuarios*"
+                              responseType: @"PierPageUsuarioResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageUsuarios*)data, error);
+                               handler((PierPageUsuarioResponse*)data, error);
                            }
           ];
 }

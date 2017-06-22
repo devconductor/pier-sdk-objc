@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierTelefone.h"
+#import "PierTelefoneResponse.h"
 
 
 @protocol PierRiscoFraudeDetalhadoResponse
@@ -95,6 +95,6 @@
 @property(nonatomic) NSString* email;
 /* Lista contendo idTipoTelefone, tipoTelefone (Descricao), DDD, Numero, Ramal associados a Pessoa portadora do Cart\u00C3\u00A3o [optional]
  */
-@property(nonatomic) NSArray<PierTelefone>* tefefones;
+@property(nonatomic) NSArray<PierTelefoneResponse>* tefefones;
 
 @end

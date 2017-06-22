@@ -6,12 +6,12 @@
 #import "PierOportunidadeResponse.h"
 #import "PierTipoOportunidadeResponse.h"
 #import "PierTipoOportunidade.h"
-#import "PierPageStatusOprtunidadesAUD.h"
-#import "PierPageOprtunidadeAUD.h"
-#import "PierPageTipoOprtunidadesAUD.h"
-#import "PierPageStatusOprtunidades.h"
-#import "PierPageOprtunidadesResponse.h"
-#import "PierPageTipoOprtunidades.h"
+#import "PierPageStatusOportunidadeAUDResponse.h"
+#import "PierPageOportunidadeAUDResponse.h"
+#import "PierPageTipoOportunidadeAUDResponse.h"
+#import "PierPageStatusOportunidadeResponse.h"
+#import "PierPageOportunidadeResponse.h"
+#import "PierPageTipoOportunidadeResponse.h"
 #import "PierOportunidadePersist.h"
 
 
@@ -648,7 +648,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
 ///
-///  @returns PierPageStatusOprtunidadesAUD*
+///  @returns PierPageStatusOportunidadeAUDResponse*
 ///
 -(NSNumber*) listarAuditoriasStatusUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -660,7 +660,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
     revUser: (NSString*) revUser
-    completionHandler: (void (^)(PierPageStatusOprtunidadesAUD* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageStatusOportunidadeAUDResponse* output, NSError* error)) handler {
 
     
 
@@ -760,9 +760,9 @@ static PierOportunidadesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusOprtunidadesAUD*"
+                              responseType: @"PierPageStatusOportunidadeAUDResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusOprtunidadesAUD*)data, error);
+                               handler((PierPageStatusOportunidadeAUDResponse*)data, error);
                            }
           ];
 }
@@ -794,7 +794,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
 ///
-///  @returns PierPageOprtunidadeAUD*
+///  @returns PierPageOportunidadeAUDResponse*
 ///
 -(NSNumber*) listarAuditoriasUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -808,7 +808,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     revDate: (NSString*) revDate
     revType: (NSString*) revType
     revUser: (NSString*) revUser
-    completionHandler: (void (^)(PierPageOprtunidadeAUD* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageOportunidadeAUDResponse* output, NSError* error)) handler {
 
     
 
@@ -916,9 +916,9 @@ static PierOportunidadesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageOprtunidadeAUD*"
+                              responseType: @"PierPageOportunidadeAUDResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageOprtunidadeAUD*)data, error);
+                               handler((PierPageOportunidadeAUDResponse*)data, error);
                            }
           ];
 }
@@ -942,7 +942,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
 ///
-///  @returns PierPageTipoOprtunidadesAUD*
+///  @returns PierPageTipoOportunidadeAUDResponse*
 ///
 -(NSNumber*) listarAuditoriasUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -952,7 +952,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
     revUser: (NSString*) revUser
-    completionHandler: (void (^)(PierPageTipoOprtunidadesAUD* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoOportunidadeAUDResponse* output, NSError* error)) handler {
 
     
 
@@ -1044,9 +1044,9 @@ static PierOportunidadesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTipoOprtunidadesAUD*"
+                              responseType: @"PierPageTipoOportunidadeAUDResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTipoOprtunidadesAUD*)data, error);
+                               handler((PierPageTipoOportunidadeAUDResponse*)data, error);
                            }
           ];
 }
@@ -1066,7 +1066,7 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo (optional)
 ///
-///  @returns PierPageStatusOprtunidades*
+///  @returns PierPageStatusOportunidadeResponse*
 ///
 -(NSNumber*) listarStatusUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
@@ -1074,7 +1074,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageStatusOprtunidades* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageStatusOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -1162,9 +1162,9 @@ static PierOportunidadesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusOprtunidades*"
+                              responseType: @"PierPageStatusOportunidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusOprtunidades*)data, error);
+                               handler((PierPageStatusOportunidadeResponse*)data, error);
                            }
           ];
 }
@@ -1190,9 +1190,9 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa (optional)
 ///
-///  @returns PierPageOprtunidadesResponse*
+///  @returns PierPageOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
     dataCadastro: (NSString*) dataCadastro
@@ -1201,7 +1201,7 @@ static PierOportunidadesApi* singletonAPI = nil;
     dataInicioVigencia: (NSString*) dataInicioVigencia
     dataFimVigencia: (NSString*) dataFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageOprtunidadesResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageOportunidadeResponse* output, NSError* error)) handler {
 
     
 
@@ -1297,9 +1297,9 @@ static PierOportunidadesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageOprtunidadesResponse*"
+                              responseType: @"PierPageOportunidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageOprtunidadesResponse*)data, error);
+                               handler((PierPageOportunidadeResponse*)data, error);
                            }
           ];
 }
@@ -1315,13 +1315,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo (optional)
 ///
-///  @returns PierPageTipoOprtunidades*
+///  @returns PierPageTipoOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageTipoOprtunidades* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
 
@@ -1397,9 +1397,9 @@ static PierOportunidadesApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTipoOprtunidades*"
+                              responseType: @"PierPageTipoOportunidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTipoOprtunidades*)data, error);
+                               handler((PierPageTipoOportunidadeResponse*)data, error);
                            }
           ];
 }

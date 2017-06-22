@@ -1,9 +1,9 @@
 #import "PierEstabelecimentosApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierTerminal.h"
-#import "PierEstabelecimento.h"
-#import "PierPageTerminal.h"
-#import "PierPageEstabelecimentos.h"
+#import "PierTerminalResponse.h"
+#import "PierEstabelecimentoResponse.h"
+#import "PierPageEstabelecimentoResponse.h"
+#import "PierPageTerminalResponse.h"
 
 
 @interface PierEstabelecimentosApi ()
@@ -77,10 +77,10 @@ static PierEstabelecimentosApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite consultar um determinado Terminal a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id). 
 ///
-///  @returns PierTerminal*
+///  @returns PierTerminalResponse*
 ///
 -(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTerminal* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -148,9 +148,9 @@ static PierEstabelecimentosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTerminal*"
+                              responseType: @"PierTerminalResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTerminal*)data, error);
+                               handler((PierTerminalResponse*)data, error);
                            }
           ];
 }
@@ -160,10 +160,10 @@ static PierEstabelecimentosApi* singletonAPI = nil;
 /// Consulta os detalhes de um determinado estabelecimento
 ///  @param _id Id 
 ///
-///  @returns PierEstabelecimento*
+///  @returns PierEstabelecimentoResponse*
 ///
 -(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEstabelecimento* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -231,123 +231,9 @@ static PierEstabelecimentosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierEstabelecimento*"
+                              responseType: @"PierEstabelecimentoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierEstabelecimento*)data, error);
-                           }
-          ];
-}
-
-///
-/// Lista os Terminais cadastrados no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os terminais existentes na base de dados do Emissor.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id). (optional)
-///
-///  @param terminal C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do terminal. (optional)
-///
-///  @param numeroEstabelecimento N\u00C3\u00BAmero do estabelecimento a qual o terminal pertence. (optional)
-///
-///  @param idEstabelecimento N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento a qual o terminal pertence. (optional)
-///
-///  @returns PierPageTerminal*
-///
--(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    terminal: (NSString*) terminal
-    numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
-    idEstabelecimento: (NSNumber*) idEstabelecimento
-    completionHandler: (void (^)(PierPageTerminal* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/terminais"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (terminal != nil) {
-        
-        queryParams[@"terminal"] = terminal;
-    }
-    if (numeroEstabelecimento != nil) {
-        
-        queryParams[@"numeroEstabelecimento"] = numeroEstabelecimento;
-    }
-    if (idEstabelecimento != nil) {
-        
-        queryParams[@"idEstabelecimento"] = idEstabelecimento;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageTerminal*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTerminal*)data, error);
+                               handler((PierEstabelecimentoResponse*)data, error);
                            }
           ];
 }
@@ -397,9 +283,9 @@ static PierEstabelecimentosApi* singletonAPI = nil;
 ///
 ///  @param inativo Indica se o estabelecimento est\u00C3\u00A1 inativo. (optional)
 ///
-///  @returns PierPageEstabelecimentos*
+///  @returns PierPageEstabelecimentoResponse*
 ///
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET10WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     numeroReceitaFederal: (NSNumber*) numeroReceitaFederal
@@ -420,7 +306,7 @@ static PierEstabelecimentosApi* singletonAPI = nil;
     flagArquivoSecrFazenda: (NSNumber*) flagArquivoSecrFazenda
     flagCartaoDigitado: (NSNumber*) flagCartaoDigitado
     inativo: (NSNumber*) inativo
-    completionHandler: (void (^)(PierPageEstabelecimentos* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageEstabelecimentoResponse* output, NSError* error)) handler {
 
     
 
@@ -564,9 +450,123 @@ static PierEstabelecimentosApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageEstabelecimentos*"
+                              responseType: @"PierPageEstabelecimentoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageEstabelecimentos*)data, error);
+                               handler((PierPageEstabelecimentoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista os Terminais cadastrados no Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os terminais existentes na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id). (optional)
+///
+///  @param terminal C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do terminal. (optional)
+///
+///  @param numeroEstabelecimento N\u00C3\u00BAmero do estabelecimento a qual o terminal pertence. (optional)
+///
+///  @param idEstabelecimento N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento a qual o terminal pertence. (optional)
+///
+///  @returns PierPageTerminalResponse*
+///
+-(NSNumber*) listarUsingGET23WithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    terminal: (NSString*) terminal
+    numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
+    idEstabelecimento: (NSNumber*) idEstabelecimento
+    completionHandler: (void (^)(PierPageTerminalResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/terminais"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (terminal != nil) {
+        
+        queryParams[@"terminal"] = terminal;
+    }
+    if (numeroEstabelecimento != nil) {
+        
+        queryParams[@"numeroEstabelecimento"] = numeroEstabelecimento;
+    }
+    if (idEstabelecimento != nil) {
+        
+        queryParams[@"idEstabelecimento"] = idEstabelecimento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageTerminalResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageTerminalResponse*)data, error);
                            }
           ];
 }

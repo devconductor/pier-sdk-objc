@@ -1,8 +1,8 @@
 #import "PierAplicacoesMobileApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierAplicacaoMobile.h"
 #import "PierAplicacaoMobileUpdate.h"
-#import "PierPageAplicacoesMobile.h"
+#import "PierAplicacaoMobileResponse.h"
+#import "PierPageAplicacaoMobileResponse.h"
 #import "PierAplicacaoMobilePersist.h"
 
 
@@ -79,11 +79,11 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
 ///
 ///  @param update update 
 ///
-///  @returns PierAplicacaoMobile*
+///  @returns PierAplicacaoMobileResponse*
 ///
 -(NSNumber*) atualizarUsingPUTWithId: (NSNumber*) _id
     update: (PierAplicacaoMobileUpdate*) update
-    completionHandler: (void (^)(PierAplicacaoMobile* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierAplicacaoMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -156,9 +156,9 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierAplicacaoMobile*"
+                              responseType: @"PierAplicacaoMobileResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierAplicacaoMobile*)data, error);
+                               handler((PierAplicacaoMobileResponse*)data, error);
                            }
           ];
 }
@@ -174,13 +174,13 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
 ///
 ///  @param idPlataformaMobile Identificador da Plataforma Mobile (optional)
 ///
-///  @returns PierPageAplicacoesMobile*
+///  @returns PierPageAplicacaoMobileResponse*
 ///
 -(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSString*) _id
     idPlataformaMobile: (NSNumber*) idPlataformaMobile
-    completionHandler: (void (^)(PierPageAplicacoesMobile* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageAplicacaoMobileResponse* output, NSError* error)) handler {
 
     
 
@@ -256,9 +256,9 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageAplicacoesMobile*"
+                              responseType: @"PierPageAplicacaoMobileResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageAplicacoesMobile*)data, error);
+                               handler((PierPageAplicacaoMobileResponse*)data, error);
                            }
           ];
 }
@@ -268,10 +268,10 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
 /// Esse recurso permite cadastrar aplicacoes mobile.
 ///  @param persist persist 
 ///
-///  @returns PierAplicacaoMobile*
+///  @returns PierAplicacaoMobileResponse*
 ///
 -(NSNumber*) salvarUsingPOSTWithPersist: (PierAplicacaoMobilePersist*) persist
-    completionHandler: (void (^)(PierAplicacaoMobile* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierAplicacaoMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
@@ -336,9 +336,9 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierAplicacaoMobile*"
+                              responseType: @"PierAplicacaoMobileResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierAplicacaoMobile*)data, error);
+                               handler((PierAplicacaoMobileResponse*)data, error);
                            }
           ];
 }

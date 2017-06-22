@@ -5,12 +5,12 @@
 #import "PierOportunidadeResponse.h"
 #import "PierTipoOportunidadeResponse.h"
 #import "PierTipoOportunidade.h"
-#import "PierPageStatusOprtunidadesAUD.h"
-#import "PierPageOprtunidadeAUD.h"
-#import "PierPageTipoOprtunidadesAUD.h"
-#import "PierPageStatusOprtunidades.h"
-#import "PierPageOprtunidadesResponse.h"
-#import "PierPageTipoOprtunidades.h"
+#import "PierPageStatusOportunidadeAUDResponse.h"
+#import "PierPageOportunidadeAUDResponse.h"
+#import "PierPageTipoOportunidadeAUDResponse.h"
+#import "PierPageStatusOportunidadeResponse.h"
+#import "PierPageOportunidadeResponse.h"
+#import "PierPageTipoOportunidadeResponse.h"
 #import "PierOportunidadePersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -136,7 +136,7 @@
 /// @param revUser Usu\u00C3\u00A1rio da auditoria
 /// 
 ///
-/// @return PierPageStatusOprtunidadesAUD*
+/// @return PierPageStatusOportunidadeAUDResponse*
 -(NSNumber*) listarAuditoriasStatusUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     revType: (NSNumber*) revType
@@ -147,7 +147,7 @@
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
     revUser: (NSString*) revUser
-    completionHandler: (void (^)(PierPageStatusOprtunidadesAUD* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageStatusOportunidadeAUDResponse* output, NSError* error)) handler;
 
 
 ///
@@ -169,7 +169,7 @@
 /// @param revUser Usu\u00C3\u00A1rio da auditoria
 /// 
 ///
-/// @return PierPageOprtunidadeAUD*
+/// @return PierPageOportunidadeAUDResponse*
 -(NSNumber*) listarAuditoriasUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -182,7 +182,7 @@
     revDate: (NSString*) revDate
     revType: (NSString*) revType
     revUser: (NSString*) revUser
-    completionHandler: (void (^)(PierPageOprtunidadeAUD* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageOportunidadeAUDResponse* output, NSError* error)) handler;
 
 
 ///
@@ -200,7 +200,7 @@
 /// @param revUser Usu\u00C3\u00A1rio da auditoria
 /// 
 ///
-/// @return PierPageTipoOprtunidadesAUD*
+/// @return PierPageTipoOportunidadeAUDResponse*
 -(NSNumber*) listarAuditoriasUsingGET1WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     revType: (NSNumber*) revType
@@ -209,7 +209,7 @@
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
     revUser: (NSString*) revUser
-    completionHandler: (void (^)(PierPageTipoOprtunidadesAUD* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTipoOportunidadeAUDResponse* output, NSError* error)) handler;
 
 
 ///
@@ -225,14 +225,14 @@
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo
 /// 
 ///
-/// @return PierPageStatusOprtunidades*
+/// @return PierPageStatusOportunidadeResponse*
 -(NSNumber*) listarStatusUsingGETWithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageStatusOprtunidades* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageStatusOportunidadeResponse* output, NSError* error)) handler;
 
 
 ///
@@ -251,8 +251,8 @@
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa
 /// 
 ///
-/// @return PierPageOprtunidadesResponse*
--(NSNumber*) listarUsingGET12WithPage: (NSNumber*) page
+/// @return PierPageOportunidadeResponse*
+-(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
     dataCadastro: (NSString*) dataCadastro
@@ -261,7 +261,7 @@
     dataInicioVigencia: (NSString*) dataInicioVigencia
     dataFimVigencia: (NSString*) dataFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageOprtunidadesResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageOportunidadeResponse* output, NSError* error)) handler;
 
 
 ///
@@ -275,12 +275,12 @@
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo
 /// 
 ///
-/// @return PierPageTipoOprtunidades*
--(NSNumber*) listarUsingGET24WithPage: (NSNumber*) page
+/// @return PierPageTipoOportunidadeResponse*
+-(NSNumber*) listarUsingGET25WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
     flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageTipoOprtunidades* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
 ///
