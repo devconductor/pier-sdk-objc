@@ -41,5 +41,14 @@
 /* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o desbloqueio, sendo: 0: Inativo e 1: Ativo. [optional]
  */
 @property(nonatomic) NSNumber* flagPermiteDesbloqueio;
+/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o cancelamento, sendo: 0: Inativo e 1: Ativo. [optional]
+ */
+@property(nonatomic) NSNumber* flagCancelamento;
+/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o bloqueio, sendo: 0: Inativo e 1: Ativo. [optional]
+ */
+@property(nonatomic) NSNumber* flagPermiteBloqueio;
+/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. [optional]
+ */
+@property(nonatomic) NSNumber* flagReativar;
 
 @end

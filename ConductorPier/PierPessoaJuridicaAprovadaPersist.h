@@ -53,6 +53,12 @@
 /* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
+/* Apresenta o valor da renda compravada [optional]
+ */
+@property(nonatomic) NSNumber* valorRenda;
+/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+ */
+@property(nonatomic) NSString* canalEntrada;
 /* Apresenta os telefones da empresa [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersist>* telefones;

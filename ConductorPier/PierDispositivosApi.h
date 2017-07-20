@@ -81,7 +81,7 @@
 /// 
 ///
 /// @return PierDispositivoResponse*
--(NSNumber*) salvarUsingPOST3WithPersist: (PierDispositivoPersist*) persist
+-(NSNumber*) salvarUsingPOST4WithPersist: (PierDispositivoPersist*) persist
     completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler;
 
 

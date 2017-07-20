@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "PierParametroProdutoResponse.h"
+#import "PierTaxaAntecipacaoRequest.h"
 #import "PierAntecipacaoResponse.h"
 #import "PierPageCompraResponse.h"
 #import "PierAntecipacaoSimuladaResponse.h"
@@ -12,19 +14,49 @@
  * Do not edit the class manually.
  */
 
-@interface PierCompraApi: NSObject
+@interface PierAntecipacoesApi: NSObject
 
 @property(nonatomic, assign)PierApiClient *apiClient;
 
 -(instancetype) initWithApiClient:(PierApiClient *)apiClient;
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
-+(PierCompraApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
-+(PierCompraApi*) sharedAPI;
++(PierAntecipacoesApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(PierAntecipacoesApi*) sharedAPI;
+///
+///
+/// Configura a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
+/// Este recurso permite configurar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id Id Produto
+/// @param taxaAntecipacaoRequest taxaAntecipacaoRequest
+/// 
+///
+/// @return PierParametroProdutoResponse*
+-(NSNumber*) configurarTaxaAntecipacaoUsingPOSTWithId: (NSNumber*) _id
+    taxaAntecipacaoRequest: (PierTaxaAntecipacaoRequest*) taxaAntecipacaoRequest
+    completionHandler: (void (^)(PierParametroProdutoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consulta a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
+/// Este recurso permite consultar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id Id Produto
+/// @param tipoTransacao Tipo da Transa\u00C3\u00A7\u00C3\u00A3o (ON-US ou OFF-US)
+/// 
+///
+/// @return PierParametroProdutoResponse*
+-(NSNumber*) consultarTaxaAntecipacaoUsingGETWithId: (NSNumber*) _id
+    tipoTransacao: (NSString*) tipoTransacao
+    completionHandler: (void (^)(PierParametroProdutoResponse* output, NSError* error)) handler;
+
+
 ///
 ///
 /// Faz a efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o
-/// Metodo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o.
+/// M\u00C3\u00A9todo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o, cujo desconto \u00C3\u00A9 calculado baseado na data da \u00C3\u00BAltima parcela em aberto.
 ///
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta.
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento.
@@ -40,8 +72,8 @@
 
 ///
 ///
-/// Listar compras
-/// Lista as compras de uma conta.
+/// Listar compras com parcelas antecip\u00C3\u00A1veis
+/// Lista as compras antecip\u00C3\u00A1veis de uma conta.
 ///
 /// @param idConta C\u00C3\u00B3digo identificador da conta da Compra.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
@@ -66,7 +98,7 @@
 ///
 ///
 /// Simular antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas
-/// Simula a antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas de um evento, listando todos os planos de parcelamento dispon\u00C3\u00ADveis.
+/// Simula a antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas de um evento, listando todos os planos de parcelamento dispon\u00C3\u00ADveis, cujo desconto \u00C3\u00A9 calculado baseado na data da \u00C3\u00BAltima parcela em aberto.
 ///
 /// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta.
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento.

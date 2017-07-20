@@ -249,13 +249,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusContaResponse*
 ///
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
     }
     
 
@@ -332,13 +332,13 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusImpressaoResponse*
 ///
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
     }
     
 
@@ -533,6 +533,12 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o desbloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
+///  @param flagCancelamento Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o cancelamento, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @param flagPermiteBloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o Bloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @param flagReativar Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
+///
 ///  @returns PierPageStatusCartaoResponse*
 ///
 -(NSNumber*) listarStatusCartoesUsingGETWithPage: (NSNumber*) page
@@ -546,6 +552,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
+    flagCancelamento: (NSNumber*) flagCancelamento
+    flagPermiteBloqueio: (NSNumber*) flagPermiteBloqueio
+    flagReativar: (NSNumber*) flagReativar
     completionHandler: (void (^)(PierPageStatusCartaoResponse* output, NSError* error)) handler {
 
     
@@ -604,6 +613,18 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (flagPermiteDesbloqueio != nil) {
         
         queryParams[@"flagPermiteDesbloqueio"] = flagPermiteDesbloqueio;
+    }
+    if (flagCancelamento != nil) {
+        
+        queryParams[@"flagCancelamento"] = flagCancelamento;
+    }
+    if (flagPermiteBloqueio != nil) {
+        
+        queryParams[@"flagPermiteBloqueio"] = flagPermiteBloqueio;
+    }
+    if (flagReativar != nil) {
+        
+        queryParams[@"flagReativar"] = flagReativar;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -678,6 +699,12 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param flagRecebeTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite receber transferencia, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
+///  @param flagPermiteBloqueio Par\u00C3\u00A2metro que define se o Status da conta permite receber bloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o Status da conta permite receber desbloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @param flagCancelaConta Par\u00C3\u00A2metro que define se o Status da conta permite receber cancelamento, sendo: 0: Inativo e 1: Ativo. (optional)
+///
 ///  @returns PierPageStatusContaResponse*
 ///
 -(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
@@ -689,6 +716,9 @@ static PierStatusParametrosApi* singletonAPI = nil;
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     flagFazTransferencia: (NSNumber*) flagFazTransferencia
     flagRecebeTransferencia: (NSNumber*) flagRecebeTransferencia
+    flagPermiteBloqueio: (NSNumber*) flagPermiteBloqueio
+    flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
+    flagCancelaConta: (NSNumber*) flagCancelaConta
     completionHandler: (void (^)(PierPageStatusContaResponse* output, NSError* error)) handler {
 
     
@@ -739,6 +769,18 @@ static PierStatusParametrosApi* singletonAPI = nil;
     if (flagRecebeTransferencia != nil) {
         
         queryParams[@"flagRecebeTransferencia"] = flagRecebeTransferencia;
+    }
+    if (flagPermiteBloqueio != nil) {
+        
+        queryParams[@"flagPermiteBloqueio"] = flagPermiteBloqueio;
+    }
+    if (flagPermiteDesbloqueio != nil) {
+        
+        queryParams[@"flagPermiteDesbloqueio"] = flagPermiteDesbloqueio;
+    }
+    if (flagCancelaConta != nil) {
+        
+        queryParams[@"flagCancelaConta"] = flagCancelaConta;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoOportunidade": @"idTipoOportunidade", @"idStatusOportunidade": @"idStatusOportunidade", @"dataCadastro": @"dataCadastro", @"dataAtualizacao": @"dataAtualizacao", @"numeroReceitaFederal": @"numeroReceitaFederal", @"dataInicioVigencia": @"dataInicioVigencia", @"dataFimVigencia": @"dataFimVigencia", @"flagAtivo": @"flagAtivo", @"detalhes": @"detalhes", @"revDate": @"revDate", @"revType": @"revType" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoOportunidade": @"idTipoOportunidade", @"idStatusOportunidade": @"idStatusOportunidade", @"dataCadastro": @"dataCadastro", @"dataAtualizacao": @"dataAtualizacao", @"numeroReceitaFederal": @"numeroReceitaFederal", @"dataInicioVigencia": @"dataInicioVigencia", @"dataFimVigencia": @"dataFimVigencia", @"flagAtivo": @"flagAtivo", @"detalhes": @"detalhes", @"revDate": @"revDate", @"revType": @"revType", @"rev": @"rev" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idTipoOportunidade", @"idStatusOportunidade", @"dataCadastro", @"dataAtualizacao", @"numeroReceitaFederal", @"dataInicioVigencia", @"dataFimVigencia", @"flagAtivo", @"detalhes", @"revDate", @"revType"];
+  NSArray *optionalProperties = @[@"_id", @"idTipoOportunidade", @"idStatusOportunidade", @"dataCadastro", @"dataAtualizacao", @"numeroReceitaFederal", @"dataInicioVigencia", @"dataFimVigencia", @"flagAtivo", @"detalhes", @"revDate", @"revType", @"rev"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -85,7 +85,7 @@
 /// 
 ///
 /// @return PierCartaoResponse*
--(NSNumber*) bloquearUsingPUTWithId: (NSNumber*) _id
+-(NSNumber*) bloquearUsingPOSTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
@@ -104,6 +104,23 @@
 -(NSNumber*) cadastrarAlterarSenhaUsingPOSTWithId: (NSNumber*) _id
     senha: (NSString*) senha
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cancelamento de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o cancelamento de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). Para isso, \u00C3\u00A9 preciso informar qual o motivo deste bloqueio que nada mais \u00C3\u00A9 do que atribuir um novo StatusCartao para ele dentre as op\u00C3\u00A7\u00C3\u00B5es praticadas pelo emissor.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param idStatus C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Novo Status Cart\u00C3\u00A3o.
+/// @param observacao Texto informando uma observa\u00C3\u00A7\u00C3\u00A3o sobre o cancelamento.
+/// 
+///
+/// @return PierCartaoResponse*
+-(NSNumber*) cancelarUsingPOSTWithId: (NSNumber*) _id
+    idStatus: (NSNumber*) idStatus
+    observacao: (NSString*) observacao
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -167,7 +184,7 @@
 /// 
 ///
 /// @return PierCartaoDetalheResponse*
--(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler;
 
 
@@ -193,7 +210,7 @@
 /// 
 ///
 /// @return PierCartaoResponse*
--(NSNumber*) desbloquearUsingPUTWithId: (NSNumber*) _id
+-(NSNumber*) desbloquearUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -315,6 +332,19 @@
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     sequencialCartao: (NSNumber*) sequencialCartao
     completionHandler: (void (^)(PierPageCartaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza a reativa\u00C3\u00A7\u00C3\u00A3o de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o da reativa\u00C3\u00A7\u00C3\u00A3o de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierCartaoResponse*
+-(NSNumber*) reativarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///

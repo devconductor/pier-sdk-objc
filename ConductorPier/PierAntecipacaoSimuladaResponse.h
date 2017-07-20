@@ -21,15 +21,15 @@
 /* C\u00C3\u00B3digo identificador da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo identificador do evento. [optional]
+/* C\u00C3\u00B3digo identificador do evento compra. [optional]
  */
-@property(nonatomic) NSNumber* idEventoExterno;
-/* C\u00C3\u00B3digo identificador do tipo do evento. [optional]
+@property(nonatomic) NSNumber* idCompra;
+/* C\u00C3\u00B3digo identificador do tipo do evento compra. [optional]
  */
 @property(nonatomic) NSNumber* idTipoTransacao;
 /* Quantidade de parcelas antecip\u00C3\u00A1veis. [optional]
  */
-@property(nonatomic) NSNumber* qtdeParcelasAntecipaveis;
+@property(nonatomic) NSNumber* quantidadeParcelasAntecipaveis;
 /* Valor da parcela. [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;

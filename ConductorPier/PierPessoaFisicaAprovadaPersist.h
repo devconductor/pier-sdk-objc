@@ -48,7 +48,7 @@
 @property(nonatomic) NSNumber* idEstadoCivil;
 /* Profiss\u00C3\u00A3o da pessoa fisica [optional]
  */
-@property(nonatomic) NSString* profissao;
+@property(nonatomic) NSNumber* idProfissao;
 /* Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;
@@ -79,6 +79,12 @@
 /* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* nomeEmpresa;
+/* Apresenta o valor da renda compravada [optional]
+ */
+@property(nonatomic) NSNumber* valorRenda;
+/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+ */
+@property(nonatomic) NSString* canalEntrada;
 /* Apresenta os telefones da empresa [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersist>* telefones;

@@ -61,7 +61,7 @@
 /// 
 ///
 /// @return PierStatusContaResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler;
 
 
@@ -74,7 +74,7 @@
 /// 
 ///
 /// @return PierStatusImpressaoResponse*
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler;
 
 
@@ -113,6 +113,9 @@
 /// @param flagCobraTarifa Quando ativa, indica que cart\u00C3\u00B5es que tiverem um idStatusCartao atribu\u00C3\u00ADdo com essa caracter\u00C3\u00ADstica, incluir\u00C3\u00A3o a cobran\u00C3\u00A7a de uma tarifa para a conta de acordo com os valores definidos nos par\u00C3\u00A2metros do emissor.
 /// @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a solicita\u00C3\u00A7\u00C3\u00A3o de uma nova via, sendo: 0: Inativo e 1: Ativo.
 /// @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o desbloqueio, sendo: 0: Inativo e 1: Ativo.
+/// @param flagCancelamento Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o cancelamento, sendo: 0: Inativo e 1: Ativo.
+/// @param flagPermiteBloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o Bloqueio, sendo: 0: Inativo e 1: Ativo.
+/// @param flagReativar Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo.
 /// 
 ///
 /// @return PierPageStatusCartaoResponse*
@@ -127,6 +130,9 @@
     flagCobraTarifa: (NSNumber*) flagCobraTarifa
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
+    flagCancelamento: (NSNumber*) flagCancelamento
+    flagPermiteBloqueio: (NSNumber*) flagPermiteBloqueio
+    flagReativar: (NSNumber*) flagReativar
     completionHandler: (void (^)(PierPageStatusCartaoResponse* output, NSError* error)) handler;
 
 
@@ -144,6 +150,9 @@
 /// @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo.
 /// @param flagFazTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite fazer transferencia, sendo: 0: Inativo e 1: Ativo.
 /// @param flagRecebeTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite receber transferencia, sendo: 0: Inativo e 1: Ativo.
+/// @param flagPermiteBloqueio Par\u00C3\u00A2metro que define se o Status da conta permite receber bloqueio, sendo: 0: Inativo e 1: Ativo.
+/// @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o Status da conta permite receber desbloqueio, sendo: 0: Inativo e 1: Ativo.
+/// @param flagCancelaConta Par\u00C3\u00A2metro que define se o Status da conta permite receber cancelamento, sendo: 0: Inativo e 1: Ativo.
 /// 
 ///
 /// @return PierPageStatusContaResponse*
@@ -156,6 +165,9 @@
     flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
     flagFazTransferencia: (NSNumber*) flagFazTransferencia
     flagRecebeTransferencia: (NSNumber*) flagRecebeTransferencia
+    flagPermiteBloqueio: (NSNumber*) flagPermiteBloqueio
+    flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
+    flagCancelaConta: (NSNumber*) flagCancelaConta
     completionHandler: (void (^)(PierPageStatusContaResponse* output, NSError* error)) handler;
 
 

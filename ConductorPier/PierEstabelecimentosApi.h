@@ -31,7 +31,7 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
@@ -44,7 +44,7 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 

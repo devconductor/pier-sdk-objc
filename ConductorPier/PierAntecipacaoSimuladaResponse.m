@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idAntecipacaoSimulada": @"idAntecipacaoSimulada", @"idConta": @"idConta", @"idEventoExterno": @"idEventoExterno", @"idTipoTransacao": @"idTipoTransacao", @"qtdeParcelasAntecipaveis": @"qtdeParcelasAntecipaveis", @"valorParcela": @"valorParcela", @"dataHoraSimulacao": @"dataHoraSimulacao", @"taxaAntecipacaoAno": @"taxaAntecipacaoAno", @"detalhes": @"detalhes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idAntecipacaoSimulada": @"idAntecipacaoSimulada", @"idConta": @"idConta", @"idCompra": @"idCompra", @"idTipoTransacao": @"idTipoTransacao", @"quantidadeParcelasAntecipaveis": @"quantidadeParcelasAntecipaveis", @"valorParcela": @"valorParcela", @"dataHoraSimulacao": @"dataHoraSimulacao", @"taxaAntecipacaoAno": @"taxaAntecipacaoAno", @"detalhes": @"detalhes" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idAntecipacaoSimulada", @"idConta", @"idEventoExterno", @"idTipoTransacao", @"qtdeParcelasAntecipaveis", @"valorParcela", @"dataHoraSimulacao", @"taxaAntecipacaoAno", @"detalhes"];
+  NSArray *optionalProperties = @[@"idAntecipacaoSimulada", @"idConta", @"idCompra", @"idTipoTransacao", @"quantidadeParcelasAntecipaveis", @"valorParcela", @"dataHoraSimulacao", @"taxaAntecipacaoAno", @"detalhes"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

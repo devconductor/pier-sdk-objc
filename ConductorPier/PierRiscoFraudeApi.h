@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierRiscoFraudeDetalhadoResponse.h"
-#import "PierRiscoFraudeResponsePage.h"
+#import "PierTipoResolucaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -23,59 +23,29 @@
 ///
 ///
 /// Consultar uma transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude
-/// Consulta os detalhes de uma transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude.
+/// Consulta os detalhes de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude.
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
 /// 
 ///
 /// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Listar as transa\u00C3\u00A7\u00C3\u00B5es com resolu\u00C3\u00A7\u00C3\u00A3o de risco fraude pendente
-/// Este recurso permite que sejam listados os riscos de fraudes existentes
+/// Listar os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude
+/// Este recurso permite que sejam listados os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude, cadastrados para um emissor
 ///
-/// @param idConta Id Conta
-/// @param confirmacaoFraude Confirma\u00C3\u00A7\u00C3\u00A3o da fraude
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
-/// @return PierRiscoFraudeResponsePage*
--(NSNumber*) listarUsingGET19WithIdConta: (NSNumber*) idConta
-    confirmacaoFraude: (NSString*) confirmacaoFraude
-    page: (NSNumber*) page
+/// @return PierTipoResolucaoResponse*
+-(NSNumber*) listarTiposResolucaoUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierRiscoFraudeResponsePage* output, NSError* error)) handler;
-
-
-///
-///
-/// Negar autenticidade da transa\u00C3\u00A7\u00C3\u00A3o com risco de fraude
-/// Nega a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
-/// 
-///
-/// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) negarUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Reconhecer a transa\u00C3\u00A7\u00C3\u00A3o com risco de fraude
-/// Confirma a autenticidade da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
-/// 
-///
-/// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) reconhecerUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTipoResolucaoResponse* output, NSError* error)) handler;
 
 
 

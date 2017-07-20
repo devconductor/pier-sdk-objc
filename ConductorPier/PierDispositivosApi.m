@@ -365,13 +365,13 @@ static PierDispositivosApi* singletonAPI = nil;
 ///
 ///  @returns PierDispositivoResponse*
 ///
--(NSNumber*) salvarUsingPOST3WithPersist: (PierDispositivoPersist*) persist
+-(NSNumber*) salvarUsingPOST4WithPersist: (PierDispositivoPersist*) persist
     completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST4`"];
     }
     
 

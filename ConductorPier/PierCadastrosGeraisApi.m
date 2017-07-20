@@ -1,17 +1,13 @@
 #import "PierCadastrosGeraisApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierEnderecoResponse.h"
-#import "PierPessoaDetalheResponse.h"
-#import "PierPessoaResponse.h"
-#import "PierTelefoneResponse.h"
 #import "PierProdutoDetalhesResponse.h"
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierOrigemComercialResponse.h"
 #import "PierAtendimentoClienteResponse.h"
-#import "PierBancoResponse.h"
 #import "PierPageTipoAjusteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
+#import "PierBancoResponse.h"
 #import "PierTipoEnderecoResponse.h"
 #import "PierTipoTelefoneResponse.h"
 #import "PierPageContaDetalheResponse.h"
@@ -19,19 +15,11 @@
 #import "PierHistoricoTelefoneResponse.h"
 #import "PierPageOrigemComercialResponse.h"
 #import "PierPageAtendimentoClienteResponse.h"
-#import "PierPagePessoaDetalheResponse.h"
-#import "PierPagePessoaResponse.h"
 #import "PierPagePortadorResponse.h"
 #import "PierPageProdutoResponse.h"
 #import "PierPageBancoResponse.h"
-#import "PierPageTelefoneResponse.h"
 #import "PierPageTipoEnderecoResponse.h"
 #import "PierPageTipoTelefoneResponse.h"
-#import "PierPageEnderecoResponse.h"
-#import "PierPessoaFisicaAprovadaPersist.h"
-#import "PierPessoaFisicaAprovadaResponse.h"
-#import "PierPessoaJuridicaAprovadaResponse.h"
-#import "PierPessoaJuridicaAprovadaPersist.h"
 
 
 @interface PierCadastrosGeraisApi ()
@@ -99,588 +87,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 #pragma mark - Api Methods
-
-///
-/// Atualiza os dados de um determinado Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um ou mais registros ligados a um determinado Endere\u00C3\u00A7o.
-///  @param _id id 
-///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
-///
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
-///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' (optional)
-///
-///  @param logradouro Apresenta o nome do Logradouro (optional)
-///
-///  @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o (optional)
-///
-///  @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o (optional)
-///
-///  @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o (optional)
-///
-///  @param bairro Apresenta nome do bairro (optional)
-///
-///  @param cidade Apresenta nome da cidade (optional)
-///
-///  @param uf Apresenta sigla da Unidade Federativa (optional)
-///
-///  @param pais Apresenta nome do Pais (optional)
-///
-///  @returns PierEnderecoResponse*
-///
--(NSNumber*) alterarUsingPUT1WithId: (NSNumber*) _id
-    idPessoa: (NSNumber*) idPessoa
-    idTipoEndereco: (NSNumber*) idTipoEndereco
-    cep: (NSString*) cep
-    logradouro: (NSString*) logradouro
-    numero: (NSNumber*) numero
-    complemento: (NSString*) complemento
-    pontoReferencia: (NSString*) pontoReferencia
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT1`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (idTipoEndereco != nil) {
-        
-        queryParams[@"idTipoEndereco"] = idTipoEndereco;
-    }
-    if (cep != nil) {
-        
-        queryParams[@"cep"] = cep;
-    }
-    if (logradouro != nil) {
-        
-        queryParams[@"logradouro"] = logradouro;
-    }
-    if (numero != nil) {
-        
-        queryParams[@"numero"] = numero;
-    }
-    if (complemento != nil) {
-        
-        queryParams[@"complemento"] = complemento;
-    }
-    if (pontoReferencia != nil) {
-        
-        queryParams[@"pontoReferencia"] = pontoReferencia;
-    }
-    if (bairro != nil) {
-        
-        queryParams[@"bairro"] = bairro;
-    }
-    if (cidade != nil) {
-        
-        queryParams[@"cidade"] = cidade;
-    }
-    if (uf != nil) {
-        
-        queryParams[@"uf"] = uf;
-    }
-    if (pais != nil) {
-        
-        queryParams[@"pais"] = pais;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierEnderecoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierEnderecoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Atualiza os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor os detalhes de uma determinada Pessoa.
-///  @param _id ID da Pessoa 
-///
-///  @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica (optional)
-///
-///  @param idEstadoCivil Id Estado civil da pessoa fisica (optional)
-///
-///  @param profissao Profiss\u00C3\u00A3o da pessoa fisica (optional)
-///
-///  @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica (optional)
-///
-///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
-///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
-///
-///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
-///
-///  @param email Email da pessoa fisica (optional)
-///
-///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
-///
-///  @returns PierPessoaDetalheResponse*
-///
--(NSNumber*) alterarUsingPUT4WithId: (NSNumber*) _id
-    nomeMae: (NSString*) nomeMae
-    idEstadoCivil: (NSNumber*) idEstadoCivil
-    profissao: (NSString*) profissao
-    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
-    idNacionalidade: (NSNumber*) idNacionalidade
-    numeroAgencia: (NSNumber*) numeroAgencia
-    numeroContaCorrente: (NSString*) numeroContaCorrente
-    email: (NSString*) email
-    nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT4`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas-detalhes/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (nomeMae != nil) {
-        
-        queryParams[@"nomeMae"] = nomeMae;
-    }
-    if (idEstadoCivil != nil) {
-        
-        queryParams[@"idEstadoCivil"] = idEstadoCivil;
-    }
-    if (profissao != nil) {
-        
-        queryParams[@"profissao"] = profissao;
-    }
-    if (idNaturezaOcupacao != nil) {
-        
-        queryParams[@"idNaturezaOcupacao"] = idNaturezaOcupacao;
-    }
-    if (idNacionalidade != nil) {
-        
-        queryParams[@"idNacionalidade"] = idNacionalidade;
-    }
-    if (numeroAgencia != nil) {
-        
-        queryParams[@"numeroAgencia"] = numeroAgencia;
-    }
-    if (numeroContaCorrente != nil) {
-        
-        queryParams[@"numeroContaCorrente"] = numeroContaCorrente;
-    }
-    if (email != nil) {
-        
-        queryParams[@"email"] = email;
-    }
-    if (nomeEmpresa != nil) {
-        
-        queryParams[@"nomeEmpresa"] = nomeEmpresa;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaDetalheResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaDetalheResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Atualiza os dados de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
-///  @param _id ID da Pessoa 
-///
-///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
-///
-///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
-///
-///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
-///
-///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
-///
-///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. (optional)
-///
-///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
-///
-///  @param numeroIdentidade N\u00C3\u00BAmero da Identidade. (optional)
-///
-///  @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade. (optional)
-///
-///  @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade (optional)
-///
-///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade. (optional)
-///
-///  @returns PierPessoaResponse*
-///
--(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
-    nome: (NSString*) nome
-    tipo: (NSString*) tipo
-    cpf: (NSString*) cpf
-    cnpj: (NSString*) cnpj
-    dataNascimento: (NSString*) dataNascimento
-    sexo: (NSString*) sexo
-    numeroIdentidade: (NSString*) numeroIdentidade
-    orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
-    unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT5`"];
-    }
-    
-    // verify the required parameter 'nome' is set
-    if (nome == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `alterarUsingPUT5`"];
-    }
-    
-    // verify the required parameter 'tipo' is set
-    if (tipo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `alterarUsingPUT5`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
-    if (tipo != nil) {
-        
-        queryParams[@"tipo"] = tipo;
-    }
-    if (cpf != nil) {
-        
-        queryParams[@"cpf"] = cpf;
-    }
-    if (cnpj != nil) {
-        
-        queryParams[@"cnpj"] = cnpj;
-    }
-    if (dataNascimento != nil) {
-        
-        queryParams[@"dataNascimento"] = dataNascimento;
-    }
-    if (sexo != nil) {
-        
-        queryParams[@"sexo"] = sexo;
-    }
-    if (numeroIdentidade != nil) {
-        
-        queryParams[@"numeroIdentidade"] = numeroIdentidade;
-    }
-    if (orgaoExpedidorIdentidade != nil) {
-        
-        queryParams[@"orgaoExpedidorIdentidade"] = orgaoExpedidorIdentidade;
-    }
-    if (unidadeFederativaIdentidade != nil) {
-        
-        queryParams[@"unidadeFederativaIdentidade"] = unidadeFederativaIdentidade;
-    }
-    if (dataEmissaoIdentidade != nil) {
-        
-        queryParams[@"dataEmissaoIdentidade"] = dataEmissaoIdentidade;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o de um determinado Telefone
-/// Este m\u00C3\u00A9todo permite que seja alterado um determinado Telefone na base de dados do Emissor.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
-///
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
-///
-///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
-///
-///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
-///
-///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
-///
-///  @returns PierTelefoneResponse*
-///
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
-    idTipoTelefone: (NSNumber*) idTipoTelefone
-    ddd: (NSString*) ddd
-    telefone: (NSString*) telefone
-    ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT6`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (idTipoTelefone != nil) {
-        
-        queryParams[@"idTipoTelefone"] = idTipoTelefone;
-    }
-    if (ddd != nil) {
-        
-        queryParams[@"ddd"] = ddd;
-    }
-    if (telefone != nil) {
-        
-        queryParams[@"telefone"] = telefone;
-    }
-    if (ramal != nil) {
-        
-        queryParams[@"ramal"] = ramal;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierTelefoneResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierTelefoneResponse*)data, error);
-                           }
-          ];
-}
 
 ///
 /// Ativa o par\u00C3\u00A2metro uso exterior para o produto
@@ -1041,13 +447,13 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @returns PierAtendimentoClienteResponse*
 ///
--(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
     }
     
 
@@ -1118,185 +524,19 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado Banco
-/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id). 
-///
-///  @returns PierBancoResponse*
-///
--(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bancos/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierBancoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierBancoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Apresenta os dados de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
-///  @param _id ID da Pessoa 
-///
-///  @returns PierPessoaResponse*
-///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Apresenta os dados de um determinado Produto
 /// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id) 
 ///
 ///  @returns PierProdutoDetalhesResponse*
 ///
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
     }
     
 
@@ -1367,89 +607,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado Telefone
-/// Este m\u00C3\u00A9todo permite consultar um determinado Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
-///
-///  @returns PierTelefoneResponse*
-///
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierTelefoneResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierTelefoneResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Lista os tipos de ajustes do emissor 
 /// Este recurso permite que sejam listados os tipos de ajustes existentes na base de dados do emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
@@ -1462,7 +619,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoAjusteResponse*
 ///
--(NSNumber*) consultarUsingGET17WithPage: (NSNumber*) page
+-(NSNumber*) consultarUsingGET18WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
@@ -1564,7 +721,7 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoBoletoResponse*
 ///
--(NSNumber*) consultarUsingGET18WithPage: (NSNumber*) page
+-(NSNumber*) consultarUsingGET19WithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     descricao: (NSString*) descricao
@@ -1657,19 +814,102 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
+/// Apresenta os dados de um determinado Banco
+/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id). 
+///
+///  @returns PierBancoResponse*
+///
+-(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET2`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bancos/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierBancoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierBancoResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Apresenta os dados de um determinado Tipo de Endere\u00C3\u00A7o
 /// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) 
 ///
 ///  @returns PierTipoEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
     }
     
 
@@ -1746,13 +986,13 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
     }
     
 
@@ -1818,172 +1058,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               responseType: @"PierTipoTelefoneResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierTipoTelefoneResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Apresenta os dados de um determinado Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite consultar um determinado Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). 
-///
-///  @returns PierEnderecoResponse*
-///
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierEnderecoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierEnderecoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Apresenta os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite a consulta dos detalhes de uma Pessoa existentes na base de dados do Emissor.
-///  @param _id ID da Pessoa 
-///
-///  @returns PierPessoaDetalheResponse*
-///
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas-detalhes/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaDetalheResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaDetalheResponse*)data, error);
                            }
           ];
 }
@@ -2523,6 +1597,10 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param status Status da origem comercial (optional)
 ///
+///  @param idEstabelecimento C\u00C3\u00B3digo identificador do estabelecimento (optional)
+///
+///  @param idProduto C\u00C3\u00B3digo identificador do produto (optional)
+///
 ///  @returns PierPageOrigemComercialResponse*
 ///
 -(NSNumber*) listarOrigensComerciaisUsingGETWithPage: (NSNumber*) page
@@ -2530,6 +1608,8 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     status: (NSNumber*) status
+    idEstabelecimento: (NSNumber*) idEstabelecimento
+    idProduto: (NSNumber*) idProduto
     completionHandler: (void (^)(PierPageOrigemComercialResponse* output, NSError* error)) handler {
 
     
@@ -2564,6 +1644,14 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
     if (status != nil) {
         
         queryParams[@"status"] = status;
+    }
+    if (idEstabelecimento != nil) {
+        
+        queryParams[@"idEstabelecimento"] = idEstabelecimento;
+    }
+    if (idProduto != nil) {
+        
+        queryParams[@"idProduto"] = idProduto;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -2613,6 +1701,92 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               responseType: @"PierPageOrigemComercialResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPageOrigemComercialResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista os Parentescos
+/// Este m\u00C3\u00A9todo permite que sejam listados parentescos na base de dados do Emissor.
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @returns PierPageCampoCodificadoDescricaoResponse*
+///
+-(NSNumber*) listarParentescosUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageCampoCodificadoDescricaoResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/parentescos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageCampoCodificadoDescricaoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageCampoCodificadoDescricaoResponse*)data, error);
                            }
           ];
 }
@@ -2813,325 +1987,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               responseType: @"PierPageAtendimentoClienteResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPageAtendimentoClienteResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Lista os Detalhes das Pessoas cadastradas no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listadas od detalhes das Pessoas existentes na base de dados do Emissor.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param idPessoa C\u00C3\u00B3digo identificador da pessoa (optional)
-///
-///  @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica (optional)
-///
-///  @param idEstadoCivil Id Estado civil da pessoa fisica (optional)
-///
-///  @param profissao Profiss\u00C3\u00A3o da pessoa fisica (optional)
-///
-///  @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica (optional)
-///
-///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
-///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
-///
-///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
-///
-///  @param email Email da pessoa fisica (optional)
-///
-///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
-///
-///  @returns PierPagePessoaDetalheResponse*
-///
--(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    idPessoa: (NSNumber*) idPessoa
-    nomeMae: (NSString*) nomeMae
-    idEstadoCivil: (NSNumber*) idEstadoCivil
-    profissao: (NSString*) profissao
-    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
-    idNacionalidade: (NSNumber*) idNacionalidade
-    numeroAgencia: (NSNumber*) numeroAgencia
-    numeroContaCorrente: (NSString*) numeroContaCorrente
-    email: (NSString*) email
-    nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPagePessoaDetalheResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas-detalhes"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (nomeMae != nil) {
-        
-        queryParams[@"nomeMae"] = nomeMae;
-    }
-    if (idEstadoCivil != nil) {
-        
-        queryParams[@"idEstadoCivil"] = idEstadoCivil;
-    }
-    if (profissao != nil) {
-        
-        queryParams[@"profissao"] = profissao;
-    }
-    if (idNaturezaOcupacao != nil) {
-        
-        queryParams[@"idNaturezaOcupacao"] = idNaturezaOcupacao;
-    }
-    if (idNacionalidade != nil) {
-        
-        queryParams[@"idNacionalidade"] = idNacionalidade;
-    }
-    if (numeroAgencia != nil) {
-        
-        queryParams[@"numeroAgencia"] = numeroAgencia;
-    }
-    if (numeroContaCorrente != nil) {
-        
-        queryParams[@"numeroContaCorrente"] = numeroContaCorrente;
-    }
-    if (email != nil) {
-        
-        queryParams[@"email"] = email;
-    }
-    if (nomeEmpresa != nil) {
-        
-        queryParams[@"nomeEmpresa"] = nomeEmpresa;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPagePessoaDetalheResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePessoaDetalheResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Lista as Pessoas cadastradas no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). (optional)
-///
-///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. (optional)
-///
-///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). (optional)
-///
-///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
-///
-///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
-///
-///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. (optional)
-///
-///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
-///
-///  @param numeroIdentidade N\u00C3\u00BAmero da Identidade (optional)
-///
-///  @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do RG. (optional)
-///
-///  @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade (optional)
-///
-///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd (optional)
-///
-///  @returns PierPagePessoaResponse*
-///
--(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    nome: (NSString*) nome
-    tipo: (NSString*) tipo
-    cpf: (NSString*) cpf
-    cnpj: (NSString*) cnpj
-    dataNascimento: (NSString*) dataNascimento
-    sexo: (NSString*) sexo
-    numeroIdentidade: (NSString*) numeroIdentidade
-    orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
-    unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPagePessoaResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
-    if (tipo != nil) {
-        
-        queryParams[@"tipo"] = tipo;
-    }
-    if (cpf != nil) {
-        
-        queryParams[@"cpf"] = cpf;
-    }
-    if (cnpj != nil) {
-        
-        queryParams[@"cnpj"] = cnpj;
-    }
-    if (dataNascimento != nil) {
-        
-        queryParams[@"dataNascimento"] = dataNascimento;
-    }
-    if (sexo != nil) {
-        
-        queryParams[@"sexo"] = sexo;
-    }
-    if (numeroIdentidade != nil) {
-        
-        queryParams[@"numeroIdentidade"] = numeroIdentidade;
-    }
-    if (orgaoExpedidorIdentidade != nil) {
-        
-        queryParams[@"orgaoExpedidorIdentidade"] = orgaoExpedidorIdentidade;
-    }
-    if (unidadeFederativaIdentidade != nil) {
-        
-        queryParams[@"unidadeFederativaIdentidade"] = unidadeFederativaIdentidade;
-    }
-    if (dataEmissaoIdentidade != nil) {
-        
-        queryParams[@"dataEmissaoIdentidade"] = dataEmissaoIdentidade;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPagePessoaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePessoaResponse*)data, error);
                            }
           ];
 }
@@ -3486,141 +2341,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os Telefones cadastrados no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). (optional)
-///
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
-///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence. (optional)
-///
-///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
-///
-///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
-///
-///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
-///
-///  @param status Apresenta o Status do Telefone, onde: '0': Inativo e '1': Ativo (optional)
-///
-///  @returns PierPageTelefoneResponse*
-///
--(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    idTipoTelefone: (NSNumber*) idTipoTelefone
-    idPessoa: (NSNumber*) idPessoa
-    ddd: (NSString*) ddd
-    telefone: (NSString*) telefone
-    ramal: (NSString*) ramal
-    status: (NSNumber*) status
-    completionHandler: (void (^)(PierPageTelefoneResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (idTipoTelefone != nil) {
-        
-        queryParams[@"idTipoTelefone"] = idTipoTelefone;
-    }
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (ddd != nil) {
-        
-        queryParams[@"ddd"] = ddd;
-    }
-    if (telefone != nil) {
-        
-        queryParams[@"telefone"] = telefone;
-    }
-    if (ramal != nil) {
-        
-        queryParams[@"ramal"] = ramal;
-    }
-    if (status != nil) {
-        
-        queryParams[@"status"] = status;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageTelefoneResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTelefoneResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Lista as op\u00C3\u00B5es de Tipos de Endere\u00C3\u00A7os do Emissor 
 /// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
@@ -3821,350 +2541,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os Endere\u00C3\u00A7os cadastrados para o Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). (optional)
-///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
-///
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
-///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) (optional)
-///
-///  @param logradouro Apresenta o nome do Logradouro (optional)
-///
-///  @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o (optional)
-///
-///  @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o (optional)
-///
-///  @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o (optional)
-///
-///  @param bairro Apresenta nome do bairro (optional)
-///
-///  @param cidade Apresenta nome da cidade (optional)
-///
-///  @param uf Apresenta sigla da Unidade Federativa (optional)
-///
-///  @param pais Apresenta nome do Pais (optional)
-///
-///  @param dataInclusao Apresenta a data em que fora cadastrado o Endere\u00C3\u00A7o (optional)
-///
-///  @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao (optional)
-///
-///  @returns PierPageEnderecoResponse*
-///
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    idPessoa: (NSNumber*) idPessoa
-    idTipoEndereco: (NSNumber*) idTipoEndereco
-    cep: (NSString*) cep
-    logradouro: (NSString*) logradouro
-    numero: (NSNumber*) numero
-    complemento: (NSString*) complemento
-    pontoReferencia: (NSString*) pontoReferencia
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    dataInclusao: (NSString*) dataInclusao
-    dataUltimaAtualizacao: (NSString*) dataUltimaAtualizacao
-    completionHandler: (void (^)(PierPageEnderecoResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (idTipoEndereco != nil) {
-        
-        queryParams[@"idTipoEndereco"] = idTipoEndereco;
-    }
-    if (cep != nil) {
-        
-        queryParams[@"cep"] = cep;
-    }
-    if (logradouro != nil) {
-        
-        queryParams[@"logradouro"] = logradouro;
-    }
-    if (numero != nil) {
-        
-        queryParams[@"numero"] = numero;
-    }
-    if (complemento != nil) {
-        
-        queryParams[@"complemento"] = complemento;
-    }
-    if (pontoReferencia != nil) {
-        
-        queryParams[@"pontoReferencia"] = pontoReferencia;
-    }
-    if (bairro != nil) {
-        
-        queryParams[@"bairro"] = bairro;
-    }
-    if (cidade != nil) {
-        
-        queryParams[@"cidade"] = cidade;
-    }
-    if (uf != nil) {
-        
-        queryParams[@"uf"] = uf;
-    }
-    if (pais != nil) {
-        
-        queryParams[@"pais"] = pais;
-    }
-    if (dataInclusao != nil) {
-        
-        queryParams[@"dataInclusao"] = dataInclusao;
-    }
-    if (dataUltimaAtualizacao != nil) {
-        
-        queryParams[@"dataUltimaAtualizacao"] = dataUltimaAtualizacao;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageEnderecoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageEnderecoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Cadastro de Conta e Pessoa Fisica
-/// Permite realizar o cadastro de uma Conta para um cliente do tipo Pessoa F\u00C3\u00ADsica, recebendo nesta opera\u00C3\u00A7\u00C3\u00A3o todos os dados cadastrais que se fazem necess\u00C3\u00A1rios para isso. Uma vez criado, poder\u00C3\u00A1 ser acionado o m\u00C3\u00A9todo de 'Gera\u00C3\u00A7\u00C3\u00A3o de Cart\u00C3\u00A3o' para o cliente e seus adicionais.
-///  @param pessoaPersist pessoaPersist 
-///
-///  @returns PierPessoaFisicaAprovadaResponse*
-///
--(NSNumber*) salvarPessoaFisicaAprovadaUsingPOSTWithPessoaPersist: (PierPessoaFisicaAprovadaPersist*) pessoaPersist
-    completionHandler: (void (^)(PierPessoaFisicaAprovadaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'pessoaPersist' is set
-    if (pessoaPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pessoaPersist` when calling `salvarPessoaFisicaAprovadaUsingPOST`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/clientes-pessoas-fisicas"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = pessoaPersist;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaFisicaAprovadaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaFisicaAprovadaResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Cadastro de Conta e Pessoa Jur\u00C3\u00ADdica
-/// Cadastro de Conta e Pessoa Jur\u00C3\u00ADdica Permite realizar o cadastro de uma Conta para um cliente do tipo Pessoa Jur\u00C3\u00ADdica, recebendo nesta opera\u00C3\u00A7\u00C3\u00A3o todos os dados cadastrais que se fazem necess\u00C3\u00A1rios para isso, inclu\u00C3\u00ADndo o registro de cada um dos s\u00C3\u00B3cios. Uma vez criado, poder\u00C3\u00A1 ser acionado o m\u00C3\u00A9todo de 'Gera\u00C3\u00A7\u00C3\u00A3o de Cart\u00C3\u00A3o' para o cliente e cada um dos s\u00C3\u00B3cios vinculados.
-///  @param pessoaPersist pessoaPersist 
-///
-///  @returns PierPessoaJuridicaAprovadaResponse*
-///
--(NSNumber*) salvarPessoaJuridicaAprovadaUsingPOSTWithPessoaPersist: (PierPessoaJuridicaAprovadaPersist*) pessoaPersist
-    completionHandler: (void (^)(PierPessoaJuridicaAprovadaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'pessoaPersist' is set
-    if (pessoaPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pessoaPersist` when calling `salvarPessoaJuridicaAprovadaUsingPOST`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/clientes-pessoas-juridicas"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = pessoaPersist;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaJuridicaAprovadaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaJuridicaAprovadaResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Cadastro um novo Atendimento do tipo Gen\u00C3\u00A9rico para uma Conta
 /// 
 ///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o Atendimento est\u00C3\u00A1 associado (optional)
@@ -4181,13 +2557,13 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
 ///
 ///  @param dataHoraInicioAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
-///  @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///  @param dataHoraFimAtendimento Apresenta a data e hora em que o Atendimento foi finalizado. Quando utilizado, serve para medir a performance dos Atendimentos no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
 ///  @param flagFilaFraude Flag fila fraude (optional)
 ///
 ///  @returns PierAtendimentoClienteResponse*
 ///
--(NSNumber*) salvarUsingPOST1WithIdConta: (NSNumber*) idConta
+-(NSNumber*) salvarUsingPOST2WithIdConta: (NSNumber*) idConta
     conteudoAtendimento: (NSString*) conteudoAtendimento
     detalhesAtendimento: (NSString*) detalhesAtendimento
     nomeAtendente: (NSString*) nomeAtendente
@@ -4295,556 +2671,6 @@ static PierCadastrosGeraisApi* singletonAPI = nil;
                               responseType: @"PierAtendimentoClienteResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierAtendimentoClienteResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Realiza o cadastro de um novo Telefone
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
-///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence. (optional)
-///
-///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
-///
-///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
-///
-///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
-///
-///  @returns PierTelefoneResponse*
-///
--(NSNumber*) salvarUsingPOST10WithIdTipoTelefone: (NSNumber*) idTipoTelefone
-    idPessoa: (NSNumber*) idPessoa
-    ddd: (NSString*) ddd
-    telefone: (NSString*) telefone
-    ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/telefones"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idTipoTelefone != nil) {
-        
-        queryParams[@"idTipoTelefone"] = idTipoTelefone;
-    }
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (ddd != nil) {
-        
-        queryParams[@"ddd"] = ddd;
-    }
-    if (telefone != nil) {
-        
-        queryParams[@"telefone"] = telefone;
-    }
-    if (ramal != nil) {
-        
-        queryParams[@"ramal"] = ramal;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierTelefoneResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierTelefoneResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Realiza o cadastro de um novo Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Endere\u00C3\u00A7o na base de dados do Emissor.
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
-///
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
-///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' (optional)
-///
-///  @param logradouro Apresenta o nome do Logradouro (optional)
-///
-///  @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o (optional)
-///
-///  @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o (optional)
-///
-///  @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o (optional)
-///
-///  @param bairro Apresenta nome do bairro (optional)
-///
-///  @param cidade Apresenta nome da cidade (optional)
-///
-///  @param uf Apresenta sigla da Unidade Federativa (optional)
-///
-///  @param pais Apresenta nome do Pais (optional)
-///
-///  @returns PierEnderecoResponse*
-///
--(NSNumber*) salvarUsingPOST4WithIdPessoa: (NSNumber*) idPessoa
-    idTipoEndereco: (NSNumber*) idTipoEndereco
-    cep: (NSString*) cep
-    logradouro: (NSString*) logradouro
-    numero: (NSNumber*) numero
-    complemento: (NSString*) complemento
-    pontoReferencia: (NSString*) pontoReferencia
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (idTipoEndereco != nil) {
-        
-        queryParams[@"idTipoEndereco"] = idTipoEndereco;
-    }
-    if (cep != nil) {
-        
-        queryParams[@"cep"] = cep;
-    }
-    if (logradouro != nil) {
-        
-        queryParams[@"logradouro"] = logradouro;
-    }
-    if (numero != nil) {
-        
-        queryParams[@"numero"] = numero;
-    }
-    if (complemento != nil) {
-        
-        queryParams[@"complemento"] = complemento;
-    }
-    if (pontoReferencia != nil) {
-        
-        queryParams[@"pontoReferencia"] = pontoReferencia;
-    }
-    if (bairro != nil) {
-        
-        queryParams[@"bairro"] = bairro;
-    }
-    if (cidade != nil) {
-        
-        queryParams[@"cidade"] = cidade;
-    }
-    if (uf != nil) {
-        
-        queryParams[@"uf"] = uf;
-    }
-    if (pais != nil) {
-        
-        queryParams[@"pais"] = pais;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierEnderecoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierEnderecoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Salvar os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
-///  @param idPessoa Apresenta o c\u00C3\u00B3digo identificador da pessoa (optional)
-///
-///  @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica (optional)
-///
-///  @param idEstadoCivil Id Estado civil da pessoa fisica (optional)
-///
-///  @param profissao Profiss\u00C3\u00A3o da pessoa fisica (optional)
-///
-///  @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica (optional)
-///
-///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
-///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
-///
-///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
-///
-///  @param email Email da pessoa fisica (optional)
-///
-///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
-///
-///  @returns PierPessoaDetalheResponse*
-///
--(NSNumber*) salvarUsingPOST7WithIdPessoa: (NSNumber*) idPessoa
-    nomeMae: (NSString*) nomeMae
-    idEstadoCivil: (NSNumber*) idEstadoCivil
-    profissao: (NSString*) profissao
-    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
-    idNacionalidade: (NSNumber*) idNacionalidade
-    numeroAgencia: (NSNumber*) numeroAgencia
-    numeroContaCorrente: (NSString*) numeroContaCorrente
-    email: (NSString*) email
-    nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas-detalhes"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idPessoa != nil) {
-        
-        queryParams[@"idPessoa"] = idPessoa;
-    }
-    if (nomeMae != nil) {
-        
-        queryParams[@"nomeMae"] = nomeMae;
-    }
-    if (idEstadoCivil != nil) {
-        
-        queryParams[@"idEstadoCivil"] = idEstadoCivil;
-    }
-    if (profissao != nil) {
-        
-        queryParams[@"profissao"] = profissao;
-    }
-    if (idNaturezaOcupacao != nil) {
-        
-        queryParams[@"idNaturezaOcupacao"] = idNaturezaOcupacao;
-    }
-    if (idNacionalidade != nil) {
-        
-        queryParams[@"idNacionalidade"] = idNacionalidade;
-    }
-    if (numeroAgencia != nil) {
-        
-        queryParams[@"numeroAgencia"] = numeroAgencia;
-    }
-    if (numeroContaCorrente != nil) {
-        
-        queryParams[@"numeroContaCorrente"] = numeroContaCorrente;
-    }
-    if (email != nil) {
-        
-        queryParams[@"email"] = email;
-    }
-    if (nomeEmpresa != nil) {
-        
-        queryParams[@"nomeEmpresa"] = nomeEmpresa;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaDetalheResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaDetalheResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Realiza o cadastro de um nova Pessoa
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova Pessoa na base de dados do Emissor.
-///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
-///
-///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
-///
-///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
-///
-///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
-///
-///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. (optional)
-///
-///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
-///
-///  @param numeroIdentidade N\u00C3\u00BAmero da Identidade. (optional)
-///
-///  @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade. (optional)
-///
-///  @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade (optional)
-///
-///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade. (optional)
-///
-///  @returns PierPessoaResponse*
-///
--(NSNumber*) salvarUsingPOST8WithNome: (NSString*) nome
-    tipo: (NSString*) tipo
-    cpf: (NSString*) cpf
-    cnpj: (NSString*) cnpj
-    dataNascimento: (NSString*) dataNascimento
-    sexo: (NSString*) sexo
-    numeroIdentidade: (NSString*) numeroIdentidade
-    orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
-    unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'nome' is set
-    if (nome == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `salvarUsingPOST8`"];
-    }
-    
-    // verify the required parameter 'tipo' is set
-    if (tipo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `salvarUsingPOST8`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/pessoas"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
-    if (tipo != nil) {
-        
-        queryParams[@"tipo"] = tipo;
-    }
-    if (cpf != nil) {
-        
-        queryParams[@"cpf"] = cpf;
-    }
-    if (cnpj != nil) {
-        
-        queryParams[@"cnpj"] = cnpj;
-    }
-    if (dataNascimento != nil) {
-        
-        queryParams[@"dataNascimento"] = dataNascimento;
-    }
-    if (sexo != nil) {
-        
-        queryParams[@"sexo"] = sexo;
-    }
-    if (numeroIdentidade != nil) {
-        
-        queryParams[@"numeroIdentidade"] = numeroIdentidade;
-    }
-    if (orgaoExpedidorIdentidade != nil) {
-        
-        queryParams[@"orgaoExpedidorIdentidade"] = orgaoExpedidorIdentidade;
-    }
-    if (unidadeFederativaIdentidade != nil) {
-        
-        queryParams[@"unidadeFederativaIdentidade"] = unidadeFederativaIdentidade;
-    }
-    if (dataEmissaoIdentidade != nil) {
-        
-        queryParams[@"dataEmissaoIdentidade"] = dataEmissaoIdentidade;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPessoaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPessoaResponse*)data, error);
                            }
           ];
 }

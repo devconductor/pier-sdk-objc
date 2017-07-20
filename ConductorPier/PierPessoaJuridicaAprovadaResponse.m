@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"razaoSocial": @"razaoSocial", @"nomeFantasia": @"nomeFantasia", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"dataAberturaEmpresa": @"dataAberturaEmpresa", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"telefones": @"telefones", @"enderecos": @"enderecos", @"socios": @"socios" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"razaoSocial": @"razaoSocial", @"nomeFantasia": @"nomeFantasia", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"dataAberturaEmpresa": @"dataAberturaEmpresa", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"idConta": @"idConta", @"idProposta": @"idProposta", @"canalEntrada": @"canalEntrada", @"telefones": @"telefones", @"enderecos": @"enderecos", @"socios": @"socios" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"razaoSocial", @"nomeFantasia", @"cnpj", @"inscricaoEstadual", @"dataAberturaEmpresa", @"idOrigemComercial", @"idProduto", @"numeroAgencia", @"numeroContaCorrente", @"email", @"diaVencimento", @"nomeImpresso", @"telefones", @"enderecos", @"socios"];
+  NSArray *optionalProperties = @[@"_id", @"razaoSocial", @"nomeFantasia", @"cnpj", @"inscricaoEstadual", @"dataAberturaEmpresa", @"idOrigemComercial", @"idProduto", @"numeroAgencia", @"numeroContaCorrente", @"email", @"diaVencimento", @"nomeImpresso", @"idConta", @"idProposta", @"canalEntrada", @"telefones", @"enderecos", @"socios"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

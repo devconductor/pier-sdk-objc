@@ -102,7 +102,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -115,7 +115,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -240,25 +240,25 @@
 /// Lista as oportunidades
 /// Este recurso permite listar as oportunidades.
 ///
+/// @param dataInicioVigencia Data de in\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade
 /// @param dataCadastro Data do cadastro da oportunidade
 /// @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade
 /// @param numeroReceitaFederal N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade
-/// @param dataInicioVigencia Data de in\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade
 /// @param dataFimVigencia Data do fim da vig\u00C3\u00AAncia da oportunidade
 /// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa
 /// 
 ///
 /// @return PierPageOportunidadeResponse*
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET13WithDataInicioVigencia: (NSString*) dataInicioVigencia
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
     dataCadastro: (NSString*) dataCadastro
     dataAtualizacao: (NSString*) dataAtualizacao
     numeroReceitaFederal: (NSString*) numeroReceitaFederal
-    dataInicioVigencia: (NSString*) dataInicioVigencia
     dataFimVigencia: (NSString*) dataFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
     completionHandler: (void (^)(PierPageOportunidadeResponse* output, NSError* error)) handler;
@@ -307,20 +307,20 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) salvarUsingPOST11WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST13WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Cadastra as oportunidade
+/// Cadastra as oportunidades
 /// Esse recurso permite cadastrar oportunidades.
 ///
 /// @param persist persist
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) salvarUsingPOST6WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 

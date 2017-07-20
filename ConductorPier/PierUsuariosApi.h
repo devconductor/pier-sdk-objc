@@ -24,7 +24,7 @@
 +(PierUsuariosApi*) sharedAPI;
 ///
 ///
-/// Alterar senha do usu\u00C3\u00A1rio
+/// Alterar senha do usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha do usu\u00C3\u00A1rio.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -41,7 +41,7 @@
 
 ///
 ///
-/// Altera os usu\u00C3\u00A1rios cadastrados
+/// Altera os usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -56,7 +56,7 @@
 
 ///
 ///
-/// Ativa os usu\u00C3\u00A1rios cadastrados
+/// Ativa os usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo realiza a ativa\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -69,20 +69,20 @@
 
 ///
 ///
-/// Apresenta os dados de um determinado Usu\u00C3\u00A1rio
+/// Apresenta os dados de um determinado Usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado Usu\u00C3\u00A1rio a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Desativa os usu\u00C3\u00A1rios cadastrados
+/// Desativa os usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo realiza a desativa\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -95,7 +95,7 @@
 
 ///
 ///
-/// Lista os Usu\u00C3\u00A1rios cadastrados
+/// Lista os Usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo permite que sejam listados os usu\u00C3\u00A1rios existentes na base do PIER.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
@@ -118,7 +118,7 @@
 
 ///
 ///
-/// Recuperar senha do usu\u00C3\u00A1rio
+/// Recuperar senha do usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Esse recurso permite recuperar a senha do usu\u00C3\u00A1rio.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -131,20 +131,20 @@
 
 ///
 ///
-/// Cadastra Usu\u00C3\u00A1rio
+/// Cadastra Usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Esse recurso permite cadastrar usu\u00C3\u00A1rios.
 ///
 /// @param persist persist
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) salvarUsingPOST13WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST15WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Validar a senha do usu\u00C3\u00A1rio
+/// Validar a senha do usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo permite validar a senha do usu\u00C3\u00A1rio).
 ///
 /// @param senha Senha do usu\u00C3\u00A1rio

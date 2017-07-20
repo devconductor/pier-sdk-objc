@@ -44,7 +44,7 @@
 /// 
 ///
 /// @return PierTransacaoOnUsResponse*
--(NSNumber*) cancelarUsingPOSTWithCancelamentoRequest: (PierCancelamentoTransacaoOnUsRequest*) cancelamentoRequest
+-(NSNumber*) cancelarUsingPOST2WithCancelamentoRequest: (PierCancelamentoTransacaoOnUsRequest*) cancelamentoRequest
     completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
 
 
@@ -62,8 +62,8 @@
 
 ///
 ///
-/// Simula planos de pagamento
-/// Este m\u00C3\u00A9todo permite que seja simulada um plano de pagamento.
+/// Simula planos de transa\u00C3\u00A7\u00C3\u00B5es
+/// Este m\u00C3\u00A9todo permite que seja simulada um plano de transa\u00C3\u00A7\u00C3\u00B5es.
 ///
 /// @param transacoesRequest transacoesRequest
 /// 

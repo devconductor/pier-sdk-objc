@@ -466,13 +466,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
     }
     
 
@@ -549,13 +549,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
     }
     
 
@@ -1172,6 +1172,8 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 /// Lista as oportunidades
 /// Este recurso permite listar as oportunidades.
+///  @param dataInicioVigencia Data de in\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade 
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -1184,25 +1186,28 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @param numeroReceitaFederal N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade (optional)
 ///
-///  @param dataInicioVigencia Data de in\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade (optional)
-///
 ///  @param dataFimVigencia Data do fim da vig\u00C3\u00AAncia da oportunidade (optional)
 ///
 ///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa (optional)
 ///
 ///  @returns PierPageOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET13WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET13WithDataInicioVigencia: (NSString*) dataInicioVigencia
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
     dataCadastro: (NSString*) dataCadastro
     dataAtualizacao: (NSString*) dataAtualizacao
     numeroReceitaFederal: (NSString*) numeroReceitaFederal
-    dataInicioVigencia: (NSString*) dataInicioVigencia
     dataFimVigencia: (NSString*) dataFimVigencia
     flagAtivo: (NSNumber*) flagAtivo
     completionHandler: (void (^)(PierPageOportunidadeResponse* output, NSError* error)) handler {
 
+    
+    // verify the required parameter 'dataInicioVigencia' is set
+    if (dataInicioVigencia == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataInicioVigencia` when calling `listarUsingGET13`"];
+    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/oportunidades"];
@@ -1502,13 +1507,13 @@ static PierOportunidadesApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST11WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST13WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST13`"];
     }
     
 
@@ -1576,19 +1581,19 @@ static PierOportunidadesApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastra as oportunidade
+/// Cadastra as oportunidades
 /// Esse recurso permite cadastrar oportunidades.
 ///  @param persist persist 
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST6WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST8`"];
     }
     
 

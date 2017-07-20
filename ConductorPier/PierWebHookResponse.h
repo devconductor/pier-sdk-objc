@@ -26,5 +26,8 @@
 /* URL que a ser consumida pelo WebHook 
  */
 @property(nonatomic) NSString* url;
+/* Status do WebHook 
+ */
+@property(nonatomic) NSString* status;
 
 @end

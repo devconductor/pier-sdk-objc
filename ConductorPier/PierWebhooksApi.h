@@ -46,7 +46,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
@@ -83,7 +83,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) salvarUsingPOST14WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST16WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 

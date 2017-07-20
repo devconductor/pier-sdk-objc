@@ -1,6 +1,6 @@
-#import "PierRiscoFraudeResponsePage.h"
+#import "PierPageTemplateNotificacaoResponse.h"
 
-@implementation PierRiscoFraudeResponsePage
+@implementation PierPageTemplateNotificacaoResponse
 
 - (instancetype)init {
   self = [super init];

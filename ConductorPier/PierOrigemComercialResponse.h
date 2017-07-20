@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierProdutoOrigemResponse.h"
 
 
 @protocol PierOrigemComercialResponse
@@ -14,12 +15,33 @@
 
 @interface PierOrigemComercialResponse : PierObject
 
-/* Id da origem comercial 
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial 
  */
 @property(nonatomic) NSNumber* _id;
 /* Nome da origem comercial 
  */
 @property(nonatomic) NSString* nome;
+/* Descri\u00C3\u00A7\u00C3\u00A3o completa do nome da Origem Comercial 
+ */
+@property(nonatomic) NSString* descricao;
+/* Lista de  ProdutosOrigem associados \u00C3\u00A0 Origem comercial 
+ */
+@property(nonatomic) NSArray<PierProdutoOrigemResponse>* produtosOrigem;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento 
+ */
+@property(nonatomic) NSNumber* idEstabelecimento;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Tipo da Origem Comercial 
+ */
+@property(nonatomic) NSNumber* idTipoOrigemComercial;
+/* Nome do Tipo da Origem Comercial 
+ */
+@property(nonatomic) NSString* nomeTipoOrigemComercial;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Grupo a qual a Origem Comercial pertence 
+ */
+@property(nonatomic) NSNumber* idGrupoOrigemComercial;
+/* Nome do Grupo a qual a Origem Comercial pertence 
+ */
+@property(nonatomic) NSString* nomeGrupoOrigemComercial;
 /* Status da origem comercial 
  */
 @property(nonatomic) NSNumber* status;

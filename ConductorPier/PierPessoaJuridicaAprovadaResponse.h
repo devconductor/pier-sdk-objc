@@ -17,7 +17,7 @@
 
 @interface PierPessoaJuridicaAprovadaResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id) [optional]
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa jur\u00C3\u00ADdica (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Apresenta o nome completo da raz\u00C3\u00A3o social (nome empresarial)'. [optional]
@@ -56,6 +56,15 @@
 /* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta cadastrada [optional]
+ */
+@property(nonatomic) NSNumber* idConta;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da proposta [optional]
+ */
+@property(nonatomic) NSNumber* idProposta;
+/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+ */
+@property(nonatomic) NSString* canalEntrada;
 /* Apresenta os telefones da empresa [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaResponse>* telefones;

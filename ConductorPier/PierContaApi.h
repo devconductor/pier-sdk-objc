@@ -78,6 +78,7 @@
 /// @param limiteInternacionalParcelas Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que portador pode acumular a partir da soma das parcelas das compras internacionais que forem realizadas nesta modalidade.
 /// @param limiteInternacionalSaqueGlobal Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Internacional.
 /// @param limiteInternacionalSaquePeriodo Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Internacional dentro de cada ciclo de faturamento.
+/// @param limiteMaximo Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es.
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
@@ -94,6 +95,7 @@
     limiteInternacionalParcelas: (NSNumber*) limiteInternacionalParcelas
     limiteInternacionalSaqueGlobal: (NSNumber*) limiteInternacionalSaqueGlobal
     limiteInternacionalSaquePeriodo: (NSNumber*) limiteInternacionalSaquePeriodo
+    limiteMaximo: (NSNumber*) limiteMaximo
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 
@@ -129,6 +131,33 @@
 
 ///
 ///
+/// Atribuir Anuidade
+/// Esse recurso permite configurar qual a regra de Anuidade que ser\u00C3\u00A1 atribu\u00C3\u00ADda a uma determinada Conta.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idAnuidade Identificador da anuidade
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param dDD DDD do celular
+/// @param celular N\u00C3\u00BAmero do celular
+/// @param idOperadora Identificador da operadora do celular
+/// @param idOrigemComercial Identificador da origem comercial
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) ativarAnuidadeUsingPOSTWithId: (NSNumber*) _id
+    idAnuidade: (NSNumber*) idAnuidade
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    dDD: (NSString*) dDD
+    celular: (NSString*) celular
+    idOperadora: (NSNumber*) idOperadora
+    idOrigemComercial: (NSNumber*) idOrigemComercial
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
 ///  Ativa o servi\u00C3\u00A7o de envio de fatura por email
 /// Este recurso ativa o servi\u00C3\u00A7o de envio de fatura por email
 ///
@@ -138,6 +167,36 @@
 /// @return NSObject*
 -(NSNumber*) ativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o bloqueio de uma determinada Conta
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o do bloqueio de uma determinada conta a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idStatus C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Novo Status Conta.
+/// 
+///
+/// @return PierContaResponse*
+-(NSNumber*) bloquearUsingPOST1WithId: (NSNumber*) _id
+    idStatus: (NSNumber*) idStatus
+    completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cancelamento de uma determinada Conta
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o do cancelamento de uma determinada conta a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idStatus C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Novo Status Conta.
+/// 
+///
+/// @return PierContaResponse*
+-(NSNumber*) cancelarUsingPOST1WithId: (NSNumber*) _id
+    idStatus: (NSNumber*) idStatus
+    completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -275,7 +334,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -291,7 +350,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler;
 
@@ -305,7 +364,7 @@
 /// 
 ///
 /// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -588,7 +647,7 @@
 /// 
 ///
 /// @return NSObject*
--(NSNumber*) reativarUsingPOSTWithId: (NSNumber*) _id
+-(NSNumber*) reativarUsingPOST1WithId: (NSNumber*) _id
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 

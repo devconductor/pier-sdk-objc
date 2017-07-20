@@ -17,5 +17,17 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do ajuste (id) [optional]
  */
 @property(nonatomic) NSNumber* idAjuste;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do ajuste [optional]
+ */
+@property(nonatomic) NSNumber* idTipoAjuste;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (idConta) [optional]
+ */
+@property(nonatomic) NSNumber* idConta;
+/* Data do ajuste [optional]
+ */
+@property(nonatomic) NSString* dataAjuste;
+/* Valor do ajuste [optional]
+ */
+@property(nonatomic) NSNumber* valor;
 
 @end

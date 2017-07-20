@@ -1,11 +1,18 @@
 #import <Foundation/Foundation.h>
+#import "PierConfiguracaoEmailResponse.h"
+#import "PierConfiguracaoEmailPersist.h"
+#import "PierTemplateNotificacaoResponse.h"
 #import "PierNotificacaoSMSResponse.h"
+#import "PierCodigoSegurancaSMSPersist.h"
+#import "PierPageConfiguracaoEmailResponse.h"
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
+#import "PierPageTemplateNotificacaoResponse.h"
 #import "PierPushFCMEGCM.h"
 #import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
 #import "PierNotificacaoSMSBody.h"
+#import "PierCodigoSegurancaSMSRequest.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -27,6 +34,44 @@
 +(PierNotificacoesApi*) sharedAPI;
 ///
 ///
+/// Altera configura\u00C3\u00A7\u00C3\u00B5es de E-mail
+/// Esse recurso permite salvar altera\u00C3\u00A7\u00C3\u00B5es de configura\u00C3\u00A7\u00C3\u00B5es de E-mail.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o de e-mail.
+/// @param persist persist
+/// 
+///
+/// @return PierConfiguracaoEmailResponse*
+-(NSNumber*) alterarConfiguracaoUsingPUTWithId: (NSNumber*) _id
+    persist: (PierConfiguracaoEmailPersist*) persist
+    completionHandler: (void (^)(PierConfiguracaoEmailResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Alterar template de notifica\u00C3\u00A7\u00C3\u00A3o
+/// Esse recurso permite salvar altera\u00C3\u00A7\u00C3\u00B5es de templates notifica\u00C3\u00A7\u00C3\u00B5es.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do layout de e-mail.
+/// @param conteudo Template HTML
+/// @param idConfiguracaoEmail C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da configra\u00C3\u00A7\u00C3\u00A3o de EMAIL.
+/// @param tipoLayout Tipo do layout.
+/// @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o.
+/// @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o.
+/// 
+///
+/// @return PierTemplateNotificacaoResponse*
+-(NSNumber*) alterarTemplateNotificacaoUsingPUTWithId: (NSNumber*) _id
+    conteudo: (NSString*) conteudo
+    idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
+    tipoLayout: (NSString*) tipoLayout
+    tipoNotificacao: (NSString*) tipoNotificacao
+    assunto: (NSString*) assunto
+    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Atualizar SMS
 /// Esse recurso permite atualizar o status do SMS do emissor
 ///
@@ -44,6 +89,60 @@
     textoStatus: (NSString*) textoStatus
     operadora: (NSString*) operadora
     completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consulta configura\u00C3\u00A7\u00C3\u00A3o de E-mail
+/// Esse recurso permite consultar uma configura\u00C3\u00A7\u00C3\u00A3o espec\u00C3\u00ADfica por id.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o de e-mail.
+/// 
+///
+/// @return PierConfiguracaoEmailResponse*
+-(NSNumber*) consultarConfiguracaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConfiguracaoEmailResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consulta template de notifica\u00C3\u00A7\u00C3\u00A3o
+/// Esse recurso permite consultar uma configura\u00C3\u00A7\u00C3\u00A3o espec\u00C3\u00ADfica por id.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do layout de e-mail.
+/// 
+///
+/// @return PierTemplateNotificacaoResponse*
+-(NSNumber*) consultarTemplateNotificacaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Gerar c\u00C3\u00B3digo de seguran\u00C3\u00A7a e enviar por sms
+/// Esse recurso permite gerar e enviar c\u00C3\u00B3digos de seguran\u00C3\u00A7a por sms, para valida\u00C3\u00A7\u00C3\u00A3o de dispositivos.
+///
+/// @param persist persist
+/// 
+///
+/// @return NSString*
+-(NSNumber*) gerarTokenUsingPOSTWithPersist: (PierCodigoSegurancaSMSPersist*) persist
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista configura\u00C3\u00A7\u00C3\u00B5es de E-mails
+/// Esse recurso permite listar as configura\u00C3\u00A7\u00C3\u00B5es de E-mails.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageConfiguracaoEmailResponse*
+-(NSNumber*) listarConfiguracaoUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageConfiguracaoEmailResponse* output, NSError* error)) handler;
 
 
 ///
@@ -100,6 +199,33 @@
 
 ///
 ///
+/// Lista templates de notifica\u00C3\u00A7\u00C3\u00B5es
+/// Esse recurso permite listar templates notifica\u00C3\u00A7\u00C3\u00B5es.
+///
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageTemplateNotificacaoResponse*
+-(NSNumber*) listarTemplateNotificacaoUsingGETWithPage: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageTemplateNotificacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os tipos templates de notifica\u00C3\u00A7\u00C3\u00A3o
+/// Esse recurso permite listar os tipos de templates dispon\u00C3\u00ADveis os par\u00C3\u00A2metros devem ser usados entre chaves. Ex: {{nomeParametro}} .
+///
+/// 
+///
+/// @return NSArray* /* NSObject */
+-(NSNumber*) listarTiposLayoutsUsingGETWithCompletionHandler: 
+    (void (^)(NSArray* /* NSObject */ output, NSError* error)) handler;
+
+
+///
+///
 /// Responder SMS
 /// Esse recurso permite atualizar a resposta do SMS, fornecida pedo usu\u00C3\u00A1rio
 ///
@@ -113,6 +239,19 @@
     data: (NSString*) data
     resposta: (NSString*) resposta
     completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Salva configura\u00C3\u00A7\u00C3\u00B5es de E-mail
+/// Esse recurso salvar configura\u00C3\u00A7\u00C3\u00B5es de E-mail.
+///
+/// @param persist persist
+/// 
+///
+/// @return PierConfiguracaoEmailResponse*
+-(NSNumber*) salvarConfiguracaoUsingPOSTWithPersist: (PierConfiguracaoEmailPersist*) persist
+    completionHandler: (void (^)(PierConfiguracaoEmailResponse* output, NSError* error)) handler;
 
 
 ///
@@ -165,6 +304,40 @@
 /// @return PierNotificacaoResponse*
 -(NSNumber*) salvarSMSUsingPOSTWithListaSMS: (NSArray<PierNotificacaoSMSBody>*) listaSMS
     completionHandler: (void (^)(PierNotificacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Salva template de notifica\u00C3\u00A7\u00C3\u00A3o
+/// Esse recurso salvar template notifica\u00C3\u00A7\u00C3\u00B5e.
+///
+/// @param conteudo Template HTML
+/// @param idConfiguracaoEmail C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da configra\u00C3\u00A7\u00C3\u00A3o de EMAIL.
+/// @param tipoLayout Tipo do layout.
+/// @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o.
+/// @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o.
+/// 
+///
+/// @return PierTemplateNotificacaoResponse*
+-(NSNumber*) salvarTemplateNotificacaoUsingPOSTWithConteudo: (NSString*) conteudo
+    idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
+    tipoLayout: (NSString*) tipoLayout
+    tipoNotificacao: (NSString*) tipoNotificacao
+    assunto: (NSString*) assunto
+    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Validar c\u00C3\u00B3digo de seguran\u00C3\u00A7a enviado por sms
+/// Esse recurso permite validar os c\u00C3\u00B3digos de seguran\u00C3\u00A7a enviador por sms, para valida\u00C3\u00A7\u00C3\u00A3o de dispositivos.
+///
+/// @param request request
+/// 
+///
+/// @return NSString*
+-(NSNumber*) validarTokenUsingPOSTWithRequest: (PierCodigoSegurancaSMSRequest*) request
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 

@@ -7,16 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "PierRiscoFraudeResponse.h"
+#import "PierTemplateNotificacaoResponse.h"
 
 
-@protocol PierRiscoFraudeResponsePage
+@protocol PierPageTemplateNotificacaoResponse
 @end
 
-@interface PierRiscoFraudeResponsePage : PierObject
+@interface PierPageTemplateNotificacaoResponse : PierObject
 
 
-@property(nonatomic) NSArray<PierRiscoFraudeResponse>* content;
+@property(nonatomic) NSArray<PierTemplateNotificacaoResponse>* content;
 
 @property(nonatomic) NSNumber* first;
 

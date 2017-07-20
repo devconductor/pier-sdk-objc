@@ -51,5 +51,8 @@
 /* Tipo da auditoria [optional]
  */
 @property(nonatomic) NSNumber* revType;
+/* Identificador da auditoria [optional]
+ */
+@property(nonatomic) NSNumber* rev;
 
 @end
