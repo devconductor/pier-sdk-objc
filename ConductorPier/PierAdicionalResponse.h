@@ -63,6 +63,9 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco do Adicional com o Titular [optional]
  */
 @property(nonatomic) NSString* email;
+/* Indica se o adicional est\u00C3\u00A1 ativo = 1 ou inativo = 0 [optional]
+ */
+@property(nonatomic) NSNumber* flagAtivo;
 /* Lista dos telefones do adicional [optional]
  */
 @property(nonatomic) NSArray<PierTelefoneResponse>* telefones;

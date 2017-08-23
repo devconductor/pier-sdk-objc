@@ -14,21 +14,12 @@
 
 @interface PierTransferenciaBancariaPersist : PierObject
 
-/* Data da transfer\u00C3\u00AAncia 
- */
-@property(nonatomic) NSString* dataCompra;
-/* Dia do vencimento padr\u00C3\u00A3o da fatura 
- */
-@property(nonatomic) NSString* proximoVencimentoPadrao;
-/* Data do vencimento real da fatura 
- */
-@property(nonatomic) NSString* proximoVencimentoReal;
 /* Valor da transfer\u00C3\u00AAncia 
  */
 @property(nonatomic) NSNumber* valorCompra;
-/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+/* Valor da transfer\u00C3\u00AAncia 
  */
-@property(nonatomic) NSString* nomeFavorecido;
+@property(nonatomic) NSNumber* valor;
 /* N\u00C3\u00BAmero do CPF ou CNPJ. 
  */
 @property(nonatomic) NSString* documentoFavorecido;
@@ -50,5 +41,8 @@
 /* Sinaliza se conta banc\u00C3\u00A1ria \u00C3\u00A9 poupan\u00C3\u00A7a (1: Poupan\u00C3\u00A7a, 0: Conta corrente) 
  */
 @property(nonatomic) NSNumber* flagContaPoupanca;
+/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+ */
+@property(nonatomic) NSString* nomeFavorecido;
 
 @end

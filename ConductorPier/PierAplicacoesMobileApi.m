@@ -166,6 +166,8 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
 ///
 /// Lista os aplicacoes mobile cadastradas
 /// Este m\u00C3\u00A9todo permite que sejam listadas as aplicacoes mobile existentes na base do PIER.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -176,7 +178,8 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPageAplicacaoMobileResponse*
 ///
--(NSNumber*) listarUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET1WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSString*) _id
     idPlataformaMobile: (NSNumber*) idPlataformaMobile
@@ -195,6 +198,12 @@ static PierAplicacoesMobileApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;

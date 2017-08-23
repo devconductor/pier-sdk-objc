@@ -41,9 +41,9 @@
 /* Nome completo do Portador do Cart\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* nomePortador;
-/* Data em que a Transa\u00C3\u00A7\u00C3\u00A3o foi realizada sob o padr\u00C3\u00A3o de Tempo Universal Coordenado (UTC). [optional]
+/* Data em que a Transa\u00C3\u00A7\u00C3\u00A3o foi realizada. [optional]
  */
-@property(nonatomic) NSString* dataTransacaoUTC;
+@property(nonatomic) NSString* dataTransacao;
 /* Data de Faturamento da Transa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* dataFaturamento;

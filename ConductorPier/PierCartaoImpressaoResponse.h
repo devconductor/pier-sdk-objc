@@ -82,5 +82,8 @@
 /* Apresenta os dados da TrilhaCVV02, seguindo as regras de trilha do emissor. [optional]
  */
 @property(nonatomic) NSString* trilhaCVV2;
+/* Apresenta o numero da hash do cart\u00C3\u00A3o  [optional]
+ */
+@property(nonatomic) NSNumber* numeroCartaoHash;
 
 @end

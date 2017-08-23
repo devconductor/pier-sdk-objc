@@ -38,7 +38,7 @@
 /* Nome da Fantasia Basica 
  */
 @property(nonatomic) NSString* nomeFantasiaBasica;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto a qual o cart\u00C3\u00A3o pertence (id). [optional]
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do status atribuido a conta. [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
 /* Descri\u00C3\u00A7\u00C3\u00A3o do status da conta [optional]

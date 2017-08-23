@@ -648,13 +648,16 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Lista configura\u00C3\u00A7\u00C3\u00B5es de E-mails
 /// Esse recurso permite listar as configura\u00C3\u00A7\u00C3\u00B5es de E-mails.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageConfiguracaoEmailResponse*
 ///
--(NSNumber*) listarConfiguracaoUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarConfiguracaoUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageConfiguracaoEmailResponse* output, NSError* error)) handler {
 
@@ -671,6 +674,12 @@ static PierNotificacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -734,6 +743,8 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Listar Push
 /// Esse recurso permite listar os Pushes do emissor
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -750,7 +761,8 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePushResponse*
 ///
--(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarPushUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataEnvio: (NSString*) dataEnvio
     tipoEvento: (NSString*) tipoEvento
@@ -772,6 +784,12 @@ static PierNotificacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -855,6 +873,8 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Listar SMS
 /// Esse recurso permite listar os SMS do emissor
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -873,7 +893,8 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 ///  @returns PierPageSMSResponse*
 ///
--(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarSMSUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInclusao: (NSString*) dataInclusao
     tipoEvento: (NSString*) tipoEvento
@@ -896,6 +917,12 @@ static PierNotificacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -983,13 +1010,16 @@ static PierNotificacoesApi* singletonAPI = nil;
 ///
 /// Lista templates de notifica\u00C3\u00A7\u00C3\u00B5es
 /// Esse recurso permite listar templates notifica\u00C3\u00A7\u00C3\u00B5es.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageTemplateNotificacaoResponse*
 ///
--(NSNumber*) listarTemplateNotificacaoUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarTemplateNotificacaoUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTemplateNotificacaoResponse* output, NSError* error)) handler {
 
@@ -1006,6 +1036,12 @@ static PierNotificacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;

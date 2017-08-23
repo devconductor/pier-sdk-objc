@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"razaoSocial": @"razaoSocial", @"nomeFantasia": @"nomeFantasia", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"dataAberturaEmpresa": @"dataAberturaEmpresa", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"valorRenda": @"valorRenda", @"canalEntrada": @"canalEntrada", @"telefones": @"telefones", @"enderecos": @"enderecos", @"socios": @"socios" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"razaoSocial": @"razaoSocial", @"nomeFantasia": @"nomeFantasia", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"dataAberturaEmpresa": @"dataAberturaEmpresa", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"valorRenda": @"valorRenda", @"canalEntrada": @"canalEntrada", @"valorPontuacao": @"valorPontuacao", @"telefones": @"telefones", @"enderecos": @"enderecos", @"limiteGlobal": @"limiteGlobal", @"socios": @"socios", @"limiteMaximo": @"limiteMaximo", @"limiteParcelas": @"limiteParcelas" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nomeFantasia", @"inscricaoEstadual", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeImpresso", @"valorRenda", @"canalEntrada", @"telefones", @"socios"];
+  NSArray *optionalProperties = @[@"nomeFantasia", @"inscricaoEstadual", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeImpresso", @"valorRenda", @"canalEntrada", @"valorPontuacao", @"telefones", @"socios", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

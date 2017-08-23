@@ -52,6 +52,7 @@
 /// Lista os dispositivos cadastrados
 /// Este m\u00C3\u00A9todo permite que sejam listados os dispositivos existentes na base do PIER.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param token Token do Dispositivo
@@ -62,7 +63,8 @@
 /// 
 ///
 /// @return PierPageDispositivoResponse*
--(NSNumber*) listarUsingGET8WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET9WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
     idUsuario: (NSNumber*) idUsuario

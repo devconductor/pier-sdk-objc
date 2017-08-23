@@ -91,5 +91,8 @@
 /* Atributo que representa o numero do estabelecimento. [optional]
  */
 @property(nonatomic) NSNumber* numeroEstabelecimento;
+/* Valor da taxa saque. [optional]
+ */
+@property(nonatomic) NSNumber* valorTaxaSaque;
 
 @end

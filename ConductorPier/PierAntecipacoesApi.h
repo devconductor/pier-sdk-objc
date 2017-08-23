@@ -76,6 +76,7 @@
 /// Lista as compras antecip\u00C3\u00A1veis de uma conta.
 ///
 /// @param idConta C\u00C3\u00B3digo identificador da conta da Compra.
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idCompra C\u00C3\u00B3digo identificador da Compra.
@@ -85,7 +86,8 @@
 /// 
 ///
 /// @return PierPageCompraResponse*
--(NSNumber*) listarUsingGET6WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET7WithIdConta: (NSNumber*) idConta
+    sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idCompra: (NSNumber*) idCompra

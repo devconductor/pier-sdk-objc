@@ -42,13 +42,15 @@
 /// Lista as plataformas mobile cadastradas
 /// Este m\u00C3\u00A9todo permite que sejam listadas as plataformas mobile existentes na base do PIER.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param nome Nome da Plataforma Mobile
 /// 
 ///
 /// @return PierPagePlataformaMobileResponse*
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     completionHandler: (void (^)(PierPagePlataformaMobileResponse* output, NSError* error)) handler;
@@ -63,7 +65,7 @@
 /// 
 ///
 /// @return PierPlataformaMobileResponse*
--(NSNumber*) salvarUsingPOST11WithPersist: (PierPlataformaMobilePersist*) persist
+-(NSNumber*) salvarUsingPOST12WithPersist: (PierPlataformaMobilePersist*) persist
     completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler;
 
 

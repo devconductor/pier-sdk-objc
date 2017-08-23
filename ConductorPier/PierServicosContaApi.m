@@ -77,6 +77,8 @@ static PierServicosContaApi* singletonAPI = nil;
 ///
 ///  @param idAnuidade Identificador da anuidade 
 ///
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -93,6 +95,7 @@ static PierServicosContaApi* singletonAPI = nil;
 ///
 -(NSNumber*) ativarAnuidadeUsingPOSTWithId: (NSNumber*) _id
     idAnuidade: (NSNumber*) idAnuidade
+    sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dDD: (NSString*) dDD
@@ -127,6 +130,12 @@ static PierServicosContaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -376,19 +385,22 @@ static PierServicosContaApi* singletonAPI = nil;
 ///
 /// Listar Anuidades
 /// Lista as anuidades
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageAnuidadeResponse*
 ///
--(NSNumber*) listarAnuidadesUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarAnuidadesUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageAnuidadeResponse* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/api/anuidades"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/anuidades"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -399,6 +411,12 @@ static PierServicosContaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -462,13 +480,16 @@ static PierServicosContaApi* singletonAPI = nil;
 ///
 /// Listar Operadoras
 /// Lista as operadoras.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageOperadoraResponse*
 ///
--(NSNumber*) listarOperadorasTelefonicasUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarOperadorasTelefonicasUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageOperadoraResponse* output, NSError* error)) handler {
 
@@ -485,6 +506,12 @@ static PierServicosContaApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;

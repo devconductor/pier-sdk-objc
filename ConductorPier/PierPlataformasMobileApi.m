@@ -166,6 +166,8 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 ///
 /// Lista as plataformas mobile cadastradas
 /// Este m\u00C3\u00A9todo permite que sejam listadas as plataformas mobile existentes na base do PIER.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -174,7 +176,8 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePlataformaMobileResponse*
 ///
--(NSNumber*) listarUsingGET16WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
     completionHandler: (void (^)(PierPagePlataformaMobileResponse* output, NSError* error)) handler {
@@ -192,6 +195,12 @@ static PierPlataformasMobileApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -263,13 +272,13 @@ static PierPlataformasMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPlataformaMobileResponse*
 ///
--(NSNumber*) salvarUsingPOST11WithPersist: (PierPlataformaMobilePersist*) persist
+-(NSNumber*) salvarUsingPOST12WithPersist: (PierPlataformaMobilePersist*) persist
     completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST12`"];
     }
     
 

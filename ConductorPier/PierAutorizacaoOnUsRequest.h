@@ -23,7 +23,7 @@
 /* C\u00C3\u00B3digo de Processamento que identifica o Tipo da Transa\u00C3\u00A7\u00C3\u00A3o. 
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* C\u00C3\u00B3digo de Seguran\u00C3\u00A7a do Cart\u00C3\u00A3o. 
+/* C\u00C3\u00B3digo de Seguran\u00C3\u00A7a do Cart\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* codigoSegurancaCartao;
 /* Valor da transa\u00C3\u00A7\u00C3\u00A3o com duas casas decimais para os centavos. 

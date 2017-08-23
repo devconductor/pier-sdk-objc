@@ -28,12 +28,14 @@
 /// @param _id C\u00C3\u00B3digo identificador do Webhook
 /// @param tipoEvento TipoEvento a ser chamado pelo WebHook
 /// @param url URL que a ser consumida pelo WebHook
+/// @param status Status
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT11WithId: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
+    status: (NSString*) status
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
@@ -55,6 +57,7 @@
 /// Lista os Webhooks
 /// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id Id do WebHook
@@ -64,7 +67,8 @@
 /// 
 ///
 /// @return PierPageWebHookResponse*
--(NSNumber*) listarUsingGET31WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
@@ -83,7 +87,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) salvarUsingPOST16WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST17WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 

@@ -16,9 +16,6 @@
 
 
 @property(nonatomic) NSNumber* ultimaParcelaLancada;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da timeline (idTimeline). [optional]
- */
-@property(nonatomic) NSNumber* _id;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). [optional]
  */
 @property(nonatomic) NSNumber* idConta;

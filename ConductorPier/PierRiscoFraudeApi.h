@@ -36,7 +36,7 @@
 ///
 ///
 /// Listar os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude
-/// Este recurso permite que sejam listados os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude, cadastrados para um emissor
+/// Este recurso permite que sejam listados os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude, cadastrados para um emissor.
 ///
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
@@ -46,6 +46,32 @@
 -(NSNumber*) listarTiposResolucaoUsingGETWithPage: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierTipoResolucaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Negar autenticidade de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude
+/// Nega a realiza\u00C3\u00A7\u00C3\u00A3o de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) negarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Reconhecer autenticidade de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude
+/// Confirma a autenticidade de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) reconhecerUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 

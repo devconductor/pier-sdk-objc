@@ -50,6 +50,7 @@
 /// Lista os pa\u00C3\u00ADses
 /// Este recurso permite listar os pa\u00C3\u00ADses.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param codigo C\u00C3\u00B3digo do pa\u00C3\u00ADs
@@ -60,7 +61,8 @@
 /// 
 ///
 /// @return PierPagePaisResponse*
--(NSNumber*) listarPaisesUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarPaisesUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     codigo: (NSString*) codigo
     sigla: (NSString*) sigla

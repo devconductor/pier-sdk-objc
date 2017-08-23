@@ -411,6 +411,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gios do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Est\u00C3\u00A1gio de Entrega que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -421,7 +423,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEstagioCartaoResponse*
 ///
--(NSNumber*) listarEstagiosCartoesUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarEstagiosCartoesUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -440,6 +443,12 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -511,6 +520,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Status do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que sejam listadas as possibilidades de Status que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -519,42 +530,25 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param nome Nome atribu\u00C3\u00ADdo ao Status de Entrega do Cart\u00C3\u00A3o. (optional)
 ///
-///  @param flagCancelaCartao Quando ativa, indica que ao ser atribu\u00C3\u00ADdo um idStatusCartao com essa caracter\u00C3\u00ADstica, o cart\u00C3\u00A3o ter\u00C3\u00A1 o seu idStatusCartao alterado para o que fora escolhido. Caso contr\u00C3\u00A1rio, o idStatusCartao s\u00C3\u00B3 ser\u00C3\u00A1 alterado ap\u00C3\u00B3s o desbloqueio de um novo cart\u00C3\u00A3o do mesmo Portador e Conta. (optional)
+///  @param permiteDesbloquear Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagCancelaNoDesbloqueio Quando ativa, indica que o cart\u00C3\u00A3o ativo que o portador possuir na mesma conta do cart\u00C3\u00A3o a ser desbloqueado, e que o status dele possua essa caracter\u00C3\u00ADstica, dever\u00C3\u00A1 ser cancelado quando um novo cart\u00C3\u00A3o for desbloqueado. (optional)
+///  @param permiteAtribuirComoBloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param idStatusDestinoDesbloqueio Indica qual o idStatusCartao que ser\u00C3\u00A1 atribu\u00C3\u00ADdo aos cart\u00C3\u00B5es que forem cancelados devido ao desbloqueio de um novo cart\u00C3\u00A3o. (optional)
+///  @param permiteAtribuirComoCancelamento Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param idStatusDestinoConta Indica qual o idStatusCartao que ser\u00C3\u00A1 atribu\u00C3\u00ADdo a conta, caso ela seja cancelada devido ao bloqueio de um cart\u00C3\u00A3o quando for utilizado um idStatusCartao no processo de Bloqueio que possua essa caracter\u00C3\u00ADstica. (optional)
-///
-///  @param flagCobraTarifa Quando ativa, indica que cart\u00C3\u00B5es que tiverem um idStatusCartao atribu\u00C3\u00ADdo com essa caracter\u00C3\u00ADstica, incluir\u00C3\u00A3o a cobran\u00C3\u00A7a de uma tarifa para a conta de acordo com os valores definidos nos par\u00C3\u00A2metros do emissor. (optional)
-///
-///  @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a solicita\u00C3\u00A7\u00C3\u00A3o de uma nova via, sendo: 0: Inativo e 1: Ativo. (optional)
-///
-///  @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o desbloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
-///
-///  @param flagCancelamento Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o cancelamento, sendo: 0: Inativo e 1: Ativo. (optional)
-///
-///  @param flagPermiteBloqueio Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite o Bloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
-///
-///  @param flagReativar Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param cobrarTarifaAoEmitirNovaVia Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
 ///  @returns PierPageStatusCartaoResponse*
 ///
--(NSNumber*) listarStatusCartoesUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarStatusCartoesUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    flagCancelaCartao: (NSNumber*) flagCancelaCartao
-    flagCancelaNoDesbloqueio: (NSNumber*) flagCancelaNoDesbloqueio
-    idStatusDestinoDesbloqueio: (NSNumber*) idStatusDestinoDesbloqueio
-    idStatusDestinoConta: (NSNumber*) idStatusDestinoConta
-    flagCobraTarifa: (NSNumber*) flagCobraTarifa
-    flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
-    flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
-    flagCancelamento: (NSNumber*) flagCancelamento
-    flagPermiteBloqueio: (NSNumber*) flagPermiteBloqueio
-    flagReativar: (NSNumber*) flagReativar
+    permiteDesbloquear: (NSNumber*) permiteDesbloquear
+    permiteAtribuirComoBloqueio: (NSNumber*) permiteAtribuirComoBloqueio
+    permiteAtribuirComoCancelamento: (NSNumber*) permiteAtribuirComoCancelamento
+    cobrarTarifaAoEmitirNovaVia: (NSNumber*) cobrarTarifaAoEmitirNovaVia
     completionHandler: (void (^)(PierPageStatusCartaoResponse* output, NSError* error)) handler {
 
     
@@ -570,6 +564,12 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -586,45 +586,21 @@ static PierStatusParametrosApi* singletonAPI = nil;
         
         queryParams[@"nome"] = nome;
     }
-    if (flagCancelaCartao != nil) {
+    if (permiteDesbloquear != nil) {
         
-        queryParams[@"flagCancelaCartao"] = flagCancelaCartao;
+        queryParams[@"permiteDesbloquear"] = permiteDesbloquear;
     }
-    if (flagCancelaNoDesbloqueio != nil) {
+    if (permiteAtribuirComoBloqueio != nil) {
         
-        queryParams[@"flagCancelaNoDesbloqueio"] = flagCancelaNoDesbloqueio;
+        queryParams[@"permiteAtribuirComoBloqueio"] = permiteAtribuirComoBloqueio;
     }
-    if (idStatusDestinoDesbloqueio != nil) {
+    if (permiteAtribuirComoCancelamento != nil) {
         
-        queryParams[@"idStatusDestinoDesbloqueio"] = idStatusDestinoDesbloqueio;
+        queryParams[@"permiteAtribuirComoCancelamento"] = permiteAtribuirComoCancelamento;
     }
-    if (idStatusDestinoConta != nil) {
+    if (cobrarTarifaAoEmitirNovaVia != nil) {
         
-        queryParams[@"idStatusDestinoConta"] = idStatusDestinoConta;
-    }
-    if (flagCobraTarifa != nil) {
-        
-        queryParams[@"flagCobraTarifa"] = flagCobraTarifa;
-    }
-    if (flagPermiteNovaViaCartao != nil) {
-        
-        queryParams[@"flagPermiteNovaViaCartao"] = flagPermiteNovaViaCartao;
-    }
-    if (flagPermiteDesbloqueio != nil) {
-        
-        queryParams[@"flagPermiteDesbloqueio"] = flagPermiteDesbloqueio;
-    }
-    if (flagCancelamento != nil) {
-        
-        queryParams[@"flagCancelamento"] = flagCancelamento;
-    }
-    if (flagPermiteBloqueio != nil) {
-        
-        queryParams[@"flagPermiteBloqueio"] = flagPermiteBloqueio;
-    }
-    if (flagReativar != nil) {
-        
-        queryParams[@"flagReativar"] = flagReativar;
+        queryParams[@"cobrarTarifaAoEmitirNovaVia"] = cobrarTarifaAoEmitirNovaVia;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -681,6 +657,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista os Status Contas cadastrados para o Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -689,36 +667,40 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @param nome Nome atribu\u00C3\u00ADdo ao Status da Conta. (optional)
 ///
-///  @param flagAlteraLimite Par\u00C3\u00A2metro que define se o Status da Conta permite realizar a Altera\u00C3\u00A7\u00C3\u00A3o de Limites do Portador, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteAlterarVencimento Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o da altera\u00C3\u00A7\u00C3\u00A3o do Dia para Vencimento das Faturas, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param mensagemConsultaNegada Apresenta o texto com o motivo que ser\u00C3\u00A1 apresentado na resposta as opera\u00C3\u00A7\u00C3\u00B5es de Listar e Consultar LimitesDisponibilidades. (optional)
+///  @param permiteAlterarLimite Par\u00C3\u00A2metro que define se o Status da conta permite altera\u00C3\u00A7\u00C3\u00A3o de Limites, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagPermiteNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite a solicita\u00C3\u00A7\u00C3\u00A3o de um novo cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteEmitirNovaViaCartao Par\u00C3\u00A2metro que define se o Status da conta permite solicitar uma nova via de Cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagFazTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite fazer transferencia, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteFazerTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite originar Transfer\u00C3\u00AAncias de Cr\u00C3\u00A9dito para outras Contas do mesmo Emissor ou para uma Conta Banc\u00C3\u00A1ria, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagRecebeTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite receber transferencia, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteReceberTransferencia Par\u00C3\u00A2metro que define se o Status da conta permite  receber Transfer\u00C3\u00AAncias de Cr\u00C3\u00A9dito originadas de outras Contas do mesmo emissor, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagPermiteBloqueio Par\u00C3\u00A2metro que define se o Status da conta permite receber bloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteCriarAcordoCobranca Par\u00C3\u00A2metro que define se o Status da conta permite ter um Acordo de Cobran\u00C3\u00A7a de D\u00C3\u00ADvida criado para ela, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagPermiteDesbloqueio Par\u00C3\u00A2metro que define se o Status da conta permite receber desbloqueio, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteAtribuirComoBloqueio Par\u00C3\u00A2metro que define se o Status da conta permite ser atribu\u00C3\u00ADdo para Bloquear temporariamente uma Conta, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
-///  @param flagCancelaConta Par\u00C3\u00A2metro que define se o Status da conta permite receber cancelamento, sendo: 0: Inativo e 1: Ativo. (optional)
+///  @param permiteDesbloquear Par\u00C3\u00A2metro que define se o Status da conta permite ser desbloqueada, sendo: 0: Inativo e 1: Ativo. (optional)
+///
+///  @param permiteAtribuirComoCancelamento Par\u00C3\u00A2metro que define se o Status da conta permite ser atribu\u00C3\u00ADdo para realizar o cancelamento definitivo de uma conta, sendo: 0: Inativo e 1: Ativo. (optional)
 ///
 ///  @returns PierPageStatusContaResponse*
 ///
--(NSNumber*) listarUsingGET20WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
-    flagAlteraLimite: (NSNumber*) flagAlteraLimite
-    mensagemConsultaNegada: (NSString*) mensagemConsultaNegada
-    flagPermiteNovaViaCartao: (NSNumber*) flagPermiteNovaViaCartao
-    flagFazTransferencia: (NSNumber*) flagFazTransferencia
-    flagRecebeTransferencia: (NSNumber*) flagRecebeTransferencia
-    flagPermiteBloqueio: (NSNumber*) flagPermiteBloqueio
-    flagPermiteDesbloqueio: (NSNumber*) flagPermiteDesbloqueio
-    flagCancelaConta: (NSNumber*) flagCancelaConta
+    permiteAlterarVencimento: (NSNumber*) permiteAlterarVencimento
+    permiteAlterarLimite: (NSNumber*) permiteAlterarLimite
+    permiteEmitirNovaViaCartao: (NSNumber*) permiteEmitirNovaViaCartao
+    permiteFazerTransferencia: (NSNumber*) permiteFazerTransferencia
+    permiteReceberTransferencia: (NSNumber*) permiteReceberTransferencia
+    permiteCriarAcordoCobranca: (NSNumber*) permiteCriarAcordoCobranca
+    permiteAtribuirComoBloqueio: (NSNumber*) permiteAtribuirComoBloqueio
+    permiteDesbloquear: (NSNumber*) permiteDesbloquear
+    permiteAtribuirComoCancelamento: (NSNumber*) permiteAtribuirComoCancelamento
     completionHandler: (void (^)(PierPageStatusContaResponse* output, NSError* error)) handler {
 
     
@@ -734,6 +716,12 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;
@@ -750,37 +738,41 @@ static PierStatusParametrosApi* singletonAPI = nil;
         
         queryParams[@"nome"] = nome;
     }
-    if (flagAlteraLimite != nil) {
+    if (permiteAlterarVencimento != nil) {
         
-        queryParams[@"flagAlteraLimite"] = flagAlteraLimite;
+        queryParams[@"permiteAlterarVencimento"] = permiteAlterarVencimento;
     }
-    if (mensagemConsultaNegada != nil) {
+    if (permiteAlterarLimite != nil) {
         
-        queryParams[@"mensagemConsultaNegada"] = mensagemConsultaNegada;
+        queryParams[@"permiteAlterarLimite"] = permiteAlterarLimite;
     }
-    if (flagPermiteNovaViaCartao != nil) {
+    if (permiteEmitirNovaViaCartao != nil) {
         
-        queryParams[@"flagPermiteNovaViaCartao"] = flagPermiteNovaViaCartao;
+        queryParams[@"permiteEmitirNovaViaCartao"] = permiteEmitirNovaViaCartao;
     }
-    if (flagFazTransferencia != nil) {
+    if (permiteFazerTransferencia != nil) {
         
-        queryParams[@"flagFazTransferencia"] = flagFazTransferencia;
+        queryParams[@"permiteFazerTransferencia"] = permiteFazerTransferencia;
     }
-    if (flagRecebeTransferencia != nil) {
+    if (permiteReceberTransferencia != nil) {
         
-        queryParams[@"flagRecebeTransferencia"] = flagRecebeTransferencia;
+        queryParams[@"permiteReceberTransferencia"] = permiteReceberTransferencia;
     }
-    if (flagPermiteBloqueio != nil) {
+    if (permiteCriarAcordoCobranca != nil) {
         
-        queryParams[@"flagPermiteBloqueio"] = flagPermiteBloqueio;
+        queryParams[@"permiteCriarAcordoCobranca"] = permiteCriarAcordoCobranca;
     }
-    if (flagPermiteDesbloqueio != nil) {
+    if (permiteAtribuirComoBloqueio != nil) {
         
-        queryParams[@"flagPermiteDesbloqueio"] = flagPermiteDesbloqueio;
+        queryParams[@"permiteAtribuirComoBloqueio"] = permiteAtribuirComoBloqueio;
     }
-    if (flagCancelaConta != nil) {
+    if (permiteDesbloquear != nil) {
         
-        queryParams[@"flagCancelaConta"] = flagCancelaConta;
+        queryParams[@"permiteDesbloquear"] = permiteDesbloquear;
+    }
+    if (permiteAtribuirComoCancelamento != nil) {
+        
+        queryParams[@"permiteAtribuirComoCancelamento"] = permiteAtribuirComoCancelamento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -837,6 +829,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 /// Lista as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que sejam listadas as op\u00C3\u00A7\u00C3\u00B5es de Status Impress\u00C3\u00A3o que podem ser atribu\u00C3\u00ADdas aos Cart\u00C3\u00B5es.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -847,7 +841,8 @@ static PierStatusParametrosApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressaoResponse*
 ///
--(NSNumber*) listarUsingGET21WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -866,6 +861,12 @@ static PierStatusParametrosApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;

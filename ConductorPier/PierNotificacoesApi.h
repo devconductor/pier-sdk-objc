@@ -135,12 +135,14 @@
 /// Lista configura\u00C3\u00A7\u00C3\u00B5es de E-mails
 /// Esse recurso permite listar as configura\u00C3\u00A7\u00C3\u00B5es de E-mails.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageConfiguracaoEmailResponse*
--(NSNumber*) listarConfiguracaoUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarConfiguracaoUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageConfiguracaoEmailResponse* output, NSError* error)) handler;
 
@@ -150,6 +152,7 @@
 /// Listar Push
 /// Esse recurso permite listar os Pushes do emissor
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param dataEnvio Apresenta a data e em que o registro foi enviado para o dispositivo.
@@ -160,7 +163,8 @@
 /// 
 ///
 /// @return PierPagePushResponse*
--(NSNumber*) listarPushUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarPushUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataEnvio: (NSString*) dataEnvio
     tipoEvento: (NSString*) tipoEvento
@@ -175,6 +179,7 @@
 /// Listar SMS
 /// Esse recurso permite listar os SMS do emissor
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param dataInclusao Apresenta a data e em que o registro foi inclu\u00C3\u00ADdo na base para ser enviado
@@ -186,7 +191,8 @@
 /// 
 ///
 /// @return PierPageSMSResponse*
--(NSNumber*) listarSMSUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarSMSUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInclusao: (NSString*) dataInclusao
     tipoEvento: (NSString*) tipoEvento
@@ -202,12 +208,14 @@
 /// Lista templates de notifica\u00C3\u00A7\u00C3\u00B5es
 /// Esse recurso permite listar templates notifica\u00C3\u00A7\u00C3\u00B5es.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageTemplateNotificacaoResponse*
--(NSNumber*) listarTemplateNotificacaoUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarTemplateNotificacaoUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTemplateNotificacaoResponse* output, NSError* error)) handler;
 

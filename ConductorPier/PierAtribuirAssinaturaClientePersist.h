@@ -9,13 +9,13 @@
 
 
 
-@protocol PierAtribuirAssinaturaClienteRequest
+@protocol PierAtribuirAssinaturaClientePersist
 @end
 
-@interface PierAtribuirAssinaturaClienteRequest : PierObject
+@interface PierAtribuirAssinaturaClientePersist : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da imagem [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Arquivo [optional]
  */
-@property(nonatomic) NSNumber* idImagem;
+@property(nonatomic) NSNumber* idArquivo;
 
 @end

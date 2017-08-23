@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataCompra": @"dataCompra", @"proximoVencimentoPadrao": @"proximoVencimentoPadrao", @"proximoVencimentoReal": @"proximoVencimentoReal", @"valorCompra": @"valorCompra", @"nomeFavorecido": @"nomeFavorecido", @"documentoFavorecido": @"documentoFavorecido", @"banco": @"banco", @"numeroAgencia": @"numeroAgencia", @"digitoAgencia": @"digitoAgencia", @"numeroConta": @"numeroConta", @"digitoConta": @"digitoConta", @"flagContaPoupanca": @"flagContaPoupanca" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"valorCompra": @"valorCompra", @"valor": @"valor", @"documentoFavorecido": @"documentoFavorecido", @"banco": @"banco", @"numeroAgencia": @"numeroAgencia", @"digitoAgencia": @"digitoAgencia", @"numeroConta": @"numeroConta", @"digitoConta": @"digitoConta", @"flagContaPoupanca": @"flagContaPoupanca", @"nomeFavorecido": @"nomeFavorecido" }];
 }
 
 /**

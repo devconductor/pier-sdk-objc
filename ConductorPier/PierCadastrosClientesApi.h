@@ -1,19 +1,21 @@
 #import <Foundation/Foundation.h>
+#import "PierAdicionalUpdate.h"
+#import "PierAdicionalResponse.h"
 #import "PierEnderecoResponse.h"
 #import "PierPessoaDetalheResponse.h"
 #import "PierPessoaResponse.h"
 #import "PierTelefoneResponse.h"
-#import "PierAtribuirAssinaturaClienteRequest.h"
+#import "PierAtribuirAssinaturaClientePersist.h"
 #import "PierAdicionalPersist.h"
-#import "PierAdicionalResponse.h"
-#import "PierPagePessoaDetalheResponse.h"
 #import "PierPagePessoaResponse.h"
-#import "PierPageTelefoneResponse.h"
 #import "PierPageEnderecoResponse.h"
+#import "PierPagePessoaDetalheResponse.h"
+#import "PierPageTelefoneResponse.h"
 #import "PierPessoaFisicaAprovadaPersist.h"
 #import "PierPessoaFisicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaPersist.h"
+#import "PierIntegracaoEmissorPersist.h"
 #import "PierIntegracaoEmissorResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -36,6 +38,23 @@
 +(PierCadastrosClientesApi*) sharedAPI;
 ///
 ///
+/// Altera Adicional de uma Conta
+/// Este m\u00C3\u00A9todo permite que seja alterado um portador Adicional de uma determinada Conta.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
+/// @param adicionalUpdate adicionalUpdate
+/// 
+///
+/// @return PierAdicionalResponse*
+-(NSNumber*) alterarUsingPUTWithId: (NSNumber*) _id
+    idPessoa: (NSNumber*) idPessoa
+    adicionalUpdate: (PierAdicionalUpdate*) adicionalUpdate
+    completionHandler: (void (^)(PierAdicionalResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Atualiza os dados de um determinado Endere\u00C3\u00A7o
 /// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um ou mais registros ligados a um determinado Endere\u00C3\u00A7o.
 ///
@@ -54,7 +73,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) alterarUsingPUT1WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -87,7 +106,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) alterarUsingPUT4WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSNumber*) idProfissao
@@ -119,7 +138,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
@@ -146,7 +165,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT7WithId: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -159,13 +178,13 @@
 /// Permite atribuir um documento para uma Conta
 /// Este m\u00C3\u00A9todo permite que seja atribu\u00C3\u00ADdo a uma determinada Conta um documento que esteja armazenado no PIER Cloud, informando qual o tipo do documento e o seu respectivo id.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do arquivo
-/// @param atribuirAssinaturaClienteRequest atribuirAssinaturaClienteRequest
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta
+/// @param body C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Arquivo
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) atribuirAssinaturaClienteUsingPOSTWithId: (NSNumber*) _id
-    atribuirAssinaturaClienteRequest: (PierAtribuirAssinaturaClienteRequest*) atribuirAssinaturaClienteRequest
+    body: (PierAtribuirAssinaturaClientePersist*) body
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
@@ -238,9 +257,106 @@
 
 ///
 ///
+/// Inativa Adicional de uma Conta
+/// Este m\u00C3\u00A9todo permite que seja inativado um portador Adicional de uma determinada Conta.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
+/// 
+///
+/// @return NSString*
+-(NSNumber*) inativarUsingPOSTWithId: (NSNumber*) _id
+    idPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar s\u00C3\u00B3cios de uma pessoa jur\u00C3\u00ADdica
+/// Lista os s\u00C3\u00B3cios vinculados \u00C3\u00A0 uma Pessoa Jur\u00C3\u00ADdica cadastrada.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Jur\u00C3\u00ADdica
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPagePessoaResponse*
+-(NSNumber*) listarSociosUsingGETWithId: (NSNumber*) _id
+    sort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPagePessoaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os Adicionais de uma Conta
+/// Este m\u00C3\u00A9todo permite que sejam listados portadores Adicionais de uma determinada Conta.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierAdicionalResponse*
+-(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierAdicionalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os Endere\u00C3\u00A7os cadastrados para o Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id)
+/// @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id)
+/// @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP)
+/// @param logradouro Apresenta o nome do Logradouro
+/// @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o
+/// @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o
+/// @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o
+/// @param bairro Apresenta nome do bairro
+/// @param cidade Apresenta nome da cidade
+/// @param uf Apresenta sigla da Unidade Federativa
+/// @param pais Apresenta nome do Pais
+/// @param dataInclusao Apresenta a data em que fora cadastrado o Endere\u00C3\u00A7o
+/// @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao
+/// 
+///
+/// @return PierPageEnderecoResponse*
+-(NSNumber*) listarUsingGET10WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    idPessoa: (NSNumber*) idPessoa
+    idTipoEndereco: (NSNumber*) idTipoEndereco
+    cep: (NSString*) cep
+    logradouro: (NSString*) logradouro
+    numero: (NSNumber*) numero
+    complemento: (NSString*) complemento
+    pontoReferencia: (NSString*) pontoReferencia
+    bairro: (NSString*) bairro
+    cidade: (NSString*) cidade
+    uf: (NSString*) uf
+    pais: (NSString*) pais
+    dataInclusao: (NSString*) dataInclusao
+    dataUltimaAtualizacao: (NSString*) dataUltimaAtualizacao
+    completionHandler: (void (^)(PierPageEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista os Detalhes das Pessoas cadastradas no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listadas od detalhes das Pessoas existentes na base de dados do Emissor.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idPessoa C\u00C3\u00B3digo identificador da pessoa
@@ -256,7 +372,8 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET14WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
@@ -276,6 +393,7 @@
 /// Lista as Pessoas cadastradas no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id).
@@ -292,7 +410,8 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET15WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
@@ -313,6 +432,7 @@
 /// Lista os Telefones cadastrados no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
 /// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id).
@@ -325,7 +445,8 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET22WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
@@ -335,49 +456,6 @@
     ramal: (NSString*) ramal
     status: (NSNumber*) status
     completionHandler: (void (^)(PierPageTelefoneResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista os Endere\u00C3\u00A7os cadastrados para o Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
-///
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
-/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id)
-/// @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id)
-/// @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP)
-/// @param logradouro Apresenta o nome do Logradouro
-/// @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o
-/// @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o
-/// @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o
-/// @param bairro Apresenta nome do bairro
-/// @param cidade Apresenta nome da cidade
-/// @param uf Apresenta sigla da Unidade Federativa
-/// @param pais Apresenta nome do Pais
-/// @param dataInclusao Apresenta a data em que fora cadastrado o Endere\u00C3\u00A7o
-/// @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao
-/// 
-///
-/// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET9WithPage: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    idPessoa: (NSNumber*) idPessoa
-    idTipoEndereco: (NSNumber*) idTipoEndereco
-    cep: (NSString*) cep
-    logradouro: (NSString*) logradouro
-    numero: (NSNumber*) numero
-    complemento: (NSString*) complemento
-    pontoReferencia: (NSString*) pontoReferencia
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    dataInclusao: (NSString*) dataInclusao
-    dataUltimaAtualizacao: (NSString*) dataUltimaAtualizacao
-    completionHandler: (void (^)(PierPageEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -408,6 +486,37 @@
 
 ///
 ///
+/// Salvar os detalhes de uma determinada Pessoa
+/// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
+///
+/// @param idPessoa Apresenta o c\u00C3\u00B3digo identificador da pessoa
+/// @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica
+/// @param idEstadoCivil Id Estado civil da pessoa fisica
+/// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
+/// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
+/// @param idNacionalidade Id Nacionalidade da pessoa fisica
+/// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
+/// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
+/// @param email Email da pessoa fisica
+/// @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o
+/// 
+///
+/// @return PierPessoaDetalheResponse*
+-(NSNumber*) salvarUsingPOST10WithIdPessoa: (NSNumber*) idPessoa
+    nomeMae: (NSString*) nomeMae
+    idEstadoCivil: (NSNumber*) idEstadoCivil
+    idProfissao: (NSNumber*) idProfissao
+    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
+    idNacionalidade: (NSNumber*) idNacionalidade
+    numeroAgencia: (NSNumber*) numeroAgencia
+    numeroContaCorrente: (NSString*) numeroContaCorrente
+    email: (NSString*) email
+    nomeEmpresa: (NSString*) nomeEmpresa
+    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Realiza o cadastro de um nova Pessoa
 /// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova Pessoa na base de dados do Emissor.
 ///
@@ -424,7 +533,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST10WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST11WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
@@ -450,7 +559,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST12WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST13WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -497,44 +606,13 @@
 /// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param idPropostaExterna Apresenta o identificador da proposta externa.
+/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
 /// 
 ///
 /// @return PierIntegracaoEmissorResponse*
--(NSNumber*) salvarUsingPOST6WithId: (NSNumber*) _id
-    idPropostaExterna: (NSNumber*) idPropostaExterna
+-(NSNumber*) salvarUsingPOST7WithId: (NSNumber*) _id
+    body: (PierIntegracaoEmissorPersist*) body
     completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Salvar os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
-///
-/// @param idPessoa Apresenta o c\u00C3\u00B3digo identificador da pessoa
-/// @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica
-/// @param idEstadoCivil Id Estado civil da pessoa fisica
-/// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
-/// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
-/// @param idNacionalidade Id Nacionalidade da pessoa fisica
-/// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
-/// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
-/// @param email Email da pessoa fisica
-/// @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o
-/// 
-///
-/// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST9WithIdPessoa: (NSNumber*) idPessoa
-    nomeMae: (NSString*) nomeMae
-    idEstadoCivil: (NSNumber*) idEstadoCivil
-    idProfissao: (NSNumber*) idProfissao
-    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
-    idNacionalidade: (NSNumber*) idNacionalidade
-    numeroAgencia: (NSNumber*) numeroAgencia
-    numeroContaCorrente: (NSString*) numeroContaCorrente
-    email: (NSString*) email
-    nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
 

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"flagCancelaCartao": @"flagCancelaCartao", @"flagCancelaNoDesbloqueio": @"flagCancelaNoDesbloqueio", @"idStatusDestinoDesbloqueio": @"idStatusDestinoDesbloqueio", @"idStatusDestinoConta": @"idStatusDestinoConta", @"flagCobraTarifa": @"flagCobraTarifa", @"flagPermiteNovaViaCartao": @"flagPermiteNovaViaCartao", @"flagPermiteDesbloqueio": @"flagPermiteDesbloqueio", @"flagCancelamento": @"flagCancelamento", @"flagPermiteBloqueio": @"flagPermiteBloqueio", @"flagReativar": @"flagReativar" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"permiteDesbloquear": @"permiteDesbloquear", @"permiteAtribuirComoBloqueio": @"permiteAtribuirComoBloqueio", @"permiteAtribuirComoCancelamento": @"permiteAtribuirComoCancelamento", @"cobrarTarifaAoEmitirNovaVia": @"cobrarTarifaAoEmitirNovaVia" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"flagCancelaNoDesbloqueio", @"flagPermiteNovaViaCartao", @"flagPermiteDesbloqueio", @"flagCancelamento", @"flagPermiteBloqueio", @"flagReativar"];
+  NSArray *optionalProperties = @[@"permiteDesbloquear", @"permiteAtribuirComoBloqueio", @"permiteAtribuirComoCancelamento", @"cobrarTarifaAoEmitirNovaVia"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

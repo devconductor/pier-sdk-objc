@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idStatusCartao": @"idStatusCartao", @"idEstagioCartao": @"idEstagioCartao", @"idConta": @"idConta", @"idPessoa": @"idPessoa", @"idProduto": @"idProduto", @"tipoPortador": @"tipoPortador", @"numeroCartao": @"numeroCartao", @"nomeImpresso": @"nomeImpresso", @"dataGeracao": @"dataGeracao", @"dataStatusCartao": @"dataStatusCartao", @"dataEstagioCartao": @"dataEstagioCartao", @"dataValidade": @"dataValidade", @"dataImpressao": @"dataImpressao", @"arquivoImpressao": @"arquivoImpressao", @"flagImpressaoOrigemComercial": @"flagImpressaoOrigemComercial", @"flagVirtual": @"flagVirtual", @"codigoDesbloqueio": @"codigoDesbloqueio", @"sequencialCartao": @"sequencialCartao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"flagTitular": @"flagTitular", @"idPessoa": @"idPessoa", @"sequencialCartao": @"sequencialCartao", @"idConta": @"idConta", @"idStatus": @"idStatus", @"dataStatus": @"dataStatus", @"idEstagio": @"idEstagio", @"dataEstagio": @"dataEstagio", @"numeroBin": @"numeroBin", @"numeroCartao": @"numeroCartao", @"numeroCartaoHash": @"numeroCartaoHash", @"numeroCartaoCriptografado": @"numeroCartaoCriptografado", @"dataEmissao": @"dataEmissao", @"dataValidade": @"dataValidade", @"cartaoVirtual": @"cartaoVirtual", @"impressaoAvulsa": @"impressaoAvulsa", @"dataImpressao": @"dataImpressao", @"nomeArquivoImpressao": @"nomeArquivoImpressao", @"idProduto": @"idProduto", @"nomeImpresso": @"nomeImpresso", @"codigoDesbloqueio": @"codigoDesbloqueio" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idStatusCartao", @"idEstagioCartao", @"idConta", @"idPessoa", @"idProduto", @"tipoPortador", @"numeroCartao", @"nomeImpresso", @"dataGeracao", @"dataStatusCartao", @"dataEstagioCartao", @"dataValidade", @"dataImpressao", @"arquivoImpressao", @"flagImpressaoOrigemComercial", @"flagVirtual", @"codigoDesbloqueio", @"sequencialCartao"];
+  NSArray *optionalProperties = @[@"_id", @"flagTitular", @"idPessoa", @"sequencialCartao", @"idConta", @"idStatus", @"dataStatus", @"idEstagio", @"dataEstagio", @"numeroBin", @"numeroCartao", @"numeroCartaoHash", @"numeroCartaoCriptografado", @"dataEmissao", @"dataValidade", @"cartaoVirtual", @"impressaoAvulsa", @"dataImpressao", @"nomeArquivoImpressao", @"idProduto", @"nomeImpresso", @"codigoDesbloqueio"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

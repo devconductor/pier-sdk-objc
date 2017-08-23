@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"flagAlteraLimite": @"flagAlteraLimite", @"mensagemConsultaNegada": @"mensagemConsultaNegada", @"flagPermiteNovaViaCartao": @"flagPermiteNovaViaCartao", @"flagFazTransferencia": @"flagFazTransferencia", @"flagRecebeTransferencia": @"flagRecebeTransferencia" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"nome": @"nome", @"permiteAlterarVencimento": @"permiteAlterarVencimento", @"permiteAlterarLimite": @"permiteAlterarLimite", @"permiteEmitirNovaViaCartao": @"permiteEmitirNovaViaCartao", @"permiteFazerTransferencia": @"permiteFazerTransferencia", @"permiteReceberTransferencia": @"permiteReceberTransferencia", @"permiteCriarAcordoCobranca": @"permiteCriarAcordoCobranca", @"permiteAtribuirComoBloqueio": @"permiteAtribuirComoBloqueio", @"permiteDesbloquear": @"permiteDesbloquear", @"permiteAtribuirComoCancelamento": @"permiteAtribuirComoCancelamento" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"mensagemConsultaNegada", @"flagPermiteNovaViaCartao", @"flagFazTransferencia", @"flagRecebeTransferencia"];
+  NSArray *optionalProperties = @[@"permiteAlterarVencimento", @"permiteAlterarLimite", @"permiteEmitirNovaViaCartao", @"permiteFazerTransferencia", @"permiteReceberTransferencia", @"permiteCriarAcordoCobranca", @"permiteAtribuirComoBloqueio", @"permiteDesbloquear", @"permiteAtribuirComoCancelamento"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

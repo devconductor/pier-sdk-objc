@@ -371,6 +371,8 @@ static PierAntecipacoesApi* singletonAPI = nil;
 /// Lista as compras antecip\u00C3\u00A1veis de uma conta.
 ///  @param idConta C\u00C3\u00B3digo identificador da conta da Compra. 
 ///
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -385,7 +387,8 @@ static PierAntecipacoesApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCompraResponse*
 ///
--(NSNumber*) listarUsingGET6WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET7WithIdConta: (NSNumber*) idConta
+    sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idCompra: (NSNumber*) idCompra
@@ -397,7 +400,7 @@ static PierAntecipacoesApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET7`"];
     }
     
 
@@ -412,6 +415,12 @@ static PierAntecipacoesApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;

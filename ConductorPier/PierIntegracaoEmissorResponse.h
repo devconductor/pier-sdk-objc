@@ -20,11 +20,17 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do arquivo. [optional]
+ */
+@property(nonatomic) NSNumber* idArquivo;
 /* Status do registro. [optional]
  */
-@property(nonatomic) NSNumber* status;
+@property(nonatomic) NSString* status;
 /* Data de inclus\u00C3\u00A3o do registro. [optional]
  */
-@property(nonatomic) NSString* dataEvento;
+@property(nonatomic) NSString* dataInclusao;
+/* Data da ultima altera\u00C3\u00A7\u00C3\u00A3o do registro. [optional]
+ */
+@property(nonatomic) NSString* dataAlteracao;
 
 @end

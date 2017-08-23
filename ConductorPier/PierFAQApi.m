@@ -213,7 +213,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierFaqResponse*
 ///
--(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
     pergunta: (NSString*) pergunta
     resposta: (NSString*) resposta
     relevancia: (NSNumber*) relevancia
@@ -225,17 +225,17 @@ static PierFAQApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT3`"];
     }
     
     // verify the required parameter 'pergunta' is set
     if (pergunta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pergunta` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pergunta` when calling `alterarUsingPUT3`"];
     }
     
     // verify the required parameter 'resposta' is set
     if (resposta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `alterarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `alterarUsingPUT3`"];
     }
     
 
@@ -415,6 +415,8 @@ static PierFAQApi* singletonAPI = nil;
 ///
 /// Lista FAQs
 /// Lista todas as FAQs
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
@@ -435,7 +437,8 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierPageFaqResponse*
 ///
--(NSNumber*) listarUsingGET11WithPage: (NSNumber*) page
+-(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq
     pergunta: (NSString*) pergunta
@@ -459,6 +462,12 @@ static PierFAQApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
     if (page != nil) {
         
         queryParams[@"page"] = page;

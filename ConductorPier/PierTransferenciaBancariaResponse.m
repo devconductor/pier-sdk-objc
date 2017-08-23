@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuorigem": @"nsuorigem", @"idAutorizacao": @"idAutorizacao", @"idTransferencia": @"idTransferencia", @"codigoAutorizacao": @"codigoAutorizacao", @"dataAutorizacao": @"dataAutorizacao", @"origem": @"origem", @"valor": @"valor", @"idOperacao": @"idOperacao", @"terminal": @"terminal", @"idCartao": @"idCartao", @"dataCompra": @"dataCompra", @"valorCompra": @"valorCompra", @"numeroParcelas": @"numeroParcelas", @"valorParcela": @"valorParcela", @"idEstabelecimento": @"idEstabelecimento", @"dataMovimento": @"dataMovimento", @"valorContrato": @"valorContrato", @"taxaJuros": @"taxaJuros", @"valorIOF": @"valorIOF", @"valorTAC": @"valorTAC", @"idConta": @"idConta", @"valorEntrada": @"valorEntrada", @"dataVencimentoReal": @"dataVencimentoReal", @"dataVencimentoPadrao": @"dataVencimentoPadrao", @"idContaPortador": @"idContaPortador", @"numeroEstabelecimento": @"numeroEstabelecimento" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuorigem": @"nsuorigem", @"idAutorizacao": @"idAutorizacao", @"idTransferencia": @"idTransferencia", @"codigoAutorizacao": @"codigoAutorizacao", @"dataAutorizacao": @"dataAutorizacao", @"origem": @"origem", @"valor": @"valor", @"idOperacao": @"idOperacao", @"terminal": @"terminal", @"idCartao": @"idCartao", @"dataCompra": @"dataCompra", @"valorCompra": @"valorCompra", @"numeroParcelas": @"numeroParcelas", @"valorParcela": @"valorParcela", @"idEstabelecimento": @"idEstabelecimento", @"dataMovimento": @"dataMovimento", @"valorContrato": @"valorContrato", @"taxaJuros": @"taxaJuros", @"valorIOF": @"valorIOF", @"valorTAC": @"valorTAC", @"idConta": @"idConta", @"valorEntrada": @"valorEntrada", @"dataVencimentoReal": @"dataVencimentoReal", @"dataVencimentoPadrao": @"dataVencimentoPadrao", @"idContaPortador": @"idContaPortador", @"numeroEstabelecimento": @"numeroEstabelecimento", @"valorTaxaSaque": @"valorTaxaSaque" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nsuorigem", @"idAutorizacao", @"idTransferencia", @"codigoAutorizacao", @"dataAutorizacao", @"origem", @"valor", @"idOperacao", @"terminal", @"idCartao", @"dataCompra", @"valorCompra", @"numeroParcelas", @"valorParcela", @"idEstabelecimento", @"dataMovimento", @"valorContrato", @"taxaJuros", @"valorIOF", @"valorTAC", @"idConta", @"valorEntrada", @"dataVencimentoReal", @"dataVencimentoPadrao", @"idContaPortador", @"numeroEstabelecimento"];
+  NSArray *optionalProperties = @[@"nsuorigem", @"idAutorizacao", @"idTransferencia", @"codigoAutorizacao", @"dataAutorizacao", @"origem", @"valor", @"idOperacao", @"terminal", @"idCartao", @"dataCompra", @"valorCompra", @"numeroParcelas", @"valorParcela", @"idEstabelecimento", @"dataMovimento", @"valorContrato", @"taxaJuros", @"valorIOF", @"valorTAC", @"idConta", @"valorEntrada", @"dataVencimentoReal", @"dataVencimentoPadrao", @"idContaPortador", @"numeroEstabelecimento", @"valorTaxaSaque"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
