@@ -1,24 +1,27 @@
 #import <Foundation/Foundation.h>
 #import "PierAjusteResponse.h"
 #import "PierLimiteDisponibilidadeResponse.h"
-#import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierContaResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
 #import "PierDetalhesFaturaConsignadaResponse.h"
 #import "PierFaturaConsignadaDetalheResponse.h"
 #import "PierDetalhesFaturaResponse.h"
-#import "PierPagePlanoParcelamentoResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierTransferenciaBancariaResponse.h"
 #import "PierPageTransferenciaResponse.h"
 #import "PierContaDetalheResponse.h"
+#import "PierCartaoEmbossingResponse.h"
+#import "PierCartaoEmbossingRequest.h"
+#import "PierCartaoImpressaoProvisorioResponse.h"
 #import "PierCartaoImpressaoResponse.h"
 #import "PierPageFaturaConsignadaResponse.h"
 #import "PierPageFaturaResponse.h"
 #import "PierPageHistoricoEventosResponse.h"
 #import "PierPageHistoricoAssessoriaResponse.h"
 #import "PierPageHistoricoAtrasoFaturaResponse.h"
+#import "PierPageTransacaoNaoProcessadaResponse.h"
+#import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
 #import "PierPageContaResponse.h"
@@ -99,21 +102,6 @@
     limiteInternacionalSaquePeriodo: (NSNumber*) limiteInternacionalSaquePeriodo
     limiteMaximo: (NSNumber*) limiteMaximo
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Altera o produto associado \u00C3\u00A0 conta.
-/// O recurso permite fazer modifica\u00C3\u00A7\u00C3\u00A3o do produto associado \u00C3\u00A0 conta.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do novo produto a ser associado (idProduto).
-/// 
-///
-/// @return PierPageContaHistoricoPagamentoResponse*
--(NSNumber*) alterarProdutoUsingPOSTWithId: (NSNumber*) _id
-    idProduto: (NSNumber*) idProduto
-    completionHandler: (void (^)(PierPageContaHistoricoPagamentoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -316,29 +304,6 @@
 
 ///
 ///
-/// Listar planos de parcelamento
-/// Lista os planos de parcelamento da fatura de uma conta.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimentoPadrao Indica a data de vencimento padr\u00C3\u00A3o das faturas
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param quantidadeParcelas 
-/// 
-///
-/// @return PierPagePlanoParcelamentoResponse*
--(NSNumber*) consultarLancamentosFuturosFaturaUsingGET1WithId: (NSNumber*) _id
-    dataVencimentoPadrao: (NSString*) dataVencimentoPadrao
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    quantidadeParcelas: (NSNumber*) quantidadeParcelas
-    completionHandler: (void (^)(PierPagePlanoParcelamentoResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Apresenta os limites da conta
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 ///
@@ -380,7 +345,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -396,7 +361,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler;
 
@@ -410,7 +375,7 @@
 /// 
 ///
 /// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -425,23 +390,6 @@
 /// @return NSObject*
 -(NSNumber*) desativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
-
-
-///
-///
-/// Envia 2\u00C2\u00AA via de fatura por E-mail
-/// Envia a segunda via da fatura para o e-mail informado/cadastrado.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimento Data de Vencimento da fatura.
-/// @param email E-mail para envio da 2\u00C2\u00AA via da fatura, caso n\u00C3\u00A3o seja informado ser\u00C3\u00A1 usado o e-mail cadastrado.
-/// 
-///
-/// @return NSString*
--(NSNumber*) enviarFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    email: (NSString*) email
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
@@ -467,15 +415,26 @@
 /// Este recurso permite que seja gerado um novo Cart\u00C3\u00A3o para um determinado Portador que esteja vinculado a uma Conta. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id), o idPessoa do Portador e o idTipoPlastico do Cart\u00C3\u00A3o que dever\u00C3\u00A1 ser gerado para impress\u00C3\u00A3o. Esta funcionalidade poder\u00C3\u00A1 ser utilizada para impress\u00C3\u00A3o de cart\u00C3\u00B5es em gr\u00C3\u00A1fica.
 ///
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
-/// @param idTipoPlastico C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do TipoPlastico (id).
+/// @param cartaoEmbossingRequest cartaoEmbossingRequest
 /// 
 ///
-/// @return PierCartaoImpressaoResponse*
+/// @return PierCartaoEmbossingResponse*
 -(NSNumber*) gerarCartaoEmbossingUsingPOSTWithId: (NSNumber*) _id
-    idPessoa: (NSNumber*) idPessoa
-    idTipoPlastico: (NSNumber*) idTipoPlastico
-    completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler;
+    cartaoEmbossingRequest: (PierCartaoEmbossingRequest*) cartaoEmbossingRequest
+    completionHandler: (void (^)(PierCartaoEmbossingResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o provisorio
+/// Este recurso permite que seja gerado um cart\u00C3\u00A3o provis\u00C3\u00B3rio para um determinado Portador que esteja vinculado a uma Conta. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id).
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// 
+///
+/// @return PierCartaoImpressaoProvisorioResponse*
+-(NSNumber*) gerarCartaoProvisorioUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoImpressaoProvisorioResponse* output, NSError* error)) handler;
 
 
 ///
@@ -622,14 +581,14 @@
 /// @param dataFim Data fim da consulta do extrato no formato yyyy-MM-dd  (Par\u00C3\u00A2mentro Ignorado se dataInicio n\u00C3\u00A3o for definida).
 /// 
 ///
-/// @return PierPageTransacoesCorrentesResponse*
+/// @return PierPageTransacaoNaoProcessadaResponse*
 -(NSNumber*) listarNaoProcessadasUsingGETWithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataInicio: (NSString*) dataInicio
     dataFim: (NSString*) dataFim
-    completionHandler: (void (^)(PierPageTransacoesCorrentesResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageTransacaoNaoProcessadaResponse* output, NSError* error)) handler;
 
 
 ///

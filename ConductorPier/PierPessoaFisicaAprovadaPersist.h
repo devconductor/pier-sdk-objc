@@ -48,7 +48,7 @@
 @property(nonatomic) NSNumber* idEstadoCivil;
 /* Profiss\u00C3\u00A3o da pessoa fisica [optional]
  */
-@property(nonatomic) NSNumber* idProfissao;
+@property(nonatomic) NSString* idProfissao;
 /* Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;

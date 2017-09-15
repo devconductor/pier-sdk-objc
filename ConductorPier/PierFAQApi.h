@@ -77,7 +77,7 @@
 /// 
 ///
 /// @return PierFaqResponse*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler;
 
 

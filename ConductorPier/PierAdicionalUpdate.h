@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierTelefoneAdicionalPersist.h"
+#import "PierTelefoneAdicionalUpdate.h"
 
 
 @protocol PierAdicionalUpdate
@@ -42,23 +42,11 @@
 /* Data de emiss\u00C3\u00A3o do Documento de Identidade do Adicional em formato yyyy-MM-dd. [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estado Civil do Adicional. [optional]
- */
-@property(nonatomic) NSNumber* idEstadoCivil;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Profissao do Adicional. [optional]
- */
-@property(nonatomic) NSNumber* idProfissao;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Nacionalidade do Adicional. [optional]
- */
-@property(nonatomic) NSNumber* idNacionalidade;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco do Adicional com o Titular. [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco do Adicional com o Titular. [optional]
- */
-@property(nonatomic) NSString* email;
 /* Lista de telefones do adicional. [optional]
  */
-@property(nonatomic) NSArray<PierTelefoneAdicionalPersist>* telefones;
+@property(nonatomic) NSArray<PierTelefoneAdicionalUpdate>* telefones;
 
 @end

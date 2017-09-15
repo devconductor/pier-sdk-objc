@@ -2,24 +2,27 @@
 #import "PierQueryParamCollection.h"
 #import "PierAjusteResponse.h"
 #import "PierLimiteDisponibilidadeResponse.h"
-#import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierContaResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
 #import "PierDetalhesFaturaConsignadaResponse.h"
 #import "PierFaturaConsignadaDetalheResponse.h"
 #import "PierDetalhesFaturaResponse.h"
-#import "PierPagePlanoParcelamentoResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierTransferenciaBancariaResponse.h"
 #import "PierPageTransferenciaResponse.h"
 #import "PierContaDetalheResponse.h"
+#import "PierCartaoEmbossingResponse.h"
+#import "PierCartaoEmbossingRequest.h"
+#import "PierCartaoImpressaoProvisorioResponse.h"
 #import "PierCartaoImpressaoResponse.h"
 #import "PierPageFaturaConsignadaResponse.h"
 #import "PierPageFaturaResponse.h"
 #import "PierPageHistoricoEventosResponse.h"
 #import "PierPageHistoricoAssessoriaResponse.h"
 #import "PierPageHistoricoAtrasoFaturaResponse.h"
+#import "PierPageTransacaoNaoProcessadaResponse.h"
+#import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
 #import "PierPageContaResponse.h"
@@ -382,101 +385,6 @@ static PierContaApi* singletonAPI = nil;
                               responseType: @"PierLimiteDisponibilidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierLimiteDisponibilidadeResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Altera o produto associado \u00C3\u00A0 conta.
-/// O recurso permite fazer modifica\u00C3\u00A7\u00C3\u00A3o do produto associado \u00C3\u00A0 conta.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
-///
-///  @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do novo produto a ser associado (idProduto). 
-///
-///  @returns PierPageContaHistoricoPagamentoResponse*
-///
--(NSNumber*) alterarProdutoUsingPOSTWithId: (NSNumber*) _id
-    idProduto: (NSNumber*) idProduto
-    completionHandler: (void (^)(PierPageContaHistoricoPagamentoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarProdutoUsingPOST`"];
-    }
-    
-    // verify the required parameter 'idProduto' is set
-    if (idProduto == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idProduto` when calling `alterarProdutoUsingPOST`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/alterar-produto"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idProduto != nil) {
-        
-        queryParams[@"idProduto"] = idProduto;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageContaHistoricoPagamentoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageContaHistoricoPagamentoResponse*)data, error);
                            }
           ];
 }
@@ -1663,131 +1571,6 @@ static PierContaApi* singletonAPI = nil;
 }
 
 ///
-/// Listar planos de parcelamento
-/// Lista os planos de parcelamento da fatura de uma conta.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
-///
-///  @param dataVencimentoPadrao Indica a data de vencimento padr\u00C3\u00A3o das faturas 
-///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
-///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param quantidadeParcelas  (optional)
-///
-///  @returns PierPagePlanoParcelamentoResponse*
-///
--(NSNumber*) consultarLancamentosFuturosFaturaUsingGET1WithId: (NSNumber*) _id
-    dataVencimentoPadrao: (NSString*) dataVencimentoPadrao
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    quantidadeParcelas: (NSNumber*) quantidadeParcelas
-    completionHandler: (void (^)(PierPagePlanoParcelamentoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarLancamentosFuturosFaturaUsingGET1`"];
-    }
-    
-    // verify the required parameter 'dataVencimentoPadrao' is set
-    if (dataVencimentoPadrao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimentoPadrao` when calling `consultarLancamentosFuturosFaturaUsingGET1`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/faturas/planos-parcelamento"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (sort != nil) {
-        
-        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
-        
-        
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (dataVencimentoPadrao != nil) {
-        
-        queryParams[@"dataVencimentoPadrao"] = dataVencimentoPadrao;
-    }
-    if (quantidadeParcelas != nil) {
-        
-        queryParams[@"quantidadeParcelas"] = quantidadeParcelas;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPagePlanoParcelamentoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePlanoParcelamentoResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Apresenta os limites da conta
 /// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
 ///  @param _id Id Conta 
@@ -1987,7 +1770,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaBancariaResponse*
 ///
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
@@ -1995,12 +1778,12 @@ static PierContaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET26`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET26`"];
     }
     
 
@@ -2086,19 +1869,19 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaResponse*
 ///
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET27`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET27`"];
     }
     
 
@@ -2178,13 +1961,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 
@@ -2338,107 +2121,6 @@ static PierContaApi* singletonAPI = nil;
 }
 
 ///
-/// Envia 2\u00C2\u00AA via de fatura por E-mail
-/// Envia a segunda via da fatura para o e-mail informado/cadastrado.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
-///
-///  @param dataVencimento Data de Vencimento da fatura. 
-///
-///  @param email E-mail para envio da 2\u00C2\u00AA via da fatura, caso n\u00C3\u00A3o seja informado ser\u00C3\u00A1 usado o e-mail cadastrado. (optional)
-///
-///  @returns NSString*
-///
--(NSNumber*) enviarFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    email: (NSString*) email
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `enviarFaturaEmailUsingPOST`"];
-    }
-    
-    // verify the required parameter 'dataVencimento' is set
-    if (dataVencimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimento` when calling `enviarFaturaEmailUsingPOST`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/faturas/{dataVencimento}/enviar-email"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    if (dataVencimento != nil) {
-        pathParams[@"dataVencimento"] = dataVencimento;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (email != nil) {
-        
-        queryParams[@"email"] = email;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"NSString*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((NSString*)data, error);
-                           }
-          ];
-}
-
-///
 /// Gera um boleto de recarga
 /// Este recurso gera um boleto de recarga
 ///  @param _id Id Conta 
@@ -2550,16 +2232,13 @@ static PierContaApi* singletonAPI = nil;
 /// Este recurso permite que seja gerado um novo Cart\u00C3\u00A3o para um determinado Portador que esteja vinculado a uma Conta. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id), o idPessoa do Portador e o idTipoPlastico do Cart\u00C3\u00A3o que dever\u00C3\u00A1 ser gerado para impress\u00C3\u00A3o. Esta funcionalidade poder\u00C3\u00A1 ser utilizada para impress\u00C3\u00A3o de cart\u00C3\u00B5es em gr\u00C3\u00A1fica.
 ///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
 ///
-///  @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+///  @param cartaoEmbossingRequest cartaoEmbossingRequest 
 ///
-///  @param idTipoPlastico C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do TipoPlastico (id). (optional)
-///
-///  @returns PierCartaoImpressaoResponse*
+///  @returns PierCartaoEmbossingResponse*
 ///
 -(NSNumber*) gerarCartaoEmbossingUsingPOSTWithId: (NSNumber*) _id
-    idPessoa: (NSNumber*) idPessoa
-    idTipoPlastico: (NSNumber*) idTipoPlastico
-    completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler {
+    cartaoEmbossingRequest: (PierCartaoEmbossingRequest*) cartaoEmbossingRequest
+    completionHandler: (void (^)(PierCartaoEmbossingResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2567,9 +2246,9 @@ static PierContaApi* singletonAPI = nil;
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `gerarCartaoEmbossingUsingPOST`"];
     }
     
-    // verify the required parameter 'idPessoa' is set
-    if (idPessoa == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `gerarCartaoEmbossingUsingPOST`"];
+    // verify the required parameter 'cartaoEmbossingRequest' is set
+    if (cartaoEmbossingRequest == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cartaoEmbossingRequest` when calling `gerarCartaoEmbossingUsingPOST`"];
     }
     
 
@@ -2584,16 +2263,92 @@ static PierContaApi* singletonAPI = nil;
     if (_id != nil) {
         pathParams[@"id"] = _id;
     }
-    if (idPessoa != nil) {
-        pathParams[@"id_pessoa"] = idPessoa;
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = cartaoEmbossingRequest;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCartaoEmbossingResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCartaoEmbossingResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza a gera\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o provisorio
+/// Este recurso permite que seja gerado um cart\u00C3\u00A3o provis\u00C3\u00B3rio para um determinado Portador que esteja vinculado a uma Conta. Para isso, ser\u00C3\u00A1 preciso informar o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id).
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
+///  @returns PierCartaoImpressaoProvisorioResponse*
+///
+-(NSNumber*) gerarCartaoProvisorioUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoImpressaoProvisorioResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `gerarCartaoProvisorioUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/gerar-cartao-provisorio"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
     }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (idTipoPlastico != nil) {
-        
-        queryParams[@"id_tipo_plastico"] = idTipoPlastico;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -2639,9 +2394,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierCartaoImpressaoResponse*"
+                              responseType: @"PierCartaoImpressaoProvisorioResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierCartaoImpressaoResponse*)data, error);
+                               handler((PierCartaoImpressaoProvisorioResponse*)data, error);
                            }
           ];
 }
@@ -3401,7 +3156,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param dataFim Data fim da consulta do extrato no formato yyyy-MM-dd  (Par\u00C3\u00A2mentro Ignorado se dataInicio n\u00C3\u00A3o for definida). (optional)
 ///
-///  @returns PierPageTransacoesCorrentesResponse*
+///  @returns PierPageTransacaoNaoProcessadaResponse*
 ///
 -(NSNumber*) listarNaoProcessadasUsingGETWithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
@@ -3409,7 +3164,7 @@ static PierContaApi* singletonAPI = nil;
     limit: (NSNumber*) limit
     dataInicio: (NSString*) dataInicio
     dataFim: (NSString*) dataFim
-    completionHandler: (void (^)(PierPageTransacoesCorrentesResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierPageTransacaoNaoProcessadaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -3499,9 +3254,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransacoesCorrentesResponse*"
+                              responseType: @"PierPageTransacaoNaoProcessadaResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransacoesCorrentesResponse*)data, error);
+                               handler((PierPageTransacaoNaoProcessadaResponse*)data, error);
                            }
           ];
 }

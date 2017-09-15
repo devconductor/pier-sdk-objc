@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nome": @"nome", @"nomeImpresso": @"nomeImpresso", @"numeroReceitaFederal": @"numeroReceitaFederal", @"dataNascimento": @"dataNascimento", @"sexo": @"sexo", @"numeroIdentidade": @"numeroIdentidade", @"orgaoExpedidorIdentidade": @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade": @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade": @"dataEmissaoIdentidade", @"idEstadoCivil": @"idEstadoCivil", @"idProfissao": @"idProfissao", @"idNacionalidade": @"idNacionalidade", @"idParentesco": @"idParentesco", @"email": @"email", @"telefones": @"telefones" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nome": @"nome", @"nomeImpresso": @"nomeImpresso", @"numeroReceitaFederal": @"numeroReceitaFederal", @"dataNascimento": @"dataNascimento", @"sexo": @"sexo", @"numeroIdentidade": @"numeroIdentidade", @"orgaoExpedidorIdentidade": @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade": @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade": @"dataEmissaoIdentidade", @"idParentesco": @"idParentesco", @"telefones": @"telefones" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nomeImpresso", @"dataNascimento", @"sexo", @"numeroIdentidade", @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade", @"idEstadoCivil", @"idProfissao", @"idNacionalidade", @"idParentesco", @"email", @"telefones"];
+  NSArray *optionalProperties = @[@"nomeImpresso", @"dataNascimento", @"sexo", @"numeroIdentidade", @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade", @"idParentesco", @"telefones"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

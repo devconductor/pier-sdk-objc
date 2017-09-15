@@ -14,8 +14,6 @@
 
 @interface PierCartaoImpressaoResponse : PierObject
 
-
-@property(nonatomic) NSNumber* flagVirtual;
 /* Apresenta o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id) a qual o cart\u00C3\u00A3o gerado pertence. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
@@ -82,6 +80,9 @@
 /* Apresenta os dados da TrilhaCVV02, seguindo as regras de trilha do emissor. [optional]
  */
 @property(nonatomic) NSString* trilhaCVV2;
+/* Apresenta o status que informa se o cart\u00C3\u00A3o \u00C3\u00A9 virtual  [optional]
+ */
+@property(nonatomic) NSNumber* flagVirtual;
 /* Apresenta o numero da hash do cart\u00C3\u00A3o  [optional]
  */
 @property(nonatomic) NSNumber* numeroCartaoHash;
