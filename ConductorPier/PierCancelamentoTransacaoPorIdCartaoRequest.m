@@ -1,6 +1,6 @@
-#import "PierTipoOperacaoResponse.h"
+#import "PierCancelamentoTransacaoPorIdCartaoRequest.h"
 
-@implementation PierTipoOperacaoResponse
+@implementation PierCancelamentoTransacaoPorIdCartaoRequest
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"tipoOperacao": @"tipoOperacao", @"nome": @"nome", @"descricao": @"descricao", @"excedentePermitido": @"excedentePermitido", @"tipoExcedentePermitido": @"tipoExcedentePermitido", @"valorMinimo": @"valorMinimo", @"valorMaximo": @"valorMaximo", @"valorTAC": @"valorTAC", @"flagTiraTac": @"flagTiraTac", @"idProduto": @"idProduto", @"idEstabelecimento": @"idEstabelecimento", @"tarifa": @"tarifa", @"remuneracaoEmissor": @"remuneracaoEmissor", @"planoMaximo": @"planoMaximo", @"planoMinimo": @"planoMinimo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuOrigem": @"nsuOrigem", @"nsuOrigemTransacaoCancelada": @"nsuOrigemTransacaoCancelada", @"codigoProcessamento": @"codigoProcessamento", @"dataHoraTransacaoCancelada": @"dataHoraTransacaoCancelada", @"nsuAutorizacaoTransacaoCancelada": @"nsuAutorizacaoTransacaoCancelada", @"valorTransacao": @"valorTransacao", @"numeroEstabelecimento": @"numeroEstabelecimento", @"dataHoraTerminal": @"dataHoraTerminal", @"terminalRequisitante": @"terminalRequisitante", @"numeroParcelas": @"numeroParcelas" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"excedentePermitido", @"tipoExcedentePermitido", @"valorTAC", @"flagTiraTac", @"tarifa", @"remuneracaoEmissor", ];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

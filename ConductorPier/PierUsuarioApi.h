@@ -76,7 +76,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 

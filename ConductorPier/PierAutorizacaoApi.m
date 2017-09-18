@@ -4,6 +4,7 @@
 #import "PierTransacaoOnUsResponse.h"
 #import "PierTransacaoOnUsPorIdCartaoRequest.h"
 #import "PierCancelamentoTransacaoOnUsRequest.h"
+#import "PierCancelamentoTransacaoPorIdCartaoRequest.h"
 #import "PierTransacaoOnUsRequest.h"
 
 
@@ -269,6 +270,97 @@ static PierAutorizacaoApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = cancelamentoRequest;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTransacaoOnUsResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTransacaoOnUsResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira por idCartao
+/// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o a partir do idCartao.
+///  @param _id Id Cartao 
+///
+///  @param cancelamentoRequest cancelamentoRequest 
+///
+///  @returns PierTransacaoOnUsResponse*
+///
+-(NSNumber*) cancelarUsingPOST3WithId: (NSNumber*) _id
+    cancelamentoRequest: (PierCancelamentoTransacaoPorIdCartaoRequest*) cancelamentoRequest
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `cancelarUsingPOST3`"];
+    }
+    
+    // verify the required parameter 'cancelamentoRequest' is set
+    if (cancelamentoRequest == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cancelamentoRequest` when calling `cancelarUsingPOST3`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/{id}/cancelar-transacao"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];

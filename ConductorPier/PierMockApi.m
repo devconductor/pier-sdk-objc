@@ -3,7 +3,6 @@
 #import "PierAlterarProdutoRequest.h"
 #import "PierEmprestimoPessoalRequest.h"
 #import "PierEmprestimoPessoalResponse.h"
-#import "PierByteArray.h"
 
 
 @interface PierMockApi ()
@@ -351,11 +350,11 @@ static PierMockApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento Data de Vencimento da fatura. 
 ///
-///  @returns NSArray<PierByteArray>*
+///  @returns NSObject*
 ///
 -(NSNumber*) visualizarDocumentoUsingPOSTWithId: (NSNumber*) _id
     dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(NSArray<PierByteArray>* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -431,9 +430,9 @@ static PierMockApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSArray<PierByteArray>*"
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSArray<PierByteArray>*)data, error);
+                               handler((NSObject*)data, error);
                            }
           ];
 }

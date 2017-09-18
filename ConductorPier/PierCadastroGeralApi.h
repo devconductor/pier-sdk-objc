@@ -7,7 +7,6 @@
 #import "PierAtendimentoClienteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
 #import "PierTipoEnderecoResponse.h"
-#import "PierTipoOperacaoResponse.h"
 #import "PierTipoTelefoneResponse.h"
 #import "PierBancoResponse.h"
 #import "PierPageContaDetalheResponse.h"
@@ -183,23 +182,6 @@
 
 ///
 ///
-/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
-///
-/// @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao).
-/// @param idEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (idEstabelecimento).
-/// @param codigoProcessamento C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o.
-/// 
-///
-/// @return PierTipoOperacaoResponse*
--(NSNumber*) consultarUsingGET22WithIdCartao: (NSNumber*) idCartao
-    idEstabelecimento: (NSNumber*) idEstabelecimento
-    codigoProcessamento: (NSString*) codigoProcessamento
-    completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Apresenta os dados de um determinado Tipo de Telefone
 /// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -207,7 +189,7 @@
 /// 
 ///
 /// @return PierTipoTelefoneResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 

@@ -2,7 +2,6 @@
 #import "PierAlterarProdutoRequest.h"
 #import "PierEmprestimoPessoalRequest.h"
 #import "PierEmprestimoPessoalResponse.h"
-#import "PierByteArray.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -76,10 +75,10 @@
 /// @param dataVencimento Data de Vencimento da fatura.
 /// 
 ///
-/// @return NSArray<PierByteArray>*
+/// @return NSObject*
 -(NSNumber*) visualizarDocumentoUsingPOSTWithId: (NSNumber*) _id
     dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(NSArray<PierByteArray>* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 

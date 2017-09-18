@@ -3,6 +3,7 @@
 #import "PierTransacaoOnUsResponse.h"
 #import "PierTransacaoOnUsPorIdCartaoRequest.h"
 #import "PierCancelamentoTransacaoOnUsRequest.h"
+#import "PierCancelamentoTransacaoPorIdCartaoRequest.h"
 #import "PierTransacaoOnUsRequest.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -61,6 +62,21 @@
 ///
 /// @return PierTransacaoOnUsResponse*
 -(NSNumber*) cancelarUsingPOST2WithCancelamentoRequest: (PierCancelamentoTransacaoOnUsRequest*) cancelamentoRequest
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira por idCartao
+/// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o a partir do idCartao.
+///
+/// @param _id Id Cartao
+/// @param cancelamentoRequest cancelamentoRequest
+/// 
+///
+/// @return PierTransacaoOnUsResponse*
+-(NSNumber*) cancelarUsingPOST3WithId: (NSNumber*) _id
+    cancelamentoRequest: (PierCancelamentoTransacaoPorIdCartaoRequest*) cancelamentoRequest
     completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
 
 
