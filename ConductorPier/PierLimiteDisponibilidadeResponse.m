@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[];
+  NSArray *optionalProperties = @[@"_id", @"limiteGlobal", @"limiteCompra", @"limiteParcelado", @"limiteParcelas", @"limiteSaqueGlobal", @"limiteSaquePeriodo", @"limiteConsignado", @"limiteInternacionalCompra", @"limiteInternacionalParcelado", @"limiteInternacionalParcelas", @"limiteInternacionalSaqueGlobal", @"limiteInternacionalSaquePeriodo", @"limiteMaximo", @"saldoDisponivelGlobal", @"saldoDisponivelCompra", @"saldoDisponivelParcelado", @"saldoDisponivelParcelas", @"saldoDisponivelSaque", @"saldoPontosFidelidade", @"saldoDisponivelCompraInternacional", @"saldoDisponivelSaqueInternacional"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

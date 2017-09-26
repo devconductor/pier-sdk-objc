@@ -87,7 +87,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) salvarUsingPOST17WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST20WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"valorSolicitado": @"valorSolicitado", @"numeroParcelas": @"numeroParcelas", @"taxaJuros": @"taxaJuros", @"periodoTaxa": @"periodoTaxa", @"sistemaAmortizacao": @"sistemaAmortizacao", @"diaVencimento": @"diaVencimento", @"numeroMesesCarencia": @"numeroMesesCarencia" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"valorSolicitado": @"valorSolicitado", @"numeroParcelas": @"numeroParcelas", @"taxaJuros": @"taxaJuros", @"periodoTaxa": @"periodoTaxa", @"sistemaAmortizacao": @"sistemaAmortizacao", @"numeroMesesCarencia": @"numeroMesesCarencia" }];
 }
 
 /**

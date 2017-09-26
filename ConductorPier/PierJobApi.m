@@ -476,7 +476,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 ///  @returns PierJobResponse*
 ///
--(NSNumber*) salvarUsingPOST8WithDescricao: (NSString*) descricao
+-(NSNumber*) salvarUsingPOST11WithDescricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
     completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
@@ -484,17 +484,17 @@ static PierJobApi* singletonAPI = nil;
     
     // verify the required parameter 'descricao' is set
     if (descricao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `descricao` when calling `salvarUsingPOST8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `descricao` when calling `salvarUsingPOST11`"];
     }
     
     // verify the required parameter 'cron' is set
     if (cron == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cron` when calling `salvarUsingPOST8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cron` when calling `salvarUsingPOST11`"];
     }
     
     // verify the required parameter 'groovy' is set
     if (groovy == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `groovy` when calling `salvarUsingPOST8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `groovy` when calling `salvarUsingPOST11`"];
     }
     
 

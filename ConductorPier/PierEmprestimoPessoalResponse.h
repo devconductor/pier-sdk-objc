@@ -20,17 +20,26 @@
 /* Valor solicitado do empr\u00C3\u00A9stimo/financiamento [optional]
  */
 @property(nonatomic) NSNumber* valorSolicitado;
-/* Valor total do empr\u00C3\u00A9stimo/financiamento [optional]
+/* Valor m\u00C3\u00A1ximo de empr\u00C3\u00A9stimo pelo valor limite de parcela [optional]
  */
-@property(nonatomic) NSNumber* valorTotal;
-/* Sistema para amortiza\u00C3\u00A7\u00C3\u00A3o do valor das parcelas [optional]
+@property(nonatomic) NSNumber* valorMaximoSolicitacao;
+/* N\u00C3\u00BAmero de parcelas solicitado [optional]
  */
-@property(nonatomic) NSString* sistemaAmortizacao;
+@property(nonatomic) NSNumber* numeroParcelas;
+/* Limite m\u00C3\u00A1ximo de parcela permitido [optional]
+ */
+@property(nonatomic) NSNumber* valorMaximoParcela;
+/* Data do desconto da primeira parcela [optional]
+ */
+@property(nonatomic) NSString* dataPrimeiraParcela;
 /* Per\u00C3\u00ADodo de aplica da taxa de juros [optional]
  */
 @property(nonatomic) NSString* periodoTaxa;
-/* Data da primeira parcela do empr\u00C3\u00A9stimo/financiamento [optional]
+/* Sistema para amortiza\u00C3\u00A7\u00C3\u00A3o do valor das parcelas [optional]
  */
-@property(nonatomic) NSString* dataPrimeiraParcela;
+@property(nonatomic) NSString* sistemaAmortizacao;
+/* Valor percentual da taxa de juros a ser aplicada [optional]
+ */
+@property(nonatomic) NSNumber* taxaJuros;
 
 @end

@@ -272,13 +272,13 @@ static PierPlataformaMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPlataformaMobileResponse*
 ///
--(NSNumber*) salvarUsingPOST12WithPersist: (PierPlataformaMobilePersist*) persist
+-(NSNumber*) salvarUsingPOST15WithPersist: (PierPlataformaMobilePersist*) persist
     completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST15`"];
     }
     
 

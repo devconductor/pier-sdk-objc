@@ -1,6 +1,6 @@
-#import "PierPlanoParcelamentoEmprestimoResponse.h"
+#import "PierNotificacaoEmailResponse.h"
 
-@implementation PierPlanoParcelamentoEmprestimoResponse
+@implementation PierNotificacaoEmailResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroParcelas": @"numeroParcelas", @"valorParcelas": @"valorParcelas", @"taxaJuros": @"taxaJuros", @"valorTributosIOF": @"valorTributosIOF", @"valorPercentualCET": @"valorPercentualCET" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTemplateNotificacao": @"idTemplateNotificacao", @"idDocumento": @"idDocumento", @"destinatario": @"destinatario", @"remetente": @"remetente" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"numeroParcelas", @"valorParcelas", @"taxaJuros", @"valorTributosIOF", @"valorPercentualCET"];
+  NSArray *optionalProperties = @[@"_id", @"idTemplateNotificacao", @"idDocumento", @"destinatario", @"remetente"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

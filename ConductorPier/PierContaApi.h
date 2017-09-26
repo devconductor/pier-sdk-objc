@@ -2,6 +2,7 @@
 #import "PierAjusteResponse.h"
 #import "PierLimiteDisponibilidadeResponse.h"
 #import "PierContaResponse.h"
+#import "PierBeneficioPagamentoAtrasoResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
 #import "PierDetalhesFaturaConsignadaResponse.h"
@@ -25,6 +26,8 @@
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
 #import "PierPageContaResponse.h"
+#import "PierEmprestimoPessoalRequest.h"
+#import "PierEmprestimoPessoalResponse.h"
 #import "PierPageTransacaoResponse.h"
 #import "PierTransferenciaBancariaPersist.h"
 #import "PierObject.h"
@@ -204,6 +207,19 @@
 -(NSNumber*) cancelarUsingPOST1WithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta a data m\u00C3\u00A1xima para pagamento da fatura em atraso para receber o benef\u00C3\u00ADcio.
+/// Este m\u00C3\u00A9todo permite consultar se o cliente tem direito ao benef\u00C3\u00ADcio de pagamento em atraso, em loja, at\u00C3\u00A9 o s\u00C3\u00A1bado subsequente ao vencimento, ficando isento do pagamento de multa, encargos, mora e IOF.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// 
+///
+/// @return PierBeneficioPagamentoAtrasoResponse*
+-(NSNumber*) consultarBeneficioPagamentoAtrasoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierBeneficioPagamentoAtrasoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -743,6 +759,21 @@
 /// @return NSObject*
 -(NSNumber*) reativarUsingPOST1WithId: (NSNumber*) _id
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Simula valores de presta\u00C3\u00A7\u00C3\u00B5es de empr\u00C3\u00A9stimos/financiamentos
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o pode ser utilizada para simular opera\u00C3\u00A7\u00C3\u00B5es financeiras a partir de informa\u00C3\u00A7\u00C3\u00B5es fornecidas pelo usu\u00C3\u00A1rio. Os c\u00C3\u00A1lculos gerados devem ser considerados apenas como refer\u00C3\u00AAncia para as situa\u00C3\u00A7\u00C3\u00B5es reais e n\u00C3\u00A3o como valores oficiais.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param request request
+/// 
+///
+/// @return PierEmprestimoPessoalResponse*
+-(NSNumber*) simularEmprestimoFinanciamentoUsingPOSTWithId: (NSNumber*) _id
+    request: (PierEmprestimoPessoalRequest*) request
+    completionHandler: (void (^)(PierEmprestimoPessoalResponse* output, NSError* error)) handler;
 
 
 ///

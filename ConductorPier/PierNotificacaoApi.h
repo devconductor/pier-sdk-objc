@@ -8,6 +8,8 @@
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
 #import "PierPageTemplateNotificacaoResponse.h"
+#import "PierNotificacaoEmailResponse.h"
+#import "PierNotificacaoEmailRequest.h"
 #import "PierPushFCMEGCM.h"
 #import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
@@ -57,6 +59,7 @@
 /// @param idConfiguracaoEmail C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da configra\u00C3\u00A7\u00C3\u00A3o de EMAIL.
 /// @param tipoLayout Tipo do layout.
 /// @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o.
+/// @param remetente Remetente
 /// @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o.
 /// 
 ///
@@ -66,6 +69,7 @@
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
     tipoLayout: (NSString*) tipoLayout
     tipoNotificacao: (NSString*) tipoNotificacao
+    remetente: (NSString*) remetente
     assunto: (NSString*) assunto
     completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
 
@@ -234,6 +238,19 @@
 
 ///
 ///
+/// Enviar notifica\u00C3\u00A7\u00C3\u00A3o por email
+/// Esse recurso permite enviar uma mensagem de notifica\u00C3\u00A7\u00C3\u00A3o por email
+///
+/// @param request request
+/// 
+///
+/// @return PierNotificacaoEmailResponse*
+-(NSNumber*) notificacaoEmailUsingPOSTWithRequest: (PierNotificacaoEmailRequest*) request
+    completionHandler: (void (^)(PierNotificacaoEmailResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Responder SMS
 /// Esse recurso permite atualizar a resposta do SMS, fornecida pedo usu\u00C3\u00A1rio
 ///
@@ -323,6 +340,7 @@
 /// @param idConfiguracaoEmail C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da configra\u00C3\u00A7\u00C3\u00A3o de EMAIL.
 /// @param tipoLayout Tipo do layout.
 /// @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o.
+/// @param remetente Remetente
 /// @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o.
 /// 
 ///
@@ -331,6 +349,7 @@
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
     tipoLayout: (NSString*) tipoLayout
     tipoNotificacao: (NSString*) tipoNotificacao
+    remetente: (NSString*) remetente
     assunto: (NSString*) assunto
     completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
 

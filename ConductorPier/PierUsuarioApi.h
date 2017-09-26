@@ -24,6 +24,21 @@
 +(PierUsuarioApi*) sharedAPI;
 ///
 ///
+/// Alterar senha do usu\u00C3\u00A1rio.
+/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha do usu\u00C3\u00A1rio.
+///
+/// @param login Login do usu\u00C3\u00A1rio.
+/// @param senhaNova Senha Nova
+/// 
+///
+/// @return NSString*
+-(NSNumber*) alterarSenhaLoginUsingPOSTWithLogin: (NSString*) login
+    senhaNova: (NSString*) senhaNova
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+
+
+///
+///
 /// Alterar senha do usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha do usu\u00C3\u00A1rio.
 ///
@@ -41,7 +56,7 @@
 
 ///
 ///
-/// Altera os usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
+/// Altera os usu\u00C3\u00A1rios cadastrados na base.
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id).
@@ -133,15 +148,30 @@
 
 ///
 ///
-/// Cadastra Usu\u00C3\u00A1rio na base do PIER ou WS.
+/// Cadastra Usu\u00C3\u00A1rio na base.
 /// Esse recurso permite cadastrar usu\u00C3\u00A1rios.
 ///
 /// @param persist persist
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) salvarUsingPOST16WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST19WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza login com valida\u00C3\u00A7\u00C3\u00A3o de senha dos usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
+/// O recurso permite fazer login do usu\u00C3\u00A1rio atrav\u00C3\u00A9s da senha definida pelo emissor.
+///
+/// @param login Login identificador do usu\u00C3\u00A1rio (login).
+/// @param senha Senha do usu\u00C3\u00A1rio
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) validarSenhaLoginUsingPOSTWithLogin: (NSString*) login
+    senha: (NSString*) senha
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 ///

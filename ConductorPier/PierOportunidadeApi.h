@@ -312,19 +312,6 @@
 
 ///
 ///
-/// Cadastra tipos oportunidades
-/// Esse recurso permite cadastrar tipos oportunidades.
-///
-/// @param persist persist
-/// 
-///
-/// @return PierTipoOportunidadeResponse*
--(NSNumber*) salvarUsingPOST14WithPersist: (PierTipoOportunidade*) persist
-    completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Cadastra as oportunidades
 /// Esse recurso permite cadastrar oportunidades.
 ///
@@ -332,8 +319,21 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) salvarUsingPOST9WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST12WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cadastra tipos oportunidades
+/// Esse recurso permite cadastrar tipos oportunidades.
+///
+/// @param persist persist
+/// 
+///
+/// @return PierTipoOportunidadeResponse*
+-(NSNumber*) salvarUsingPOST17WithPersist: (PierTipoOportunidade*) persist
+    completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
 

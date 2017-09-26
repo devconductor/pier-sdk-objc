@@ -40,5 +40,37 @@
     completionHandler: (void (^)(PierPagePlanoParcelamentoResponse* output, NSError* error)) handler;
 
 
+///
+///
+/// Envia 2\u00C2\u00AA via de fatura por E-mail
+/// Envia a segunda via da fatura para o e-mail informado/cadastrado.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param dataVencimento Data de Vencimento da fatura (yyyy-MM-dd).
+/// @param email E-mail para envio da 2\u00C2\u00AA via da fatura, caso n\u00C3\u00A3o seja informado ser\u00C3\u00A1 usado o e-mail cadastrado.
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) enviarFaturaEmailUsingPOSTWithId: (NSNumber*) _id
+    dataVencimento: (NSString*) dataVencimento
+    email: (NSString*) email
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Permite visualizar o extrato da fatura em formato PDF
+/// Esta opera\u00C3\u00A7\u00C3\u00A3o permite visualizar o extrato da fatura de uma determinada conta, em formato PDF. Quando ela for a fatura ativa, ou seja, a do m\u00C3\u00AAs corrente, o pdf ser\u00C3\u00A1 composto pelo extrato de lan\u00C3\u00A7amentos e pela ficha de compensa\u00C3\u00A7\u00C3\u00A3o banc\u00C3\u00A1ria. Quando for de uma fatura do hist\u00C3\u00B3rico do cliente, o PDF ser\u00C3\u00A1 composto apenas pelo extrato de transa\u00C3\u00A7\u00C3\u00B5es.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param dataVencimento Data de Vencimento da fatura.
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) visualizarDocumentoUsingGETWithId: (NSNumber*) _id
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
 
 @end

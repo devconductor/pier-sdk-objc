@@ -99,7 +99,7 @@
 /// 
 ///
 /// @return PierJobResponse*
--(NSNumber*) salvarUsingPOST8WithDescricao: (NSString*) descricao
+-(NSNumber*) salvarUsingPOST11WithDescricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
     completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler;

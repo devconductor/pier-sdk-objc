@@ -73,6 +73,100 @@ static PierUsuarioApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
+/// Alterar senha do usu\u00C3\u00A1rio.
+/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha do usu\u00C3\u00A1rio.
+///  @param login Login do usu\u00C3\u00A1rio. 
+///
+///  @param senhaNova Senha Nova 
+///
+///  @returns NSString*
+///
+-(NSNumber*) alterarSenhaLoginUsingPOSTWithLogin: (NSString*) login
+    senhaNova: (NSString*) senhaNova
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'login' is set
+    if (login == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `login` when calling `alterarSenhaLoginUsingPOST`"];
+    }
+    
+    // verify the required parameter 'senhaNova' is set
+    if (senhaNova == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senhaNova` when calling `alterarSenhaLoginUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/usuarios/{login}/alterar-senha"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (login != nil) {
+        pathParams[@"login"] = login;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    if (senhaNova != nil) {
+        headerParams[@"senhaNova"] = senhaNova;
+    }
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
+                           }
+          ];
+}
+
+///
 /// Alterar senha do usu\u00C3\u00A1rio na base do PIER ou WS.
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o da senha do usu\u00C3\u00A1rio.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id). 
@@ -178,7 +272,7 @@ static PierUsuarioApi* singletonAPI = nil;
 }
 
 ///
-/// Altera os usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
+/// Altera os usu\u00C3\u00A1rios cadastrados na base.
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos usu\u00C3\u00A1rios.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio (id). 
 ///
@@ -724,19 +818,19 @@ static PierUsuarioApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastra Usu\u00C3\u00A1rio na base do PIER ou WS.
+/// Cadastra Usu\u00C3\u00A1rio na base.
 /// Esse recurso permite cadastrar usu\u00C3\u00A1rios.
 ///  @param persist persist 
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) salvarUsingPOST16WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST19WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST19`"];
     }
     
 
@@ -799,6 +893,100 @@ static PierUsuarioApi* singletonAPI = nil;
                               responseType: @"PierUsuarioResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierUsuarioResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza login com valida\u00C3\u00A7\u00C3\u00A3o de senha dos usu\u00C3\u00A1rios cadastrados na base do PIER ou WS.
+/// O recurso permite fazer login do usu\u00C3\u00A1rio atrav\u00C3\u00A9s da senha definida pelo emissor.
+///  @param login Login identificador do usu\u00C3\u00A1rio (login). 
+///
+///  @param senha Senha do usu\u00C3\u00A1rio 
+///
+///  @returns NSObject*
+///
+-(NSNumber*) validarSenhaLoginUsingPOSTWithLogin: (NSString*) login
+    senha: (NSString*) senha
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'login' is set
+    if (login == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `login` when calling `validarSenhaLoginUsingPOST`"];
+    }
+    
+    // verify the required parameter 'senha' is set
+    if (senha == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `senha` when calling `validarSenhaLoginUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/usuarios/{login}/validar-senha"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (login != nil) {
+        pathParams[@"login"] = login;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    if (senha != nil) {
+        headerParams[@"senha"] = senha;
+    }
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSObject*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSObject*)data, error);
                            }
           ];
 }

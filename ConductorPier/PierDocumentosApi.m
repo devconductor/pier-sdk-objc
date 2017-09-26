@@ -1,15 +1,20 @@
-#import "PierFaturaApi.h"
+#import "PierDocumentosApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierPagePlanoParcelamentoResponse.h"
+#import "PierDocumentoResponse.h"
+#import "PierDocumentoParametrosRequest.h"
+#import "PierDocumentoTemplateRequest.h"
+#import "PierDocumentoTemplateResponse.h"
+#import "PierDocumentoTipoResponse.h"
+#import "PierDocumentoTipoRequest.h"
 
 
-@interface PierFaturaApi ()
+@interface PierDocumentosApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierFaturaApi
+@implementation PierDocumentosApi
 
-static PierFaturaApi* singletonAPI = nil;
+static PierDocumentosApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -37,19 +42,19 @@ static PierFaturaApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierFaturaApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierDocumentosApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierFaturaApi alloc] init];
+        singletonAPI = [[PierDocumentosApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierFaturaApi*) sharedAPI {
++(PierDocumentosApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierFaturaApi alloc] init];
+        singletonAPI = [[PierDocumentosApi alloc] init];
     }
     return singletonAPI;
 }
@@ -70,40 +75,23 @@ static PierFaturaApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Listar planos de parcelamento
-/// Lista os planos de parcelamento da fatura de uma conta.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Cadastra documentos
+/// Esse recurso permite cadastrar documentos.
+///  @param persist persist 
 ///
-///  @param dataVencimentoPadrao Indica a data de vencimento padr\u00C3\u00A3o das faturas 
+///  @returns PierDocumentoResponse*
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
-///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @returns PierPagePlanoParcelamentoResponse*
-///
--(NSNumber*) consultarLancamentosFuturosFaturaUsingGET1WithId: (NSNumber*) _id
-    dataVencimentoPadrao: (NSString*) dataVencimentoPadrao
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPagePlanoParcelamentoResponse* output, NSError* error)) handler {
+-(NSNumber*) salvarUsingPOST5WithPersist: (PierDocumentoParametrosRequest*) persist
+    completionHandler: (void (^)(PierDocumentoResponse* output, NSError* error)) handler {
 
     
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarLancamentosFuturosFaturaUsingGET1`"];
-    }
-    
-    // verify the required parameter 'dataVencimentoPadrao' is set
-    if (dataVencimentoPadrao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimentoPadrao` when calling `consultarLancamentosFuturosFaturaUsingGET1`"];
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/faturas/planos-parcelamento"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/documentos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -111,30 +99,9 @@ static PierFaturaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (sort != nil) {
-        
-        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
-        
-        
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (dataVencimentoPadrao != nil) {
-        
-        queryParams[@"dataVencimentoPadrao"] = dataVencimentoPadrao;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -165,108 +132,7 @@ static PierFaturaApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPagePlanoParcelamentoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPagePlanoParcelamentoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Envia 2\u00C2\u00AA via de fatura por E-mail
-/// Envia a segunda via da fatura para o e-mail informado/cadastrado.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
-///
-///  @param dataVencimento Data de Vencimento da fatura (yyyy-MM-dd). 
-///
-///  @param email E-mail para envio da 2\u00C2\u00AA via da fatura, caso n\u00C3\u00A3o seja informado ser\u00C3\u00A1 usado o e-mail cadastrado. (optional)
-///
-///  @returns NSObject*
-///
--(NSNumber*) enviarFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    email: (NSString*) email
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `enviarFaturaEmailUsingPOST`"];
-    }
-    
-    // verify the required parameter 'dataVencimento' is set
-    if (dataVencimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimento` when calling `enviarFaturaEmailUsingPOST`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/faturas/{dataVencimento}/enviar-email"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    if (dataVencimento != nil) {
-        pathParams[@"dataVencimento"] = dataVencimento;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (email != nil) {
-        
-        queryParams[@"email"] = email;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
+    bodyParam = persist;
     
 
     
@@ -281,39 +147,31 @@ static PierFaturaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSObject*"
+                              responseType: @"PierDocumentoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSObject*)data, error);
+                               handler((PierDocumentoResponse*)data, error);
                            }
           ];
 }
 
 ///
-/// Permite visualizar o extrato da fatura em formato PDF
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o permite visualizar o extrato da fatura de uma determinada conta, em formato PDF. Quando ela for a fatura ativa, ou seja, a do m\u00C3\u00AAs corrente, o pdf ser\u00C3\u00A1 composto pelo extrato de lan\u00C3\u00A7amentos e pela ficha de compensa\u00C3\u00A7\u00C3\u00A3o banc\u00C3\u00A1ria. Quando for de uma fatura do hist\u00C3\u00B3rico do cliente, o PDF ser\u00C3\u00A1 composto apenas pelo extrato de transa\u00C3\u00A7\u00C3\u00B5es.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Cadastra os templates dos documentos
+/// Esse recurso permite cadastrar templates dos documentos.
+///  @param persist persist 
 ///
-///  @param dataVencimento Data de Vencimento da fatura. 
+///  @returns PierDocumentoTemplateResponse*
 ///
-///  @returns NSObject*
-///
--(NSNumber*) visualizarDocumentoUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+-(NSNumber*) salvarUsingPOST6WithPersist: (PierDocumentoTemplateRequest*) persist
+    completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
 
     
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `visualizarDocumentoUsingGET`"];
-    }
-    
-    // verify the required parameter 'dataVencimento' is set
-    if (dataVencimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimento` when calling `visualizarDocumentoUsingGET`"];
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/faturas/{dataVencimento}/arquivo.pdf"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/templates-documentos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -321,12 +179,6 @@ static PierFaturaApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    if (dataVencimento != nil) {
-        pathParams[@"dataVencimento"] = dataVencimento;
-    }
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
@@ -336,7 +188,7 @@ static PierFaturaApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/pdf"]];
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -360,12 +212,12 @@ static PierFaturaApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    
+    bodyParam = persist;
     
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -375,9 +227,89 @@ static PierFaturaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSObject*"
+                              responseType: @"PierDocumentoTemplateResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSObject*)data, error);
+                               handler((PierDocumentoTemplateResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cadastra os tipos de documentos
+/// Esse recurso permite cadastrar tipos de documentos.
+///  @param persist persist 
+///
+///  @returns PierDocumentoTipoResponse*
+///
+-(NSNumber*) salvarUsingPOST7WithPersist: (PierDocumentoTipoRequest*) persist
+    completionHandler: (void (^)(PierDocumentoTipoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST7`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-documentos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierDocumentoTipoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierDocumentoTipoResponse*)data, error);
                            }
           ];
 }

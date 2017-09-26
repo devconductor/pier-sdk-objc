@@ -504,6 +504,21 @@
 
 ///
 ///
+/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
+/// 
+///
+/// @return PierIntegracaoEmissorResponse*
+-(NSNumber*) salvarUsingPOST10WithId: (NSNumber*) _id
+    body: (PierIntegracaoEmissorPersist*) body
+    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Salvar os detalhes de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
 ///
@@ -520,7 +535,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST10WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST13WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -551,7 +566,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST11WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST14WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
@@ -577,7 +592,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST13WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST16WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -604,7 +619,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) salvarUsingPOST5WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST8WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
@@ -616,21 +631,6 @@
     uf: (NSString*) uf
     pais: (NSString*) pais
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
-/// 
-///
-/// @return PierIntegracaoEmissorResponse*
--(NSNumber*) salvarUsingPOST7WithId: (NSNumber*) _id
-    body: (PierIntegracaoEmissorPersist*) body
-    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
 
 
 

@@ -29,9 +29,6 @@
 /* Sistema para amortiza\u00C3\u00A7\u00C3\u00A3o do valor das parcelas 
  */
 @property(nonatomic) NSString* sistemaAmortizacao;
-/* Dia para cobran\u00C3\u00A7a da primeira parcela 
- */
-@property(nonatomic) NSNumber* diaVencimento;
 /* N\u00C3\u00BAmero de meses para cobran\u00C3\u00A7a da primeira parcela [optional]
  */
 @property(nonatomic) NSNumber* numeroMesesCarencia;

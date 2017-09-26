@@ -9,6 +9,8 @@
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
 #import "PierPageTemplateNotificacaoResponse.h"
+#import "PierNotificacaoEmailResponse.h"
+#import "PierNotificacaoEmailRequest.h"
 #import "PierPushFCMEGCM.h"
 #import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
@@ -186,6 +188,8 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
+///  @param remetente Remetente (optional)
+///
 ///  @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
 ///  @returns PierTemplateNotificacaoResponse*
@@ -195,6 +199,7 @@ static PierNotificacaoApi* singletonAPI = nil;
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
     tipoLayout: (NSString*) tipoLayout
     tipoNotificacao: (NSString*) tipoNotificacao
+    remetente: (NSString*) remetente
     assunto: (NSString*) assunto
     completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler {
 
@@ -235,6 +240,10 @@ static PierNotificacaoApi* singletonAPI = nil;
     if (tipoNotificacao != nil) {
         
         queryParams[@"tipoNotificacao"] = tipoNotificacao;
+    }
+    if (remetente != nil) {
+        
+        queryParams[@"remetente"] = remetente;
     }
     if (assunto != nil) {
         
@@ -1176,6 +1185,86 @@ static PierNotificacaoApi* singletonAPI = nil;
 }
 
 ///
+/// Enviar notifica\u00C3\u00A7\u00C3\u00A3o por email
+/// Esse recurso permite enviar uma mensagem de notifica\u00C3\u00A7\u00C3\u00A3o por email
+///  @param request request 
+///
+///  @returns PierNotificacaoEmailResponse*
+///
+-(NSNumber*) notificacaoEmailUsingPOSTWithRequest: (PierNotificacaoEmailRequest*) request
+    completionHandler: (void (^)(PierNotificacaoEmailResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'request' is set
+    if (request == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `request` when calling `notificacaoEmailUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes-email"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = request;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierNotificacaoEmailResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierNotificacaoEmailResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Responder SMS
 /// Esse recurso permite atualizar a resposta do SMS, fornecida pedo usu\u00C3\u00A1rio
 ///  @param nsu Seu n\u00C3\u00BAmero (optional)
@@ -1679,6 +1768,8 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
+///  @param remetente Remetente (optional)
+///
 ///  @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
 ///  @returns PierTemplateNotificacaoResponse*
@@ -1687,6 +1778,7 @@ static PierNotificacaoApi* singletonAPI = nil;
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
     tipoLayout: (NSString*) tipoLayout
     tipoNotificacao: (NSString*) tipoNotificacao
+    remetente: (NSString*) remetente
     assunto: (NSString*) assunto
     completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler {
 
@@ -1719,6 +1811,10 @@ static PierNotificacaoApi* singletonAPI = nil;
     if (tipoNotificacao != nil) {
         
         queryParams[@"tipoNotificacao"] = tipoNotificacao;
+    }
+    if (remetente != nil) {
+        
+        queryParams[@"remetente"] = remetente;
     }
     if (assunto != nil) {
         

@@ -65,7 +65,7 @@
 /// 
 ///
 /// @return PierPlataformaMobileResponse*
--(NSNumber*) salvarUsingPOST12WithPersist: (PierPlataformaMobilePersist*) persist
+-(NSNumber*) salvarUsingPOST15WithPersist: (PierPlataformaMobilePersist*) persist
     completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler;
 
 

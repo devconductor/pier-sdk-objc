@@ -23,11 +23,11 @@
 /* Taxa de juros aplicado no empr\u00C3\u00A9stimo/financiamento [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* valor percentual do Custo Efetivo Total, ao ano, do empr\u00C3\u00A9stimo / financiamento [optional]
- */
-@property(nonatomic) NSNumber* valorPercentualCET;
 /* valor total estimado dos tributos do Imposto sobre Opera\u00C3\u00A7\u00C3\u00B5es Financeiras [optional]
  */
 @property(nonatomic) NSNumber* valorTributosIOF;
+/* valor percentual do Custo Efetivo Total, ao ano, do empr\u00C3\u00A9stimo / financiamento [optional]
+ */
+@property(nonatomic) NSNumber* valorPercentualCET;
 
 @end

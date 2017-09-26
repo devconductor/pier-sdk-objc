@@ -399,19 +399,19 @@ static PierWebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) salvarUsingPOST17WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST20WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'tipoEvento' is set
     if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST20`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST20`"];
     }
     
 

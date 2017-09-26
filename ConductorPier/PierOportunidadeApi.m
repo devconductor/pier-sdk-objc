@@ -1550,99 +1550,19 @@ static PierOportunidadeApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastra tipos oportunidades
-/// Esse recurso permite cadastrar tipos oportunidades.
-///  @param persist persist 
-///
-///  @returns PierTipoOportunidadeResponse*
-///
--(NSNumber*) salvarUsingPOST14WithPersist: (PierTipoOportunidade*) persist
-    completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'persist' is set
-    if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST14`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-oportunidades"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = persist;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierTipoOportunidadeResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierTipoOportunidadeResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Cadastra as oportunidades
 /// Esse recurso permite cadastrar oportunidades.
 ///  @param persist persist 
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST9WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST12WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST12`"];
     }
     
 
@@ -1705,6 +1625,86 @@ static PierOportunidadeApi* singletonAPI = nil;
                               responseType: @"PierOportunidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierOportunidadeResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cadastra tipos oportunidades
+/// Esse recurso permite cadastrar tipos oportunidades.
+///  @param persist persist 
+///
+///  @returns PierTipoOportunidadeResponse*
+///
+-(NSNumber*) salvarUsingPOST17WithPersist: (PierTipoOportunidade*) persist
+    completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST17`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-oportunidades"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTipoOportunidadeResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTipoOportunidadeResponse*)data, error);
                            }
           ];
 }

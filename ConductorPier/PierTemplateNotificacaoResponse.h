@@ -26,6 +26,9 @@
 /* Tipo da notifica\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* tipoNotificacao;
+/* Remetente. [optional]
+ */
+@property(nonatomic) NSString* remetente;
 /* Assunto do e-mail. [optional]
  */
 @property(nonatomic) NSString* assunto;
