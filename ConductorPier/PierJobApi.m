@@ -166,7 +166,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 ///  @returns PierJobResponse*
 ///
--(NSNumber*) atualizarUsingPUTWithId: (NSNumber*) _id
+-(NSNumber*) atualizarUsingPUT1WithId: (NSNumber*) _id
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
@@ -175,22 +175,22 @@ static PierJobApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPUT1`"];
     }
     
     // verify the required parameter 'descricao' is set
     if (descricao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `descricao` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `descricao` when calling `atualizarUsingPUT1`"];
     }
     
     // verify the required parameter 'cron' is set
     if (cron == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cron` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cron` when calling `atualizarUsingPUT1`"];
     }
     
     // verify the required parameter 'groovy' is set
     if (groovy == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `groovy` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `groovy` when calling `atualizarUsingPUT1`"];
     }
     
 
@@ -368,7 +368,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 ///  @returns PierPageJobResponse*
 ///
--(NSNumber*) listarUsingGET13WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET14WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status

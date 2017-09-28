@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PierAjusteResponse.h"
 #import "PierLimiteDisponibilidadeResponse.h"
+#import "PierAlterarProdutoRequest.h"
 #import "PierContaResponse.h"
 #import "PierBeneficioPagamentoAtrasoResponse.h"
 #import "PierBoletoResponse.h"
@@ -56,7 +57,7 @@
 ///
 /// @param _id Id Conta
 /// @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste.
-/// @param dataAjuste Data do ajuste.
+/// @param dataAjuste Data do ajuste no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.
 /// @param valorAjuste Valor do ajuste
 /// 
 ///
@@ -105,6 +106,21 @@
     limiteInternacionalSaquePeriodo: (NSNumber*) limiteInternacionalSaquePeriodo
     limiteMaximo: (NSNumber*) limiteMaximo
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Altera o produto associado \u00C3\u00A0 conta.
+/// O recurso permite fazer modifica\u00C3\u00A7\u00C3\u00A3o do produto associado \u00C3\u00A0 conta.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param request request
+/// 
+///
+/// @return NSString*
+-(NSNumber*) alterarProdutoUsingPOSTWithId: (NSNumber*) _id
+    request: (PierAlterarProdutoRequest*) request
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
@@ -361,7 +377,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -377,7 +393,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler;
 
@@ -676,7 +692,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET31WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -701,7 +717,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET32WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

@@ -45,7 +45,7 @@
 /// 
 ///
 /// @return PierJobResponse*
--(NSNumber*) atualizarUsingPUTWithId: (NSNumber*) _id
+-(NSNumber*) atualizarUsingPUT1WithId: (NSNumber*) _id
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
@@ -79,7 +79,7 @@
 /// 
 ///
 /// @return PierPageJobResponse*
--(NSNumber*) listarUsingGET13WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET14WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status

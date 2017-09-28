@@ -14,11 +14,14 @@
 
 @interface PierAlterarProdutoRequest : PierObject
 
-/* C\u00C3\u00B3digo identificador da origem comercial. [optional]
- */
-@property(nonatomic) NSNumber* idOrigemComercial;
 /* C\u00C3\u00B3digo identificador do produto. 
  */
 @property(nonatomic) NSNumber* idProduto;
+/* C\u00C3\u00B3digo identificador da origem comercial. [optional]
+ */
+@property(nonatomic) NSNumber* idOrigemComercial;
+/* Valor do novo limite Global. [optional]
+ */
+@property(nonatomic) NSNumber* limiteGlobal;
 
 @end

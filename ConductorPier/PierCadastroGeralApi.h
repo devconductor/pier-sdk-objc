@@ -3,10 +3,11 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierOrigemComercialResponse.h"
-#import "PierPageTipoAjusteResponse.h"
 #import "PierAtendimentoClienteResponse.h"
+#import "PierPageTipoAjusteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
 #import "PierTipoEnderecoResponse.h"
+#import "PierTipoOperacaoResponse.h"
 #import "PierTipoTelefoneResponse.h"
 #import "PierBancoResponse.h"
 #import "PierPageContaDetalheResponse.h"
@@ -15,8 +16,8 @@
 #import "PierHistoricoTelefoneResponse.h"
 #import "PierPageOrigemComercialResponse.h"
 #import "PierPagePortadorResponse.h"
-#import "PierPageProdutoResponse.h"
 #import "PierPageAtendimentoClienteResponse.h"
+#import "PierPageProdutoResponse.h"
 #import "PierPagePromotorResponse.h"
 #import "PierPageTipoEnderecoResponse.h"
 #import "PierPageTipoTelefoneResponse.h"
@@ -106,29 +107,8 @@
 /// 
 ///
 /// @return PierProdutoDetalhesResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista os tipos de ajustes do emissor 
-/// Este recurso permite que sejam listados os tipos de ajustes existentes na base de dados do emissor.
-///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo identificador do tipo de ajuste.
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste.
-/// 
-///
-/// @return PierPageTipoAjusteResponse*
--(NSNumber*) consultarUsingGET19WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    descricao: (NSString*) descricao
-    completionHandler: (void (^)(PierPageTipoAjusteResponse* output, NSError* error)) handler;
 
 
 ///
@@ -146,6 +126,27 @@
 
 ///
 ///
+/// Lista os tipos de ajustes do emissor 
+/// Este recurso permite que sejam listados os tipos de ajustes existentes na base de dados do emissor.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param _id C\u00C3\u00B3digo identificador do tipo de ajuste.
+/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste.
+/// 
+///
+/// @return PierPageTipoAjusteResponse*
+-(NSNumber*) consultarUsingGET20WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    descricao: (NSString*) descricao
+    completionHandler: (void (^)(PierPageTipoAjusteResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista os tipos de boletos do emissor 
 /// Este recurso permite que sejam listados os tipos de boletos existentes na base de dados do emissor.
 ///
@@ -158,7 +159,7 @@
 /// 
 ///
 /// @return PierPageTipoBoletoResponse*
--(NSNumber*) consultarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -176,8 +177,25 @@
 /// 
 ///
 /// @return PierTipoEnderecoResponse*
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
+///
+/// @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao).
+/// @param idEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (idEstabelecimento).
+/// @param codigoProcessamento C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o.
+/// 
+///
+/// @return PierTipoOperacaoResponse*
+-(NSNumber*) consultarUsingGET23WithIdCartao: (NSNumber*) idCartao
+    idEstabelecimento: (NSNumber*) idEstabelecimento
+    codigoProcessamento: (NSString*) codigoProcessamento
+    completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -189,7 +207,7 @@
 /// 
 ///
 /// @return PierTipoTelefoneResponse*
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -401,7 +419,7 @@
 /// 
 ///
 /// @return PierPagePortadorResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -415,29 +433,6 @@
     dataCadastroPortador: (NSString*) dataCadastroPortador
     dataCancelamentoPortador: (NSString*) dataCancelamentoPortador
     completionHandler: (void (^)(PierPagePortadorResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista os Produtos do Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
-///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
-/// @param status Representa o Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
-/// @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence.
-/// 
-///
-/// @return PierPageProdutoResponse*
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    nome: (NSString*) nome
-    status: (NSNumber*) status
-    idFantasiaBasica: (NSNumber*) idFantasiaBasica
-    completionHandler: (void (^)(PierPageProdutoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -467,6 +462,29 @@
 
 ///
 ///
+/// Lista os Produtos do Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
+/// @param status Representa o Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
+/// @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence.
+/// 
+///
+/// @return PierPageProdutoResponse*
+-(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    nome: (NSString*) nome
+    status: (NSNumber*) status
+    idFantasiaBasica: (NSNumber*) idFantasiaBasica
+    completionHandler: (void (^)(PierPageProdutoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista promotores cadastrados na base do emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os cadastros de Promoteres existentes na base de dados do Emissor.
 ///
@@ -481,7 +499,7 @@
 /// 
 ///
 /// @return PierPagePromotorResponse*
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -505,7 +523,7 @@
 /// 
 ///
 /// @return PierPageTipoEnderecoResponse*
--(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -526,7 +544,7 @@
 /// 
 ///
 /// @return PierPageTipoTelefoneResponse*
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -563,7 +581,7 @@
 /// 
 ///
 /// @return PierPageControleVencimentoResponse*
--(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento

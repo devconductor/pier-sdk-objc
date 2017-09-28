@@ -9,10 +9,10 @@
 
 
 
-@protocol PierDocumentoTemplateRequest
+@protocol PierDocumentoTemplatePersist
 @end
 
-@interface PierDocumentoTemplateRequest : PierObject
+@interface PierDocumentoTemplatePersist : PierObject
 
 /* ID para o Tipo de Documento vinculado ao template. [optional]
  */

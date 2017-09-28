@@ -94,5 +94,29 @@
 /* Valor da taxa saque. [optional]
  */
 @property(nonatomic) NSNumber* valorTaxaSaque;
+/* C\u00C3\u00B3digo do Banco [optional]
+ */
+@property(nonatomic) NSNumber* banco;
+/* N\u00C3\u00BAmero da Ag\u00C3\u00AAncia [optional]
+ */
+@property(nonatomic) NSString* numeroAgencia;
+/* D\u00C3\u00ADgito da Ag\u00C3\u00AAncia [optional]
+ */
+@property(nonatomic) NSString* digitoAgencia;
+/* N\u00C3\u00BAmero da Conta [optional]
+ */
+@property(nonatomic) NSString* numeroConta;
+/* D\u00C3\u00ADgito da Conta [optional]
+ */
+@property(nonatomic) NSString* digitoConta;
+/* Tipo da Conta [optional]
+ */
+@property(nonatomic) NSNumber* flagContaPoupanca;
+/* Documento do Favorecido [optional]
+ */
+@property(nonatomic) NSString* documentoFavorecido;
+/* Nome do Favorecido [optional]
+ */
+@property(nonatomic) NSString* nomeFavorecido;
 
 @end

@@ -1,6 +1,6 @@
-#import "PierDocumentoTemplateRequest.h"
+#import "PierTipoOperacaoResponse.h"
 
-@implementation PierDocumentoTemplateRequest
+@implementation PierTipoOperacaoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTipoDocumento": @"idTipoDocumento", @"template": @"template" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"tipoOperacao": @"tipoOperacao", @"nome": @"nome", @"descricao": @"descricao", @"excedentePermitido": @"excedentePermitido", @"tipoExcedentePermitido": @"tipoExcedentePermitido", @"valorMinimo": @"valorMinimo", @"valorMaximo": @"valorMaximo", @"valorTAC": @"valorTAC", @"flagTiraTac": @"flagTiraTac", @"idProduto": @"idProduto", @"idEstabelecimento": @"idEstabelecimento", @"tarifa": @"tarifa", @"remuneracaoEmissor": @"remuneracaoEmissor", @"planoMaximo": @"planoMaximo", @"planoMinimo": @"planoMinimo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idTipoDocumento", @"template"];
+  NSArray *optionalProperties = @[@"excedentePermitido", @"tipoExcedentePermitido", @"valorTAC", @"flagTiraTac", @"tarifa", @"remuneracaoEmissor", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

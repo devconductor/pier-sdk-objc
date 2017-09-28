@@ -1,6 +1,6 @@
-#import "PierDocumentoResponse.h"
+#import "PierDocumentoTemplatePersist.h"
 
-@implementation PierDocumentoResponse
+@implementation PierDocumentoTemplatePersist
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoDocumento": @"idTipoDocumento", @"idTemplateDocumento": @"idTemplateDocumento", @"nome": @"nome", @"documento": @"documento", @"extensao": @"extensao", @"documentoDetalhes": @"documentoDetalhes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTipoDocumento": @"idTipoDocumento", @"template": @"template" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idTipoDocumento", @"idTemplateDocumento", @"nome", @"documento", @"extensao", @"documentoDetalhes"];
+  NSArray *optionalProperties = @[@"idTipoDocumento", @"template"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

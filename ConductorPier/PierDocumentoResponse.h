@@ -20,10 +20,10 @@
 @property(nonatomic) NSNumber* _id;
 /* ID do Tipo de Documento associado. [optional]
  */
-@property(nonatomic) NSNumber* idDocumentoTipo;
+@property(nonatomic) NSNumber* idTipoDocumento;
 /* ID do Template de Documento associado. [optional]
  */
-@property(nonatomic) NSNumber* idDocumentoTemplate;
+@property(nonatomic) NSNumber* idTemplateDocumento;
 /* Nome do Documento. [optional]
  */
 @property(nonatomic) NSString* nome;

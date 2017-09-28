@@ -1,18 +1,21 @@
-#import "PierEstabelecimentoApi.h"
+#import "PierDocumentoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierTerminalResponse.h"
-#import "PierEstabelecimentoResponse.h"
-#import "PierPageEstabelecimentoResponse.h"
-#import "PierPageTerminalResponse.h"
+#import "PierDocumentoTemplatePersist.h"
+#import "PierDocumentoTemplateResponse.h"
+#import "PierPageDocumentoTemplateResponse.h"
+#import "PierDocumentoResponse.h"
+#import "PierDocumentoParametrosRequest.h"
+#import "PierDocumentoTipoResponse.h"
+#import "PierDocumentoTipoRequest.h"
 
 
-@interface PierEstabelecimentoApi ()
+@interface PierDocumentoApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierEstabelecimentoApi
+@implementation PierDocumentoApi
 
-static PierEstabelecimentoApi* singletonAPI = nil;
+static PierDocumentoApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -40,19 +43,19 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierEstabelecimentoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierDocumentoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierEstabelecimentoApi alloc] init];
+        singletonAPI = [[PierDocumentoApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierEstabelecimentoApi*) sharedAPI {
++(PierDocumentoApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierEstabelecimentoApi alloc] init];
+        singletonAPI = [[PierDocumentoApi alloc] init];
     }
     return singletonAPI;
 }
@@ -73,23 +76,114 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Apresenta os dados de um determinado Terminal
-/// Este m\u00C3\u00A9todo permite consultar um determinado Terminal a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id). 
+/// Atualizar templates dos documentos
+/// Esse recurso permite atualizar templates dos documentos.
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento template (id). 
 ///
-///  @returns PierTerminalResponse*
+///  @param persist persist 
 ///
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler {
+///  @returns PierDocumentoTemplateResponse*
+///
+-(NSNumber*) atualizarUsingPUTWithId: (NSNumber*) _id
+    persist: (PierDocumentoTemplatePersist*) persist
+    completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPUT`"];
+    }
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `atualizarUsingPUT`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/terminais/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/templates-documentos/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierDocumentoTemplateResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierDocumentoTemplateResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Consultar templates dos documentos
+/// Esse recurso permite consultar templates dos documentos.
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento template (id). 
+///
+///  @returns PierDocumentoTemplateResponse*
+///
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/templates-documentos/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -148,172 +242,35 @@ static PierEstabelecimentoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTerminalResponse*"
+                              responseType: @"PierDocumentoTemplateResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTerminalResponse*)data, error);
+                               handler((PierDocumentoTemplateResponse*)data, error);
                            }
           ];
 }
 
 ///
-/// Consultar estabelecimento por id
-/// Consulta os detalhes de um determinado estabelecimento
-///  @param _id Id 
-///
-///  @returns PierEstabelecimentoResponse*
-///
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/estabelecimentos/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierEstabelecimentoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierEstabelecimentoResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Lista Estabelecimentos
-/// Lista todas os Estabelecimentos
+/// Lista os templates dos documentos
+/// Esse recurso permite listar os templates dos documentos.
 ///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
 ///
 ///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
 ///
 ///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (id). (optional)
+///  @param idTipoDocumento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do documento. (optional)
 ///
-///  @param numeroReceitaFederal Apresenta o n\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Receita Federal. (optional)
+///  @returns PierPageDocumentoTemplateResponse*
 ///
-///  @param nome Nome do Estabelecimento. (optional)
-///
-///  @param descricao Raz\u00C3\u00A3o Social do Estabelecimento. (optional)
-///
-///  @param nomeFantasia T\u00C3\u00ADtulo Comercial do Estabelecimento. (optional)
-///
-///  @param cep C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP). (optional)
-///
-///  @param nomeLogradouro Nome do Logradouro. (optional)
-///
-///  @param numeroEndereco N\u00C3\u00BAmero do endere\u00C3\u00A7o. (optional)
-///
-///  @param complemento Descri\u00C3\u00A7\u00C3\u00B5es complementares referente ao endere\u00C3\u00A7o. (optional)
-///
-///  @param bairro Nome do bairro do endere\u00C3\u00A7o. (optional)
-///
-///  @param cidade Nome da cidade do endere\u00C3\u00A7o. (optional)
-///
-///  @param uf Sigla de identifica\u00C3\u00A7\u00C3\u00A3o da Unidade Federativa do endere\u00C3\u00A7o. (optional)
-///
-///  @param pais Nome do pa\u00C3\u00ADs. (optional)
-///
-///  @param dataCadastramento Data de Cadastro do Estabelecimento, no formato yyyy-MM-dd. (optional)
-///
-///  @param contato Nome da pessoa para contato com o Estabelecimento. (optional)
-///
-///  @param email E-mail da pessoa para contato com o Estabelecimento. (optional)
-///
-///  @param flagArquivoSecrFazenda Indica se o estabelecimento ser\u00C3\u00A1 inclu\u00C3\u00ADdo no arquivo de registro para a Secretaria da Fazenda Estadual. (optional)
-///
-///  @param flagCartaoDigitado Indica se o estabelecimento poder\u00C3\u00A1 originar transa\u00C3\u00A7\u00C3\u00B5es sem a leitura da tarja ou do chip do cart\u00C3\u00A3o. (optional)
-///
-///  @param inativo Indica se o estabelecimento est\u00C3\u00A1 inativo. (optional)
-///
-///  @returns PierPageEstabelecimentoResponse*
-///
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET10WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    numeroReceitaFederal: (NSNumber*) numeroReceitaFederal
-    nome: (NSString*) nome
-    descricao: (NSString*) descricao
-    nomeFantasia: (NSString*) nomeFantasia
-    cep: (NSString*) cep
-    nomeLogradouro: (NSString*) nomeLogradouro
-    numeroEndereco: (NSNumber*) numeroEndereco
-    complemento: (NSString*) complemento
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    dataCadastramento: (NSString*) dataCadastramento
-    contato: (NSString*) contato
-    email: (NSString*) email
-    flagArquivoSecrFazenda: (NSNumber*) flagArquivoSecrFazenda
-    flagCartaoDigitado: (NSNumber*) flagCartaoDigitado
-    inativo: (NSNumber*) inativo
-    completionHandler: (void (^)(PierPageEstabelecimentoResponse* output, NSError* error)) handler {
+    idTipoDocumento: (NSNumber*) idTipoDocumento
+    completionHandler: (void (^)(PierPageDocumentoTemplateResponse* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/estabelecimentos"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/templates-documentos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -338,81 +295,9 @@ static PierEstabelecimentoApi* singletonAPI = nil;
         
         queryParams[@"limit"] = limit;
     }
-    if (_id != nil) {
+    if (idTipoDocumento != nil) {
         
-        queryParams[@"id"] = _id;
-    }
-    if (numeroReceitaFederal != nil) {
-        
-        queryParams[@"numeroReceitaFederal"] = numeroReceitaFederal;
-    }
-    if (nome != nil) {
-        
-        queryParams[@"nome"] = nome;
-    }
-    if (descricao != nil) {
-        
-        queryParams[@"descricao"] = descricao;
-    }
-    if (nomeFantasia != nil) {
-        
-        queryParams[@"nomeFantasia"] = nomeFantasia;
-    }
-    if (cep != nil) {
-        
-        queryParams[@"cep"] = cep;
-    }
-    if (nomeLogradouro != nil) {
-        
-        queryParams[@"nomeLogradouro"] = nomeLogradouro;
-    }
-    if (numeroEndereco != nil) {
-        
-        queryParams[@"numeroEndereco"] = numeroEndereco;
-    }
-    if (complemento != nil) {
-        
-        queryParams[@"complemento"] = complemento;
-    }
-    if (bairro != nil) {
-        
-        queryParams[@"bairro"] = bairro;
-    }
-    if (cidade != nil) {
-        
-        queryParams[@"cidade"] = cidade;
-    }
-    if (uf != nil) {
-        
-        queryParams[@"uf"] = uf;
-    }
-    if (pais != nil) {
-        
-        queryParams[@"pais"] = pais;
-    }
-    if (dataCadastramento != nil) {
-        
-        queryParams[@"dataCadastramento"] = dataCadastramento;
-    }
-    if (contato != nil) {
-        
-        queryParams[@"contato"] = contato;
-    }
-    if (email != nil) {
-        
-        queryParams[@"email"] = email;
-    }
-    if (flagArquivoSecrFazenda != nil) {
-        
-        queryParams[@"flagArquivoSecrFazenda"] = flagArquivoSecrFazenda;
-    }
-    if (flagCartaoDigitado != nil) {
-        
-        queryParams[@"flagCartaoDigitado"] = flagCartaoDigitado;
-    }
-    if (inativo != nil) {
-        
-        queryParams[@"inativo"] = inativo;
+        queryParams[@"idTipoDocumento"] = idTipoDocumento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -459,44 +344,31 @@ static PierEstabelecimentoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageEstabelecimentoResponse*"
+                              responseType: @"PierPageDocumentoTemplateResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageEstabelecimentoResponse*)data, error);
+                               handler((PierPageDocumentoTemplateResponse*)data, error);
                            }
           ];
 }
 
 ///
-/// Lista os Terminais cadastrados no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os terminais existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Cadastra documentos
+/// Esse recurso permite cadastrar documentos.
+///  @param persist persist 
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @returns PierDocumentoResponse*
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id). (optional)
-///
-///  @param terminal C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do terminal. (optional)
-///
-///  @param numeroEstabelecimento N\u00C3\u00BAmero do estabelecimento a qual o terminal pertence. (optional)
-///
-///  @param idEstabelecimento N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento a qual o terminal pertence. (optional)
-///
-///  @returns PierPageTerminalResponse*
-///
--(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    terminal: (NSString*) terminal
-    numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
-    idEstabelecimento: (NSNumber*) idEstabelecimento
-    completionHandler: (void (^)(PierPageTerminalResponse* output, NSError* error)) handler {
+-(NSNumber*) salvarUsingPOST5WithPersist: (PierDocumentoParametrosRequest*) persist
+    completionHandler: (void (^)(PierDocumentoResponse* output, NSError* error)) handler {
 
     
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
+    }
+    
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/terminais"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/documentos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -507,36 +379,6 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (sort != nil) {
-        
-        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
-        
-        
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (terminal != nil) {
-        
-        queryParams[@"terminal"] = terminal;
-    }
-    if (numeroEstabelecimento != nil) {
-        
-        queryParams[@"numeroEstabelecimento"] = numeroEstabelecimento;
-    }
-    if (idEstabelecimento != nil) {
-        
-        queryParams[@"idEstabelecimento"] = idEstabelecimento;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -567,12 +409,12 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    
+    bodyParam = persist;
     
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -582,9 +424,169 @@ static PierEstabelecimentoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTerminalResponse*"
+                              responseType: @"PierDocumentoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTerminalResponse*)data, error);
+                               handler((PierDocumentoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cadastra os templates dos documentos
+/// Esse recurso permite cadastrar templates dos documentos.
+///  @param persist persist 
+///
+///  @returns PierDocumentoTemplateResponse*
+///
+-(NSNumber*) salvarUsingPOST6WithPersist: (PierDocumentoTemplatePersist*) persist
+    completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/templates-documentos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierDocumentoTemplateResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierDocumentoTemplateResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Cadastra os tipos de documentos
+/// Esse recurso permite cadastrar tipos de documentos.
+///  @param persist persist 
+///
+///  @returns PierDocumentoTipoResponse*
+///
+-(NSNumber*) salvarUsingPOST7WithPersist: (PierDocumentoTipoRequest*) persist
+    completionHandler: (void (^)(PierDocumentoTipoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST7`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-documentos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierDocumentoTipoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierDocumentoTipoResponse*)data, error);
                            }
           ];
 }
