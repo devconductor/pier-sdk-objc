@@ -12,7 +12,7 @@
 #import "PierDetalhesFaturaResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierTransferenciaBancariaResponse.h"
-#import "PierPageTransferenciaResponse.h"
+#import "PierTransferenciaDetalheResponse.h"
 #import "PierContaDetalheResponse.h"
 #import "PierCartaoEmbossingResponse.h"
 #import "PierCartaoEmbossingRequest.h"
@@ -27,6 +27,7 @@
 #import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
+#import "PierPageTransferenciaResponse.h"
 #import "PierPageContaResponse.h"
 #import "PierEmprestimoPessoalRequest.h"
 #import "PierEmprestimoPessoalResponse.h"
@@ -1948,7 +1949,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaBancariaResponse*
 ///
--(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
@@ -1956,12 +1957,12 @@ static PierContaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET27`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET29`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET27`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET29`"];
     }
     
 
@@ -2045,21 +2046,21 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param idTransferencia C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id_transferencia). 
 ///
-///  @returns PierPageTransferenciaResponse*
+///  @returns PierTransferenciaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
-    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET28`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET30`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET28`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET30`"];
     }
     
 
@@ -2125,9 +2126,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransferenciaResponse*"
+                              responseType: @"PierTransferenciaDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransferenciaResponse*)data, error);
+                               handler((PierTransferenciaDetalheResponse*)data, error);
                            }
           ];
 }
@@ -3729,7 +3730,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaBancariaResponse*
 ///
--(NSNumber*) listarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET33WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -3739,7 +3740,7 @@ static PierContaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET31`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET33`"];
     }
     
 
@@ -3850,7 +3851,7 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaResponse*
 ///
--(NSNumber*) listarUsingGET32WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET34WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -3864,7 +3865,7 @@ static PierContaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET32`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET34`"];
     }
     
 
@@ -4506,12 +4507,12 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param valorTransferencia Valor da Transfer\u00C3\u00AAncia. 
 ///
-///  @returns PierPageTransferenciaResponse*
+///  @returns PierTransferenciaDetalheResponse*
 ///
 -(NSNumber*) transferirUsingPOST1WithId: (NSNumber*) _id
     idContaDestino: (NSNumber*) idContaDestino
     valorTransferencia: (NSNumber*) valorTransferencia
-    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -4597,9 +4598,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageTransferenciaResponse*"
+                              responseType: @"PierTransferenciaDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageTransferenciaResponse*)data, error);
+                               handler((PierTransferenciaDetalheResponse*)data, error);
                            }
           ];
 }

@@ -176,7 +176,7 @@ static PierPlataformaMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePlataformaMobileResponse*
 ///
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -272,13 +272,13 @@ static PierPlataformaMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPlataformaMobileResponse*
 ///
--(NSNumber*) salvarUsingPOST15WithPersist: (PierPlataformaMobilePersist*) persist
+-(NSNumber*) salvarUsingPOST14WithPersist: (PierPlataformaMobilePersist*) persist
     completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST14`"];
     }
     
 

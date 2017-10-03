@@ -9,10 +9,10 @@
 
 
 
-@protocol PierTemplateNotificacaoResponse
+@protocol PierTemplateNotificacaoDetalheResponse
 @end
 
-@interface PierTemplateNotificacaoResponse : PierObject
+@interface PierTemplateNotificacaoDetalheResponse : PierObject
 
 /* C\u00C3\u00B3digo Identificador. [optional]
  */
@@ -41,5 +41,8 @@
 /* Data altera\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* dataAlteracao;
+/* Conteudo do e-mail. [optional]
+ */
+@property(nonatomic) NSString* conteudo;
 
 @end

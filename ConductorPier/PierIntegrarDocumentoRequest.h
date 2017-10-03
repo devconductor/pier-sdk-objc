@@ -10,19 +10,22 @@
 #import "PierPropriedadeDocumentoRequest.h"
 
 
-@protocol PierDocumentoParametrosRequest
+@protocol PierIntegrarDocumentoRequest
 @end
 
-@interface PierDocumentoParametrosRequest : PierObject
+@interface PierIntegrarDocumentoRequest : PierObject
 
-/* ID para o template do documento. [optional]
+/* Identificador do template de documento [optional]
  */
-@property(nonatomic) NSNumber* idTemplateDocumento;
-/* Nome para o arquivo. [optional]
+@property(nonatomic) NSNumber* idTemplate;
+/* Conte\u00C3\u00BAdo do arquivo convertido em Base 64 [optional]
+ */
+@property(nonatomic) NSString* arquivo;
+/* Nome do arquivo. [optional]
  */
 @property(nonatomic) NSString* nome;
 /* Lista de par\u00C3\u00A2metros para montagem do documento. [optional]
  */
-@property(nonatomic) NSArray<PierPropriedadeDocumentoRequest>* parametrosConteudo;
+@property(nonatomic) NSArray<PierPropriedadeDocumentoRequest>* propriedades;
 
 @end

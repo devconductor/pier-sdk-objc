@@ -9,21 +9,21 @@
 
 
 
-@protocol PierDocumentoTipoResponse
+@protocol PierTipoTemplateResponse
 @end
 
-@interface PierDocumentoTipoResponse : PierObject
+@interface PierTipoTemplateResponse : PierObject
 
-/* ID do Tipo de Documento. [optional]
+/* ID do Tipo de Template. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do Tipo de Documento. [optional]
+/* Nome do Tipo de Template. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do Tipo de Documento. [optional]
+/* Descri\u00C3\u00A7\u00C3\u00A3o do Tipo de Template. [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Sigla do Tipo de Documento. [optional]
+/* Sigla do Tipo de Template. [optional]
  */
 @property(nonatomic) NSString* sigla;
 

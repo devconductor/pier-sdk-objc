@@ -2,10 +2,12 @@
 #import "PierQueryParamCollection.h"
 #import "PierConfiguracaoEmailResponse.h"
 #import "PierConfiguracaoEmailPersist.h"
-#import "PierTemplateNotificacaoResponse.h"
+#import "PierTemplateNotificacaoDetalheResponse.h"
 #import "PierNotificacaoSMSResponse.h"
+#import "PierCodigoSegurancaResponse.h"
 #import "PierCodigoSegurancaSMSPersist.h"
 #import "PierPageConfiguracaoEmailResponse.h"
+#import "PierPageCodigoSegurancaResponse.h"
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
 #import "PierPageTemplateNotificacaoResponse.h"
@@ -15,6 +17,7 @@
 #import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
 #import "PierNotificacaoSMSBody.h"
+#import "PierCodigoSegurancaEMAILPersist.h"
 #import "PierCodigoSegurancaSMSRequest.h"
 
 
@@ -192,7 +195,9 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
-///  @returns PierTemplateNotificacaoResponse*
+///  @param templatePadrao Template Padr\u00C3\u00A3o. (optional)
+///
+///  @returns PierTemplateNotificacaoDetalheResponse*
 ///
 -(NSNumber*) alterarTemplateNotificacaoUsingPUTWithId: (NSNumber*) _id
     conteudo: (NSString*) conteudo
@@ -201,7 +206,8 @@ static PierNotificacaoApi* singletonAPI = nil;
     tipoNotificacao: (NSString*) tipoNotificacao
     remetente: (NSString*) remetente
     assunto: (NSString*) assunto
-    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler {
+    templatePadrao: (NSNumber*) templatePadrao
+    completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -249,6 +255,10 @@ static PierNotificacaoApi* singletonAPI = nil;
         
         queryParams[@"assunto"] = assunto;
     }
+    if (templatePadrao != nil) {
+        
+        queryParams[@"templatePadrao"] = templatePadrao;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -294,9 +304,9 @@ static PierNotificacaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTemplateNotificacaoResponse*"
+                              responseType: @"PierTemplateNotificacaoDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTemplateNotificacaoResponse*)data, error);
+                               handler((PierTemplateNotificacaoDetalheResponse*)data, error);
                            }
           ];
 }
@@ -492,14 +502,180 @@ static PierNotificacaoApi* singletonAPI = nil;
 }
 
 ///
+/// Consulta c\u00C3\u00B3digo de seguran\u00C3\u00A7a E-mail
+/// Esse recurso permite consultar um c\u00C3\u00B3digo de seguran\u00C3\u00A7a E-mail espec\u00C3\u00ADfico por id.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o de e-mail. 
+///
+///  @returns PierCodigoSegurancaResponse*
+///
+-(NSNumber*) consultarPorEmailUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCodigoSegurancaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarPorEmailUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/codigos-seguranca-email/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCodigoSegurancaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCodigoSegurancaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Consulta c\u00C3\u00B3digo de seguran\u00C3\u00A7a SMS
+/// Esse recurso permite consultar um c\u00C3\u00B3digo de seguran\u00C3\u00A7a SMS espec\u00C3\u00ADfico por id.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o de e-mail. 
+///
+///  @returns PierCodigoSegurancaResponse*
+///
+-(NSNumber*) consultarPorSMSUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCodigoSegurancaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarPorSMSUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/codigos-seguranca-sms/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierCodigoSegurancaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierCodigoSegurancaResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Consulta template de notifica\u00C3\u00A7\u00C3\u00A3o
 /// Esse recurso permite consultar uma configura\u00C3\u00A7\u00C3\u00A3o espec\u00C3\u00ADfica por id.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do layout de e-mail. 
 ///
-///  @returns PierTemplateNotificacaoResponse*
+///  @returns PierTemplateNotificacaoDetalheResponse*
 ///
 -(NSNumber*) consultarTemplateNotificacaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -567,9 +743,89 @@ static PierNotificacaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTemplateNotificacaoResponse*"
+                              responseType: @"PierTemplateNotificacaoDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTemplateNotificacaoResponse*)data, error);
+                               handler((PierTemplateNotificacaoDetalheResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Gerar c\u00C3\u00B3digo de seguran\u00C3\u00A7a e enviar por e-mail
+/// Esse recurso permite gerar e enviar c\u00C3\u00B3digos de seguran\u00C3\u00A7a por e-mail, para valida\u00C3\u00A7\u00C3\u00A3o de dispositivos.
+///  @param email email 
+///
+///  @returns NSString*
+///
+-(NSNumber*) gerarTokenEMAILUsingPOSTWithEmail: (NSString*) email
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'email' is set
+    if (email == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `email` when calling `gerarTokenEMAILUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes-email/gerar-codigo-seguranca"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = email;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
                            }
           ];
 }
@@ -581,13 +837,13 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @returns NSString*
 ///
--(NSNumber*) gerarTokenUsingPOSTWithPersist: (PierCodigoSegurancaSMSPersist*) persist
+-(NSNumber*) gerarTokenSMSUsingPOSTWithPersist: (PierCodigoSegurancaSMSPersist*) persist
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `gerarTokenUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `gerarTokenSMSUsingPOST`"];
     }
     
 
@@ -745,6 +1001,196 @@ static PierNotificacaoApi* singletonAPI = nil;
                               responseType: @"PierPageConfiguracaoEmailResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPageConfiguracaoEmailResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista os c\u00C3\u00B3digos de seguran\u00C3\u00A7a E-Mail
+/// Esse recurso permite listar os codigos de seguran\u00C3\u00A7a por E-Mail.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @returns PierPageCodigoSegurancaResponse*
+///
+-(NSNumber*) listarPorEmailUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageCodigoSegurancaResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/codigos-seguranca-email"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageCodigoSegurancaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageCodigoSegurancaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista os c\u00C3\u00B3digos de seguran\u00C3\u00A7a SMS
+/// Esse recurso permite listar os codigos de seguran\u00C3\u00A7a por SMS.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @returns PierPageCodigoSegurancaResponse*
+///
+-(NSNumber*) listarPorSMSUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageCodigoSegurancaResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/codigos-seguranca-sms"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageCodigoSegurancaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageCodigoSegurancaResponse*)data, error);
                            }
           ];
 }
@@ -1772,7 +2218,9 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
-///  @returns PierTemplateNotificacaoResponse*
+///  @param templatePadrao Template Padr\u00C3\u00A3o. (optional)
+///
+///  @returns PierTemplateNotificacaoDetalheResponse*
 ///
 -(NSNumber*) salvarTemplateNotificacaoUsingPOSTWithConteudo: (NSString*) conteudo
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
@@ -1780,7 +2228,8 @@ static PierNotificacaoApi* singletonAPI = nil;
     tipoNotificacao: (NSString*) tipoNotificacao
     remetente: (NSString*) remetente
     assunto: (NSString*) assunto
-    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler {
+    templatePadrao: (NSNumber*) templatePadrao
+    completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'conteudo' is set
@@ -1819,6 +2268,10 @@ static PierNotificacaoApi* singletonAPI = nil;
     if (assunto != nil) {
         
         queryParams[@"assunto"] = assunto;
+    }
+    if (templatePadrao != nil) {
+        
+        queryParams[@"templatePadrao"] = templatePadrao;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1865,9 +2318,89 @@ static PierNotificacaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierTemplateNotificacaoResponse*"
+                              responseType: @"PierTemplateNotificacaoDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierTemplateNotificacaoResponse*)data, error);
+                               handler((PierTemplateNotificacaoDetalheResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Validar c\u00C3\u00B3digo de seguran\u00C3\u00A7a enviado por e-mail
+/// Esse recurso permite validar os c\u00C3\u00B3digos de seguran\u00C3\u00A7a enviador por e-mail, para valida\u00C3\u00A7\u00C3\u00A3o de dispositivos.
+///  @param request request 
+///
+///  @returns NSString*
+///
+-(NSNumber*) validarTokenEMAILUsingPOSTWithRequest: (PierCodigoSegurancaEMAILPersist*) request
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'request' is set
+    if (request == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `request` when calling `validarTokenEMAILUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes-email/validar-codigo-seguranca"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = request;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
                            }
           ];
 }
@@ -1879,13 +2412,13 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @returns NSString*
 ///
--(NSNumber*) validarTokenUsingPOSTWithRequest: (PierCodigoSegurancaSMSRequest*) request
+-(NSNumber*) validarTokenSMSUsingPOSTWithRequest: (PierCodigoSegurancaSMSRequest*) request
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
     // verify the required parameter 'request' is set
     if (request == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `request` when calling `validarTokenUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `request` when calling `validarTokenSMSUsingPOST`"];
     }
     
 

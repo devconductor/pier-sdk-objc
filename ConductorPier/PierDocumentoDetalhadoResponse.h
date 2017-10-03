@@ -7,12 +7,13 @@
  * Do not edit the class manually.
  */
 
+#import "PierDocumentoDetalheResponse.h"
 
 
-@protocol PierDocumentoResponse
+@protocol PierDocumentoDetalhadoResponse
 @end
 
-@interface PierDocumentoResponse : PierObject
+@interface PierDocumentoDetalhadoResponse : PierObject
 
 /* ID do Documento. [optional]
  */
@@ -23,8 +24,14 @@
 /* Nome do Documento. [optional]
  */
 @property(nonatomic) NSString* nome;
+/* Representa\u00C3\u00A7\u00C3\u00A3o do documento em Base64. [optional]
+ */
+@property(nonatomic) NSString* documento;
 /* Extens\u00C3\u00A3o do Documento. [optional]
  */
 @property(nonatomic) NSString* extensao;
+/* Detalhamento do documento. [optional]
+ */
+@property(nonatomic) NSArray<PierDocumentoDetalheResponse>* documentoDetalhes;
 
 @end

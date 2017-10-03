@@ -9,16 +9,12 @@
 
 
 
-@protocol PierDocumentoTemplateResponse
+@protocol PierReferenciaIdPersist
 @end
 
-@interface PierDocumentoTemplateResponse : PierObject
+@interface PierReferenciaIdPersist : PierObject
 
-/* ID do Template do Documento. [optional]
- */
+
 @property(nonatomic) NSNumber* _id;
-/* ID do Tipo de Template. [optional]
- */
-@property(nonatomic) NSNumber* idTipoTemplate;
 
 @end

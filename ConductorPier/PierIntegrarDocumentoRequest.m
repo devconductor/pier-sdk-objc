@@ -1,6 +1,6 @@
-#import "PierDocumentoTipoRequest.h"
+#import "PierIntegrarDocumentoRequest.h"
 
-@implementation PierDocumentoTipoRequest
+@implementation PierIntegrarDocumentoRequest
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nome": @"nome", @"descricao": @"descricao", @"sigla": @"sigla" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTemplate": @"idTemplate", @"arquivo": @"arquivo", @"nome": @"nome", @"propriedades": @"propriedades" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nome", @"descricao", @"sigla"];
+  NSArray *optionalProperties = @[@"idTemplate", @"arquivo", @"nome", @"propriedades"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

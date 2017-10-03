@@ -1,6 +1,6 @@
-#import "PierTemplateNotificacaoResponse.h"
+#import "PierDocumentoDetalhadoResponse.h"
 
-@implementation PierTemplateNotificacaoResponse
+@implementation PierDocumentoDetalhadoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idConfiguracaoEmail": @"idConfiguracaoEmail", @"tipoLayout": @"tipoLayout", @"tipoNotificacao": @"tipoNotificacao", @"templatePadrao": @"templatePadrao", @"remetente": @"remetente", @"assunto": @"assunto", @"dataInclusao": @"dataInclusao", @"dataAlteracao": @"dataAlteracao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTemplateDocumento": @"idTemplateDocumento", @"nome": @"nome", @"documento": @"documento", @"extensao": @"extensao", @"documentoDetalhes": @"documentoDetalhes" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idConfiguracaoEmail", @"tipoLayout", @"tipoNotificacao", @"templatePadrao", @"remetente", @"assunto", @"dataInclusao", @"dataAlteracao"];
+  NSArray *optionalProperties = @[@"_id", @"idTemplateDocumento", @"nome", @"documento", @"extensao", @"documentoDetalhes"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

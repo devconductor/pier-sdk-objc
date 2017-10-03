@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "PierTerminalResponse.h"
 #import "PierEstabelecimentoResponse.h"
+#import "PierTerminalResponse.h"
 #import "PierPageEstabelecimentoResponse.h"
 #import "PierPageTerminalResponse.h"
 #import "PierObject.h"
@@ -24,19 +24,6 @@
 +(PierEstabelecimentoApi*) sharedAPI;
 ///
 ///
-/// Apresenta os dados de um determinado Terminal
-/// Este m\u00C3\u00A9todo permite consultar um determinado Terminal a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id).
-/// 
-///
-/// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Consultar estabelecimento por id
 /// Consulta os detalhes de um determinado estabelecimento
 ///
@@ -44,8 +31,21 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de um determinado Terminal
+/// Este m\u00C3\u00A9todo permite consultar um determinado Terminal a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Terminal (id).
+/// 
+///
+/// @return PierTerminalResponse*
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
 ///
@@ -78,7 +78,7 @@
 /// 
 ///
 /// @return PierPageEstabelecimentoResponse*
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -118,7 +118,7 @@
 /// 
 ///
 /// @return PierPageTerminalResponse*
--(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

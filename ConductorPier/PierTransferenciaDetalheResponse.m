@@ -1,6 +1,6 @@
-#import "PierTemplateNotificacaoResponse.h"
+#import "PierTransferenciaDetalheResponse.h"
 
-@implementation PierTemplateNotificacaoResponse
+@implementation PierTransferenciaDetalheResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idConfiguracaoEmail": @"idConfiguracaoEmail", @"tipoLayout": @"tipoLayout", @"tipoNotificacao": @"tipoNotificacao", @"templatePadrao": @"templatePadrao", @"remetente": @"remetente", @"assunto": @"assunto", @"dataInclusao": @"dataInclusao", @"dataAlteracao": @"dataAlteracao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"dataTransferencia": @"dataTransferencia", @"idContaOrigem": @"idContaOrigem", @"nomePessoaOrigem": @"nomePessoaOrigem", @"idContaDestino": @"idContaDestino", @"nomePessoaDestino": @"nomePessoaDestino", @"valorTransferencia": @"valorTransferencia", @"valorTarifa": @"valorTarifa" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idConfiguracaoEmail", @"tipoLayout", @"tipoNotificacao", @"templatePadrao", @"remetente", @"assunto", @"dataInclusao", @"dataAlteracao"];
+  NSArray *optionalProperties = @[@"_id", @"dataTransferencia", @"idContaOrigem", @"nomePessoaOrigem", @"idContaDestino", @"nomePessoaDestino", @"valorTransferencia", @"valorTarifa"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

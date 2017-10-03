@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierReferenciaIdPersist.h"
 
 
 @protocol PierDocumentoTemplatePersist
@@ -14,11 +15,14 @@
 
 @interface PierDocumentoTemplatePersist : PierObject
 
-/* ID para o Tipo de Documento vinculado ao template. [optional]
+/* ID para o Tipo de Template vinculado ao template. [optional]
  */
-@property(nonatomic) NSNumber* idTipoDocumento;
+@property(nonatomic) NSNumber* idTipoTemplate;
 /* Template para o conte\u00C3\u00BAdo do documento. [optional]
  */
 @property(nonatomic) NSString* template;
+/* Lista de configura\u00C3\u00A7\u00C3\u00B5es de integra\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSArray<PierReferenciaIdPersist>* integracoes;
 
 @end

@@ -9,18 +9,18 @@
 
 
 
-@protocol PierDocumentoTipoRequest
+@protocol PierTipoTemplateRequest
 @end
 
-@interface PierDocumentoTipoRequest : PierObject
+@interface PierTipoTemplateRequest : PierObject
 
-/* Nome do tipo de documento. [optional]
+/* Nome do tipo de template. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de documento. [optional]
+/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de template. [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Sigla do tipo de documento. [optional]
+/* Sigla do tipo de template. [optional]
  */
 @property(nonatomic) NSString* sigla;
 

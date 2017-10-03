@@ -128,9 +128,9 @@
 /// @param _id ID da Pessoa
 /// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
 /// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
 /// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
 /// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
-/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
 /// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
 /// @param numeroIdentidade N\u00C3\u00BAmero da Identidade.
 /// @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade.
@@ -142,9 +142,9 @@
 -(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
+    dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
-    dataNascimento: (NSString*) dataNascimento
     sexo: (NSString*) sexo
     numeroIdentidade: (NSString*) numeroIdentidade
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
@@ -228,7 +228,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -241,7 +241,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -254,7 +254,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -267,7 +267,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
@@ -349,7 +349,7 @@
 /// 
 ///
 /// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET11WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -390,7 +390,7 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -428,7 +428,7 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -463,7 +463,7 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -504,21 +504,6 @@
 
 ///
 ///
-/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
-/// 
-///
-/// @return PierIntegracaoEmissorResponse*
--(NSNumber*) salvarUsingPOST10WithId: (NSNumber*) _id
-    body: (PierIntegracaoEmissorPersist*) body
-    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Salvar os detalhes de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
 ///
@@ -535,7 +520,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST13WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST12WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -555,9 +540,9 @@
 ///
 /// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
 /// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
 /// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
 /// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
-/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
 /// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
 /// @param numeroIdentidade N\u00C3\u00BAmero da Identidade.
 /// @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade.
@@ -566,11 +551,11 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST14WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST13WithNome: (NSString*) nome
     tipo: (NSString*) tipo
+    dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
     cnpj: (NSString*) cnpj
-    dataNascimento: (NSString*) dataNascimento
     sexo: (NSString*) sexo
     numeroIdentidade: (NSString*) numeroIdentidade
     orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
@@ -592,7 +577,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST16WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST15WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -619,7 +604,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) salvarUsingPOST8WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST7WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
@@ -631,6 +616,21 @@
     uf: (NSString*) uf
     pais: (NSString*) pais
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
+/// 
+///
+/// @return PierIntegracaoEmissorResponse*
+-(NSNumber*) salvarUsingPOST9WithId: (NSNumber*) _id
+    body: (PierIntegracaoEmissorPersist*) body
+    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
 
 
 

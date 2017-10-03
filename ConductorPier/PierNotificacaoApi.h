@@ -1,10 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "PierConfiguracaoEmailResponse.h"
 #import "PierConfiguracaoEmailPersist.h"
-#import "PierTemplateNotificacaoResponse.h"
+#import "PierTemplateNotificacaoDetalheResponse.h"
 #import "PierNotificacaoSMSResponse.h"
+#import "PierCodigoSegurancaResponse.h"
 #import "PierCodigoSegurancaSMSPersist.h"
 #import "PierPageConfiguracaoEmailResponse.h"
+#import "PierPageCodigoSegurancaResponse.h"
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
 #import "PierPageTemplateNotificacaoResponse.h"
@@ -14,6 +16,7 @@
 #import "PierNotificacaoResponse.h"
 #import "PierPushAPNS.h"
 #import "PierNotificacaoSMSBody.h"
+#import "PierCodigoSegurancaEMAILPersist.h"
 #import "PierCodigoSegurancaSMSRequest.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -61,9 +64,10 @@
 /// @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o.
 /// @param remetente Remetente
 /// @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o.
+/// @param templatePadrao Template Padr\u00C3\u00A3o.
 /// 
 ///
-/// @return PierTemplateNotificacaoResponse*
+/// @return PierTemplateNotificacaoDetalheResponse*
 -(NSNumber*) alterarTemplateNotificacaoUsingPUTWithId: (NSNumber*) _id
     conteudo: (NSString*) conteudo
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
@@ -71,7 +75,8 @@
     tipoNotificacao: (NSString*) tipoNotificacao
     remetente: (NSString*) remetente
     assunto: (NSString*) assunto
-    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
+    templatePadrao: (NSNumber*) templatePadrao
+    completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -110,15 +115,54 @@
 
 ///
 ///
+/// Consulta c\u00C3\u00B3digo de seguran\u00C3\u00A7a E-mail
+/// Esse recurso permite consultar um c\u00C3\u00B3digo de seguran\u00C3\u00A7a E-mail espec\u00C3\u00ADfico por id.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o de e-mail.
+/// 
+///
+/// @return PierCodigoSegurancaResponse*
+-(NSNumber*) consultarPorEmailUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCodigoSegurancaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consulta c\u00C3\u00B3digo de seguran\u00C3\u00A7a SMS
+/// Esse recurso permite consultar um c\u00C3\u00B3digo de seguran\u00C3\u00A7a SMS espec\u00C3\u00ADfico por id.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o de e-mail.
+/// 
+///
+/// @return PierCodigoSegurancaResponse*
+-(NSNumber*) consultarPorSMSUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCodigoSegurancaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consulta template de notifica\u00C3\u00A7\u00C3\u00A3o
 /// Esse recurso permite consultar uma configura\u00C3\u00A7\u00C3\u00A3o espec\u00C3\u00ADfica por id.
 ///
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do layout de e-mail.
 /// 
 ///
-/// @return PierTemplateNotificacaoResponse*
+/// @return PierTemplateNotificacaoDetalheResponse*
 -(NSNumber*) consultarTemplateNotificacaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Gerar c\u00C3\u00B3digo de seguran\u00C3\u00A7a e enviar por e-mail
+/// Esse recurso permite gerar e enviar c\u00C3\u00B3digos de seguran\u00C3\u00A7a por e-mail, para valida\u00C3\u00A7\u00C3\u00A3o de dispositivos.
+///
+/// @param email email
+/// 
+///
+/// @return NSString*
+-(NSNumber*) gerarTokenEMAILUsingPOSTWithEmail: (NSString*) email
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
@@ -130,7 +174,7 @@
 /// 
 ///
 /// @return NSString*
--(NSNumber*) gerarTokenUsingPOSTWithPersist: (PierCodigoSegurancaSMSPersist*) persist
+-(NSNumber*) gerarTokenSMSUsingPOSTWithPersist: (PierCodigoSegurancaSMSPersist*) persist
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
@@ -149,6 +193,40 @@
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageConfiguracaoEmailResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os c\u00C3\u00B3digos de seguran\u00C3\u00A7a E-Mail
+/// Esse recurso permite listar os codigos de seguran\u00C3\u00A7a por E-Mail.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageCodigoSegurancaResponse*
+-(NSNumber*) listarPorEmailUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageCodigoSegurancaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os c\u00C3\u00B3digos de seguran\u00C3\u00A7a SMS
+/// Esse recurso permite listar os codigos de seguran\u00C3\u00A7a por SMS.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageCodigoSegurancaResponse*
+-(NSNumber*) listarPorSMSUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageCodigoSegurancaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -342,16 +420,31 @@
 /// @param tipoNotificacao Tipo da notifica\u00C3\u00A7\u00C3\u00A3o.
 /// @param remetente Remetente
 /// @param assunto Assunto da Notificaca\u00C3\u00A7\u00C3\u00A3o.
+/// @param templatePadrao Template Padr\u00C3\u00A3o.
 /// 
 ///
-/// @return PierTemplateNotificacaoResponse*
+/// @return PierTemplateNotificacaoDetalheResponse*
 -(NSNumber*) salvarTemplateNotificacaoUsingPOSTWithConteudo: (NSString*) conteudo
     idConfiguracaoEmail: (NSNumber*) idConfiguracaoEmail
     tipoLayout: (NSString*) tipoLayout
     tipoNotificacao: (NSString*) tipoNotificacao
     remetente: (NSString*) remetente
     assunto: (NSString*) assunto
-    completionHandler: (void (^)(PierTemplateNotificacaoResponse* output, NSError* error)) handler;
+    templatePadrao: (NSNumber*) templatePadrao
+    completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Validar c\u00C3\u00B3digo de seguran\u00C3\u00A7a enviado por e-mail
+/// Esse recurso permite validar os c\u00C3\u00B3digos de seguran\u00C3\u00A7a enviador por e-mail, para valida\u00C3\u00A7\u00C3\u00A3o de dispositivos.
+///
+/// @param request request
+/// 
+///
+/// @return NSString*
+-(NSNumber*) validarTokenEMAILUsingPOSTWithRequest: (PierCodigoSegurancaEMAILPersist*) request
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
@@ -363,7 +456,7 @@
 /// 
 ///
 /// @return NSString*
--(NSNumber*) validarTokenUsingPOSTWithRequest: (PierCodigoSegurancaSMSRequest*) request
+-(NSNumber*) validarTokenSMSUsingPOSTWithRequest: (PierCodigoSegurancaSMSRequest*) request
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 

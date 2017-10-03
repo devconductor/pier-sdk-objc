@@ -11,7 +11,7 @@
 #import "PierDetalhesFaturaResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierTransferenciaBancariaResponse.h"
-#import "PierPageTransferenciaResponse.h"
+#import "PierTransferenciaDetalheResponse.h"
 #import "PierContaDetalheResponse.h"
 #import "PierCartaoEmbossingResponse.h"
 #import "PierCartaoEmbossingRequest.h"
@@ -26,6 +26,7 @@
 #import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
+#import "PierPageTransferenciaResponse.h"
 #import "PierPageContaResponse.h"
 #import "PierEmprestimoPessoalRequest.h"
 #import "PierEmprestimoPessoalResponse.h"
@@ -377,7 +378,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -392,10 +393,10 @@
 /// @param idTransferencia C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id_transferencia).
 /// 
 ///
-/// @return PierPageTransferenciaResponse*
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+/// @return PierTransferenciaDetalheResponse*
+-(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
-    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -692,7 +693,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET33WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -717,7 +718,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET32WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET34WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -836,11 +837,11 @@
 /// @param valorTransferencia Valor da Transfer\u00C3\u00AAncia.
 /// 
 ///
-/// @return PierPageTransferenciaResponse*
+/// @return PierTransferenciaDetalheResponse*
 -(NSNumber*) transferirUsingPOST1WithId: (NSNumber*) _id
     idContaDestino: (NSNumber*) idContaDestino
     valorTransferencia: (NSNumber*) valorTransferencia
-    completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 
 
 

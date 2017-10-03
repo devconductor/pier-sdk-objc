@@ -1,6 +1,6 @@
-#import "PierTemplateNotificacaoResponse.h"
+#import "PierCodigoSegurancaEMAILPersist.h"
 
-@implementation PierTemplateNotificacaoResponse
+@implementation PierCodigoSegurancaEMAILPersist
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idConfiguracaoEmail": @"idConfiguracaoEmail", @"tipoLayout": @"tipoLayout", @"tipoNotificacao": @"tipoNotificacao", @"templatePadrao": @"templatePadrao", @"remetente": @"remetente", @"assunto": @"assunto", @"dataInclusao": @"dataInclusao", @"dataAlteracao": @"dataAlteracao" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"email": @"email", @"codigoSeguranca": @"codigoSeguranca" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idConfiguracaoEmail", @"tipoLayout", @"tipoNotificacao", @"templatePadrao", @"remetente", @"assunto", @"dataInclusao", @"dataAlteracao"];
+  NSArray *optionalProperties = @[@"email", @"codigoSeguranca"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
