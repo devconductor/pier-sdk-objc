@@ -79,13 +79,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierEstabelecimentoResponse*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -162,13 +162,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTerminalResponse*
 ///
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
     }
     
 
@@ -287,7 +287,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEstabelecimentoResponse*
 ///
--(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -485,7 +485,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTerminalResponse*
 ///
--(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

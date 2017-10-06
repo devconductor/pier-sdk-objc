@@ -378,7 +378,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -394,7 +394,7 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 
@@ -408,7 +408,7 @@
 /// 
 ///
 /// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -693,7 +693,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET33WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET34WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -718,7 +718,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET35WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -750,7 +750,7 @@
 /// 
 ///
 /// @return PierPageContaResponse*
--(NSNumber*) listarUsingGET8WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET9WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto

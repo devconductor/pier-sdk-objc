@@ -451,13 +451,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierProdutoDetalhesResponse*
 ///
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
     }
     
 
@@ -625,7 +625,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoAjusteResponse*
 ///
--(NSNumber*) consultarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -736,7 +736,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoBoletoResponse*
 ///
--(NSNumber*) consultarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -842,13 +842,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET24`"];
     }
     
 
@@ -929,7 +929,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOperacaoResponse*
 ///
--(NSNumber*) consultarUsingGET24WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET25WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler {
@@ -937,17 +937,17 @@ static PierCadastroGeralApi* singletonAPI = nil;
     
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET25`"];
     }
     
     // verify the required parameter 'idEstabelecimento' is set
     if (idEstabelecimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET25`"];
     }
     
     // verify the required parameter 'codigoProcessamento' is set
     if (codigoProcessamento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET25`"];
     }
     
 
@@ -1033,13 +1033,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET26`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET27`"];
     }
     
 
@@ -2319,7 +2319,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePortadorResponse*
 ///
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -2470,7 +2470,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageProdutoResponse*
 ///
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -2590,7 +2590,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePromotorResponse*
 ///
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2714,7 +2714,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2918,7 +2918,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3025,7 +3025,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageControleVencimentoResponse*
 ///
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento

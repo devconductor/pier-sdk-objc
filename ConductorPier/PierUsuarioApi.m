@@ -452,13 +452,13 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET32`"];
     }
     
 
@@ -630,7 +630,7 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierPageUsuarioResponse*
 ///
--(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -824,13 +824,13 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) salvarUsingPOST19WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST20WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST20`"];
     }
     
 

@@ -77,7 +77,7 @@
 /// 
 ///
 /// @return PierFaqResponse*
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler;
 
 
@@ -99,7 +99,7 @@
 /// 
 ///
 /// @return PierPageFaqResponse*
--(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq

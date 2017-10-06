@@ -107,7 +107,7 @@
 /// 
 ///
 /// @return PierProdutoDetalhesResponse*
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
@@ -137,7 +137,7 @@
 /// 
 ///
 /// @return PierPageTipoAjusteResponse*
--(NSNumber*) consultarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -159,7 +159,7 @@
 /// 
 ///
 /// @return PierPageTipoBoletoResponse*
--(NSNumber*) consultarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -177,7 +177,7 @@
 /// 
 ///
 /// @return PierTipoEnderecoResponse*
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler;
 
 
@@ -192,7 +192,7 @@
 /// 
 ///
 /// @return PierTipoOperacaoResponse*
--(NSNumber*) consultarUsingGET24WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET25WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
@@ -207,7 +207,7 @@
 /// 
 ///
 /// @return PierTipoTelefoneResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -444,7 +444,7 @@
 /// 
 ///
 /// @return PierPagePortadorResponse*
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -474,7 +474,7 @@
 /// 
 ///
 /// @return PierPageProdutoResponse*
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -499,7 +499,7 @@
 /// 
 ///
 /// @return PierPagePromotorResponse*
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -523,7 +523,7 @@
 /// 
 ///
 /// @return PierPageTipoEnderecoResponse*
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -561,7 +561,7 @@
 /// 
 ///
 /// @return PierPageTipoTelefoneResponse*
--(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -581,7 +581,7 @@
 /// 
 ///
 /// @return PierPageControleVencimentoResponse*
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento

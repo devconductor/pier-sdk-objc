@@ -221,6 +221,19 @@
 
 ///
 ///
+/// Apresenta os dados de um determinado Endere\u00C3\u00A7o
+/// Este m\u00C3\u00A9todo permite consultar um determinado Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
+/// 
+///
+/// @return PierEnderecoResponse*
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os detalhes de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite a consulta dos detalhes de uma Pessoa existentes na base de dados do Emissor.
 ///
@@ -228,7 +241,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -241,7 +254,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -254,21 +267,8 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta os dados de um determinado Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite consultar um determinado Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
-/// 
-///
-/// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -349,7 +349,7 @@
 /// 
 ///
 /// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -390,7 +390,7 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -428,7 +428,7 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -463,7 +463,7 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -504,6 +504,21 @@
 
 ///
 ///
+/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
+/// 
+///
+/// @return PierIntegracaoEmissorResponse*
+-(NSNumber*) salvarUsingPOST10WithId: (NSNumber*) _id
+    body: (PierIntegracaoEmissorPersist*) body
+    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Salvar os detalhes de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
 ///
@@ -520,7 +535,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST12WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST13WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -551,7 +566,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST13WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST14WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
@@ -577,7 +592,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST15WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST16WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -604,7 +619,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) salvarUsingPOST7WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST8WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
@@ -616,21 +631,6 @@
     uf: (NSString*) uf
     pais: (NSString*) pais
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
-/// 
-///
-/// @return PierIntegracaoEmissorResponse*
--(NSNumber*) salvarUsingPOST9WithId: (NSNumber*) _id
-    body: (PierIntegracaoEmissorPersist*) body
-    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
 
 
 

@@ -101,6 +101,9 @@
 /* Nome do Estabelecimento. [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
+/* Nome Fantasia do Estabelecimento. [optional]
+ */
+@property(nonatomic) NSString* nomeFantasiaEstabelecimento;
 /* Localidade do Estabelecimento. [optional]
  */
 @property(nonatomic) NSString* localidadeEstabelecimento;

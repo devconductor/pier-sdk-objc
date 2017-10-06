@@ -387,7 +387,7 @@ static PierAntecipacaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCompraResponse*
 ///
--(NSNumber*) listarUsingGET7WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET8WithIdConta: (NSNumber*) idConta
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -400,7 +400,7 @@ static PierAntecipacaoApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET8`"];
     }
     
 
