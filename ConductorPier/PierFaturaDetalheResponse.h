@@ -7,13 +7,16 @@
  * Do not edit the class manually.
  */
 
+#import "PierLancamentoFaturaResponse.h"
 
 
-@protocol PierFaturaResponse
+@protocol PierFaturaDetalheResponse
 @end
 
-@interface PierFaturaResponse : PierObject
+@interface PierFaturaDetalheResponse : PierObject
 
+
+@property(nonatomic) NSArray<PierLancamentoFaturaResponse>* lancamentosFaturaResponse;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;

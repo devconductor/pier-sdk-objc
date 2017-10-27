@@ -10,7 +10,6 @@
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
 #import "PierPageTemplateNotificacaoResponse.h"
-#import "PierNotificacaoEmailResponse.h"
 #import "PierNotificacaoEmailRequest.h"
 #import "PierPushFCMEGCM.h"
 #import "PierNotificacaoResponse.h"
@@ -322,9 +321,9 @@
 /// @param request request
 /// 
 ///
-/// @return PierNotificacaoEmailResponse*
+/// @return NSObject*
 -(NSNumber*) notificacaoEmailUsingPOSTWithRequest: (PierNotificacaoEmailRequest*) request
-    completionHandler: (void (^)(PierNotificacaoEmailResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 ///
@@ -338,7 +337,7 @@
 /// 
 ///
 /// @return PierNotificacaoSMSResponse*
--(NSNumber*) responderSMSUsingPOSTWithNsu: (NSString*) nsu
+-(NSNumber*) responderSMSGetUsingGETWithNsu: (NSString*) nsu
     data: (NSString*) data
     resposta: (NSString*) resposta
     completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler;

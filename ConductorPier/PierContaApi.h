@@ -6,8 +6,6 @@
 #import "PierBeneficioPagamentoAtrasoResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
-#import "PierDetalhesFaturaConsignadaResponse.h"
-#import "PierFaturaConsignadaDetalheResponse.h"
 #import "PierDetalhesFaturaResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierTransferenciaBancariaResponse.h"
@@ -17,8 +15,7 @@
 #import "PierCartaoEmbossingRequest.h"
 #import "PierCartaoImpressaoProvisorioResponse.h"
 #import "PierCartaoImpressaoResponse.h"
-#import "PierPageFaturaConsignadaResponse.h"
-#import "PierPageFaturaResponse.h"
+#import "PierPageFaturaFechadaResponse.h"
 #import "PierPageHistoricoEventosResponse.h"
 #import "PierPageHistoricoAssessoriaResponse.h"
 #import "PierPageHistoricoAtrasoFaturaResponse.h"
@@ -277,36 +274,6 @@
 
 ///
 ///
-/// Consultar a fatura consignadas abertas da conta
-/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar a fatura consignada em aberto
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimento Data Vencimento
-/// 
-///
-/// @return PierDetalhesFaturaConsignadaResponse*
--(NSNumber*) consultarFaturaConsignadaAbertaUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierDetalhesFaturaConsignadaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta dados de uma determinada fatura consignada
-/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar uma fatura, atrav\u00C3\u00A9s do id da conta e o id da fatura.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param idFatura C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da fatura (id_fatura).
-/// 
-///
-/// @return PierFaturaConsignadaDetalheResponse*
--(NSNumber*) consultarFaturaConsignadaUsingGETWithId: (NSNumber*) _id
-    idFatura: (NSNumber*) idFatura
-    completionHandler: (void (^)(PierFaturaConsignadaDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Consultar Fatura da Conta
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar os detalhes de uma fatura vinculados a uma determinada conta.
 ///
@@ -504,27 +471,6 @@
 
 ///
 ///
-/// Lista as faturas consignadas da conta
-/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param dataVencimento Apresenta a data de vencimento da fatura.
-/// 
-///
-/// @return PierPageFaturaConsignadaResponse*
--(NSNumber*) listarFaturasConsignadasUsingGETWithId: (NSNumber*) _id
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageFaturaConsignadaResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista as faturas da conta
 /// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
 ///
@@ -535,13 +481,13 @@
 /// @param dataVencimento Data de Vencimento da Fatura.
 /// 
 ///
-/// @return PierPageFaturaResponse*
+/// @return PierPageFaturaFechadaResponse*
 -(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageFaturaResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageFaturaFechadaResponse* output, NSError* error)) handler;
 
 
 ///

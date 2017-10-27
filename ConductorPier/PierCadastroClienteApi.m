@@ -7,6 +7,8 @@
 #import "PierPessoaResponse.h"
 #import "PierTelefoneResponse.h"
 #import "PierAtribuirAssinaturaClientePersist.h"
+#import "PierIntegracaoEmissorPersist.h"
+#import "PierIntegracaoEmissorResponse.h"
 #import "PierAdicionalPersist.h"
 #import "PierPagePessoaResponse.h"
 #import "PierAdicionalResponse.h"
@@ -17,8 +19,6 @@
 #import "PierPessoaFisicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaPersist.h"
-#import "PierIntegracaoEmissorPersist.h"
-#import "PierIntegracaoEmissorResponse.h"
 
 
 @interface PierCadastroClienteApi ()
@@ -863,6 +863,92 @@ static PierCadastroClienteApi* singletonAPI = nil;
                               responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((NSObject*)data, error);
+                           }
+          ];
+}
+
+///
+/// Atualiza conta integrada com o emissor
+/// Este recurso permite a atualiza\u00C3\u00A7\u00C3\u00A3o de uma conta integrada com o emissor.
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///
+///  @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada (optional)
+///
+///  @returns PierIntegracaoEmissorResponse*
+///
+-(NSNumber*) atualizarUsingPOSTWithId: (NSNumber*) _id
+    body: (PierIntegracaoEmissorPersist*) body
+    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/atualizar-registro-integracao"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = body;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierIntegracaoEmissorResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierIntegracaoEmissorResponse*)data, error);
                            }
           ];
 }

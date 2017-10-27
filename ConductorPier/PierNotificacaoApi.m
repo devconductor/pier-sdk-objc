@@ -11,7 +11,6 @@
 #import "PierPagePushResponse.h"
 #import "PierPageSMSResponse.h"
 #import "PierPageTemplateNotificacaoResponse.h"
-#import "PierNotificacaoEmailResponse.h"
 #import "PierNotificacaoEmailRequest.h"
 #import "PierPushFCMEGCM.h"
 #import "PierNotificacaoResponse.h"
@@ -1635,10 +1634,10 @@ static PierNotificacaoApi* singletonAPI = nil;
 /// Esse recurso permite enviar uma mensagem de notifica\u00C3\u00A7\u00C3\u00A3o por email
 ///  @param request request 
 ///
-///  @returns PierNotificacaoEmailResponse*
+///  @returns NSObject*
 ///
 -(NSNumber*) notificacaoEmailUsingPOSTWithRequest: (PierNotificacaoEmailRequest*) request
-    completionHandler: (void (^)(PierNotificacaoEmailResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
     // verify the required parameter 'request' is set
@@ -1703,9 +1702,9 @@ static PierNotificacaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierNotificacaoEmailResponse*"
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierNotificacaoEmailResponse*)data, error);
+                               handler((NSObject*)data, error);
                            }
           ];
 }
@@ -1721,7 +1720,7 @@ static PierNotificacaoApi* singletonAPI = nil;
 ///
 ///  @returns PierNotificacaoSMSResponse*
 ///
--(NSNumber*) responderSMSUsingPOSTWithNsu: (NSString*) nsu
+-(NSNumber*) responderSMSGetUsingGETWithNsu: (NSString*) nsu
     data: (NSString*) data
     resposta: (NSString*) resposta
     completionHandler: (void (^)(PierNotificacaoSMSResponse* output, NSError* error)) handler {
@@ -1786,7 +1785,7 @@ static PierNotificacaoApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"GET"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

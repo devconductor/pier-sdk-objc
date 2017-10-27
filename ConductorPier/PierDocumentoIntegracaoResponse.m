@@ -1,6 +1,6 @@
-#import "PierFaturaResponse.h"
+#import "PierDocumentoIntegracaoResponse.h"
 
-@implementation PierFaturaResponse
+@implementation PierDocumentoIntegracaoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTemplate": @"idTemplate", @"nome": @"nome" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo"];
+  NSArray *optionalProperties = @[@"_id", @"idTemplate", @"nome"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

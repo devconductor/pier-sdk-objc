@@ -837,7 +837,7 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 /// Lista os cart\u00C3\u00B5es cadastrados
 /// Este m\u00C3\u00A9todo permite listar os cart\u00C3\u00B5es cadastrado em um dispositivo.
-///  @param deviceId Device id criptografado 
+///  @param deviceId Device id criptografado (optional)
 ///
 ///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
 ///
@@ -847,6 +847,8 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 ///  @param status Status do cart\u00C3\u00A3o tokenizado (optional)
 ///
+///  @param numeroCartao Numero do cart\u00C3\u00A3o tokenizado (optional)
+///
 ///  @returns PierPageCartaoPayResponse*
 ///
 -(NSNumber*) listarUsingGET6WithDeviceId: (NSString*) deviceId
@@ -854,13 +856,9 @@ static PierConductorPayApi* singletonAPI = nil;
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     status: (NSString*) status
+    numeroCartao: (NSString*) numeroCartao
     completionHandler: (void (^)(PierPageCartaoPayResponse* output, NSError* error)) handler {
 
-    
-    // verify the required parameter 'deviceId' is set
-    if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `listarUsingGET6`"];
-    }
     
 
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes-tokenizados"];
@@ -891,6 +889,10 @@ static PierConductorPayApi* singletonAPI = nil;
     if (status != nil) {
         
         queryParams[@"status"] = status;
+    }
+    if (numeroCartao != nil) {
+        
+        queryParams[@"numeroCartao"] = numeroCartao;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

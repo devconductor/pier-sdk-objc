@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"razaoSocial": @"razaoSocial", @"nomeFantasia": @"nomeFantasia", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"dataAberturaEmpresa": @"dataAberturaEmpresa", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"valorRenda": @"valorRenda", @"canalEntrada": @"canalEntrada", @"valorPontuacao": @"valorPontuacao", @"telefones": @"telefones", @"enderecos": @"enderecos", @"limiteGlobal": @"limiteGlobal", @"socios": @"socios", @"limiteMaximo": @"limiteMaximo", @"limiteParcelas": @"limiteParcelas" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"razaoSocial": @"razaoSocial", @"nomeFantasia": @"nomeFantasia", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"dataAberturaEmpresa": @"dataAberturaEmpresa", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"valorRenda": @"valorRenda", @"canalEntrada": @"canalEntrada", @"valorPontuacao": @"valorPontuacao", @"telefones": @"telefones", @"enderecos": @"enderecos", @"socios": @"socios", @"referenciasComerciais": @"referenciasComerciais", @"limiteGlobal": @"limiteGlobal", @"limiteMaximo": @"limiteMaximo", @"limiteParcelas": @"limiteParcelas" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nomeFantasia", @"inscricaoEstadual", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeImpresso", @"valorRenda", @"canalEntrada", @"valorPontuacao", @"telefones", @"socios", ];
+  NSArray *optionalProperties = @[@"nomeFantasia", @"inscricaoEstadual", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeImpresso", @"valorRenda", @"canalEntrada", @"valorPontuacao", @"telefones", @"socios", @"referenciasComerciais", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -1,6 +1,6 @@
-#import "PierFaturaResponse.h"
+#import "PierPageFaturaFechadaResponse.h"
 
-@implementation PierFaturaResponse
+@implementation PierPageFaturaFechadaResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo"];
+  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

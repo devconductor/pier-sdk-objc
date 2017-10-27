@@ -125,6 +125,19 @@
 
 ///
 ///
+/// Consultar os dados de impress\u00C3\u00A3o de um Cart\u00C3\u00A3o
+/// Esse recurso permite consultar os dados de impress\u00C3\u00A3o de um cart\u00C3\u00A3o
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) consultarCartaoImpressaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar Detalhes do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que seja consultado os dados necessarios de um cart\u00C3\u00A3o para executar servi\u00C3\u00A7os de autoriza\u00C3\u00A7\u00C3\u00A3o.
 ///

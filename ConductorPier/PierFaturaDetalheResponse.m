@@ -1,6 +1,6 @@
-#import "PierFaturaResponse.h"
+#import "PierFaturaDetalheResponse.h"
 
-@implementation PierFaturaResponse
+@implementation PierFaturaDetalheResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"lancamentosFaturaResponse": @"lancamentosFaturaResponse", @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo"];
+  NSArray *optionalProperties = @[@"lancamentosFaturaResponse", @"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

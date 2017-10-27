@@ -15,7 +15,7 @@
 
 @interface PierSocioAprovadoResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id) [optional]
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do S\u00C3\u00B3cio (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Apresenta o Nome do Socio [optional]

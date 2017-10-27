@@ -2,8 +2,10 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierAntecipacaoResponse.h"
+#import "PierAntecipacaoMockResponse.h"
 #import "PierPageCompraResponse.h"
 #import "PierAntecipacaoSimuladaResponse.h"
+#import "PierAntecipacaoSimuladaLoteResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -61,13 +63,30 @@
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta.
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento.
 /// @param quantidadeParcelas Quantidade de parcelas para serem antecipadas.
+/// @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o.
 /// 
 ///
 /// @return PierAntecipacaoResponse*
 -(NSNumber*) efetivarAntecipacaoUsingPOSTWithIdConta: (NSNumber*) idConta
     _id: (NSNumber*) _id
     quantidadeParcelas: (NSNumber*) quantidadeParcelas
+    complemento: (NSString*) complemento
     completionHandler: (void (^)(PierAntecipacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Faz a efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o
+/// M\u00C3\u00A9todo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o de todas as compras antecip\u00C3\u00A1veis com todas as parcelas de uma conta.
+///
+/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta.
+/// @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o.
+/// 
+///
+/// @return PierAntecipacaoMockResponse*
+-(NSNumber*) efetivarAntecipacoesUsingPOSTWithIdConta: (NSNumber*) idConta
+    complemento: (NSString*) complemento
+    completionHandler: (void (^)(PierAntecipacaoMockResponse* output, NSError* error)) handler;
 
 
 ///
@@ -104,12 +123,29 @@
 ///
 /// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta.
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento.
+/// @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o.
 /// 
 ///
 /// @return PierAntecipacaoSimuladaResponse*
 -(NSNumber*) simularAntecipacaoUsingGETWithIdConta: (NSNumber*) idConta
     _id: (NSNumber*) _id
+    complemento: (NSString*) complemento
     completionHandler: (void (^)(PierAntecipacaoSimuladaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Simular antecipa\u00C3\u00A7\u00C3\u00A3o de todas as parcelas antecip\u00C3\u00A1veis
+/// O recurso permite realizar a simula\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o de todas as compras antecip\u00C3\u00A1veis de todas as parcelas de uma determinada conta.
+///
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta.
+/// @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o.
+/// 
+///
+/// @return PierAntecipacaoSimuladaLoteResponse*
+-(NSNumber*) simularAntecipacoesUsingGETWithIdConta: (NSNumber*) idConta
+    complemento: (NSString*) complemento
+    completionHandler: (void (^)(PierAntecipacaoSimuladaLoteResponse* output, NSError* error)) handler;
 
 
 

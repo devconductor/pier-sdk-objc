@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "PierFaturaDetalheResponse.h"
 #import "PierPagePlanoParcelamentoResponse.h"
+#import "PierPageFaturaResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -19,6 +21,21 @@
 -(unsigned long) requestQueueSize;
 +(PierFaturaApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
 +(PierFaturaApi*) sharedAPI;
+///
+///
+/// Consulta fatura de um cliente
+/// Consulta fatura de um cliente pela data de vencimento.
+///
+/// @param dataVencimento Data Vencimento
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// 
+///
+/// @return PierFaturaDetalheResponse*
+-(NSNumber*) consultarFaturaUsingGET1WithDataVencimento: (NSString*) dataVencimento
+    idConta: (NSNumber*) idConta
+    completionHandler: (void (^)(PierFaturaDetalheResponse* output, NSError* error)) handler;
+
+
 ///
 ///
 /// Listar planos de parcelamento
@@ -55,6 +72,27 @@
     dataVencimento: (NSString*) dataVencimento
     email: (NSString*) email
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar faturas de um cliente.
+/// Lista faturas de um cliente.
+///
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param situacaoProcessamento Status do processamento das faturas. Valores possiveis [ABERTA, FECHADA, TODAS].
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageFaturaResponse*
+-(NSNumber*) listarFaturasUsingGET1WithIdConta: (NSNumber*) idConta
+    situacaoProcessamento: (NSString*) situacaoProcessamento
+    sort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageFaturaResponse* output, NSError* error)) handler;
 
 
 ///

@@ -6,6 +6,8 @@
 #import "PierPessoaResponse.h"
 #import "PierTelefoneResponse.h"
 #import "PierAtribuirAssinaturaClientePersist.h"
+#import "PierIntegracaoEmissorPersist.h"
+#import "PierIntegracaoEmissorResponse.h"
 #import "PierAdicionalPersist.h"
 #import "PierPagePessoaResponse.h"
 #import "PierAdicionalResponse.h"
@@ -16,8 +18,6 @@
 #import "PierPessoaFisicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaResponse.h"
 #import "PierPessoaJuridicaAprovadaPersist.h"
-#import "PierIntegracaoEmissorPersist.h"
-#import "PierIntegracaoEmissorResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -187,6 +187,21 @@
 -(NSNumber*) atribuirAssinaturaClienteUsingPOSTWithId: (NSNumber*) _id
     body: (PierAtribuirAssinaturaClientePersist*) body
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Atualiza conta integrada com o emissor
+/// Este recurso permite a atualiza\u00C3\u00A7\u00C3\u00A3o de uma conta integrada com o emissor.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada
+/// 
+///
+/// @return PierIntegracaoEmissorResponse*
+-(NSNumber*) atualizarUsingPOSTWithId: (NSNumber*) _id
+    body: (PierIntegracaoEmissorPersist*) body
+    completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
 
 
 ///

@@ -3,8 +3,10 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierAntecipacaoResponse.h"
+#import "PierAntecipacaoMockResponse.h"
 #import "PierPageCompraResponse.h"
 #import "PierAntecipacaoSimuladaResponse.h"
+#import "PierAntecipacaoSimuladaLoteResponse.h"
 
 
 @interface PierAntecipacaoApi ()
@@ -268,11 +270,14 @@ static PierAntecipacaoApi* singletonAPI = nil;
 ///
 ///  @param quantidadeParcelas Quantidade de parcelas para serem antecipadas. 
 ///
+///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///
 ///  @returns PierAntecipacaoResponse*
 ///
 -(NSNumber*) efetivarAntecipacaoUsingPOSTWithIdConta: (NSNumber*) idConta
     _id: (NSNumber*) _id
     quantidadeParcelas: (NSNumber*) quantidadeParcelas
+    complemento: (NSString*) complemento
     completionHandler: (void (^)(PierAntecipacaoResponse* output, NSError* error)) handler {
 
     
@@ -313,6 +318,10 @@ static PierAntecipacaoApi* singletonAPI = nil;
     if (quantidadeParcelas != nil) {
         
         queryParams[@"quantidadeParcelas"] = quantidadeParcelas;
+    }
+    if (complemento != nil) {
+        
+        queryParams[@"complemento"] = complemento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -362,6 +371,97 @@ static PierAntecipacaoApi* singletonAPI = nil;
                               responseType: @"PierAntecipacaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierAntecipacaoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Faz a efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o
+/// M\u00C3\u00A9todo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o de todas as compras antecip\u00C3\u00A1veis com todas as parcelas de uma conta.
+///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta. 
+///
+///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///
+///  @returns PierAntecipacaoMockResponse*
+///
+-(NSNumber*) efetivarAntecipacoesUsingPOSTWithIdConta: (NSNumber*) idConta
+    complemento: (NSString*) complemento
+    completionHandler: (void (^)(PierAntecipacaoMockResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `efetivarAntecipacoesUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/compras-antecipaveis/efetivar-antecipacao"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        
+        queryParams[@"idConta"] = idConta;
+    }
+    if (complemento != nil) {
+        
+        queryParams[@"complemento"] = complemento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAntecipacaoMockResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAntecipacaoMockResponse*)data, error);
                            }
           ];
 }
@@ -508,10 +608,13 @@ static PierAntecipacaoApi* singletonAPI = nil;
 ///
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento. 
 ///
+///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///
 ///  @returns PierAntecipacaoSimuladaResponse*
 ///
 -(NSNumber*) simularAntecipacaoUsingGETWithIdConta: (NSNumber*) idConta
     _id: (NSNumber*) _id
+    complemento: (NSString*) complemento
     completionHandler: (void (^)(PierAntecipacaoSimuladaResponse* output, NSError* error)) handler {
 
     
@@ -543,6 +646,10 @@ static PierAntecipacaoApi* singletonAPI = nil;
     if (idConta != nil) {
         
         queryParams[@"idConta"] = idConta;
+    }
+    if (complemento != nil) {
+        
+        queryParams[@"complemento"] = complemento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -592,6 +699,97 @@ static PierAntecipacaoApi* singletonAPI = nil;
                               responseType: @"PierAntecipacaoSimuladaResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierAntecipacaoSimuladaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Simular antecipa\u00C3\u00A7\u00C3\u00A3o de todas as parcelas antecip\u00C3\u00A1veis
+/// O recurso permite realizar a simula\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o de todas as compras antecip\u00C3\u00A1veis de todas as parcelas de uma determinada conta.
+///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. 
+///
+///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///
+///  @returns PierAntecipacaoSimuladaLoteResponse*
+///
+-(NSNumber*) simularAntecipacoesUsingGETWithIdConta: (NSNumber*) idConta
+    complemento: (NSString*) complemento
+    completionHandler: (void (^)(PierAntecipacaoSimuladaLoteResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `simularAntecipacoesUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/compras-antecipaveis/simular-antecipacao"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idConta != nil) {
+        
+        queryParams[@"idConta"] = idConta;
+    }
+    if (complemento != nil) {
+        
+        queryParams[@"complemento"] = complemento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAntecipacaoSimuladaLoteResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAntecipacaoSimuladaLoteResponse*)data, error);
                            }
           ];
 }

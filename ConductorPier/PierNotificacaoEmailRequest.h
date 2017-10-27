@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierAnexoNotificacaoEmailRequest.h"
 
 
 @protocol PierNotificacaoEmailRequest
@@ -14,18 +15,15 @@
 
 @interface PierNotificacaoEmailRequest : PierObject
 
-/* ID para o documento a ser enviado. [optional]
- */
-@property(nonatomic) NSNumber* idDocumento;
 /* ID para o template da notifica\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSNumber* idTemplateNotificacao;
-/* Email do destinat\u00C3\u00A1rio. [optional]
+/* Lista de email(s) do(s) destinat\u00C3\u00A1rio(s). [optional]
  */
-@property(nonatomic) NSString* destinatario;
-/* Tipo de layout para o template da notifica\u00C3\u00A7\u00C3\u00A3o. [optional]
+@property(nonatomic) NSArray* /* NSString */ destinatarios;
+/* Lista de ids dos anexos a serem enviados. [optional]
  */
-@property(nonatomic) NSString* tipoLayout;
+@property(nonatomic) NSArray<PierAnexoNotificacaoEmailRequest>* anexos;
 /* Mapa de par\u00C3\u00A2metros para montagem da notifica\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSDictionary* /* NSString, NSObject */ parametrosConteudo;

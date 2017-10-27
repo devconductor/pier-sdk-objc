@@ -9,6 +9,7 @@
 
 #import "PierEnderecoAprovadoPersist.h"
 #import "PierPessoaPersist.h"
+#import "PierRefenciaComercialAprovadoPersist.h"
 #import "PierTelefonePessoaAprovadaPersist.h"
 
 
@@ -68,12 +69,15 @@
 /* Pode ser informado os seguintes tipos de endere\u00C3\u00A7o: Residencial, Comercial, e Outros 
  */
 @property(nonatomic) NSArray<PierEnderecoAprovadoPersist>* enderecos;
-/* Valor do Limite Global 
- */
-@property(nonatomic) NSNumber* limiteGlobal;
 /* Apresenta os dados dos s\u00C3\u00B3cios da empresa, caso exista [optional]
  */
 @property(nonatomic) NSArray<PierPessoaPersist>* socios;
+/* Apresenta os dados das refer\u00C3\u00AAncias comerciais [optional]
+ */
+@property(nonatomic) NSArray<PierRefenciaComercialAprovadoPersist>* referenciasComerciais;
+/* Valor do Limite Global 
+ */
+@property(nonatomic) NSNumber* limiteGlobal;
 /* Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es 
  */
 @property(nonatomic) NSNumber* limiteMaximo;

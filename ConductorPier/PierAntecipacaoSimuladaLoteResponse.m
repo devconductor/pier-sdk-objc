@@ -1,6 +1,6 @@
-#import "PierFaturaResponse.h"
+#import "PierAntecipacaoSimuladaLoteResponse.h"
 
-@implementation PierFaturaResponse
+@implementation PierAntecipacaoSimuladaLoteResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"valorTotalAntecipado": @"valorTotalAntecipado", @"valorTotalDesconto": @"valorTotalDesconto", @"valorTotalComDesconto": @"valorTotalComDesconto", @"antecipacoesSimuladas": @"antecipacoesSimuladas" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo"];
+  NSArray *optionalProperties = @[@"valorTotalAntecipado", @"valorTotalDesconto", @"valorTotalComDesconto", @"antecipacoesSimuladas"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

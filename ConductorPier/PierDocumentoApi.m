@@ -5,6 +5,7 @@
 #import "PierDocumentoTemplatePersist.h"
 #import "PierDocumentoTemplateResponse.h"
 #import "PierDocumentoDetalhadoResponse.h"
+#import "PierDocumentoIntegracaoResponse.h"
 #import "PierIntegrarDocumentoRequest.h"
 #import "PierPageDocumentoResponse.h"
 #import "PierPageDocumentoTemplateResponse.h"
@@ -514,10 +515,10 @@ static PierDocumentoApi* singletonAPI = nil;
 /// Este recurso permite integrar um documento ao reposit\u00C3\u00B3rio pre-configurado.
 ///  @param integrarDocumentoRequest integrarDocumentoRequest 
 ///
-///  @returns NSString*
+///  @returns PierDocumentoIntegracaoResponse*
 ///
 -(NSNumber*) integrarUsingPOSTWithIntegrarDocumentoRequest: (PierIntegrarDocumentoRequest*) integrarDocumentoRequest
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierDocumentoIntegracaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'integrarDocumentoRequest' is set
@@ -582,9 +583,9 @@ static PierDocumentoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSString*"
+                              responseType: @"PierDocumentoIntegracaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSString*)data, error);
+                               handler((PierDocumentoIntegracaoResponse*)data, error);
                            }
           ];
 }

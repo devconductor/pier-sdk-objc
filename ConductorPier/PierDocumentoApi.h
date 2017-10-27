@@ -4,6 +4,7 @@
 #import "PierDocumentoTemplatePersist.h"
 #import "PierDocumentoTemplateResponse.h"
 #import "PierDocumentoDetalhadoResponse.h"
+#import "PierDocumentoIntegracaoResponse.h"
 #import "PierIntegrarDocumentoRequest.h"
 #import "PierPageDocumentoResponse.h"
 #import "PierPageDocumentoTemplateResponse.h"
@@ -105,9 +106,9 @@
 /// @param integrarDocumentoRequest integrarDocumentoRequest
 /// 
 ///
-/// @return NSString*
+/// @return PierDocumentoIntegracaoResponse*
 -(NSNumber*) integrarUsingPOSTWithIntegrarDocumentoRequest: (PierIntegrarDocumentoRequest*) integrarDocumentoRequest
-    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierDocumentoIntegracaoResponse* output, NSError* error)) handler;
 
 
 ///

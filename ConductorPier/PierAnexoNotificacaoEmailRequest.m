@@ -1,6 +1,6 @@
-#import "PierNotificacaoEmailResponse.h"
+#import "PierAnexoNotificacaoEmailRequest.h"
 
-@implementation PierNotificacaoEmailResponse
+@implementation PierAnexoNotificacaoEmailRequest
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTemplateNotificacao": @"idTemplateNotificacao", @"idDocumento": @"idDocumento", @"destinatario": @"destinatario", @"remetente": @"remetente" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idDocumento": @"idDocumento" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idTemplateNotificacao", @"idDocumento", @"destinatario", @"remetente"];
+  NSArray *optionalProperties = @[@"idDocumento"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

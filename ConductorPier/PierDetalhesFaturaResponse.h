@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierFaturaResponse.h"
+#import "PierFaturaFechadaResponse.h"
 #import "PierTransacoesCorrentesResponse.h"
 
 
@@ -18,7 +18,7 @@
 
 /* Apresenta os detalhes da fatura [optional]
  */
-@property(nonatomic) PierFaturaResponse* fatura;
+@property(nonatomic) PierFaturaFechadaResponse* fatura;
 /* Apresenta as transa\u00C3\u00A7\u00C3\u00B5es relacionadas a fatura. [optional]
  */
 @property(nonatomic) NSArray<PierTransacoesCorrentesResponse>* transacoes;

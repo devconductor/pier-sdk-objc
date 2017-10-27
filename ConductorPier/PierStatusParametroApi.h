@@ -130,6 +130,18 @@
 
 ///
 ///
+/// Lista os tipos de transa\u00C3\u00A7\u00C3\u00B5es
+/// Esse recurso permite listar os tipos de transa\u00C3\u00A7\u00C3\u00B5es dispon\u00C3\u00ADveis.
+///
+/// 
+///
+/// @return NSArray* /* NSObject */
+-(NSNumber*) listarTiposEventosTransacoesUsingGETWithCompletionHandler: 
+    (void (^)(NSArray* /* NSObject */ output, NSError* error)) handler;
+
+
+///
+///
 /// Lista os Status Contas cadastrados para o Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
 ///

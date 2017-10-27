@@ -8,6 +8,7 @@
  */
 
 #import "PierEnderecoAprovadoResponse.h"
+#import "PierReferenciaComercialAprovadoResponse.h"
 #import "PierSocioAprovadoResponse.h"
 #import "PierTelefonePessoaAprovadaResponse.h"
 
@@ -77,6 +78,9 @@
 /* Apresenta os dados dos s\u00C3\u00B3cios da empresa, caso exista [optional]
  */
 @property(nonatomic) NSArray<PierSocioAprovadoResponse>* socios;
+/* Apresenta os dados dos s\u00C3\u00B3cios da empresa, caso exista [optional]
+ */
+@property(nonatomic) NSArray<PierReferenciaComercialAprovadoResponse>* referencias;
 /* Valor do Limite Global 
  */
 @property(nonatomic) NSNumber* limiteGlobal;
