@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idAntecipacaoSimulada": @"idAntecipacaoSimulada", @"idConta": @"idConta", @"idCompra": @"idCompra", @"idTipoTransacao": @"idTipoTransacao", @"quantidadeParcelasAntecipaveis": @"quantidadeParcelasAntecipaveis", @"valorParcela": @"valorParcela", @"dataHoraSimulacao": @"dataHoraSimulacao", @"taxaAntecipacaoAno": @"taxaAntecipacaoAno", @"detalhes": @"detalhes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"mcc": @"mcc", @"uf": @"uf", @"idAntecipacaoSimulada": @"idAntecipacaoSimulada", @"idConta": @"idConta", @"idCompra": @"idCompra", @"idTipoTransacao": @"idTipoTransacao", @"quantidadeParcelasAntecipaveis": @"quantidadeParcelasAntecipaveis", @"valorParcela": @"valorParcela", @"dataHoraSimulacao": @"dataHoraSimulacao", @"taxaAntecipacaoAno": @"taxaAntecipacaoAno", @"nomeEstabelecimento": @"nomeEstabelecimento", @"status": @"status", @"dataCompra": @"dataCompra", @"tipoOrigemTransacao": @"tipoOrigemTransacao", @"cidade": @"cidade", @"pais": @"pais", @"latitude": @"latitude", @"longitude": @"longitude", @"idGrupoMCC": @"idGrupoMCC", @"descricaoGrupoMCC": @"descricaoGrupoMCC", @"idProduto": @"idProduto", @"descricaoProduto": @"descricaoProduto", @"descricaoEstabelecimento": @"descricaoEstabelecimento", @"nomeFantasiaEstabelecimento": @"nomeFantasiaEstabelecimento", @"detalhes": @"detalhes" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idAntecipacaoSimulada", @"idConta", @"idCompra", @"idTipoTransacao", @"quantidadeParcelasAntecipaveis", @"valorParcela", @"dataHoraSimulacao", @"taxaAntecipacaoAno", @"detalhes"];
+  NSArray *optionalProperties = @[@"mcc", @"uf", @"idAntecipacaoSimulada", @"idConta", @"idCompra", @"idTipoTransacao", @"quantidadeParcelasAntecipaveis", @"valorParcela", @"dataHoraSimulacao", @"taxaAntecipacaoAno", @"nomeEstabelecimento", @"status", @"dataCompra", @"tipoOrigemTransacao", @"cidade", @"pais", @"latitude", @"longitude", @"idGrupoMCC", @"descricaoGrupoMCC", @"idProduto", @"descricaoProduto", @"descricaoEstabelecimento", @"nomeFantasiaEstabelecimento", @"detalhes"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

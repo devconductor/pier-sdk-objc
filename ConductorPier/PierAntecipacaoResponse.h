@@ -14,6 +14,10 @@
 
 @interface PierAntecipacaoResponse : PierObject
 
+
+@property(nonatomic) NSNumber* mcc;
+
+@property(nonatomic) NSString* uf;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSNumber* _id;
@@ -41,5 +45,47 @@
 /* Apresenta a taxa de desconto [optional]
  */
 @property(nonatomic) NSNumber* taxaDesconto;
+/* Data da compra. [optional]
+ */
+@property(nonatomic) NSString* dataCompra;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do status da autoriza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+ */
+@property(nonatomic) NSString* status;
+/* Nome do estabelecimento da compra. [optional]
+ */
+@property(nonatomic) NSString* nomeEstabelecimento;
+/* Tipo de transa\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+ */
+@property(nonatomic) NSString* tipoOrigemTransacao;
+/* Cidade onde a compra foi realizada. [optional]
+ */
+@property(nonatomic) NSString* cidade;
+/* Pa\u00C3\u00ADs onde a compra foi realizada. [optional]
+ */
+@property(nonatomic) NSString* pais;
+/* Coordenada latitudinal da localiza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+ */
+@property(nonatomic) NSString* latitude;
+/* Coordenada longitudinal da localiza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+ */
+@property(nonatomic) NSString* longitude;
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Grupo MCC da compra. [optional]
+ */
+@property(nonatomic) NSNumber* idGrupoMCC;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do Grupo MCC da compra. [optional]
+ */
+@property(nonatomic) NSString* descricaoGrupoMCC;
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do produto da compra. [optional]
+ */
+@property(nonatomic) NSNumber* idProduto;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do produto da compra. [optional]
+ */
+@property(nonatomic) NSString* descricaoProduto;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do estabelecimento da compra. [optional]
+ */
+@property(nonatomic) NSString* descricaoEstabelecimento;
+/* Nome fantasia do estabelecimento da compra. [optional]
+ */
+@property(nonatomic) NSString* nomeFantasiaEstabelecimento;
 
 @end

@@ -1,7 +1,10 @@
 #import <Foundation/Foundation.h>
-#import "PierEstabelecimentoResponse.h"
+#import "PierPessoaJuridicaResponse.h"
 #import "PierTerminalResponse.h"
+#import "PierTerminalUpdate.h"
+#import "PierEstabelecimentoResponse.h"
 #import "PierPageEstabelecimentoResponse.h"
+#import "PierPagePessoaJuridicaResponse.h"
 #import "PierPageTerminalResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -24,6 +27,79 @@
 +(PierEstabelecimentoApi*) sharedAPI;
 ///
 ///
+/// Alterar Pessoa Jur\u00C3\u00ADdica
+/// Altera uma pessoa jur\u00C3\u00ADdica.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa jur\u00C3\u00ADdica
+/// @param razaoSocial Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param inscricaoEstadual N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual
+/// @param contato Nome da pessoa para entrar em contato
+/// @param banco C\u00C3\u00B3digo do banco
+/// @param agencia Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param digitoVerificadorAgencia D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia
+/// @param contaCorrente C\u00C3\u00B3digo da Conta Corrente
+/// @param digitoVerificadorContaCorrente D\u00C3\u00ADgito Verificador da Conta Corrente
+/// 
+///
+/// @return PierPessoaJuridicaResponse*
+-(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
+    razaoSocial: (NSString*) razaoSocial
+    inscricaoEstadual: (NSString*) inscricaoEstadual
+    contato: (NSString*) contato
+    banco: (NSNumber*) banco
+    agencia: (NSNumber*) agencia
+    digitoVerificadorAgencia: (NSString*) digitoVerificadorAgencia
+    contaCorrente: (NSString*) contaCorrente
+    digitoVerificadorContaCorrente: (NSString*) digitoVerificadorContaCorrente
+    completionHandler: (void (^)(PierPessoaJuridicaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Altera um Terminal
+/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos Terminais.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do terminal (id).
+/// @param terminalUpdate terminalUpdate
+/// 
+///
+/// @return PierTerminalResponse*
+-(NSNumber*) alterarUsingPUT13WithId: (NSNumber*) _id
+    terminalUpdate: (PierTerminalUpdate*) terminalUpdate
+    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cadastrar Pessoa Jur\u00C3\u00ADdica
+/// Cadastra uma pessoa jur\u00C3\u00ADdica.
+///
+/// @param razaoSocial Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param cnpj C\u00C3\u00B3digo do Cadastro Nacional de Pessoas Jur\u00C3\u00ADdicas
+/// @param inscricaoEstadual N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual
+/// @param contato Nome da pessoa para entrar em contato
+/// @param banco C\u00C3\u00B3digo do banco
+/// @param agencia Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param digitoVerificadorAgencia D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia
+/// @param contaCorrente C\u00C3\u00B3digo da Conta Corrente
+/// @param digitoVerificadorContaCorrente D\u00C3\u00ADgito Verificador da Conta Corrente
+/// 
+///
+/// @return PierPessoaJuridicaResponse*
+-(NSNumber*) cadastrarUsingPOST2WithRazaoSocial: (NSString*) razaoSocial
+    cnpj: (NSString*) cnpj
+    inscricaoEstadual: (NSString*) inscricaoEstadual
+    contato: (NSString*) contato
+    banco: (NSNumber*) banco
+    agencia: (NSNumber*) agencia
+    digitoVerificadorAgencia: (NSString*) digitoVerificadorAgencia
+    contaCorrente: (NSString*) contaCorrente
+    digitoVerificadorContaCorrente: (NSString*) digitoVerificadorContaCorrente
+    completionHandler: (void (^)(PierPessoaJuridicaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar estabelecimento por id
 /// Consulta os detalhes de um determinado estabelecimento
 ///
@@ -31,8 +107,21 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar pessoa jur\u00C3\u00ADdica
+/// Consulta uma pessoa jur\u00C3\u00ADdica atrav\u00C3\u00A9s do seu identificador.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da pessoa jur\u00C3\u00ADdica
+/// 
+///
+/// @return PierPessoaJuridicaResponse*
+-(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierPessoaJuridicaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -44,7 +133,7 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
@@ -78,7 +167,7 @@
 /// 
 ///
 /// @return PierPageEstabelecimentoResponse*
--(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -105,6 +194,41 @@
 
 ///
 ///
+/// Listar pessoas jur\u00C3\u00ADdicas
+/// Lista pessoas jur\u00C3\u00ADdicas cadastradas. 
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param razaoSocial Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param cnpj C\u00C3\u00B3digo do Cadastro Nacional de Pessoas Jur\u00C3\u00ADdicas
+/// @param inscricaoEstadual N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual
+/// @param contato Nome da pessoa para entrar em contato
+/// @param banco C\u00C3\u00B3digo do banco
+/// @param agencia Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param digitoVerificadorAgencia D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia
+/// @param contaCorrente C\u00C3\u00B3digo da Conta Corrente
+/// @param digitoVerificadorContaCorrente D\u00C3\u00ADgito Verificador da Conta Corrente
+/// 
+///
+/// @return PierPagePessoaJuridicaResponse*
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    razaoSocial: (NSString*) razaoSocial
+    cnpj: (NSString*) cnpj
+    inscricaoEstadual: (NSString*) inscricaoEstadual
+    contato: (NSString*) contato
+    banco: (NSNumber*) banco
+    agencia: (NSNumber*) agencia
+    digitoVerificadorAgencia: (NSString*) digitoVerificadorAgencia
+    contaCorrente: (NSString*) contaCorrente
+    digitoVerificadorContaCorrente: (NSString*) digitoVerificadorContaCorrente
+    completionHandler: (void (^)(PierPagePessoaJuridicaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista os Terminais cadastrados no Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os terminais existentes na base de dados do Emissor.
 ///
@@ -118,7 +242,7 @@
 /// 
 ///
 /// @return PierPageTerminalResponse*
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -126,6 +250,23 @@
     numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
     idEstabelecimento: (NSNumber*) idEstabelecimento
     completionHandler: (void (^)(PierPageTerminalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cadastro de um novo Terminal
+/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Terminal.
+///
+/// @param idEstabelecimento Apresenta o id do estabelecimento.
+/// @param flagConsultaExtrato Flag indicando se o terminal \u00C3\u00A9 f\u00C3\u00ADsico ou virtual, sendo: (true: Sim), (false: N\u00C3\u00A3o)).
+/// @param flagTerminalVirtual Flag indicando se o terminal permite consultar extrato, sendo: (true: Sim), (false: N\u00C3\u00A3o)).
+/// 
+///
+/// @return PierTerminalResponse*
+-(NSNumber*) salvarUsingPOST20WithIdEstabelecimento: (NSNumber*) idEstabelecimento
+    flagConsultaExtrato: (NSNumber*) flagConsultaExtrato
+    flagTerminalVirtual: (NSNumber*) flagTerminalVirtual
+    completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
 

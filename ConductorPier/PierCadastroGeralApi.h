@@ -1,4 +1,10 @@
 #import <Foundation/Foundation.h>
+#import "PierCampanhaUpdate.h"
+#import "PierCampanhaResponse.h"
+#import "PierConfiguracaoRegistroCobrancaResponse.h"
+#import "PierConfiguracaoRegistroCobrancaPersist.h"
+#import "PierConfiguracaoRotativoDetalheResponse.h"
+#import "PierConfiguracaoRotativoPersist.h"
 #import "PierProdutoDetalhesResponse.h"
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
@@ -7,22 +13,26 @@
 #import "PierPageTipoAjusteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
 #import "PierTipoEnderecoResponse.h"
+#import "PierBancoResponse.h"
 #import "PierTipoOperacaoResponse.h"
 #import "PierTipoTelefoneResponse.h"
-#import "PierBancoResponse.h"
+#import "PierPageCampanhaResponse.h"
 #import "PierPageContaDetalheResponse.h"
 #import "PierPageCampoCodificadoDescricaoResponse.h"
 #import "PierPageFantasiaBasicaResponse.h"
 #import "PierHistoricoTelefoneResponse.h"
 #import "PierPageOrigemComercialResponse.h"
+#import "PierPageTipoCampanhaResponse.h"
+#import "PierPageConfiguracaoRotativoResponse.h"
 #import "PierPageAtendimentoClienteResponse.h"
 #import "PierPagePortadorResponse.h"
 #import "PierPageProdutoResponse.h"
 #import "PierPagePromotorResponse.h"
-#import "PierPageTipoEnderecoResponse.h"
 #import "PierPageBancoResponse.h"
+#import "PierPageTipoEnderecoResponse.h"
 #import "PierPageTipoTelefoneResponse.h"
 #import "PierPageControleVencimentoResponse.h"
+#import "PierCampanhaPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -44,6 +54,51 @@
 +(PierCadastroGeralApi*) sharedAPI;
 ///
 ///
+/// Alterar campanha
+/// Este m\u00C3\u00A9todo permite que sejam alterados os dados de uma campanha.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da campanha (id).
+/// @param update update
+/// 
+///
+/// @return PierCampanhaResponse*
+-(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
+    update: (PierCampanhaUpdate*) update
+    completionHandler: (void (^)(PierCampanhaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Atualizar configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
+/// Este m\u00C3\u00A9todo permite atualizar uma configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id).
+/// @param configuracaoPersist configuracaoPersist
+/// 
+///
+/// @return PierConfiguracaoRegistroCobrancaResponse*
+-(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
+    configuracaoPersist: (PierConfiguracaoRegistroCobrancaPersist*) configuracaoPersist
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Alterar os dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo de um produto
+/// Este m\u00C3\u00A9todo permite que seja alterada uma configura\u00C3\u00A7\u00C3\u00A3o do rotativo para um determinado produto.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id).
+/// @param configuracaoRotativoPersist configuracaoRotativoPersist
+/// 
+///
+/// @return PierConfiguracaoRotativoDetalheResponse*
+-(NSNumber*) alterarUsingPUT4WithId: (NSNumber*) _id
+    configuracaoRotativoPersist: (PierConfiguracaoRotativoPersist*) configuracaoRotativoPersist
+    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Ativa o par\u00C3\u00A2metro uso exterior para o produto
 /// Este m\u00C3\u00A9todo permite ativar o uso no exterior para o produto atrav\u00C3\u00A9s do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -53,6 +108,19 @@
 /// @return PierProdutoDetalhesResponse*
 -(NSNumber*) ativarUsoExteriorUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Inserir configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
+/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
+///
+/// @param configuracaoPersist configuracaoPersist
+/// 
+///
+/// @return PierConfiguracaoRegistroCobrancaResponse*
+-(NSNumber*) cadastrarUsingPOST1WithConfiguracaoPersist: (PierConfiguracaoRegistroCobrancaPersist*) configuracaoPersist
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -68,6 +136,19 @@
 -(NSNumber*) configurarTaxaAntecipacaoUsingPOSTWithId: (NSNumber*) _id
     taxaAntecipacaoRequest: (PierTaxaAntecipacaoRequest*) taxaAntecipacaoRequest
     completionHandler: (void (^)(PierParametroProdutoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar campanha
+/// Este m\u00C3\u00A9todo permite que sejam listados os dados de uma determinada campanha existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id ID da Campanha
+/// 
+///
+/// @return PierCampanhaResponse*
+-(NSNumber*) consultarCampanhaUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCampanhaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -100,19 +181,6 @@
 
 ///
 ///
-/// Apresenta os dados de um determinado Produto
-/// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
-/// 
-///
-/// @return PierProdutoDetalhesResponse*
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Apresenta os dados de um determinado Atendimento
 /// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Atendimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (idAtendimento).
 ///
@@ -122,6 +190,19 @@
 /// @return PierAtendimentoClienteResponse*
 -(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de um determinado Produto
+/// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
+/// 
+///
+/// @return PierProdutoDetalhesResponse*
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
 ///
@@ -137,7 +218,7 @@
 /// 
 ///
 /// @return PierPageTipoAjusteResponse*
--(NSNumber*) consultarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -159,7 +240,7 @@
 /// 
 ///
 /// @return PierPageTipoBoletoResponse*
--(NSNumber*) consultarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -177,38 +258,8 @@
 /// 
 ///
 /// @return PierTipoEnderecoResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
-///
-/// @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao).
-/// @param idEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (idEstabelecimento).
-/// @param codigoProcessamento C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o.
-/// 
-///
-/// @return PierTipoOperacaoResponse*
--(NSNumber*) consultarUsingGET25WithIdCartao: (NSNumber*) idCartao
-    idEstabelecimento: (NSNumber*) idEstabelecimento
-    codigoProcessamento: (NSString*) codigoProcessamento
-    completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta os dados de um determinado Tipo de Telefone
-/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id)
-/// 
-///
-/// @return PierTipoTelefoneResponse*
--(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -226,6 +277,62 @@
 
 ///
 ///
+/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
+///
+/// @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao).
+/// @param idEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (idEstabelecimento).
+/// @param codigoProcessamento C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o.
+/// 
+///
+/// @return PierTipoOperacaoResponse*
+-(NSNumber*) consultarUsingGET30WithIdCartao: (NSNumber*) idCartao
+    idEstabelecimento: (NSNumber*) idEstabelecimento
+    codigoProcessamento: (NSString*) codigoProcessamento
+    completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de um determinado Tipo de Telefone
+/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id)
+/// 
+///
+/// @return PierTipoTelefoneResponse*
+-(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
+/// Este m\u00C3\u00A9todo permite buscar uma configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierConfiguracaoRegistroCobrancaResponse*
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo espec\u00C3\u00ADfico.
+/// Este recurso permite consultar dados de configura\u00C3\u00A7\u00C3\u00A3o do parcelamento rotativo a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de configura\u00C3\u00A7\u00C3\u00A3o rotativo (id).
+/// 
+///
+/// @return PierConfiguracaoRotativoDetalheResponse*
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Desativa o par\u00C3\u00A2metro uso exterior para o produto
 /// Este m\u00C3\u00A9todo permite desativar o uso no exterior para o produto atrav\u00C3\u00A9s do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -235,6 +342,25 @@
 /// @return PierProdutoDetalhesResponse*
 -(NSNumber*) desativarUsoExteriorUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar Campanhas
+/// Lista as campanhas.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idTipoCampanha C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de campanha (id).
+/// 
+///
+/// @return PierPageCampanhaResponse*
+-(NSNumber*) listarCampanhasUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idTipoCampanha: (NSNumber*) idTipoCampanha
+    completionHandler: (void (^)(PierPageCampanhaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -400,6 +526,42 @@
 
 ///
 ///
+/// Listar Tipos de Campanhas
+/// Lista os tipos de campanhas.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageTipoCampanhaResponse*
+-(NSNumber*) listarTiposCampanhasUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageTipoCampanhaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar as configura\u00C3\u00A7\u00C3\u00B5es rotativo.
+/// Este recurso permite listar as configura\u00C3\u00A7\u00C3\u00B5es rotativo.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Produto.
+/// 
+///
+/// @return PierPageConfiguracaoRotativoResponse*
+-(NSNumber*) listarUsingGET10WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idProduto: (NSNumber*) idProduto
+    completionHandler: (void (^)(PierPageConfiguracaoRotativoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista todos os atendimentos
 /// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
 ///
@@ -444,7 +606,7 @@
 /// 
 ///
 /// @return PierPagePortadorResponse*
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -474,7 +636,7 @@
 /// 
 ///
 /// @return PierPageProdutoResponse*
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -499,7 +661,7 @@
 /// 
 ///
 /// @return PierPagePromotorResponse*
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -508,27 +670,6 @@
     idEstabelecimento: (NSNumber*) idEstabelecimento
     idUsuario: (NSNumber*) idUsuario
     completionHandler: (void (^)(PierPagePromotorResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista as op\u00C3\u00B5es de Tipos de Endere\u00C3\u00A7os do Emissor 
-/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
-///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id)
-/// @param nome Nome do Tipo do Endere\u00C3\u00A7o
-/// 
-///
-/// @return PierPageTipoEnderecoResponse*
--(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    nome: (NSString*) nome
-    completionHandler: (void (^)(PierPageTipoEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -550,6 +691,27 @@
 
 ///
 ///
+/// Lista as op\u00C3\u00B5es de Tipos de Endere\u00C3\u00A7os do Emissor 
+/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id)
+/// @param nome Nome do Tipo do Endere\u00C3\u00A7o
+/// 
+///
+/// @return PierPageTipoEnderecoResponse*
+-(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    nome: (NSString*) nome
+    completionHandler: (void (^)(PierPageTipoEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Lista os Tipos de Telefones
 /// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
 ///
@@ -561,7 +723,7 @@
 /// 
 ///
 /// @return PierPageTipoTelefoneResponse*
--(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -581,11 +743,28 @@
 /// 
 ///
 /// @return PierPageControleVencimentoResponse*
--(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET43WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento
     completionHandler: (void (^)(PierPageControleVencimentoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar configura\u00C3\u00A7\u00C3\u00B5es para registro de cobran\u00C3\u00A7a
+/// Este m\u00C3\u00A9todo permite listar as configura\u00C3\u00A7\u00C3\u00B5es de registro de cobran\u00C3\u00A7a.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierConfiguracaoRegistroCobrancaResponse*
+-(NSNumber*) listarUsingGET9WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -615,6 +794,32 @@
     dataHoraFimAtendimento: (NSString*) dataHoraFimAtendimento
     flagFilaFraude: (NSNumber*) flagFilaFraude
     completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Inserir campanha
+/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova campanha.
+///
+/// @param campanhaPersist campanhaPersist
+/// 
+///
+/// @return PierCampanhaResponse*
+-(NSNumber*) salvarUsingPOST4WithCampanhaPersist: (PierCampanhaPersist*) campanhaPersist
+    completionHandler: (void (^)(PierCampanhaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Inserir os dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo de um produto
+/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova configura\u00C3\u00A7\u00C3\u00A3o do rotativo para um determinado produto.
+///
+/// @param configuracaoRotativoPersist configuracaoRotativoPersist
+/// 
+///
+/// @return PierConfiguracaoRotativoDetalheResponse*
+-(NSNumber*) salvarUsingPOST6WithConfiguracaoRotativoPersist: (PierConfiguracaoRotativoPersist*) configuracaoRotativoPersist
+    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
 
 
 

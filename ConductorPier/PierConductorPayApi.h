@@ -184,7 +184,7 @@
 /// 
 ///
 /// @return PierCartaoPayCadastroResponse*
--(NSNumber*) salvarUsingPOST4WithDeviceId: (NSString*) deviceId
+-(NSNumber*) salvarUsingPOST5WithDeviceId: (NSString*) deviceId
     persist: (PierCartaoPayPersist*) persist
     completionHandler: (void (^)(PierCartaoPayCadastroResponse* output, NSError* error)) handler;
 

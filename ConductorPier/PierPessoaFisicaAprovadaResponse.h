@@ -109,5 +109,8 @@
 /* Valor do limite de cr\u00C3\u00A9dito acumulado da soma das parcelas das compras 
  */
 @property(nonatomic) NSNumber* limiteParcelas;
+/* Valor do limite de margem consignado 
+ */
+@property(nonatomic) NSNumber* limiteConsignado;
 
 @end

@@ -41,5 +41,8 @@
 /* Valor do pagamento m\u00C3\u00ADnimo. [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoMinimo;
+/* Valor do saldo anterior. [optional]
+ */
+@property(nonatomic) NSNumber* saldoAnterior;
 
 @end

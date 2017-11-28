@@ -39,7 +39,7 @@
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT15WithId: (NSNumber*) _id
     persist: (PierTipoTemplateRequest*) persist
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
@@ -54,22 +54,9 @@
 /// 
 ///
 /// @return PierDocumentoTemplateResponse*
--(NSNumber*) atualizarUsingPUT1WithId: (NSNumber*) _id
+-(NSNumber*) atualizarUsingPUT2WithId: (NSNumber*) _id
     persist: (PierDocumentoTemplatePersist*) persist
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Consultar tipo de template
-/// Esse recurso permite consultar um determinado tipo de template a partir do id recebido e do id do emissor.
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de template (id).
-/// 
-///
-/// @return PierTipoTemplateResponse*
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 
 ///
@@ -81,7 +68,7 @@
 /// 
 ///
 /// @return PierDocumentoDetalhadoResponse*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -94,8 +81,21 @@
 /// 
 ///
 /// @return PierDocumentoTemplateResponse*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar tipo de template
+/// Esse recurso permite consultar um determinado tipo de template a partir do id recebido e do id do emissor.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de template (id).
+/// 
+///
+/// @return PierTipoTemplateResponse*
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 
 ///
@@ -125,7 +125,7 @@
 /// 
 ///
 /// @return PierPageDocumentoResponse*
--(NSNumber*) listarUsingGET11WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -146,7 +146,7 @@
 /// 
 ///
 /// @return PierPageDocumentoTemplateResponse*
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -164,10 +164,23 @@
 /// 
 ///
 /// @return PierPageTipoTemplateResponse*
--(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cadastra os templates dos documentos
+/// Esse recurso permite cadastrar templates dos documentos.
+///
+/// @param persist persist
+/// 
+///
+/// @return PierDocumentoTemplateResponse*
+-(NSNumber*) salvarUsingPOST10WithPersist: (PierDocumentoTemplatePersist*) persist
+    completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
 
 
 ///
@@ -179,7 +192,7 @@
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) salvarUsingPOST18WithPersist: (PierTipoTemplateRequest*) persist
+-(NSNumber*) salvarUsingPOST22WithPersist: (PierTipoTemplateRequest*) persist
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 
@@ -192,21 +205,8 @@
 /// 
 ///
 /// @return PierDocumentoDetalhadoResponse*
--(NSNumber*) salvarUsingPOST6WithPersist: (PierDocumentoParametrosRequest*) persist
+-(NSNumber*) salvarUsingPOST9WithPersist: (PierDocumentoParametrosRequest*) persist
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Cadastra os templates dos documentos
-/// Esse recurso permite cadastrar templates dos documentos.
-///
-/// @param persist persist
-/// 
-///
-/// @return PierDocumentoTemplateResponse*
--(NSNumber*) salvarUsingPOST7WithPersist: (PierDocumentoTemplatePersist*) persist
-    completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
 
 
 

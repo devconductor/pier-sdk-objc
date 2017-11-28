@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTransacao": @"idTransacao", @"descricaoTipoTransacao": @"descricaoTipoTransacao", @"idTipoEvento": @"idTipoEvento", @"descricaoTipoEvento": @"descricaoTipoEvento", @"idEvento": @"idEvento", @"idConta": @"idConta", @"complemento": @"complemento", @"valorBRL": @"valorBRL", @"valorUSD": @"valorUSD", @"numeroParcela": @"numeroParcela", @"quantidadeParcelas": @"quantidadeParcelas", @"dataHoraTransacao": @"dataHoraTransacao", @"nomeEstabelecimento": @"nomeEstabelecimento", @"descricaoEstabelecimento": @"descricaoEstabelecimento", @"nomeFantasiaEstabelecimento": @"nomeFantasiaEstabelecimento", @"flagCredito": @"flagCredito", @"idMCC": @"idMCC", @"idGrupoMCC": @"idGrupoMCC", @"descricaoGrupoMCC": @"descricaoGrupoMCC", @"titular": @"titular", @"nomePortador": @"nomePortador", @"numeroCartaoMascarado": @"numeroCartaoMascarado", @"flagSolicitouContestacao": @"flagSolicitouContestacao", @"valorTaxaEmbarque": @"valorTaxaEmbarque" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTransacao": @"idTransacao", @"descricaoTipoTransacao": @"descricaoTipoTransacao", @"idTipoEvento": @"idTipoEvento", @"descricaoTipoEvento": @"descricaoTipoEvento", @"idEvento": @"idEvento", @"idConta": @"idConta", @"complemento": @"complemento", @"valorBRL": @"valorBRL", @"valorUSD": @"valorUSD", @"numeroParcela": @"numeroParcela", @"quantidadeParcelas": @"quantidadeParcelas", @"dataHoraTransacao": @"dataHoraTransacao", @"nomeEstabelecimento": @"nomeEstabelecimento", @"descricaoEstabelecimento": @"descricaoEstabelecimento", @"nomeFantasiaEstabelecimento": @"nomeFantasiaEstabelecimento", @"flagCredito": @"flagCredito", @"idMCC": @"idMCC", @"idGrupoMCC": @"idGrupoMCC", @"descricaoGrupoMCC": @"descricaoGrupoMCC", @"titular": @"titular", @"nomePortador": @"nomePortador", @"numeroCartaoMascarado": @"numeroCartaoMascarado", @"flagSolicitouContestacao": @"flagSolicitouContestacao", @"valorTaxaEmbarque": @"valorTaxaEmbarque", @"descricaoAbreviada": @"descricaoAbreviada" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idTransacao", @"descricaoTipoTransacao", @"idTipoEvento", @"descricaoTipoEvento", @"idEvento", @"idConta", @"complemento", @"valorBRL", @"valorUSD", @"numeroParcela", @"quantidadeParcelas", @"dataHoraTransacao", @"nomeEstabelecimento", @"descricaoEstabelecimento", @"nomeFantasiaEstabelecimento", @"flagCredito", @"idMCC", @"idGrupoMCC", @"descricaoGrupoMCC", @"titular", @"nomePortador", @"numeroCartaoMascarado", @"flagSolicitouContestacao", @"valorTaxaEmbarque"];
+  NSArray *optionalProperties = @[@"idTransacao", @"descricaoTipoTransacao", @"idTipoEvento", @"descricaoTipoEvento", @"idEvento", @"idConta", @"complemento", @"valorBRL", @"valorUSD", @"numeroParcela", @"quantidadeParcelas", @"dataHoraTransacao", @"nomeEstabelecimento", @"descricaoEstabelecimento", @"nomeFantasiaEstabelecimento", @"flagCredito", @"idMCC", @"idGrupoMCC", @"descricaoGrupoMCC", @"titular", @"nomePortador", @"numeroCartaoMascarado", @"flagSolicitouContestacao", @"valorTaxaEmbarque", @"descricaoAbreviada"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

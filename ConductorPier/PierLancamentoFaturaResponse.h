@@ -86,5 +86,8 @@
 /* Valor da taxa de embarque [optional]
  */
 @property(nonatomic) NSNumber* valorTaxaEmbarque;
+/* Descri\u00C3\u00A7\u00C3\u00A3o abreviada da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSString* descricaoAbreviada;
 
 @end

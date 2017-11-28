@@ -2,7 +2,6 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierAntecipacaoResponse.h"
-#import "PierAntecipacaoMockResponse.h"
 #import "PierPageCompraResponse.h"
 #import "PierAntecipacaoSimuladaResponse.h"
 #import "PierAntecipacaoSimuladaLoteResponse.h"
@@ -83,10 +82,10 @@
 /// @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o.
 /// 
 ///
-/// @return PierAntecipacaoMockResponse*
+/// @return PierAntecipacaoResponse*
 -(NSNumber*) efetivarAntecipacoesUsingPOSTWithIdConta: (NSNumber*) idConta
     complemento: (NSString*) complemento
-    completionHandler: (void (^)(PierAntecipacaoMockResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierAntecipacaoResponse* output, NSError* error)) handler;
 
 
 ///

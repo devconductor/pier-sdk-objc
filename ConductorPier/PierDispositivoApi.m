@@ -258,7 +258,7 @@ static PierDispositivoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDispositivoResponse*
 ///
--(NSNumber*) listarUsingGET10WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
@@ -374,13 +374,13 @@ static PierDispositivoApi* singletonAPI = nil;
 ///
 ///  @returns PierDispositivoResponse*
 ///
--(NSNumber*) salvarUsingPOST5WithPersist: (PierDispositivoPersist*) persist
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierDispositivoPersist*) persist
     completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST8`"];
     }
     
 

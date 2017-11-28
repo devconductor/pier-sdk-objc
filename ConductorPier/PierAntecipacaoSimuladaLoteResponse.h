@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierAntecipacaoSimuladaMockResponse.h"
+#import "PierAntecipacaoSimuladaResponse.h"
 
 
 @protocol PierAntecipacaoSimuladaLoteResponse
@@ -26,6 +26,6 @@
 @property(nonatomic) NSNumber* valorTotalComDesconto;
 /* Antecipa\u00C3\u00A7\u00C3\u00B5es Simuladas. [optional]
  */
-@property(nonatomic) NSArray<PierAntecipacaoSimuladaMockResponse>* antecipacoesSimuladas;
+@property(nonatomic) NSArray<PierAntecipacaoSimuladaResponse>* antecipacoesSimuladas;
 
 @end

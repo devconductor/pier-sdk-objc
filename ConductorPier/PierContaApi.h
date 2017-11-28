@@ -1,30 +1,27 @@
 #import <Foundation/Foundation.h>
 #import "PierAjusteResponse.h"
-#import "PierLimiteDisponibilidadeResponse.h"
 #import "PierAlterarProdutoRequest.h"
 #import "PierContaResponse.h"
 #import "PierBeneficioPagamentoAtrasoResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
-#import "PierDetalhesFaturaResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
+#import "PierContaDetalheResponse.h"
 #import "PierTransferenciaBancariaResponse.h"
 #import "PierTransferenciaDetalheResponse.h"
-#import "PierContaDetalheResponse.h"
 #import "PierCartaoEmbossingResponse.h"
 #import "PierCartaoEmbossingRequest.h"
 #import "PierCartaoImpressaoProvisorioResponse.h"
 #import "PierCartaoImpressaoResponse.h"
-#import "PierPageFaturaFechadaResponse.h"
 #import "PierPageHistoricoEventosResponse.h"
 #import "PierPageHistoricoAssessoriaResponse.h"
 #import "PierPageHistoricoAtrasoFaturaResponse.h"
 #import "PierPageTransacaoNaoProcessadaResponse.h"
 #import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
+#import "PierPageContaResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
 #import "PierPageTransferenciaResponse.h"
-#import "PierPageContaResponse.h"
 #import "PierEmprestimoPessoalRequest.h"
 #import "PierEmprestimoPessoalResponse.h"
 #import "PierPageTransacaoResponse.h"
@@ -65,45 +62,6 @@
     dataAjuste: (NSString*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
     completionHandler: (void (^)(PierAjusteResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o dos limites da conta
-/// Esse recurso permite realizar a altera\u00C3\u00A7\u00C3\u00A3o dos Limites de uma determinada Conta.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param limiteGlobal Apresenta o valor do limite de cr\u00C3\u00A9dito que o portador do cart\u00C3\u00A3o possui.
-/// @param limiteCompra Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador possui para uso exclusivo em Compras Nacionais.
-/// @param limiteParcelado Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador possui para realizar transa\u00C3\u00A7\u00C3\u00B5es de compras parceladas.
-/// @param limiteParcelas Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que portador pode acumular a partir da soma das parcelas das compras que forem realizadas nesta modalidade.
-/// @param limiteSaqueGlobal Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Nacional.
-/// @param limiteSaquePeriodo Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Nacional dentro de cada ciclo de faturamento.
-/// @param limiteConsignado Quando utilizado pelo emissor, este campo apresenta o valor da margem de cr\u00C3\u00A9dito que ele poder\u00C3\u00A1 utilizar para ser cobrado de forma consignada (desconto em folha) em seu sal\u00C3\u00A1rio/vencimentos.
-/// @param limiteInternacionalCompra Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador possui para uso exclusivo em Compras Internacionais.
-/// @param limiteInternacionalParcelado Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador possui para realizar transa\u00C3\u00A7\u00C3\u00B5es Internacionais de Compras Parceladas.
-/// @param limiteInternacionalParcelas Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que portador pode acumular a partir da soma das parcelas das compras internacionais que forem realizadas nesta modalidade.
-/// @param limiteInternacionalSaqueGlobal Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Internacional.
-/// @param limiteInternacionalSaquePeriodo Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00C3\u00A9dito que o portador pode utilizar para realizar transa\u00C3\u00A7\u00C3\u00B5es de Saque Internacional dentro de cada ciclo de faturamento.
-/// @param limiteMaximo Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es.
-/// 
-///
-/// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) alterarLimiteUsingPUTWithId: (NSNumber*) _id
-    limiteGlobal: (NSNumber*) limiteGlobal
-    limiteCompra: (NSNumber*) limiteCompra
-    limiteParcelado: (NSNumber*) limiteParcelado
-    limiteParcelas: (NSNumber*) limiteParcelas
-    limiteSaqueGlobal: (NSNumber*) limiteSaqueGlobal
-    limiteSaquePeriodo: (NSNumber*) limiteSaquePeriodo
-    limiteConsignado: (NSNumber*) limiteConsignado
-    limiteInternacionalCompra: (NSNumber*) limiteInternacionalCompra
-    limiteInternacionalParcelado: (NSNumber*) limiteInternacionalParcelado
-    limiteInternacionalParcelas: (NSNumber*) limiteInternacionalParcelas
-    limiteInternacionalSaqueGlobal: (NSNumber*) limiteInternacionalSaqueGlobal
-    limiteInternacionalSaquePeriodo: (NSNumber*) limiteInternacionalSaquePeriodo
-    limiteMaximo: (NSNumber*) limiteMaximo
-    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 
 ///
@@ -274,49 +232,6 @@
 
 ///
 ///
-/// Consultar Fatura da Conta
-/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar os detalhes de uma fatura vinculados a uma determinada conta.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimento Data Vencimento.
-/// 
-///
-/// @return PierDetalhesFaturaResponse*
--(NSNumber*) consultarFaturaUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierDetalhesFaturaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Consultar Lan\u00C3\u00A7amentos Futuros da Fatura de uma Conta
-/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar os detalhes dos lan\u00C3\u00A7amentos futuros de uma fatura vinculados a uma determinada conta.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimento Data Vencimento
-/// 
-///
-/// @return PierDetalhesFaturaResponse*
--(NSNumber*) consultarLancamentosFuturosFaturaUsingGETWithId: (NSNumber*) _id
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierDetalhesFaturaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta os limites da conta
-/// Este m\u00C3\u00A9todo permite consultar os Limites configurados para uma determinada Conta, a partir do c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-///
-/// @param _id Id Conta
-/// 
-///
-/// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) consultarLimiteDisponibilidadeUsingGET1WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Permite consultar a partir do ID da conta as taxas e tarifas
 /// Esta opera\u00C3\u00A7\u00C3\u00A3o tem como objetivo permitir que os Emissores consultem as taxas e tarifas da conta
 ///
@@ -336,6 +251,19 @@
 
 ///
 ///
+/// Apresenta dados de uma determinada conta
+/// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// 
+///
+/// @return PierContaDetalheResponse*
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria para um banco
 /// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada para uma conta banc\u00C3\u00A1ria. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
 ///
@@ -345,7 +273,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -361,22 +289,9 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta dados de uma determinada conta
-/// Este m\u00C3\u00A9todo permite consultar dados de uma determinada conta a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// 
-///
-/// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -467,27 +382,6 @@
 -(NSNumber*) gerarCartaoVirtualUsingPOSTWithId: (NSNumber*) _id
     dataValidade: (NSString*) dataValidade
     completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista as faturas da conta
-/// Atrav\u00C3\u00A9s desta opera\u00C3\u00A7\u00C3\u00A3o os Emissores ou Portadores poder\u00C3\u00A3o consultar todo o Hist\u00C3\u00B3rico de Faturas vinculados a uma determinada Conta, independentemente do valor delas.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param dataVencimento Data de Vencimento da Fatura.
-/// 
-///
-/// @return PierPageFaturaFechadaResponse*
--(NSNumber*) listarFaturasUsingGETWithId: (NSNumber*) _id
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageFaturaFechadaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -628,6 +522,41 @@
 
 ///
 ///
+/// Lista contas existentes na base de dados do Emissor
+/// Este recurso permite listar contas existentes na base de dados do Emissor.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id).
+/// @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id) que deu origem a Conta.
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Titular da Conta (id).
+/// @param idStatusConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do status da conta.
+/// @param diaVencimento Apresenta o dia de vencimento.
+/// @param melhorDiaCompra Apresenta o melhor dia de compra.
+/// @param dataStatusConta Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela.
+/// @param dataCadastro Apresenta a data em que o cart\u00C3\u00A3o foi gerado.
+/// @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento.
+/// 
+///
+/// @return PierPageContaResponse*
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idProduto: (NSNumber*) idProduto
+    idOrigemComercial: (NSNumber*) idOrigemComercial
+    idPessoa: (NSNumber*) idPessoa
+    idStatusConta: (NSNumber*) idStatusConta
+    diaVencimento: (NSNumber*) diaVencimento
+    melhorDiaCompra: (NSNumber*) melhorDiaCompra
+    dataStatusConta: (NSString*) dataStatusConta
+    dataCadastro: (NSString*) dataCadastro
+    dataUltimaAlteracaoVencimento: (NSString*) dataUltimaAlteracaoVencimento
+    completionHandler: (void (^)(PierPageContaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Listar as transfer\u00C3\u00AAncias banc\u00C3\u00A1rias realizadas
 /// Este recurso tem como objetivo permitir que o portador de um Cart\u00C3\u00A3o possa consultar uma lista das Transfer\u00C3\u00AAncias Banc\u00C3\u00A1rias para os Favorecidos cadastrados.
 ///
@@ -639,7 +568,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET40WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -664,7 +593,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET35WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET41WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -674,41 +603,6 @@
     valorTransferencia: (NSNumber*) valorTransferencia
     dataTransferencia: (NSString*) dataTransferencia
     completionHandler: (void (^)(PierPageTransferenciaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista contas existentes na base de dados do Emissor
-/// Este recurso permite listar contas existentes na base de dados do Emissor.
-///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id).
-/// @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id) que deu origem a Conta.
-/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Titular da Conta (id).
-/// @param idStatusConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do status da conta.
-/// @param diaVencimento Apresenta o dia de vencimento.
-/// @param melhorDiaCompra Apresenta o melhor dia de compra.
-/// @param dataStatusConta Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela.
-/// @param dataCadastro Apresenta a data em que o cart\u00C3\u00A3o foi gerado.
-/// @param dataUltimaAlteracaoVencimento Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento.
-/// 
-///
-/// @return PierPageContaResponse*
--(NSNumber*) listarUsingGET9WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    idProduto: (NSNumber*) idProduto
-    idOrigemComercial: (NSNumber*) idOrigemComercial
-    idPessoa: (NSNumber*) idPessoa
-    idStatusConta: (NSNumber*) idStatusConta
-    diaVencimento: (NSNumber*) diaVencimento
-    melhorDiaCompra: (NSNumber*) melhorDiaCompra
-    dataStatusConta: (NSString*) dataStatusConta
-    dataCadastro: (NSString*) dataCadastro
-    dataUltimaAlteracaoVencimento: (NSString*) dataUltimaAlteracaoVencimento
-    completionHandler: (void (^)(PierPageContaResponse* output, NSError* error)) handler;
 
 
 ///

@@ -958,19 +958,19 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayCadastroResponse*
 ///
--(NSNumber*) salvarUsingPOST4WithDeviceId: (NSString*) deviceId
+-(NSNumber*) salvarUsingPOST5WithDeviceId: (NSString*) deviceId
     persist: (PierCartaoPayPersist*) persist
     completionHandler: (void (^)(PierCartaoPayCadastroResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `salvarUsingPOST4`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `salvarUsingPOST5`"];
     }
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST4`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
     }
     
 

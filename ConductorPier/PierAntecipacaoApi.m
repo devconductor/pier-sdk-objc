@@ -3,7 +3,6 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierAntecipacaoResponse.h"
-#import "PierAntecipacaoMockResponse.h"
 #import "PierPageCompraResponse.h"
 #import "PierAntecipacaoSimuladaResponse.h"
 #import "PierAntecipacaoSimuladaLoteResponse.h"
@@ -382,11 +381,11 @@ static PierAntecipacaoApi* singletonAPI = nil;
 ///
 ///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
 ///
-///  @returns PierAntecipacaoMockResponse*
+///  @returns PierAntecipacaoResponse*
 ///
 -(NSNumber*) efetivarAntecipacoesUsingPOSTWithIdConta: (NSNumber*) idConta
     complemento: (NSString*) complemento
-    completionHandler: (void (^)(PierAntecipacaoMockResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierAntecipacaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idConta' is set
@@ -459,9 +458,9 @@ static PierAntecipacaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierAntecipacaoMockResponse*"
+                              responseType: @"PierAntecipacaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierAntecipacaoMockResponse*)data, error);
+                               handler((PierAntecipacaoResponse*)data, error);
                            }
           ];
 }

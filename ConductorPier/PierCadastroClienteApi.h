@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import "PierAdicionalDetalheResponse.h"
 #import "PierAdicionalUpdate.h"
-#import "PierEnderecoResponse.h"
-#import "PierPessoaDetalheResponse.h"
 #import "PierPessoaResponse.h"
 #import "PierTelefoneResponse.h"
+#import "PierEnderecoResponse.h"
+#import "PierPessoaDetalheResponse.h"
 #import "PierAtribuirAssinaturaClientePersist.h"
 #import "PierIntegracaoEmissorPersist.h"
 #import "PierIntegracaoEmissorResponse.h"
@@ -56,6 +56,60 @@
 
 ///
 ///
+/// Atualiza os dados de uma determinada Pessoa
+/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
+///
+/// @param _id ID da Pessoa
+/// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
+/// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
+/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
+/// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
+/// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
+/// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
+/// @param numeroIdentidade N\u00C3\u00BAmero da Identidade.
+/// @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade.
+/// @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade
+/// @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade.
+/// 
+///
+/// @return PierPessoaResponse*
+-(NSNumber*) alterarUsingPUT11WithId: (NSNumber*) _id
+    nome: (NSString*) nome
+    tipo: (NSString*) tipo
+    dataNascimento: (NSString*) dataNascimento
+    cpf: (NSString*) cpf
+    cnpj: (NSString*) cnpj
+    sexo: (NSString*) sexo
+    numeroIdentidade: (NSString*) numeroIdentidade
+    orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
+    unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
+    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
+    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o de um determinado Telefone
+/// Este m\u00C3\u00A9todo permite que seja alterado um determinado Telefone na base de dados do Emissor.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id).
+/// @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
+/// @param ddd C\u00C3\u00B3digo DDD do telefone (id).
+/// @param telefone N\u00C3\u00BAmero do telefone.
+/// @param ramal N\u00C3\u00BAmero do ramal.
+/// 
+///
+/// @return PierTelefoneResponse*
+-(NSNumber*) alterarUsingPUT12WithId: (NSNumber*) _id
+    idTipoTelefone: (NSNumber*) idTipoTelefone
+    ddd: (NSString*) ddd
+    telefone: (NSString*) telefone
+    ramal: (NSString*) ramal
+    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Atualiza os dados de um determinado Endere\u00C3\u00A7o
 /// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um ou mais registros ligados a um determinado Endere\u00C3\u00A7o.
 ///
@@ -74,7 +128,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) alterarUsingPUT2WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -107,7 +161,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -118,60 +172,6 @@
     email: (NSString*) email
     nomeEmpresa: (NSString*) nomeEmpresa
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Atualiza os dados de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
-///
-/// @param _id ID da Pessoa
-/// @param nome Apresenta o &#39;Nome Completo da PF&#39; ou o &#39;Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)&#39;.
-/// @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\&quot;PF\&quot;: Pessoa F\u00C3\u00ADsica), (\&quot;PJ\&quot;: Pessoa Jur\u00C3\u00ADdica).
-/// @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd.
-/// @param cpf N\u00C3\u00BAmero do CPF, quando PF.
-/// @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ.
-/// @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\&quot;M\&quot;: Masculino), (\&quot;F\&quot;: Feminino), (\&quot;O\&quot;: Outro), (\&quot;N\&quot;: N\u00C3\u00A3o Especificado).
-/// @param numeroIdentidade N\u00C3\u00BAmero da Identidade.
-/// @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade.
-/// @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade
-/// @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade.
-/// 
-///
-/// @return PierPessoaResponse*
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
-    nome: (NSString*) nome
-    tipo: (NSString*) tipo
-    dataNascimento: (NSString*) dataNascimento
-    cpf: (NSString*) cpf
-    cnpj: (NSString*) cnpj
-    sexo: (NSString*) sexo
-    numeroIdentidade: (NSString*) numeroIdentidade
-    orgaoExpedidorIdentidade: (NSString*) orgaoExpedidorIdentidade
-    unidadeFederativaIdentidade: (NSString*) unidadeFederativaIdentidade
-    dataEmissaoIdentidade: (NSString*) dataEmissaoIdentidade
-    completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o de um determinado Telefone
-/// Este m\u00C3\u00A9todo permite que seja alterado um determinado Telefone na base de dados do Emissor.
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id).
-/// @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
-/// @param ddd C\u00C3\u00B3digo DDD do telefone (id).
-/// @param telefone N\u00C3\u00BAmero do telefone.
-/// @param ramal N\u00C3\u00BAmero do ramal.
-/// 
-///
-/// @return PierTelefoneResponse*
--(NSNumber*) alterarUsingPUT7WithId: (NSNumber*) _id
-    idTipoTelefone: (NSNumber*) idTipoTelefone
-    ddd: (NSString*) ddd
-    telefone: (NSString*) telefone
-    ramal: (NSString*) ramal
-    completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
@@ -243,7 +243,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
@@ -256,7 +256,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -269,7 +269,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -282,7 +282,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -364,7 +364,7 @@
 /// 
 ///
 /// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -405,7 +405,7 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -443,7 +443,7 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -478,7 +478,7 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -519,6 +519,39 @@
 
 ///
 ///
+/// Realiza o cadastro de um novo Endere\u00C3\u00A7o
+/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Endere\u00C3\u00A7o na base de dados do Emissor.
+///
+/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id)
+/// @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id)
+/// @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro &#39;58800000&#39;
+/// @param logradouro Apresenta o nome do Logradouro
+/// @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o
+/// @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o
+/// @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o
+/// @param bairro Apresenta nome do bairro
+/// @param cidade Apresenta nome da cidade
+/// @param uf Apresenta sigla da Unidade Federativa
+/// @param pais Apresenta nome do Pais
+/// 
+///
+/// @return PierEnderecoResponse*
+-(NSNumber*) salvarUsingPOST11WithIdPessoa: (NSNumber*) idPessoa
+    idTipoEndereco: (NSNumber*) idTipoEndereco
+    cep: (NSString*) cep
+    logradouro: (NSString*) logradouro
+    numero: (NSNumber*) numero
+    complemento: (NSString*) complemento
+    pontoReferencia: (NSString*) pontoReferencia
+    bairro: (NSString*) bairro
+    cidade: (NSString*) cidade
+    uf: (NSString*) uf
+    pais: (NSString*) pais
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
 /// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
 ///
@@ -527,7 +560,7 @@
 /// 
 ///
 /// @return PierIntegracaoEmissorResponse*
--(NSNumber*) salvarUsingPOST10WithId: (NSNumber*) _id
+-(NSNumber*) salvarUsingPOST13WithId: (NSNumber*) _id
     body: (PierIntegracaoEmissorPersist*) body
     completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
 
@@ -550,7 +583,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST13WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST16WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -581,7 +614,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST14WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST17WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
@@ -607,45 +640,12 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST16WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST19WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Realiza o cadastro de um novo Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Endere\u00C3\u00A7o na base de dados do Emissor.
-///
-/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id)
-/// @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id)
-/// @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro &#39;58800000&#39;
-/// @param logradouro Apresenta o nome do Logradouro
-/// @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o
-/// @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o
-/// @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o
-/// @param bairro Apresenta nome do bairro
-/// @param cidade Apresenta nome da cidade
-/// @param uf Apresenta sigla da Unidade Federativa
-/// @param pais Apresenta nome do Pais
-/// 
-///
-/// @return PierEnderecoResponse*
--(NSNumber*) salvarUsingPOST8WithIdPessoa: (NSNumber*) idPessoa
-    idTipoEndereco: (NSNumber*) idTipoEndereco
-    cep: (NSString*) cep
-    logradouro: (NSString*) logradouro
-    numero: (NSNumber*) numero
-    complemento: (NSString*) complemento
-    pontoReferencia: (NSString*) pontoReferencia
-    bairro: (NSString*) bairro
-    cidade: (NSString*) cidade
-    uf: (NSString*) uf
-    pais: (NSString*) pais
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
 

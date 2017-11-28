@@ -213,7 +213,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierFaqResponse*
 ///
--(NSNumber*) alterarUsingPUT3WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
     pergunta: (NSString*) pergunta
     resposta: (NSString*) resposta
     relevancia: (NSNumber*) relevancia
@@ -225,17 +225,17 @@ static PierFAQApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT6`"];
     }
     
     // verify the required parameter 'pergunta' is set
     if (pergunta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pergunta` when calling `alterarUsingPUT3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pergunta` when calling `alterarUsingPUT6`"];
     }
     
     // verify the required parameter 'resposta' is set
     if (resposta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `alterarUsingPUT3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `alterarUsingPUT6`"];
     }
     
 
@@ -336,13 +336,13 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierFaqResponse*
 ///
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
     }
     
 
@@ -437,7 +437,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierPageFaqResponse*
 ///
--(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq

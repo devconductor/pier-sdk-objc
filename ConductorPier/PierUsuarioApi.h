@@ -64,7 +64,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) alterarUsingPUT11WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT17WithId: (NSNumber*) _id
     update: (PierUsuarioUpdate*) update
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
@@ -91,7 +91,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
@@ -123,7 +123,7 @@
 /// 
 ///
 /// @return PierPageUsuarioResponse*
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -155,7 +155,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) salvarUsingPOST20WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST24WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
