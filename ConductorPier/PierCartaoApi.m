@@ -2,6 +2,7 @@
 #import "PierQueryParamCollection.h"
 #import "PierHistoricoImpressaoCartaoResponse.h"
 #import "PierCartaoResponse.h"
+#import "PierDadosCartaoImpressaoResponse.h"
 #import "PierDadosCartaoResponse.h"
 #import "PierLimiteDisponibilidadeResponse.h"
 #import "PierLoteCartoesPrePagosResponse.h"
@@ -676,10 +677,10 @@ static PierCartaoApi* singletonAPI = nil;
 /// Esse recurso permite consultar os dados de impress\u00C3\u00A3o de um cart\u00C3\u00A3o
 ///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id). 
 ///
-///  @returns NSObject*
+///  @returns PierDadosCartaoImpressaoResponse*
 ///
 -(NSNumber*) consultarCartaoImpressaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierDadosCartaoImpressaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -747,9 +748,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSObject*"
+                              responseType: @"PierDadosCartaoImpressaoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSObject*)data, error);
+                               handler((PierDadosCartaoImpressaoResponse*)data, error);
                            }
           ];
 }

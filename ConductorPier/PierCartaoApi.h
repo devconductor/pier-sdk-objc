@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PierHistoricoImpressaoCartaoResponse.h"
 #import "PierCartaoResponse.h"
+#import "PierDadosCartaoImpressaoResponse.h"
 #import "PierDadosCartaoResponse.h"
 #import "PierLimiteDisponibilidadeResponse.h"
 #import "PierLoteCartoesPrePagosResponse.h"
@@ -131,9 +132,9 @@
 /// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return NSObject*
+/// @return PierDadosCartaoImpressaoResponse*
 -(NSNumber*) consultarCartaoImpressaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierDadosCartaoImpressaoResponse* output, NSError* error)) handler;
 
 
 ///

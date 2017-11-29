@@ -79,6 +79,7 @@
 #import "PierContaHistoricoPagamentoResponse.h"
 #import "PierContaResponse.h"
 #import "PierControleVencimentoResponse.h"
+#import "PierDadosCartaoImpressaoResponse.h"
 #import "PierDadosCartaoResponse.h"
 #import "PierDesfazimentoTransacaoOnUsRequest.h"
 #import "PierDetalheOportunidadePersist.h"

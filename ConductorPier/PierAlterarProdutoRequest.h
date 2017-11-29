@@ -20,5 +20,11 @@
 /* C\u00C3\u00B3digo identificador da origem comercial. [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
+/* Identificador do estabelecimento. [optional]
+ */
+@property(nonatomic) NSNumber* idEstabelecimento;
+/* Identificador do promotor que realizou a solicita\u00C3\u00A7\u00C3\u00A3o do grade no estabelecimento. [optional]
+ */
+@property(nonatomic) NSNumber* idPromotor;
 
 @end
