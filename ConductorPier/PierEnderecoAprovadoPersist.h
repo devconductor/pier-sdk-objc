@@ -14,7 +14,7 @@
 
 @interface PierEnderecoAprovadoPersist : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) [optional]
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) 
  */
 @property(nonatomic) NSNumber* idTipoEndereco;
 /* Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' [optional]
@@ -35,16 +35,16 @@
 /* Apresenta nome do bairro [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Apresenta nome da cidade [optional]
+/* Apresenta nome da cidade 
  */
 @property(nonatomic) NSString* cidade;
-/* Apresenta sigla da Unidade Federativa [optional]
+/* Apresenta sigla da Unidade Federativa 
  */
 @property(nonatomic) NSString* uf;
 /* Apresenta nome do Pais [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Indica se o endere\u00C3\u00A7o informado \u00C3\u00A9 o de correspond\u00C3\u00AAncia [optional]
+/* Indica se o endere\u00C3\u00A7o informado \u00C3\u00A9 o de correspond\u00C3\u00AAncia 
  */
 @property(nonatomic) NSNumber* enderecoCorrespondencia;
 

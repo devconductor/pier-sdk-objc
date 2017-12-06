@@ -192,19 +192,19 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT16WithId: (NSNumber*) _id
     persist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT16`"];
     }
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `alterarUsingPUT14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `alterarUsingPUT16`"];
     }
     
 
@@ -283,19 +283,19 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) alterarUsingPUT8WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
     update: (PierOportunidadeUpdate*) update
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT9`"];
     }
     
     // verify the required parameter 'update' is set
     if (update == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT9`"];
     }
     
 
@@ -466,13 +466,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET18`"];
     }
     
 
@@ -549,13 +549,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET33`"];
     }
     
 
@@ -1230,7 +1230,7 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -1364,7 +1364,7 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
@@ -1636,13 +1636,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST21WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST22WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST22`"];
     }
     
 

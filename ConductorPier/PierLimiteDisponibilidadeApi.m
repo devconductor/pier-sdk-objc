@@ -102,7 +102,7 @@ static PierLimiteDisponibilidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierLimiteDisponibilidadeResponse*
 ///
--(NSNumber*) alterarUsingPUT7WithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarUsingPUT8WithIdConta: (NSNumber*) idConta
     limiteGlobal: (NSNumber*) limiteGlobal
     limiteCompra: (NSNumber*) limiteCompra
     limiteParcelado: (NSNumber*) limiteParcelado
@@ -121,7 +121,7 @@ static PierLimiteDisponibilidadeApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarUsingPUT7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarUsingPUT8`"];
     }
     
 
@@ -251,13 +251,13 @@ static PierLimiteDisponibilidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierLimiteDisponibilidadeResponse*
 ///
--(NSNumber*) consultarUsingGET16WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET17WithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET17`"];
     }
     
 

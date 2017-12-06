@@ -58,7 +58,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT16WithId: (NSNumber*) _id
     persist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
@@ -73,7 +73,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) alterarUsingPUT8WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
     update: (PierOportunidadeUpdate*) update
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
@@ -102,7 +102,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -115,7 +115,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -261,7 +261,7 @@
 /// 
 ///
 /// @return PierPageOportunidadeResponse*
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -287,7 +287,7 @@
 /// 
 ///
 /// @return PierPageTipoOportunidadeResponse*
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
@@ -332,7 +332,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) salvarUsingPOST21WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST22WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 

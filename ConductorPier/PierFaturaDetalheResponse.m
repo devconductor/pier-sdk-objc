@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"lancamentosFaturaResponse": @"lancamentosFaturaResponse", @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo", @"saldoAnterior": @"saldoAnterior" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"situacaoProcessamento": @"situacaoProcessamento", @"pagamentoEfetuado": @"pagamentoEfetuado", @"dataVencimentoFatura": @"dataVencimentoFatura", @"dataVencimentoReal": @"dataVencimentoReal", @"dataFechamento": @"dataFechamento", @"valorTotal": @"valorTotal", @"valorPagamentoMinimo": @"valorPagamentoMinimo", @"lancamentosFaturaResponse": @"lancamentosFaturaResponse", @"saldoAnterior": @"saldoAnterior" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"lancamentosFaturaResponse", @"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo", @"saldoAnterior"];
+  NSArray *optionalProperties = @[@"idConta", @"situacaoProcessamento", @"pagamentoEfetuado", @"dataVencimentoFatura", @"dataVencimentoReal", @"dataFechamento", @"valorTotal", @"valorPagamentoMinimo", @"lancamentosFaturaResponse", @"saldoAnterior"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

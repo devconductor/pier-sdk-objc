@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import "PierAdicionalDetalheResponse.h"
 #import "PierAdicionalUpdate.h"
+#import "PierPessoaDetalheResponse.h"
 #import "PierPessoaResponse.h"
 #import "PierTelefoneResponse.h"
 #import "PierEnderecoResponse.h"
-#import "PierPessoaDetalheResponse.h"
 #import "PierAtribuirAssinaturaClientePersist.h"
 #import "PierIntegracaoEmissorPersist.h"
 #import "PierIntegracaoEmissorResponse.h"
@@ -56,6 +56,37 @@
 
 ///
 ///
+/// Atualiza os detalhes de uma determinada Pessoa
+/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor os detalhes de uma determinada Pessoa.
+///
+/// @param _id ID da Pessoa
+/// @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica
+/// @param idEstadoCivil Id Estado civil da pessoa fisica
+/// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
+/// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
+/// @param idNacionalidade Id Nacionalidade da pessoa fisica
+/// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
+/// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
+/// @param email Email da pessoa fisica
+/// @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o
+/// 
+///
+/// @return PierPessoaDetalheResponse*
+-(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
+    nomeMae: (NSString*) nomeMae
+    idEstadoCivil: (NSNumber*) idEstadoCivil
+    idProfissao: (NSString*) idProfissao
+    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
+    idNacionalidade: (NSNumber*) idNacionalidade
+    numeroAgencia: (NSNumber*) numeroAgencia
+    numeroContaCorrente: (NSString*) numeroContaCorrente
+    email: (NSString*) email
+    nomeEmpresa: (NSString*) nomeEmpresa
+    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Atualiza os dados de uma determinada Pessoa
 /// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
 ///
@@ -73,7 +104,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) alterarUsingPUT11WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT12WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
@@ -100,7 +131,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) alterarUsingPUT12WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -128,7 +159,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -141,37 +172,6 @@
     uf: (NSString*) uf
     pais: (NSString*) pais
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Atualiza os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor os detalhes de uma determinada Pessoa.
-///
-/// @param _id ID da Pessoa
-/// @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica
-/// @param idEstadoCivil Id Estado civil da pessoa fisica
-/// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
-/// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
-/// @param idNacionalidade Id Nacionalidade da pessoa fisica
-/// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
-/// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
-/// @param email Email da pessoa fisica
-/// @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o
-/// 
-///
-/// @return PierPessoaDetalheResponse*
--(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
-    nomeMae: (NSString*) nomeMae
-    idEstadoCivil: (NSNumber*) idEstadoCivil
-    idProfissao: (NSString*) idProfissao
-    idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
-    idNacionalidade: (NSNumber*) idNacionalidade
-    numeroAgencia: (NSNumber*) numeroAgencia
-    numeroContaCorrente: (NSString*) numeroContaCorrente
-    email: (NSString*) email
-    nomeEmpresa: (NSString*) nomeEmpresa
-    completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -243,7 +243,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
@@ -256,7 +256,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -269,7 +269,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -282,7 +282,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -364,7 +364,7 @@
 /// 
 ///
 /// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -405,7 +405,7 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -443,7 +443,7 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -478,7 +478,7 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -640,7 +640,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST19WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST20WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone

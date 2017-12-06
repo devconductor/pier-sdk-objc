@@ -79,7 +79,7 @@
 /// 
 ///
 /// @return PierPageJobResponse*
--(NSNumber*) listarUsingGET20WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET21WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status

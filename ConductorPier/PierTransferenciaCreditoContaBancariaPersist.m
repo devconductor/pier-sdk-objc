@@ -1,6 +1,6 @@
-#import "PierTelefonePessoaAprovadaPersist.h"
+#import "PierTransferenciaCreditoContaBancariaPersist.h"
 
-@implementation PierTelefonePessoaAprovadaPersist
+@implementation PierTransferenciaCreditoContaBancariaPersist
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTipoTelefone": @"idTipoTelefone", @"ddd": @"ddd", @"telefone": @"telefone", @"ramal": @"ramal" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuOrigem": @"nsuOrigem", @"idCartao": @"idCartao", @"idContaBancaria": @"idContaBancaria", @"valor": @"valor", @"numeroParcelas": @"numeroParcelas", @"numeroMesesCarencia": @"numeroMesesCarencia", @"dataHoraTerminal": @"dataHoraTerminal", @"terminalRequisitante": @"terminalRequisitante", @"numeroEstabelecimento": @"numeroEstabelecimento" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"ramal"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -15,8 +15,6 @@
 
 @interface PierFaturaDetalheResponse : PierObject
 
-
-@property(nonatomic) NSArray<PierLancamentoFaturaResponse>* lancamentosFaturaResponse;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
@@ -41,6 +39,9 @@
 /* Valor do pagamento m\u00C3\u00ADnimo. [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoMinimo;
+/* Lista de lan\u00C3\u00A7amentos da fatura. [optional]
+ */
+@property(nonatomic) NSArray<PierLancamentoFaturaResponse>* lancamentosFaturaResponse;
 /* Valor do saldo anterior. [optional]
  */
 @property(nonatomic) NSNumber* saldoAnterior;

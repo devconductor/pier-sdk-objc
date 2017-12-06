@@ -32,7 +32,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) alterarUsingPUT18WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT20WithId: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     status: (NSString*) status
@@ -48,7 +48,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
@@ -67,7 +67,7 @@
 /// 
 ///
 /// @return PierPageWebHookResponse*
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -87,7 +87,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) salvarUsingPOST25WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST26WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 

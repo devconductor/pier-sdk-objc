@@ -1,6 +1,6 @@
-#import "PierTelefonePessoaAprovadaPersist.h"
+#import "PierTelefoneEstabelecimentoResponse.h"
 
-@implementation PierTelefonePessoaAprovadaPersist
+@implementation PierTelefoneEstabelecimentoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTipoTelefone": @"idTipoTelefone", @"ddd": @"ddd", @"telefone": @"telefone", @"ramal": @"ramal" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idEstabelecimento": @"idEstabelecimento", @"ddd": @"ddd", @"telefone": @"telefone", @"ramal": @"ramal" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"ramal"];
+  NSArray *optionalProperties = @[@"_id", @"idEstabelecimento", @"ddd", @"telefone", @"ramal"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

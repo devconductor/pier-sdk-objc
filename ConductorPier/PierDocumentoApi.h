@@ -39,7 +39,7 @@
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) alterarUsingPUT15WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT17WithId: (NSNumber*) _id
     persist: (PierTipoTemplateRequest*) persist
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
@@ -68,7 +68,7 @@
 /// 
 ///
 /// @return PierDocumentoDetalhadoResponse*
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -81,7 +81,7 @@
 /// 
 ///
 /// @return PierDocumentoTemplateResponse*
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
 
 
@@ -94,7 +94,7 @@
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 
@@ -125,7 +125,7 @@
 /// 
 ///
 /// @return PierPageDocumentoResponse*
--(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -146,7 +146,7 @@
 /// 
 ///
 /// @return PierPageDocumentoTemplateResponse*
--(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -164,7 +164,7 @@
 /// 
 ///
 /// @return PierPageTipoTemplateResponse*
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler;
@@ -192,7 +192,7 @@
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) salvarUsingPOST22WithPersist: (PierTipoTemplateRequest*) persist
+-(NSNumber*) salvarUsingPOST23WithPersist: (PierTipoTemplateRequest*) persist
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 

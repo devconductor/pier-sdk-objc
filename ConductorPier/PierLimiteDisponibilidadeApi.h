@@ -41,7 +41,7 @@
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) alterarUsingPUT7WithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarUsingPUT8WithIdConta: (NSNumber*) idConta
     limiteGlobal: (NSNumber*) limiteGlobal
     limiteCompra: (NSNumber*) limiteCompra
     limiteParcelado: (NSNumber*) limiteParcelado
@@ -67,7 +67,7 @@
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) consultarUsingGET16WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET17WithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 

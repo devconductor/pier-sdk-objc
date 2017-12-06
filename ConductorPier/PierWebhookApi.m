@@ -83,7 +83,7 @@ static PierWebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) alterarUsingPUT18WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT20WithId: (NSNumber*) _id
     tipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     status: (NSString*) status
@@ -92,17 +92,17 @@ static PierWebhookApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT18`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT20`"];
     }
     
     // verify the required parameter 'tipoEvento' is set
     if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `alterarUsingPUT18`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `alterarUsingPUT20`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT18`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT20`"];
     }
     
 
@@ -191,13 +191,13 @@ static PierWebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET38`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET40`"];
     }
     
 
@@ -286,7 +286,7 @@ static PierWebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierPageWebHookResponse*
 ///
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -399,19 +399,19 @@ static PierWebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) salvarUsingPOST25WithTipoEvento: (NSString*) tipoEvento
+-(NSNumber*) salvarUsingPOST26WithTipoEvento: (NSString*) tipoEvento
     url: (NSString*) url
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'tipoEvento' is set
     if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST26`"];
     }
     
     // verify the required parameter 'url' is set
     if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST26`"];
     }
     
 

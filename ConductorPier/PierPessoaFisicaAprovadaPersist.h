@@ -88,7 +88,7 @@
 /* Indica o valor da pontua\u00C3\u00A7\u00C3\u00A3o atribuido ao cliente (caso n\u00C3\u00A3o informado ser\u00C3\u00A1 atribuido o valor = 0) [optional]
  */
 @property(nonatomic) NSNumber* valorPontuacao;
-/* Apresenta os telefones da empresa [optional]
+/* Apresenta os telefones da empresa 
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersist>* telefones;
 /* Pode ser informado os seguintes tipos de endere\u00C3\u00A7o: Residencial, Comercial, e Outros 

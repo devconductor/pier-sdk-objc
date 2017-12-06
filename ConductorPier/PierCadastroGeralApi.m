@@ -12,9 +12,9 @@
 #import "PierOrigemComercialResponse.h"
 #import "PierAtendimentoClienteResponse.h"
 #import "PierPageTipoAjusteResponse.h"
+#import "PierBancoResponse.h"
 #import "PierPageTipoBoletoResponse.h"
 #import "PierTipoEnderecoResponse.h"
-#import "PierBancoResponse.h"
 #import "PierTipoOperacaoResponse.h"
 #import "PierTipoTelefoneResponse.h"
 #import "PierPageCampanhaResponse.h"
@@ -980,13 +980,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierProdutoDetalhesResponse*
 ///
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
     }
     
 
@@ -1071,7 +1071,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoAjusteResponse*
 ///
--(NSNumber*) consultarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET29WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -1166,6 +1166,89 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
+/// Apresenta os dados de um determinado Banco
+/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id). 
+///
+///  @returns PierBancoResponse*
+///
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bancos/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierBancoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierBancoResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Lista os tipos de boletos do emissor 
 /// Este recurso permite que sejam listados os tipos de boletos existentes na base de dados do emissor.
 ///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
@@ -1182,7 +1265,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoBoletoResponse*
 ///
--(NSNumber*) consultarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET30WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -1288,13 +1371,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET29`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
     }
     
 
@@ -1365,89 +1448,6 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado Banco
-/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id). 
-///
-///  @returns PierBancoResponse*
-///
--(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bancos/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierBancoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierBancoResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
 /// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
 ///  @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao). 
@@ -1458,7 +1458,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOperacaoResponse*
 ///
--(NSNumber*) consultarUsingGET30WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET32WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler {
@@ -1466,17 +1466,17 @@ static PierCadastroGeralApi* singletonAPI = nil;
     
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET30`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET32`"];
     }
     
     // verify the required parameter 'idEstabelecimento' is set
     if (idEstabelecimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET30`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET32`"];
     }
     
     // verify the required parameter 'codigoProcessamento' is set
     if (codigoProcessamento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET30`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET32`"];
     }
     
 
@@ -1562,13 +1562,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET32`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET34`"];
     }
     
 
@@ -3230,7 +3230,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePortadorResponse*
 ///
--(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -3381,7 +3381,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageProdutoResponse*
 ///
--(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -3501,7 +3501,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePromotorResponse*
 ///
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3720,7 +3720,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3829,7 +3829,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET39WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3936,7 +3936,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageControleVencimentoResponse*
 ///
--(NSNumber*) listarUsingGET43WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento

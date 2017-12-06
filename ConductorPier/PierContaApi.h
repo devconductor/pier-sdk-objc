@@ -7,7 +7,6 @@
 #import "PierDividaClienteResponse.h"
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierContaDetalheResponse.h"
-#import "PierTransferenciaBancariaResponse.h"
 #import "PierTransferenciaDetalheResponse.h"
 #import "PierCartaoEmbossingResponse.h"
 #import "PierCartaoEmbossingRequest.h"
@@ -20,12 +19,10 @@
 #import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageContaResponse.h"
-#import "PierPageTransferenciaBancariaResponse.h"
 #import "PierPageTransferenciaResponse.h"
 #import "PierEmprestimoPessoalRequest.h"
 #import "PierEmprestimoPessoalResponse.h"
 #import "PierPageTransacaoResponse.h"
-#import "PierTransferenciaBancariaPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -264,23 +261,6 @@
 
 ///
 ///
-/// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria para um banco
-/// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada para uma conta banc\u00C3\u00A1ria. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
-///
-/// @param _id Id Conta
-/// @param idTransferencia Id Transfer\u00C3\u00AAncia
-/// @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id)
-/// 
-///
-/// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
-    idTransferencia: (NSNumber*) idTransferencia
-    idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
-    completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Consulta os detalhes de uma determinada transfer\u00C3\u00AAncia
 /// Este m\u00C3\u00A9todo permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada entre contas.
 ///
@@ -289,7 +269,7 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 
@@ -557,27 +537,6 @@
 
 ///
 ///
-/// Listar as transfer\u00C3\u00AAncias banc\u00C3\u00A1rias realizadas
-/// Este recurso tem como objetivo permitir que o portador de um Cart\u00C3\u00A3o possa consultar uma lista das Transfer\u00C3\u00AAncias Banc\u00C3\u00A1rias para os Favorecidos cadastrados.
-///
-/// @param _id Id Conta
-/// @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id)
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// 
-///
-/// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET40WithId: (NSNumber*) _id
-    idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageTransferenciaBancariaResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista as transfer\u00C3\u00AAncias realizadas pela conta
 /// Este m\u00C3\u00A9todo permite que sejam listadas as transfer\u00C3\u00AAncias realizadas pela conta existentes na base do emissor.
 ///
@@ -593,7 +552,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET41WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET43WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -650,21 +609,6 @@
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTransacaoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria do cart\u00C3\u00A3o para contas banc\u00C3\u00A1rias
-/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para uma conta banc\u00C3\u00A1ria. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta banc\u00C3\u00A1ria de destino.
-///
-/// @param _id Id Conta
-/// @param transferenciaBancariaPersist transferenciaBancariaPersist
-/// 
-///
-/// @return PierTransferenciaBancariaResponse*
--(NSNumber*) transferirUsingPOSTWithId: (NSNumber*) _id
-    transferenciaBancariaPersist: (PierTransferenciaBancariaPersist*) transferenciaBancariaPersist
-    completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
 
 
 ///

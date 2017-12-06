@@ -1,10 +1,15 @@
 #import <Foundation/Foundation.h>
 #import "PierPessoaJuridicaResponse.h"
+#import "PierTelefoneEstabelecimentoResponse.h"
 #import "PierTerminalResponse.h"
 #import "PierTerminalUpdate.h"
+#import "PierCredorResponse.h"
+#import "PierCredorDTO.h"
 #import "PierEstabelecimentoResponse.h"
+#import "PierPageCredorResponse.h"
 #import "PierPageEstabelecimentoResponse.h"
 #import "PierPagePessoaJuridicaResponse.h"
+#import "PierPageTelefoneEstabelecimentoResponse.h"
 #import "PierPageTerminalResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -42,7 +47,7 @@
 /// 
 ///
 /// @return PierPessoaJuridicaResponse*
--(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT11WithId: (NSNumber*) _id
     razaoSocial: (NSString*) razaoSocial
     inscricaoEstadual: (NSString*) inscricaoEstadual
     contato: (NSString*) contato
@@ -56,6 +61,25 @@
 
 ///
 ///
+/// Altera um Telefone do estabelecimento
+/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos telefones dos estabelecimentos.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone Estabelecimento (id).
+/// @param ddd C\u00C3\u00B3digo DDD do telefone (id).
+/// @param telefone N\u00C3\u00BAmero do telefone.
+/// @param ramal N\u00C3\u00BAmero do ramal.
+/// 
+///
+/// @return PierTelefoneEstabelecimentoResponse*
+-(NSNumber*) alterarUsingPUT13WithId: (NSNumber*) _id
+    ddd: (NSString*) ddd
+    telefone: (NSString*) telefone
+    ramal: (NSString*) ramal
+    completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Altera um Terminal
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos Terminais.
 ///
@@ -64,9 +88,37 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) alterarUsingPUT13WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT15WithId: (NSNumber*) _id
     terminalUpdate: (PierTerminalUpdate*) terminalUpdate
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Alterar Credor
+/// Altera um credor.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da credor
+/// @param credorUpdate credorUpdate
+/// 
+///
+/// @return PierCredorResponse*
+-(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
+    credorUpdate: (PierCredorDTO*) credorUpdate
+    completionHandler: (void (^)(PierCredorResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cadastrar Credor
+/// Cadastra um credor.
+///
+/// @param credorPersist credorPersist
+/// 
+///
+/// @return PierCredorResponse*
+-(NSNumber*) cadastrarUsingPOST2WithCredorPersist: (PierCredorDTO*) credorPersist
+    completionHandler: (void (^)(PierCredorResponse* output, NSError* error)) handler;
 
 
 ///
@@ -86,7 +138,7 @@
 /// 
 ///
 /// @return PierPessoaJuridicaResponse*
--(NSNumber*) cadastrarUsingPOST2WithRazaoSocial: (NSString*) razaoSocial
+-(NSNumber*) cadastrarUsingPOST3WithRazaoSocial: (NSString*) razaoSocial
     cnpj: (NSString*) cnpj
     inscricaoEstadual: (NSString*) inscricaoEstadual
     contato: (NSString*) contato
@@ -100,6 +152,19 @@
 
 ///
 ///
+/// Consultar credor
+/// Consulta um credor atrav\u00C3\u00A9s do seu identificador.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da credor
+/// 
+///
+/// @return PierCredorResponse*
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCredorResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar estabelecimento por id
 /// Consulta os detalhes de um determinado estabelecimento
 ///
@@ -107,7 +172,7 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -120,8 +185,21 @@
 /// 
 ///
 /// @return PierPessoaJuridicaResponse*
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaJuridicaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de um determinado telefone de um estabelecimento
+/// Este m\u00C3\u00A9todo permite consultar um determinado telefone de um estabelecimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone Estabelecimento (id).
+/// 
+///
+/// @return PierTelefoneEstabelecimentoResponse*
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -133,8 +211,71 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar credores
+/// Lista credores cadastrados. 
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idPessoaJuridica Identificador da pessoa jur\u00C3\u00ADdica do credor
+/// @param nome Nome do credor
+/// @param periodicidade Periodicidade do pagamento
+/// @param pagamentoSemanal Dia para pagamento semanal
+/// @param pagamentoMensal Dia da data para o pagamento mensal
+/// @param pagamentoDecendialPrimeiro Dia da data para o primeiro pagamento decendial
+/// @param pagamentoDecendialSegundo Dia da data para o segundo pagamento decendial
+/// @param pagamentoDecendialTerceiro Dia da data para o terceiro pagamento decendial
+/// @param pagamentoQuinzenalPrimeiro Dia da data para o primeiro pagamento quinzenal
+/// @param pagamentoQuinzenalSegundo Dia da data para o segundo pagamento quinzenal
+/// @param credorBanco Indica se este credor pode ser um Credor RAV de outros credores
+/// @param percentualRAV Valor percentual do RAV do credor
+/// @param recebeRAV Indica se o credor recebe RAV e o tipo
+/// @param percentualMultiplica Percentual Multiplica
+/// @param taxaAdm Taxa Administrativa
+/// @param taxaBanco Taxa do Banco
+/// @param limiteRAV Valor limite do RAV
+/// @param idCredorRAV C\u00C3\u00B3digo identificador do credor RAV
+/// @param banco C\u00C3\u00B3digo do banco
+/// @param agencia Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
+/// @param digitoVerificadorAgencia D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia
+/// @param contaCorrente C\u00C3\u00B3digo da Conta Corrente
+/// @param digitoVerificadorContaCorrente D\u00C3\u00ADgito Verificador da Conta Corrente
+/// 
+///
+/// @return PierPageCredorResponse*
+-(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idPessoaJuridica: (NSNumber*) idPessoaJuridica
+    nome: (NSString*) nome
+    periodicidade: (NSString*) periodicidade
+    pagamentoSemanal: (NSString*) pagamentoSemanal
+    pagamentoMensal: (NSNumber*) pagamentoMensal
+    pagamentoDecendialPrimeiro: (NSNumber*) pagamentoDecendialPrimeiro
+    pagamentoDecendialSegundo: (NSNumber*) pagamentoDecendialSegundo
+    pagamentoDecendialTerceiro: (NSNumber*) pagamentoDecendialTerceiro
+    pagamentoQuinzenalPrimeiro: (NSNumber*) pagamentoQuinzenalPrimeiro
+    pagamentoQuinzenalSegundo: (NSNumber*) pagamentoQuinzenalSegundo
+    credorBanco: (NSNumber*) credorBanco
+    percentualRAV: (NSNumber*) percentualRAV
+    recebeRAV: (NSString*) recebeRAV
+    percentualMultiplica: (NSNumber*) percentualMultiplica
+    taxaAdm: (NSNumber*) taxaAdm
+    taxaBanco: (NSNumber*) taxaBanco
+    limiteRAV: (NSNumber*) limiteRAV
+    idCredorRAV: (NSNumber*) idCredorRAV
+    banco: (NSNumber*) banco
+    agencia: (NSNumber*) agencia
+    digitoVerificadorAgencia: (NSString*) digitoVerificadorAgencia
+    contaCorrente: (NSString*) contaCorrente
+    digitoVerificadorContaCorrente: (NSString*) digitoVerificadorContaCorrente
+    completionHandler: (void (^)(PierPageCredorResponse* output, NSError* error)) handler;
 
 
 ///
@@ -167,7 +308,7 @@
 /// 
 ///
 /// @return PierPageEstabelecimentoResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -212,7 +353,7 @@
 /// 
 ///
 /// @return PierPagePessoaJuridicaResponse*
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     razaoSocial: (NSString*) razaoSocial
@@ -225,6 +366,25 @@
     contaCorrente: (NSString*) contaCorrente
     digitoVerificadorContaCorrente: (NSString*) digitoVerificadorContaCorrente
     completionHandler: (void (^)(PierPagePessoaJuridicaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os Telefones Estabelecimentos
+/// Este m\u00C3\u00A9todo permite que sejam listados os telefones dos estabelecimentos existentes na base de dados do Emissor.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idEstabelecimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Estabelecimento (id).
+/// 
+///
+/// @return PierPageTelefoneEstabelecimentoResponse*
+-(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idEstabelecimento: (NSNumber*) idEstabelecimento
+    completionHandler: (void (^)(PierPageTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -242,7 +402,7 @@
 /// 
 ///
 /// @return PierPageTerminalResponse*
--(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -250,6 +410,25 @@
     numeroEstabelecimento: (NSNumber*) numeroEstabelecimento
     idEstabelecimento: (NSNumber*) idEstabelecimento
     completionHandler: (void (^)(PierPageTerminalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza o cadastro de um novo telefone para um estabelecimento 
+/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo telefone para um estabelecimento.
+///
+/// @param idEstabelecimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento (id).
+/// @param ddd C\u00C3\u00B3digo DDD do telefone (id).
+/// @param telefone N\u00C3\u00BAmero do telefone.
+/// @param ramal N\u00C3\u00BAmero do ramal.
+/// 
+///
+/// @return PierTelefoneEstabelecimentoResponse*
+-(NSNumber*) salvarUsingPOST19WithIdEstabelecimento: (NSNumber*) idEstabelecimento
+    ddd: (NSString*) ddd
+    telefone: (NSString*) telefone
+    ramal: (NSString*) ramal
+    completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -263,7 +442,7 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) salvarUsingPOST20WithIdEstabelecimento: (NSNumber*) idEstabelecimento
+-(NSNumber*) salvarUsingPOST21WithIdEstabelecimento: (NSNumber*) idEstabelecimento
     flagConsultaExtrato: (NSNumber*) flagConsultaExtrato
     flagTerminalVirtual: (NSNumber*) flagTerminalVirtual
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
