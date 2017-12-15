@@ -7,6 +7,8 @@
 #import "PierPageContaBancariaPortadorResponse.h"
 #import "PierPageTransferenciaBancariaResponse.h"
 #import "PierContaBancariaPortadorPersist.h"
+#import "PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse.h"
+#import "PierPlanoParcelamentoTransferenciaCreditoContaBancariaRequest.h"
 #import "PierTransferenciaCreditoContaBancariaPersist.h"
 #import "PierTransferenciaBancariaPersist.h"
 #import "PierObject.h"
@@ -58,6 +60,19 @@
 
 ///
 ///
+/// Consulta conta banc\u00C3\u00A1ria portador
+/// Esse recurso permite consultar uma conta banc\u00C3\u00A1ria do portador a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria (id).
+/// 
+///
+/// @return PierContaBancariaPortadorResponse*
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria para um banco
 /// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada para uma conta banc\u00C3\u00A1ria. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
 ///
@@ -67,23 +82,10 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Consulta conta banc\u00C3\u00A1ria portador
-/// Esse recurso permite consultar uma conta banc\u00C3\u00A1ria do portador a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria (id).
-/// 
-///
-/// @return PierContaBancariaPortadorResponse*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
 
 ///
@@ -174,6 +176,19 @@
 /// @return PierContaBancariaPortadorResponse*
 -(NSNumber*) salvarUsingPOST7WithPersist: (PierContaBancariaPortadorPersist*) persist
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza a simula\u00C3\u00A7\u00C3\u00A3o dos planos de parcelamentos para uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1rias
+/// Realiza a simula\u00C3\u00A7\u00C3\u00A3o dos planos de parcelamentos para uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1rias.
+///
+/// @param request request
+/// 
+///
+/// @return PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse*
+-(NSNumber*) simularTransferenciaBancariaUsingPOSTWithRequest: (PierPlanoParcelamentoTransferenciaCreditoContaBancariaRequest*) request
+    completionHandler: (void (^)(PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse* output, NSError* error)) handler;
 
 
 ///

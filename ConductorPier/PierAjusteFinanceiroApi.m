@@ -1,16 +1,16 @@
-#import "PierWebhookApi.h"
+#import "PierAjusteFinanceiroApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierWebHookResponse.h"
-#import "PierPageWebHookResponse.h"
+#import "PierAjusteFinanceiroResponse.h"
+#import "PierPageAjusteResponse.h"
 
 
-@interface PierWebhookApi ()
+@interface PierAjusteFinanceiroApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierWebhookApi
+@implementation PierAjusteFinanceiroApi
 
-static PierWebhookApi* singletonAPI = nil;
+static PierAjusteFinanceiroApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static PierWebhookApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierWebhookApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierAjusteFinanceiroApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierWebhookApi alloc] init];
+        singletonAPI = [[PierAjusteFinanceiroApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierWebhookApi*) sharedAPI {
++(PierAjusteFinanceiroApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierWebhookApi alloc] init];
+        singletonAPI = [[PierAjusteFinanceiroApi alloc] init];
     }
     return singletonAPI;
 }
@@ -71,233 +71,50 @@ static PierWebhookApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Alterar Webhook
-/// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
-///  @param _id C\u00C3\u00B3digo identificador do Webhook 
+/// Lan\u00C3\u00A7a um ajuste para a conta informada
+/// Este recurso insere um ajuste para a conta do id informado
+///  @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste. 
 ///
-///  @param tipoEvento TipoEvento a ser chamado pelo WebHook 
+///  @param dataAjuste Data do ajuste no formato yyyy-MM-dd'T'HH:mm:ss.SSSZ. 
 ///
-///  @param url URL que a ser consumida pelo WebHook 
+///  @param valorAjuste Valor do ajuste 
 ///
-///  @param status Status (optional)
+///  @param idConta C\u00C3\u00B3digo identificador da conta. 
 ///
-///  @returns PierWebHookResponse*
+///  @param identificadorExterno Codigo Hexadecimal (optional)
 ///
--(NSNumber*) alterarUsingPUT20WithId: (NSNumber*) _id
-    tipoEvento: (NSString*) tipoEvento
-    url: (NSString*) url
-    status: (NSString*) status
-    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
+///  @returns PierAjusteFinanceiroResponse*
+///
+-(NSNumber*) ajustarContaUsingPOSTWithIdTipoAjuste: (NSNumber*) idTipoAjuste
+    dataAjuste: (NSString*) dataAjuste
+    valorAjuste: (NSNumber*) valorAjuste
+    idConta: (NSNumber*) idConta
+    identificadorExterno: (NSString*) identificadorExterno
+    completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler {
 
     
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT20`"];
+    // verify the required parameter 'idTipoAjuste' is set
+    if (idTipoAjuste == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTipoAjuste` when calling `ajustarContaUsingPOST`"];
     }
     
-    // verify the required parameter 'tipoEvento' is set
-    if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `alterarUsingPUT20`"];
+    // verify the required parameter 'dataAjuste' is set
+    if (dataAjuste == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataAjuste` when calling `ajustarContaUsingPOST`"];
     }
     
-    // verify the required parameter 'url' is set
-    if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT20`"];
+    // verify the required parameter 'valorAjuste' is set
+    if (valorAjuste == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `valorAjuste` when calling `ajustarContaUsingPOST`"];
     }
     
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
+    // verify the required parameter 'idConta' is set
+    if (idConta == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `ajustarContaUsingPOST`"];
     }
     
 
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (status != nil) {
-        
-        queryParams[@"status"] = status;
-    }
-    if (tipoEvento != nil) {
-        
-        queryParams[@"tipoEvento"] = tipoEvento;
-    }
-    if (url != nil) {
-        
-        queryParams[@"url"] = url;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierWebHookResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHookResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Consultar Webhook
-/// Este m\u00C3\u00A9todo permite que sejam consultado um webhook do emissor atrav\u00C3\u00A9s de um id especifico
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id). 
-///
-///  @returns PierWebHookResponse*
-///
--(NSNumber*) consultarUsingGET41WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET41`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierWebHookResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHookResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Lista os Webhooks
-/// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
-///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param _id Id do WebHook (optional)
-///
-///  @param tipoEvento TipoEvento a ser chamado pelo WebHook (optional)
-///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook (optional)
-///
-///  @param url URL que a ser consumida pelo WebHook (optional)
-///
-///  @returns PierPageWebHookResponse*
-///
--(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    _id: (NSNumber*) _id
-    tipoEvento: (NSString*) tipoEvento
-    metodo: (NSString*) metodo
-    url: (NSString*) url
-    completionHandler: (void (^)(PierPageWebHookResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/ajustes-financeiros"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -308,131 +125,25 @@ static PierWebhookApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (sort != nil) {
+    if (idTipoAjuste != nil) {
         
-        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        queryParams[@"idTipoAjuste"] = idTipoAjuste;
+    }
+    if (dataAjuste != nil) {
         
+        queryParams[@"dataAjuste"] = dataAjuste;
+    }
+    if (valorAjuste != nil) {
         
+        queryParams[@"valorAjuste"] = valorAjuste;
     }
-    if (page != nil) {
+    if (identificadorExterno != nil) {
         
-        queryParams[@"page"] = page;
+        queryParams[@"identificadorExterno"] = identificadorExterno;
     }
-    if (limit != nil) {
+    if (idConta != nil) {
         
-        queryParams[@"limit"] = limit;
-    }
-    if (_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if (tipoEvento != nil) {
-        
-        queryParams[@"tipoEvento"] = tipoEvento;
-    }
-    if (metodo != nil) {
-        
-        queryParams[@"metodo"] = metodo;
-    }
-    if (url != nil) {
-        
-        queryParams[@"url"] = url;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageWebHookResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageWebHookResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Salvar Webhook
-/// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
-///  @param tipoEvento TipoEvento a ser chamado pelo WebHook 
-///
-///  @param url URL que a ser consumida pelo WebHook 
-///
-///  @returns PierWebHookResponse*
-///
--(NSNumber*) salvarUsingPOST26WithTipoEvento: (NSString*) tipoEvento
-    url: (NSString*) url
-    completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'tipoEvento' is set
-    if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST26`"];
-    }
-    
-    // verify the required parameter 'url' is set
-    if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST26`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/webhooks"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (tipoEvento != nil) {
-        
-        queryParams[@"tipoEvento"] = tipoEvento;
-    }
-    if (url != nil) {
-        
-        queryParams[@"url"] = url;
+        queryParams[@"idConta"] = idConta;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -479,9 +190,222 @@ static PierWebhookApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierWebHookResponse*"
+                              responseType: @"PierAjusteFinanceiroResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierWebHookResponse*)data, error);
+                               handler((PierAjusteFinanceiroResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Apresenta dados de um determinado ajuste financeiro
+/// Este m\u00C3\u00A9todo permite consultar dados de um determinado ajuste a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do ajuste (id). 
+///
+///  @returns PierAjusteFinanceiroResponse*
+///
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/ajustes-financeiros/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAjusteFinanceiroResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAjusteFinanceiroResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista ajustes existentes na base de dados do Emissor
+/// Este recurso permite listar ajustes existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste. (optional)
+///
+///  @param dataAjuste Data do ajuste no formato yyyy-MM-dd'T'HH:mm:ss.SSSZ. (optional)
+///
+///  @param valorAjuste Valor do ajuste (optional)
+///
+///  @param identificadorExterno Codigo Hexadecimal (optional)
+///
+///  @param idConta C\u00C3\u00B3digo identificador da conta. (optional)
+///
+///  @returns PierPageAjusteResponse*
+///
+-(NSNumber*) listarUsingGET1WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idTipoAjuste: (NSNumber*) idTipoAjuste
+    dataAjuste: (NSString*) dataAjuste
+    valorAjuste: (NSNumber*) valorAjuste
+    identificadorExterno: (NSString*) identificadorExterno
+    idConta: (NSNumber*) idConta
+    completionHandler: (void (^)(PierPageAjusteResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/ajustes-financeiros"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (idTipoAjuste != nil) {
+        
+        queryParams[@"idTipoAjuste"] = idTipoAjuste;
+    }
+    if (dataAjuste != nil) {
+        
+        queryParams[@"dataAjuste"] = dataAjuste;
+    }
+    if (valorAjuste != nil) {
+        
+        queryParams[@"valorAjuste"] = valorAjuste;
+    }
+    if (identificadorExterno != nil) {
+        
+        queryParams[@"identificadorExterno"] = identificadorExterno;
+    }
+    if (idConta != nil) {
+        
+        queryParams[@"idConta"] = idConta;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageAjusteResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageAjusteResponse*)data, error);
                            }
           ];
 }

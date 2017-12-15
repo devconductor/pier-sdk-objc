@@ -5,7 +5,9 @@
 #import "PierTerminalUpdate.h"
 #import "PierCredorResponse.h"
 #import "PierCredorDTO.h"
+#import "PierDetalheOperacaoResponse.h"
 #import "PierEstabelecimentoResponse.h"
+#import "PierPageOperacaoResponse.h"
 #import "PierPageCredorResponse.h"
 #import "PierPageEstabelecimentoResponse.h"
 #import "PierPagePessoaJuridicaResponse.h"
@@ -152,6 +154,19 @@
 
 ///
 ///
+/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idoperacao
+///
+/// @param _id C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o (idOperacao).
+/// 
+///
+/// @return PierDetalheOperacaoResponse*
+-(NSNumber*) consultaOperacaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierDetalheOperacaoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar credor
 /// Consulta um credor atrav\u00C3\u00A9s do seu identificador.
 ///
@@ -159,7 +174,7 @@
 /// 
 ///
 /// @return PierCredorResponse*
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCredorResponse* output, NSError* error)) handler;
 
 
@@ -172,7 +187,7 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -185,7 +200,7 @@
 /// 
 ///
 /// @return PierPessoaJuridicaResponse*
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaJuridicaResponse* output, NSError* error)) handler;
 
 
@@ -198,7 +213,7 @@
 /// 
 ///
 /// @return PierTelefoneEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -211,8 +226,29 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta dados de opera\u00C3\u00A7\u00C3\u00B5es em uma lista
+/// Este recurso permite listar as opera\u00C3\u00A7\u00C3\u00A3o
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idOperacao C\u00C3\u00B3digo que identifica a opera\u00C3\u00A7\u00C3\u00A3o
+/// @param codigoProcessamento C\u00C3\u00B3digo de processamento usado em transa\u00C3\u00A7\u00C3\u00B5es com o autorizador
+/// 
+///
+/// @return PierPageOperacaoResponse*
+-(NSNumber*) listaOperacaoUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idOperacao: (NSNumber*) idOperacao
+    codigoProcessamento: (NSString*) codigoProcessamento
+    completionHandler: (void (^)(PierPageOperacaoResponse* output, NSError* error)) handler;
 
 
 ///

@@ -67,7 +67,7 @@
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) consultarUsingGET17WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET18WithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 

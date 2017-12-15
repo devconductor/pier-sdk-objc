@@ -384,19 +384,19 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET5WithDeviceId: (NSString*) deviceId
+-(NSNumber*) consultarUsingGET6WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoPayDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET6`"];
     }
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 

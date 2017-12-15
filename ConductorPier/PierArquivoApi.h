@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierArquivoResponse*
--(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierArquivoResponse* output, NSError* error)) handler;
 
 

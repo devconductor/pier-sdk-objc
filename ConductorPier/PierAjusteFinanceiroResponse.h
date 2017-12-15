@@ -9,14 +9,14 @@
 
 
 
-@protocol PierAjusteResponse
+@protocol PierAjusteFinanceiroResponse
 @end
 
-@interface PierAjusteResponse : PierObject
+@interface PierAjusteFinanceiroResponse : PierObject
 
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do ajuste (id) [optional]
  */
-@property(nonatomic) NSNumber* idAjuste;
+@property(nonatomic) NSNumber* _id;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do ajuste [optional]
  */
 @property(nonatomic) NSNumber* idTipoAjuste;
@@ -29,5 +29,11 @@
 /* Valor do ajuste [optional]
  */
 @property(nonatomic) NSNumber* valor;
+/* Descri\u00C3\u00A7\u00C3\u00A3o do status da autoriza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+ */
+@property(nonatomic) NSString* identificadorExterno;
+/* Status do ajuste. [optional]
+ */
+@property(nonatomic) NSNumber* status;
 
 @end
