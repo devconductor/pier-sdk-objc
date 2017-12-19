@@ -20,12 +20,9 @@
 /* Valor da transa\u00C3\u00A7\u00C3\u00A3o com duas casas decimais para os centavos. 
  */
 @property(nonatomic) NSNumber* valorTransacao;
-/* N\u00C3\u00BAmero Real do Cart\u00C3\u00A3o. 
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o. 
  */
-@property(nonatomic) NSString* numeroRealCartao;
-/* Data de Validade do Cart\u00C3\u00A3o. Ex: AAMM 
- */
-@property(nonatomic) NSString* dataValidadeCartao;
+@property(nonatomic) NSNumber* idCartao;
 /* Representa o N\u00C3\u00BAmero de Meses concedido como car\u00C3\u00AAncia. 
  */
 @property(nonatomic) NSNumber* numeroMesesCarencia;

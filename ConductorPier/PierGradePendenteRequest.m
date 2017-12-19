@@ -1,6 +1,6 @@
-#import "PierParcelamentoTransferenciaResponse.h"
+#import "PierGradePendenteRequest.h"
 
-@implementation PierParcelamentoTransferenciaResponse
+@implementation PierGradePendenteRequest
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroParcela": @"numeroParcela", @"valorPrimeiraParcela": @"valorPrimeiraParcela", @"valorDemaisParcelas": @"valorDemaisParcelas", @"valorTotal": @"valorTotal", @"valorTAC": @"valorTAC", @"valorIOF": @"valorIOF", @"taxaJuros": @"taxaJuros", @"cetAnual": @"cetAnual" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"dataBase": @"dataBase" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"numeroParcela", @"valorPrimeiraParcela", @"valorDemaisParcelas", @"valorTotal", @"valorTAC", @"valorIOF", @"taxaJuros", @"cetAnual"];
+  NSArray *optionalProperties = @[@"idConta", @"dataBase"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

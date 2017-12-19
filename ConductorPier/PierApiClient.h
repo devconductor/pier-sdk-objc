@@ -115,6 +115,7 @@
 #import "PierFaturaDetalheResponse.h"
 #import "PierFaturaFechadaResponse.h"
 #import "PierFaturaResponse.h"
+#import "PierGradePendenteRequest.h"
 #import "PierHistoricoAssessoriaResponse.h"
 #import "PierHistoricoAtrasoFaturaResponse.h"
 #import "PierHistoricoEventosResponse.h"
