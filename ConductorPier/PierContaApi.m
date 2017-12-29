@@ -1,6 +1,6 @@
 #import "PierContaApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierAjusteResponse.h"
+#import "PierAjusteFinanceiroResponse.h"
 #import "PierAlterarProdutoRequest.h"
 #import "PierContaResponse.h"
 #import "PierBeneficioPagamentoAtrasoResponse.h"
@@ -103,33 +103,36 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @param valorAjuste Valor do ajuste 
 ///
-///  @returns PierAjusteResponse*
+///  @param identificadorExterno Identificador Externo (optional)
 ///
--(NSNumber*) ajustarContaUsingPOSTWithId: (NSNumber*) _id
+///  @returns PierAjusteFinanceiroResponse*
+///
+-(NSNumber*) ajustarContaUsingPOST1WithId: (NSNumber*) _id
     idTipoAjuste: (NSNumber*) idTipoAjuste
     dataAjuste: (NSString*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
-    completionHandler: (void (^)(PierAjusteResponse* output, NSError* error)) handler {
+    identificadorExterno: (NSString*) identificadorExterno
+    completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `ajustarContaUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `ajustarContaUsingPOST1`"];
     }
     
     // verify the required parameter 'idTipoAjuste' is set
     if (idTipoAjuste == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTipoAjuste` when calling `ajustarContaUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTipoAjuste` when calling `ajustarContaUsingPOST1`"];
     }
     
     // verify the required parameter 'dataAjuste' is set
     if (dataAjuste == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataAjuste` when calling `ajustarContaUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataAjuste` when calling `ajustarContaUsingPOST1`"];
     }
     
     // verify the required parameter 'valorAjuste' is set
     if (valorAjuste == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `valorAjuste` when calling `ajustarContaUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `valorAjuste` when calling `ajustarContaUsingPOST1`"];
     }
     
 
@@ -158,6 +161,10 @@ static PierContaApi* singletonAPI = nil;
     if (valorAjuste != nil) {
         
         queryParams[@"valorAjuste"] = valorAjuste;
+    }
+    if (identificadorExterno != nil) {
+        
+        queryParams[@"identificadorExterno"] = identificadorExterno;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -204,9 +211,9 @@ static PierContaApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierAjusteResponse*"
+                              responseType: @"PierAjusteFinanceiroResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierAjusteResponse*)data, error);
+                               handler((PierAjusteFinanceiroResponse*)data, error);
                            }
           ];
 }
@@ -1310,13 +1317,13 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -1395,19 +1402,19 @@ static PierContaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET38`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET39`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET38`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET39`"];
     }
     
 

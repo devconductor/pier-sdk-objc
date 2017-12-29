@@ -1,6 +1,6 @@
-#import "PierPessoaDetalheResponse.h"
+#import "PierOperacaoResponse.h"
 
-@implementation PierPessoaDetalheResponse
+@implementation PierOperacaoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idPessoa": @"idPessoa", @"nomeMae": @"nomeMae", @"idEstadoCivil": @"idEstadoCivil", @"idProfissao": @"idProfissao", @"idNaturezaOcupacao": @"idNaturezaOcupacao", @"idNacionalidade": @"idNacionalidade", @"numeroBanco": @"numeroBanco", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"nomeEmpresa": @"nomeEmpresa" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idOperacao": @"idOperacao", @"codigoProcessamento": @"codigoProcessamento", @"codigoProcessamentoCancelamento": @"codigoProcessamentoCancelamento", @"nomeOperacao": @"nomeOperacao", @"flagCobraJuros": @"flagCobraJuros", @"flagCobraTarifa": @"flagCobraTarifa", @"carencia": @"carencia", @"flagPermitirParcelamento": @"flagPermitirParcelamento" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idPessoa", @"nomeMae", @"idEstadoCivil", @"idProfissao", @"idNaturezaOcupacao", @"idNacionalidade", @"numeroBanco", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeEmpresa"];
+  NSArray *optionalProperties = @[@"idOperacao", @"codigoProcessamento", @"codigoProcessamentoCancelamento", @"nomeOperacao", @"flagCobraJuros", @"flagCobraTarifa", @"carencia", @"flagPermitirParcelamento"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

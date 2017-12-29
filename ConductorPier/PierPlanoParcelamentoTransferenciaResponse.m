@@ -1,6 +1,6 @@
-#import "PierPagePaisResponse.h"
+#import "PierPlanoParcelamentoTransferenciaResponse.h"
 
-@implementation PierPagePaisResponse
+@implementation PierPlanoParcelamentoTransferenciaResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"codigoEspecial": @"codigoEspecial", @"vencimentoPrimeiraParcela": @"vencimentoPrimeiraParcela", @"flagJuros": @"flagJuros", @"numeroMesesCarencia": @"numeroMesesCarencia", @"parcelas": @"parcelas" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages"];
+  NSArray *optionalProperties = @[@"codigoEspecial", @"vencimentoPrimeiraParcela", @"flagJuros", @"numeroMesesCarencia", @"parcelas"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -1,6 +1,6 @@
-#import "PierPaisResponse.h"
+#import "PierParcelamentoTransferenciaResponse.h"
 
-@implementation PierPaisResponse
+@implementation PierParcelamentoTransferenciaResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"codigo": @"codigo", @"sigla": @"sigla", @"descricao": @"descricao", @"continente": @"continente" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroParcela": @"numeroParcela", @"valorPrimeiraParcela": @"valorPrimeiraParcela", @"valorDemaisParcelas": @"valorDemaisParcelas", @"valorTotal": @"valorTotal", @"valorTAC": @"valorTAC", @"valorIOF": @"valorIOF", @"taxaJuros": @"taxaJuros", @"cetAnual": @"cetAnual" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"codigo", @"sigla", @"descricao", @"continente"];
+  NSArray *optionalProperties = @[@"numeroParcela", @"valorPrimeiraParcela", @"valorDemaisParcelas", @"valorTotal", @"valorTAC", @"valorIOF", @"taxaJuros", @"cetAnual"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

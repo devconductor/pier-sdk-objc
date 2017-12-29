@@ -1,6 +1,6 @@
-#import "PierPessoaDetalheResponse.h"
+#import "PierAjusteFinanceiroResponse.h"
 
-@implementation PierPessoaDetalheResponse
+@implementation PierAjusteFinanceiroResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idPessoa": @"idPessoa", @"nomeMae": @"nomeMae", @"idEstadoCivil": @"idEstadoCivil", @"idProfissao": @"idProfissao", @"idNaturezaOcupacao": @"idNaturezaOcupacao", @"idNacionalidade": @"idNacionalidade", @"numeroBanco": @"numeroBanco", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"nomeEmpresa": @"nomeEmpresa" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoAjuste": @"idTipoAjuste", @"idConta": @"idConta", @"dataAjuste": @"dataAjuste", @"valor": @"valor", @"identificadorExterno": @"identificadorExterno", @"status": @"status" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idPessoa", @"nomeMae", @"idEstadoCivil", @"idProfissao", @"idNaturezaOcupacao", @"idNacionalidade", @"numeroBanco", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeEmpresa"];
+  NSArray *optionalProperties = @[@"_id", @"idTipoAjuste", @"idConta", @"dataAjuste", @"valor", @"identificadorExterno", @"status"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

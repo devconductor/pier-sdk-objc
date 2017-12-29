@@ -32,6 +32,9 @@
 /* Id Nacionalidade da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
+/* N\u00C3\u00BAmero do banco. [optional]
+ */
+@property(nonatomic) NSNumber* numeroBanco;
 /* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;

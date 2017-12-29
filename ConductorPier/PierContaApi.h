@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "PierAjusteResponse.h"
+#import "PierAjusteFinanceiroResponse.h"
 #import "PierAlterarProdutoRequest.h"
 #import "PierContaResponse.h"
 #import "PierBeneficioPagamentoAtrasoResponse.h"
@@ -51,14 +51,16 @@
 /// @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste.
 /// @param dataAjuste Data do ajuste no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.
 /// @param valorAjuste Valor do ajuste
+/// @param identificadorExterno Identificador Externo
 /// 
 ///
-/// @return PierAjusteResponse*
--(NSNumber*) ajustarContaUsingPOSTWithId: (NSNumber*) _id
+/// @return PierAjusteFinanceiroResponse*
+-(NSNumber*) ajustarContaUsingPOST1WithId: (NSNumber*) _id
     idTipoAjuste: (NSNumber*) idTipoAjuste
     dataAjuste: (NSString*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
-    completionHandler: (void (^)(PierAjusteResponse* output, NSError* error)) handler;
+    identificadorExterno: (NSString*) identificadorExterno
+    completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler;
 
 
 ///
@@ -255,7 +257,7 @@
 /// 
 ///
 /// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -269,7 +271,7 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 

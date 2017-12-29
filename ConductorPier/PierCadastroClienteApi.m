@@ -204,6 +204,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
+///  @param numeroBanco N\u00C3\u00BAmero do banco. (optional)
+///
 ///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
 ///
 ///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
@@ -220,6 +222,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -266,6 +269,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
     if (idNacionalidade != nil) {
         
         queryParams[@"idNacionalidade"] = idNacionalidade;
+    }
+    if (numeroBanco != nil) {
+        
+        queryParams[@"numeroBanco"] = numeroBanco;
     }
     if (numeroAgencia != nil) {
         
@@ -1145,13 +1152,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
     }
     
 
@@ -1228,13 +1235,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
     }
     
 
@@ -1311,13 +1318,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
     }
     
 
@@ -1394,13 +1401,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET27`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET28`"];
     }
     
 
@@ -1990,6 +1997,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
+///  @param numeroBanco N\u00C3\u00BAmero do Banco. (optional)
+///
 ///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
 ///
 ///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
@@ -2009,6 +2018,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -2065,6 +2075,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
     if (idNacionalidade != nil) {
         
         queryParams[@"idNacionalidade"] = idNacionalidade;
+    }
+    if (numeroBanco != nil) {
+        
+        queryParams[@"numeroBanco"] = numeroBanco;
     }
     if (numeroAgencia != nil) {
         
@@ -2860,6 +2874,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
+///  @param numeroBanco N\u00C3\u00BAmero do banco. (optional)
+///
 ///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
 ///
 ///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
@@ -2876,6 +2892,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -2923,6 +2940,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
     if (idNacionalidade != nil) {
         
         queryParams[@"idNacionalidade"] = idNacionalidade;
+    }
+    if (numeroBanco != nil) {
+        
+        queryParams[@"numeroBanco"] = numeroBanco;
     }
     if (numeroAgencia != nil) {
         
