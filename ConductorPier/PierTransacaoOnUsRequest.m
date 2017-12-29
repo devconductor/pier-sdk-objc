@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nsuOrigem", @"codigoProcessamento", @"valorTransacao", @"numeroRealCartao", @"dataValidadeCartao", @"numeroEstabelecimento", @"dataHoraTerminal", @"terminalRequisitante"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

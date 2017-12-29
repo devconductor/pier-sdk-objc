@@ -7,7 +7,6 @@
  * Do not edit the class manually.
  */
 
-#import "PierPessoaDetalheResponse.h"
 
 
 @protocol PierPessoaDetalheResponse
@@ -15,37 +14,9 @@
 
 @interface PierPessoaDetalheResponse : PierObject
 
-
-@property(nonatomic) NSArray<PierPessoaDetalheResponse>* content;
-
-@property(nonatomic) NSNumber* first;
-
-@property(nonatomic) NSNumber* firstPage;
-
-@property(nonatomic) NSNumber* hasContent;
-
-@property(nonatomic) NSNumber* hasNextPage;
-
-@property(nonatomic) NSNumber* hasPreviousPage;
 /* C\u00C3\u00B3digo identificador da pessoa [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-
-@property(nonatomic) NSNumber* last;
-
-@property(nonatomic) NSNumber* nextPage;
-
-@property(nonatomic) NSNumber* number;
-
-@property(nonatomic) NSNumber* numberOfElements;
-
-@property(nonatomic) NSNumber* previousPage;
-
-@property(nonatomic) NSNumber* size;
-
-@property(nonatomic) NSNumber* totalElements;
-
-@property(nonatomic) NSNumber* totalPages;
 /* Apresenta o nome da m\u00C3\u00A3e da pessoa fisica [optional]
  */
 @property(nonatomic) NSString* nomeMae;
@@ -54,13 +25,16 @@
 @property(nonatomic) NSNumber* idEstadoCivil;
 /* Profiss\u00C3\u00A3o da pessoa fisica [optional]
  */
-@property(nonatomic) NSString* profissao;
+@property(nonatomic) NSString* idProfissao;
 /* Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;
 /* Id Nacionalidade da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
+/* N\u00C3\u00BAmero do banco. [optional]
+ */
+@property(nonatomic) NSNumber* numeroBanco;
 /* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;

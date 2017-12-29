@@ -26,10 +26,10 @@
 @property(nonatomic) NSString* numeroReceitaFederal;
 /* In\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade 
  */
-@property(nonatomic) NSDate* dataInicioVigencia;
+@property(nonatomic) NSString* dataInicioVigencia;
 /* Fim da vig\u00C3\u00AAncia da oportunidade 
  */
-@property(nonatomic) NSDate* dataFimVigencia;
+@property(nonatomic) NSString* dataFimVigencia;
 /* Atributo que indica se a oportunidade est\u00C3\u00A1 ativa 
  */
 @property(nonatomic) NSNumber* flagAtivo;

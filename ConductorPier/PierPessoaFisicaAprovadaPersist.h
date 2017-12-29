@@ -24,7 +24,7 @@
 @property(nonatomic) NSString* nomeMae;
 /* Data de Nascimento da Pessoa. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
  */
-@property(nonatomic) NSDate* dataNascimento;
+@property(nonatomic) NSString* dataNascimento;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino). [optional]
  */
 @property(nonatomic) NSString* sexo;
@@ -42,13 +42,13 @@
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
 /* Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd [optional]
  */
-@property(nonatomic) NSDate* dataEmissaoIdentidade;
+@property(nonatomic) NSString* dataEmissaoIdentidade;
 /* Id Estado civil da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;
 /* Profiss\u00C3\u00A3o da pessoa fisica [optional]
  */
-@property(nonatomic) NSString* profissao;
+@property(nonatomic) NSString* idProfissao;
 /* Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;
@@ -79,11 +79,32 @@
 /* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* nomeEmpresa;
-/* Apresenta os telefones da empresa [optional]
+/* Apresenta o valor da renda compravada [optional]
+ */
+@property(nonatomic) NSNumber* valorRenda;
+/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+ */
+@property(nonatomic) NSString* canalEntrada;
+/* Indica o valor da pontua\u00C3\u00A7\u00C3\u00A3o atribuido ao cliente (caso n\u00C3\u00A3o informado ser\u00C3\u00A1 atribuido o valor = 0) [optional]
+ */
+@property(nonatomic) NSNumber* valorPontuacao;
+/* Apresenta os telefones da empresa 
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersist>* telefones;
 /* Pode ser informado os seguintes tipos de endere\u00C3\u00A7o: Residencial, Comercial, e Outros 
  */
 @property(nonatomic) NSArray<PierEnderecoAprovadoPersist>* enderecos;
+/* Valor do Limite Global 
+ */
+@property(nonatomic) NSNumber* limiteGlobal;
+/* Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es 
+ */
+@property(nonatomic) NSNumber* limiteMaximo;
+/* Valor do limite de cr\u00C3\u00A9dito acumulado da soma das parcelas das compras 
+ */
+@property(nonatomic) NSNumber* limiteParcelas;
+/* Valor do limite de margem consignado [optional]
+ */
+@property(nonatomic) NSNumber* limiteConsignado;
 
 @end

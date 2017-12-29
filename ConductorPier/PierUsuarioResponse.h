@@ -37,10 +37,10 @@
 @property(nonatomic) NSString* status;
 /* Data de cria\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio [optional]
  */
-@property(nonatomic) NSDate* dataCriacao;
+@property(nonatomic) NSString* dataCriacao;
 /* Data de modifica\u00C3\u00A7\u00C3\u00A3o do Usu\u00C3\u00A1rio [optional]
  */
-@property(nonatomic) NSDate* dataModificacao;
+@property(nonatomic) NSString* dataModificacao;
 /* N\u00C3\u00BAmero de tentativas de valida\u00C3\u00A7\u00C3\u00A3o incorretas [optional]
  */
 @property(nonatomic) NSNumber* tentativasIncorretas;

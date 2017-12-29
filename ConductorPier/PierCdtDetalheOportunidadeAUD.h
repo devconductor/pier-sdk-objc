@@ -25,7 +25,7 @@
 
 @property(nonatomic) NSNumber* rev;
 
-@property(nonatomic) NSDate* revDate;
+@property(nonatomic) NSString* revDate;
 
 @property(nonatomic) NSNumber* revOportunidade;
 

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuOrigem": @"nsuOrigem", @"codigoProcessamento": @"codigoProcessamento", @"valorTransacao": @"valorTransacao", @"numeroRealCartao": @"numeroRealCartao", @"dataValidadeCartao": @"dataValidadeCartao", @"numeroEstabelecimento": @"numeroEstabelecimento", @"dataHoraTerminal": @"dataHoraTerminal", @"terminalRequisitante": @"terminalRequisitante", @"nsuOrigemTransacaoCancelada": @"nsuOrigemTransacaoCancelada", @"dataHoraTransacaoCancelada": @"dataHoraTransacaoCancelada", @"codigoTransacaoCancelada": @"codigoTransacaoCancelada", @"nsuAutorizacaoTransacaoCancelada": @"nsuAutorizacaoTransacaoCancelada" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nsuAutorizacaoTransacaoCancelada": @"nsuAutorizacaoTransacaoCancelada", @"nsuOrigem": @"nsuOrigem", @"nsuOrigemTransacaoCancelada": @"nsuOrigemTransacaoCancelada", @"codigoProcessamento": @"codigoProcessamento", @"dataHoraTransacaoCancelada": @"dataHoraTransacaoCancelada", @"valorTransacao": @"valorTransacao", @"numeroRealCartao": @"numeroRealCartao", @"dataValidadeCartao": @"dataValidadeCartao", @"numeroEstabelecimento": @"numeroEstabelecimento", @"dataHoraTerminal": @"dataHoraTerminal", @"terminalRequisitante": @"terminalRequisitante" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nsuOrigem", @"codigoProcessamento", @"valorTransacao", @"numeroRealCartao", @"dataValidadeCartao", @"numeroEstabelecimento", @"dataHoraTerminal", @"terminalRequisitante", @"nsuOrigemTransacaoCancelada", @"dataHoraTransacaoCancelada", @"codigoTransacaoCancelada", @"nsuAutorizacaoTransacaoCancelada"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

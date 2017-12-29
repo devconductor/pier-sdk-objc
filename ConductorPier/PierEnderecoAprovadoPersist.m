@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idTipoEndereco", @"cep", @"logradouro", @"numero", @"complemento", @"pontoReferencia", @"bairro", @"cidade", @"uf", @"pais", @"enderecoCorrespondencia"];
+  NSArray *optionalProperties = @[@"cep", @"logradouro", @"numero", @"complemento", @"pontoReferencia", @"bairro", @"pais", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

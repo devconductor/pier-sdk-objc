@@ -33,5 +33,8 @@
 /* Nome do Portador do Cart\u00C3\u00A3o que originou a transa\u00C3\u00A7\u00C3\u00A3o. [optional]
  */
 @property(nonatomic) NSString* nomePortadorCartao;
+/* Apresenta a identifica\u00C3\u00A7\u00C3\u00A3o do terminal requisitante 
+ */
+@property(nonatomic) NSString* terminalRequisitante;
 
 @end

@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idPessoa", @"idProduto", @"idOrigemComercial", @"idFantasiaBasica", @"idStatusConta", @"statusConta", @"diaVencimento", @"melhorDiaCompra", @"dataStatusConta", @"valorRenda", @"dataCadastro", @"dataUltimaAlteracaoVencimento", @"dataHoraUltimaCompra", @"numeroAgencia", @"numeroContaCorrente", @"formaEnvioFatura", @"titular", @"diasAtraso"];
+  NSArray *optionalProperties = @[@"_id", @"idPessoa", @"nome", @"idProduto", @"idOrigemComercial", @"nomeOrigemComercial", @"idFantasiaBasica", @"nomeFantasiaBasica", @"idStatusConta", @"statusConta", @"diaVencimento", @"melhorDiaCompra", @"dataStatusConta", @"valorRenda", @"dataCadastro", @"dataUltimaAlteracaoVencimento", @"dataHoraUltimaCompra", @"numeroAgencia", @"numeroContaCorrente", @"formaEnvioFatura", @"titular", @"limiteGlobal", @"limiteSaqueGlobal", @"saldoDisponivelGlobal", @"saldoDisponivelSaque", @"diasAtraso"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

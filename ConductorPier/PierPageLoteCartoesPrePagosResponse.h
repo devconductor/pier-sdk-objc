@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierLoteCartoesPrePagos.h"
+#import "PierLoteCartoesPrePagosResponse.h"
 
 
 @protocol PierPageLoteCartoesPrePagosResponse
@@ -16,7 +16,7 @@
 @interface PierPageLoteCartoesPrePagosResponse : PierObject
 
 
-@property(nonatomic) NSArray<PierLoteCartoesPrePagos>* content;
+@property(nonatomic) NSArray<PierLoteCartoesPrePagosResponse>* content;
 
 @property(nonatomic) NSNumber* first;
 

@@ -26,19 +26,19 @@
 @property(nonatomic) NSNumber* idStatusOportunidade;
 /* Data cadastro da oportunidade. [optional]
  */
-@property(nonatomic) NSDate* dataCadastro;
+@property(nonatomic) NSString* dataCadastro;
 /* Data atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade. [optional]
  */
-@property(nonatomic) NSDate* dataAtualizacao;
+@property(nonatomic) NSString* dataAtualizacao;
 /* N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
 /* In\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade [optional]
  */
-@property(nonatomic) NSDate* dataInicioVigencia;
+@property(nonatomic) NSString* dataInicioVigencia;
 /* Fim da vig\u00C3\u00AAncia da oportunidade [optional]
  */
-@property(nonatomic) NSDate* dataFimVigencia;
+@property(nonatomic) NSString* dataFimVigencia;
 /* Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;

@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierTelefone.h"
+#import "PierTelefoneResponse.h"
 
 
 @protocol PierRiscoFraudeDetalhadoResponse
@@ -15,33 +15,33 @@
 
 @interface PierRiscoFraudeDetalhadoResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude (id) [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de resolu\u00C3\u00A7\u00C3\u00A3o atribu\u00C3\u00ADdo ao registro (id) [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de resolu\u00C3\u00A7\u00C3\u00A3o atribu\u00C3\u00ADdo ao registro [optional]
  */
 @property(nonatomic) NSNumber* idTipoResolucao;
 /* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de resolu\u00C3\u00A7\u00C3\u00A3o atribu\u00C3\u00ADdo ao registro [optional]
  */
 @property(nonatomic) NSString* descricaoTipoResolucao;
-/* Quando ativa, indica que a transa\u00C3\u00A7\u00C3\u00A3o possui um alto risco de fraude e que todas as transa\u00C3\u00A7\u00C3\u00B5es seguintes a ela ser\u00C3\u00A3o negadas at\u00C3\u00A9 que todas as transa\u00C3\u00A7\u00C3\u00B5es classificadas com risco de fraude ser\u00C3\u00A3o analisadas [optional]
+/* Indica que a transa\u00C3\u00A7\u00C3\u00A3o possui um alto risco de fraude e que todas as transa\u00C3\u00A7\u00C3\u00B5es seguintes a ela ser\u00C3\u00A3o negadas at\u00C3\u00A9 que todas as transa\u00C3\u00A7\u00C3\u00B5es classificadas com risco de fraude sejam analisadas [optional]
  */
 @property(nonatomic) NSNumber* flagAltoRisco;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id) [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id) [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto (id) [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o (id) [optional]
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSNumber* idTransacao;
 /* Data que a transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude foi realizada [optional]
  */
-@property(nonatomic) NSDate* dataTransacao;
+@property(nonatomic) NSString* dataTransacao;
 /* Valor da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude [optional]
  */
 @property(nonatomic) NSNumber* valorTransacao;
@@ -54,7 +54,7 @@
 /* C\u00C3\u00B3digo da moeda de destino utilizada para a transa\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* codigoMoedaDestino;
-/* Valor da transa\u00C3\u00A7\u00C3\u00A3o na moeda de origem [optional]
+/* Valor da transa\u00C3\u00A7\u00C3\u00A3o na moeda de destino [optional]
  */
 @property(nonatomic) NSNumber* valorDestino;
 /* Nome do estabelecimento onde a transa\u00C3\u00A7\u00C3\u00A3o  com risco de fraude foi realizada [optional]
@@ -93,8 +93,8 @@
 /* Endere\u00C3\u00A7o de email da Pessoa portadora do Cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* email;
-/* Lista contendo idTipoTelefone, tipoTelefone (Descricao), DDD, Numero, Ramal associados a Pessoa portadora do Cart\u00C3\u00A3o [optional]
+/* Lista de telefones associados ao portador do Cart\u00C3\u00A3o [optional]
  */
-@property(nonatomic) NSArray<PierTelefone>* tefefones;
+@property(nonatomic) NSArray<PierTelefoneResponse>* tefefones;
 
 @end
