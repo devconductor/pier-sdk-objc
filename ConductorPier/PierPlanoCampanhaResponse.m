@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"parcelas": @"parcelas", @"taxa": @"taxa" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"parcelas": @"parcelas", @"taxa": @"taxa", @"usuario": @"usuario" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"parcelas", @"taxa"];
+  NSArray *optionalProperties = @[@"_id", @"parcelas", @"taxa", @"usuario"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

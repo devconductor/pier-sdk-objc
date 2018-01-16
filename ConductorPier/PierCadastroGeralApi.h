@@ -5,10 +5,10 @@
 #import "PierConfiguracaoRegistroCobrancaPersist.h"
 #import "PierConfiguracaoRotativoDetalheResponse.h"
 #import "PierConfiguracaoRotativoPersist.h"
-#import "PierProdutoDetalhesResponse.h"
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierOrigemComercialResponse.h"
+#import "PierProdutoDetalhesResponse.h"
 #import "PierAtendimentoClienteResponse.h"
 #import "PierPageTipoAjusteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
@@ -95,19 +95,6 @@
 -(NSNumber*) alterarUsingPUT4WithId: (NSNumber*) _id
     configuracaoRotativoPersist: (PierConfiguracaoRotativoPersist*) configuracaoRotativoPersist
     completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Ativa o par\u00C3\u00A2metro uso exterior para o produto
-/// Este m\u00C3\u00A9todo permite ativar o uso no exterior para o produto atrav\u00C3\u00A9s do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
-/// 
-///
-/// @return PierProdutoDetalhesResponse*
--(NSNumber*) ativarUsoExteriorUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
 ///
@@ -329,19 +316,6 @@
 /// @return PierConfiguracaoRotativoDetalheResponse*
 -(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Desativa o par\u00C3\u00A2metro uso exterior para o produto
-/// Este m\u00C3\u00A9todo permite desativar o uso no exterior para o produto atrav\u00C3\u00A9s do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
-/// 
-///
-/// @return PierProdutoDetalhesResponse*
--(NSNumber*) desativarUsoExteriorUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
 ///

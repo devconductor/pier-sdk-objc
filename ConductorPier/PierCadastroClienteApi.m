@@ -204,6 +204,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
+///  @param numeroBanco N\u00C3\u00BAmero do banco. (optional)
+///
 ///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
 ///
 ///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
@@ -220,6 +222,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -266,6 +269,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
     if (idNacionalidade != nil) {
         
         queryParams[@"idNacionalidade"] = idNacionalidade;
+    }
+    if (numeroBanco != nil) {
+        
+        queryParams[@"numeroBanco"] = numeroBanco;
     }
     if (numeroAgencia != nil) {
         
@@ -1990,6 +1997,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
+///  @param numeroBanco N\u00C3\u00BAmero do Banco. (optional)
+///
 ///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
 ///
 ///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
@@ -2009,6 +2018,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -2065,6 +2075,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
     if (idNacionalidade != nil) {
         
         queryParams[@"idNacionalidade"] = idNacionalidade;
+    }
+    if (numeroBanco != nil) {
+        
+        queryParams[@"numeroBanco"] = numeroBanco;
     }
     if (numeroAgencia != nil) {
         
@@ -2860,6 +2874,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
+///  @param numeroBanco N\u00C3\u00BAmero do banco. (optional)
+///
 ///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
 ///
 ///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
@@ -2876,6 +2892,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -2923,6 +2940,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
     if (idNacionalidade != nil) {
         
         queryParams[@"idNacionalidade"] = idNacionalidade;
+    }
+    if (numeroBanco != nil) {
+        
+        queryParams[@"numeroBanco"] = numeroBanco;
     }
     if (numeroAgencia != nil) {
         

@@ -65,6 +65,7 @@
 /// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
 /// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
 /// @param idNacionalidade Id Nacionalidade da pessoa fisica
+/// @param numeroBanco N\u00C3\u00BAmero do banco.
 /// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
 /// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
 /// @param email Email da pessoa fisica
@@ -78,6 +79,7 @@
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -398,6 +400,7 @@
 /// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
 /// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
 /// @param idNacionalidade Id Nacionalidade da pessoa fisica
+/// @param numeroBanco N\u00C3\u00BAmero do Banco.
 /// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
 /// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
 /// @param email Email da pessoa fisica
@@ -414,6 +417,7 @@
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email
@@ -576,6 +580,7 @@
 /// @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica
 /// @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica
 /// @param idNacionalidade Id Nacionalidade da pessoa fisica
+/// @param numeroBanco N\u00C3\u00BAmero do banco.
 /// @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia.
 /// @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente.
 /// @param email Email da pessoa fisica
@@ -589,6 +594,7 @@
     idProfissao: (NSString*) idProfissao
     idNaturezaOcupacao: (NSNumber*) idNaturezaOcupacao
     idNacionalidade: (NSNumber*) idNacionalidade
+    numeroBanco: (NSNumber*) numeroBanco
     numeroAgencia: (NSNumber*) numeroAgencia
     numeroContaCorrente: (NSString*) numeroContaCorrente
     email: (NSString*) email

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroParcela": @"numeroParcela", @"valorPrimeiraParcela": @"valorPrimeiraParcela", @"valorDemaisParcelas": @"valorDemaisParcelas", @"valorTotal": @"valorTotal", @"valorTAC": @"valorTAC", @"valorIOF": @"valorIOF", @"taxaJuros": @"taxaJuros", @"cetAnual": @"cetAnual" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroParcela": @"numeroParcela", @"valorParcelas": @"valorParcelas", @"valorTotal": @"valorTotal", @"valorTAC": @"valorTAC", @"valorIOF": @"valorIOF", @"taxaJuros": @"taxaJuros", @"cetAnual": @"cetAnual" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"numeroParcela", @"valorPrimeiraParcela", @"valorDemaisParcelas", @"valorTotal", @"valorTAC", @"valorIOF", @"taxaJuros", @"cetAnual"];
+  NSArray *optionalProperties = @[@"numeroParcela", @"valorParcelas", @"valorTotal", @"valorTAC", @"valorIOF", @"taxaJuros", @"cetAnual"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

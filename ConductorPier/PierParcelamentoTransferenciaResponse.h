@@ -16,13 +16,10 @@
 
 /* N\u00C3\u00BAmero de parcelas dispon\u00C3\u00ADveis. [optional]
  */
-@property(nonatomic) NSString* numeroParcela;
-/* Valor da primeira parcela. [optional]
- */
-@property(nonatomic) NSNumber* valorPrimeiraParcela;
+@property(nonatomic) NSNumber* numeroParcela;
 /* Valor das demais parcelas. [optional]
  */
-@property(nonatomic) NSNumber* valorDemaisParcelas;
+@property(nonatomic) NSNumber* valorParcelas;
 /* Valor total do financiamento. [optional]
  */
 @property(nonatomic) NSNumber* valorTotal;

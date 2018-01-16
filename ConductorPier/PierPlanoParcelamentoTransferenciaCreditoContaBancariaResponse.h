@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierPlanoParcelamentoTransferenciaResponse.h"
+#import "PierParcelamentoTransferenciaResponse.h"
 
 
 @protocol PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse
@@ -15,17 +15,20 @@
 
 @interface PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse : PierObject
 
-/* N\u00C3\u00BAmero Sequencial \u00C3\u009Anico que identifica a transa\u00C3\u00A7\u00C3\u00A3o no sistema que a originou. [optional]
- */
-@property(nonatomic) NSString* nsuOrigem;
 /* N\u00C3\u00BAmero do Cart\u00C3\u00A3o que originou a transa\u00C3\u00A7\u00C3\u00A3o em formato mascarado. [optional]
  */
 @property(nonatomic) NSString* numeroMascaradoCartao;
-/* Apresenta a identifica\u00C3\u00A7\u00C3\u00A3o do terminal requisitante [optional]
+/* Data de vencimento da primeira parcela. [optional]
  */
-@property(nonatomic) NSString* terminalRequisitante;
-/* Lista os planos de parcelamentos [optional]
+@property(nonatomic) NSString* vencimentoPrimeiraParcela;
+/* Valor da solicita\u00C3\u00A7\u00C3\u00A3o de saque. [optional]
  */
-@property(nonatomic) NSArray<PierPlanoParcelamentoTransferenciaResponse>* planoParcelamentos;
+@property(nonatomic) NSNumber* valorTransacao;
+/* N\u00C3\u00BAmero de meses para car\u00C3\u00AAncia. [optional]
+ */
+@property(nonatomic) NSNumber* numeroMesesCarencia;
+/* Lista com os planos de parcelamento. [optional]
+ */
+@property(nonatomic) NSArray<PierParcelamentoTransferenciaResponse>* parcelas;
 
 @end
