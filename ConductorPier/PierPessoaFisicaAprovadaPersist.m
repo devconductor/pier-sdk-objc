@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nome": @"nome", @"nomeMae": @"nomeMae", @"dataNascimento": @"dataNascimento", @"sexo": @"sexo", @"cpf": @"cpf", @"numeroIdentidade": @"numeroIdentidade", @"orgaoExpedidorIdentidade": @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade": @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade": @"dataEmissaoIdentidade", @"idEstadoCivil": @"idEstadoCivil", @"profissao": @"profissao", @"idNaturezaOcupacao": @"idNaturezaOcupacao", @"idNacionalidade": @"idNacionalidade", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"nomeEmpresa": @"nomeEmpresa", @"telefones": @"telefones", @"enderecos": @"enderecos" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nome": @"nome", @"nomeMae": @"nomeMae", @"dataNascimento": @"dataNascimento", @"sexo": @"sexo", @"cpf": @"cpf", @"numeroIdentidade": @"numeroIdentidade", @"orgaoExpedidorIdentidade": @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade": @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade": @"dataEmissaoIdentidade", @"idEstadoCivil": @"idEstadoCivil", @"idProfissao": @"idProfissao", @"idNaturezaOcupacao": @"idNaturezaOcupacao", @"idNacionalidade": @"idNacionalidade", @"idOrigemComercial": @"idOrigemComercial", @"idProduto": @"idProduto", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"diaVencimento": @"diaVencimento", @"nomeImpresso": @"nomeImpresso", @"nomeEmpresa": @"nomeEmpresa", @"valorRenda": @"valorRenda", @"canalEntrada": @"canalEntrada", @"valorPontuacao": @"valorPontuacao", @"telefones": @"telefones", @"enderecos": @"enderecos", @"limiteGlobal": @"limiteGlobal", @"limiteMaximo": @"limiteMaximo", @"limiteParcelas": @"limiteParcelas", @"limiteConsignado": @"limiteConsignado" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nomeMae", @"dataNascimento", @"sexo", @"numeroIdentidade", @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade", @"idEstadoCivil", @"profissao", @"idNaturezaOcupacao", @"idNacionalidade", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeImpresso", @"nomeEmpresa", @"telefones", ];
+  NSArray *optionalProperties = @[@"nomeMae", @"dataNascimento", @"sexo", @"numeroIdentidade", @"orgaoExpedidorIdentidade", @"unidadeFederativaIdentidade", @"dataEmissaoIdentidade", @"idEstadoCivil", @"idProfissao", @"idNaturezaOcupacao", @"idNacionalidade", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeImpresso", @"nomeEmpresa", @"valorRenda", @"canalEntrada", @"valorPontuacao", @"limiteConsignado"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

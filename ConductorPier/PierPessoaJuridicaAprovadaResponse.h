@@ -8,6 +8,7 @@
  */
 
 #import "PierEnderecoAprovadoResponse.h"
+#import "PierReferenciaComercialAprovadoResponse.h"
 #import "PierSocioAprovadoResponse.h"
 #import "PierTelefonePessoaAprovadaResponse.h"
 
@@ -17,7 +18,7 @@
 
 @interface PierPessoaJuridicaAprovadaResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id) [optional]
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa jur\u00C3\u00ADdica (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Apresenta o nome completo da raz\u00C3\u00A3o social (nome empresarial)'. [optional]
@@ -34,7 +35,7 @@
 @property(nonatomic) NSString* inscricaoEstadual;
 /* Data de abertura da empresa, essa data deve ser informada no formato: aaaa-MM-dd. [optional]
  */
-@property(nonatomic) NSDate* dataAberturaEmpresa;
+@property(nonatomic) NSString* dataAberturaEmpresa;
 /* Id da origem comercial [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
@@ -56,6 +57,18 @@
 /* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta cadastrada [optional]
+ */
+@property(nonatomic) NSNumber* idConta;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da proposta [optional]
+ */
+@property(nonatomic) NSNumber* idProposta;
+/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+ */
+@property(nonatomic) NSString* canalEntrada;
+/* Indica o valor da pontua\u00C3\u00A7\u00C3\u00A3o atribuido ao cliente (caso n\u00C3\u00A3o informado ser\u00C3\u00A1 atribuido o valor = 0) [optional]
+ */
+@property(nonatomic) NSNumber* valorPontuacao;
 /* Apresenta os telefones da empresa [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaResponse>* telefones;
@@ -65,5 +78,17 @@
 /* Apresenta os dados dos s\u00C3\u00B3cios da empresa, caso exista [optional]
  */
 @property(nonatomic) NSArray<PierSocioAprovadoResponse>* socios;
+/* Apresenta os dados dos s\u00C3\u00B3cios da empresa, caso exista [optional]
+ */
+@property(nonatomic) NSArray<PierReferenciaComercialAprovadoResponse>* referencias;
+/* Valor do Limite Global 
+ */
+@property(nonatomic) NSNumber* limiteGlobal;
+/* Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es 
+ */
+@property(nonatomic) NSNumber* limiteMaximo;
+/* Valor do limite de cr\u00C3\u00A9dito acumulado da soma das parcelas das compras 
+ */
+@property(nonatomic) NSNumber* limiteParcelas;
 
 @end

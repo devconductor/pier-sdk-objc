@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"idPessoa": @"idPessoa", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages", @"nomeMae": @"nomeMae", @"idEstadoCivil": @"idEstadoCivil", @"profissao": @"profissao", @"idNaturezaOcupacao": @"idNaturezaOcupacao", @"idNacionalidade": @"idNacionalidade", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"nomeEmpresa": @"nomeEmpresa" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idPessoa": @"idPessoa", @"nomeMae": @"nomeMae", @"idEstadoCivil": @"idEstadoCivil", @"idProfissao": @"idProfissao", @"idNaturezaOcupacao": @"idNaturezaOcupacao", @"idNacionalidade": @"idNacionalidade", @"numeroBanco": @"numeroBanco", @"numeroAgencia": @"numeroAgencia", @"numeroContaCorrente": @"numeroContaCorrente", @"email": @"email", @"nomeEmpresa": @"nomeEmpresa" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"idPessoa", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages", @"nomeMae", @"idEstadoCivil", @"profissao", @"idNaturezaOcupacao", @"idNacionalidade", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeEmpresa"];
+  NSArray *optionalProperties = @[@"idPessoa", @"nomeMae", @"idEstadoCivil", @"idProfissao", @"idNaturezaOcupacao", @"idNacionalidade", @"numeroBanco", @"numeroAgencia", @"numeroContaCorrente", @"email", @"nomeEmpresa"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idPlataformaMobile": @"idPlataformaMobile", @"idEmissor": @"idEmissor", @"token": @"token", @"cor": @"cor", @"som": @"som", @"icone": @"icone", @"certificadoBase64": @"certificadoBase64", @"senha": @"senha" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idPlataformaMobile": @"idPlataformaMobile", @"token": @"token", @"cor": @"cor", @"som": @"som", @"icone": @"icone", @"certificadoBase64": @"certificadoBase64", @"senha": @"senha" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idPlataformaMobile", @"idEmissor", @"token", @"cor", @"som", @"icone", @"certificadoBase64", @"senha"];
+  NSArray *optionalProperties = @[@"idPlataformaMobile", @"token", @"cor", @"som", @"icone", @"certificadoBase64", @"senha"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

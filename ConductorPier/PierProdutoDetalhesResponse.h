@@ -29,5 +29,8 @@
 /* Descri\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica a qual o produto pertence. [optional]
  */
 @property(nonatomic) NSString* fantasiaBasica;
+/* Par\u00C3\u00A2metro que indica se o produto est\u00C3\u00A1 habilitado para compras no exterior. [optional]
+ */
+@property(nonatomic) NSNumber* usoExterior;
 
 @end

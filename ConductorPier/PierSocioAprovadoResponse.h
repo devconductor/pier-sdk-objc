@@ -15,7 +15,7 @@
 
 @interface PierSocioAprovadoResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id) [optional]
+/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do S\u00C3\u00B3cio (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Apresenta o Nome do Socio [optional]
@@ -26,7 +26,7 @@
 @property(nonatomic) NSString* cpf;
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
  */
-@property(nonatomic) NSDate* dataNascimento;
+@property(nonatomic) NSString* dataNascimento;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). [optional]
  */
 @property(nonatomic) NSString* sexo;
@@ -41,7 +41,7 @@
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
 /* Data emiss\u00C3\u00A3o da Identidade [optional]
  */
-@property(nonatomic) NSDate* dataEmissaoIdentidade;
+@property(nonatomic) NSString* dataEmissaoIdentidade;
 /* Estado civil do s\u00C3\u00B3cio [optional]
  */
 @property(nonatomic) NSString* estadoCivil;

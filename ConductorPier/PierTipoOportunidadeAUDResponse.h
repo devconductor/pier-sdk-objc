@@ -22,7 +22,7 @@
 @property(nonatomic) NSNumber* revType;
 /* Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades [optional]
  */
-@property(nonatomic) NSDate* revDate;
+@property(nonatomic) NSString* revDate;
 /* C\u00C3\u00B3digo identificador do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o [optional]
  */
 @property(nonatomic) NSNumber* _id;

@@ -1,14 +1,16 @@
 #import <Foundation/Foundation.h>
-#import "PierHistoricoImpressaoCartao.h"
-#import "PierCartao.h"
-#import "PierDadosCartO.h"
-#import "PierLimiteDisponibilidade.h"
-#import "PierLoteCartoesPrePagos.h"
-#import "PierPortador.h"
+#import "PierHistoricoImpressaoCartaoResponse.h"
+#import "PierCartaoResponse.h"
+#import "PierDadosCartaoImpressaoResponse.h"
+#import "PierDadosCartaoResponse.h"
+#import "PierLimiteDisponibilidadeResponse.h"
+#import "PierLoteCartoesPrePagosResponse.h"
+#import "PierPortadorResponse.h"
+#import "PierCartaoDetalheResponse.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
-#import "PierPageCartoes.h"
-#import "PierValidaCartao.h"
-#import "PierValidaSenhaCartao.h"
+#import "PierPageCartaoResponse.h"
+#import "PierValidaCartaoResponse.h"
+#import "PierValidaSenhaCartaoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -52,10 +54,10 @@
 /// @param idStatusImpressao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status Impress\u00C3\u00A3o (Id).
 /// 
 ///
-/// @return PierHistoricoImpressaoCartao*
+/// @return PierHistoricoImpressaoCartaoResponse*
 -(NSNumber*) alterarStatusImpressaoUsingPUTWithId: (NSNumber*) _id
     idStatusImpressao: (NSNumber*) idStatusImpressao
-    completionHandler: (void (^)(PierHistoricoImpressaoCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierHistoricoImpressaoCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -67,10 +69,10 @@
 /// @param idPessoa C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de uma Pessoa (id).
 /// 
 ///
-/// @return PierCartao*
+/// @return PierCartaoResponse*
 -(NSNumber*) atribuirPessoaUsingPUTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -83,11 +85,11 @@
 /// @param observacao Texto informando uma observa\u00C3\u00A7\u00C3\u00A3o sobre o bloqueio.
 /// 
 ///
-/// @return PierCartao*
--(NSNumber*) bloquearUsingPUTWithId: (NSNumber*) _id
+/// @return PierCartaoResponse*
+-(NSNumber*) bloquearUsingPOSTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -107,15 +109,45 @@
 
 ///
 ///
+/// Realiza o cancelamento de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o cancelamento de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id). Para isso, \u00C3\u00A9 preciso informar qual o motivo deste bloqueio que nada mais \u00C3\u00A9 do que atribuir um novo StatusCartao para ele dentre as op\u00C3\u00A7\u00C3\u00B5es praticadas pelo emissor.
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// @param idStatus C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Novo Status Cart\u00C3\u00A3o.
+/// @param observacao Texto informando uma observa\u00C3\u00A7\u00C3\u00A3o sobre o cancelamento.
+/// 
+///
+/// @return PierCartaoResponse*
+-(NSNumber*) cancelarUsingPOSTWithId: (NSNumber*) _id
+    idStatus: (NSNumber*) idStatus
+    observacao: (NSString*) observacao
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Consultar os dados de impress\u00C3\u00A3o de um Cart\u00C3\u00A3o
+/// Esse recurso permite consultar os dados de impress\u00C3\u00A3o de um cart\u00C3\u00A3o
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierDadosCartaoImpressaoResponse*
+-(NSNumber*) consultarCartaoImpressaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierDadosCartaoImpressaoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Consultar Detalhes do Cart\u00C3\u00A3o
 /// Este m\u00C3\u00A9todo permite que seja consultado os dados necessarios de um cart\u00C3\u00A3o para executar servi\u00C3\u00A7os de autoriza\u00C3\u00A7\u00C3\u00A3o.
 ///
 /// @param _id id
 /// 
 ///
-/// @return PierDadosCartO*
--(NSNumber*) consultarDadosCartaoUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierDadosCartO* output, NSError* error)) handler;
+/// @return PierDadosCartaoResponse*
+-(NSNumber*) consultarDadosReaisCartaoUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierDadosCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -126,9 +158,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierLimiteDisponibilidade*
+/// @return PierLimiteDisponibilidadeResponse*
 -(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierLimiteDisponibilidade* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 
 ///
@@ -139,9 +171,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do lote de cart\u00C3\u00B5es (id)
 /// 
 ///
-/// @return PierLoteCartoesPrePagos*
+/// @return PierLoteCartoesPrePagosResponse*
 -(NSNumber*) consultarLotesCartoesPrePagosUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler;
 
 
 ///
@@ -152,9 +184,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierPortador*
+/// @return PierPortadorResponse*
 -(NSNumber*) consultarPortadorUsingGETWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierPortador* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPortadorResponse* output, NSError* error)) handler;
 
 
 ///
@@ -165,9 +197,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierCartao*
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+/// @return PierCartaoDetalheResponse*
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -178,9 +210,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierCartao*
+/// @return PierCartaoResponse*
 -(NSNumber*) desbloquearSenhaIncorretaUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -191,9 +223,9 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// 
 ///
-/// @return PierCartao*
--(NSNumber*) desbloquearUsingPUTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+/// @return PierCartaoResponse*
+-(NSNumber*) desbloquearUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -209,14 +241,14 @@
 /// @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote.
 /// 
 ///
-/// @return PierLoteCartoesPrePagos*
+/// @return PierLoteCartoesPrePagosResponse*
 -(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithIdOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
     idTipoCartao: (NSNumber*) idTipoCartao
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
-    completionHandler: (void (^)(PierLoteCartoesPrePagos* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler;
 
 
 ///
@@ -227,9 +259,22 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id)
 /// 
 ///
-/// @return PierCartao*
+/// @return PierCartaoResponse*
 -(NSNumber*) gerarNovaViaUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Adiciona tarifa de ajuste da segunda via do cart\u00C3\u00A3o
+/// Esse recurso permite adicionar tar\u00C3\u00ADfa de ajuste pela emiss\u00C3\u00A3o da segunda via do cart\u00C3\u00A3o.
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) lancarTarifaSegundaViaUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 ///
@@ -237,8 +282,9 @@
 /// Permite listar os Lotes de Cart\u00C3\u00B5es Pr\u00C3\u00A9-Pago
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es pr\u00C3\u00A9-pagos existentes na base do emissor.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idOrigemComercial C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id).
 /// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
 /// @param idTipoCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Cart\u00C3\u00A3o (id).
@@ -251,7 +297,8 @@
 /// 
 ///
 /// @return PierPageLoteCartoesPrePagosResponse*
--(NSNumber*) listarLotesCartoesPrePagosUsingGETWithPage: (NSNumber*) page
+-(NSNumber*) listarLotesCartoesPrePagosUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
@@ -259,7 +306,7 @@
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
-    dataCadastro: (NSDate*) dataCadastro
+    dataCadastro: (NSString*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
     completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler;
@@ -270,8 +317,9 @@
 /// Lista os Cart\u00C3\u00B5es gerados pelo Emissor
 /// Este m\u00C3\u00A9todo permite que sejam listados os cart\u00C3\u00B5es existentes na base do emissor.
 ///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
 /// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 100, Max = 100)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
 /// @param idStatusCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id).
 /// @param idEstagioCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Est\u00C3\u00A1gio de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
 /// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o cart\u00C3\u00A3o pertence (id).
@@ -292,8 +340,9 @@
 /// @param sequencialCartao N\u00C3\u00BAmero sequencial do cart\u00C3\u00A3o
 /// 
 ///
-/// @return PierPageCartoes*
--(NSNumber*) listarUsingGET3WithPage: (NSNumber*) page
+/// @return PierPageCartaoResponse*
+-(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
     idEstagioCartao: (NSNumber*) idEstagioCartao
@@ -303,17 +352,30 @@
     tipoPortador: (NSString*) tipoPortador
     numeroCartao: (NSString*) numeroCartao
     nomeImpresso: (NSString*) nomeImpresso
-    dataGeracao: (NSDate*) dataGeracao
-    dataStatusCartao: (NSDate*) dataStatusCartao
-    dataEstagioCartao: (NSDate*) dataEstagioCartao
+    dataGeracao: (NSString*) dataGeracao
+    dataStatusCartao: (NSString*) dataStatusCartao
+    dataEstagioCartao: (NSString*) dataEstagioCartao
     dataValidade: (NSString*) dataValidade
-    dataImpressao: (NSDate*) dataImpressao
+    dataImpressao: (NSString*) dataImpressao
     arquivoImpressao: (NSString*) arquivoImpressao
     flagImpressaoOrigemComercial: (NSNumber*) flagImpressaoOrigemComercial
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     sequencialCartao: (NSNumber*) sequencialCartao
-    completionHandler: (void (^)(PierPageCartoes* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierPageCartaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Realiza a reativa\u00C3\u00A7\u00C3\u00A3o de um determinado Cart\u00C3\u00A3o
+/// Este m\u00C3\u00A9todo permite a realiza\u00C3\u00A7\u00C3\u00A3o da reativa\u00C3\u00A7\u00C3\u00A3o de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
+/// 
+///
+/// @return PierCartaoResponse*
+-(NSNumber*) reativarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -327,12 +389,12 @@
 /// @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros
 /// 
 ///
-/// @return PierValidaCartao*
+/// @return PierValidaCartaoResponse*
 -(NSNumber*) validarDadosImpressosBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -346,12 +408,12 @@
 /// @param codigoSeguranca C\u00C3\u00B3digo de seguran\u00C3\u00A7a do cart\u00C3\u00A3o com tr\u00C3\u00AAs n\u00C3\u00BAmeros
 /// 
 ///
-/// @return PierValidaCartao*
+/// @return PierValidaCartaoResponse*
 -(NSNumber*) validarDadosImpressosNaoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -363,10 +425,10 @@
 /// @param criptograma Criptograma do cart\u00C3\u00A3o no formato de55
 /// 
 ///
-/// @return PierValidaCartao*
+/// @return PierValidaCartaoResponse*
 -(NSNumber*) validarDe55CartaoMastercardUsingGETWithNumeroCartao: (NSString*) numeroCartao
     criptograma: (NSString*) criptograma
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -378,10 +440,10 @@
 /// @param senha Senha para ser validada.
 /// 
 ///
-/// @return PierValidaSenhaCartao*
+/// @return PierValidaSenhaCartaoResponse*
 -(NSNumber*) validarSenhaUsingGETWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    completionHandler: (void (^)(PierValidaSenhaCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierValidaSenhaCartaoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -394,11 +456,11 @@
 /// @param trilha2 Trilha 2 do cart\u00C3\u00A3o a ser validado
 /// 
 ///
-/// @return PierValidaCartao*
+/// @return PierValidaCartaoResponse*
 -(NSNumber*) validarTarjaUsingGETWithNumeroCartao: (NSString*) numeroCartao
     trilha1: (NSString*) trilha1
     trilha2: (NSString*) trilha2
-    completionHandler: (void (^)(PierValidaCartao* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
 
