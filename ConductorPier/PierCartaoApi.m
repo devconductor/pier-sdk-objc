@@ -1351,6 +1351,8 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. (optional)
 ///
+///  @param identificadorExterno N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor). (optional)
+///
 ///  @returns PierLoteCartoesPrePagosResponse*
 ///
 -(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithIdOrigemComercial: (NSNumber*) idOrigemComercial
@@ -1359,6 +1361,7 @@ static PierCartaoApi* singletonAPI = nil;
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
+    identificadorExterno: (NSString*) identificadorExterno
     completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler {
 
     
@@ -1397,6 +1400,10 @@ static PierCartaoApi* singletonAPI = nil;
     if (quantidadeCartoes != nil) {
         
         queryParams[@"quantidadeCartoes"] = quantidadeCartoes;
+    }
+    if (identificadorExterno != nil) {
+        
+        queryParams[@"identificadorExterno"] = identificadorExterno;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -1643,6 +1650,8 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param statusProcessamento Indica o Status de Processamento do Lote. (optional)
 ///
+///  @param identificadorExterno N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor). (optional)
+///
 ///  @returns PierPageLoteCartoesPrePagosResponse*
 ///
 -(NSNumber*) listarLotesCartoesPrePagosUsingGETWithSort: (NSArray* /* NSString */) sort
@@ -1657,6 +1666,7 @@ static PierCartaoApi* singletonAPI = nil;
     dataCadastro: (NSString*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
+    identificadorExterno: (NSString*) identificadorExterno
     completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler {
 
     
@@ -1721,6 +1731,10 @@ static PierCartaoApi* singletonAPI = nil;
     if (statusProcessamento != nil) {
         
         queryParams[@"statusProcessamento"] = statusProcessamento;
+    }
+    if (identificadorExterno != nil) {
+        
+        queryParams[@"identificadorExterno"] = identificadorExterno;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

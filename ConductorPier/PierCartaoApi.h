@@ -239,6 +239,7 @@
 /// @param idImagem C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Imagem (id).
 /// @param idEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
 /// @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote.
+/// @param identificadorExterno N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor).
 /// 
 ///
 /// @return PierLoteCartoesPrePagosResponse*
@@ -248,6 +249,7 @@
     idImagem: (NSNumber*) idImagem
     idEndereco: (NSNumber*) idEndereco
     quantidadeCartoes: (NSNumber*) quantidadeCartoes
+    identificadorExterno: (NSString*) identificadorExterno
     completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler;
 
 
@@ -294,6 +296,7 @@
 /// @param dataCadastro Data de Cadastro do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais.
 /// @param usuarioCadastro Nome do Usu\u00C3\u00A1rio que criou o Lote.
 /// @param statusProcessamento Indica o Status de Processamento do Lote.
+/// @param identificadorExterno N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor).
 /// 
 ///
 /// @return PierPageLoteCartoesPrePagosResponse*
@@ -309,6 +312,7 @@
     dataCadastro: (NSString*) dataCadastro
     usuarioCadastro: (NSString*) usuarioCadastro
     statusProcessamento: (NSNumber*) statusProcessamento
+    identificadorExterno: (NSString*) identificadorExterno
     completionHandler: (void (^)(PierPageLoteCartoesPrePagosResponse* output, NSError* error)) handler;
 
 

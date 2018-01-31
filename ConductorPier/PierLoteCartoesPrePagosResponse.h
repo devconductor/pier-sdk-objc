@@ -44,5 +44,8 @@
 /* Indica o status de processamento do lote. 
  */
 @property(nonatomic) NSNumber* statusProcessamento;
+/* N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor). 
+ */
+@property(nonatomic) NSString* identificadorExterno;
 
 @end
