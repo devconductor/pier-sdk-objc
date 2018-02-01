@@ -73,7 +73,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT13WithId: (NSNumber*) _id
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -106,7 +106,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) alterarUsingPUT12WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
@@ -133,7 +133,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT16WithId: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -161,7 +161,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -245,7 +245,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
@@ -258,7 +258,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -271,7 +271,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -284,7 +284,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -366,7 +366,7 @@
 /// 
 ///
 /// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -408,7 +408,7 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -447,7 +447,7 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -482,7 +482,7 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -588,7 +588,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST16WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST18WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -620,7 +620,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST17WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST19WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
@@ -646,7 +646,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST20WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST22WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone

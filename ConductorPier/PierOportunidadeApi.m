@@ -2,10 +2,10 @@
 #import "PierQueryParamCollection.h"
 #import "PierStatusOportunidadeResponse.h"
 #import "PierStatusOportunidade.h"
-#import "PierTipoOportunidadeResponse.h"
-#import "PierTipoOportunidade.h"
 #import "PierOportunidadeUpdate.h"
 #import "PierOportunidadeResponse.h"
+#import "PierTipoOportunidadeResponse.h"
+#import "PierTipoOportunidade.h"
 #import "PierPageStatusOportunidadeAUDResponse.h"
 #import "PierPageOportunidadeAUDResponse.h"
 #import "PierPageTipoOportunidadeAUDResponse.h"
@@ -184,97 +184,6 @@ static PierOportunidadeApi* singletonAPI = nil;
 }
 
 ///
-/// Altera os tipos oportunidades
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos tipos oportunidades.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
-///
-///  @param persist persist 
-///
-///  @returns PierTipoOportunidadeResponse*
-///
--(NSNumber*) alterarUsingPUT16WithId: (NSNumber*) _id
-    persist: (PierTipoOportunidade*) persist
-    completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT16`"];
-    }
-    
-    // verify the required parameter 'persist' is set
-    if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `alterarUsingPUT16`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-oportunidades/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = persist;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierTipoOportunidadeResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierTipoOportunidadeResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Altera as oportunidades
 /// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o das oportunidades.
 ///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da oportunidade (id). 
@@ -283,19 +192,19 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) alterarUsingPUT9WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT12WithId: (NSNumber*) _id
     update: (PierOportunidadeUpdate*) update
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT12`"];
     }
     
     // verify the required parameter 'update' is set
     if (update == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT12`"];
     }
     
 
@@ -361,6 +270,97 @@ static PierOportunidadeApi* singletonAPI = nil;
                               responseType: @"PierOportunidadeResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierOportunidadeResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Altera os tipos oportunidades
+/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos tipos oportunidades.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+///
+///  @param persist persist 
+///
+///  @returns PierTipoOportunidadeResponse*
+///
+-(NSNumber*) alterarUsingPUT18WithId: (NSNumber*) _id
+    persist: (PierTipoOportunidade*) persist
+    completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT18`"];
+    }
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `alterarUsingPUT18`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-oportunidades/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTipoOportunidadeResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTipoOportunidadeResponse*)data, error);
                            }
           ];
 }
@@ -466,13 +466,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
     }
     
 
@@ -549,13 +549,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET34`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET35`"];
     }
     
 
@@ -1230,7 +1230,7 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -1364,7 +1364,7 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
@@ -1556,13 +1556,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST15WithPersist: (PierOportunidadePersist*) persist
+-(NSNumber*) salvarUsingPOST17WithPersist: (PierOportunidadePersist*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST17`"];
     }
     
 
@@ -1636,13 +1636,13 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) salvarUsingPOST22WithPersist: (PierTipoOportunidade*) persist
+-(NSNumber*) salvarUsingPOST24WithPersist: (PierTipoOportunidade*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST22`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST24`"];
     }
     
 

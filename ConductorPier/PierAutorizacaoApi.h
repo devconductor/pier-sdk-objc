@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
-#import "PierAutorizacaoOnUsRequest.h"
 #import "PierTransacaoOnUsResponse.h"
 #import "PierTransacaoOnUsPorIdCartaoRequest.h"
-#import "PierCancelamentoTransacaoOnUsRequest.h"
+#import "PierAutorizacaoOnUsRequest.h"
 #import "PierCancelamentoTransacaoPorIdCartaoRequest.h"
+#import "PierCancelamentoTransacaoOnUsRequest.h"
 #import "PierTransacaoOnUsRequest.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -24,6 +24,21 @@
 -(unsigned long) requestQueueSize;
 +(PierAutorizacaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
 +(PierAutorizacaoApi*) sharedAPI;
+///
+///
+/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira por idConta
+/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira com o idConta.
+///
+/// @param _id Id Conta
+/// @param transacaoOnUsPorIdCartaoRequest transacaoOnUsPorIdCartaoRequest
+/// 
+///
+/// @return PierTransacaoOnUsResponse*
+-(NSNumber*) autorizarPorContaUsingPOSTWithId: (NSNumber*) _id
+    transacaoOnUsPorIdCartaoRequest: (PierTransacaoOnUsPorIdCartaoRequest*) transacaoOnUsPorIdCartaoRequest
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
+
+
 ///
 ///
 /// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira
@@ -49,6 +64,21 @@
 /// @return PierTransacaoOnUsResponse*
 -(NSNumber*) autorizarUsingPOST1WithId: (NSNumber*) _id
     transacaoOnUsPorIdCartaoRequest: (PierTransacaoOnUsPorIdCartaoRequest*) transacaoOnUsPorIdCartaoRequest
+    completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira por idConta
+/// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o a partir do idConta.
+///
+/// @param _id Id Conta
+/// @param cancelamentoRequest cancelamentoRequest
+/// 
+///
+/// @return PierTransacaoOnUsResponse*
+-(NSNumber*) cancelarPorIdContaUsingPOSTWithId: (NSNumber*) _id
+    cancelamentoRequest: (PierCancelamentoTransacaoPorIdCartaoRequest*) cancelamentoRequest
     completionHandler: (void (^)(PierTransacaoOnUsResponse* output, NSError* error)) handler;
 
 

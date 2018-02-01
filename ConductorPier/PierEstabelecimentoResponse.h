@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierConsultaCadastroEstabelecimentoDTO.h"
 
 
 @protocol PierEstabelecimentoResponse
@@ -20,6 +21,12 @@
 /* N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Conductor. [optional]
  */
 @property(nonatomic) NSString* numeroEstabelecimento;
+/* Indica se \u00C3\u00A9 matriz ou filial. [optional]
+ */
+@property(nonatomic) NSNumber* flagMatriz;
+/* Apresenta o n\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Credor. [optional]
+ */
+@property(nonatomic) NSNumber* idCredor;
 /* Apresenta o n\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Receita Federal. [optional]
  */
 @property(nonatomic) NSNumber* numeroReceitaFederal;
@@ -41,24 +48,39 @@
 /* N\u00C3\u00BAmero do endere\u00C3\u00A7o. [optional]
  */
 @property(nonatomic) NSString* numeroEndereco;
-/* Descri\u00C3\u00A7\u00C3\u00B5es complementares referente ao endere\u00C3\u00A7o. [optional]
- */
-@property(nonatomic) NSString* complemento;
 /* Nome do bairro do endere\u00C3\u00A7o. [optional]
  */
 @property(nonatomic) NSString* bairro;
 /* Nome da cidade do endere\u00C3\u00A7o. [optional]
  */
 @property(nonatomic) NSString* cidade;
+/* Descri\u00C3\u00A7\u00C3\u00B5es complementares referente ao endere\u00C3\u00A7o. [optional]
+ */
+@property(nonatomic) NSString* complemento;
 /* Sigla de identifica\u00C3\u00A7\u00C3\u00A3o da Unidade Federativa do endere\u00C3\u00A7o. [optional]
  */
 @property(nonatomic) NSString* uf;
-/* Nome do pa\u00C3\u00ADs. [optional]
+/* C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP). [optional]
  */
-@property(nonatomic) NSString* pais;
-/* Data de Cadastro do Estabelecimento. [optional]
+@property(nonatomic) NSString* cep2;
+/* Nome do Logradouro . [optional]
  */
-@property(nonatomic) NSString* dataCadastramento;
+@property(nonatomic) NSString* nomeLogradouro2;
+/* N\u00C3\u00BAmero do endere\u00C3\u00A7o. [optional]
+ */
+@property(nonatomic) NSString* numeroEndereco2;
+/* Nome do bairro do endere\u00C3\u00A7o. [optional]
+ */
+@property(nonatomic) NSString* bairro2;
+/* Nome da cidade do endere\u00C3\u00A7o. [optional]
+ */
+@property(nonatomic) NSString* cidade2;
+/* Descri\u00C3\u00A7\u00C3\u00B5es complementares referente ao endere\u00C3\u00A7o. [optional]
+ */
+@property(nonatomic) NSString* complemento2;
+/* Sigla de identifica\u00C3\u00A7\u00C3\u00A3o da Unidade Federativa do endere\u00C3\u00A7o. [optional]
+ */
+@property(nonatomic) NSString* uf2;
 /* Detalhes espec\u00C3\u00ADficos quanto ao Cadastro do Estabelecimento. [optional]
  */
 @property(nonatomic) NSString* obs;
@@ -77,5 +99,47 @@
 /* Indica se o estabelecimento est\u00C3\u00A1 inativo. [optional]
  */
 @property(nonatomic) NSNumber* inativo;
+/* C\u00C3\u00B3digo identificador da moeda. [optional]
+ */
+@property(nonatomic) NSNumber* idMoeda;
+/* Identificador de Pa\u00C3\u00ADs. [optional]
+ */
+@property(nonatomic) NSNumber* idPais;
+/* N\u00C3\u00BAmero do associado ao SPCBrasil. [optional]
+ */
+@property(nonatomic) NSNumber* associadoSPCBrasil;
+/* C\u00C3\u00B3digo de Categoria de Mercado. [optional]
+ */
+@property(nonatomic) NSNumber* mcc;
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento. [optional]
+ */
+@property(nonatomic) NSNumber* idTipoEstabelecimento;
+/* Tipo da Correspond\u00C3\u00AAncia (ORIGEM, CORRESPONDENCIA). [optional]
+ */
+@property(nonatomic) NSString* tipoCorrespondencia;
+/* Cargo do contato do estabelecimento. [optional]
+ */
+@property(nonatomic) NSString* cargoContato;
+/* Tipo do regime de pagamento do estabelecimento. [optional]
+ */
+@property(nonatomic) NSString* tipoPagamento;
+/* Consulta de cadastro n\u00C3\u00BAmero um. [optional]
+ */
+@property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta;
+/* Consulta de cadastro n\u00C3\u00BAmero um. [optional]
+ */
+@property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta2;
+/* Consulta de cadastro n\u00C3\u00BAmero um. [optional]
+ */
+@property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta3;
+/* Terminal do estabelecimento. [optional]
+ */
+@property(nonatomic) NSString* terminal;
+/* Data de Cadastro do Estabelecimento. [optional]
+ */
+@property(nonatomic) NSString* dataCadastramento;
+/* Usu\u00C3\u00A1rio da aplica\u00C3\u00A7\u00C3\u00A3o. [optional]
+ */
+@property(nonatomic) NSString* usuario;
 
 @end

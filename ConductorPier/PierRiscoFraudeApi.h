@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierRiscoFraudeDetalhadoResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler;
 
 

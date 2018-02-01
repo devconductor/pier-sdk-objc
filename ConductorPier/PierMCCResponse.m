@@ -1,6 +1,6 @@
-#import "PierPagePessoaJuridicaResponse.h"
+#import "PierMCCResponse.h"
 
-@implementation PierPagePessoaJuridicaResponse
+@implementation PierMCCResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"descricao": @"descricao" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages"];
+  NSArray *optionalProperties = @[@"_id", @"descricao"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

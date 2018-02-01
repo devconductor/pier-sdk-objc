@@ -14,10 +14,10 @@
 
 @interface PierTerminalUpdate : PierObject
 
-/* Flag indicando se o terminal \u00C3\u00A9 f\u00C3\u00ADsico ou virtual, sendo: (true: Sim), (false: N\u00C3\u00A3o)). 
+/* Flag indicando se o terminal permite consultar extrato, sendo: (true: Sim), (false: N\u00C3\u00A3o)). 
  */
 @property(nonatomic) NSNumber* flagConsultaExtrato;
-/* Flag indicando se o terminal permite consultar extrato, sendo: (true: Sim), (false: N\u00C3\u00A3o)). 
+/* Flag indicando se o terminal \u00C3\u00A9 f\u00C3\u00ADsico ou virtual, sendo: (true: Sim), (false: N\u00C3\u00A3o)). 
  */
 @property(nonatomic) NSNumber* flagTerminalVirtual;
 

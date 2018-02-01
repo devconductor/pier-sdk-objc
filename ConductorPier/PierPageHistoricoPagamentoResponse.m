@@ -1,6 +1,6 @@
-#import "PierPessoaJuridicaResponse.h"
+#import "PierPageHistoricoPagamentoResponse.h"
 
-@implementation PierPessoaJuridicaResponse
+@implementation PierPageHistoricoPagamentoResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"razaoSocial": @"razaoSocial", @"cnpj": @"cnpj", @"inscricaoEstadual": @"inscricaoEstadual", @"contato": @"contato", @"banco": @"banco", @"agencia": @"agencia", @"digitoVerificadorAgencia": @"digitoVerificadorAgencia", @"contaCorrente": @"contaCorrente", @"digitoVerificadorContaCorrente": @"digitoVerificadorContaCorrente", @"usuario": @"usuario" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"content": @"content", @"first": @"first", @"firstPage": @"firstPage", @"hasContent": @"hasContent", @"hasNextPage": @"hasNextPage", @"hasPreviousPage": @"hasPreviousPage", @"last": @"last", @"nextPage": @"nextPage", @"number": @"number", @"numberOfElements": @"numberOfElements", @"previousPage": @"previousPage", @"size": @"size", @"totalElements": @"totalElements", @"totalPages": @"totalPages" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"razaoSocial", @"cnpj", @"inscricaoEstadual", @"contato", @"banco", @"agencia", @"digitoVerificadorAgencia", @"contaCorrente", @"digitoVerificadorContaCorrente", @"usuario"];
+  NSArray *optionalProperties = @[@"content", @"first", @"firstPage", @"hasContent", @"hasNextPage", @"hasPreviousPage", @"last", @"nextPage", @"number", @"numberOfElements", @"previousPage", @"size", @"totalElements", @"totalPages"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

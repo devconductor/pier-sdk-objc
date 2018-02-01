@@ -336,13 +336,13 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierFaqResponse*
 ///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
     }
     
 
@@ -437,7 +437,7 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierPageFaqResponse*
 ///
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq

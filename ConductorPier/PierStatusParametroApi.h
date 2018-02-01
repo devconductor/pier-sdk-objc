@@ -61,7 +61,7 @@
 /// 
 ///
 /// @return PierStatusContaResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler;
 
 
@@ -74,7 +74,7 @@
 /// 
 ///
 /// @return PierStatusImpressaoResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler;
 
 
@@ -162,7 +162,7 @@
 /// 
 ///
 /// @return PierPageStatusContaResponse*
--(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -192,7 +192,7 @@
 /// 
 ///
 /// @return PierPageStatusImpressaoResponse*
--(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

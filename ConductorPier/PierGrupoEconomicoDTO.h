@@ -9,21 +9,42 @@
 
 
 
-@protocol PierCredorResponse
+@protocol PierGrupoEconomicoDTO
 @end
 
-@interface PierCredorResponse : PierObject
+@interface PierGrupoEconomicoDTO : PierObject
 
-/* C\u00C3\u00B3digo identificador do credor [optional]
+/* Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica 
  */
-@property(nonatomic) NSNumber* _id;
-/* Identificador da pessoa jur\u00C3\u00ADdica do credor [optional]
- */
-@property(nonatomic) NSNumber* idPessoaJuridica;
+@property(nonatomic) NSString* razaoSocial;
 /* Nome do credor [optional]
  */
-@property(nonatomic) NSString* nome;
-/* Periodicidade do pagamento [optional]
+@property(nonatomic) NSString* nomeCredor;
+/* N\u00C3\u00BAmero da Receita Federal 
+ */
+@property(nonatomic) NSString* numeroReceitaFederal;
+/* N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual [optional]
+ */
+@property(nonatomic) NSString* inscricaoEstadual;
+/* Nome da pessoa para entrar em contato [optional]
+ */
+@property(nonatomic) NSString* contato;
+/* C\u00C3\u00B3digo do banco [optional]
+ */
+@property(nonatomic) NSNumber* banco;
+/* Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica [optional]
+ */
+@property(nonatomic) NSNumber* agencia;
+/* D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia [optional]
+ */
+@property(nonatomic) NSString* digitoAgencia;
+/* C\u00C3\u00B3digo da Conta Corrente [optional]
+ */
+@property(nonatomic) NSString* contaCorrente;
+/* D\u00C3\u00ADgito Verificador da Conta Corrente [optional]
+ */
+@property(nonatomic) NSString* digitoContaCorrente;
+/* Periodicidade do pagamento 
  */
 @property(nonatomic) NSString* periodicidade;
 /* Dia para pagamento semanal [optional]
@@ -47,10 +68,7 @@
 /* Dia da data para o segundo pagamento quinzenal [optional]
  */
 @property(nonatomic) NSNumber* pagamentoQuinzenalSegundo;
-/* Indica se este credor pode ser um Credor RAV de outros credores [optional]
- */
-@property(nonatomic) NSNumber* credorBanco;
-/* Valor percentual do RAV do credor [optional]
+/* Valor percentual do RAV do credor 
  */
 @property(nonatomic) NSNumber* percentualRAV;
 /* Indica se o credor recebe RAV e o tipo [optional]
@@ -68,26 +86,5 @@
 /* Valor limite do RAV [optional]
  */
 @property(nonatomic) NSNumber* limiteRAV;
-/* C\u00C3\u00B3digo identificador do credor RAV [optional]
- */
-@property(nonatomic) NSNumber* idCredorRAV;
-/* C\u00C3\u00B3digo do banco [optional]
- */
-@property(nonatomic) NSNumber* banco;
-/* Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica [optional]
- */
-@property(nonatomic) NSNumber* agencia;
-/* D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia [optional]
- */
-@property(nonatomic) NSString* digitoVerificadorAgencia;
-/* C\u00C3\u00B3digo da Conta Corrente [optional]
- */
-@property(nonatomic) NSString* contaCorrente;
-/* D\u00C3\u00ADgito Verificador da Conta Corrente [optional]
- */
-@property(nonatomic) NSString* digitoVerificadorContaCorrente;
-/* Login do usu\u00C3\u00A1rio para registro da inser\u00C3\u00A7\u00C3\u00A3o [optional]
- */
-@property(nonatomic) NSString* usuario;
 
 @end

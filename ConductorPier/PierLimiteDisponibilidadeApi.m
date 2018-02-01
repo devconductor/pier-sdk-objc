@@ -102,7 +102,7 @@ static PierLimiteDisponibilidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierLimiteDisponibilidadeResponse*
 ///
--(NSNumber*) alterarUsingPUT8WithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarUsingPUT9WithIdConta: (NSNumber*) idConta
     limiteGlobal: (NSNumber*) limiteGlobal
     limiteCompra: (NSNumber*) limiteCompra
     limiteParcelado: (NSNumber*) limiteParcelado
@@ -121,7 +121,7 @@ static PierLimiteDisponibilidadeApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarUsingPUT8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `alterarUsingPUT9`"];
     }
     
 

@@ -88,19 +88,19 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTemplateResponse*
 ///
--(NSNumber*) alterarUsingPUT17WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT19WithId: (NSNumber*) _id
     persist: (PierTipoTemplateRequest*) persist
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT19`"];
     }
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `alterarUsingPUT17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `alterarUsingPUT19`"];
     }
     
 
@@ -268,13 +268,13 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierDocumentoDetalhadoResponse*
 ///
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
     }
     
 
@@ -351,13 +351,13 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierDocumentoTemplateResponse*
 ///
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
     }
     
 
@@ -434,13 +434,13 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTemplateResponse*
 ///
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET36`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET37`"];
     }
     
 
@@ -607,7 +607,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDocumentoResponse*
 ///
--(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -719,7 +719,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDocumentoTemplateResponse*
 ///
--(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -819,7 +819,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoTemplateResponse*
 ///
--(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler {
@@ -990,13 +990,13 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTemplateResponse*
 ///
--(NSNumber*) salvarUsingPOST23WithPersist: (PierTipoTemplateRequest*) persist
+-(NSNumber*) salvarUsingPOST25WithPersist: (PierTipoTemplateRequest*) persist
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST25`"];
     }
     
 

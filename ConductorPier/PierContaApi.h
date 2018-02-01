@@ -16,7 +16,6 @@
 #import "PierPageHistoricoAssessoriaResponse.h"
 #import "PierPageHistoricoAtrasoFaturaResponse.h"
 #import "PierPageTransacaoNaoProcessadaResponse.h"
-#import "PierPageContaHistoricoPagamentoResponse.h"
 #import "PierPageTransacoesCorrentesResponse.h"
 #import "PierPageContaResponse.h"
 #import "PierPageTransferenciaResponse.h"
@@ -271,7 +270,7 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 
@@ -448,37 +447,6 @@
 
 ///
 ///
-/// Lista hist\u00C3\u00B3rico de pagamentos da conta
-/// Este recurso permite listar todos os Pagamentos realizados por uma determinada Conta independente do seu Status de Processamento.
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idPagamento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Pagamento
-/// @param idEstabelecimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento onde o Pagamento foi realizado, quando este for o local de pagamento
-/// @param idBanco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Institui\u00C3\u00A7\u00C3\u00A3o Banc\u00C3\u00A1ria onde o Pagamento foi realizado, quando este for o local de pagamento
-/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o
-/// @param dataHoraPagamento Data e Hora da realiza\u00C3\u00A7\u00C3\u00A3o do Pagamento. Quando feito em Institui\u00C3\u00A7\u00C3\u00A3o Banc\u00C3\u00A1ria, o hor\u00C3\u00A1rio do pagamento \u00C3\u00A9 exibido com valor zero
-/// @param status C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Pagamento
-/// 
-///
-/// @return PierPageContaHistoricoPagamentoResponse*
--(NSNumber*) listarPagamentosUsingGETWithId: (NSNumber*) _id
-    sort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    idPagamento: (NSNumber*) idPagamento
-    idEstabelecimento: (NSNumber*) idEstabelecimento
-    idBanco: (NSNumber*) idBanco
-    idCartao: (NSNumber*) idCartao
-    dataHoraPagamento: (NSString*) dataHoraPagamento
-    status: (NSNumber*) status
-    completionHandler: (void (^)(PierPageContaHistoricoPagamentoResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista as transa\u00C3\u00A7\u00C3\u00B5es processadas da conta
 /// Este m\u00C3\u00A9todo permite que sejam listadas todas as transa\u00C3\u00A7\u00C3\u00B5es processadas da Conta.
 ///
@@ -554,7 +522,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET43WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET45WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

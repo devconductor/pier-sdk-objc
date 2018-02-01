@@ -15,35 +15,83 @@
 
 @interface PierOrigemComercialResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial 
+/* C\u00C3\u00B3digo identificador do OrigemComercial [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome da origem comercial 
+/* Nome da origem comercial [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00C3\u00A7\u00C3\u00A3o completa do nome da Origem Comercial 
+/* Descri\u00C3\u00A7\u00C3\u00A3o completa do nome da Origem Comercial [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Lista de  ProdutosOrigem associados \u00C3\u00A0 Origem comercial 
+/* Produtos da origem comercial [optional]
  */
 @property(nonatomic) NSArray<PierProdutoOrigemResponse>* produtosOrigem;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento 
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Tipo da Origem Comercial 
+/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Tipo da Origem Comercial [optional]
  */
 @property(nonatomic) NSNumber* idTipoOrigemComercial;
-/* Nome do Tipo da Origem Comercial 
+/* Nome do Tipo da Origem Comercial [optional]
  */
 @property(nonatomic) NSString* nomeTipoOrigemComercial;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Grupo a qual a Origem Comercial pertence 
+/* Identificador do grupo da origem comercial [optional]
  */
 @property(nonatomic) NSNumber* idGrupoOrigemComercial;
-/* Nome do Grupo a qual a Origem Comercial pertence 
+/* Nome do grupo da origem comercial [optional]
  */
 @property(nonatomic) NSString* nomeGrupoOrigemComercial;
-/* Status da origem comercial 
+/* Indica o status da origem comercial [optional]
  */
 @property(nonatomic) NSNumber* status;
+/* Indica se permite pr\u00C3\u00A9 aprova\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSNumber* flagPreAprovado;
+/* Indica se permite aprova\u00C3\u00A7\u00C3\u00A3o imediata [optional]
+ */
+@property(nonatomic) NSNumber* flagAprovacaoImediata;
+/* Nome fantasia impresso no pl\u00C3\u00A1stico [optional]
+ */
+@property(nonatomic) NSString* nomeFantasiaPlastico;
+/* Indica se permite cart\u00C3\u00A3o provis\u00C3\u00B3rio [optional]
+ */
+@property(nonatomic) NSNumber* flagCartaoProvisorio;
+/* Indica se permite cart\u00C3\u00A3o definitivo [optional]
+ */
+@property(nonatomic) NSNumber* flagCartaoDefinitivo;
+/* Usu\u00C3\u00A1rio para autentica\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSString* usuario;
+/* Senha para autentica\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSString* senha;
+/* Indica se \u00C3\u00A9 origem externa [optional]
+ */
+@property(nonatomic) NSNumber* flagOrigemExterna;
+/* Indica se h\u00C3\u00A1 modifica\u00C3\u00A7\u00C3\u00A3o [optional]
+ */
+@property(nonatomic) NSNumber* flagModificado;
+/* Indica se envia fatura [optional]
+ */
+@property(nonatomic) NSNumber* flagEnviaFaturaUsuario;
+/* Indica se permite cr\u00C3\u00A9dito de faturamento [optional]
+ */
+@property(nonatomic) NSNumber* flagCreditoFaturamento;
+/* Indica se concede limite provis\u00C3\u00B3rio [optional]
+ */
+@property(nonatomic) NSNumber* flagConcedeLimiteProvisorio;
+/* Indica se digitaliza documento [optional]
+ */
+@property(nonatomic) NSNumber* flagDigitalizarDoc;
+/* Indica se realiza embossing em loja [optional]
+ */
+@property(nonatomic) NSNumber* flagEmbossingLoja;
+/* Indica se realiza consulta pr\u00C3\u00A9via [optional]
+ */
+@property(nonatomic) NSNumber* flagConsultaPrevia;
+/* Tipo de pessoa [optional]
+ */
+@property(nonatomic) NSString* tipoPessoa;
 
 @end

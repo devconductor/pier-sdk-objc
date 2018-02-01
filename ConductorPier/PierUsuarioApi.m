@@ -280,19 +280,19 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) alterarUsingPUT19WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT21WithId: (NSNumber*) _id
     update: (PierUsuarioUpdate*) update
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT21`"];
     }
     
     // verify the required parameter 'update' is set
     if (update == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `alterarUsingPUT21`"];
     }
     
 
@@ -452,13 +452,13 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET41WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET40`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET41`"];
     }
     
 
@@ -630,7 +630,7 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierPageUsuarioResponse*
 ///
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -824,13 +824,13 @@ static PierUsuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) salvarUsingPOST25WithPersist: (PierUsuarioPersist*) persist
+-(NSNumber*) salvarUsingPOST27WithPersist: (PierUsuarioPersist*) persist
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST27`"];
     }
     
 

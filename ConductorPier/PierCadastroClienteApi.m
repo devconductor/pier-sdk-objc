@@ -216,7 +216,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) alterarUsingPUT10WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT13WithId: (NSNumber*) _id
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -232,7 +232,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT13`"];
     }
     
 
@@ -369,7 +369,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) alterarUsingPUT12WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
     nome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
@@ -385,22 +385,22 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT14`"];
     }
     
     // verify the required parameter 'nome' is set
     if (nome == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `alterarUsingPUT12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `alterarUsingPUT14`"];
     }
     
     // verify the required parameter 'tipo' is set
     if (tipo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `alterarUsingPUT12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `alterarUsingPUT14`"];
     }
     
     // verify the required parameter 'dataNascimento' is set
     if (dataNascimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataNascimento` when calling `alterarUsingPUT12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataNascimento` when calling `alterarUsingPUT14`"];
     }
     
 
@@ -525,7 +525,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) alterarUsingPUT14WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT16WithId: (NSNumber*) _id
     idTipoTelefone: (NSNumber*) idTipoTelefone
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
@@ -535,7 +535,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT16`"];
     }
     
 
@@ -651,7 +651,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierEnderecoResponse*
 ///
--(NSNumber*) alterarUsingPUT6WithId: (NSNumber*) _id
+-(NSNumber*) alterarUsingPUT5WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
@@ -668,7 +668,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT5`"];
     }
     
 
@@ -1152,13 +1152,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
     }
     
 
@@ -1235,13 +1235,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
     }
     
 
@@ -1318,13 +1318,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET23`"];
     }
     
 
@@ -1401,13 +1401,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET28`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET29`"];
     }
     
 
@@ -1822,7 +1822,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2009,7 +2009,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoaDetalheResponse*
 ///
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -2181,7 +2181,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoaResponse*
 ///
--(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2345,7 +2345,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2886,7 +2886,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) salvarUsingPOST16WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST18WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -2902,7 +2902,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter 'idPessoa' is set
     if (idPessoa == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `salvarUsingPOST16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `salvarUsingPOST18`"];
     }
     
 
@@ -3038,7 +3038,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) salvarUsingPOST17WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST19WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
@@ -3053,17 +3053,17 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter 'nome' is set
     if (nome == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `salvarUsingPOST17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `salvarUsingPOST19`"];
     }
     
     // verify the required parameter 'tipo' is set
     if (tipo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `salvarUsingPOST17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `salvarUsingPOST19`"];
     }
     
     // verify the required parameter 'dataNascimento' is set
     if (dataNascimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataNascimento` when calling `salvarUsingPOST17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataNascimento` when calling `salvarUsingPOST19`"];
     }
     
 
@@ -3185,7 +3185,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) salvarUsingPOST20WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST22WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone

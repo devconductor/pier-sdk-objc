@@ -230,7 +230,7 @@ static PierDebitoRecorrenteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoDebitoRecorrenteResponse*
 ///
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

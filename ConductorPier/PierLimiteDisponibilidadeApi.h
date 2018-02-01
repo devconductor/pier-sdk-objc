@@ -41,7 +41,7 @@
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) alterarUsingPUT8WithIdConta: (NSNumber*) idConta
+-(NSNumber*) alterarUsingPUT9WithIdConta: (NSNumber*) idConta
     limiteGlobal: (NSNumber*) limiteGlobal
     limiteCompra: (NSNumber*) limiteCompra
     limiteParcelado: (NSNumber*) limiteParcelado

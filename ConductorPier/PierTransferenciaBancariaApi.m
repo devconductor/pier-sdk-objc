@@ -348,7 +348,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaBancariaResponse*
 ///
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
@@ -356,12 +356,12 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET38`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET39`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET38`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET39`"];
     }
     
 
@@ -720,7 +720,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaBancariaResponse*
 ///
--(NSNumber*) listarUsingGET42WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET44WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -730,7 +730,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET42`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET44`"];
     }
     
 
