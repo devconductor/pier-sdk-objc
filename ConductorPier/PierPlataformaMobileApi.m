@@ -176,7 +176,7 @@ static PierPlataformaMobileApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePlataformaMobileResponse*
 ///
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

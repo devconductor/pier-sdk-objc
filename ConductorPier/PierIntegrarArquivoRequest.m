@@ -1,6 +1,6 @@
-#import "PierArquivoPersist.h"
+#import "PierIntegrarArquivoRequest.h"
 
-@implementation PierArquivoPersist
+@implementation PierIntegrarArquivoRequest
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTipoArquivo": @"idTipoArquivo", @"arquivo": @"arquivo", @"nome": @"nome", @"extensao": @"extensao", @"tipoComunicacao": @"tipoComunicacao", @"detalhes": @"detalhes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"cpf": @"cpf" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idTipoArquivo", @"nome", @"extensao", @"tipoComunicacao", ];
+  NSArray *optionalProperties = @[@"cpf"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

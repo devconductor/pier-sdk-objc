@@ -575,7 +575,7 @@
 /// 
 ///
 /// @return PierPageEstabelecimentoResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -651,7 +651,7 @@
 /// 
 ///
 /// @return PierPageGrupoEconomicoResponse*
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     razaoSocial: (NSString*) razaoSocial
@@ -694,7 +694,7 @@
 /// 
 ///
 /// @return PierPageMaquinetaResponse*
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -715,7 +715,7 @@
 /// 
 ///
 /// @return PierPageMoedaResponse*
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     codigoMoeda: (NSString*) codigoMoeda
@@ -738,7 +738,7 @@
 /// 
 ///
 /// @return PierPageOperacaoCredorResponse*
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOperacao: (NSNumber*) idOperacao
@@ -759,7 +759,7 @@
 /// 
 ///
 /// @return PierPageTelefoneEstabelecimentoResponse*
--(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -781,7 +781,7 @@
 /// 
 ///
 /// @return PierPageTerminalResponse*
--(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -805,7 +805,7 @@
 /// 
 ///
 /// @return PierPageVinculoEstabelecimentoAdquirenteResponse*
--(NSNumber*) listarUsingGET48WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET49WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idAdquirente: (NSNumber*) idAdquirente
@@ -829,7 +829,7 @@
 /// 
 ///
 /// @return PierPageVinculoOperacaoResponse*
--(NSNumber*) listarUsingGET49WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET50WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

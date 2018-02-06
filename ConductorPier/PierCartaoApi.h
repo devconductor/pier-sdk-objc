@@ -345,7 +345,7 @@
 /// 
 ///
 /// @return PierPageCartaoResponse*
--(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET8WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao

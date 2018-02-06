@@ -368,7 +368,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 ///  @returns PierPageJobResponse*
 ///
--(NSNumber*) listarUsingGET21WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET22WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status

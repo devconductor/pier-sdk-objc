@@ -165,7 +165,7 @@
 /// 
 ///
 /// @return PierPageCartaoPayResponse*
--(NSNumber*) listarUsingGET6WithDeviceId: (NSString*) deviceId
+-(NSNumber*) listarUsingGET7WithDeviceId: (NSString*) deviceId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

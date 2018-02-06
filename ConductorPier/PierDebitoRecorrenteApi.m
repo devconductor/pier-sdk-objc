@@ -92,7 +92,7 @@ static PierDebitoRecorrenteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoDebitoRecorrenteResponse*
 ///
--(NSNumber*) listarUsingGET12WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET13WithIdConta: (NSNumber*) idConta
     idTipoDebitoRecorrente: (NSNumber*) idTipoDebitoRecorrente
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -106,7 +106,7 @@ static PierDebitoRecorrenteApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET13`"];
     }
     
 
@@ -230,7 +230,7 @@ static PierDebitoRecorrenteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoDebitoRecorrenteResponse*
 ///
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET39WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "PierArquivoResponse.h"
+#import "PierArquivoDetalheResponse.h"
+#import "PierIntegrarArquivoRequest.h"
+#import "PierPageArquivoResponse.h"
 #import "PierArquivoPersist.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -28,9 +30,47 @@
 /// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do arquivo
 /// 
 ///
-/// @return PierArquivoResponse*
+/// @return PierArquivoDetalheResponse*
 -(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierArquivoResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierArquivoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Integrar Arquivos
+/// Este recurso foi desenvolvido para realizar a integra\u00C3\u00A7\u00C3\u00A3o de arquivos do PIER Cloud junto a reposit\u00C3\u00B3rios externos pr\u00C3\u00A9-configurado.
+///
+/// @param integrarArquivoRequest integrarArquivoRequest
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) integrarUsingPOSTWithIntegrarArquivoRequest: (PierIntegrarArquivoRequest*) integrarArquivoRequest
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
+/// Listar arquivos do Pier Cloud
+/// Este recurso permite a listagem de todos os arquivos dispon\u00C3\u00ADveis no Pier Cloud.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param nome Nome do arquivo
+/// @param idTipoArquivo Tipo do arquivo
+/// @param idStatusArquivo Identificador do status do arquivo
+/// @param extensao Extens\u00C3\u00A3o do arquivo
+/// 
+///
+/// @return PierPageArquivoResponse*
+-(NSNumber*) listarUsingGET3WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    nome: (NSString*) nome
+    idTipoArquivo: (NSNumber*) idTipoArquivo
+    idStatusArquivo: (NSNumber*) idStatusArquivo
+    extensao: (NSString*) extensao
+    completionHandler: (void (^)(PierPageArquivoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -41,9 +81,9 @@
 /// @param arquivoPersist arquivoPersist
 /// 
 ///
-/// @return PierArquivoResponse*
+/// @return PierArquivoDetalheResponse*
 -(NSNumber*) salvarUsingPOST1WithArquivoPersist: (PierArquivoPersist*) arquivoPersist
-    completionHandler: (void (^)(PierArquivoResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierArquivoDetalheResponse* output, NSError* error)) handler;
 
 
 

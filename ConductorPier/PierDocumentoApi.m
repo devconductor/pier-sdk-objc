@@ -517,13 +517,13 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierDocumentoIntegracaoResponse*
 ///
--(NSNumber*) integrarUsingPOSTWithIntegrarDocumentoRequest: (PierIntegrarDocumentoRequest*) integrarDocumentoRequest
+-(NSNumber*) integrarUsingPOST1WithIntegrarDocumentoRequest: (PierIntegrarDocumentoRequest*) integrarDocumentoRequest
     completionHandler: (void (^)(PierDocumentoIntegracaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'integrarDocumentoRequest' is set
     if (integrarDocumentoRequest == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `integrarDocumentoRequest` when calling `integrarUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `integrarDocumentoRequest` when calling `integrarUsingPOST1`"];
     }
     
 
@@ -607,7 +607,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDocumentoResponse*
 ///
--(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -719,7 +719,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDocumentoTemplateResponse*
 ///
--(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -819,7 +819,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoTemplateResponse*
 ///
--(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET43WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler {

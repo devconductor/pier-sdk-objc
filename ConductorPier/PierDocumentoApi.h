@@ -107,7 +107,7 @@
 /// 
 ///
 /// @return PierDocumentoIntegracaoResponse*
--(NSNumber*) integrarUsingPOSTWithIntegrarDocumentoRequest: (PierIntegrarDocumentoRequest*) integrarDocumentoRequest
+-(NSNumber*) integrarUsingPOST1WithIntegrarDocumentoRequest: (PierIntegrarDocumentoRequest*) integrarDocumentoRequest
     completionHandler: (void (^)(PierDocumentoIntegracaoResponse* output, NSError* error)) handler;
 
 
@@ -125,7 +125,7 @@
 /// 
 ///
 /// @return PierPageDocumentoResponse*
--(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -146,7 +146,7 @@
 /// 
 ///
 /// @return PierPageDocumentoTemplateResponse*
--(NSNumber*) listarUsingGET16WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -164,7 +164,7 @@
 /// 
 ///
 /// @return PierPageTipoTemplateResponse*
--(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET43WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler;

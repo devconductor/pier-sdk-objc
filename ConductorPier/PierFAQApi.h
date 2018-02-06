@@ -99,7 +99,7 @@
 /// 
 ///
 /// @return PierPageFaqResponse*
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq

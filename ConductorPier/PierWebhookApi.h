@@ -67,7 +67,7 @@
 /// 
 ///
 /// @return PierPageWebHookResponse*
--(NSNumber*) listarUsingGET50WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET51WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

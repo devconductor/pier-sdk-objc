@@ -490,7 +490,7 @@
 /// 
 ///
 /// @return PierPageContaResponse*
--(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
@@ -522,7 +522,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET45WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET46WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

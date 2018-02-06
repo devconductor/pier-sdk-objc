@@ -1,6 +1,6 @@
-#import "PierArquivoPersist.h"
+#import "PierArquivoDetalheResponse.h"
 
-@implementation PierArquivoPersist
+@implementation PierArquivoDetalheResponse
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idTipoArquivo": @"idTipoArquivo", @"arquivo": @"arquivo", @"nome": @"nome", @"extensao": @"extensao", @"tipoComunicacao": @"tipoComunicacao", @"detalhes": @"detalhes" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idTipoArquivo": @"idTipoArquivo", @"nomeTipoArquivo": @"nomeTipoArquivo", @"arquivo": @"arquivo", @"idStatusArquivo": @"idStatusArquivo", @"nomeStatusArquivo": @"nomeStatusArquivo", @"nome": @"nome", @"extensao": @"extensao", @"dataInclusao": @"dataInclusao", @"dataAlteracao": @"dataAlteracao", @"detalhes": @"detalhes" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idTipoArquivo", @"nome", @"extensao", @"tipoComunicacao", ];
+  NSArray *optionalProperties = @[@"_id", @"idTipoArquivo", @"nomeTipoArquivo", @"arquivo", @"idStatusArquivo", @"nomeStatusArquivo", @"nome", @"extensao", @"dataInclusao", @"dataAlteracao", @"detalhes"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

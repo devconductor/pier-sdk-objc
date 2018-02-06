@@ -104,7 +104,7 @@
 /// 
 ///
 /// @return PierPageCompraResponse*
--(NSNumber*) listarUsingGET8WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET9WithIdConta: (NSNumber*) idConta
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

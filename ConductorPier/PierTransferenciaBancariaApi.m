@@ -581,7 +581,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageContaBancariaPortadorResponse*
 ///
--(NSNumber*) listarUsingGET11WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET12WithIdConta: (NSNumber*) idConta
     nomeAgencia: (NSString*) nomeAgencia
     numeroAgencia: (NSString*) numeroAgencia
     numeroConta: (NSString*) numeroConta
@@ -720,7 +720,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaBancariaResponse*
 ///
--(NSNumber*) listarUsingGET44WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET45WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -730,7 +730,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET44`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET45`"];
     }
     
 

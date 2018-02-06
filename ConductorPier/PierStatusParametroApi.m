@@ -760,7 +760,7 @@ static PierStatusParametroApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusContaResponse*
 ///
--(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -914,7 +914,7 @@ static PierStatusParametroApi* singletonAPI = nil;
 ///
 ///  @returns PierPageStatusImpressaoResponse*
 ///
--(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

@@ -1822,7 +1822,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2009,7 +2009,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoaDetalheResponse*
 ///
--(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -2181,7 +2181,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoaResponse*
 ///
--(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2345,7 +2345,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

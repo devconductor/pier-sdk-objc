@@ -63,7 +63,7 @@
 /// 
 ///
 /// @return PierPageDispositivoResponse*
--(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET15WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token

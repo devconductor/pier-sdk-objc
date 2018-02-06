@@ -123,7 +123,7 @@
 /// 
 ///
 /// @return PierPageUsuarioResponse*
--(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET47WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

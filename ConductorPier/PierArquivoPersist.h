@@ -18,7 +18,7 @@
 /* Tipo do arquivo [optional]
  */
 @property(nonatomic) NSNumber* idTipoArquivo;
-/* Conte\u00C3\u00BAdo do arquivo convertido em Base 64 [optional]
+/* Conte\u00C3\u00BAdo do arquivo convertido em Base 64 
  */
 @property(nonatomic) NSString* arquivo;
 /* Nome do arquivo. [optional]
@@ -27,6 +27,9 @@
 /* Formato/extens\u00C3\u00A3o do arquivo. [optional]
  */
 @property(nonatomic) NSString* extensao;
+/* Tipo de comunica\u00C3\u00A7\u00C3\u00A3o. [optional]
+ */
+@property(nonatomic) NSString* tipoComunicacao;
 /* Detalhes contendo informa\u00C3\u00A7\u00C3\u00B5es adicionais, relacionadas ao arquivo 
  */
 @property(nonatomic) NSArray<PierArquivoDetalhesPersist>* detalhes;

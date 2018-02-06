@@ -10,10 +10,10 @@
 #import "PierArquivoParametroResponse.h"
 
 
-@protocol PierArquivoResponse
+@protocol PierArquivoDetalheResponse
 @end
 
-@interface PierArquivoResponse : PierObject
+@interface PierArquivoDetalheResponse : PierObject
 
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do arquivo [optional]
  */
@@ -24,6 +24,9 @@
 /* Descri\u00C3\u00A7\u00C3\u00A3o do tipo do arquivo [optional]
  */
 @property(nonatomic) NSString* nomeTipoArquivo;
+/* Conte\u00C3\u00BAdo do arquivo convertido em Base 64 [optional]
+ */
+@property(nonatomic) NSString* arquivo;
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Status do arquivo [optional]
  */
 @property(nonatomic) NSNumber* idStatusArquivo;

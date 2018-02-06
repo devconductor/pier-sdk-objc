@@ -2931,7 +2931,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEstabelecimentoResponse*
 ///
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3246,7 +3246,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageGrupoEconomicoResponse*
 ///
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     razaoSocial: (NSString*) razaoSocial
@@ -3468,7 +3468,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageMaquinetaResponse*
 ///
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -3574,7 +3574,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageMoedaResponse*
 ///
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     codigoMoeda: (NSString*) codigoMoeda
@@ -3690,7 +3690,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOperacaoCredorResponse*
 ///
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOperacao: (NSNumber*) idOperacao
@@ -3802,7 +3802,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTelefoneEstabelecimentoResponse*
 ///
--(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -3910,7 +3910,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTerminalResponse*
 ///
--(NSNumber*) listarUsingGET37WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -4031,7 +4031,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageVinculoEstabelecimentoAdquirenteResponse*
 ///
--(NSNumber*) listarUsingGET48WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET49WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idAdquirente: (NSNumber*) idAdquirente
@@ -4149,7 +4149,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageVinculoOperacaoResponse*
 ///
--(NSNumber*) listarUsingGET49WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET50WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -4161,7 +4161,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET49`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET50`"];
     }
     
 

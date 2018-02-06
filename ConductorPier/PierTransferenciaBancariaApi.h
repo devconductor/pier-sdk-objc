@@ -130,7 +130,7 @@
 /// 
 ///
 /// @return PierPageContaBancariaPortadorResponse*
--(NSNumber*) listarUsingGET11WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET12WithIdConta: (NSNumber*) idConta
     nomeAgencia: (NSString*) nomeAgencia
     numeroAgencia: (NSString*) numeroAgencia
     numeroConta: (NSString*) numeroConta
@@ -157,7 +157,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET44WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET45WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
