@@ -95,6 +95,6 @@
 @property(nonatomic) NSString* email;
 /* Lista de telefones associados ao portador do Cart\u00C3\u00A3o [optional]
  */
-@property(nonatomic) NSArray<PierTelefoneResponse>* tefefones;
+@property(nonatomic) NSArray<PierTelefoneResponse>* telefones;
 
 @end

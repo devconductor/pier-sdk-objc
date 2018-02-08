@@ -238,7 +238,7 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -251,7 +251,7 @@
 /// 
 ///
 /// @return PierGrupoEconomicoResponse*
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierGrupoEconomicoResponse* output, NSError* error)) handler;
 
 
@@ -264,7 +264,7 @@
 /// 
 ///
 /// @return PierMaquinetaResponse*
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierMaquinetaResponse* output, NSError* error)) handler;
 
 
@@ -277,7 +277,7 @@
 /// 
 ///
 /// @return PierOperacaoCredorResponse*
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOperacaoCredorResponse* output, NSError* error)) handler;
 
 
@@ -290,7 +290,7 @@
 /// 
 ///
 /// @return PierTelefoneEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -303,7 +303,7 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
@@ -316,7 +316,7 @@
 /// 
 ///
 /// @return PierVinculoEstabelecimentoAdquirenteResponse*
--(NSNumber*) consultarUsingGET42WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET43WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierVinculoEstabelecimentoAdquirenteResponse* output, NSError* error)) handler;
 
 
@@ -575,7 +575,7 @@
 /// 
 ///
 /// @return PierPageEstabelecimentoResponse*
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -651,7 +651,7 @@
 /// 
 ///
 /// @return PierPageGrupoEconomicoResponse*
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     razaoSocial: (NSString*) razaoSocial
@@ -694,7 +694,7 @@
 /// 
 ///
 /// @return PierPageMaquinetaResponse*
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -715,7 +715,7 @@
 /// 
 ///
 /// @return PierPageMoedaResponse*
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     codigoMoeda: (NSString*) codigoMoeda
@@ -738,7 +738,7 @@
 /// 
 ///
 /// @return PierPageOperacaoCredorResponse*
--(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOperacao: (NSNumber*) idOperacao
@@ -759,7 +759,7 @@
 /// 
 ///
 /// @return PierPageTelefoneEstabelecimentoResponse*
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -781,7 +781,7 @@
 /// 
 ///
 /// @return PierPageTerminalResponse*
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -805,7 +805,7 @@
 /// 
 ///
 /// @return PierPageVinculoEstabelecimentoAdquirenteResponse*
--(NSNumber*) listarUsingGET49WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET51WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idAdquirente: (NSNumber*) idAdquirente
@@ -829,7 +829,7 @@
 /// 
 ///
 /// @return PierPageVinculoOperacaoResponse*
--(NSNumber*) listarUsingGET50WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET52WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -848,7 +848,7 @@
 /// 
 ///
 /// @return PierMaquinetaResponse*
--(NSNumber*) salvarUsingPOST15WithMaquinetaPersist: (PierMaquinetaPersist*) maquinetaPersist
+-(NSNumber*) salvarUsingPOST16WithMaquinetaPersist: (PierMaquinetaPersist*) maquinetaPersist
     completionHandler: (void (^)(PierMaquinetaResponse* output, NSError* error)) handler;
 
 
@@ -861,7 +861,7 @@
 /// 
 ///
 /// @return PierOperacaoCredorResponse*
--(NSNumber*) salvarUsingPOST16WithOprecaoCredorPersist: (PierOperacaoCredorPersist*) oprecaoCredorPersist
+-(NSNumber*) salvarUsingPOST17WithOprecaoCredorPersist: (PierOperacaoCredorPersist*) oprecaoCredorPersist
     completionHandler: (void (^)(PierOperacaoCredorResponse* output, NSError* error)) handler;
 
 
@@ -877,7 +877,7 @@
 /// 
 ///
 /// @return PierTelefoneEstabelecimentoResponse*
--(NSNumber*) salvarUsingPOST21WithIdEstabelecimento: (NSNumber*) idEstabelecimento
+-(NSNumber*) salvarUsingPOST22WithIdEstabelecimento: (NSNumber*) idEstabelecimento
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
@@ -893,7 +893,7 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) salvarUsingPOST23WithTerminalPersist: (PierTerminalPersist*) terminalPersist
+-(NSNumber*) salvarUsingPOST24WithTerminalPersist: (PierTerminalPersist*) terminalPersist
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
@@ -906,7 +906,7 @@
 /// 
 ///
 /// @return PierVinculoEstabelecimentoAdquirenteResponse*
--(NSNumber*) salvarUsingPOST28WithVinculoEstabelecimentoAdquirentePersist: (PierVinculoEstabelecimentoAdquirentePersist*) vinculoEstabelecimentoAdquirentePersist
+-(NSNumber*) salvarUsingPOST29WithVinculoEstabelecimentoAdquirentePersist: (PierVinculoEstabelecimentoAdquirentePersist*) vinculoEstabelecimentoAdquirentePersist
     completionHandler: (void (^)(PierVinculoEstabelecimentoAdquirenteResponse* output, NSError* error)) handler;
 
 

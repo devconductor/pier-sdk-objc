@@ -384,19 +384,19 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET6WithDeviceId: (NSString*) deviceId
+-(NSNumber*) consultarUsingGET7WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoPayDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET7`"];
     }
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
     }
     
 
@@ -851,7 +851,7 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCartaoPayResponse*
 ///
--(NSNumber*) listarUsingGET7WithDeviceId: (NSString*) deviceId
+-(NSNumber*) listarUsingGET9WithDeviceId: (NSString*) deviceId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -958,19 +958,19 @@ static PierConductorPayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayCadastroResponse*
 ///
--(NSNumber*) salvarUsingPOST5WithDeviceId: (NSString*) deviceId
+-(NSNumber*) salvarUsingPOST6WithDeviceId: (NSString*) deviceId
     persist: (PierCartaoPayPersist*) persist
     completionHandler: (void (^)(PierCartaoPayCadastroResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `salvarUsingPOST5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `salvarUsingPOST6`"];
     }
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
     }
     
 

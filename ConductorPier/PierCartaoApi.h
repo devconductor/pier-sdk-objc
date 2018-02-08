@@ -9,6 +9,7 @@
 #import "PierCartaoDetalheResponse.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
 #import "PierPageCartaoResponse.h"
+#import "PierValidaCVVRequest.h"
 #import "PierValidaCartaoResponse.h"
 #import "PierValidaSenhaCartaoResponse.h"
 #import "PierObject.h"
@@ -198,7 +199,7 @@
 /// 
 ///
 /// @return PierCartaoDetalheResponse*
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler;
 
 
@@ -345,7 +346,7 @@
 /// 
 ///
 /// @return PierPageCartaoResponse*
--(NSNumber*) listarUsingGET8WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET10WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
@@ -380,6 +381,21 @@
 /// @return PierCartaoResponse*
 -(NSNumber*) reativarUsingPOSTWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Validar CVV do cart\u00C3\u00A3o
+/// Esse recurso permite a valida\u00C3\u00A7\u00C3\u00A3o do cvv de um cart\u00C3\u00A3o
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id).
+/// @param validaCVV validaCVV
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) validarCVVUsingPOSTWithId: (NSNumber*) _id
+    validaCVV: (PierValidaCVVRequest*) validaCVV
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 ///

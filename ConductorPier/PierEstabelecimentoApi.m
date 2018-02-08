@@ -1178,13 +1178,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierEstabelecimentoResponse*
 ///
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
     }
     
 
@@ -1261,13 +1261,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierGrupoEconomicoResponse*
 ///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierGrupoEconomicoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET18`"];
     }
     
 
@@ -1344,13 +1344,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierMaquinetaResponse*
 ///
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierMaquinetaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET19`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
     }
     
 
@@ -1427,13 +1427,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierOperacaoCredorResponse*
 ///
--(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOperacaoCredorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET20`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
     }
     
 
@@ -1510,13 +1510,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneEstabelecimentoResponse*
 ///
--(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET28`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET29`"];
     }
     
 
@@ -1593,13 +1593,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTerminalResponse*
 ///
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET30`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
     }
     
 
@@ -1676,13 +1676,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierVinculoEstabelecimentoAdquirenteResponse*
 ///
--(NSNumber*) consultarUsingGET42WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET43WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierVinculoEstabelecimentoAdquirenteResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET42`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET43`"];
     }
     
 
@@ -2931,7 +2931,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEstabelecimentoResponse*
 ///
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3246,7 +3246,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageGrupoEconomicoResponse*
 ///
--(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     razaoSocial: (NSString*) razaoSocial
@@ -3468,7 +3468,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageMaquinetaResponse*
 ///
--(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -3574,7 +3574,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageMoedaResponse*
 ///
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET26WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     codigoMoeda: (NSString*) codigoMoeda
@@ -3690,7 +3690,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageOperacaoCredorResponse*
 ///
--(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOperacao: (NSNumber*) idOperacao
@@ -3802,7 +3802,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTelefoneEstabelecimentoResponse*
 ///
--(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idEstabelecimento: (NSNumber*) idEstabelecimento
@@ -3910,7 +3910,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTerminalResponse*
 ///
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -4031,7 +4031,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageVinculoEstabelecimentoAdquirenteResponse*
 ///
--(NSNumber*) listarUsingGET49WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET51WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idAdquirente: (NSNumber*) idAdquirente
@@ -4149,7 +4149,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageVinculoOperacaoResponse*
 ///
--(NSNumber*) listarUsingGET50WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET52WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -4161,7 +4161,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET50`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET52`"];
     }
     
 
@@ -4264,13 +4264,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierMaquinetaResponse*
 ///
--(NSNumber*) salvarUsingPOST15WithMaquinetaPersist: (PierMaquinetaPersist*) maquinetaPersist
+-(NSNumber*) salvarUsingPOST16WithMaquinetaPersist: (PierMaquinetaPersist*) maquinetaPersist
     completionHandler: (void (^)(PierMaquinetaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'maquinetaPersist' is set
     if (maquinetaPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `maquinetaPersist` when calling `salvarUsingPOST15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `maquinetaPersist` when calling `salvarUsingPOST16`"];
     }
     
 
@@ -4344,13 +4344,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierOperacaoCredorResponse*
 ///
--(NSNumber*) salvarUsingPOST16WithOprecaoCredorPersist: (PierOperacaoCredorPersist*) oprecaoCredorPersist
+-(NSNumber*) salvarUsingPOST17WithOprecaoCredorPersist: (PierOperacaoCredorPersist*) oprecaoCredorPersist
     completionHandler: (void (^)(PierOperacaoCredorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'oprecaoCredorPersist' is set
     if (oprecaoCredorPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `oprecaoCredorPersist` when calling `salvarUsingPOST16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `oprecaoCredorPersist` when calling `salvarUsingPOST17`"];
     }
     
 
@@ -4430,7 +4430,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneEstabelecimentoResponse*
 ///
--(NSNumber*) salvarUsingPOST21WithIdEstabelecimento: (NSNumber*) idEstabelecimento
+-(NSNumber*) salvarUsingPOST22WithIdEstabelecimento: (NSNumber*) idEstabelecimento
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
     ramal: (NSString*) ramal
@@ -4439,17 +4439,17 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     
     // verify the required parameter 'idEstabelecimento' is set
     if (idEstabelecimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `salvarUsingPOST21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `salvarUsingPOST22`"];
     }
     
     // verify the required parameter 'ddd' is set
     if (ddd == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `ddd` when calling `salvarUsingPOST21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `ddd` when calling `salvarUsingPOST22`"];
     }
     
     // verify the required parameter 'telefone' is set
     if (telefone == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `telefone` when calling `salvarUsingPOST21`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `telefone` when calling `salvarUsingPOST22`"];
     }
     
 
@@ -4539,13 +4539,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTerminalResponse*
 ///
--(NSNumber*) salvarUsingPOST23WithTerminalPersist: (PierTerminalPersist*) terminalPersist
+-(NSNumber*) salvarUsingPOST24WithTerminalPersist: (PierTerminalPersist*) terminalPersist
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'terminalPersist' is set
     if (terminalPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `terminalPersist` when calling `salvarUsingPOST23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `terminalPersist` when calling `salvarUsingPOST24`"];
     }
     
 
@@ -4619,13 +4619,13 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @returns PierVinculoEstabelecimentoAdquirenteResponse*
 ///
--(NSNumber*) salvarUsingPOST28WithVinculoEstabelecimentoAdquirentePersist: (PierVinculoEstabelecimentoAdquirentePersist*) vinculoEstabelecimentoAdquirentePersist
+-(NSNumber*) salvarUsingPOST29WithVinculoEstabelecimentoAdquirentePersist: (PierVinculoEstabelecimentoAdquirentePersist*) vinculoEstabelecimentoAdquirentePersist
     completionHandler: (void (^)(PierVinculoEstabelecimentoAdquirenteResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'vinculoEstabelecimentoAdquirentePersist' is set
     if (vinculoEstabelecimentoAdquirentePersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `vinculoEstabelecimentoAdquirentePersist` when calling `salvarUsingPOST28`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `vinculoEstabelecimentoAdquirentePersist` when calling `salvarUsingPOST29`"];
     }
     
 

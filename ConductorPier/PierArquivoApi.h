@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "PierArquivoDetalheResponse.h"
 #import "PierIntegrarArquivoRequest.h"
+#import "PierPageArquivoAUDResponse.h"
 #import "PierPageArquivoResponse.h"
 #import "PierArquivoPersist.h"
 #import "PierObject.h"
@@ -50,6 +51,23 @@
 
 ///
 ///
+/// Lista as auditorias do arquivo
+/// Este recurso permite listar as auditorias de um determinado arquivo a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do arquivo
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// 
+///
+/// @return PierPageArquivoAUDResponse*
+-(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageArquivoAUDResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Listar arquivos do Pier Cloud
 /// Este recurso permite a listagem de todos os arquivos dispon\u00C3\u00ADveis no Pier Cloud.
 ///
@@ -63,7 +81,7 @@
 /// 
 ///
 /// @return PierPageArquivoResponse*
--(NSNumber*) listarUsingGET3WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET4WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

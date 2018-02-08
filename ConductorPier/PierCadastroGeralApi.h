@@ -25,9 +25,9 @@
 #import "PierPagePortadorResponse.h"
 #import "PierPageProdutoResponse.h"
 #import "PierPagePromotorResponse.h"
-#import "PierPageAtendimentoClienteResponse.h"
 #import "PierPageTipoEnderecoResponse.h"
 #import "PierPageTipoTelefoneResponse.h"
+#import "PierPageAtendimentoClienteResponse.h"
 #import "PierPageControleVencimentoResponse.h"
 #import "PierPageBancoResponse.h"
 #import "PierCampanhaPersist.h"
@@ -153,6 +153,19 @@
 
 ///
 ///
+/// Apresenta dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo espec\u00C3\u00ADfico.
+/// Este recurso permite consultar dados de configura\u00C3\u00A7\u00C3\u00A3o do parcelamento rotativo a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+///
+/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de configura\u00C3\u00A7\u00C3\u00A3o rotativo (id).
+/// 
+///
+/// @return PierConfiguracaoRotativoDetalheResponse*
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// Apresenta os dados de um determinado Produto
 /// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
 ///
@@ -160,7 +173,7 @@
 /// 
 ///
 /// @return PierProdutoDetalhesResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
 
 
@@ -190,7 +203,7 @@
 /// 
 ///
 /// @return PierPageTipoAjusteResponse*
--(NSNumber*) consultarUsingGET31WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET32WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -212,7 +225,7 @@
 /// 
 ///
 /// @return PierPageTipoBoletoResponse*
--(NSNumber*) consultarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -230,7 +243,7 @@
 /// 
 ///
 /// @return PierTipoEnderecoResponse*
--(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler;
 
 
@@ -245,7 +258,7 @@
 /// 
 ///
 /// @return PierTipoOperacaoResponse*
--(NSNumber*) consultarUsingGET34WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET35WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
@@ -260,7 +273,7 @@
 /// 
 ///
 /// @return PierTipoTelefoneResponse*
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -273,7 +286,7 @@
 /// 
 ///
 /// @return PierBancoResponse*
--(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler;
 
 
@@ -286,21 +299,8 @@
 /// 
 ///
 /// @return PierConfiguracaoRegistroCobrancaResponse*
--(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo espec\u00C3\u00ADfico.
-/// Este recurso permite consultar dados de configura\u00C3\u00A7\u00C3\u00A3o do parcelamento rotativo a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de configura\u00C3\u00A7\u00C3\u00A3o rotativo (id).
-/// 
-///
-/// @return PierConfiguracaoRotativoDetalheResponse*
 -(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -484,7 +484,7 @@
 /// 
 ///
 /// @return PierConfiguracaoRegistroCobrancaResponse*
--(NSNumber*) listarUsingGET10WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
@@ -502,7 +502,7 @@
 /// 
 ///
 /// @return PierPageConfiguracaoRotativoResponse*
--(NSNumber*) listarUsingGET11WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
@@ -530,7 +530,7 @@
 /// 
 ///
 /// @return PierPagePortadorResponse*
--(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -560,7 +560,7 @@
 /// 
 ///
 /// @return PierPageProdutoResponse*
--(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -585,7 +585,7 @@
 /// 
 ///
 /// @return PierPagePromotorResponse*
--(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -594,31 +594,6 @@
     idEstabelecimento: (NSNumber*) idEstabelecimento
     idUsuario: (NSNumber*) idUsuario
     completionHandler: (void (^)(PierPagePromotorResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Lista todos os atendimentos
-/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
-///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id)
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
-/// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
-/// @param dataAtendimento Apresenta a data em que o Atendimento foi realizado.
-/// 
-///
-/// @return PierPageAtendimentoClienteResponse*
--(NSNumber*) listarUsingGET4WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    idTipoAtendimento: (NSNumber*) idTipoAtendimento
-    idConta: (NSNumber*) idConta
-    nomeAtendente: (NSString*) nomeAtendente
-    dataAtendimento: (NSString*) dataAtendimento
-    completionHandler: (void (^)(PierPageAtendimentoClienteResponse* output, NSError* error)) handler;
 
 
 ///
@@ -634,7 +609,7 @@
 /// 
 ///
 /// @return PierPageTipoEnderecoResponse*
--(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -655,12 +630,37 @@
 /// 
 ///
 /// @return PierPageTipoTelefoneResponse*
--(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
     nome: (NSString*) nome
     completionHandler: (void (^)(PierPageTipoTelefoneResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista todos os atendimentos
+/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
+///
+/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
+/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id)
+/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
+/// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
+/// @param dataAtendimento Apresenta a data em que o Atendimento foi realizado.
+/// 
+///
+/// @return PierPageAtendimentoClienteResponse*
+-(NSNumber*) listarUsingGET5WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idTipoAtendimento: (NSNumber*) idTipoAtendimento
+    idConta: (NSNumber*) idConta
+    nomeAtendente: (NSString*) nomeAtendente
+    dataAtendimento: (NSString*) dataAtendimento
+    completionHandler: (void (^)(PierPageAtendimentoClienteResponse* output, NSError* error)) handler;
 
 
 ///
@@ -675,7 +675,7 @@
 /// 
 ///
 /// @return PierPageControleVencimentoResponse*
--(NSNumber*) listarUsingGET48WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET50WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     dataVencimento: (NSString*) dataVencimento
@@ -693,7 +693,7 @@
 /// 
 ///
 /// @return PierPageBancoResponse*
--(NSNumber*) listarUsingGET5WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageBancoResponse* output, NSError* error)) handler;
@@ -737,7 +737,7 @@
 /// 
 ///
 /// @return PierCampanhaResponse*
--(NSNumber*) salvarUsingPOST4WithCampanhaPersist: (PierCampanhaPersist*) campanhaPersist
+-(NSNumber*) salvarUsingPOST5WithCampanhaPersist: (PierCampanhaPersist*) campanhaPersist
     completionHandler: (void (^)(PierCampanhaResponse* output, NSError* error)) handler;
 
 
@@ -750,7 +750,7 @@
 /// 
 ///
 /// @return PierConfiguracaoRotativoDetalheResponse*
--(NSNumber*) salvarUsingPOST6WithConfiguracaoRotativoPersist: (PierConfiguracaoRotativoPersist*) configuracaoRotativoPersist
+-(NSNumber*) salvarUsingPOST7WithConfiguracaoRotativoPersist: (PierConfiguracaoRotativoPersist*) configuracaoRotativoPersist
     completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
 
 

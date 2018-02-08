@@ -1,16 +1,16 @@
-#import "PierFAQApi.h"
+#import "PierAvisoViagemApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierFaqResponse.h"
-#import "PierPageFaqResponse.h"
+#import "PierAvisoViagemResponse.h"
+#import "PierPageAvisoViagemResponse.h"
 
 
-@interface PierFAQApi ()
+@interface PierAvisoViagemApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierFAQApi
+@implementation PierAvisoViagemApi
 
-static PierFAQApi* singletonAPI = nil;
+static PierAvisoViagemApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static PierFAQApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierFAQApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierAvisoViagemApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierFAQApi alloc] init];
+        singletonAPI = [[PierAvisoViagemApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierFAQApi*) sharedAPI {
++(PierAvisoViagemApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierFAQApi alloc] init];
+        singletonAPI = [[PierAvisoViagemApi alloc] init];
     }
     return singletonAPI;
 }
@@ -71,43 +71,288 @@ static PierFAQApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Adiciona uma nova FAQ
-/// Adiciona uma nova FAQ
-///  @param pergunta Conte\u00C3\u00BAdo da pergunta. 
+/// Consultar um aviso viagem de acordo com o id passado
+/// Este m\u00C3\u00A9todo permite que seja consultado um aviso viagen existente na base do emissor.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Aviso Viagem (id). 
 ///
-///  @param resposta Conte\u00C3\u00BAdo da resposta. 
+///  @returns PierAvisoViagemResponse*
 ///
-///  @param relevancia N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. (optional)
-///
-///  @param plataforma Plataforma em que a FAQ se encaixa. (optional)
-///
-///  @param categoria Categoria de assunto do qual a FAQ se trata. (optional)
-///
-///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
-///
-///  @returns PierFaqResponse*
-///
--(NSNumber*) adicionarUsingPOSTWithPergunta: (NSString*) pergunta
-    resposta: (NSString*) resposta
-    relevancia: (NSNumber*) relevancia
-    plataforma: (NSString*) plataforma
-    categoria: (NSString*) categoria
-    status: (NSString*) status
-    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'pergunta' is set
-    if (pergunta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pergunta` when calling `adicionarUsingPOST`"];
-    }
-    
-    // verify the required parameter 'resposta' is set
-    if (resposta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `adicionarUsingPOST`"];
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET4`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/faqs"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/avisos-viagens/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAvisoViagemResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAvisoViagemResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Desabilitar um aviso viagem de acordo com o id passado
+/// Este m\u00C3\u00A9todo permite que seja desabilitado um aviso viagen existente na base do emissor.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Aviso Viagem (id). 
+///
+///  @returns PierAvisoViagemResponse*
+///
+-(NSNumber*) desabilitarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `desabilitarUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/avisos-viagens/{id}/desabilitar"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAvisoViagemResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAvisoViagemResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Habilitar um aviso viagem de acordo com o id passado
+/// Este m\u00C3\u00A9todo permite que seja habilitado um aviso viagen existente na base do emissor.
+///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Aviso Viagem (id). 
+///
+///  @returns PierAvisoViagemResponse*
+///
+-(NSNumber*) habilitarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `habilitarUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/avisos-viagens/{id}/habilitar"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAvisoViagemResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAvisoViagemResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista os avisos viagens gerados pelo Emissor
+/// Este m\u00C3\u00A9todo permite que sejam listados os avisos viagens existentes na base do emissor.
+///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///
+///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///
+///  @param idCartao C\u00C3\u00B3digo Identificador do cart\u00C3\u00A3o na base (id) (optional)
+///
+///  @param codigoPais Codigo identificador do pa\u00C3\u00ADs na base (id) (optional)
+///
+///  @param dataInicio Data inicio do aviso viagem (optional)
+///
+///  @param dataFim Data fim do aviso viagem (optional)
+///
+///  @param flagAtivo Identifica se o aviso viagem esta ativo ou n\u00C3\u00A3o (optional)
+///
+///  @returns PierPageAvisoViagemResponse*
+///
+-(NSNumber*) listarUsingGET6WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idCartao: (NSNumber*) idCartao
+    codigoPais: (NSString*) codigoPais
+    dataInicio: (NSString*) dataInicio
+    dataFim: (NSString*) dataFim
+    flagAtivo: (NSNumber*) flagAtivo
+    completionHandler: (void (^)(PierPageAvisoViagemResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/avisos-viagens"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -118,29 +363,159 @@ static PierFAQApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (pergunta != nil) {
+    if (sort != nil) {
         
-        queryParams[@"pergunta"] = pergunta;
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
     }
-    if (resposta != nil) {
+    if (page != nil) {
         
-        queryParams[@"resposta"] = resposta;
+        queryParams[@"page"] = page;
     }
-    if (relevancia != nil) {
+    if (limit != nil) {
         
-        queryParams[@"relevancia"] = relevancia;
+        queryParams[@"limit"] = limit;
     }
-    if (plataforma != nil) {
+    if (idCartao != nil) {
         
-        queryParams[@"plataforma"] = plataforma;
+        queryParams[@"idCartao"] = idCartao;
     }
-    if (categoria != nil) {
+    if (codigoPais != nil) {
         
-        queryParams[@"categoria"] = categoria;
+        queryParams[@"codigoPais"] = codigoPais;
     }
-    if (status != nil) {
+    if (dataInicio != nil) {
         
-        queryParams[@"status"] = status;
+        queryParams[@"dataInicio"] = dataInicio;
+    }
+    if (dataFim != nil) {
+        
+        queryParams[@"dataFim"] = dataFim;
+    }
+    if (flagAtivo != nil) {
+        
+        queryParams[@"flagAtivo"] = flagAtivo;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageAvisoViagemResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageAvisoViagemResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza o cadastro de um novo Aviso Viagem
+/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Aviso Viagem na base de dados do Emissor.
+///  @param idCartao C\u00C3\u00B3digo Identificador do cart\u00C3\u00A3o na base (id) 
+///
+///  @param codigoPais Codigo identificador do pa\u00C3\u00ADs na base (id) 
+///
+///  @param dataInicio Data inicio do aviso viagem 
+///
+///  @param dataFim Data fim do aviso viagem 
+///
+///  @returns PierAvisoViagemResponse*
+///
+-(NSNumber*) salvarUsingPOST3WithIdCartao: (NSNumber*) idCartao
+    codigoPais: (NSString*) codigoPais
+    dataInicio: (NSString*) dataInicio
+    dataFim: (NSString*) dataFim
+    completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idCartao' is set
+    if (idCartao == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `salvarUsingPOST3`"];
+    }
+    
+    // verify the required parameter 'codigoPais' is set
+    if (codigoPais == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoPais` when calling `salvarUsingPOST3`"];
+    }
+    
+    // verify the required parameter 'dataInicio' is set
+    if (dataInicio == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataInicio` when calling `salvarUsingPOST3`"];
+    }
+    
+    // verify the required parameter 'dataFim' is set
+    if (dataFim == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataFim` when calling `salvarUsingPOST3`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/avisos-viagens"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (idCartao != nil) {
+        
+        queryParams[@"idCartao"] = idCartao;
+    }
+    if (codigoPais != nil) {
+        
+        queryParams[@"codigoPais"] = codigoPais;
+    }
+    if (dataInicio != nil) {
+        
+        queryParams[@"dataInicio"] = dataInicio;
+    }
+    if (dataFim != nil) {
+        
+        queryParams[@"dataFim"] = dataFim;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -187,371 +562,9 @@ static PierFAQApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierFaqResponse*"
+                              responseType: @"PierAvisoViagemResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierFaqResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Alterar FAQ
-/// Alterar FAQ
-///  @param _id Id 
-///
-///  @param pergunta Conte\u00C3\u00BAdo da pergunta. 
-///
-///  @param resposta Conte\u00C3\u00BAdo da resposta. 
-///
-///  @param relevancia N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. (optional)
-///
-///  @param plataforma Plataforma em que a FAQ se encaixa. (optional)
-///
-///  @param categoria Categoria de assunto do qual a FAQ se trata. (optional)
-///
-///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
-///
-///  @returns PierFaqResponse*
-///
--(NSNumber*) alterarUsingPUT7WithId: (NSNumber*) _id
-    pergunta: (NSString*) pergunta
-    resposta: (NSString*) resposta
-    relevancia: (NSNumber*) relevancia
-    plataforma: (NSString*) plataforma
-    categoria: (NSString*) categoria
-    status: (NSString*) status
-    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT7`"];
-    }
-    
-    // verify the required parameter 'pergunta' is set
-    if (pergunta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `pergunta` when calling `alterarUsingPUT7`"];
-    }
-    
-    // verify the required parameter 'resposta' is set
-    if (resposta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `resposta` when calling `alterarUsingPUT7`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/faqs/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (pergunta != nil) {
-        
-        queryParams[@"pergunta"] = pergunta;
-    }
-    if (resposta != nil) {
-        
-        queryParams[@"resposta"] = resposta;
-    }
-    if (relevancia != nil) {
-        
-        queryParams[@"relevancia"] = relevancia;
-    }
-    if (plataforma != nil) {
-        
-        queryParams[@"plataforma"] = plataforma;
-    }
-    if (categoria != nil) {
-        
-        queryParams[@"categoria"] = categoria;
-    }
-    if (status != nil) {
-        
-        queryParams[@"status"] = status;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"PUT"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierFaqResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierFaqResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Consultar FAQ por id
-/// Consulta os detalhes de uma determinada FAQ
-///  @param _id Id 
-///
-///  @returns PierFaqResponse*
-///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/faqs/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierFaqResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierFaqResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// Lista FAQs
-/// Lista todas as FAQs
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
-///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param idFaq C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da FAQ (id). (optional)
-///
-///  @param pergunta Conte\u00C3\u00BAdo da pergunta. (optional)
-///
-///  @param resposta Conte\u00C3\u00BAdo da resposta. (optional)
-///
-///  @param relevancia N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. (optional)
-///
-///  @param plataforma Plataforma em que a FAQ se encaixa. (optional)
-///
-///  @param categoria Categoria de assunto do qual a FAQ se trata. (optional)
-///
-///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
-///
-///  @returns PierPageFaqResponse*
-///
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    idFaq: (NSNumber*) idFaq
-    pergunta: (NSString*) pergunta
-    resposta: (NSString*) resposta
-    relevancia: (NSNumber*) relevancia
-    plataforma: (NSString*) plataforma
-    categoria: (NSString*) categoria
-    status: (NSString*) status
-    completionHandler: (void (^)(PierPageFaqResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/faqs"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (sort != nil) {
-        
-        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
-        
-        
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (idFaq != nil) {
-        
-        queryParams[@"idFaq"] = idFaq;
-    }
-    if (pergunta != nil) {
-        
-        queryParams[@"pergunta"] = pergunta;
-    }
-    if (resposta != nil) {
-        
-        queryParams[@"resposta"] = resposta;
-    }
-    if (relevancia != nil) {
-        
-        queryParams[@"relevancia"] = relevancia;
-    }
-    if (plataforma != nil) {
-        
-        queryParams[@"plataforma"] = plataforma;
-    }
-    if (categoria != nil) {
-        
-        queryParams[@"categoria"] = categoria;
-    }
-    if (status != nil) {
-        
-        queryParams[@"status"] = status;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageFaqResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageFaqResponse*)data, error);
+                               handler((PierAvisoViagemResponse*)data, error);
                            }
           ];
 }

@@ -79,7 +79,7 @@
 /// 
 ///
 /// @return PierPageJobResponse*
--(NSNumber*) listarUsingGET22WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET24WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status
@@ -99,7 +99,7 @@
 /// 
 ///
 /// @return PierJobResponse*
--(NSNumber*) salvarUsingPOST14WithDescricao: (NSString*) descricao
+-(NSNumber*) salvarUsingPOST15WithDescricao: (NSString*) descricao
     cron: (NSString*) cron
     groovy: (NSString*) groovy
     completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler;

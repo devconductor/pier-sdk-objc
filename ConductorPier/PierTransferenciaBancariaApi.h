@@ -67,7 +67,7 @@
 /// 
 ///
 /// @return PierContaBancariaPortadorResponse*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
 
@@ -82,7 +82,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -130,7 +130,7 @@
 /// 
 ///
 /// @return PierPageContaBancariaPortadorResponse*
--(NSNumber*) listarUsingGET12WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
     nomeAgencia: (NSString*) nomeAgencia
     numeroAgencia: (NSString*) numeroAgencia
     numeroConta: (NSString*) numeroConta
@@ -157,7 +157,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET45WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET47WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -174,7 +174,7 @@
 /// 
 ///
 /// @return PierContaBancariaPortadorResponse*
--(NSNumber*) salvarUsingPOST7WithPersist: (PierContaBancariaPortadorPersist*) persist
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierContaBancariaPortadorPersist*) persist
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
 

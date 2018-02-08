@@ -261,13 +261,13 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaBancariaPortadorResponse*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -348,7 +348,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaBancariaResponse*
 ///
--(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
@@ -356,12 +356,12 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET39`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET40`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET39`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET40`"];
     }
     
 
@@ -581,7 +581,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageContaBancariaPortadorResponse*
 ///
--(NSNumber*) listarUsingGET12WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
     nomeAgencia: (NSString*) nomeAgencia
     numeroAgencia: (NSString*) numeroAgencia
     numeroConta: (NSString*) numeroConta
@@ -720,7 +720,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaBancariaResponse*
 ///
--(NSNumber*) listarUsingGET45WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET47WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -730,7 +730,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET45`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET47`"];
     }
     
 
@@ -825,13 +825,13 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaBancariaPortadorResponse*
 ///
--(NSNumber*) salvarUsingPOST7WithPersist: (PierContaBancariaPortadorPersist*) persist
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierContaBancariaPortadorPersist*) persist
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST8`"];
     }
     
 
