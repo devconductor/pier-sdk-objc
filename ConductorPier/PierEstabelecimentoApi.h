@@ -561,6 +561,7 @@
 /// @param idPais Identificador de Pa\u00C3\u00ADs.
 /// @param mcc C\u00C3\u00B3digo de Categoria de Mercado
 /// @param idTipoEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento.
+/// @param correspondencia Indicador para qual endere\u00C3\u00A7o as correspond\u00C3\u00AAncias ser\u00C3\u00A3o enviadas, onde 1 \u00C3\u00A9 ORIGEM e 2 ENDERE\u00C3\u0087O DE CORRESPOND\u00C3\u008ANCIA.
 /// @param idMoeda C\u00C3\u00B3digo identificador da moeda.
 /// @param tipoPagamento Tipo do regime de pagamento do estabelecimento.
 /// @param numeroEstabelecimento N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento na Conductor.
@@ -601,6 +602,7 @@
     idPais: (NSNumber*) idPais
     mcc: (NSNumber*) mcc
     idTipoEstabelecimento: (NSNumber*) idTipoEstabelecimento
+    correspondencia: (NSNumber*) correspondencia
     idMoeda: (NSNumber*) idMoeda
     tipoPagamento: (NSString*) tipoPagamento
     numeroEstabelecimento: (NSString*) numeroEstabelecimento

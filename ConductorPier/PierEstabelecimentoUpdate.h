@@ -102,9 +102,9 @@
 /* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento. [optional]
  */
 @property(nonatomic) NSNumber* idTipoEstabelecimento;
-/* Tipo da Correspond\u00C3\u00AAncia (ORIGEM, CORRESPONDENCIA). [optional]
+/* Indicador para qual endere\u00C3\u00A7o as correspond\u00C3\u00AAncias ser\u00C3\u00A3o enviadas, onde 1 \u00C3\u00A9 ORIGEM e 2 ENDERE\u00C3\u0087O DE CORRESPOND\u00C3\u008ANCIA. [optional]
  */
-@property(nonatomic) NSString* tipoCorrespondencia;
+@property(nonatomic) NSNumber* correspondencia;
 /* Cargo do contato do estabelecimento. [optional]
  */
 @property(nonatomic) NSString* cargoContato;

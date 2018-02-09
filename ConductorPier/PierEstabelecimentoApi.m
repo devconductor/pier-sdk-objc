@@ -2907,6 +2907,8 @@ static PierEstabelecimentoApi* singletonAPI = nil;
 ///
 ///  @param idTipoEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento. (optional)
 ///
+///  @param correspondencia Indicador para qual endere\u00C3\u00A7o as correspond\u00C3\u00AAncias ser\u00C3\u00A3o enviadas, onde 1 \u00C3\u00A9 ORIGEM e 2 ENDERE\u00C3\u0087O DE CORRESPOND\u00C3\u008ANCIA. (optional)
+///
 ///  @param idMoeda C\u00C3\u00B3digo identificador da moeda. (optional)
 ///
 ///  @param tipoPagamento Tipo do regime de pagamento do estabelecimento. (optional)
@@ -2957,6 +2959,7 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     idPais: (NSNumber*) idPais
     mcc: (NSNumber*) mcc
     idTipoEstabelecimento: (NSNumber*) idTipoEstabelecimento
+    correspondencia: (NSNumber*) correspondencia
     idMoeda: (NSNumber*) idMoeda
     tipoPagamento: (NSString*) tipoPagamento
     numeroEstabelecimento: (NSString*) numeroEstabelecimento
@@ -3088,6 +3091,10 @@ static PierEstabelecimentoApi* singletonAPI = nil;
     if (idTipoEstabelecimento != nil) {
         
         queryParams[@"idTipoEstabelecimento"] = idTipoEstabelecimento;
+    }
+    if (correspondencia != nil) {
+        
+        queryParams[@"correspondencia"] = correspondencia;
     }
     if (idMoeda != nil) {
         

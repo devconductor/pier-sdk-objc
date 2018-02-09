@@ -40,6 +40,6 @@
 @property(nonatomic) NSString* terminalRequisitante;
 /* Representa a identifica\u00C3\u00A7\u00C3\u00A3o do n\u00C3\u00BAmero do estabelecimento. 
  */
-@property(nonatomic) NSNumber* numeroEstabelecimento;
+@property(nonatomic) NSString* numeroEstabelecimento;
 
 @end

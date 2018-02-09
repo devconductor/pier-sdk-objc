@@ -116,7 +116,7 @@
 @property(nonatomic) NSNumber* idTipoEstabelecimento;
 /* Tipo da Correspond\u00C3\u00AAncia (ORIGEM, CORRESPONDENCIA). [optional]
  */
-@property(nonatomic) NSString* tipoCorrespondencia;
+@property(nonatomic) NSNumber* correspondencia;
 /* Cargo do contato do estabelecimento. [optional]
  */
 @property(nonatomic) NSString* cargoContato;
