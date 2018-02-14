@@ -2100,11 +2100,11 @@ static PierCartaoApi* singletonAPI = nil;
 ///
 ///  @param validaCVV validaCVV 
 ///
-///  @returns NSObject*
+///  @returns NSString*
 ///
 -(NSNumber*) validarCVVUsingPOSTWithId: (NSNumber*) _id
     validaCVV: (PierValidaCVVRequest*) validaCVV
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
@@ -2177,9 +2177,9 @@ static PierCartaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"NSObject*"
+                              responseType: @"NSString*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((NSObject*)data, error);
+                               handler((NSString*)data, error);
                            }
           ];
 }

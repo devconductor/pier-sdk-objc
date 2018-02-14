@@ -392,10 +392,10 @@
 /// @param validaCVV validaCVV
 /// 
 ///
-/// @return NSObject*
+/// @return NSString*
 -(NSNumber*) validarCVVUsingPOSTWithId: (NSNumber*) _id
     validaCVV: (PierValidaCVVRequest*) validaCVV
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 ///
