@@ -352,6 +352,7 @@
 #import "PierVinculoEstabelecimentoAdquirenteResponse.h"
 #import "PierVinculoOperacaoPersist.h"
 #import "PierVinculoOperacaoResponse.h"
+#import "PierWebHook.h"
 #import "PierWebHookResponse.h"
 
 

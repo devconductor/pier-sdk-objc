@@ -1,6 +1,7 @@
 #import "PierWebhookApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierWebHookResponse.h"
+#import "PierWebHook.h"
 #import "PierPageWebHookResponse.h"
 
 
@@ -75,17 +76,14 @@ static PierWebhookApi* singletonAPI = nil;
 /// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
 ///  @param _id C\u00C3\u00B3digo identificador do Webhook 
 ///
-///  @param tipoEvento TipoEvento a ser chamado pelo WebHook 
-///
-///  @param url URL que a ser consumida pelo WebHook 
+///  @param webhook webhook 
 ///
 ///  @param status Status (optional)
 ///
 ///  @returns PierWebHookResponse*
 ///
 -(NSNumber*) alterarUsingPUT22WithId: (NSNumber*) _id
-    tipoEvento: (NSString*) tipoEvento
-    url: (NSString*) url
+    webhook: (PierWebHook*) webhook
     status: (NSString*) status
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
@@ -95,14 +93,9 @@ static PierWebhookApi* singletonAPI = nil;
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarUsingPUT22`"];
     }
     
-    // verify the required parameter 'tipoEvento' is set
-    if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `alterarUsingPUT22`"];
-    }
-    
-    // verify the required parameter 'url' is set
-    if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `alterarUsingPUT22`"];
+    // verify the required parameter 'webhook' is set
+    if (webhook == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `webhook` when calling `alterarUsingPUT22`"];
     }
     
 
@@ -123,14 +116,6 @@ static PierWebhookApi* singletonAPI = nil;
     if (status != nil) {
         
         queryParams[@"status"] = status;
-    }
-    if (tipoEvento != nil) {
-        
-        queryParams[@"tipoEvento"] = tipoEvento;
-    }
-    if (url != nil) {
-        
-        queryParams[@"url"] = url;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -162,7 +147,7 @@ static PierWebhookApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    
+    bodyParam = webhook;
     
 
     
@@ -393,25 +378,17 @@ static PierWebhookApi* singletonAPI = nil;
 ///
 /// Salvar Webhook
 /// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
-///  @param tipoEvento TipoEvento a ser chamado pelo WebHook 
-///
-///  @param url URL que a ser consumida pelo WebHook 
+///  @param webhook webhook 
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) salvarUsingPOST30WithTipoEvento: (NSString*) tipoEvento
-    url: (NSString*) url
+-(NSNumber*) salvarUsingPOST30WithWebhook: (PierWebHook*) webhook
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'tipoEvento' is set
-    if (tipoEvento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipoEvento` when calling `salvarUsingPOST30`"];
-    }
-    
-    // verify the required parameter 'url' is set
-    if (url == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `url` when calling `salvarUsingPOST30`"];
+    // verify the required parameter 'webhook' is set
+    if (webhook == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `webhook` when calling `salvarUsingPOST30`"];
     }
     
 
@@ -426,14 +403,6 @@ static PierWebhookApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (tipoEvento != nil) {
-        
-        queryParams[@"tipoEvento"] = tipoEvento;
-    }
-    if (url != nil) {
-        
-        queryParams[@"url"] = url;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -464,7 +433,7 @@ static PierWebhookApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    
+    bodyParam = webhook;
     
 
     

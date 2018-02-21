@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierWebHookResponse.h"
+#import "PierWebHook.h"
 #import "PierPageWebHookResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -26,15 +27,13 @@
 /// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
 ///
 /// @param _id C\u00C3\u00B3digo identificador do Webhook
-/// @param tipoEvento TipoEvento a ser chamado pelo WebHook
-/// @param url URL que a ser consumida pelo WebHook
+/// @param webhook webhook
 /// @param status Status
 /// 
 ///
 /// @return PierWebHookResponse*
 -(NSNumber*) alterarUsingPUT22WithId: (NSNumber*) _id
-    tipoEvento: (NSString*) tipoEvento
-    url: (NSString*) url
+    webhook: (PierWebHook*) webhook
     status: (NSString*) status
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
@@ -82,13 +81,11 @@
 /// Salvar Webhook
 /// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
 ///
-/// @param tipoEvento TipoEvento a ser chamado pelo WebHook
-/// @param url URL que a ser consumida pelo WebHook
+/// @param webhook webhook
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) salvarUsingPOST30WithTipoEvento: (NSString*) tipoEvento
-    url: (NSString*) url
+-(NSNumber*) salvarUsingPOST30WithWebhook: (PierWebHook*) webhook
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
