@@ -14,8 +14,8 @@
 
 @interface PierIntegrarArquivoRequest : PierObject
 
-/* CPF do cliente de Arquivos a serem integrados [optional]
+/* N\u00FAmero Receita Federal (CPF) vinculado a um ou mais arquivos que ser\u00E3o enviados para realizar integra\u00E7\u00E3o [optional]
  */
-@property(nonatomic) NSString* cpf;
+@property(nonatomic) NSString* numeroReceitaFederal;
 
 @end

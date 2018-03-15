@@ -20,7 +20,7 @@
 /* Data de fechamento da fatura [optional]
  */
 @property(nonatomic) NSString* dataFechamentoFatura;
-/* Data de vencimento padr\u00C3\u00A3o [optional]
+/* Data de vencimento padr\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataVencimentoPadrao;
 /* Valor total da fatura [optional]
@@ -50,19 +50,22 @@
 /* Valor do TAC [optional]
  */
 @property(nonatomic) NSNumber* valorTAC;
-/* Status da ades\u00C3\u00A3o [optional]
+/* Status da ades\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* statusAdesao;
-/* Data de inclus\u00C3\u00A3o [optional]
+/* Data de inclus\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data de processamento da ades\u00C3\u00A3o [optional]
+/* Data de processamento da ades\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataProcessamentoAdesao;
 /* Identificador da conta [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de servi\u00C3\u00A7o [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de servi\u00E7o [optional]
+ */
+@property(nonatomic) NSNumber* idServicoTipo;
+/* Descri\u00E7\u00E3o do tipo de servi\u00E7o [optional]
  */
 @property(nonatomic) NSString* descricaoServicoTipo;
 /* Indica se a fatura foi com entrada [optional]

@@ -2,6 +2,7 @@
 #import "PierQueryParamCollection.h"
 #import "PierRiscoFraudeDetalhadoResponse.h"
 #import "PierTipoResolucaoResponse.h"
+#import "PierDadosPortadorRequest.h"
 
 
 @interface PierRiscoFraudeApi ()
@@ -71,19 +72,19 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Consultar uma transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude
-/// Consulta os detalhes de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude 
+/// Consultar uma transa\u00E7\u00E3o classificada com risco de fraude
+/// Consulta os detalhes de uma transa\u00E7\u00E3o classificada como risco de fraude.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do risco de fraude 
 ///
 ///  @returns PierRiscoFraudeDetalhadoResponse*
 ///
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET27WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierRiscoFraudeDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET26`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET27`"];
     }
     
 
@@ -154,11 +155,11 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 }
 
 ///
-/// Listar os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude
-/// Este recurso permite que sejam listados os tipos de resolu\u00C3\u00A7\u00C3\u00A3o de fraude, cadastrados para um emissor.
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+/// Listar os tipos de resolu\u00E7\u00E3o de fraude
+/// Este recurso permite que sejam listados os tipos de resolu\u00E7\u00E3o de fraude, cadastrados para um emissor.
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierTipoResolucaoResponse*
 ///
@@ -240,9 +241,9 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 }
 
 ///
-/// Negar autenticidade de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude
-/// Nega a realiza\u00C3\u00A7\u00C3\u00A3o de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude 
+/// Negar autenticidade de uma transa\u00E7\u00E3o classificada como risco de fraude
+/// Nega a realiza\u00E7\u00E3o de uma transa\u00E7\u00E3o classificada como risco de fraude.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do risco de fraude 
 ///
 ///  @returns NSObject*
 ///
@@ -323,9 +324,9 @@ static PierRiscoFraudeApi* singletonAPI = nil;
 }
 
 ///
-/// Reconhecer autenticidade de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude
-/// Confirma a autenticidade de uma transa\u00C3\u00A7\u00C3\u00A3o classificada como risco de fraude.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude 
+/// Reconhecer autenticidade de uma transa\u00E7\u00E3o classificada como risco de fraude
+/// Confirma a autenticidade de uma transa\u00E7\u00E3o classificada como risco de fraude.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do risco de fraude 
 ///
 ///  @returns NSObject*
 ///
@@ -384,6 +385,86 @@ static PierRiscoFraudeApi* singletonAPI = nil;
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
     
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSObject*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSObject*)data, error);
+                           }
+          ];
+}
+
+///
+/// Val\u00EDda os dados informados, consultando as informa\u00E7\u00F5es na base do emissor
+/// Verif\u00EDca a exist\u00EAncias das informa\u00E7\u00F5es na base do emissor.
+///  @param request request 
+///
+///  @returns NSObject*
+///
+-(NSNumber*) validarDadosPortadorUsingPOSTWithRequest: (PierDadosPortadorRequest*) request
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'request' is set
+    if (request == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `request` when calling `validarDadosPortadorUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/riscos-fraudes/validar-dados-portador"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = request;
     
 
     

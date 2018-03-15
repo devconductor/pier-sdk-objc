@@ -14,22 +14,22 @@
 
 @interface PierCartaoPayPersist : PierObject
 
-/* N\u00C3\u00BAmero do cart\u00C3\u00A3o criptografado 
+/* N\u00FAmero do cart\u00E3o criptografado 
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Data de validade do cart\u00C3\u00A3o [optional]
+/* Data de validade do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* CVV do cart\u00C3\u00A3o criptografado [optional]
+/* CVV do cart\u00E3o criptografado [optional]
  */
 @property(nonatomic) NSString* cvv;
-/* CPF do portador do cart\u00C3\u00A3o criptografado [optional]
+/* CPF do portador do cart\u00E3o criptografado [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* Nome impresso no cart\u00C3\u00A3o criptografado [optional]
+/* Nome impresso no cart\u00E3o criptografado [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Chave p\u00C3\u00BAblica do dispositivo criptografada 
+/* Chave p\u00FAblica do dispositivo criptografada 
  */
 @property(nonatomic) NSString* chavePublicaDevice;
 

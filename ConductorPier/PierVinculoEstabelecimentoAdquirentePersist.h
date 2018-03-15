@@ -20,7 +20,7 @@
 /* Apresenta o id do adquirente. 
  */
 @property(nonatomic) NSNumber* idAdquirente;
-/* Apresenta o c\u00C3\u00B3digo de v\u00C3\u00ADnculo entre o estabelecimento e o adquirente. 
+/* Apresenta o c\u00F3digo de v\u00EDnculo entre o estabelecimento e o adquirente. 
  */
 @property(nonatomic) NSString* codigoEstabelecimentoAdquirente;
 

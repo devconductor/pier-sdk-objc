@@ -20,7 +20,7 @@
 /* TipoEvento a ser chamado pelo WebHook 
  */
 @property(nonatomic) NSString* tipoEvento;
-/* M\u00C3\u00A9todo que a ser chamado pelo WebHook 
+/* M\u00E9todo que a ser chamado pelo WebHook 
  */
 @property(nonatomic) NSString* metodo;
 /* URL que a ser consumida pelo WebHook 

@@ -14,28 +14,28 @@
 
 @interface PierTipoBoletoResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do tipo de boleto. [optional]
+/* C\u00F3digo identificador do tipo de boleto. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de boleto. [optional]
+/* Descri\u00E7\u00E3o do tipo de boleto. [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* C\u00C3\u00B3digo identificador do banco. [optional]
+/* C\u00F3digo identificador do banco. [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* Faixa permitida para cria\u00C3\u00A7\u00C3\u00A3o do nosso n\u00C3\u00BAmero. [optional]
+/* Faixa permitida para cria\u00E7\u00E3o do nosso n\u00FAmero. [optional]
  */
 @property(nonatomic) NSNumber* faixaNossoNumero;
-/* N\u00C3\u00BAmero minimo para o nosso n\u00C3\u00BAmero. [optional]
+/* N\u00FAmero minimo para o nosso n\u00FAmero. [optional]
  */
 @property(nonatomic) NSNumber* minNossoNumero;
-/* N\u00C3\u00BAmero m\u00C3\u00A1ximo para o nosso n\u00C3\u00BAmero. [optional]
+/* N\u00FAmero m\u00E1ximo para o nosso n\u00FAmero. [optional]
  */
 @property(nonatomic) NSNumber* maxNossoNumero;
-/* Tamanho do nosso n\u00C3\u00BAmero. [optional]
+/* Tamanho do nosso n\u00FAmero. [optional]
  */
 @property(nonatomic) NSNumber* tamNossoNumero;
-/* \u00C3\u009Altimo nosso n\u00C3\u00BAmero utilizado. [optional]
+/* \u00DAltimo nosso n\u00FAmero utilizado. [optional]
  */
 @property(nonatomic) NSNumber* ultimoNossoNumero;
 

@@ -18,13 +18,13 @@
 /* Identificador do template de documento [optional]
  */
 @property(nonatomic) NSNumber* idTemplate;
-/* Conte\u00C3\u00BAdo do arquivo convertido em Base 64 [optional]
+/* Conte\u00FAdo do arquivo convertido em Base 64 [optional]
  */
 @property(nonatomic) NSString* arquivo;
 /* Nome do arquivo. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Lista de par\u00C3\u00A2metros para montagem do documento. [optional]
+/* Lista de par\u00E2metros para montagem do documento. [optional]
  */
 @property(nonatomic) NSArray<PierPropriedadeDocumentoRequest>* propriedades;
 

@@ -14,13 +14,13 @@
 
 @interface PierArquivoParametroResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do detalhe do arquivo. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do detalhe do arquivo. [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Nome que identifica o detalhe do arquivo 
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00C3\u00BAdo do nomeCampo 
+/* Conte\u00FAdo do nomeCampo 
  */
 @property(nonatomic) NSString* conteudo;
 

@@ -18,7 +18,7 @@
 /* Nome da campanha [optional]
  */
 @property(nonatomic) NSString* nome;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo da campanha. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do tipo da campanha. [optional]
  */
 @property(nonatomic) NSNumber* idTipoCampanha;
 /* Lista com os planos de campanha [optional]

@@ -14,43 +14,43 @@
 
 @interface PierDetalheOperacaoResponse : PierObject
 
-/* C\u00C3\u00B3digo que identifica a opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* C\u00F3digo que identifica a opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* C\u00C3\u00B3digo de processamento usado em transa\u00C3\u00A7\u00C3\u00B5es com o autorizador [optional]
+/* C\u00F3digo de processamento usado em transa\u00E7\u00F5es com o autorizador [optional]
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* C\u00C3\u00B3digo de processamento usado para cancelar transa\u00C3\u00A7\u00C3\u00B5es no autorizador [optional]
+/* C\u00F3digo de processamento usado para cancelar transa\u00E7\u00F5es no autorizador [optional]
  */
 @property(nonatomic) NSString* codigoProcessamentoCancelamento;
-/* Nome da opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Nome da opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* nomeOperacao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o da opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o da opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* descricaoOperacao;
-/* Quantidade m\u00C3\u00ADnima de meses permitido para opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Quantidade m\u00EDnima de meses permitido para opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* planoMinimo;
-/* Quantidade M\u00C3\u00A1ximo de meses permitido para opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Quantidade M\u00E1ximo de meses permitido para opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* planoMaximo;
-/*  Valor m\u00C3\u00ADnimo permitido permitido para opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/*  Valor m\u00EDnimo permitido permitido para opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* valorMinimo;
-/*  Valor m\u00C3\u00A1ximo permitido permitido para opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/*  Valor m\u00E1ximo permitido permitido para opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* valorMaximo;
-/* Flag indicativa para crobran\u00C3\u00A7a de juros [optional]
+/* Flag indicativa para crobran\u00E7a de juros [optional]
  */
 @property(nonatomic) NSNumber* flagCobraJuros;
-/* Valor do juros a ser cobrado, caso opera\u00C3\u00A7\u00C3\u00A3o cobre juros [optional]
+/* Valor do juros a ser cobrado, caso opera\u00E7\u00E3o cobre juros [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* Flag indicativa para crobran\u00C3\u00A7a de tarifas [optional]
+/* Flag indicativa para crobran\u00E7a de tarifas [optional]
  */
 @property(nonatomic) NSNumber* flagCobraTarifa;
-/* Valor da tarifa a ser cobrado, caso opera\u00C3\u00A7\u00C3\u00A3o cobre tarifas [optional]
+/* Valor da tarifa a ser cobrado, caso opera\u00E7\u00E3o cobre tarifas [optional]
  */
 @property(nonatomic) NSNumber* taxaTarifa;
 /* Valor da taxa de abertura de conta [optional]
@@ -59,16 +59,16 @@
 /* Percentual da taxa de abertura de conta [optional]
  */
 @property(nonatomic) NSNumber* percentualTac;
-/* Valor da opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Valor da opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* valorOperacao;
-/* Quantidade de meses para car\u00C3\u00AAncia [optional]
+/* Quantidade de meses para car\u00EAncia [optional]
  */
 @property(nonatomic) NSNumber* carencia;
-/* Valor excedente permitido para opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Valor excedente permitido para opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* excedentePermitido;
-/* Permitir transa\u00C3\u00A7\u00C3\u00B5es parceladas [optional]
+/* Permitir transa\u00E7\u00F5es parceladas [optional]
  */
 @property(nonatomic) NSNumber* flagPermitirParcelamento;
 

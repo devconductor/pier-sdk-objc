@@ -18,13 +18,13 @@
 @property(nonatomic) NSNumber* mcc;
 
 @property(nonatomic) NSString* uf;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da antecipa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da compra [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da compra [optional]
  */
 @property(nonatomic) NSNumber* idCompra;
 /* Apresenta o numero total de parcelas da compra [optional]
@@ -48,40 +48,40 @@
 /* Data da compra. [optional]
  */
 @property(nonatomic) NSString* dataCompra;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status da autoriza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+/* Descri\u00E7\u00E3o do status da autoriza\u00E7\u00E3o da compra. [optional]
  */
 @property(nonatomic) NSString* status;
 /* Nome do estabelecimento da compra. [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Tipo de transa\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+/* Tipo de transa\u00E7\u00E3o da compra. [optional]
  */
 @property(nonatomic) NSString* tipoOrigemTransacao;
 /* Cidade onde a compra foi realizada. [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Pa\u00C3\u00ADs onde a compra foi realizada. [optional]
+/* Pa\u00EDs onde a compra foi realizada. [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Coordenada latitudinal da localiza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+/* Coordenada latitudinal da localiza\u00E7\u00E3o da compra. [optional]
  */
 @property(nonatomic) NSString* latitude;
-/* Coordenada longitudinal da localiza\u00C3\u00A7\u00C3\u00A3o da compra. [optional]
+/* Coordenada longitudinal da localiza\u00E7\u00E3o da compra. [optional]
  */
 @property(nonatomic) NSString* longitude;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Grupo MCC da compra. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Grupo MCC da compra. [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do Grupo MCC da compra. [optional]
+/* Descri\u00E7\u00E3o do Grupo MCC da compra. [optional]
  */
 @property(nonatomic) NSString* descricaoGrupoMCC;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do produto da compra. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do produto da compra. [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do produto da compra. [optional]
+/* Descri\u00E7\u00E3o do produto da compra. [optional]
  */
 @property(nonatomic) NSString* descricaoProduto;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do estabelecimento da compra. [optional]
+/* Descri\u00E7\u00E3o do estabelecimento da compra. [optional]
  */
 @property(nonatomic) NSString* descricaoEstabelecimento;
 /* Nome fantasia do estabelecimento da compra. [optional]

@@ -38,28 +38,28 @@
 /* Vencimento das taxas [optional]
  */
 @property(nonatomic) NSString* vencimento;
-/* Recupera\u00C3\u00A7\u00C3\u00A3o de encargos financeiro [optional]
+/* Recupera\u00E7\u00E3o de encargos financeiro [optional]
  */
 @property(nonatomic) NSNumber* recuperacaoEncargosFinanceiros;
-/* Descri\u00C3\u00A7\u00C3\u00A3o da comiss\u00C3\u00A3o de garantia [optional]
+/* Descri\u00E7\u00E3o da comiss\u00E3o de garantia [optional]
  */
 @property(nonatomic) NSNumber* comissaoGarantia;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do agenciamento [optional]
+/* Descri\u00E7\u00E3o do agenciamento [optional]
  */
 @property(nonatomic) NSNumber* agenciamento;
-/* Taxa m\u00C3\u00A1xima do proximo per\u00C3\u00ADodo [optional]
+/* Taxa m\u00E1xima do proximo per\u00EDodo [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaProximoPeriodo;
 /* Taxa de encargos do financiamento [optional]
  */
 @property(nonatomic) NSNumber* taxaEncargosFinanciamento;
-/* Taxa m\u00C3\u00A1xima de saque [optional]
+/* Taxa m\u00E1xima de saque [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaSaque;
 /* Taxa de saque [optional]
  */
 @property(nonatomic) NSNumber* taxaSaque;
-/* Taxa m\u00C3\u00A1xima de compras juros [optional]
+/* Taxa m\u00E1xima de compras juros [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaCompraJuros;
 /* Taxa de juros compra [optional]
@@ -77,7 +77,7 @@
 /* Taxa Percelamento pagamento minimo [optional]
  */
 @property(nonatomic) NSNumber* taxaPercCalcPagamentoMinimo;
-/* Plano de taxa padr\u00C3\u00A3o [optional]
+/* Plano de taxa padr\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* planoTaxaDefault;
 

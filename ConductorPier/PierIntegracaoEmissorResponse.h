@@ -14,22 +14,22 @@
 
 @interface PierIntegracaoEmissorResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do registro na tabela Integra\u00C3\u00A7\u00C3\u00A3oEmissor. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do registro na tabela Integra\u00E7\u00E3oEmissor. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do arquivo. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do arquivo. [optional]
  */
 @property(nonatomic) NSNumber* idArquivo;
 /* Status do registro. [optional]
  */
 @property(nonatomic) NSString* status;
-/* Data de inclus\u00C3\u00A3o do registro. [optional]
+/* Data de inclus\u00E3o do registro. [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data da ultima altera\u00C3\u00A7\u00C3\u00A3o do registro. [optional]
+/* Data da ultima altera\u00E7\u00E3o do registro. [optional]
  */
 @property(nonatomic) NSString* dataAlteracao;
 

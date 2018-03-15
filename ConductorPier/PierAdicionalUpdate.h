@@ -18,31 +18,31 @@
 /* Nome completo do Adicional. 
  */
 @property(nonatomic) NSString* nome;
-/* Nome do Adicional que ser\u00C3\u00A1 gravado no Cart\u00C3\u00A3o. [optional]
+/* Nome do Adicional que ser\u00E1 gravado no Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* N\u00C3\u00BAmero do CPF ou CNPJ do Adicional. 
+/* N\u00FAmero do CPF ou CNPJ do Adicional. 
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
 /* Data de Nascimento do Adicional em formato yyyy-MM-dd. [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00C3\u00BAmero do Documento de Identidade do Adicional. [optional]
+/* N\u00FAmero do Documento de Identidade do Adicional. [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Nome do Org\u00C3\u00A3o Emissor do Documento de Identidade do Adicional. [optional]
+/* Nome do Org\u00E3o Emissor do Documento de Identidade do Adicional. [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
 /* Sigla da Unidade Federativa onde o Documento de Identidade do Adicional foi emitido. [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data de emiss\u00C3\u00A3o do Documento de Identidade do Adicional em formato yyyy-MM-dd. [optional]
+/* Data de emiss\u00E3o do Documento de Identidade do Adicional em formato yyyy-MM-dd. [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco do Adicional com o Titular. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do Parentesco do Adicional com o Titular. [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;
 /* Lista de telefones do adicional. [optional]

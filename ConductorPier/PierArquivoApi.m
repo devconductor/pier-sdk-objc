@@ -3,6 +3,8 @@
 #import "PierArquivoDetalheResponse.h"
 #import "PierIntegrarArquivoRequest.h"
 #import "PierPageArquivoAUDResponse.h"
+#import "PierPageStatusArquivoResponse.h"
+#import "PierPageTipoArquivoResponse.h"
 #import "PierPageArquivoResponse.h"
 #import "PierArquivoPersist.h"
 
@@ -76,17 +78,17 @@ static PierArquivoApi* singletonAPI = nil;
 ///
 /// Consulta de arquivo no PIER Cloud
 /// Este recurso permite consultar um determinado arquivo armazenado no PIER Cloud.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do arquivo 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do arquivo 
 ///
 ///  @returns PierArquivoDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierArquivoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
     }
     
 
@@ -158,7 +160,7 @@ static PierArquivoApi* singletonAPI = nil;
 
 ///
 /// Integrar Arquivos
-/// Este recurso foi desenvolvido para realizar a integra\u00C3\u00A7\u00C3\u00A3o de arquivos do PIER Cloud junto a reposit\u00C3\u00B3rios externos pr\u00C3\u00A9-configurado.
+/// Este recurso foi desenvolvido para realizar a integra\u00E7\u00E3o de arquivos do PIER Cloud junto a reposit\u00F3rios externos pr\u00E9-configurado.
 ///  @param integrarArquivoRequest integrarArquivoRequest 
 ///
 ///  @returns NSObject*
@@ -237,17 +239,333 @@ static PierArquivoApi* singletonAPI = nil;
 }
 
 ///
-/// Lista as auditorias do arquivo
-/// Este recurso permite listar as auditorias de um determinado arquivo a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do arquivo 
+/// Lista as auditorias de arquivos vinculadas a um N\u00FAmero da Receita Federal
+/// Este recurso permite listar as auditorias de arquivos vinculadas a um N\u00FAmero da Receita Federal que ser\u00E1 passado como par\u00E2metro.
+///  @param numeroReceitaFederal Par\u00E2metro vinculado a um arquivo no ato de seu cadastro 
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageArquivoAUDResponse*
 ///
--(NSNumber*) listarUsingGET3WithId: (NSNumber*) _id
+-(NSNumber*) listarPorNumeroReceitaFederalUsingGETWithNumeroReceitaFederal: (NSString*) numeroReceitaFederal
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(PierPageArquivoAUDResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'numeroReceitaFederal' is set
+    if (numeroReceitaFederal == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroReceitaFederal` when calling `listarPorNumeroReceitaFederalUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/arquivos-auditorias"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (numeroReceitaFederal != nil) {
+        
+        queryParams[@"numeroReceitaFederal"] = numeroReceitaFederal;
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageArquivoAUDResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageArquivoAUDResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Listar Status de Arquivo
+/// Este recurso permite a listagem de todos os Status de Arquivo.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
+///
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
+///
+///  @param nome Nome do status de arquivo (optional)
+///
+///  @param descricao Descri\u00E7\u00E3o do status de arquivo (optional)
+///
+///  @returns PierPageStatusArquivoResponse*
+///
+-(NSNumber*) listarStatusArquivosUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    nome: (NSString*) nome
+    descricao: (NSString*) descricao
+    completionHandler: (void (^)(PierPageStatusArquivoResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-arquivos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
+    }
+    if (descricao != nil) {
+        
+        queryParams[@"descricao"] = descricao;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageStatusArquivoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageStatusArquivoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Listar Tipos de Arquivo
+/// Este recurso permite a listagem de todos os Tipos de Arquivo.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
+///
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
+///
+///  @param nome Nome do tipo de arquivo (optional)
+///
+///  @param descricao Descri\u00E7\u00E3o do tipo de arquivo (optional)
+///
+///  @returns PierPageTipoArquivoResponse*
+///
+-(NSNumber*) listarTiposArquivosUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    nome: (NSString*) nome
+    descricao: (NSString*) descricao
+    completionHandler: (void (^)(PierPageTipoArquivoResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/tipos-arquivos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (nome != nil) {
+        
+        queryParams[@"nome"] = nome;
+    }
+    if (descricao != nil) {
+        
+        queryParams[@"descricao"] = descricao;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageTipoArquivoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageTipoArquivoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Lista as auditorias do arquivo
+/// Este recurso permite listar as auditorias de um determinado arquivo a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do arquivo 
+///
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
+///
+///  @returns PierPageArquivoAUDResponse*
+///
+-(NSNumber*) listarUsingGET4WithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageArquivoAUDResponse* output, NSError* error)) handler {
@@ -255,7 +573,7 @@ static PierArquivoApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET3`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET4`"];
     }
     
 
@@ -335,12 +653,12 @@ static PierArquivoApi* singletonAPI = nil;
 
 ///
 /// Listar arquivos do Pier Cloud
-/// Este recurso permite a listagem de todos os arquivos dispon\u00C3\u00ADveis no Pier Cloud.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este recurso permite a listagem de todos os arquivos dispon\u00EDveis no Pier Cloud.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param nome Nome do arquivo (optional)
 ///
@@ -348,11 +666,11 @@ static PierArquivoApi* singletonAPI = nil;
 ///
 ///  @param idStatusArquivo Identificador do status do arquivo (optional)
 ///
-///  @param extensao Extens\u00C3\u00A3o do arquivo (optional)
+///  @param extensao Extens\u00E3o do arquivo (optional)
 ///
 ///  @returns PierPageArquivoResponse*
 ///
--(NSNumber*) listarUsingGET4WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET5WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

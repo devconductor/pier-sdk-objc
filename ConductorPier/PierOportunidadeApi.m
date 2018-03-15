@@ -83,10 +83,10 @@ static PierOportunidadeApi* singletonAPI = nil;
 
 ///
 /// Altera o status do tipo oportunidade
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o do status do tipo oportunidade.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+/// Este m\u00E9todo realiza a altera\u00E7\u00E3o do status do tipo oportunidade.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id). 
 ///
-///  @param idStatus C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do status do tipo oportunidade (id). 
+///  @param idStatus C\u00F3digo de identifica\u00E7\u00E3o do status do tipo oportunidade (id). 
 ///
 ///  @param persist persist 
 ///
@@ -185,8 +185,8 @@ static PierOportunidadeApi* singletonAPI = nil;
 
 ///
 /// Altera as oportunidades
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o das oportunidades.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da oportunidade (id). 
+/// Este m\u00E9todo realiza a altera\u00E7\u00E3o das oportunidades.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da oportunidade (id). 
 ///
 ///  @param update update 
 ///
@@ -276,8 +276,8 @@ static PierOportunidadeApi* singletonAPI = nil;
 
 ///
 /// Altera os tipos oportunidades
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos tipos oportunidades.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+/// Este m\u00E9todo realiza a altera\u00E7\u00E3o dos tipos oportunidades.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do tipo oportunidade (id). 
 ///
 ///  @param persist persist 
 ///
@@ -367,10 +367,10 @@ static PierOportunidadeApi* singletonAPI = nil;
 
 ///
 /// Apresenta dados de um determinado status do tipo oportunidade
-/// Este recurso permite consultar dados de um determinado status do tipo oportunidade a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (idStatus).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+/// Este recurso permite consultar dados de um determinado status do tipo oportunidade a partir de seu codigo de identifica\u00E7\u00E3o (idStatus).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id). 
 ///
-///  @param idStatus C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do status (idStatus). 
+///  @param idStatus C\u00F3digo de identifica\u00E7\u00E3o do status (idStatus). 
 ///
 ///  @returns PierStatusOportunidadeResponse*
 ///
@@ -461,18 +461,18 @@ static PierOportunidadeApi* singletonAPI = nil;
 
 ///
 /// Apresenta dados de uma determinada oportunidade
-/// Este recurso permite consultar dados de uma determinada oportunidade a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da oportunidade (id). 
+/// Este recurso permite consultar dados de uma determinada oportunidade a partir de seu codigo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da oportunidade (id). 
 ///
 ///  @returns PierOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET22`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET23`"];
     }
     
 
@@ -544,18 +544,18 @@ static PierOportunidadeApi* singletonAPI = nil;
 
 ///
 /// Apresenta dados de um determinado tipo oportunidade
-/// Este recurso permite consultar dados de um determinado tipo oportunidade a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+/// Este recurso permite consultar dados de um determinado tipo oportunidade a partir de seu codigo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id). 
 ///
 ///  @returns PierTipoOportunidadeResponse*
 ///
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET36`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET37`"];
     }
     
 
@@ -628,27 +628,27 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Lista as auditorias dos status oportunidades
 /// Este recurso permite listar os status oportunidades.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades (optional)
+///  @param revType C\u00F3digo que representa o tipo de a\u00E7\u00E3o realizada no recurso de tipos oportunidades (optional)
 ///
-///  @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades (optional)
+///  @param revDate Data da a\u00E7\u00E3o realizada no recurso de tipos oportunidades (optional)
 ///
-///  @param _id C\u00C3\u00B3digo identificador do status oportunidade (optional)
+///  @param _id C\u00F3digo identificador do status oportunidade (optional)
 ///
-///  @param idTipoOportunidade C\u00C3\u00B3digo identificador do tipo oportunidade (optional)
+///  @param idTipoOportunidade C\u00F3digo identificador do tipo oportunidade (optional)
 ///
 ///  @param nome Nome do status oportunidade (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade (optional)
+///  @param descricao Descri\u00E7\u00E3o do status oportunidade (optional)
 ///
-///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo (optional)
+///  @param flagAtivo Flag de verifica\u00E7\u00E3o se o status oportunidade est\u00E1 ativo (optional)
 ///
-///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
+///  @param revUser Usu\u00E1rio da auditoria (optional)
 ///
 ///  @returns PierPageStatusOportunidadeAUDResponse*
 ///
@@ -779,31 +779,31 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Lista as auditorias das oportunidades
 /// Este recurso permite listar as auditorias das oportunidades.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade (optional)
+///  @param idStatusOportunidade C\u00F3digo identificador do status oportunidade (optional)
 ///
 ///  @param dataCadastro Data do cadastro da oportunidade (optional)
 ///
-///  @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade (optional)
+///  @param dataAtualizacao Data da atualiza\u00E7\u00E3o da oportunidade (optional)
 ///
-///  @param numeroReceitaFederal N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade (optional)
+///  @param numeroReceitaFederal N\u00FAmero receita federal do cliente ao qual ser\u00E1 ofertada a oportunidade (optional)
 ///
-///  @param dataInicioVigencia In\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade (optional)
+///  @param dataInicioVigencia In\u00EDcio da vig\u00EAncia da oportunidade (optional)
 ///
-///  @param datatFimVigencia Fim da vig\u00C3\u00AAncia da oportunidade (optional)
+///  @param datatFimVigencia Fim da vig\u00EAncia da oportunidade (optional)
 ///
-///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa (optional)
+///  @param flagAtivo Flag de verifica\u00E7\u00E3o se a oportunidade est\u00E1 ativa (optional)
 ///
 ///  @param revDate Data da auditoria (optional)
 ///
 ///  @param revType Tipo da auditoria (optional)
 ///
-///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
+///  @param revUser Usu\u00E1rio da auditoria (optional)
 ///
 ///  @returns PierPageOportunidadeAUDResponse*
 ///
@@ -944,23 +944,23 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Lista as auditorias dos tipos oportunidades
 /// Este recurso permite listar os tipos oportunidades.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades (optional)
+///  @param revType C\u00F3digo que representa o tipo de a\u00E7\u00E3o realizada no recurso de tipos oportunidades (optional)
 ///
-///  @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades (optional)
+///  @param revDate Data da a\u00E7\u00E3o realizada no recurso de tipos oportunidades (optional)
 ///
-///  @param _id C\u00C3\u00B3digo identificador do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o (optional)
+///  @param _id C\u00F3digo identificador do tipo oportunidade no qual foi realizado a a\u00E7\u00E3o (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o (optional)
+///  @param descricao Descri\u00E7\u00E3o do tipo oportunidade no qual foi realizado a a\u00E7\u00E3o (optional)
 ///
-///  @param flagAtivo Atributo que representa se o tipo oportunidade est\u00C3\u00A1 ativo (optional)
+///  @param flagAtivo Atributo que representa se o tipo oportunidade est\u00E1 ativo (optional)
 ///
-///  @param revUser Usu\u00C3\u00A1rio da auditoria (optional)
+///  @param revUser Usu\u00E1rio da auditoria (optional)
 ///
 ///  @returns PierPageTipoOportunidadeAUDResponse*
 ///
@@ -1081,19 +1081,19 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Lista os status do tipo oportunidades
 /// Este recurso permite listar os status do tipo oportunidades.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id). 
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param nome Nome do status oportunidade (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade (optional)
+///  @param descricao Descri\u00E7\u00E3o do status oportunidade (optional)
 ///
-///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo (optional)
+///  @param flagAtivo Flag de verifica\u00E7\u00E3o se o status oportunidade est\u00E1 ativo (optional)
 ///
 ///  @returns PierPageStatusOportunidadeResponse*
 ///
@@ -1208,29 +1208,29 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Lista as oportunidades
 /// Este recurso permite listar as oportunidades.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade (optional)
+///  @param idStatusOportunidade C\u00F3digo identificador do status oportunidade (optional)
 ///
 ///  @param dataCadastro Data do cadastro da oportunidade (optional)
 ///
-///  @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade (optional)
+///  @param dataAtualizacao Data da atualiza\u00E7\u00E3o da oportunidade (optional)
 ///
-///  @param numeroReceitaFederal N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade (optional)
+///  @param numeroReceitaFederal N\u00FAmero receita federal do cliente ao qual ser\u00E1 ofertada a oportunidade (optional)
 ///
-///  @param dataInicioVigencia Data de in\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade (optional)
+///  @param dataInicioVigencia Data de in\u00EDcio da vig\u00EAncia da oportunidade (optional)
 ///
-///  @param dataFimVigencia Data do fim da vig\u00C3\u00AAncia da oportunidade (optional)
+///  @param dataFimVigencia Data do fim da vig\u00EAncia da oportunidade (optional)
 ///
-///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa (optional)
+///  @param flagAtivo Flag de verifica\u00E7\u00E3o se a oportunidade est\u00E1 ativa (optional)
 ///
 ///  @returns PierPageOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -1352,19 +1352,19 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Lista os tipos oportunidades
 /// Este recurso permite listar os tipos oportunidades.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (optional)
+///  @param descricao Descri\u00E7\u00E3o do tipo oportunidade (optional)
 ///
-///  @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo (optional)
+///  @param flagAtivo Flag de verifica\u00E7\u00E3o se o tipo oportunidade est\u00E1 ativo (optional)
 ///
 ///  @returns PierPageTipoOportunidadeResponse*
 ///
--(NSNumber*) listarUsingGET43WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
@@ -1461,7 +1461,7 @@ static PierOportunidadeApi* singletonAPI = nil;
 ///
 /// Cadastra status para o tipo oportunidade
 /// Esse recurso permite cadastrar status para o tipo oportunidade.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id). 
 ///
 ///  @param persist persist 
 ///

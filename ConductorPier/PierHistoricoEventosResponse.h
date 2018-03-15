@@ -14,7 +14,7 @@
 
 @interface PierHistoricoEventosResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do evento 
+/* C\u00F3digo identificador do evento 
  */
 @property(nonatomic) NSNumber* idHistorico;
 /* Data do evento 
@@ -23,10 +23,10 @@
 /* Nome do campo alterado 
  */
 @property(nonatomic) NSString* tipoHistorico;
-/* Valor anterior a modifica\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Valor anterior a modifica\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* valorAnterior;
-/* Valor atribu\u00C3\u00ADdo na modifica\u00C3\u00A7\u00C3\u00A3o 
+/* Valor atribu\u00EDdo na modifica\u00E7\u00E3o 
  */
 @property(nonatomic) NSString* valorAtribuido;
 

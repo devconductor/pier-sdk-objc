@@ -18,16 +18,16 @@
 
 @interface PierPessoaJuridicaAprovadaPersist : PierObject
 
-/* Apresenta o nome completo da raz\u00C3\u00A3o social (nome empresarial)'. 
+/* Apresenta o nome completo da raz\u00E3o social (nome empresarial)'. 
  */
 @property(nonatomic) NSString* razaoSocial;
 /* Apresenta o nome fantasia da empresa. [optional]
  */
 @property(nonatomic) NSString* nomeFantasia;
-/* N\u00C3\u00BAmero do Cadastro Nacional de Pessoa Juridica (CNPJ) 
+/* N\u00FAmero do Cadastro Nacional de Pessoa Juridica (CNPJ) 
  */
 @property(nonatomic) NSString* cnpj;
-/* N\u00C3\u00BAmero da Inscri\u00C3\u00A7\u00C3\u00A3o Estadual (IE). [optional]
+/* N\u00FAmero da Inscri\u00E7\u00E3o Estadual (IE). [optional]
  */
 @property(nonatomic) NSString* inscricaoEstadual;
 /* Data de abertura da empresa, essa data deve ser informada no formato: aaaa-MM-dd. 
@@ -39,10 +39,10 @@
 /* Id do produto 
  */
 @property(nonatomic) NSNumber* idProduto;
-/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
+/* N\u00FAmero da ag\u00EAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00C3\u00BAmero da conta corrente. [optional]
+/* N\u00FAmero da conta corrente. [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
 /* Email da empresa [optional]
@@ -51,7 +51,7 @@
 /* Dia vencimento 
  */
 @property(nonatomic) NSNumber* diaVencimento;
-/* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
+/* Nome que deve ser impresso no cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
 /* Apresenta o valor da renda compravada [optional]
@@ -60,28 +60,28 @@
 /* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
  */
 @property(nonatomic) NSString* canalEntrada;
-/* Indica o valor da pontua\u00C3\u00A7\u00C3\u00A3o atribuido ao cliente (caso n\u00C3\u00A3o informado ser\u00C3\u00A1 atribuido o valor = 0) [optional]
+/* Indica o valor da pontua\u00E7\u00E3o atribuido ao cliente (caso n\u00E3o informado ser\u00E1 atribuido o valor = 0) [optional]
  */
 @property(nonatomic) NSNumber* valorPontuacao;
 /* Apresenta os telefones da empresa [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersist>* telefones;
-/* Pode ser informado os seguintes tipos de endere\u00C3\u00A7o: Residencial, Comercial, e Outros 
+/* Pode ser informado os seguintes tipos de endere\u00E7o: Residencial, Comercial, e Outros 
  */
 @property(nonatomic) NSArray<PierEnderecoAprovadoPersist>* enderecos;
-/* Apresenta os dados dos s\u00C3\u00B3cios da empresa, caso exista [optional]
+/* Apresenta os dados dos s\u00F3cios da empresa, caso exista [optional]
  */
 @property(nonatomic) NSArray<PierPessoaPersist>* socios;
-/* Apresenta os dados das refer\u00C3\u00AAncias comerciais [optional]
+/* Apresenta os dados das refer\u00EAncias comerciais [optional]
  */
 @property(nonatomic) NSArray<PierRefenciaComercialAprovadoPersist>* referenciasComerciais;
 /* Valor do Limite Global 
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es 
+/* Valor m\u00E1ximo do limite de cr\u00E9dito para realizar transa\u00E7\u00F5es 
  */
 @property(nonatomic) NSNumber* limiteMaximo;
-/* Valor do limite de cr\u00C3\u00A9dito acumulado da soma das parcelas das compras 
+/* Valor do limite de cr\u00E9dito acumulado da soma das parcelas das compras 
  */
 @property(nonatomic) NSNumber* limiteParcelas;
 

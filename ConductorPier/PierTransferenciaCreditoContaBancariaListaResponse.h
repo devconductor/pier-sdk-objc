@@ -14,18 +14,27 @@
 
 @interface PierTransferenciaCreditoContaBancariaListaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transferencia. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da transferencia. [optional]
  */
 @property(nonatomic) NSNumber* idTransferencia;
-/* Valor da transfer\u00C3\u00AAncia. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
+ */
+@property(nonatomic) NSNumber* idConta;
+/* C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o. [optional]
+ */
+@property(nonatomic) NSNumber* idCartao;
+/* Valor da transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSNumber* valorCompra;
-/* Valor da transfer\u00C3\u00AAncia acrescido do valor da tarifa de saque se houver tarifa de saque. [optional]
+/* Valor da transfer\u00EAncia acrescido do valor da tarifa de saque se houver tarifa de saque. [optional]
  */
 @property(nonatomic) NSNumber* valorContrato;
-/* Data da transfer\u00C3\u00AAncia. [optional]
+/* Data da transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* dataCompra;
+/* C\u00F3digo de status de processamento. [optional]
+ */
+@property(nonatomic) NSNumber* status;
 /* Status Processamento. [optional]
  */
 @property(nonatomic) NSString* statusProcessamento;

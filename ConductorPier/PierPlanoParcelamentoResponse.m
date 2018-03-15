@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"dataFechamentoFatura": @"dataFechamentoFatura", @"dataVencimentoPadrao": @"dataVencimentoPadrao", @"valorTotalFatura": @"valorTotalFatura", @"quantidadeParcelas": @"quantidadeParcelas", @"valorParcela": @"valorParcela", @"valorEntrada": @"valorEntrada", @"taxaRefinanciamento": @"taxaRefinanciamento", @"custoEfetivoTotal": @"custoEfetivoTotal", @"valorTotalRefinanciamento": @"valorTotalRefinanciamento", @"valorIOF": @"valorIOF", @"valorTAC": @"valorTAC", @"statusAdesao": @"statusAdesao", @"dataInclusao": @"dataInclusao", @"dataProcessamentoAdesao": @"dataProcessamentoAdesao", @"idConta": @"idConta", @"descricaoServicoTipo": @"descricaoServicoTipo", @"comEntrada": @"comEntrada", @"nomeCampanha": @"nomeCampanha" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"dataFechamentoFatura": @"dataFechamentoFatura", @"dataVencimentoPadrao": @"dataVencimentoPadrao", @"valorTotalFatura": @"valorTotalFatura", @"quantidadeParcelas": @"quantidadeParcelas", @"valorParcela": @"valorParcela", @"valorEntrada": @"valorEntrada", @"taxaRefinanciamento": @"taxaRefinanciamento", @"custoEfetivoTotal": @"custoEfetivoTotal", @"valorTotalRefinanciamento": @"valorTotalRefinanciamento", @"valorIOF": @"valorIOF", @"valorTAC": @"valorTAC", @"statusAdesao": @"statusAdesao", @"dataInclusao": @"dataInclusao", @"dataProcessamentoAdesao": @"dataProcessamentoAdesao", @"idConta": @"idConta", @"idServicoTipo": @"idServicoTipo", @"descricaoServicoTipo": @"descricaoServicoTipo", @"comEntrada": @"comEntrada", @"nomeCampanha": @"nomeCampanha" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"dataFechamentoFatura", @"dataVencimentoPadrao", @"valorTotalFatura", @"quantidadeParcelas", @"valorParcela", @"valorEntrada", @"taxaRefinanciamento", @"custoEfetivoTotal", @"valorTotalRefinanciamento", @"valorIOF", @"valorTAC", @"statusAdesao", @"dataInclusao", @"dataProcessamentoAdesao", @"idConta", @"descricaoServicoTipo", @"comEntrada", @"nomeCampanha"];
+  NSArray *optionalProperties = @[@"_id", @"dataFechamentoFatura", @"dataVencimentoPadrao", @"valorTotalFatura", @"quantidadeParcelas", @"valorParcela", @"valorEntrada", @"taxaRefinanciamento", @"custoEfetivoTotal", @"valorTotalRefinanciamento", @"valorIOF", @"valorTAC", @"statusAdesao", @"dataInclusao", @"dataProcessamentoAdesao", @"idConta", @"idServicoTipo", @"descricaoServicoTipo", @"comEntrada", @"nomeCampanha"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

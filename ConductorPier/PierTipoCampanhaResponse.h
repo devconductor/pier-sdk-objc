@@ -17,7 +17,7 @@
 /* Identificador do tipo de campanha [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de campanha [optional]
+/* Descri\u00E7\u00E3o do tipo de campanha [optional]
  */
 @property(nonatomic) NSString* descricao;
 

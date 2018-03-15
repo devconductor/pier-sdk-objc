@@ -14,10 +14,10 @@
 
 @interface PierCartaoEmbossingRequest : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o cart\u00C3\u00A3o pertence (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o cart\u00E3o pertence (id) [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do TipoPlastico (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do TipoPlastico (id). [optional]
  */
 @property(nonatomic) NSNumber* idTipoPlastico;
 

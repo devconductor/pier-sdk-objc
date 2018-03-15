@@ -27,7 +27,7 @@
 /// Consulta fatura de um cliente pela data de vencimento.
 ///
 /// @param dataVencimento Data Vencimento
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idConta C\u00F3digo de identifica\u00E7\u00E3o da conta (id).
 /// 
 ///
 /// @return PierFaturaDetalheResponse*
@@ -41,11 +41,11 @@
 /// Listar planos de parcelamento
 /// Lista os planos de parcelamento da fatura de uma conta.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
-/// @param dataVencimentoPadrao Indica a data de vencimento padr\u00C3\u00A3o das faturas
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id).
+/// @param dataVencimentoPadrao Indica a data de vencimento padr\u00E3o das faturas
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPagePlanoParcelamentoResponse*
@@ -59,12 +59,12 @@
 
 ///
 ///
-/// Envia 2\u00C2\u00AA via de fatura por E-mail
+/// Envia 2\u00AA via de fatura por E-mail
 /// Envia a segunda via da fatura para o e-mail informado/cadastrado.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id).
 /// @param dataVencimento Data de Vencimento da fatura (yyyy-MM-dd).
-/// @param email E-mail para envio da 2\u00C2\u00AA via da fatura, caso n\u00C3\u00A3o seja informado ser\u00C3\u00A1 usado o e-mail cadastrado.
+/// @param email E-mail para envio da 2\u00AA via da fatura, caso n\u00E3o seja informado ser\u00E1 usado o e-mail cadastrado.
 /// 
 ///
 /// @return NSObject*
@@ -79,11 +79,11 @@
 /// Listar faturas de um cliente.
 /// Lista faturas de um cliente.
 ///
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param idConta C\u00F3digo de identifica\u00E7\u00E3o da conta (id).
 /// @param situacaoProcessamento Status do processamento das faturas. Valores possiveis [ABERTA, FECHADA, TODAS].
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageFaturaResponse*
@@ -98,9 +98,9 @@
 ///
 ///
 /// Permite visualizar o extrato da fatura em formato PDF
-/// Esta opera\u00C3\u00A7\u00C3\u00A3o permite visualizar o extrato da fatura de uma determinada conta, em formato PDF. Quando ela for a fatura ativa, ou seja, a do m\u00C3\u00AAs corrente, o pdf ser\u00C3\u00A1 composto pelo extrato de lan\u00C3\u00A7amentos e pela ficha de compensa\u00C3\u00A7\u00C3\u00A3o banc\u00C3\u00A1ria. Quando for de uma fatura do hist\u00C3\u00B3rico do cliente, o PDF ser\u00C3\u00A1 composto apenas pelo extrato de transa\u00C3\u00A7\u00C3\u00B5es.
+/// Esta opera\u00E7\u00E3o permite visualizar o extrato da fatura de uma determinada conta, em formato PDF. Quando ela for a fatura ativa, ou seja, a do m\u00EAs corrente, o pdf ser\u00E1 composto pelo extrato de lan\u00E7amentos e pela ficha de compensa\u00E7\u00E3o banc\u00E1ria. Quando for de uma fatura do hist\u00F3rico do cliente, o PDF ser\u00E1 composto apenas pelo extrato de transa\u00E7\u00F5es.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id).
 /// @param dataVencimento Data de Vencimento da fatura.
 /// 
 ///

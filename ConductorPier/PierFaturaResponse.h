@@ -14,10 +14,10 @@
 
 @interface PierFaturaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Situa\u00C3\u00A7\u00C3\u00A3o de Processamento da fatura. [optional]
+/* Situa\u00E7\u00E3o de Processamento da fatura. [optional]
  */
 @property(nonatomic) NSString* situacaoProcessamento;
 /* Status de pagamento efetuado. [optional]
@@ -35,7 +35,7 @@
 /* Valor total da fatura. [optional]
  */
 @property(nonatomic) NSNumber* valorTotal;
-/* Valor do pagamento m\u00C3\u00ADnimo. [optional]
+/* Valor do pagamento m\u00EDnimo. [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoMinimo;
 /* Valor do saldo anterior. [optional]

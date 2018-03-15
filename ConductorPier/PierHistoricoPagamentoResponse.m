@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"idPagamento": @"idPagamento", @"idEstabelecimento": @"idEstabelecimento", @"idBanco": @"idBanco", @"idCartao": @"idCartao", @"valorPagamento": @"valorPagamento", @"dataHoraPagamento": @"dataHoraPagamento", @"dataHoraEntradaPagamento": @"dataHoraEntradaPagamento", @"dataVencimentoParcelaAcordo": @"dataVencimentoParcelaAcordo", @"status": @"status" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idConta": @"idConta", @"idPagamento": @"idPagamento", @"idEstabelecimento": @"idEstabelecimento", @"idBanco": @"idBanco", @"idCartao": @"idCartao", @"valorPagamento": @"valorPagamento", @"dataHoraPagamento": @"dataHoraPagamento", @"dataHoraEntradaPagamento": @"dataHoraEntradaPagamento", @"status": @"status" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idConta", @"idPagamento", @"idEstabelecimento", @"idBanco", @"idCartao", @"valorPagamento", @"dataHoraPagamento", @"dataHoraEntradaPagamento", @"dataVencimentoParcelaAcordo", @"status"];
+  NSArray *optionalProperties = @[@"idConta", @"idPagamento", @"idEstabelecimento", @"idBanco", @"idCartao", @"valorPagamento", @"dataHoraPagamento", @"dataHoraEntradaPagamento", @"status"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

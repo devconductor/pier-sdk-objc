@@ -14,19 +14,19 @@
 
 @interface PierUsuarioPersist : PierObject
 
-/* Apresenta o nome do usu\u00C3\u00A1rio. [optional]
+/* Apresenta o nome do usu\u00E1rio. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Apresenta o login do usu\u00C3\u00A1rio. [optional]
+/* Apresenta o login do usu\u00E1rio. [optional]
  */
 @property(nonatomic) NSString* login;
-/* N\u00C3\u00BAmero do CPF. [optional]
+/* N\u00FAmero do CPF. [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* Apresenta o email do usu\u00C3\u00A1rio. [optional]
+/* Apresenta o email do usu\u00E1rio. [optional]
  */
 @property(nonatomic) NSString* email;
-/* Apresenta a senha do usu\u00C3\u00A1rio. [optional]
+/* Apresenta a senha do usu\u00E1rio. [optional]
  */
 @property(nonatomic) NSString* senha;
 

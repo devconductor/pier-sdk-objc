@@ -14,7 +14,7 @@
 
 @interface PierPlanoCampanhaUpdate : PierObject
 
-/* C\u00C3\u00B3digo identificador do plano campanha [optional]
+/* C\u00F3digo identificador do plano campanha [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Quantidade de parcelas [optional]
@@ -23,7 +23,7 @@
 /* Taxa de juros [optional]
  */
 @property(nonatomic) NSNumber* taxa;
-/* Nome do usu\u00C3\u00A1rio [optional]
+/* Nome do usu\u00E1rio [optional]
  */
 @property(nonatomic) NSString* usuario;
 

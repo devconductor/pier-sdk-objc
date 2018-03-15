@@ -19,7 +19,7 @@
 /* Apresenta os detalhes da fatura [optional]
  */
 @property(nonatomic) PierFaturaConsignadaResponse* faturaConsignadaResponse;
-/* Apresenta as transa\u00C3\u00A7\u00C3\u00B5es relacionadas a fatura. [optional]
+/* Apresenta as transa\u00E7\u00F5es relacionadas a fatura. [optional]
  */
 @property(nonatomic) NSArray<PierTransacoesCorrentesResponse>* transacoes;
 

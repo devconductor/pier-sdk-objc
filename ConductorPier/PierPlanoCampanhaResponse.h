@@ -23,7 +23,7 @@
 /* Taxa de juros [optional]
  */
 @property(nonatomic) NSNumber* taxa;
-/* Nome do usu\u00C3\u00A1rio [optional]
+/* Nome do usu\u00E1rio [optional]
  */
 @property(nonatomic) NSString* usuario;
 

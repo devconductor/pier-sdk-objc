@@ -14,13 +14,13 @@
 
 @interface PierTipoFaturamentoPersist : PierObject
 
-/* Desci\u00C3\u00A7\u00C3\u00A3o do tipo de faturamento. 
+/* Desci\u00E7\u00E3o do tipo de faturamento. 
  */
 @property(nonatomic) NSString* descricao;
-/* Flag que representa que o faturamento ser\u00C3\u00A1 apenas demonstrativo. 
+/* Flag que representa que o faturamento ser\u00E1 apenas demonstrativo. 
  */
 @property(nonatomic) NSNumber* flagApenasDemonstrativo;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do convenio relacionado ao tipo de faturamento. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do convenio relacionado ao tipo de faturamento. [optional]
  */
 @property(nonatomic) NSNumber* idConvenio;
 

@@ -71,9 +71,9 @@ static PierPermissaoPaisApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Apresenta dados de um determinado pa\u00C3\u00ADs
-/// Este m\u00C3\u00A9todo permite consultar dados de um determinado pa\u00C3\u00ADs a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do pa\u00C3\u00ADs (id). 
+/// Apresenta dados de um determinado pa\u00EDs
+/// Este m\u00E9todo permite consultar dados de um determinado pa\u00EDs a partir de seu codigo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do pa\u00EDs (id). 
 ///
 ///  @returns PierPaisResponse*
 ///
@@ -155,7 +155,7 @@ static PierPermissaoPaisApi* singletonAPI = nil;
 
 ///
 /// Lista os continentes
-/// Este recurso permite listar os continentes utilizados no recurso de permiss\u00C3\u00A3o de uso do cart\u00C3\u00A3o no exterior
+/// Este recurso permite listar os continentes utilizados no recurso de permiss\u00E3o de uso do cart\u00E3o no exterior
 ///  @returns NSArray* /* NSObject */
 ///
 -(NSNumber*) listarContinentesUsingGETWithCompletionHandler: 
@@ -227,23 +227,23 @@ static PierPermissaoPaisApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os pa\u00C3\u00ADses
-/// Este recurso permite listar os pa\u00C3\u00ADses.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista os pa\u00EDses
+/// Este recurso permite listar os pa\u00EDses.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param codigo C\u00C3\u00B3digo do pa\u00C3\u00ADs (optional)
+///  @param codigo C\u00F3digo do pa\u00EDs (optional)
 ///
-///  @param sigla Sigla do pa\u00C3\u00ADs (optional)
+///  @param sigla Sigla do pa\u00EDs (optional)
 ///
-///  @param descricao Nome do pa\u00C3\u00ADs (optional)
+///  @param descricao Nome do pa\u00EDs (optional)
 ///
-///  @param continente Continente no qual o pa\u00C3\u00ADs faz parte (optional)
+///  @param continente Continente no qual o pa\u00EDs faz parte (optional)
 ///
-///  @param flagAtivo Atributo que representa se o pa\u00C3\u00ADs est\u00C3\u00A1 ativo (optional)
+///  @param flagAtivo Atributo que representa se o pa\u00EDs est\u00E1 ativo (optional)
 ///
 ///  @returns PierPagePaisResponse*
 ///

@@ -17,16 +17,16 @@
 /* Mensagem [optional]
  */
 @property(nonatomic) NSString* mensagem;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status do cart\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idStatusCartao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status do cart\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* statusCartao;
 /* Quantidade tentativas [optional]
  */
 @property(nonatomic) NSNumber* quantidadeTentativas;
-/* Quantidade m\u00C3\u00A1xima tentativas permitidas [optional]
+/* Quantidade m\u00E1xima tentativas permitidas [optional]
  */
 @property(nonatomic) NSNumber* quantidadeMaximaTentativas;
 

@@ -29,13 +29,13 @@
 /* Apresenta o som da mensagem da aplicacao [optional]
  */
 @property(nonatomic) NSString* som;
-/* Apresenta o icone da mensagem da aplica\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Apresenta o icone da mensagem da aplica\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* icone;
-/* Apresenta o certificado da aplica\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Apresenta o certificado da aplica\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* certificadoBase64;
-/* Apresenta a senha da aplica\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Apresenta a senha da aplica\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* senha;
 

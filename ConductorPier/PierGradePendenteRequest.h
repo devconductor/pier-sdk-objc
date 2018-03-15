@@ -14,7 +14,7 @@
 
 @interface PierGradePendenteRequest : PierObject
 
-/* C\u00C3\u00B3digo identificador da conta. [optional]
+/* C\u00F3digo identificador da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
 /* Data do ajuste no formato yyyy-MM-dd. [optional]

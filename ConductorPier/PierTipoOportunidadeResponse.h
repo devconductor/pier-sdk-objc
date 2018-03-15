@@ -14,13 +14,13 @@
 
 @interface PierTipoOportunidadeResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do TipoOportunidade 
+/* C\u00F3digo identificador do TipoOportunidade 
  */
 @property(nonatomic) NSNumber* _id;
 /* Descricao do TipoOportunidade 
  */
 @property(nonatomic) NSString* descricao;
-/* Flag que representa se o tipo oportunidade est\u00C3\u00A1 ativo 
+/* Flag que representa se o tipo oportunidade est\u00E1 ativo 
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

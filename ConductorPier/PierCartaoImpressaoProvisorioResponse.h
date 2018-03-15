@@ -16,22 +16,22 @@
 
 
 @property(nonatomic) NSNumber* flagVirtual;
-/* Apresenta o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id) a qual o cart\u00C3\u00A3o gerado pertence. [optional]
+/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id) a qual o cart\u00E3o gerado pertence. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) portadora do cart\u00C3\u00A3o gerado. [optional]
+/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) portadora do cart\u00E3o gerado. [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id) que foi gerado. [optional]
+/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o (id) que foi gerado. [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Apresenta o n\u00C3\u00BAmero do cart\u00C3\u00A3o. [optional]
+/* Apresenta o n\u00FAmero do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Apresenta o nome do Portador do Cart\u00C3\u00A3o. [optional]
+/* Apresenta o nome do Portador do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* nomePlastico;
-/* Apresenta a data de Validade do Cart\u00C3\u00A3o. [optional]
+/* Apresenta a data de Validade do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* dataValidade;
 

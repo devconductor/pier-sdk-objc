@@ -14,19 +14,19 @@
 
 @interface PierPlanoParcelamentoEmprestimoResponse : PierObject
 
-/* N\u00C3\u00BAmeros de parcelas do empr\u00C3\u00A9stimo/financiamento [optional]
+/* N\u00FAmeros de parcelas do empr\u00E9stimo/financiamento [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelas;
 /* Valor da parcela [optional]
  */
 @property(nonatomic) NSNumber* valorParcelas;
-/* Taxa de juros aplicado no empr\u00C3\u00A9stimo/financiamento [optional]
+/* Taxa de juros aplicado no empr\u00E9stimo/financiamento [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* valor total estimado dos tributos do Imposto sobre Opera\u00C3\u00A7\u00C3\u00B5es Financeiras [optional]
+/* valor total estimado dos tributos do Imposto sobre Opera\u00E7\u00F5es Financeiras [optional]
  */
 @property(nonatomic) NSNumber* valorTributosIOF;
-/* valor percentual do Custo Efetivo Total, ao ano, do empr\u00C3\u00A9stimo / financiamento [optional]
+/* valor percentual do Custo Efetivo Total, ao ano, do empr\u00E9stimo / financiamento [optional]
  */
 @property(nonatomic) NSNumber* valorPercentualCET;
 

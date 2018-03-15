@@ -14,46 +14,46 @@
 
 @interface PierTransacaoPaySecureRequest : PierObject
 
-/* Data e hora utilizado na gera\u00C3\u00A7\u00C3\u00A3o do criptograma em GMT - 0 [optional]
+/* Data e hora utilizado na gera\u00E7\u00E3o do criptograma em GMT - 0 [optional]
  */
 @property(nonatomic) NSString* dataHoraTransacao;
 /* Numero do cartao (criptografado) [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Id do cart\u00C3\u00A3o [optional]
+/* Id do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Valor da transa\u00C3\u00A7\u00C3\u00A3o em moeda local [optional]
+/* Valor da transa\u00E7\u00E3o em moeda local [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* N\u00C3\u00BAmero Sequencial \u00C3\u009Anico que identifica a transa\u00C3\u00A7\u00C3\u00A3o no sistema que a originou (critografado). [optional]
+/* N\u00FAmero Sequencial \u00DAnico que identifica a transa\u00E7\u00E3o no sistema que a originou (critografado). [optional]
  */
 @property(nonatomic) NSString* nsuOrigem;
-/* Nome do Portador do Cart\u00C3\u00A3o que originou a transa\u00C3\u00A7\u00C3\u00A3o (criptografado). [optional]
+/* Nome do Portador do Cart\u00E3o que originou a transa\u00E7\u00E3o (criptografado). [optional]
  */
 @property(nonatomic) NSString* nomePortadorCartao;
-/* Origem da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Origem da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* origem;
-/* Apresenta a identifica\u00C3\u00A7\u00C3\u00A3o do terminal requisitante 
+/* Apresenta a identifica\u00E7\u00E3o do terminal requisitante 
  */
 @property(nonatomic) NSString* terminalRequisitante;
-/* C\u00C3\u00B3digo de Processamento que identifica o Tipo da Transa\u00C3\u00A7\u00C3\u00A3o. 
+/* C\u00F3digo de Processamento que identifica o Tipo da Transa\u00E7\u00E3o. 
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* Data de Validade do Cart\u00C3\u00A3o. Ex: AAMM 
+/* Data de Validade do Cart\u00E3o. Ex: AAMM 
  */
 @property(nonatomic) NSString* dataValidadeCartao;
-/* N\u00C3\u00BAmero do Estabelecimento (N\u00C3\u00BAmero+DV). 
+/* N\u00FAmero do Estabelecimento (N\u00FAmero+DV). 
  */
 @property(nonatomic) NSString* numeroEstabelecimento;
-/* N\u00C3\u00BAmero de Parcelas. 
+/* N\u00FAmero de Parcelas. 
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* C\u00C3\u00B3digo de Seguran\u00C3\u00A7a do Cart\u00C3\u00A3o (criptografado). 
+/* C\u00F3digo de Seguran\u00E7a do Cart\u00E3o (criptografado). 
  */
 @property(nonatomic) NSString* codigoSegurancaCartao;
-/* Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. [optional]
+/* Tipo de ordena\u00E7\u00E3o dos registros. [optional]
  */
 @property(nonatomic) NSArray* /* NSString */ sort;
 

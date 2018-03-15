@@ -14,16 +14,16 @@
 
 @interface PierTipoDebitoRecorrenteResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de d\u00C3\u00A9bito recorrente (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de d\u00E9bito recorrente (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de d\u00C3\u00A9bito recorrente. [optional]
+/* Descri\u00E7\u00E3o do tipo de d\u00E9bito recorrente. [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Valor do tipo de d\u00C3\u00A9bito recorrente. [optional]
+/* Valor do tipo de d\u00E9bito recorrente. [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* Flag que identifica se o tipo d\u00C3\u00A9bito recorrente est\u00C3\u00A1 ativo. [optional]
+/* Flag que identifica se o tipo d\u00E9bito recorrente est\u00E1 ativo. [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

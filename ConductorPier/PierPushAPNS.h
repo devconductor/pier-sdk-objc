@@ -14,28 +14,28 @@
 
 @interface PierPushAPNS : PierObject
 
-/* C\u00C3\u00B3digo identificado da pessoa 
+/* C\u00F3digo identificado da pessoa 
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo identificador da conta 
+/* C\u00F3digo identificador da conta 
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o token do dispositivo que dever\u00C3\u00A1 receber o push. 
+/* Apresenta o token do dispositivo que dever\u00E1 receber o push. 
  */
 @property(nonatomic) NSString* tokenDispositivo;
-/* Apresenta o certificado APNs que est\u00C3\u00A1 cadastrado para o aplicativo na loja da Apple. Esse certificado dever\u00C3\u00A1 ser enviado no formado Base64. 
+/* Apresenta o certificado APNs que est\u00E1 cadastrado para o aplicativo na loja da Apple. Esse certificado dever\u00E1 ser enviado no formado Base64. 
  */
 @property(nonatomic) NSString* certificado;
-/* Apresenta a senha para o certificado APNs que est\u00C3\u00A1 cadastrado para o aplicativo na loja da Apple. 
+/* Apresenta a senha para o certificado APNs que est\u00E1 cadastrado para o aplicativo na loja da Apple. 
  */
 @property(nonatomic) NSString* senha;
-/* Apresenta o t\u00C3\u00ADtulo da notifica\u00C3\u00A7\u00C3\u00A3o. 
+/* Apresenta o t\u00EDtulo da notifica\u00E7\u00E3o. 
  */
 @property(nonatomic) NSString* titulo;
-/* Apresenta o texto da notifica\u00C3\u00A7\u00C3\u00A3o a ser enviado. 
+/* Apresenta o texto da notifica\u00E7\u00E3o a ser enviado. 
  */
 @property(nonatomic) NSString* conteudo;
-/* Apresenta o tipoEvento a qual pertence a notifica\u00C3\u00A7\u00C3\u00A3o 
+/* Apresenta o tipoEvento a qual pertence a notifica\u00E7\u00E3o 
  */
 @property(nonatomic) NSString* tipoEvento;
 /* Apresenta o nome do icone a ser apresentado no push. [optional]

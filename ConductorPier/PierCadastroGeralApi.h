@@ -8,12 +8,12 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierProdutoDetalhesResponse.h"
-#import "PierAtendimentoClienteResponse.h"
 #import "PierPageTipoAjusteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
 #import "PierTipoEnderecoResponse.h"
 #import "PierTipoOperacaoResponse.h"
 #import "PierTipoTelefoneResponse.h"
+#import "PierAtendimentoClienteResponse.h"
 #import "PierBancoResponse.h"
 #import "PierPageCampanhaResponse.h"
 #import "PierPageContaDetalheResponse.h"
@@ -27,8 +27,8 @@
 #import "PierPagePromotorResponse.h"
 #import "PierPageTipoEnderecoResponse.h"
 #import "PierPageTipoTelefoneResponse.h"
-#import "PierPageAtendimentoClienteResponse.h"
 #import "PierPageControleVencimentoResponse.h"
+#import "PierPageAtendimentoClienteResponse.h"
 #import "PierPageBancoResponse.h"
 #import "PierCampanhaPersist.h"
 #import "PierObject.h"
@@ -53,9 +53,9 @@
 ///
 ///
 /// Alterar campanha
-/// Este m\u00C3\u00A9todo permite que sejam alterados os dados de uma campanha.
+/// Este m\u00E9todo permite que sejam alterados os dados de uma campanha.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da campanha (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o da campanha (id).
 /// @param update update
 /// 
 ///
@@ -67,10 +67,10 @@
 
 ///
 ///
-/// Atualizar configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite atualizar uma configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
+/// Atualizar configura\u00E7\u00E3o para registro de cobran\u00E7a
+/// Este m\u00E9todo permite atualizar uma configura\u00E7\u00E3o, para registro de cobran\u00E7a.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o da configura\u00E7\u00E3o (id).
 /// @param configuracaoPersist configuracaoPersist
 /// 
 ///
@@ -82,10 +82,10 @@
 
 ///
 ///
-/// Alterar os dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo de um produto
-/// Este m\u00C3\u00A9todo permite que seja alterada uma configura\u00C3\u00A7\u00C3\u00A3o do rotativo para um determinado produto.
+/// Alterar os dados de configura\u00E7\u00E3o do rotativo de um produto
+/// Este m\u00E9todo permite que seja alterada uma configura\u00E7\u00E3o do rotativo para um determinado produto.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o da configura\u00E7\u00E3o (id).
 /// @param configuracaoRotativoPersist configuracaoRotativoPersist
 /// 
 ///
@@ -97,8 +97,8 @@
 
 ///
 ///
-/// Inserir configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
+/// Inserir configura\u00E7\u00E3o para registro de cobran\u00E7a
+/// Este m\u00E9todo permite que seja cadastrado uma nova configura\u00E7\u00E3o, para registro de cobran\u00E7a.
 ///
 /// @param configuracaoPersist configuracaoPersist
 /// 
@@ -110,8 +110,8 @@
 
 ///
 ///
-/// Configura a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
-/// Este recurso permite configurar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Configura a Taxa de Antecipa\u00E7\u00E3o de um Produto
+/// Este recurso permite configurar a Taxa de Antecipa\u00E7\u00E3o de um Produto, a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
 /// @param _id Id Produto
 /// @param taxaAntecipacaoRequest taxaAntecipacaoRequest
@@ -126,7 +126,7 @@
 ///
 ///
 /// Consultar campanha
-/// Este m\u00C3\u00A9todo permite que sejam listados os dados de uma determinada campanha existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este m\u00E9todo permite que sejam listados os dados de uma determinada campanha existente na base do emissor. Para isso, \u00E9 preciso informar o seu respectivo c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
 /// @param _id ID da Campanha
 /// 
@@ -138,11 +138,11 @@
 
 ///
 ///
-/// Consulta a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
-/// Este recurso permite consultar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Consulta a Taxa de Antecipa\u00E7\u00E3o de um Produto
+/// Este recurso permite consultar a Taxa de Antecipa\u00E7\u00E3o de um Produto, a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
 /// @param _id Id Produto
-/// @param tipoTransacao Tipo da Transa\u00C3\u00A7\u00C3\u00A3o (ON-US ou OFF-US)
+/// @param tipoTransacao Tipo da Transa\u00E7\u00E3o (ON-US ou OFF-US)
 /// 
 ///
 /// @return PierParametroProdutoResponse*
@@ -153,41 +153,41 @@
 
 ///
 ///
-/// Apresenta dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo espec\u00C3\u00ADfico.
-/// Este recurso permite consultar dados de configura\u00C3\u00A7\u00C3\u00A3o do parcelamento rotativo a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Consultar configura\u00E7\u00E3o para registro de cobran\u00E7a
+/// Este m\u00E9todo permite buscar uma configura\u00E7\u00E3o, para registro de cobran\u00E7a.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de configura\u00C3\u00A7\u00C3\u00A3o rotativo (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o da configura\u00E7\u00E3o (id).
+/// 
+///
+/// @return PierConfiguracaoRegistroCobrancaResponse*
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta dados de configura\u00E7\u00E3o do rotativo espec\u00EDfico.
+/// Este recurso permite consultar dados de configura\u00E7\u00E3o do parcelamento rotativo a partir de seu codigo de identifica\u00E7\u00E3o (id).
+///
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o de configura\u00E7\u00E3o rotativo (id).
 /// 
 ///
 /// @return PierConfiguracaoRotativoDetalheResponse*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler;
 
 
 ///
 ///
 /// Apresenta os dados de um determinado Produto
-/// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este m\u00E9todo permite consultar um determinado Produto a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id)
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id)
 /// 
 ///
 /// @return PierProdutoDetalhesResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Apresenta os dados de um determinado Atendimento
-/// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Atendimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (idAtendimento).
-///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do atendimento cliente (id).
-/// 
-///
-/// @return PierAtendimentoClienteResponse*
--(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler;
 
 
 ///
@@ -195,15 +195,15 @@
 /// Lista os tipos de ajustes do emissor 
 /// Este recurso permite que sejam listados os tipos de ajustes existentes na base de dados do emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo identificador do tipo de ajuste.
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo identificador do tipo de ajuste.
+/// @param descricao Descri\u00E7\u00E3o do tipo de ajuste.
 /// 
 ///
 /// @return PierPageTipoAjusteResponse*
--(NSNumber*) consultarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -216,16 +216,16 @@
 /// Lista os tipos de boletos do emissor 
 /// Este recurso permite que sejam listados os tipos de boletos existentes na base de dados do emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo identificador do tipo de boleto.
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de boleto.
-/// @param banco C\u00C3\u00B3digo identificador do banco.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo identificador do tipo de boleto.
+/// @param descricao Descri\u00E7\u00E3o do tipo de boleto.
+/// @param banco C\u00F3digo identificador do banco.
 /// 
 ///
 /// @return PierPageTipoBoletoResponse*
--(NSNumber*) consultarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -236,29 +236,29 @@
 
 ///
 ///
-/// Apresenta os dados de um determinado Tipo de Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Apresenta os dados de um determinado Tipo de Endere\u00E7o
+/// Este m\u00E9todo permite consultar um determinado Tipo de Endere\u00E7o a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id)
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Endere\u00E7o (id)
 /// 
 ///
 /// @return PierTipoEnderecoResponse*
--(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
+/// Apresenta dados de um determinado tipo de opera\u00E7\u00E3o
+/// Este recurso permite consultar dados de um determinado tipo opera\u00E7\u00E3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
 ///
-/// @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao).
-/// @param idEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (idEstabelecimento).
-/// @param codigoProcessamento C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o.
+/// @param idCartao C\u00F3digo de identifica\u00E7\u00E3o do cartao (idCartao).
+/// @param idEstabelecimento C\u00F3digo de identifica\u00E7\u00E3o do estabelecimento (idEstabelecimento).
+/// @param codigoProcessamento C\u00F3digo de processamento da opera\u00E7\u00E3o.
 /// 
 ///
 /// @return PierTipoOperacaoResponse*
--(NSNumber*) consultarUsingGET35WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET36WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler;
@@ -267,40 +267,40 @@
 ///
 ///
 /// Apresenta os dados de um determinado Tipo de Telefone
-/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este m\u00E9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id)
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id)
 /// 
 ///
 /// @return PierTipoTelefoneResponse*
--(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Apresenta os dados de um determinado Banco
-/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Apresenta os dados de um determinado Atendimento
+/// Este m\u00E9todo permite consultar os par\u00E2metros de um determinado Atendimento a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (idAtendimento).
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do atendimento cliente (id).
+/// 
+///
+/// @return PierAtendimentoClienteResponse*
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Apresenta os dados de um determinado Banco
+/// Este m\u00E9todo permite consultar um determinado Banco a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Banco (id).
 /// 
 ///
 /// @return PierBancoResponse*
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// Consultar configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite buscar uma configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
-///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id).
-/// 
-///
-/// @return PierConfiguracaoRegistroCobrancaResponse*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
 
 
 ///
@@ -308,10 +308,10 @@
 /// Listar Campanhas
 /// Lista as campanhas.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idTipoCampanha C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de campanha (id).
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idTipoCampanha C\u00F3digo de Identifica\u00E7\u00E3o do tipo de campanha (id).
 /// 
 ///
 /// @return PierPageCampanhaResponse*
@@ -327,10 +327,10 @@
 /// Lista as contas da pessoa
 /// Permite listar as contas de um pessoa a partir do seu numero na receita federal.
 ///
-/// @param numeroReceitaFederal N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do cliente na Receita Federal (CPF ou CNPJ)
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param numeroReceitaFederal N\u00FAmero de identifica\u00E7\u00E3o do cliente na Receita Federal (CPF ou CNPJ)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageContaDetalheResponse*
@@ -343,12 +343,12 @@
 
 ///
 ///
-/// Lista os Estados C\u00C3\u00ADvis
-/// Este m\u00C3\u00A9todo permite que sejam listados os Estados C\u00C3\u00ADvis na base de dados do Emissor.
+/// Lista os Estados C\u00EDvis
+/// Este m\u00E9todo permite que sejam listados os Estados C\u00EDvis na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricaoResponse*
@@ -360,12 +360,12 @@
 
 ///
 ///
-/// Listar Fantasias B\u00C3\u00A1sicas
-/// Lista as fantasia b\u00C3\u00A1sicas.
+/// Listar Fantasias B\u00E1sicas
+/// Lista as fantasia b\u00E1sicas.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageFantasiaBasicaResponse*
@@ -377,10 +377,10 @@
 
 ///
 ///
-/// Listar altera\u00C3\u00A7\u00C3\u00B5es de telefones realizadas nos \u00C3\u00BAltimos 60 dias
-/// Este m\u00C3\u00A9todo permite verificar quais os telefones de um determinado que cliente que sofreram altera\u00C3\u00A7\u00C3\u00A3o nos \u00C3\u00BAltimos 60 dias.
+/// Listar altera\u00E7\u00F5es de telefones realizadas nos \u00FAltimos 60 dias
+/// Este m\u00E9todo permite verificar quais os telefones de um determinado que cliente que sofreram altera\u00E7\u00E3o nos \u00FAltimos 60 dias.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o da pessoa (id).
 /// 
 ///
 /// @return PierHistoricoTelefoneResponse*
@@ -391,11 +391,11 @@
 ///
 ///
 /// Lista nacionalidades
-/// Este m\u00C3\u00A9todo permite que sejam listados as nacionalidades na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listados as nacionalidades na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricaoResponse*
@@ -407,12 +407,12 @@
 
 ///
 ///
-/// Lista as Ocupa\u00C3\u00A7\u00C3\u00B5es
-/// Este m\u00C3\u00A9todo permite que sejam listados as naturezas de opera\u00C3\u00A7\u00C3\u00B5es na base de dados do Emissor.
+/// Lista as Ocupa\u00E7\u00F5es
+/// Este m\u00E9todo permite que sejam listados as naturezas de opera\u00E7\u00F5es na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricaoResponse*
@@ -425,11 +425,11 @@
 ///
 ///
 /// Lista os Parentescos
-/// Este m\u00C3\u00A9todo permite que sejam listados parentescos na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listados parentescos na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricaoResponse*
@@ -441,12 +441,12 @@
 
 ///
 ///
-/// Lista profiss\u00C3\u00B5es
-/// Este m\u00C3\u00A9todo permite que sejam listados as profiss\u00C3\u00B5es na base de dados do Emissor.
+/// Lista profiss\u00F5es
+/// Este m\u00E9todo permite que sejam listados as profiss\u00F5es na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageCampoCodificadoDescricaoResponse*
@@ -461,9 +461,9 @@
 /// Listar Tipos de Campanhas
 /// Lista os tipos de campanhas.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageTipoCampanhaResponse*
@@ -475,16 +475,16 @@
 
 ///
 ///
-/// Listar configura\u00C3\u00A7\u00C3\u00B5es para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite listar as configura\u00C3\u00A7\u00C3\u00B5es de registro de cobran\u00C3\u00A7a.
+/// Listar configura\u00E7\u00F5es para registro de cobran\u00E7a
+/// Este m\u00E9todo permite listar as configura\u00E7\u00F5es de registro de cobran\u00E7a.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierConfiguracaoRegistroCobrancaResponse*
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler;
@@ -492,17 +492,17 @@
 
 ///
 ///
-/// Listar as configura\u00C3\u00A7\u00C3\u00B5es rotativo.
-/// Este recurso permite listar as configura\u00C3\u00A7\u00C3\u00B5es rotativo.
+/// Listar as configura\u00E7\u00F5es rotativo.
+/// Este recurso permite listar as configura\u00E7\u00F5es rotativo.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Produto.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idProduto C\u00F3digo de identifica\u00E7\u00E3o do Produto.
 /// 
 ///
 /// @return PierPageConfiguracaoRotativoResponse*
--(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
@@ -512,25 +512,25 @@
 ///
 ///
 /// Lista os Portadores existentes
-/// Este m\u00C3\u00A9todo permite que sejam listados os portadores cadastrados na base do emissor.
+/// Este m\u00E9todo permite que sejam listados os portadores cadastrados na base do emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id).
-/// @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id).
-/// @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id).
-/// @param idParentesco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco (id)
-/// @param tipoPortador Apresenta o tipo do Portador do cart\u00C3\u00A3o, sendo: (&#39;T&#39;: Titular, &#39;A&#39;: Adicional).
-/// @param nomeImpresso Apresenta o nome a ser impresso no cart\u00C3\u00A3o.
-/// @param idTipoCartao Apresenta o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do cart\u00C3\u00A3o (id), que ser\u00C3\u00A1 utilizado para gerar os cart\u00C3\u00B5es deste portador, vinculados a sua respectiva conta atrav\u00C3\u00A9s do campo idConta.
-/// @param flagAtivo Quanto ativa, indica que o cadastro do Portador est\u00C3\u00A1 ativo, em emissores que realizam este tipo de gest\u00C3\u00A3o.
-/// @param dataCadastroPortador Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o.
-/// @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id).
+/// @param idProduto C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id).
+/// @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id).
+/// @param idParentesco C\u00F3digo de Identifica\u00E7\u00E3o do Parentesco (id)
+/// @param tipoPortador Apresenta o tipo do Portador do cart\u00E3o, sendo: (&#39;T&#39;: Titular, &#39;A&#39;: Adicional).
+/// @param nomeImpresso Apresenta o nome a ser impresso no cart\u00E3o.
+/// @param idTipoCartao Apresenta o c\u00F3digo de identifica\u00E7\u00E3o do tipo do cart\u00E3o (id), que ser\u00E1 utilizado para gerar os cart\u00F5es deste portador, vinculados a sua respectiva conta atrav\u00E9s do campo idConta.
+/// @param flagAtivo Quanto ativa, indica que o cadastro do Portador est\u00E1 ativo, em emissores que realizam este tipo de gest\u00E3o.
+/// @param dataCadastroPortador Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00E7\u00E3o.
+/// @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00E7\u00E3o.
 /// 
 ///
 /// @return PierPagePortadorResponse*
--(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -549,18 +549,18 @@
 ///
 ///
 /// Lista os Produtos do Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param nome Descri\u00E7\u00E3o do Nome do Produto.
 /// @param status Representa o Status do Produto, onde: (\&quot;0\&quot;: Inativo), (\&quot;1\&quot;: Ativo).
-/// @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence.
+/// @param idFantasiaBasica C\u00F3digo de Identifica\u00E7\u00E3o da Fantasia B\u00E1sica (id) a qual o produto pertence.
 /// 
 ///
 /// @return PierPageProdutoResponse*
--(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -572,20 +572,20 @@
 ///
 ///
 /// Lista promotores cadastrados na base do emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os cadastros de Promoteres existentes na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listados os cadastros de Promoteres existentes na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do promotor (id)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do promotor (id)
 /// @param nome Nome do Promotor
-/// @param dataCadastro Data da Inclus\u00C3\u00A3o.
-/// @param idEstabelecimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento
-/// @param idUsuario C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do usu\u00C3\u00A1rio
+/// @param dataCadastro Data da Inclus\u00E3o.
+/// @param idEstabelecimento C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento
+/// @param idUsuario C\u00F3digo de Identifica\u00E7\u00E3o do usu\u00E1rio
 /// 
 ///
 /// @return PierPagePromotorResponse*
--(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -598,18 +598,18 @@
 
 ///
 ///
-/// Lista as op\u00C3\u00B5es de Tipos de Endere\u00C3\u00A7os do Emissor 
-/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
+/// Lista as op\u00F5es de Tipos de Endere\u00E7os do Emissor 
+/// Este m\u00E9todo permite que sejam listados os Tipos de Endere\u00E7os existentes na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id)
-/// @param nome Nome do Tipo do Endere\u00C3\u00A7o
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Endere\u00E7o (id)
+/// @param nome Nome do Tipo do Endere\u00E7o
 /// 
 ///
 /// @return PierPageTipoEnderecoResponse*
--(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -620,17 +620,17 @@
 ///
 ///
 /// Lista os Tipos de Telefones
-/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id).
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id).
 /// @param nome Nome do Tipo do Telefone
 /// 
 ///
 /// @return PierPageTipoTelefoneResponse*
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -640,20 +640,39 @@
 
 ///
 ///
-/// Lista todos os atendimentos
-/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
+/// Listar Vencimentos
+/// Este recurso permite que sejam listados os Vencimentos do emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id)
-/// @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id).
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param dataVencimento Indica a data de vencimento das faturas
+/// 
+///
+/// @return PierPageControleVencimentoResponse*
+-(NSNumber*) listarUsingGET52WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(PierPageControleVencimentoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista todos os atendimentos
+/// Este m\u00E9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
+///
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idTipoAtendimento C\u00F3digo de Identifica\u00E7\u00E3o do Tipo de Atendimento (id)
+/// @param idConta C\u00F3digo de identifica\u00E7\u00E3o de conta (id).
 /// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
 /// @param dataAtendimento Apresenta a data em que o Atendimento foi realizado.
 /// 
 ///
 /// @return PierPageAtendimentoClienteResponse*
--(NSNumber*) listarUsingGET5WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET6WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
@@ -665,35 +684,16 @@
 
 ///
 ///
-/// Listar Vencimentos
-/// Este recurso permite que sejam listados os Vencimentos do emissor.
-///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param dataVencimento Indica a data de vencimento das faturas
-/// 
-///
-/// @return PierPageControleVencimentoResponse*
--(NSNumber*) listarUsingGET50WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageControleVencimentoResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// Lista os Bancos cadastrados para o Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Bancos existentes na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listados os Bancos existentes na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageBancoResponse*
--(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET8WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageBancoResponse* output, NSError* error)) handler;
@@ -701,12 +701,12 @@
 
 ///
 ///
-/// Cadastro um novo Atendimento do tipo Gen\u00C3\u00A9rico para uma Conta
+/// Cadastro um novo Atendimento do tipo Gen\u00E9rico para uma Conta
 /// 
 ///
-/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o Atendimento est\u00C3\u00A1 associado
-/// @param conteudoAtendimento Apresenta as informa\u00C3\u00A7\u00C3\u00B5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00C3\u00A7\u00C3\u00B5es relacionadas ao Atendimento.
-/// @param detalhesAtendimento Apresenta os detalhes lan\u00C3\u00A7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento.
+/// @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta a qual o Atendimento est\u00E1 associado
+/// @param conteudoAtendimento Apresenta as informa\u00E7\u00F5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00E7\u00F5es relacionadas ao Atendimento.
+/// @param detalhesAtendimento Apresenta os detalhes lan\u00E7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento.
 /// @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento.
 /// @param dataAtendimento Apresenta a data e hora em que o Atendimento foi realizado no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;.
 /// @param dataAgendamento Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data e hora para processamento ou a data e hora para retorno do Atendimento no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;.
@@ -731,7 +731,7 @@
 ///
 ///
 /// Inserir campanha
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova campanha.
+/// Este m\u00E9todo permite que seja cadastrado uma nova campanha.
 ///
 /// @param campanhaPersist campanhaPersist
 /// 
@@ -743,8 +743,8 @@
 
 ///
 ///
-/// Inserir os dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo de um produto
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova configura\u00C3\u00A7\u00C3\u00A3o do rotativo para um determinado produto.
+/// Inserir os dados de configura\u00E7\u00E3o do rotativo de um produto
+/// Este m\u00E9todo permite que seja cadastrado uma nova configura\u00E7\u00E3o do rotativo para um determinado produto.
 ///
 /// @param configuracaoRotativoPersist configuracaoRotativoPersist
 /// 

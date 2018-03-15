@@ -14,25 +14,25 @@
 
 @interface PierLancamentoFaturaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idTransacao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do tipo da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* descricaoTipoTransacao;
-/* C\u00C3\u00B3digo identificador do tipo do evento [optional]
+/* C\u00F3digo identificador do tipo do evento [optional]
  */
 @property(nonatomic) NSNumber* idTipoEvento;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo do evento [optional]
+/* Descri\u00E7\u00E3o do tipo do evento [optional]
  */
 @property(nonatomic) NSString* descricaoTipoEvento;
-/* C\u00C3\u00B3digo identificador do evento [optional]
+/* C\u00F3digo identificador do evento [optional]
  */
 @property(nonatomic) NSNumber* idEvento;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Descri\u00C3\u00A7\u00C3\u00A3o complementar do evento [optional]
+/* Descri\u00E7\u00E3o complementar do evento [optional]
  */
 @property(nonatomic) NSString* complemento;
 /* Valor em reais [optional]
@@ -41,52 +41,52 @@
 /* Valor em dolar [optional]
  */
 @property(nonatomic) NSNumber* valorUSD;
-/* N\u00C3\u00BAmero da parcela [optional]
+/* N\u00FAmero da parcela [optional]
  */
 @property(nonatomic) NSNumber* numeroParcela;
 /* Quantidade de parcelas [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Data da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Data da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataHoraTransacao;
 /* Nome do estabelecimento [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do estabelecimento [optional]
+/* Descri\u00E7\u00E3o do estabelecimento [optional]
  */
 @property(nonatomic) NSString* descricaoEstabelecimento;
 /* Nome fantasia do estabelecimento [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaEstabelecimento;
-/* Flag que indica se o lan\u00C3\u00A7amento \u00C3\u00A9 de cr\u00C3\u00A9dito [optional]
+/* Flag que indica se o lan\u00E7amento \u00E9 de cr\u00E9dito [optional]
  */
 @property(nonatomic) NSNumber* flagCredito;
-/* C\u00C3\u00B3digo identificador do MCC (Merchant Category Codes) [optional]
+/* C\u00F3digo identificador do MCC (Merchant Category Codes) [optional]
  */
 @property(nonatomic) NSNumber* idMCC;
-/* C\u00C3\u00B3digo identificador do grupo MCC [optional]
+/* C\u00F3digo identificador do grupo MCC [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do grupo MCC [optional]
+/* Descri\u00E7\u00E3o do grupo MCC [optional]
  */
 @property(nonatomic) NSString* descricaoGrupoMCC;
-/* Indica se o portador do cart\u00C3\u00A3o \u00C3\u00A9 o titular da conta [optional]
+/* Indica se o portador do cart\u00E3o \u00E9 o titular da conta [optional]
  */
 @property(nonatomic) NSNumber* titular;
-/* Nome impresso no cart\u00C3\u00A3o [optional]
+/* Nome impresso no cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* nomePortador;
-/* N\u00C3\u00BAmero do cart\u00C3\u00A3o mascarado [optional]
+/* N\u00FAmero do cart\u00E3o mascarado [optional]
  */
 @property(nonatomic) NSString* numeroCartaoMascarado;
-/* Flag que indica se o cliente solicitou contesta\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Flag que indica se o cliente solicitou contesta\u00E7\u00E3o da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* flagSolicitouContestacao;
 /* Valor da taxa de embarque [optional]
  */
 @property(nonatomic) NSNumber* valorTaxaEmbarque;
-/* Descri\u00C3\u00A7\u00C3\u00A3o abreviada da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o abreviada da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* descricaoAbreviada;
 

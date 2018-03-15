@@ -14,31 +14,31 @@
 
 @interface PierCartaoPayConfirmarChaveResponse : PierObject
 
-/* Id do cart\u00C3\u00A3o [optional]
+/* Id do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* N\u00C3\u00BAmero do cart\u00C3\u00A3o real criptografado [optional]
+/* N\u00FAmero do cart\u00E3o real criptografado [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Data de validade do cart\u00C3\u00A3o [optional]
+/* Data de validade do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataValidadeCartao;
-/* Nome impresso no cart\u00C3\u00A3o criptografado [optional]
+/* Nome impresso no cart\u00E3o criptografado [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Identificador do emissor do cart\u00C3\u00A3o [optional]
+/* Identificador do emissor do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idEntidade;
-/* Nome do emissor do cart\u00C3\u00A3o [optional]
+/* Nome do emissor do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* nomeEntidade;
-/* Status do cart\u00C3\u00A3o [optional]
+/* Status do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* status;
 /* Data de validade da chave do criptograma [optional]
  */
 @property(nonatomic) NSString* dataValidadeChaveCriptograma;
-/* Chave de gera\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o criptografada [optional]
+/* Chave de gera\u00E7\u00E3o de transa\u00E7\u00E3o criptografada [optional]
  */
 @property(nonatomic) NSString* chaveCriptograma;
 

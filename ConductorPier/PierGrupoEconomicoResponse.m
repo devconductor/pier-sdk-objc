@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"razaoSocial": @"razaoSocial", @"nomeCredor": @"nomeCredor", @"numeroReceitaFederal": @"numeroReceitaFederal", @"inscricaoEstadual": @"inscricaoEstadual", @"contato": @"contato", @"banco": @"banco", @"agencia": @"agencia", @"digitoAgencia": @"digitoAgencia", @"contaCorrente": @"contaCorrente", @"digitoContaCorrente": @"digitoContaCorrente", @"usuario": @"usuario", @"periodicidade": @"periodicidade", @"pagamentoSemanal": @"pagamentoSemanal", @"pagamentoMensal": @"pagamentoMensal", @"pagamentoDecendialPrimeiro": @"pagamentoDecendialPrimeiro", @"pagamentoDecendialSegundo": @"pagamentoDecendialSegundo", @"pagamentoDecendialTerceiro": @"pagamentoDecendialTerceiro", @"pagamentoQuinzenalPrimeiro": @"pagamentoQuinzenalPrimeiro", @"pagamentoQuinzenalSegundo": @"pagamentoQuinzenalSegundo", @"percentualRAV": @"percentualRAV", @"recebeRAV": @"recebeRAV", @"percentualMultiplica": @"percentualMultiplica", @"taxaAdm": @"taxaAdm", @"taxaBanco": @"taxaBanco", @"limiteRAV": @"limiteRAV" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"razaoSocial": @"razaoSocial", @"nomeCredor": @"nomeCredor", @"numeroReceitaFederal": @"numeroReceitaFederal", @"inscricaoEstadual": @"inscricaoEstadual", @"contato": @"contato", @"banco": @"banco", @"agencia": @"agencia", @"digitoAgencia": @"digitoAgencia", @"contaCorrente": @"contaCorrente", @"digitoContaCorrente": @"digitoContaCorrente", @"usuario": @"usuario", @"periodicidade": @"periodicidade", @"pagamentoSemanal": @"pagamentoSemanal", @"pagamentoMensal": @"pagamentoMensal", @"pagamentoDecendialPrimeiro": @"pagamentoDecendialPrimeiro", @"pagamentoDecendialSegundo": @"pagamentoDecendialSegundo", @"pagamentoDecendialTerceiro": @"pagamentoDecendialTerceiro", @"pagamentoQuinzenalPrimeiro": @"pagamentoQuinzenalPrimeiro", @"pagamentoQuinzenalSegundo": @"pagamentoQuinzenalSegundo", @"idCredorRAV": @"idCredorRAV", @"percentualRAV": @"percentualRAV", @"recebeRAV": @"recebeRAV", @"percentualMultiplica": @"percentualMultiplica", @"taxaAdm": @"taxaAdm", @"taxaBanco": @"taxaBanco", @"limiteRAV": @"limiteRAV" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"razaoSocial", @"nomeCredor", @"numeroReceitaFederal", @"inscricaoEstadual", @"contato", @"banco", @"agencia", @"digitoAgencia", @"contaCorrente", @"digitoContaCorrente", @"usuario", @"periodicidade", @"pagamentoSemanal", @"pagamentoMensal", @"pagamentoDecendialPrimeiro", @"pagamentoDecendialSegundo", @"pagamentoDecendialTerceiro", @"pagamentoQuinzenalPrimeiro", @"pagamentoQuinzenalSegundo", @"percentualRAV", @"recebeRAV", @"percentualMultiplica", @"taxaAdm", @"taxaBanco", @"limiteRAV"];
+  NSArray *optionalProperties = @[@"_id", @"razaoSocial", @"nomeCredor", @"numeroReceitaFederal", @"inscricaoEstadual", @"contato", @"banco", @"agencia", @"digitoAgencia", @"contaCorrente", @"digitoContaCorrente", @"usuario", @"periodicidade", @"pagamentoSemanal", @"pagamentoMensal", @"pagamentoDecendialPrimeiro", @"pagamentoDecendialSegundo", @"pagamentoDecendialTerceiro", @"pagamentoQuinzenalPrimeiro", @"pagamentoQuinzenalSegundo", @"idCredorRAV", @"percentualRAV", @"recebeRAV", @"percentualMultiplica", @"taxaAdm", @"taxaBanco", @"limiteRAV"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

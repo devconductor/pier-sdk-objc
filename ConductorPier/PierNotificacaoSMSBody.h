@@ -14,13 +14,13 @@
 
 @interface PierNotificacaoSMSBody : PierObject
 
-/* N\u00C3\u00BAmero sequencial \u00C3\u00BAnico 
+/* N\u00FAmero sequencial \u00FAnico 
  */
 @property(nonatomic) NSNumber* nsu;
-/* C\u00C3\u00B3digo identificado da pessoa 
+/* C\u00F3digo identificado da pessoa 
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo identificador da conta 
+/* C\u00F3digo identificador da conta 
  */
 @property(nonatomic) NSNumber* idConta;
 /* Apresenta o celular a ser eviado o SMS no formato 5588999999999 ou 5588999999999. 
@@ -29,10 +29,10 @@
 /* Apresenta o texto do SMS a ser enviado 
  */
 @property(nonatomic) NSString* conteudo;
-/* Apresenta a data e hora em que ser\u00C3\u00A1 enviado a notifica\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Apresenta a data e hora em que ser\u00E1 enviado a notifica\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataAgendamento;
-/* Apresenta o tipoEvento a qual pertence a notifica\u00C3\u00A7\u00C3\u00A3o 
+/* Apresenta o tipoEvento a qual pertence a notifica\u00E7\u00E3o 
  */
 @property(nonatomic) NSString* tipoEvento;
 

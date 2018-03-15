@@ -14,10 +14,10 @@
 
 @interface PierTipoAjusteResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do tipo de ajuste. [optional]
+/* C\u00F3digo identificador do tipo de ajuste. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste. [optional]
+/* Descri\u00E7\u00E3o do tipo de ajuste. [optional]
  */
 @property(nonatomic) NSString* descricao;
 

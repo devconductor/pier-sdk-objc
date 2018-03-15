@@ -14,10 +14,10 @@
 
 @interface PierValidaCVVRequest : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do chave de criptografia. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do chave de criptografia. [optional]
  */
 @property(nonatomic) NSNumber* idChaveCriptografia;
-/* Valor de Verifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (CVV). [optional]
+/* Valor de Verifica\u00E7\u00E3o do Cart\u00E3o (CVV). [optional]
  */
 @property(nonatomic) NSString* cvv;
 

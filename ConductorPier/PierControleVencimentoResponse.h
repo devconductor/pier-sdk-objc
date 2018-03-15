@@ -17,19 +17,19 @@
 /*  Indica a data de vencimento das faturas [optional]
  */
 @property(nonatomic) NSString* dataVencimento;
-/*  Indica a data prevista para a realiza\u00C3\u00A7\u00C3\u00A3o do Corte das faturas [optional]
+/*  Indica a data prevista para a realiza\u00E7\u00E3o do Corte das faturas [optional]
  */
 @property(nonatomic) NSString* dataPrevistaCorte;
-/* Indica a data e a hora que fora realizada a realiza\u00C3\u00A7\u00C3\u00A3o do Corte das faturas [optional]
+/* Indica a data e a hora que fora realizada a realiza\u00E7\u00E3o do Corte das faturas [optional]
  */
 @property(nonatomic) NSString* dataHoraRealizacaoCorte;
-/* Indica a data prevista para a realiza\u00C3\u00A7\u00C3\u00A3o do faturamento [optional]
+/* Indica a data prevista para a realiza\u00E7\u00E3o do faturamento [optional]
  */
 @property(nonatomic) NSString* dataPrevistaFaturamento;
 /* Indica a data e a hora que fora realizado o faturamento [optional]
  */
 @property(nonatomic) NSString* dataHoraRealizacaoFaturamento;
-/* Indica o dia \u00C3\u00BAtil que ser\u00C3\u00A1 considerado como a data de vencimento [optional]
+/* Indica o dia \u00FAtil que ser\u00E1 considerado como a data de vencimento [optional]
  */
 @property(nonatomic) NSString* dataRealVencimento;
 

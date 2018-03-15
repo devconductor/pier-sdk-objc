@@ -14,37 +14,37 @@
 
 @interface PierPessoaDetalheResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador da pessoa [optional]
+/* C\u00F3digo identificador da pessoa [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o nome da m\u00C3\u00A3e da pessoa fisica [optional]
+/* Apresenta o nome da m\u00E3e da pessoa fisica [optional]
  */
 @property(nonatomic) NSString* nomeMae;
 /* Id Estado civil da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;
-/* Profiss\u00C3\u00A3o da pessoa fisica [optional]
+/* Profiss\u00E3o da pessoa fisica [optional]
  */
 @property(nonatomic) NSString* idProfissao;
-/* Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica [optional]
+/* Id Natureza Ocupa\u00E7\u00E3o da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;
 /* Id Nacionalidade da pessoa fisica [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
-/* N\u00C3\u00BAmero do banco. [optional]
+/* N\u00FAmero do banco. [optional]
  */
 @property(nonatomic) NSNumber* numeroBanco;
-/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
+/* N\u00FAmero da ag\u00EAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00C3\u00BAmero da conta corrente. [optional]
+/* N\u00FAmero da conta corrente. [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
 /* Email da pessoa fisica [optional]
  */
 @property(nonatomic) NSString* email;
-/* Nome que deve ser impresso no cart\u00C3\u00A3o [optional]
+/* Nome que deve ser impresso no cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* nomeEmpresa;
 

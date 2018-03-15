@@ -9,11 +9,11 @@
 
 Pod::Spec.new do |s|
     s.name             = "ConductorPier"
-    s.version          = "2.54.5"
+    s.version          = "2.57.0"
 
     s.summary          = "PIER Labs"
     s.description      = <<-DESC
-                         Gest\u00C3\u00A3o de pagamento eletr\u00C3\u00B4nicos como servi\u00C3\u00A7o
+                         Gest\u00E3o de pagamento eletr\u00F4nicos como servi\u00E7o
                          DESC
 
     s.platform     = :ios, '7.0'

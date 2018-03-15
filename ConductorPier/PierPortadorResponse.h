@@ -14,34 +14,34 @@
 
 @interface PierPortadorResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id). [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id). [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id). [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Parentesco (id) [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;
-/* Apresenta o tipo do Portador do cart\u00C3\u00A3o, sendo: ('T': Titular, 'A': Adicional). [optional]
+/* Apresenta o tipo do Portador do cart\u00E3o, sendo: ('T': Titular, 'A': Adicional). [optional]
  */
 @property(nonatomic) NSString* tipoPortador;
-/* Apresenta o nome a ser impresso no cart\u00C3\u00A3o. [optional]
+/* Apresenta o nome a ser impresso no cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Apresenta o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do cart\u00C3\u00A3o (id), que ser\u00C3\u00A1 utilizado para gerar os cart\u00C3\u00B5es deste portador, vinculados a sua respectiva conta atrav\u00C3\u00A9s do campo idConta. [optional]
+/* Apresenta o c\u00F3digo de identifica\u00E7\u00E3o do tipo do cart\u00E3o (id), que ser\u00E1 utilizado para gerar os cart\u00F5es deste portador, vinculados a sua respectiva conta atrav\u00E9s do campo idConta. [optional]
  */
 @property(nonatomic) NSNumber* idTipoCartao;
-/* Quanto ativa, indica que o cadastro do Portador est\u00C3\u00A1 ativo, em emissores que realizam este tipo de gest\u00C3\u00A3o. [optional]
+/* Quanto ativa, indica que o cadastro do Portador est\u00E1 ativo, em emissores que realizam este tipo de gest\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
-/* Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* dataCadastroPortador;
-/* Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* dataCancelamentoPortador;
 

@@ -75,8 +75,8 @@ static PierAntecipacaoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Configura a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
-/// Este recurso permite configurar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Configura a Taxa de Antecipa\u00E7\u00E3o de um Produto
+/// Este recurso permite configurar a Taxa de Antecipa\u00E7\u00E3o de um Produto, a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///  @param _id Id Produto 
 ///
 ///  @param taxaAntecipacaoRequest taxaAntecipacaoRequest 
@@ -166,11 +166,11 @@ static PierAntecipacaoApi* singletonAPI = nil;
 }
 
 ///
-/// Consulta a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
-/// Este recurso permite consultar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Consulta a Taxa de Antecipa\u00E7\u00E3o de um Produto
+/// Este recurso permite consultar a Taxa de Antecipa\u00E7\u00E3o de um Produto, a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///  @param _id Id Produto 
 ///
-///  @param tipoTransacao Tipo da Transa\u00C3\u00A7\u00C3\u00A3o (ON-US ou OFF-US) 
+///  @param tipoTransacao Tipo da Transa\u00E7\u00E3o (ON-US ou OFF-US) 
 ///
 ///  @returns PierParametroProdutoResponse*
 ///
@@ -261,15 +261,15 @@ static PierAntecipacaoApi* singletonAPI = nil;
 }
 
 ///
-/// Faz a efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o
-/// M\u00C3\u00A9todo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o, cujo desconto \u00C3\u00A9 calculado baseado na data da \u00C3\u00BAltima parcela em aberto.
-///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta. 
+/// Faz a efetiva\u00E7\u00E3o da antecipa\u00E7\u00E3o
+/// M\u00E9todo responsavel pela efetiva\u00E7\u00E3o da antecipa\u00E7\u00E3o, cujo desconto \u00E9 calculado baseado na data da \u00FAltima parcela em aberto.
+///  @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta. 
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento. 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do evento. 
 ///
 ///  @param quantidadeParcelas Quantidade de parcelas para serem antecipadas. 
 ///
-///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///  @param complemento Dados complementares sobre a realiza\u00E7\u00E3o da transa\u00E7\u00E3o. (optional)
 ///
 ///  @returns PierAntecipacaoResponse*
 ///
@@ -375,11 +375,11 @@ static PierAntecipacaoApi* singletonAPI = nil;
 }
 
 ///
-/// Faz a efetiva\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o
-/// M\u00C3\u00A9todo responsavel pela efetiva\u00C3\u00A7\u00C3\u00A3o de todas as compras antecip\u00C3\u00A1veis com todas as parcelas de uma conta.
-///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta. 
+/// Faz a efetiva\u00E7\u00E3o da antecipa\u00E7\u00E3o
+/// M\u00E9todo responsavel pela efetiva\u00E7\u00E3o de todas as compras antecip\u00E1veis com todas as parcelas de uma conta.
+///  @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta. 
 ///
-///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///  @param complemento Dados complementares sobre a realiza\u00E7\u00E3o da transa\u00E7\u00E3o. (optional)
 ///
 ///  @returns PierAntecipacaoResponse*
 ///
@@ -466,27 +466,27 @@ static PierAntecipacaoApi* singletonAPI = nil;
 }
 
 ///
-/// Listar compras com parcelas antecip\u00C3\u00A1veis
-/// Lista as compras antecip\u00C3\u00A1veis de uma conta.
-///  @param idConta C\u00C3\u00B3digo identificador da conta da Compra. 
+/// Listar compras com parcelas antecip\u00E1veis
+/// Lista as compras antecip\u00E1veis de uma conta.
+///  @param idConta C\u00F3digo identificador da conta da Compra. 
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idCompra C\u00C3\u00B3digo identificador da Compra. (optional)
+///  @param idCompra C\u00F3digo identificador da Compra. (optional)
 ///
-///  @param parcelada Indica se a compra \u00C3\u00A9 parcelada. (optional)
+///  @param parcelada Indica se a compra \u00E9 parcelada. (optional)
 ///
-///  @param juros Indica se a compra \u00C3\u00A9 com ou sem juros. (optional)
+///  @param juros Indica se a compra \u00E9 com ou sem juros. (optional)
 ///
-///  @param tipoOrigemTransacao Indica se a compra \u00C3\u00A9 ON-US ou OFF-US (optional)
+///  @param tipoOrigemTransacao Indica se a compra \u00E9 ON-US ou OFF-US (optional)
 ///
 ///  @returns PierPageCompraResponse*
 ///
--(NSNumber*) listarUsingGET11WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET12WithIdConta: (NSNumber*) idConta
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -499,7 +499,7 @@ static PierAntecipacaoApi* singletonAPI = nil;
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `listarUsingGET12`"];
     }
     
 
@@ -601,13 +601,13 @@ static PierAntecipacaoApi* singletonAPI = nil;
 }
 
 ///
-/// Simular antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas
-/// Simula a antecipa\u00C3\u00A7\u00C3\u00A3o de parcelas de um evento, listando todos os planos de parcelamento dispon\u00C3\u00ADveis, cujo desconto \u00C3\u00A9 calculado baseado na data da \u00C3\u00BAltima parcela em aberto.
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. 
+/// Simular antecipa\u00E7\u00E3o de parcelas
+/// Simula a antecipa\u00E7\u00E3o de parcelas de um evento, listando todos os planos de parcelamento dispon\u00EDveis, cujo desconto \u00E9 calculado baseado na data da \u00FAltima parcela em aberto.
+///  @param idConta C\u00F3digo de identifica\u00E7\u00E3o da conta. 
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do evento. 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do evento. 
 ///
-///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///  @param complemento Dados complementares sobre a realiza\u00E7\u00E3o da transa\u00E7\u00E3o. (optional)
 ///
 ///  @returns PierAntecipacaoSimuladaResponse*
 ///
@@ -703,11 +703,11 @@ static PierAntecipacaoApi* singletonAPI = nil;
 }
 
 ///
-/// Simular antecipa\u00C3\u00A7\u00C3\u00A3o de todas as parcelas antecip\u00C3\u00A1veis
-/// O recurso permite realizar a simula\u00C3\u00A7\u00C3\u00A3o da antecipa\u00C3\u00A7\u00C3\u00A3o de todas as compras antecip\u00C3\u00A1veis de todas as parcelas de uma determinada conta.
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. 
+/// Simular antecipa\u00E7\u00E3o de todas as parcelas antecip\u00E1veis
+/// O recurso permite realizar a simula\u00E7\u00E3o da antecipa\u00E7\u00E3o de todas as compras antecip\u00E1veis de todas as parcelas de uma determinada conta.
+///  @param idConta C\u00F3digo de identifica\u00E7\u00E3o da conta. 
 ///
-///  @param complemento Dados complementares sobre a realiza\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///  @param complemento Dados complementares sobre a realiza\u00E7\u00E3o da transa\u00E7\u00E3o. (optional)
 ///
 ///  @returns PierAntecipacaoSimuladaLoteResponse*
 ///

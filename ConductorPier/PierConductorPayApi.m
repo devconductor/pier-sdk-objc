@@ -78,11 +78,11 @@ static PierConductorPayApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Atualiza a chave de gera\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite atualizar a chave de gera\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o de um dispositivo a partir do seu identificador (id).
+/// Atualiza a chave de gera\u00E7\u00E3o de transa\u00E7\u00E3o
+/// Este m\u00E9todo permite atualizar a chave de gera\u00E7\u00E3o de transa\u00E7\u00E3o de um dispositivo a partir do seu identificador (id).
 ///  @param deviceId Device id criptografado 
 ///
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o (id). 
 ///
 ///  @returns PierCartaoPayAtualizarChaveResponse*
 ///
@@ -172,11 +172,11 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Atualiza os dados do cart\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite atualizar os dados do cart\u00C3\u00A3o tokenizados de um dispositivo a partir do seu identificador (id).
+/// Atualiza os dados do cart\u00E3o
+/// Este m\u00E9todo permite atualizar os dados do cart\u00E3o tokenizados de um dispositivo a partir do seu identificador (id).
 ///  @param deviceId Device id criptografado 
 ///
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o (id). 
 ///
 ///  @param update update 
 ///
@@ -274,11 +274,11 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Confirma a atualiza\u00C3\u00A7\u00C3\u00A3o da chave de transa\u00C3\u00A7\u00C3\u00A3o
-/// Este met\u00C3\u00B3do recebe confirma\u00C3\u00A7\u00C3\u00A3o de atualiza\u00C3\u00A7\u00C3\u00A3o de chave transa\u00C3\u00A7\u00C3\u00A3o.
+/// Confirma a atualiza\u00E7\u00E3o da chave de transa\u00E7\u00E3o
+/// Este met\u00F3do recebe confirma\u00E7\u00E3o de atualiza\u00E7\u00E3o de chave transa\u00E7\u00E3o.
 ///  @param deviceId Device id criptografado 
 ///
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o (id). 
 ///
 ///  @param update update 
 ///
@@ -376,27 +376,27 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado cart\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo permite consultar as informa\u00C3\u00A7\u00C3\u00B5es de um determinado cart\u00C3\u00A3o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Apresenta os dados de um determinado cart\u00E3o
+/// Este m\u00E9todo permite consultar as informa\u00E7\u00F5es de um determinado cart\u00E3o a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///  @param deviceId Device id criptografado 
 ///
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o (id). 
 ///
 ///  @returns PierCartaoPayDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET7WithDeviceId: (NSString*) deviceId
+-(NSNumber*) consultarUsingGET8WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoPayDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET8`"];
     }
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET8`"];
     }
     
 
@@ -470,8 +470,8 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os c\u00C3\u00B3digos de resposta dos recursos de transa\u00C3\u00A7\u00C3\u00A3o e consulta de conta
-/// Este m\u00C3\u00A9todo retorna a lista dos c\u00C3\u00B3digos de resposta das transa\u00C3\u00A7\u00C3\u00B5es e consulta de saque realizada no Pay.
+/// Lista os c\u00F3digos de resposta dos recursos de transa\u00E7\u00E3o e consulta de conta
+/// Este m\u00E9todo retorna a lista dos c\u00F3digos de resposta das transa\u00E7\u00F5es e consulta de saque realizada no Pay.
 ///  @returns NSArray* /* NSObject */
 ///
 -(NSNumber*) listarCodigosRespostaUsingGETWithCompletionHandler: 
@@ -544,7 +544,7 @@ static PierConductorPayApi* singletonAPI = nil;
 
 ///
 /// Lista os modos entradas
-/// Este recurso permite listar os modos de entrada para transa\u00C3\u00A7\u00C3\u00A3o
+/// Este recurso permite listar os modos de entrada para transa\u00E7\u00E3o
 ///  @returns NSArray* /* NSObject */
 ///
 -(NSNumber*) listarModosEntradaUsingGETWithCompletionHandler: 
@@ -616,8 +616,8 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Lista as opera\u00C3\u00A7\u00C3\u00B5es
-/// Este recurso permite listar as opera\u00C3\u00A7\u00C3\u00B5es disponiveis de transa\u00C3\u00A7\u00C3\u00A3o
+/// Lista as opera\u00E7\u00F5es
+/// Este recurso permite listar as opera\u00E7\u00F5es disponiveis de transa\u00E7\u00E3o
 ///  @returns NSArray* /* NSObject */
 ///
 -(NSNumber*) listarOperacoesUsingGETWithCompletionHandler: 
@@ -690,7 +690,7 @@ static PierConductorPayApi* singletonAPI = nil;
 
 ///
 /// Lista os tipos de terminais
-/// Este m\u00C3\u00A9todo retorna a lista dos tipos de terminais.
+/// Este m\u00E9todo retorna a lista dos tipos de terminais.
 ///  @returns NSArray* /* NSObject */
 ///
 -(NSNumber*) listarTiposTerminaisUsingGETWithCompletionHandler: 
@@ -762,8 +762,8 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os tipos de transa\u00C3\u00A7\u00C3\u00B5es
-/// Este m\u00C3\u00A9todo retorna a lista dos tipos de transa\u00C3\u00A7\u00C3\u00B5es realizadas no Pay.
+/// Lista os tipos de transa\u00E7\u00F5es
+/// Este m\u00E9todo retorna a lista dos tipos de transa\u00E7\u00F5es realizadas no Pay.
 ///  @returns NSArray* /* NSObject */
 ///
 -(NSNumber*) listarTiposTransacoesUsingGETWithCompletionHandler: 
@@ -835,23 +835,23 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os cart\u00C3\u00B5es cadastrados
-/// Este m\u00C3\u00A9todo permite listar os cart\u00C3\u00B5es cadastrado em um dispositivo.
+/// Lista os cart\u00F5es cadastrados
+/// Este m\u00E9todo permite listar os cart\u00F5es cadastrado em um dispositivo.
 ///  @param deviceId Device id criptografado (optional)
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param status Status do cart\u00C3\u00A3o tokenizado (optional)
+///  @param status Status do cart\u00E3o tokenizado (optional)
 ///
-///  @param numeroCartao Numero do cart\u00C3\u00A3o tokenizado (optional)
+///  @param numeroCartao Numero do cart\u00E3o tokenizado (optional)
 ///
 ///  @returns PierPageCartaoPayResponse*
 ///
--(NSNumber*) listarUsingGET9WithDeviceId: (NSString*) deviceId
+-(NSNumber*) listarUsingGET10WithDeviceId: (NSString*) deviceId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -950,8 +950,8 @@ static PierConductorPayApi* singletonAPI = nil;
 }
 
 ///
-/// Cria\u00C3\u00A7\u00C3\u00A3o de cart\u00C3\u00A3o
-/// Este met\u00C3\u00B3do permite a tokeniza\u00C3\u00A7\u00C3\u00A3o de um cart\u00C3\u00A3o a partir dos seus dados impressos.
+/// Cria\u00E7\u00E3o de cart\u00E3o
+/// Este met\u00F3do permite a tokeniza\u00E7\u00E3o de um cart\u00E3o a partir dos seus dados impressos.
 ///  @param deviceId Device id criptografado 
 ///
 ///  @param persist persist 

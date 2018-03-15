@@ -14,25 +14,25 @@
 
 @interface PierEnderecoAprovadoResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Endere\u00E7o (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) [optional]
  */
 @property(nonatomic) NSNumber* idTipoEndereco;
-/* Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' [optional]
+/* Apresenta o C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' [optional]
  */
 @property(nonatomic) NSString* cep;
 /* Apresenta o nome do Logradouro [optional]
  */
 @property(nonatomic) NSString* logradouro;
-/* Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o [optional]
+/* Apresenta o n\u00FAmero do endere\u00E7o [optional]
  */
 @property(nonatomic) NSNumber* numero;
-/* Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o [optional]
+/* Apresenta descri\u00E7oes complementares referente ao endere\u00E7o [optional]
  */
 @property(nonatomic) NSString* complemento;
-/* Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o [optional]
+/* Apresenta a descri\u00E7\u00E3o de ponto de refer\u00EAncia do endere\u00E7o [optional]
  */
 @property(nonatomic) NSString* pontoReferencia;
 /* Apresenta nome do bairro [optional]
@@ -47,7 +47,7 @@
 /* Apresenta nome do Pais [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Indica se o endere\u00C3\u00A7o informado \u00C3\u00A9 o de correspond\u00C3\u00AAncia [optional]
+/* Indica se o endere\u00E7o informado \u00E9 o de correspond\u00EAncia [optional]
  */
 @property(nonatomic) NSNumber* enderecoCorrespondencia;
 

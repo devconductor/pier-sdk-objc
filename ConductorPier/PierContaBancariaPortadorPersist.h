@@ -14,37 +14,37 @@
 
 @interface PierContaBancariaPortadorPersist : PierObject
 
-/* C\u00C3\u00B3digo identificador da conta cart\u00C3\u00A3o 
+/* C\u00F3digo identificador da conta cart\u00E3o 
  */
 @property(nonatomic) NSNumber* idConta;
-/* Descri\u00C3\u00A7\u00C3\u00A3o da ag\u00C3\u00AAncia [optional]
+/* Descri\u00E7\u00E3o da ag\u00EAncia [optional]
  */
 @property(nonatomic) NSString* nomeAgencia;
-/* C\u00C3\u00B3digo do banco 
+/* C\u00F3digo do banco 
  */
 @property(nonatomic) NSNumber* banco;
-/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia 
+/* N\u00FAmero da ag\u00EAncia 
  */
 @property(nonatomic) NSString* numeroAgencia;
-/* D\u00C3\u00ADgito da ag\u00C3\u00AAncia [optional]
+/* D\u00EDgito da ag\u00EAncia [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* N\u00C3\u00BAmero da conta 
+/* N\u00FAmero da conta 
  */
 @property(nonatomic) NSString* numeroConta;
-/* D\u00C3\u00ADgito da conta [optional]
+/* D\u00EDgito da conta [optional]
  */
 @property(nonatomic) NSString* digitoConta;
-/* Sinaliza se conta banc\u00C3\u00A1ria est\u00C3\u00A1 ativa ou n\u00C3\u00A3o (1: Ativa, 0: Inativa) 
+/* Sinaliza se conta banc\u00E1ria est\u00E1 ativa ou n\u00E3o (1: Ativa, 0: Inativa) 
  */
 @property(nonatomic) NSNumber* flagAtivo;
-/* Sinaliza se origem \u00C3\u00A9 DOC (1: DOC, 0: TED) 
+/* Sinaliza se origem \u00E9 DOC (1: DOC, 0: TED) 
  */
 @property(nonatomic) NSNumber* flagContaOrigemDoc;
-/* C\u00C3\u00B3digo da pessoa 
+/* C\u00F3digo da pessoa 
  */
 @property(nonatomic) NSNumber* idPessoaFisica;
-/* Sinaliza se conta banc\u00C3\u00A1ria \u00C3\u00A9 poupan\u00C3\u00A7a (1: Poupan\u00C3\u00A7a, 0: Conta corrente) 
+/* Sinaliza se conta banc\u00E1ria \u00E9 poupan\u00E7a (1: Poupan\u00E7a, 0: Conta corrente) 
  */
 @property(nonatomic) NSNumber* flagContaPoupanca;
 /* Nome do favorecido [optional]
@@ -53,7 +53,7 @@
 /* Documento do favorecido [optional]
  */
 @property(nonatomic) NSString* numeroReceiraFederal;
-/* Titularidade da conta (1:Portador \u00C3\u00A9 o titular, 0: Portador n\u00C3\u00A3o \u00C3\u00A9 o t\u00C3\u00ADtular [optional]
+/* Titularidade da conta (1:Portador \u00E9 o titular, 0: Portador n\u00E3o \u00E9 o t\u00EDtular [optional]
  */
 @property(nonatomic) NSNumber* titularidade;
 

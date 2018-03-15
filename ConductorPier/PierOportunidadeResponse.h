@@ -15,31 +15,31 @@
 
 @interface PierOportunidadeResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador da oportunidade [optional]
+/* C\u00F3digo identificador da oportunidade [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo identificador do tipo oportunidade [optional]
+/* C\u00F3digo identificador do tipo oportunidade [optional]
  */
 @property(nonatomic) NSNumber* idTipoOportunidade;
-/* C\u00C3\u00B3digo identificador do status oportunidade [optional]
+/* C\u00F3digo identificador do status oportunidade [optional]
  */
 @property(nonatomic) NSNumber* idStatusOportunidade;
 /* Data cadastro da oportunidade. [optional]
  */
 @property(nonatomic) NSString* dataCadastro;
-/* Data atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade. [optional]
+/* Data atualiza\u00E7\u00E3o da oportunidade. [optional]
  */
 @property(nonatomic) NSString* dataAtualizacao;
-/* N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade [optional]
+/* N\u00FAmero receita federal do cliente ao qual ser\u00E1 ofertada a oportunidade [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* In\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade [optional]
+/* In\u00EDcio da vig\u00EAncia da oportunidade [optional]
  */
 @property(nonatomic) NSString* dataInicioVigencia;
-/* Fim da vig\u00C3\u00AAncia da oportunidade [optional]
+/* Fim da vig\u00EAncia da oportunidade [optional]
  */
 @property(nonatomic) NSString* dataFimVigencia;
-/* Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa [optional]
+/* Flag de verifica\u00E7\u00E3o se a oportunidade est\u00E1 ativa [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 /* Lista de detalhes da oportunidade [optional]

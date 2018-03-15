@@ -17,25 +17,25 @@
 
 
 @property(nonatomic) NSArray<PierPlanoParcelamentoEmprestimoResponse>* planosParcelamentos;
-/* Valor solicitado do empr\u00C3\u00A9stimo/financiamento [optional]
+/* Valor solicitado do empr\u00E9stimo/financiamento [optional]
  */
 @property(nonatomic) NSNumber* valorSolicitado;
-/* Valor m\u00C3\u00A1ximo de empr\u00C3\u00A9stimo pelo valor limite de parcela [optional]
+/* Valor m\u00E1ximo de empr\u00E9stimo pelo valor limite de parcela [optional]
  */
 @property(nonatomic) NSNumber* valorMaximoSolicitacao;
-/* N\u00C3\u00BAmero de parcelas solicitado [optional]
+/* N\u00FAmero de parcelas solicitado [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* Limite m\u00C3\u00A1ximo de parcela permitido [optional]
+/* Limite m\u00E1ximo de parcela permitido [optional]
  */
 @property(nonatomic) NSNumber* valorMaximoParcela;
 /* Data do desconto da primeira parcela [optional]
  */
 @property(nonatomic) NSString* dataPrimeiraParcela;
-/* Per\u00C3\u00ADodo de aplica da taxa de juros [optional]
+/* Per\u00EDodo de aplica da taxa de juros [optional]
  */
 @property(nonatomic) NSString* periodoTaxa;
-/* Sistema para amortiza\u00C3\u00A7\u00C3\u00A3o do valor das parcelas [optional]
+/* Sistema para amortiza\u00E7\u00E3o do valor das parcelas [optional]
  */
 @property(nonatomic) NSString* sistemaAmortizacao;
 /* Valor percentual da taxa de juros a ser aplicada [optional]

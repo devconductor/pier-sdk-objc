@@ -73,17 +73,17 @@ static PierFAQApi* singletonAPI = nil;
 ///
 /// Adiciona uma nova FAQ
 /// Adiciona uma nova FAQ
-///  @param pergunta Conte\u00C3\u00BAdo da pergunta. 
+///  @param pergunta Conte\u00FAdo da pergunta. 
 ///
-///  @param resposta Conte\u00C3\u00BAdo da resposta. 
+///  @param resposta Conte\u00FAdo da resposta. 
 ///
-///  @param relevancia N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. (optional)
+///  @param relevancia N\u00EDvel de relev\u00E2ncia da pergunta. (optional)
 ///
 ///  @param plataforma Plataforma em que a FAQ se encaixa. (optional)
 ///
 ///  @param categoria Categoria de assunto do qual a FAQ se trata. (optional)
 ///
-///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
+///  @param status Status descrevendo a situa\u00E7\u00E3o atual da FAQ. (optional)
 ///
 ///  @returns PierFaqResponse*
 ///
@@ -199,17 +199,17 @@ static PierFAQApi* singletonAPI = nil;
 /// Alterar FAQ
 ///  @param _id Id 
 ///
-///  @param pergunta Conte\u00C3\u00BAdo da pergunta. 
+///  @param pergunta Conte\u00FAdo da pergunta. 
 ///
-///  @param resposta Conte\u00C3\u00BAdo da resposta. 
+///  @param resposta Conte\u00FAdo da resposta. 
 ///
-///  @param relevancia N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. (optional)
+///  @param relevancia N\u00EDvel de relev\u00E2ncia da pergunta. (optional)
 ///
 ///  @param plataforma Plataforma em que a FAQ se encaixa. (optional)
 ///
 ///  @param categoria Categoria de assunto do qual a FAQ se trata. (optional)
 ///
-///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
+///  @param status Status descrevendo a situa\u00E7\u00E3o atual da FAQ. (optional)
 ///
 ///  @returns PierFaqResponse*
 ///
@@ -336,13 +336,13 @@ static PierFAQApi* singletonAPI = nil;
 ///
 ///  @returns PierFaqResponse*
 ///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierFaqResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET18`"];
     }
     
 
@@ -415,29 +415,29 @@ static PierFAQApi* singletonAPI = nil;
 ///
 /// Lista FAQs
 /// Lista todas as FAQs
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idFaq C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da FAQ (id). (optional)
+///  @param idFaq C\u00F3digo de identifica\u00E7\u00E3o da FAQ (id). (optional)
 ///
-///  @param pergunta Conte\u00C3\u00BAdo da pergunta. (optional)
+///  @param pergunta Conte\u00FAdo da pergunta. (optional)
 ///
-///  @param resposta Conte\u00C3\u00BAdo da resposta. (optional)
+///  @param resposta Conte\u00FAdo da resposta. (optional)
 ///
-///  @param relevancia N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. (optional)
+///  @param relevancia N\u00EDvel de relev\u00E2ncia da pergunta. (optional)
 ///
 ///  @param plataforma Plataforma em que a FAQ se encaixa. (optional)
 ///
 ///  @param categoria Categoria de assunto do qual a FAQ se trata. (optional)
 ///
-///  @param status Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. (optional)
+///  @param status Status descrevendo a situa\u00E7\u00E3o atual da FAQ. (optional)
 ///
 ///  @returns PierPageFaqResponse*
 ///
--(NSNumber*) listarUsingGET22WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET23WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idFaq: (NSNumber*) idFaq

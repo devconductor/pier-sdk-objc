@@ -17,13 +17,13 @@
 /* Identificador do tipo de moeda. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo identificador do tipo de moeda. [optional]
+/* C\u00F3digo identificador do tipo de moeda. [optional]
  */
 @property(nonatomic) NSString* codigoMoeda;
-/* S\u00C3\u00ADmbolo da Moeda. [optional]
+/* S\u00EDmbolo da Moeda. [optional]
  */
 @property(nonatomic) NSString* simbolo;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo da moeda. [optional]
+/* Descri\u00E7\u00E3o do tipo da moeda. [optional]
  */
 @property(nonatomic) NSString* descricao;
 

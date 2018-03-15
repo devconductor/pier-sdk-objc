@@ -14,16 +14,16 @@
 
 @interface PierProdutoResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). 
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id). 
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto. 
+/* Descri\u00E7\u00E3o do Nome do Produto. 
  */
 @property(nonatomic) NSString* nome;
 /* Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). 
  */
 @property(nonatomic) NSNumber* status;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Fantasia B\u00E1sica (id) a qual o produto pertence. [optional]
  */
 @property(nonatomic) NSNumber* idFantasiaBasica;
 

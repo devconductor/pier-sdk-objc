@@ -26,8 +26,8 @@
 +(PierAutorizacaoApi*) sharedAPI;
 ///
 ///
-/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira por idConta
-/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira com o idConta.
+/// Autoriza transa\u00E7\u00E3o financeira por idConta
+/// Este m\u00E9todo faz uma autoriza\u00E7\u00E3o de transa\u00E7\u00E3o financeira com o idConta.
 ///
 /// @param _id Id Conta
 /// @param transacaoOnUsPorIdCartaoRequest transacaoOnUsPorIdCartaoRequest
@@ -41,8 +41,8 @@
 
 ///
 ///
-/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira
-/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira.
+/// Autoriza transa\u00E7\u00E3o financeira
+/// Este m\u00E9todo faz uma autoriza\u00E7\u00E3o de transa\u00E7\u00E3o financeira.
 ///
 /// @param autorizacaoOnUsRequest autorizacaoOnUsRequest
 /// 
@@ -54,8 +54,8 @@
 
 ///
 ///
-/// Autoriza transa\u00C3\u00A7\u00C3\u00A3o financeira por idCartao
-/// Este m\u00C3\u00A9todo faz uma autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00A3o financeira com o idCartao.
+/// Autoriza transa\u00E7\u00E3o financeira por idCartao
+/// Este m\u00E9todo faz uma autoriza\u00E7\u00E3o de transa\u00E7\u00E3o financeira com o idCartao.
 ///
 /// @param _id Id Cartao
 /// @param transacaoOnUsPorIdCartaoRequest transacaoOnUsPorIdCartaoRequest
@@ -69,8 +69,8 @@
 
 ///
 ///
-/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira por idConta
-/// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o a partir do idConta.
+/// Cancela transa\u00E7\u00E3o financeira por idConta
+/// Este m\u00E9todo permite que seja cancelada uma transa\u00E7\u00E3o a partir do idConta.
 ///
 /// @param _id Id Conta
 /// @param cancelamentoRequest cancelamentoRequest
@@ -84,8 +84,8 @@
 
 ///
 ///
-/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira
-/// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o.
+/// Cancela transa\u00E7\u00E3o financeira
+/// Este m\u00E9todo permite que seja cancelada uma transa\u00E7\u00E3o.
 ///
 /// @param cancelamentoRequest cancelamentoRequest
 /// 
@@ -97,8 +97,8 @@
 
 ///
 ///
-/// Cancela transa\u00C3\u00A7\u00C3\u00A3o financeira por idCartao
-/// Este m\u00C3\u00A9todo permite que seja cancelada uma transa\u00C3\u00A7\u00C3\u00A3o a partir do idCartao.
+/// Cancela transa\u00E7\u00E3o financeira por idCartao
+/// Este m\u00E9todo permite que seja cancelada uma transa\u00E7\u00E3o a partir do idCartao.
 ///
 /// @param _id Id Cartao
 /// @param cancelamentoRequest cancelamentoRequest
@@ -112,8 +112,8 @@
 
 ///
 ///
-/// Retorna c\u00C3\u00B3digos de processamento de autoriza\u00C3\u00A7\u00C3\u00A3o
-/// Este m\u00C3\u00A9todo retorna a lista dos c\u00C3\u00B3digos de processamento para autoriza\u00C3\u00A7\u00C3\u00A3o de transa\u00C3\u00A7\u00C3\u00B5es financeiras.
+/// Retorna c\u00F3digos de processamento de autoriza\u00E7\u00E3o
+/// Este m\u00E9todo retorna a lista dos c\u00F3digos de processamento para autoriza\u00E7\u00E3o de transa\u00E7\u00F5es financeiras.
 ///
 /// 
 ///
@@ -124,8 +124,8 @@
 
 ///
 ///
-/// Simula planos de transa\u00C3\u00A7\u00C3\u00B5es
-/// Este m\u00C3\u00A9todo permite que seja simulada um plano de transa\u00C3\u00A7\u00C3\u00B5es.
+/// Simula planos de transa\u00E7\u00F5es
+/// Este m\u00E9todo permite que seja simulada um plano de transa\u00E7\u00F5es.
 ///
 /// @param transacoesRequest transacoesRequest
 /// 

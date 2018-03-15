@@ -34,10 +34,10 @@
 ///
 ///
 /// Altera o status do tipo oportunidade
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o do status do tipo oportunidade.
+/// Este m\u00E9todo realiza a altera\u00E7\u00E3o do status do tipo oportunidade.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
-/// @param idStatus C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do status do tipo oportunidade (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id).
+/// @param idStatus C\u00F3digo de identifica\u00E7\u00E3o do status do tipo oportunidade (id).
 /// @param persist persist
 /// 
 ///
@@ -51,9 +51,9 @@
 ///
 ///
 /// Altera as oportunidades
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o das oportunidades.
+/// Este m\u00E9todo realiza a altera\u00E7\u00E3o das oportunidades.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da oportunidade (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o da oportunidade (id).
 /// @param update update
 /// 
 ///
@@ -66,9 +66,9 @@
 ///
 ///
 /// Altera os tipos oportunidades
-/// Este m\u00C3\u00A9todo realiza a altera\u00C3\u00A7\u00C3\u00A3o dos tipos oportunidades.
+/// Este m\u00E9todo realiza a altera\u00E7\u00E3o dos tipos oportunidades.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do tipo oportunidade (id).
 /// @param persist persist
 /// 
 ///
@@ -81,10 +81,10 @@
 ///
 ///
 /// Apresenta dados de um determinado status do tipo oportunidade
-/// Este recurso permite consultar dados de um determinado status do tipo oportunidade a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (idStatus).
+/// Este recurso permite consultar dados de um determinado status do tipo oportunidade a partir de seu codigo de identifica\u00E7\u00E3o (idStatus).
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
-/// @param idStatus C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do status (idStatus).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id).
+/// @param idStatus C\u00F3digo de identifica\u00E7\u00E3o do status (idStatus).
 /// 
 ///
 /// @return PierStatusOportunidadeResponse*
@@ -96,26 +96,26 @@
 ///
 ///
 /// Apresenta dados de uma determinada oportunidade
-/// Este recurso permite consultar dados de uma determinada oportunidade a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este recurso permite consultar dados de uma determinada oportunidade a partir de seu codigo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da oportunidade (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o da oportunidade (id).
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
 ///
 ///
 /// Apresenta dados de um determinado tipo oportunidade
-/// Este recurso permite consultar dados de um determinado tipo oportunidade a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este recurso permite consultar dados de um determinado tipo oportunidade a partir de seu codigo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id).
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -124,17 +124,17 @@
 /// Lista as auditorias dos status oportunidades
 /// Este recurso permite listar os status oportunidades.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
-/// @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
-/// @param _id C\u00C3\u00B3digo identificador do status oportunidade
-/// @param idTipoOportunidade C\u00C3\u00B3digo identificador do tipo oportunidade
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param revType C\u00F3digo que representa o tipo de a\u00E7\u00E3o realizada no recurso de tipos oportunidades
+/// @param revDate Data da a\u00E7\u00E3o realizada no recurso de tipos oportunidades
+/// @param _id C\u00F3digo identificador do status oportunidade
+/// @param idTipoOportunidade C\u00F3digo identificador do tipo oportunidade
 /// @param nome Nome do status oportunidade
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade
-/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo
-/// @param revUser Usu\u00C3\u00A1rio da auditoria
+/// @param descricao Descri\u00E7\u00E3o do status oportunidade
+/// @param flagAtivo Flag de verifica\u00E7\u00E3o se o status oportunidade est\u00E1 ativo
+/// @param revUser Usu\u00E1rio da auditoria
 /// 
 ///
 /// @return PierPageStatusOportunidadeAUDResponse*
@@ -157,19 +157,19 @@
 /// Lista as auditorias das oportunidades
 /// Este recurso permite listar as auditorias das oportunidades.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idStatusOportunidade C\u00F3digo identificador do status oportunidade
 /// @param dataCadastro Data do cadastro da oportunidade
-/// @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade
-/// @param numeroReceitaFederal N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade
-/// @param dataInicioVigencia In\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade
-/// @param datatFimVigencia Fim da vig\u00C3\u00AAncia da oportunidade
-/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa
+/// @param dataAtualizacao Data da atualiza\u00E7\u00E3o da oportunidade
+/// @param numeroReceitaFederal N\u00FAmero receita federal do cliente ao qual ser\u00E1 ofertada a oportunidade
+/// @param dataInicioVigencia In\u00EDcio da vig\u00EAncia da oportunidade
+/// @param datatFimVigencia Fim da vig\u00EAncia da oportunidade
+/// @param flagAtivo Flag de verifica\u00E7\u00E3o se a oportunidade est\u00E1 ativa
 /// @param revDate Data da auditoria
 /// @param revType Tipo da auditoria
-/// @param revUser Usu\u00C3\u00A1rio da auditoria
+/// @param revUser Usu\u00E1rio da auditoria
 /// 
 ///
 /// @return PierPageOportunidadeAUDResponse*
@@ -194,15 +194,15 @@
 /// Lista as auditorias dos tipos oportunidades
 /// Este recurso permite listar os tipos oportunidades.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param revType C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
-/// @param revDate Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades
-/// @param _id C\u00C3\u00B3digo identificador do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o
-/// @param flagAtivo Atributo que representa se o tipo oportunidade est\u00C3\u00A1 ativo
-/// @param revUser Usu\u00C3\u00A1rio da auditoria
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param revType C\u00F3digo que representa o tipo de a\u00E7\u00E3o realizada no recurso de tipos oportunidades
+/// @param revDate Data da a\u00E7\u00E3o realizada no recurso de tipos oportunidades
+/// @param _id C\u00F3digo identificador do tipo oportunidade no qual foi realizado a a\u00E7\u00E3o
+/// @param descricao Descri\u00E7\u00E3o do tipo oportunidade no qual foi realizado a a\u00E7\u00E3o
+/// @param flagAtivo Atributo que representa se o tipo oportunidade est\u00E1 ativo
+/// @param revUser Usu\u00E1rio da auditoria
 /// 
 ///
 /// @return PierPageTipoOportunidadeAUDResponse*
@@ -223,13 +223,13 @@
 /// Lista os status do tipo oportunidades
 /// Este recurso permite listar os status do tipo oportunidades.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id).
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// @param nome Nome do status oportunidade
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade
-/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo
+/// @param descricao Descri\u00E7\u00E3o do status oportunidade
+/// @param flagAtivo Flag de verifica\u00E7\u00E3o se o status oportunidade est\u00E1 ativo
 /// 
 ///
 /// @return PierPageStatusOportunidadeResponse*
@@ -248,20 +248,20 @@
 /// Lista as oportunidades
 /// Este recurso permite listar as oportunidades.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idStatusOportunidade C\u00C3\u00B3digo identificador do status oportunidade
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idStatusOportunidade C\u00F3digo identificador do status oportunidade
 /// @param dataCadastro Data do cadastro da oportunidade
-/// @param dataAtualizacao Data da atualiza\u00C3\u00A7\u00C3\u00A3o da oportunidade
-/// @param numeroReceitaFederal N\u00C3\u00BAmero receita federal do cliente ao qual ser\u00C3\u00A1 ofertada a oportunidade
-/// @param dataInicioVigencia Data de in\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade
-/// @param dataFimVigencia Data do fim da vig\u00C3\u00AAncia da oportunidade
-/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se a oportunidade est\u00C3\u00A1 ativa
+/// @param dataAtualizacao Data da atualiza\u00E7\u00E3o da oportunidade
+/// @param numeroReceitaFederal N\u00FAmero receita federal do cliente ao qual ser\u00E1 ofertada a oportunidade
+/// @param dataInicioVigencia Data de in\u00EDcio da vig\u00EAncia da oportunidade
+/// @param dataFimVigencia Data do fim da vig\u00EAncia da oportunidade
+/// @param flagAtivo Flag de verifica\u00E7\u00E3o se a oportunidade est\u00E1 ativa
 /// 
 ///
 /// @return PierPageOportunidadeResponse*
--(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -279,15 +279,15 @@
 /// Lista os tipos oportunidades
 /// Este recurso permite listar os tipos oportunidades.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade
-/// @param flagAtivo Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o tipo oportunidade est\u00C3\u00A1 ativo
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param descricao Descri\u00E7\u00E3o do tipo oportunidade
+/// @param flagAtivo Flag de verifica\u00E7\u00E3o se o tipo oportunidade est\u00E1 ativo
 /// 
 ///
 /// @return PierPageTipoOportunidadeResponse*
--(NSNumber*) listarUsingGET43WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
@@ -300,7 +300,7 @@
 /// Cadastra status para o tipo oportunidade
 /// Esse recurso permite cadastrar status para o tipo oportunidade.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do tipo oportunidade (id).
 /// @param persist persist
 /// 
 ///

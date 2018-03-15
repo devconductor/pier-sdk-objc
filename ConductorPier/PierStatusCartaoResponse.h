@@ -14,22 +14,22 @@
 
 @interface PierStatusCartaoResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o (id)  
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Status do Cart\u00E3o (id)  
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome atribu\u00C3\u00ADdo ao Status de Entrega do Cart\u00C3\u00A3o. 
+/* Nome atribu\u00EDdo ao Status de Entrega do Cart\u00E3o. 
  */
 @property(nonatomic) NSString* nome;
-/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. [optional]
+/* Par\u00E2metro que define se o status do cart\u00E3o permite a reativa\u00E7\u00E3o do cart\u00E3o, sendo: 0: Inativo e 1: Ativo. [optional]
  */
 @property(nonatomic) NSNumber* permiteDesbloquear;
-/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. [optional]
+/* Par\u00E2metro que define se o status do cart\u00E3o permite a reativa\u00E7\u00E3o do cart\u00E3o, sendo: 0: Inativo e 1: Ativo. [optional]
  */
 @property(nonatomic) NSNumber* permiteAtribuirComoBloqueio;
-/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. [optional]
+/* Par\u00E2metro que define se o status do cart\u00E3o permite a reativa\u00E7\u00E3o do cart\u00E3o, sendo: 0: Inativo e 1: Ativo. [optional]
  */
 @property(nonatomic) NSNumber* permiteAtribuirComoCancelamento;
-/* Par\u00C3\u00A2metro que define se o status do cart\u00C3\u00A3o permite a reativa\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o, sendo: 0: Inativo e 1: Ativo. [optional]
+/* Par\u00E2metro que define se o status do cart\u00E3o permite a reativa\u00E7\u00E3o do cart\u00E3o, sendo: 0: Inativo e 1: Ativo. [optional]
  */
 @property(nonatomic) NSNumber* cobrarTarifaAoEmitirNovaVia;
 

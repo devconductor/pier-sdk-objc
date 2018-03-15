@@ -14,25 +14,25 @@
 
 @interface PierValidaCartaoResponse : PierObject
 
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status do cart\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idStatusCartao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status do cart\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* statusCartao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status da conta [optional]
+/* Descri\u00E7\u00E3o do status da conta [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status da conta [optional]
+/* Descri\u00E7\u00E3o do status da conta [optional]
  */
 @property(nonatomic) NSString* statusConta;
-/* C\u00C3\u00B3digo identificador da conta. [optional]
+/* C\u00F3digo identificador da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia. [optional]
+/* N\u00FAmero da ag\u00EAncia. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00C3\u00BAmero da conta corrente. [optional]
+/* N\u00FAmero da conta corrente. [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
 /* Criptograma de resposta [optional]

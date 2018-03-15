@@ -14,37 +14,37 @@
 
 @interface PierLoteCartoesPrePagosResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do lote de cart\u00C3\u00B5es pr\u00C3\u00A9-pagos (id). 
+/* C\u00F3digo de identifica\u00E7\u00E3o do lote de cart\u00F5es pr\u00E9-pagos (id). 
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo identificador da origem comercial. 
+/* C\u00F3digo identificador da origem comercial. 
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* C\u00C3\u00B3digo identificador do Produto. 
+/* C\u00F3digo identificador do Produto. 
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00C3\u00B3digo identificador do tipo do cart\u00C3\u00A3o. 
+/* C\u00F3digo identificador do tipo do cart\u00E3o. 
  */
 @property(nonatomic) NSNumber* idTipoCartao;
-/* C\u00C3\u00B3digo identificador da Imagem do cart\u00C3\u00A3o. 
+/* C\u00F3digo identificador da Imagem do cart\u00E3o. 
  */
 @property(nonatomic) NSNumber* idImagem;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o. 
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Endere\u00E7o. 
  */
 @property(nonatomic) NSNumber* idEndereco;
-/* N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote. 
+/* N\u00FAmero de cart\u00F5es existentes no Lote. 
  */
 @property(nonatomic) NSNumber* quantidade;
-/* Data de cadastro do lote de cart\u00C3\u00B5es pr\u00C3\u00A9-pagos. 
+/* Data de cadastro do lote de cart\u00F5es pr\u00E9-pagos. 
  */
 @property(nonatomic) NSString* dataCadastro;
-/* Nome do usu\u00C3\u00A1rio que criou o lote. 
+/* Nome do usu\u00E1rio que criou o lote. 
  */
 @property(nonatomic) NSString* usuarioCadastro;
 /* Indica o status de processamento do lote. 
  */
 @property(nonatomic) NSNumber* statusProcessamento;
-/* N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor). 
+/* N\u00FAmero de identifica\u00E7\u00E3o externo (utilizado pelo emissor). 
  */
 @property(nonatomic) NSString* identificadorExterno;
 

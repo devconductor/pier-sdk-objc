@@ -9,12 +9,12 @@
 #import "PierParametroProdutoResponse.h"
 #import "PierTaxaAntecipacaoRequest.h"
 #import "PierProdutoDetalhesResponse.h"
-#import "PierAtendimentoClienteResponse.h"
 #import "PierPageTipoAjusteResponse.h"
 #import "PierPageTipoBoletoResponse.h"
 #import "PierTipoEnderecoResponse.h"
 #import "PierTipoOperacaoResponse.h"
 #import "PierTipoTelefoneResponse.h"
+#import "PierAtendimentoClienteResponse.h"
 #import "PierBancoResponse.h"
 #import "PierPageCampanhaResponse.h"
 #import "PierPageContaDetalheResponse.h"
@@ -28,8 +28,8 @@
 #import "PierPagePromotorResponse.h"
 #import "PierPageTipoEnderecoResponse.h"
 #import "PierPageTipoTelefoneResponse.h"
-#import "PierPageAtendimentoClienteResponse.h"
 #import "PierPageControleVencimentoResponse.h"
+#import "PierPageAtendimentoClienteResponse.h"
 #import "PierPageBancoResponse.h"
 #import "PierCampanhaPersist.h"
 
@@ -102,8 +102,8 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Alterar campanha
-/// Este m\u00C3\u00A9todo permite que sejam alterados os dados de uma campanha.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da campanha (id). 
+/// Este m\u00E9todo permite que sejam alterados os dados de uma campanha.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da campanha (id). 
 ///
 ///  @param update update 
 ///
@@ -192,9 +192,9 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Atualizar configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite atualizar uma configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id). 
+/// Atualizar configura\u00E7\u00E3o para registro de cobran\u00E7a
+/// Este m\u00E9todo permite atualizar uma configura\u00E7\u00E3o, para registro de cobran\u00E7a.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da configura\u00E7\u00E3o (id). 
 ///
 ///  @param configuracaoPersist configuracaoPersist 
 ///
@@ -283,9 +283,9 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Alterar os dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo de um produto
-/// Este m\u00C3\u00A9todo permite que seja alterada uma configura\u00C3\u00A7\u00C3\u00A3o do rotativo para um determinado produto.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id). 
+/// Alterar os dados de configura\u00E7\u00E3o do rotativo de um produto
+/// Este m\u00E9todo permite que seja alterada uma configura\u00E7\u00E3o do rotativo para um determinado produto.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da configura\u00E7\u00E3o (id). 
 ///
 ///  @param configuracaoRotativoPersist configuracaoRotativoPersist 
 ///
@@ -374,8 +374,8 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Inserir configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
+/// Inserir configura\u00E7\u00E3o para registro de cobran\u00E7a
+/// Este m\u00E9todo permite que seja cadastrado uma nova configura\u00E7\u00E3o, para registro de cobran\u00E7a.
 ///  @param configuracaoPersist configuracaoPersist 
 ///
 ///  @returns PierConfiguracaoRegistroCobrancaResponse*
@@ -454,8 +454,8 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Configura a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
-/// Este recurso permite configurar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Configura a Taxa de Antecipa\u00E7\u00E3o de um Produto
+/// Este recurso permite configurar a Taxa de Antecipa\u00E7\u00E3o de um Produto, a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///  @param _id Id Produto 
 ///
 ///  @param taxaAntecipacaoRequest taxaAntecipacaoRequest 
@@ -546,7 +546,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Consultar campanha
-/// Este m\u00C3\u00A9todo permite que sejam listados os dados de uma determinada campanha existente na base do emissor. Para isso, \u00C3\u00A9 preciso informar o seu respectivo c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este m\u00E9todo permite que sejam listados os dados de uma determinada campanha existente na base do emissor. Para isso, \u00E9 preciso informar o seu respectivo c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///  @param _id ID da Campanha 
 ///
 ///  @returns PierCampanhaResponse*
@@ -628,11 +628,11 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Consulta a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto
-/// Este recurso permite consultar a Taxa de Antecipa\u00C3\u00A7\u00C3\u00A3o de um Produto, a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Consulta a Taxa de Antecipa\u00E7\u00E3o de um Produto
+/// Este recurso permite consultar a Taxa de Antecipa\u00E7\u00E3o de um Produto, a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///  @param _id Id Produto 
 ///
-///  @param tipoTransacao Tipo da Transa\u00C3\u00A7\u00C3\u00A3o (ON-US ou OFF-US) 
+///  @param tipoTransacao Tipo da Transa\u00E7\u00E3o (ON-US ou OFF-US) 
 ///
 ///  @returns PierParametroProdutoResponse*
 ///
@@ -723,19 +723,102 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo espec\u00C3\u00ADfico.
-/// Este recurso permite consultar dados de configura\u00C3\u00A7\u00C3\u00A3o do parcelamento rotativo a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de configura\u00C3\u00A7\u00C3\u00A3o rotativo (id). 
+/// Consultar configura\u00E7\u00E3o para registro de cobran\u00E7a
+/// Este m\u00E9todo permite buscar uma configura\u00E7\u00E3o, para registro de cobran\u00E7a.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da configura\u00E7\u00E3o (id). 
 ///
-///  @returns PierConfiguracaoRotativoDetalheResponse*
+///  @returns PierConfiguracaoRegistroCobrancaResponse*
 ///
 -(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/configuracoes-registro-cobranca/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierConfiguracaoRegistroCobrancaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierConfiguracaoRegistroCobrancaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// Apresenta dados de configura\u00E7\u00E3o do rotativo espec\u00EDfico.
+/// Este recurso permite consultar dados de configura\u00E7\u00E3o do parcelamento rotativo a partir de seu codigo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o de configura\u00E7\u00E3o rotativo (id). 
+///
+///  @returns PierConfiguracaoRotativoDetalheResponse*
+///
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -807,18 +890,18 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Apresenta os dados de um determinado Produto
-/// Este m\u00C3\u00A9todo permite consultar um determinado Produto a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id) 
+/// Este m\u00E9todo permite consultar um determinado Produto a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id) 
 ///
 ///  @returns PierProdutoDetalhesResponse*
 ///
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET26`"];
     }
     
 
@@ -889,104 +972,21 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado Atendimento
-/// Este m\u00C3\u00A9todo permite consultar os par\u00C3\u00A2metros de um determinado Atendimento a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (idAtendimento).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do atendimento cliente (id). 
-///
-///  @returns PierAtendimentoClienteResponse*
-///
--(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierAtendimentoClienteResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierAtendimentoClienteResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Lista os tipos de ajustes do emissor 
 /// Este recurso permite que sejam listados os tipos de ajustes existentes na base de dados do emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo identificador do tipo de ajuste. (optional)
+///  @param _id C\u00F3digo identificador do tipo de ajuste. (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de ajuste. (optional)
+///  @param descricao Descri\u00E7\u00E3o do tipo de ajuste. (optional)
 ///
 ///  @returns PierPageTipoAjusteResponse*
 ///
--(NSNumber*) consultarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -1083,21 +1083,21 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 /// Lista os tipos de boletos do emissor 
 /// Este recurso permite que sejam listados os tipos de boletos existentes na base de dados do emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo identificador do tipo de boleto. (optional)
+///  @param _id C\u00F3digo identificador do tipo de boleto. (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de boleto. (optional)
+///  @param descricao Descri\u00E7\u00E3o do tipo de boleto. (optional)
 ///
-///  @param banco C\u00C3\u00B3digo identificador do banco. (optional)
+///  @param banco C\u00F3digo identificador do banco. (optional)
 ///
 ///  @returns PierPageTipoBoletoResponse*
 ///
--(NSNumber*) consultarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -1197,19 +1197,19 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado Tipo de Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) 
+/// Apresenta os dados de um determinado Tipo de Endere\u00E7o
+/// Este m\u00E9todo permite consultar um determinado Tipo de Endere\u00E7o a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Endere\u00E7o (id) 
 ///
 ///  @returns PierTipoEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET34`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET35`"];
     }
     
 
@@ -1280,17 +1280,17 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta dados de um determinado tipo de opera\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite consultar dados de um determinado tipo opera\u00C3\u00A7\u00C3\u00A3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
-///  @param idCartao C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cartao (idCartao). 
+/// Apresenta dados de um determinado tipo de opera\u00E7\u00E3o
+/// Este recurso permite consultar dados de um determinado tipo opera\u00E7\u00E3o a partir do idCartao, idEstabelecimento e codigoProcessamento.
+///  @param idCartao C\u00F3digo de identifica\u00E7\u00E3o do cartao (idCartao). 
 ///
-///  @param idEstabelecimento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do estabelecimento (idEstabelecimento). 
+///  @param idEstabelecimento C\u00F3digo de identifica\u00E7\u00E3o do estabelecimento (idEstabelecimento). 
 ///
-///  @param codigoProcessamento C\u00C3\u00B3digo de processamento da opera\u00C3\u00A7\u00C3\u00A3o. 
+///  @param codigoProcessamento C\u00F3digo de processamento da opera\u00E7\u00E3o. 
 ///
 ///  @returns PierTipoOperacaoResponse*
 ///
--(NSNumber*) consultarUsingGET35WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET36WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler {
@@ -1298,17 +1298,17 @@ static PierCadastroGeralApi* singletonAPI = nil;
     
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET35`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET36`"];
     }
     
     // verify the required parameter 'idEstabelecimento' is set
     if (idEstabelecimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET35`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET36`"];
     }
     
     // verify the required parameter 'codigoProcessamento' is set
     if (codigoProcessamento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET35`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET36`"];
     }
     
 
@@ -1389,18 +1389,18 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Apresenta os dados de um determinado Tipo de Telefone
-/// Este m\u00C3\u00A9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id) 
+/// Este m\u00E9todo permite consultar um determinado Tipo de Telefone a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id) 
 ///
 ///  @returns PierTipoTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET37`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET38`"];
     }
     
 
@@ -1471,19 +1471,102 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
+/// Apresenta os dados de um determinado Atendimento
+/// Este m\u00E9todo permite consultar os par\u00E2metros de um determinado Atendimento a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (idAtendimento).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do atendimento cliente (id). 
+///
+///  @returns PierAtendimentoClienteResponse*
+///
+-(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET4`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/atendimento-clientes/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAtendimentoClienteResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAtendimentoClienteResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Apresenta os dados de um determinado Banco
-/// Este m\u00C3\u00A9todo permite consultar um determinado Banco a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Banco (id). 
+/// Este m\u00E9todo permite consultar um determinado Banco a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Banco (id). 
 ///
 ///  @returns PierBancoResponse*
 ///
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 
@@ -1554,98 +1637,15 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Consultar configura\u00C3\u00A7\u00C3\u00A3o para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite buscar uma configura\u00C3\u00A7\u00C3\u00A3o, para registro de cobran\u00C3\u00A7a.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o (id). 
-///
-///  @returns PierConfiguracaoRegistroCobrancaResponse*
-///
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/configuracoes-registro-cobranca/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierConfiguracaoRegistroCobrancaResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierConfiguracaoRegistroCobrancaResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Listar Campanhas
 /// Lista as campanhas.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idTipoCampanha C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de campanha (id). (optional)
+///  @param idTipoCampanha C\u00F3digo de Identifica\u00E7\u00E3o do tipo de campanha (id). (optional)
 ///
 ///  @returns PierPageCampanhaResponse*
 ///
@@ -1741,13 +1741,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 /// Lista as contas da pessoa
 /// Permite listar as contas de um pessoa a partir do seu numero na receita federal.
-///  @param numeroReceitaFederal N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o do cliente na Receita Federal (CPF ou CNPJ) 
+///  @param numeroReceitaFederal N\u00FAmero de identifica\u00E7\u00E3o do cliente na Receita Federal (CPF ou CNPJ) 
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageContaDetalheResponse*
 ///
@@ -1846,13 +1846,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os Estados C\u00C3\u00ADvis
-/// Este m\u00C3\u00A9todo permite que sejam listados os Estados C\u00C3\u00ADvis na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista os Estados C\u00EDvis
+/// Este m\u00E9todo permite que sejam listados os Estados C\u00EDvis na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
@@ -1941,13 +1941,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Listar Fantasias B\u00C3\u00A1sicas
-/// Lista as fantasia b\u00C3\u00A1sicas.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Listar Fantasias B\u00E1sicas
+/// Lista as fantasia b\u00E1sicas.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageFantasiaBasicaResponse*
 ///
@@ -2036,9 +2036,9 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Listar altera\u00C3\u00A7\u00C3\u00B5es de telefones realizadas nos \u00C3\u00BAltimos 60 dias
-/// Este m\u00C3\u00A9todo permite verificar quais os telefones de um determinado que cliente que sofreram altera\u00C3\u00A7\u00C3\u00A3o nos \u00C3\u00BAltimos 60 dias.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+/// Listar altera\u00E7\u00F5es de telefones realizadas nos \u00FAltimos 60 dias
+/// Este m\u00E9todo permite verificar quais os telefones de um determinado que cliente que sofreram altera\u00E7\u00E3o nos \u00FAltimos 60 dias.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da pessoa (id). 
 ///
 ///  @returns PierHistoricoTelefoneResponse*
 ///
@@ -2120,12 +2120,12 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Lista nacionalidades
-/// Este m\u00C3\u00A9todo permite que sejam listados as nacionalidades na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados as nacionalidades na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
@@ -2214,13 +2214,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Lista as Ocupa\u00C3\u00A7\u00C3\u00B5es
-/// Este m\u00C3\u00A9todo permite que sejam listados as naturezas de opera\u00C3\u00A7\u00C3\u00B5es na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista as Ocupa\u00E7\u00F5es
+/// Este m\u00E9todo permite que sejam listados as naturezas de opera\u00E7\u00F5es na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
@@ -2310,12 +2310,12 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Lista os Parentescos
-/// Este m\u00C3\u00A9todo permite que sejam listados parentescos na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados parentescos na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
@@ -2404,13 +2404,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Lista profiss\u00C3\u00B5es
-/// Este m\u00C3\u00A9todo permite que sejam listados as profiss\u00C3\u00B5es na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista profiss\u00F5es
+/// Este m\u00E9todo permite que sejam listados as profiss\u00F5es na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageCampoCodificadoDescricaoResponse*
 ///
@@ -2501,11 +2501,11 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 /// Listar Tipos de Campanhas
 /// Lista os tipos de campanhas.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageTipoCampanhaResponse*
 ///
@@ -2594,17 +2594,17 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Listar configura\u00C3\u00A7\u00C3\u00B5es para registro de cobran\u00C3\u00A7a
-/// Este m\u00C3\u00A9todo permite listar as configura\u00C3\u00A7\u00C3\u00B5es de registro de cobran\u00C3\u00A7a.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Listar configura\u00E7\u00F5es para registro de cobran\u00E7a
+/// Este m\u00E9todo permite listar as configura\u00E7\u00F5es de registro de cobran\u00E7a.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierConfiguracaoRegistroCobrancaResponse*
 ///
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler {
@@ -2689,19 +2689,19 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Listar as configura\u00C3\u00A7\u00C3\u00B5es rotativo.
-/// Este recurso permite listar as configura\u00C3\u00A7\u00C3\u00B5es rotativo.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Listar as configura\u00E7\u00F5es rotativo.
+/// Este recurso permite listar as configura\u00E7\u00F5es rotativo.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idProduto C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Produto. (optional)
+///  @param idProduto C\u00F3digo de identifica\u00E7\u00E3o do Produto. (optional)
 ///
 ///  @returns PierPageConfiguracaoRotativoResponse*
 ///
--(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET14WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
@@ -2792,36 +2792,36 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Lista os Portadores existentes
-/// Este m\u00C3\u00A9todo permite que sejam listados os portadores cadastrados na base do emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os portadores cadastrados na base do emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id). (optional)
+///  @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id). (optional)
 ///
-///  @param idProduto C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). (optional)
+///  @param idProduto C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id). (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). (optional)
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id). (optional)
 ///
-///  @param idParentesco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Parentesco (id) (optional)
+///  @param idParentesco C\u00F3digo de Identifica\u00E7\u00E3o do Parentesco (id) (optional)
 ///
-///  @param tipoPortador Apresenta o tipo do Portador do cart\u00C3\u00A3o, sendo: ('T': Titular, 'A': Adicional). (optional)
+///  @param tipoPortador Apresenta o tipo do Portador do cart\u00E3o, sendo: ('T': Titular, 'A': Adicional). (optional)
 ///
-///  @param nomeImpresso Apresenta o nome a ser impresso no cart\u00C3\u00A3o. (optional)
+///  @param nomeImpresso Apresenta o nome a ser impresso no cart\u00E3o. (optional)
 ///
-///  @param idTipoCartao Apresenta o c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do cart\u00C3\u00A3o (id), que ser\u00C3\u00A1 utilizado para gerar os cart\u00C3\u00B5es deste portador, vinculados a sua respectiva conta atrav\u00C3\u00A9s do campo idConta. (optional)
+///  @param idTipoCartao Apresenta o c\u00F3digo de identifica\u00E7\u00E3o do tipo do cart\u00E3o (id), que ser\u00E1 utilizado para gerar os cart\u00F5es deste portador, vinculados a sua respectiva conta atrav\u00E9s do campo idConta. (optional)
 ///
-///  @param flagAtivo Quanto ativa, indica que o cadastro do Portador est\u00C3\u00A1 ativo, em emissores que realizam este tipo de gest\u00C3\u00A3o. (optional)
+///  @param flagAtivo Quanto ativa, indica que o cadastro do Portador est\u00E1 ativo, em emissores que realizam este tipo de gest\u00E3o. (optional)
 ///
-///  @param dataCadastroPortador Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///  @param dataCadastroPortador Apresenta a data em que o Portador fora cadastrado, quando possuir esta informa\u00E7\u00E3o. (optional)
 ///
-///  @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00C3\u00A7\u00C3\u00A3o. (optional)
+///  @param dataCancelamentoPortador Apresenta a data em que o Portador fora cancelado, quando possuir esta informa\u00E7\u00E3o. (optional)
 ///
 ///  @returns PierPagePortadorResponse*
 ///
--(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta
@@ -2957,22 +2957,22 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Lista os Produtos do Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os Produtos existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param nome Descri\u00C3\u00A7\u00C3\u00A3o do Nome do Produto. (optional)
+///  @param nome Descri\u00E7\u00E3o do Nome do Produto. (optional)
 ///
 ///  @param status Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). (optional)
 ///
-///  @param idFantasiaBasica C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Fantasia B\u00C3\u00A1sica (id) a qual o produto pertence. (optional)
+///  @param idFantasiaBasica C\u00F3digo de Identifica\u00E7\u00E3o da Fantasia B\u00E1sica (id) a qual o produto pertence. (optional)
 ///
 ///  @returns PierPageProdutoResponse*
 ///
--(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -3073,26 +3073,26 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Lista promotores cadastrados na base do emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os cadastros de Promoteres existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os cadastros de Promoteres existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do promotor (id) (optional)
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do promotor (id) (optional)
 ///
 ///  @param nome Nome do Promotor (optional)
 ///
-///  @param dataCadastro Data da Inclus\u00C3\u00A3o. (optional)
+///  @param dataCadastro Data da Inclus\u00E3o. (optional)
 ///
-///  @param idEstabelecimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento (optional)
+///  @param idEstabelecimento C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento (optional)
 ///
-///  @param idUsuario C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do usu\u00C3\u00A1rio (optional)
+///  @param idUsuario C\u00F3digo de Identifica\u00E7\u00E3o do usu\u00E1rio (optional)
 ///
 ///  @returns PierPagePromotorResponse*
 ///
--(NSNumber*) listarUsingGET34WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3202,21 +3202,21 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Lista as op\u00C3\u00B5es de Tipos de Endere\u00C3\u00A7os do Emissor 
-/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Endere\u00C3\u00A7os existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista as op\u00F5es de Tipos de Endere\u00E7os do Emissor 
+/// Este m\u00E9todo permite que sejam listados os Tipos de Endere\u00E7os existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Endere\u00C3\u00A7o (id) (optional)
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Endere\u00E7o (id) (optional)
 ///
-///  @param nome Nome do Tipo do Endere\u00C3\u00A7o (optional)
+///  @param nome Nome do Tipo do Endere\u00E7o (optional)
 ///
 ///  @returns PierPageTipoEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3312,20 +3312,20 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Lista os Tipos de Telefones
-/// Este m\u00C3\u00A9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os Tipos de Telefones existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id). (optional)
 ///
 ///  @param nome Nome do Tipo do Telefone (optional)
 ///
 ///  @returns PierPageTipoTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -3420,17 +3420,119 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
+/// Listar Vencimentos
+/// Este recurso permite que sejam listados os Vencimentos do emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
+///
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
+///
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
+///
+///  @param dataVencimento Indica a data de vencimento das faturas (optional)
+///
+///  @returns PierPageControleVencimentoResponse*
+///
+-(NSNumber*) listarUsingGET52WithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(PierPageControleVencimentoResponse* output, NSError* error)) handler {
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/vencimentos"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (sort != nil) {
+        
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
+        
+        
+    }
+    if (page != nil) {
+        
+        queryParams[@"page"] = page;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    if (dataVencimento != nil) {
+        
+        queryParams[@"dataVencimento"] = dataVencimento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierPageControleVencimentoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierPageControleVencimentoResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// Lista todos os atendimentos
-/// Este m\u00C3\u00A9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados todos os Registro de Atendimento, independente do Tipo.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idTipoAtendimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo de Atendimento (id) (optional)
+///  @param idTipoAtendimento C\u00F3digo de Identifica\u00E7\u00E3o do Tipo de Atendimento (id) (optional)
 ///
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). (optional)
+///  @param idConta C\u00F3digo de identifica\u00E7\u00E3o de conta (id). (optional)
 ///
 ///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
 ///
@@ -3438,7 +3540,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageAtendimentoClienteResponse*
 ///
--(NSNumber*) listarUsingGET5WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET6WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoAtendimento: (NSNumber*) idTipoAtendimento
@@ -3543,119 +3645,17 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Listar Vencimentos
-/// Este recurso permite que sejam listados os Vencimentos do emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
-///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
-///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
-///
-///  @param dataVencimento Indica a data de vencimento das faturas (optional)
-///
-///  @returns PierPageControleVencimentoResponse*
-///
--(NSNumber*) listarUsingGET50WithSort: (NSArray* /* NSString */) sort
-    page: (NSNumber*) page
-    limit: (NSNumber*) limit
-    dataVencimento: (NSString*) dataVencimento
-    completionHandler: (void (^)(PierPageControleVencimentoResponse* output, NSError* error)) handler {
-
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/vencimentos"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (sort != nil) {
-        
-        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
-        
-        
-    }
-    if (page != nil) {
-        
-        queryParams[@"page"] = page;
-    }
-    if (limit != nil) {
-        
-        queryParams[@"limit"] = limit;
-    }
-    if (dataVencimento != nil) {
-        
-        queryParams[@"dataVencimento"] = dataVencimento;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierPageControleVencimentoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageControleVencimentoResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// Lista os Bancos cadastrados para o Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Bancos existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os Bancos existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageBancoResponse*
 ///
--(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET8WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageBancoResponse* output, NSError* error)) handler {
@@ -3740,13 +3740,13 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastro um novo Atendimento do tipo Gen\u00C3\u00A9rico para uma Conta
+/// Cadastro um novo Atendimento do tipo Gen\u00E9rico para uma Conta
 /// 
-///  @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta a qual o Atendimento est\u00C3\u00A1 associado (optional)
+///  @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta a qual o Atendimento est\u00E1 associado (optional)
 ///
-///  @param conteudoAtendimento Apresenta as informa\u00C3\u00A7\u00C3\u00B5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00C3\u00A7\u00C3\u00B5es relacionadas ao Atendimento. (optional)
+///  @param conteudoAtendimento Apresenta as informa\u00E7\u00F5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00E7\u00F5es relacionadas ao Atendimento. (optional)
 ///
-///  @param detalhesAtendimento Apresenta os detalhes lan\u00C3\u00A7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento. (optional)
+///  @param detalhesAtendimento Apresenta os detalhes lan\u00E7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento. (optional)
 ///
 ///  @param nomeAtendente Apresenta o nome do Atendente que registrou o Atendimento. (optional)
 ///
@@ -3876,7 +3876,7 @@ static PierCadastroGeralApi* singletonAPI = nil;
 
 ///
 /// Inserir campanha
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova campanha.
+/// Este m\u00E9todo permite que seja cadastrado uma nova campanha.
 ///  @param campanhaPersist campanhaPersist 
 ///
 ///  @returns PierCampanhaResponse*
@@ -3955,8 +3955,8 @@ static PierCadastroGeralApi* singletonAPI = nil;
 }
 
 ///
-/// Inserir os dados de configura\u00C3\u00A7\u00C3\u00A3o do rotativo de um produto
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova configura\u00C3\u00A7\u00C3\u00A3o do rotativo para um determinado produto.
+/// Inserir os dados de configura\u00E7\u00E3o do rotativo de um produto
+/// Este m\u00E9todo permite que seja cadastrado uma nova configura\u00E7\u00E3o do rotativo para um determinado produto.
 ///  @param configuracaoRotativoPersist configuracaoRotativoPersist 
 ///
 ///  @returns PierConfiguracaoRotativoDetalheResponse*

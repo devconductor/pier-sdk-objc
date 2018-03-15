@@ -17,13 +17,13 @@
 /* Numero do cartao (criptografado) [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Id do cart\u00C3\u00A3o [optional]
+/* Id do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
 /* Origem [optional]
  */
 @property(nonatomic) NSString* origem;
-/* Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. [optional]
+/* Tipo de ordena\u00E7\u00E3o dos registros. [optional]
  */
 @property(nonatomic) NSArray* /* NSString */ sort;
 

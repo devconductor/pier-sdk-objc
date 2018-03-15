@@ -14,7 +14,7 @@
 
 @interface PierParcelamentoTransferenciaResponse : PierObject
 
-/* N\u00C3\u00BAmero de parcelas dispon\u00C3\u00ADveis. [optional]
+/* N\u00FAmero de parcelas dispon\u00EDveis. [optional]
  */
 @property(nonatomic) NSNumber* numeroParcela;
 /* Valor das demais parcelas. [optional]
@@ -23,10 +23,10 @@
 /* Valor total do financiamento. [optional]
  */
 @property(nonatomic) NSNumber* valorTotal;
-/* Valor da tarifa de contrata\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Valor da tarifa de contrata\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* valorTAC;
-/* IOF [optional]
+/* IOF calculado para o cliente [optional]
  */
 @property(nonatomic) NSNumber* valorIOF;
 /* Valor da taxa de juros. [optional]

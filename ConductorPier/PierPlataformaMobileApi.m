@@ -75,7 +75,7 @@ static PierPlataformaMobileApi* singletonAPI = nil;
 ///
 /// Atualiza Plataforma Mobile
 /// Esse recurso permite atualizar plataforma mobile.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da Plataforma (id). 
 ///
 ///  @param update update 
 ///
@@ -165,18 +165,18 @@ static PierPlataformaMobileApi* singletonAPI = nil;
 
 ///
 /// Lista as plataformas mobile cadastradas
-/// Este m\u00C3\u00A9todo permite que sejam listadas as plataformas mobile existentes na base do PIER.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listadas as plataformas mobile existentes na base do PIER.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param nome Nome da Plataforma Mobile (optional)
 ///
 ///  @returns PierPagePlataformaMobileResponse*
 ///
--(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET33WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

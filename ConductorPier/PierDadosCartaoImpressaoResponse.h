@@ -14,40 +14,40 @@
 
 @interface PierDadosCartaoImpressaoResponse : PierObject
 
-/* O C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta (id) a qual o cart\u00C3\u00A3o gerado pertence. [optional]
+/* O C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id) a qual o cart\u00E3o gerado pertence. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* O C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) portadora do cart\u00C3\u00A3o gerado. [optional]
+/* O C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) portadora do cart\u00E3o gerado. [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* O C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id) que foi gerado. [optional]
+/* O C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o (id) que foi gerado. [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* O C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Bandeira (id) a qual o Cart\u00C3\u00A3o pertence, quando bandeirado. [optional]
+/* O C\u00F3digo de Identifica\u00E7\u00E3o da Bandeira (id) a qual o Cart\u00E3o pertence, quando bandeirado. [optional]
  */
 @property(nonatomic) NSNumber* idBandeira;
-/* O C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Cart\u00C3\u00A3o (id) atribu\u00C3\u00ADdo ao Cart\u00C3\u00A3o. [optional]
+/* O C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Cart\u00E3o (id) atribu\u00EDdo ao Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idTipoCartao;
-/* O n\u00C3\u00BAmero do cart\u00C3\u00A3o. [optional]
+/* O n\u00FAmero do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* O nome do Portador do Cart\u00C3\u00A3o. [optional]
+/* O nome do Portador do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* nomePlastico;
-/* O n\u00C3\u00BAmero do CVV a ser impresso no Cart\u00C3\u00A3o [optional]
+/* O n\u00FAmero do CVV a ser impresso no Cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* cvv2;
-/* Apresenta a data de emiss\u00C3\u00A3o do Cart\u00C3\u00A3o. [optional]
+/* Apresenta a data de emiss\u00E3o do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* dataGeracao;
-/* Apresenta a data de Validade do Cart\u00C3\u00A3o. [optional]
+/* Apresenta a data de Validade do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* O CPF do Portador do Cart\u00C3\u00A3o. [optional]
+/* O CPF do Portador do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* O tipo do Portador do cart\u00C3\u00A3o, sendo: ('T': Titular, 'A': Adicional). [optional]
+/* O tipo do Portador do cart\u00E3o, sendo: ('T': Titular, 'A': Adicional). [optional]
  */
 @property(nonatomic) NSString* tipoPortador;
 /* Os dados da Trilha1, seguindo as regras de trilha do emissor. [optional]
@@ -62,7 +62,7 @@
 /* Os dados da TrilhaCVV02, seguindo as regras de trilha do emissor. [optional]
  */
 @property(nonatomic) NSString* trilhaCVV2;
-/* O status que informa se o cart\u00C3\u00A3o \u00C3\u00A9 virtual  [optional]
+/* O status que informa se o cart\u00E3o \u00E9 virtual  [optional]
  */
 @property(nonatomic) NSNumber* flagVirtual;
 /* Nome da Bandeira [optional]
@@ -71,76 +71,76 @@
 /* Flag Indicativo de Titularidade da Conta [optional]
  */
 @property(nonatomic) NSNumber* flagTitular;
-/* C\u00C3\u00B3digo Sequencial do Cart\u00C3\u00A3o [optional]
+/* C\u00F3digo Sequencial do Cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* sequencialCartao;
-/* Identificador do Status do Cart\u00C3\u00A3o [optional]
+/* Identificador do Status do Cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idStatus;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do Status do Cart\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do Status do Cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* descricaoStatusCartao;
-/* Apresenta a data em que o idStatusCartao atual do cart\u00C3\u00A3o fora aplicado, quando houver. [optional]
+/* Apresenta a data em que o idStatusCartao atual do cart\u00E3o fora aplicado, quando houver. [optional]
  */
 @property(nonatomic) NSString* dataStatus;
-/* Identificador do Est\u00C3\u00A1gio do Cart\u00C3\u00A3o. [optional]
+/* Identificador do Est\u00E1gio do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idEstagio;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do Estagio do Cart\u00C3\u00A3o. [optional]
+/* Descri\u00E7\u00E3o do Estagio do Cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* descricaoEstagio;
-/* Apresenta a data em que o idEstagioCartao atual do cart\u00C3\u00A3o fora aplicado, quando houver. [optional]
+/* Apresenta a data em que o idEstagioCartao atual do cart\u00E3o fora aplicado, quando houver. [optional]
  */
 @property(nonatomic) NSString* dataEstagio;
-/* N\u00C3\u00BAmero do Bin do Cart\u00C3\u00A3o [optional]
+/* N\u00FAmero do Bin do Cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* numeroBin;
 /* Identificador do Produto Associado a Conta [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do produto [optional]
+/* Descri\u00E7\u00E3o do produto [optional]
  */
 @property(nonatomic) NSString* descricaoProduto;
 /* Identificador do Status da Conta [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status da conta [optional]
+/* Descri\u00E7\u00E3o do status da conta [optional]
  */
 @property(nonatomic) NSNumber* descricaoStatusConta;
-/* Data que o cart\u00C3\u00A3o foi embossado [optional]
+/* Data que o cart\u00E3o foi embossado [optional]
  */
 @property(nonatomic) NSString* dataEmbossing;
-/* C\u00C3\u00B3digo de desbloqueio do cart\u00C3\u00A3o [optional]
+/* C\u00F3digo de desbloqueio do cart\u00E3o [optional]
  */
 @property(nonatomic) NSString* codigoDesbloqueio;
-/* O 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. [optional]
+/* O 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. [optional]
  */
 @property(nonatomic) NSString* nomePessoa;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00EDsica), (\"PJ\": Pessoa Jur\u00EDdica). [optional]
  */
 @property(nonatomic) NSString* tipoPessoa;
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* Identificador do Endere\u00C3\u00A7o do titular do cart\u00C3\u00A3o [optional]
+/* Identificador do Endere\u00E7o do titular do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idEndereco;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) [optional]
  */
 @property(nonatomic) NSNumber* idTipoEndereco;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do Tipo de Endere\u00C3\u00A7o [optional]
+/* Descri\u00E7\u00E3o do Tipo de Endere\u00E7o [optional]
  */
 @property(nonatomic) NSString* descricaoTipoEndereco;
-/* O C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' [optional]
+/* O C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' [optional]
  */
 @property(nonatomic) NSString* cep;
 /* Nome do Logradouro [optional]
  */
 @property(nonatomic) NSString* logradouro;
-/* N\u00C3\u00BAmero do endere\u00C3\u00A7o [optional]
+/* N\u00FAmero do endere\u00E7o [optional]
  */
 @property(nonatomic) NSString* numeroEndereco;
-/* Descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o [optional]
+/* Descri\u00E7oes complementares referente ao endere\u00E7o [optional]
  */
 @property(nonatomic) NSString* complementoEndereco;
 /* Nome do bairro [optional]
@@ -152,8 +152,11 @@
 /* Unidade federativa [optional]
  */
 @property(nonatomic) NSString* uf;
-/* Nome do pa\u00C3\u00ADs [optional]
+/* Nome do pa\u00EDs [optional]
  */
 @property(nonatomic) NSString* pais;
+/* Senha Criptografada [optional]
+ */
+@property(nonatomic) NSString* senhaCriptografada;
 
 @end

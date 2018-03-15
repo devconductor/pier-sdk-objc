@@ -17,10 +17,10 @@
 /* Nome do status oportunidade [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status oportunidade 
+/* Descri\u00E7\u00E3o do status oportunidade 
  */
 @property(nonatomic) NSString* descricao;
-/* Flag de verifica\u00C3\u00A7\u00C3\u00A3o se o status oportunidade est\u00C3\u00A1 ativo 
+/* Flag de verifica\u00E7\u00E3o se o status oportunidade est\u00E1 ativo 
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

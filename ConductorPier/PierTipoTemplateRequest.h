@@ -17,7 +17,7 @@
 /* Nome do tipo de template. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de template. [optional]
+/* Descri\u00E7\u00E3o do tipo de template. [optional]
  */
 @property(nonatomic) NSString* descricao;
 /* Sigla do tipo de template. [optional]

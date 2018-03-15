@@ -14,34 +14,34 @@
 
 @interface PierTransferenciaBancariaPersist : PierObject
 
-/* Valor da transfer\u00C3\u00AAncia 
+/* Valor da transfer\u00EAncia 
  */
 @property(nonatomic) NSNumber* valorCompra;
-/* Valor da transfer\u00C3\u00AAncia 
+/* Valor da transfer\u00EAncia 
  */
 @property(nonatomic) NSNumber* valor;
-/* N\u00C3\u00BAmero do CPF ou CNPJ. 
+/* N\u00FAmero do CPF ou CNPJ. 
  */
 @property(nonatomic) NSString* documentoFavorecido;
-/* C\u00C3\u00B3digo do banco 
+/* C\u00F3digo do banco 
  */
 @property(nonatomic) NSNumber* banco;
-/* N\u00C3\u00BAmero da ag\u00C3\u00AAncia 
+/* N\u00FAmero da ag\u00EAncia 
  */
 @property(nonatomic) NSString* numeroAgencia;
-/* D\u00C3\u00ADgito da ag\u00C3\u00AAncia [optional]
+/* D\u00EDgito da ag\u00EAncia [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* N\u00C3\u00BAmero da conta 
+/* N\u00FAmero da conta 
  */
 @property(nonatomic) NSString* numeroConta;
-/* D\u00C3\u00ADgito da conta [optional]
+/* D\u00EDgito da conta [optional]
  */
 @property(nonatomic) NSString* digitoConta;
-/* Sinaliza se conta banc\u00C3\u00A1ria \u00C3\u00A9 poupan\u00C3\u00A7a (1: Poupan\u00C3\u00A7a, 0: Conta corrente) 
+/* Sinaliza se conta banc\u00E1ria \u00E9 poupan\u00E7a (1: Poupan\u00E7a, 0: Conta corrente) 
  */
 @property(nonatomic) NSNumber* flagContaPoupanca;
-/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. 
  */
 @property(nonatomic) NSString* nomeFavorecido;
 

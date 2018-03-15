@@ -16,13 +16,13 @@
 
 
 @property(nonatomic) NSNumber* flagVirtual;
-/* N\u00C3\u00BAmero do cart\u00C3\u00A3o. [optional]
+/* N\u00FAmero do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
 /* Data de validade. [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* CVV2 do cart\u00C3\u00A3o. [optional]
+/* CVV2 do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* cvv2;
 /* Nome do portador. [optional]
@@ -31,25 +31,25 @@
 /* Identificador da conta do portador. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Identificador da cart\u00C3\u00A3o do portador. [optional]
+/* Identificador da cart\u00E3o do portador. [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Apresenta o n\u00C3\u00BAmero da Ag\u00C3\u00AAncia a ser impresso no Cart\u00C3\u00A3o, quando aplic\u00C3\u00A1vel. [optional]
+/* Apresenta o n\u00FAmero da Ag\u00EAncia a ser impresso no Cart\u00E3o, quando aplic\u00E1vel. [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* Apresenta o n\u00C3\u00BAmero da Conta Corrente a ser impresso no Cart\u00C3\u00A3o, quando aplic\u00C3\u00A1vel. [optional]
+/* Apresenta o n\u00FAmero da Conta Corrente a ser impresso no Cart\u00E3o, quando aplic\u00E1vel. [optional]
  */
 @property(nonatomic) NSString* numeroContaCorente;
 /* Status da conta do portador. [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status da conta do portador. [optional]
+/* Descri\u00E7\u00E3o do status da conta do portador. [optional]
  */
 @property(nonatomic) NSString* statusConta;
-/* Status do cart\u00C3\u00A3o. [optional]
+/* Status do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idStatusCartao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do status do cart\u00C3\u00A3o. [optional]
+/* Descri\u00E7\u00E3o do status do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSString* statusCartao;
 

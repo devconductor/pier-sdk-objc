@@ -23,22 +23,22 @@
 ///
 ///
 /// Consultar um aviso viagem de acordo com o id passado
-/// Este m\u00C3\u00A9todo permite que seja consultado um aviso viagen existente na base do emissor.
+/// Este m\u00E9todo permite que seja consultado um aviso viagen existente na base do emissor.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Aviso Viagem (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Aviso Viagem (id).
 /// 
 ///
 /// @return PierAvisoViagemResponse*
--(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler;
 
 
 ///
 ///
 /// Desabilitar um aviso viagem de acordo com o id passado
-/// Este m\u00C3\u00A9todo permite que seja desabilitado um aviso viagen existente na base do emissor.
+/// Este m\u00E9todo permite que seja desabilitado um aviso viagen existente na base do emissor.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Aviso Viagem (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Aviso Viagem (id).
 /// 
 ///
 /// @return PierAvisoViagemResponse*
@@ -49,9 +49,9 @@
 ///
 ///
 /// Habilitar um aviso viagem de acordo com o id passado
-/// Este m\u00C3\u00A9todo permite que seja habilitado um aviso viagen existente na base do emissor.
+/// Este m\u00E9todo permite que seja habilitado um aviso viagen existente na base do emissor.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Aviso Viagem (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Aviso Viagem (id).
 /// 
 ///
 /// @return PierAvisoViagemResponse*
@@ -62,20 +62,20 @@
 ///
 ///
 /// Lista os avisos viagens gerados pelo Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os avisos viagens existentes na base do emissor.
+/// Este m\u00E9todo permite que sejam listados os avisos viagens existentes na base do emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idCartao C\u00C3\u00B3digo Identificador do cart\u00C3\u00A3o na base (id)
-/// @param codigoPais Codigo identificador do pa\u00C3\u00ADs na base (id)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idCartao C\u00F3digo Identificador do cart\u00E3o na base (id)
+/// @param codigoPais Codigo identificador do pa\u00EDs na base (id)
 /// @param dataInicio Data inicio do aviso viagem
 /// @param dataFim Data fim do aviso viagem
-/// @param flagAtivo Identifica se o aviso viagem esta ativo ou n\u00C3\u00A3o
+/// @param flagAtivo Identifica se o aviso viagem esta ativo ou n\u00E3o
 /// 
 ///
 /// @return PierPageAvisoViagemResponse*
--(NSNumber*) listarUsingGET6WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idCartao: (NSNumber*) idCartao
@@ -89,10 +89,10 @@
 ///
 ///
 /// Realiza o cadastro de um novo Aviso Viagem
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Aviso Viagem na base de dados do Emissor.
+/// Este m\u00E9todo permite que seja cadastrado um novo Aviso Viagem na base de dados do Emissor.
 ///
-/// @param idCartao C\u00C3\u00B3digo Identificador do cart\u00C3\u00A3o na base (id)
-/// @param codigoPais Codigo identificador do pa\u00C3\u00ADs na base (id)
+/// @param idCartao C\u00F3digo Identificador do cart\u00E3o na base (id)
+/// @param codigoPais Codigo identificador do pa\u00EDs na base (id)
 /// @param dataInicio Data inicio do aviso viagem
 /// @param dataFim Data fim do aviso viagem
 /// 

@@ -14,25 +14,25 @@
 
 @interface PierVinculoEstabelecimentoAdquirenteResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do VinculoEstabelecimentoAdquirente (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do VinculoEstabelecimentoAdquirente (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento (id). [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Adquirente (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Adquirente (id). [optional]
  */
 @property(nonatomic) NSNumber* idAdquirente;
-/* C\u00C3\u00B3digo do v\u00C3\u00ADnculo entre o estabelecimento e o adquirente. [optional]
+/* C\u00F3digo do v\u00EDnculo entre o estabelecimento e o adquirente. [optional]
  */
 @property(nonatomic) NSString* codigoEstabelecimentoAdquirente;
-/* Data de cadastro do v\u00C3\u00ADnculo. [optional]
+/* Data de cadastro do v\u00EDnculo. [optional]
  */
 @property(nonatomic) NSString* dataHoraCadastro;
-/* Data de cadastro do v\u00C3\u00ADnculo. [optional]
+/* Data de cadastro do v\u00EDnculo. [optional]
  */
 @property(nonatomic) NSString* mensagem;
-/* Data de cadastro do v\u00C3\u00ADnculo. [optional]
+/* Data de cadastro do v\u00EDnculo. [optional]
  */
 @property(nonatomic) NSNumber* status;
 

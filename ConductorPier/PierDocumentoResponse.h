@@ -23,7 +23,7 @@
 /* Nome do Documento. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Extens\u00C3\u00A3o do Documento. [optional]
+/* Extens\u00E3o do Documento. [optional]
  */
 @property(nonatomic) NSString* extensao;
 

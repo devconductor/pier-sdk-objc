@@ -15,22 +15,22 @@
 
 @interface PierOportunidadeUpdate : PierObject
 
-/* C\u00C3\u00B3digo identificador do tipo oportunidade 
+/* C\u00F3digo identificador do tipo oportunidade 
  */
 @property(nonatomic) NSNumber* idTipoOportunidade;
-/* C\u00C3\u00B3digo identificador do status oportunidade 
+/* C\u00F3digo identificador do status oportunidade 
  */
 @property(nonatomic) NSNumber* idStatusOportunidade;
-/* N\u00C3\u00BAmero receita federal do cliente 
+/* N\u00FAmero receita federal do cliente 
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* In\u00C3\u00ADcio da vig\u00C3\u00AAncia da oportunidade 
+/* In\u00EDcio da vig\u00EAncia da oportunidade 
  */
 @property(nonatomic) NSString* dataInicioVigencia;
-/* Fim da vig\u00C3\u00AAncia da oportunidade 
+/* Fim da vig\u00EAncia da oportunidade 
  */
 @property(nonatomic) NSString* dataFimVigencia;
-/* Atributo que indica se a oportunidade est\u00C3\u00A1 ativa 
+/* Atributo que indica se a oportunidade est\u00E1 ativa 
  */
 @property(nonatomic) NSNumber* flagAtivo;
 /* Lista de detalhes 

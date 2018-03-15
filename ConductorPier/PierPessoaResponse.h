@@ -14,37 +14,37 @@
 
 @interface PierPessoaResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). 
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id). 
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. 
  */
 @property(nonatomic) NSString* nome;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
+/* C\u00F3digo de identifica\u00E7\u00E3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00EDsica), (\"PJ\": Pessoa Jur\u00EDdica). 
  */
 @property(nonatomic) NSString* tipo;
-/* N\u00C3\u00BAmero do CPF, quando PF. [optional]
+/* N\u00FAmero do CPF, quando PF. [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* N\u00C3\u00BAmero do CNPJ, quando PJ. [optional]
+/* N\u00FAmero do CNPJ, quando PJ. [optional]
  */
 @property(nonatomic) NSString* cnpj;
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* N\u00C3\u00BAmero da Identidade [optional]
+/* N\u00FAmero da Identidade [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Org\u00C3\u00A3o expedidor do RG. [optional]
+/* Org\u00E3o expedidor do RG. [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
  */
 @property(nonatomic) NSString* sexo;
 /* Sigla da Unidade Federativa de onde foi expedido a Identidade [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd [optional]
+/* Data emiss\u00E3o da identidade no formato aaaa-MM-dd [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
 

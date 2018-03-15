@@ -14,22 +14,22 @@
 
 @interface PierCodigoSegurancaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do c\u00C3\u00B3digo de seguranca (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do c\u00F3digo de seguranca (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Emissor (idEmissor). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Emissor (idEmissor). [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* Apresenta o Modo de Envio do C\u00C3\u00B3digo de Seguran\u00C3\u00A7a. [optional]
+/* Apresenta o Modo de Envio do C\u00F3digo de Seguran\u00E7a. [optional]
  */
 @property(nonatomic) NSString* modoEnvio;
-/* Apresenta o contato do c\u00C3\u00B3digo de seguran\u00C3\u00A7a. [optional]
+/* Apresenta o contato do c\u00F3digo de seguran\u00E7a. [optional]
  */
 @property(nonatomic) NSString* contato;
-/* Apresenta o status do c\u00C3\u00B3digo de seguran\u00C3\u00A7a. [optional]
+/* Apresenta o status do c\u00F3digo de seguran\u00E7a. [optional]
  */
 @property(nonatomic) NSNumber* ativo;
-/* Apresenta a data de validade do c\u00C3\u00B3digo de seguran\u00C3\u00A7a gerado. [optional]
+/* Apresenta a data de validade do c\u00F3digo de seguran\u00E7a gerado. [optional]
  */
 @property(nonatomic) NSString* dataValidade;
 

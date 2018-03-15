@@ -14,13 +14,13 @@
 
 @interface PierDetalheOportunidadeUpdate : PierObject
 
-/* C\u00C3\u00B3digo identificador do detalhe [optional]
+/* C\u00F3digo identificador do detalhe [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do conte\u00C3\u00BAdo [optional]
+/* Nome do conte\u00FAdo [optional]
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00C3\u00BAdo do detalhe [optional]
+/* Conte\u00FAdo do detalhe [optional]
  */
 @property(nonatomic) NSString* conteudo;
 

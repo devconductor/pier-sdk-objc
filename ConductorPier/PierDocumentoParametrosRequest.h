@@ -21,7 +21,7 @@
 /* Nome para o arquivo. [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Lista de par\u00C3\u00A2metros para montagem do documento. [optional]
+/* Lista de par\u00E2metros para montagem do documento. [optional]
  */
 @property(nonatomic) NSArray<PierPropriedadeDocumentoRequest>* parametrosConteudo;
 

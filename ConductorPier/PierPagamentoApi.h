@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "PierAcordoDetalheResponse.h"
 #import "PierPageHistoricoPagamentoResponse.h"
+#import "PierPageAcordoResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -21,19 +23,32 @@
 +(PierPagamentoApi*) sharedAPI;
 ///
 ///
-/// Lista hist\u00C3\u00B3rico de pagamentos
+/// Consulta os dados de um determinado acordo
+/// Este m\u00E9todo permite consultar dados de um determinado acordo a partir de seu codigo de identifica\u00E7\u00E3o (id).
+///
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do acordo (id).
+/// 
+///
+/// @return PierAcordoDetalheResponse*
+-(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAcordoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista hist\u00F3rico de pagamentos
 /// Este recurso permite listar todos os Pagamentos realizados independente do seu Status de Processamento.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idConta C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta
-/// @param idPagamento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Pagamento
-/// @param idEstabelecimento C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento onde o Pagamento foi realizado, quando este for o local de pagamento
-/// @param idBanco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Institui\u00C3\u00A7\u00C3\u00A3o Banc\u00C3\u00A1ria onde o Pagamento foi realizado, quando este for o local de pagamento
-/// @param idCartao C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o
-/// @param dataHoraPagamento Data e Hora da realiza\u00C3\u00A7\u00C3\u00A3o do Pagamento. Quando feito em Institui\u00C3\u00A7\u00C3\u00A3o Banc\u00C3\u00A1ria, o hor\u00C3\u00A1rio do pagamento \u00C3\u00A9 exibido com valor zero
-/// @param status C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status do Pagamento
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idConta C\u00F3digo de Identifica\u00E7\u00E3o da Conta
+/// @param idPagamento C\u00F3digo de Identifica\u00E7\u00E3o do Pagamento
+/// @param idEstabelecimento C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento onde o Pagamento foi realizado, quando este for o local de pagamento
+/// @param idBanco C\u00F3digo de Identifica\u00E7\u00E3o da Institui\u00E7\u00E3o Banc\u00E1ria onde o Pagamento foi realizado, quando este for o local de pagamento
+/// @param idCartao C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o
+/// @param dataHoraPagamento Data e Hora da realiza\u00E7\u00E3o do Pagamento. Quando feito em Institui\u00E7\u00E3o Banc\u00E1ria, o hor\u00E1rio do pagamento \u00E9 exibido com valor zero
+/// @param status C\u00F3digo de Identifica\u00E7\u00E3o do Status do Pagamento
 /// 
 ///
 /// @return PierPageHistoricoPagamentoResponse*
@@ -48,6 +63,31 @@
     dataHoraPagamento: (NSString*) dataHoraPagamento
     status: (NSNumber*) status
     completionHandler: (void (^)(PierPageHistoricoPagamentoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// Lista os acordos existentes na base
+/// Este m\u00E9todo permite que sejam listados todos os acordos existentes na base do emissor.
+///
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idConta C\u00F3digo Identificador da conta na base (id)
+/// @param statusAcordo Status do acordo na base
+/// @param dataAcordo Data do acordo
+/// @param quantidadeParcelas Quantidade de parcelas
+/// 
+///
+/// @return PierPageAcordoResponse*
+-(NSNumber*) listarUsingGETWithSort: (NSArray* /* NSString */) sort
+    page: (NSNumber*) page
+    limit: (NSNumber*) limit
+    idConta: (NSNumber*) idConta
+    statusAcordo: (NSNumber*) statusAcordo
+    dataAcordo: (NSString*) dataAcordo
+    quantidadeParcelas: (NSNumber*) quantidadeParcelas
+    completionHandler: (void (^)(PierPageAcordoResponse* output, NSError* error)) handler;
 
 
 

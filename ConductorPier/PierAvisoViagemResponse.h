@@ -14,13 +14,13 @@
 
 @interface PierAvisoViagemResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador \u00C3\u00BAnico do aviso viagem na base (id) [optional]
+/* C\u00F3digo identificador \u00FAnico do aviso viagem na base (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo identificador do cart\u00C3\u00A3o na base (id) [optional]
+/* C\u00F3digo identificador do cart\u00E3o na base (id) [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Codigo identificador do pa\u00C3\u00ADs na base (id) [optional]
+/* Codigo identificador do pa\u00EDs na base (id) [optional]
  */
 @property(nonatomic) NSString* codigoPais;
 /* Data inicio do aviso viagem [optional]
@@ -29,7 +29,7 @@
 /* Data fim do aviso viagem [optional]
  */
 @property(nonatomic) NSString* dataFim;
-/* Identifica se o aviso viagem esta ativo ou n\u00C3\u00A3o [optional]
+/* Identifica se o aviso viagem esta ativo ou n\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

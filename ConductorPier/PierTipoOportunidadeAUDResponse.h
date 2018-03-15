@@ -14,22 +14,22 @@
 
 @interface PierTipoOportunidadeAUDResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador da auditoria dos tipos oportunidades [optional]
+/* C\u00F3digo identificador da auditoria dos tipos oportunidades [optional]
  */
 @property(nonatomic) NSNumber* rev;
-/* C\u00C3\u00B3digo que representa o tipo de a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades [optional]
+/* C\u00F3digo que representa o tipo de a\u00E7\u00E3o realizada no recurso de tipos oportunidades [optional]
  */
 @property(nonatomic) NSNumber* revType;
-/* Data da a\u00C3\u00A7\u00C3\u00A3o realizada no recurso de tipos oportunidades [optional]
+/* Data da a\u00E7\u00E3o realizada no recurso de tipos oportunidades [optional]
  */
 @property(nonatomic) NSString* revDate;
-/* C\u00C3\u00B3digo identificador do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o [optional]
+/* C\u00F3digo identificador do tipo oportunidade no qual foi realizado a a\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo oportunidade no qual foi realizado a a\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Descri\u00E7\u00E3o do tipo oportunidade no qual foi realizado a a\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Atributo que representa se o tipo oportunidade est\u00C3\u00A1 ativo [optional]
+/* Atributo que representa se o tipo oportunidade est\u00E1 ativo [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

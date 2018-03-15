@@ -17,34 +17,34 @@
 /* Apresenta a data e em que o registro foi enviado para o dispositivo. [optional]
  */
 @property(nonatomic) NSString* dataEnvio;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do emissor (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do emissor (id). [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* Nome do tipoEvento da notifica\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Nome do tipoEvento da notifica\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* tipoEvento;
-/* Status de envio da notifica\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Status de envio da notifica\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* status;
-/* C\u00C3\u00B3digo identificado da pessoa 
+/* C\u00F3digo identificado da pessoa 
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo identificador da conta 
+/* C\u00F3digo identificador da conta 
  */
 @property(nonatomic) NSNumber* idConta;
-/* Token do dispositivo a qual foi destinado a notifica\u00C3\u00A7\u00C3\u00A3o (device_token) 
+/* Token do dispositivo a qual foi destinado a notifica\u00E7\u00E3o (device_token) 
  */
 @property(nonatomic) NSString* tokenDispositivo;
-/* T\u00C3\u00ADtulo da notifica\u00C3\u00A7\u00C3\u00A3o enviada. 
+/* T\u00EDtulo da notifica\u00E7\u00E3o enviada. 
  */
 @property(nonatomic) NSString* titulo;
-/* Conte\u00C3\u00BAdo da notifica\u00C3\u00A7\u00C3\u00A3o enviada. 
+/* Conte\u00FAdo da notifica\u00E7\u00E3o enviada. 
  */
 @property(nonatomic) NSString* conteudo;
 /* Nome do Sistema Operacional a qual foi enviado o Push. [optional]
  */
 @property(nonatomic) NSString* plataforma;
-/* N\u00C3\u00BAmero do protocolo de envio de notifica\u00C3\u00A7\u00C3\u00B5es [optional]
+/* N\u00FAmero do protocolo de envio de notifica\u00E7\u00F5es [optional]
  */
 @property(nonatomic) NSString* protocolo;
 

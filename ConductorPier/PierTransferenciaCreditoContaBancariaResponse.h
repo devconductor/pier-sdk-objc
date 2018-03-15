@@ -14,40 +14,40 @@
 
 @interface PierTransferenciaCreditoContaBancariaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transferencia. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da transferencia. [optional]
  */
 @property(nonatomic) NSNumber* idTransferencia;
 /* Taxa de custo efetivo total. [optional]
  */
 @property(nonatomic) NSNumber* valorCET;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da autoriza\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da autoriza\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idAutorizacao;
-/* C\u00C3\u00B3digo da autoriza\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* C\u00F3digo da autoriza\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* codigoAutorizacao;
 /* NSU de origem. [optional]
  */
 @property(nonatomic) NSNumber* nsuOrigem;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de opera\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de opera\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* Valor da transfer\u00C3\u00AAncia. [optional]
+/* Valor da transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSNumber* valorCompra;
 /* Valor da parcela. [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Valor da transfer\u00C3\u00AAncia acrescido do valor da tarifa de saque se houver tarifa de saque. [optional]
+/* Valor da transfer\u00EAncia acrescido do valor da tarifa de saque se houver tarifa de saque. [optional]
  */
 @property(nonatomic) NSNumber* valorContrato;
-/* N\u00C3\u00BAmero de parcelas. [optional]
+/* N\u00FAmero de parcelas. [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelas;
 /* Valor do IOF. [optional]
@@ -62,7 +62,7 @@
 /* Percentual de juros. [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* Data da transfer\u00C3\u00AAncia. [optional]
+/* Data da transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* dataCompra;
 /* Data do movimento. [optional]
@@ -71,25 +71,25 @@
 /* Data do vencimento real da fatura. [optional]
  */
 @property(nonatomic) NSString* dataVencimentoReal;
-/* Dia do vencimento padr\u00C3\u00A3o da fatura. [optional]
+/* Dia do vencimento padr\u00E3o da fatura. [optional]
  */
 @property(nonatomic) NSString* dataVencimentoPadrao;
-/* Data da autoriza\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Data da autoriza\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSString* dataAutorizacao;
-/* C\u00C3\u00B3digo do Banco. [optional]
+/* C\u00F3digo do Banco. [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* N\u00C3\u00BAmero da Ag\u00C3\u00AAncia. [optional]
+/* N\u00FAmero da Ag\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* numeroAgencia;
-/* D\u00C3\u00ADgito da Ag\u00C3\u00AAncia. [optional]
+/* D\u00EDgito da Ag\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* N\u00C3\u00BAmero da Conta. [optional]
+/* N\u00FAmero da Conta. [optional]
  */
 @property(nonatomic) NSString* numeroConta;
-/* D\u00C3\u00ADgito da Conta. [optional]
+/* D\u00EDgito da Conta. [optional]
  */
 @property(nonatomic) NSString* digitoConta;
 /* Tipo da Conta. [optional]
@@ -101,7 +101,7 @@
 /* Nome do Favorecido. [optional]
  */
 @property(nonatomic) NSString* nomeFavorecido;
-/* C\u00C3\u00B3digo do Status [optional]
+/* C\u00F3digo do Status [optional]
  */
 @property(nonatomic) NSString* status;
 /* Status Processamento. [optional]

@@ -81,9 +81,9 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// Atualiza conta banc\u00C3\u00A1ria portador
-/// Esse recurso permite atualizar uma conta banc\u00C3\u00A1ria do portador.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria do portador (id). 
+/// Atualiza conta banc\u00E1ria portador
+/// Esse recurso permite atualizar uma conta banc\u00E1ria do portador.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta banc\u00E1ria do portador (id). 
 ///
 ///  @param update update 
 ///
@@ -172,9 +172,175 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza a consulta de uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1rias de um portador
-/// Recurso utilizado para recuperar uma transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1ria de um portador, utiliza o ID da transfer\u00C3\u00AAncia banc\u00C3\u00A1riae o idConta para realizar a consulta.
-///  @param idTransferencia Id Transfer\u00C3\u00AAncia 
+/// Realizar o cancelamento de uma transfer\u00EAncia banc\u00E1ria do cart\u00E3o para contas banc\u00E1rias que esteja pendente de confirma\u00E7\u00E3o.
+/// Este recurso tem como objetivo permitir o canelamento de uma transfer\u00EAncia de cr\u00E9dito entre contas.
+///  @param idTransferencia Id Transfer\u00EAncia 
+///
+///  @returns NSString*
+///
+-(NSNumber*) cancelarTransferenciaCreditoContaBancariaUsingPOSTWithIdTransferencia: (NSNumber*) idTransferencia
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idTransferencia' is set
+    if (idTransferencia == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `cancelarTransferenciaCreditoContaBancariaUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/transferencias-creditos-contas-bancarias/{idTransferencia}/cancelar"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idTransferencia != nil) {
+        pathParams[@"idTransferencia"] = idTransferencia;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realizar a confirma\u00E7\u00E3o de uma transfer\u00EAncia banc\u00E1ria do cart\u00E3o para contas banc\u00E1rias que esteja pendente de confirma\u00E7\u00E3o.
+/// Este recurso tem como objetivo permitir a confirma\u00E7\u00E3o da transfer\u00EAncia de cr\u00E9dito entre contas.
+///  @param idTransferencia Id Transfer\u00EAncia 
+///
+///  @returns NSString*
+///
+-(NSNumber*) confirmarTransferenciaCreditoContaBancariaUsingPOSTWithIdTransferencia: (NSNumber*) idTransferencia
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'idTransferencia' is set
+    if (idTransferencia == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `confirmarTransferenciaCreditoContaBancariaUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/transferencias-creditos-contas-bancarias/{idTransferencia}/confirmar"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (idTransferencia != nil) {
+        pathParams[@"idTransferencia"] = idTransferencia;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSString*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSString*)data, error);
+                           }
+          ];
+}
+
+///
+/// Realiza a consulta de uma transfer\u00EAncia banc\u00E1ria de cr\u00E9dito entre contas banc\u00E1rias de um portador
+/// Recurso utilizado para recuperar uma transfer\u00EAncia de cr\u00E9dito entre contas banc\u00E1ria de um portador, utiliza o ID da transfer\u00EAncia banc\u00E1riae o idConta para realizar a consulta.
+///  @param idTransferencia Id Transfer\u00EAncia 
 ///
 ///  @returns PierTransferenciaCreditoContaBancariaResponse*
 ///
@@ -255,19 +421,19 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Consulta conta banc\u00C3\u00A1ria portador
-/// Esse recurso permite consultar uma conta banc\u00C3\u00A1ria do portador a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria (id). 
+/// Consulta conta banc\u00E1ria portador
+/// Esse recurso permite consultar uma conta banc\u00E1ria do portador a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta banc\u00E1ria (id). 
 ///
 ///  @returns PierContaBancariaPortadorResponse*
 ///
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
     }
     
 
@@ -338,17 +504,17 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Consultar uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria para um banco
-/// Este recurso permite consultar os detalhes de uma determinada transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito realizada para uma conta banc\u00C3\u00A1ria. De modo geral, esta opera\u00C3\u00A7\u00C3\u00A3o poder\u00C3\u00A1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00C2\u00AA via de transfer\u00C3\u00AAncia entre contas.
+/// Consultar uma transfer\u00EAncia banc\u00E1ria para um banco
+/// Este recurso permite consultar os detalhes de uma determinada transfer\u00EAncia de cr\u00E9dito realizada para uma conta banc\u00E1ria. De modo geral, esta opera\u00E7\u00E3o poder\u00E1 ser utilizada para uma consulta simples destes detalhes ou para realizar a montagem de um comprovante de 2\u00AA via de transfer\u00EAncia entre contas.
 ///  @param _id Id Conta 
 ///
-///  @param idTransferencia Id Transfer\u00C3\u00AAncia 
+///  @param idTransferencia Id Transfer\u00EAncia 
 ///
-///  @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id) (optional)
+///  @param idContaBancariaDestino C\u00F3digo de identifica\u00E7\u00E3o da conta banc\u00E1ria de destino (id) (optional)
 ///
 ///  @returns PierTransferenciaBancariaResponse*
 ///
--(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET41WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
@@ -356,12 +522,12 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET40`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET41`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET40`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET41`"];
     }
     
 
@@ -439,19 +605,21 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza a listagem das transfer\u00C3\u00AAncias banc\u00C3\u00A1rias de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1rias
-/// Recurso utilizado para listar as transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1ria de um portador solicitadas.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Realiza a listagem das transfer\u00EAncias banc\u00E1rias de cr\u00E9dito entre contas banc\u00E1rias
+/// Recurso utilizado para listar as transfer\u00EAncia de cr\u00E9dito entre contas banc\u00E1ria de um portador solicitadas.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da Conta. (optional)
+///  @param idConta C\u00F3digo de identifica\u00E7\u00E3o da Conta. (optional)
 ///
-///  @param dataSolicitacaoInicial Data inicial da solicita\u00C3\u00A7\u00C3\u00A3o de transfer\u00C3\u00AAncia. (optional)
+///  @param dataSolicitacaoInicial Data inicial da solicita\u00E7\u00E3o de transfer\u00EAncia. (optional)
 ///
-///  @param dataSolicitacaoFinal Data final da solicita\u00C3\u00A7\u00C3\u00A3o de transfer\u00C3\u00AAncia (optional)
+///  @param dataSolicitacaoFinal Data final da solicita\u00E7\u00E3o de transfer\u00EAncia (optional)
+///
+///  @param status C\u00F3digo do status do processamento (optional)
 ///
 ///  @returns PierPageTransferenciaCreditoContaBancariaResponse*
 ///
@@ -461,6 +629,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     idConta: (NSNumber*) idConta
     dataSolicitacaoInicial: (NSString*) dataSolicitacaoInicial
     dataSolicitacaoFinal: (NSString*) dataSolicitacaoFinal
+    status: (NSNumber*) status
     completionHandler: (void (^)(PierPageTransferenciaCreditoContaBancariaResponse* output, NSError* error)) handler {
 
     
@@ -501,6 +670,10 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     if (dataSolicitacaoFinal != nil) {
         
         queryParams[@"dataSolicitacaoFinal"] = dataSolicitacaoFinal;
+    }
+    if (status != nil) {
+        
+        queryParams[@"status"] = status;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -555,33 +728,33 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Lista contas banc\u00C3\u00A1rias portador
-/// Esse recurso permite listar contas banc\u00C3\u00A1rias do portador.
-///  @param idConta C\u00C3\u00B3digo identificador da conta cart\u00C3\u00A3o (optional)
+/// Lista contas banc\u00E1rias portador
+/// Esse recurso permite listar contas banc\u00E1rias do portador.
+///  @param idConta C\u00F3digo identificador da conta cart\u00E3o (optional)
 ///
-///  @param nomeAgencia Descri\u00C3\u00A7\u00C3\u00A3o da ag\u00C3\u00AAncia (optional)
+///  @param nomeAgencia Descri\u00E7\u00E3o da ag\u00EAncia (optional)
 ///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia (optional)
+///  @param numeroAgencia N\u00FAmero da ag\u00EAncia (optional)
 ///
-///  @param numeroConta N\u00C3\u00BAmero da conta (optional)
+///  @param numeroConta N\u00FAmero da conta (optional)
 ///
-///  @param flagContaOrigemDoc Sinaliza se origem \u00C3\u00A9 DOC (1: DOC, 0: TED) (optional)
+///  @param flagContaOrigemDoc Sinaliza se origem \u00E9 DOC (1: DOC, 0: TED) (optional)
 ///
-///  @param idPessoaFisica C\u00C3\u00B3digo da pessoa (optional)
+///  @param idPessoaFisica C\u00F3digo da pessoa (optional)
 ///
 ///  @param favorecido Nome do favorecido (optional)
 ///
 ///  @param numeroReceiraFederal Documento do favorecido (optional)
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageContaBancariaPortadorResponse*
 ///
--(NSNumber*) listarUsingGET14WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET15WithIdConta: (NSNumber*) idConta
     nomeAgencia: (NSString*) nomeAgencia
     numeroAgencia: (NSString*) numeroAgencia
     numeroConta: (NSString*) numeroConta
@@ -706,21 +879,21 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Listar as transfer\u00C3\u00AAncias banc\u00C3\u00A1rias realizadas
-/// Este recurso tem como objetivo permitir que o portador de um Cart\u00C3\u00A3o possa consultar uma lista das Transfer\u00C3\u00AAncias Banc\u00C3\u00A1rias para os Favorecidos cadastrados.
+/// Listar as transfer\u00EAncias banc\u00E1rias realizadas
+/// Este recurso tem como objetivo permitir que o portador de um Cart\u00E3o possa consultar uma lista das Transfer\u00EAncias Banc\u00E1rias para os Favorecidos cadastrados.
 ///  @param _id Id Conta 
 ///
-///  @param idContaBancariaDestino C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta banc\u00C3\u00A1ria de destino (id) (optional)
+///  @param idContaBancariaDestino C\u00F3digo de identifica\u00E7\u00E3o da conta banc\u00E1ria de destino (id) (optional)
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageTransferenciaBancariaResponse*
 ///
--(NSNumber*) listarUsingGET47WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET49WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -730,7 +903,7 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET47`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET49`"];
     }
     
 
@@ -819,8 +992,8 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastra uma conta banc\u00C3\u00A1ria do portador
-/// Esse recurso permite cadastrar contas banc\u00C3\u00A1rias do portador.
+/// Cadastra uma conta banc\u00E1ria do portador
+/// Esse recurso permite cadastrar contas banc\u00E1rias do portador.
 ///  @param persist persist 
 ///
 ///  @returns PierContaBancariaPortadorResponse*
@@ -899,8 +1072,8 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza a simula\u00C3\u00A7\u00C3\u00A3o dos planos de parcelamentos para uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1rias
-/// Realiza a simula\u00C3\u00A7\u00C3\u00A3o dos planos de parcelamentos para uma transfer\u00C3\u00AAncia banc\u00C3\u00A1ria de cr\u00C3\u00A9dito entre contas banc\u00C3\u00A1rias.
+/// Realiza a simula\u00E7\u00E3o dos planos de parcelamentos para uma transfer\u00EAncia banc\u00E1ria de cr\u00E9dito entre contas banc\u00E1rias
+/// Realiza a simula\u00E7\u00E3o dos planos de parcelamentos para uma transfer\u00EAncia banc\u00E1ria de cr\u00E9dito entre contas banc\u00E1rias.
 ///  @param request request 
 ///
 ///  @returns PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse*
@@ -979,8 +1152,8 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria do cart\u00C3\u00A3o para contas banc\u00C3\u00A1rias
-/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para uma conta banc\u00C3\u00A1ria. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta banc\u00C3\u00A1ria de destino.
+/// Realizar transfer\u00EAncia banc\u00E1ria do cart\u00E3o para contas banc\u00E1rias
+/// Este recurso tem como objetivo permitir que o portador de um cart\u00E3o possa realizar a transfer\u00EAncia de cr\u00E9dito para uma conta banc\u00E1ria. Assim, o valor do cr\u00E9dito somado a tarifa para transfer\u00EAncia, quando praticada pelo emissor, ser\u00E1 debitado da conta de origem, se houver saldo suficiente, e ser\u00E1 creditado na conta banc\u00E1ria de destino.
 ///  @param persist persist 
 ///
 ///  @returns PierTransferenciaCreditoContaBancariaResponse*
@@ -1059,8 +1232,8 @@ static PierTransferenciaBancariaApi* singletonAPI = nil;
 }
 
 ///
-/// Realizar transfer\u00C3\u00AAncia banc\u00C3\u00A1ria do cart\u00C3\u00A3o para contas banc\u00C3\u00A1rias
-/// Este recurso tem como objetivo permitir que o portador de um cart\u00C3\u00A3o possa realizar a transfer\u00C3\u00AAncia de cr\u00C3\u00A9dito para uma conta banc\u00C3\u00A1ria. Assim, o valor do cr\u00C3\u00A9dito somado a tarifa para transfer\u00C3\u00AAncia, quando praticada pelo emissor, ser\u00C3\u00A1 debitado da conta de origem, se houver saldo suficiente, e ser\u00C3\u00A1 creditado na conta banc\u00C3\u00A1ria de destino.
+/// Realizar transfer\u00EAncia banc\u00E1ria do cart\u00E3o para contas banc\u00E1rias
+/// Este recurso tem como objetivo permitir que o portador de um cart\u00E3o possa realizar a transfer\u00EAncia de cr\u00E9dito para uma conta banc\u00E1ria. Assim, o valor do cr\u00E9dito somado a tarifa para transfer\u00EAncia, quando praticada pelo emissor, ser\u00E1 debitado da conta de origem, se houver saldo suficiente, e ser\u00E1 creditado na conta banc\u00E1ria de destino.
 ///  @param _id Id Conta 
 ///
 ///  @param transferenciaBancariaPersist transferenciaBancariaPersist 

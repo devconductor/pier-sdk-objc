@@ -14,16 +14,16 @@
 
 @interface PierTelefoneAdicionalPersist : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id). [optional]
  */
 @property(nonatomic) NSNumber* idTipoTelefone;
-/* C\u00C3\u00B3digo DDD do telefone (id). [optional]
+/* C\u00F3digo DDD do telefone (id). [optional]
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00C3\u00BAmero do telefone. [optional]
+/* N\u00FAmero do telefone. [optional]
  */
 @property(nonatomic) NSString* telefone;
-/* N\u00C3\u00BAmero do ramal. [optional]
+/* N\u00FAmero do ramal. [optional]
  */
 @property(nonatomic) NSString* ramal;
 

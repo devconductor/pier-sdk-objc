@@ -14,16 +14,16 @@
 
 @interface PierTransferenciaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da transfer\u00EAncia (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Data estabelecida para ocorrer a transfer\u00C3\u00AAncia. [optional]
+/* Data estabelecida para ocorrer a transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* dataTransferencia;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta em que o valor ser\u00C3\u00A1 debitado para a transfer\u00C3\u00AAncia. (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta em que o valor ser\u00E1 debitado para a transfer\u00EAncia. (id). [optional]
  */
 @property(nonatomic) NSNumber* idContaOrigem;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta em que o valor ser\u00C3\u00A1 creditado para a transfer\u00C3\u00AAncia. (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta em que o valor ser\u00E1 creditado para a transfer\u00EAncia. (id). [optional]
  */
 @property(nonatomic) NSNumber* idContaDestino;
 /* Valor estabelecido para ser transferido. [optional]

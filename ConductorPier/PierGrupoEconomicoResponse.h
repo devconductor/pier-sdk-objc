@@ -14,40 +14,40 @@
 
 @interface PierGrupoEconomicoResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do grupo econ\u00C3\u00B4mico [optional]
+/* C\u00F3digo identificador do grupo econ\u00F4mico [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica [optional]
+/* Raz\u00E3o social da pessoa jur\u00EDdica [optional]
  */
 @property(nonatomic) NSString* razaoSocial;
 /* Nome do credor [optional]
  */
 @property(nonatomic) NSString* nomeCredor;
-/* N\u00C3\u00BAmero da Receita Federal [optional]
+/* N\u00FAmero da Receita Federal [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual [optional]
+/* N\u00FAmero da inscri\u00E7\u00E3o estadual [optional]
  */
 @property(nonatomic) NSString* inscricaoEstadual;
 /* Nome da pessoa para entrar em contato [optional]
  */
 @property(nonatomic) NSString* contato;
-/* C\u00C3\u00B3digo do banco [optional]
+/* C\u00F3digo do banco [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* C\u00C3\u00B3digo da ag\u00C3\u00AAncia [optional]
+/* C\u00F3digo da ag\u00EAncia [optional]
  */
 @property(nonatomic) NSNumber* agencia;
-/* D\u00C3\u00ADgito verificador da ag\u00C3\u00AAncia [optional]
+/* D\u00EDgito verificador da ag\u00EAncia [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* C\u00C3\u00B3digo da Conta Corrente [optional]
+/* C\u00F3digo da Conta Corrente [optional]
  */
 @property(nonatomic) NSString* contaCorrente;
-/* D\u00C3\u00ADgito Verificador da Conta Corrente [optional]
+/* D\u00EDgito Verificador da Conta Corrente [optional]
  */
 @property(nonatomic) NSString* digitoContaCorrente;
-/* Login do usu\u00C3\u00A1rio para registro da inser\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Login do usu\u00E1rio para registro da inser\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* usuario;
 /* Periodicidade do pagamento [optional]
@@ -74,6 +74,9 @@
 /* Dia da data para o segundo pagamento quinzenal [optional]
  */
 @property(nonatomic) NSNumber* pagamentoQuinzenalSegundo;
+/* Identificador do credor RAV [optional]
+ */
+@property(nonatomic) NSNumber* idCredorRAV;
 /* Valor percentual do RAV do credor [optional]
  */
 @property(nonatomic) NSNumber* percentualRAV;

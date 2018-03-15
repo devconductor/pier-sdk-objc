@@ -14,13 +14,13 @@
 
 @interface PierVinculoOperacaoPersist : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Produto (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id). [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Opera\u00C3\u00A7\u00C3\u00A3o (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Opera\u00E7\u00E3o (id). [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* C\u00C3\u00B3digo MCC. [optional]
+/* C\u00F3digo MCC. [optional]
  */
 @property(nonatomic) NSNumber* codigoMCC;
 

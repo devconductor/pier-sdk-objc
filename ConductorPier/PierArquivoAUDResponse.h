@@ -18,7 +18,7 @@
 /* Identificador da auditoria arquivo [optional]
  */
 @property(nonatomic) NSNumber* rev;
-/* Identificador do tipo de auditoria (0 - Criado, 1 - Alterado, 2 - Exclu\u00C3\u00ADdo) [optional]
+/* Identificador do tipo de auditoria (0 - Criado, 1 - Alterado, 2 - Exclu\u00EDdo) [optional]
  */
 @property(nonatomic) NSNumber* revType;
 /* Identificador do arquivo auditado [optional]
@@ -42,16 +42,16 @@
 /* Uri de acesso [optional]
  */
 @property(nonatomic) NSString* uri;
-/* Data de inclus\u00C3\u00A3o do arquivo auditado [optional]
+/* Data de inclus\u00E3o do arquivo auditado [optional]
  */
 @property(nonatomic) NSString* dataHoraInclusao;
-/* Data de altera\u00C3\u00A7\u00C3\u00A3o do arquivo auditado [optional]
+/* Data de altera\u00E7\u00E3o do arquivo auditado [optional]
  */
 @property(nonatomic) NSString* dataHoraAlteracao;
-/* Extens\u00C3\u00A3o do arquivo auditado [optional]
+/* Extens\u00E3o do arquivo auditado [optional]
  */
 @property(nonatomic) NSString* extensao;
-/* Lista  de par\u00C3\u00A2metros do arquivo auditado [optional]
+/* Lista  de par\u00E2metros do arquivo auditado [optional]
  */
 @property(nonatomic) NSArray<PierArquivoParametroAUDResponse>* parametros;
 

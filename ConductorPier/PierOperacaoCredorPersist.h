@@ -14,19 +14,19 @@
 
 @interface PierOperacaoCredorPersist : PierObject
 
-/* Apresenta o id da Opera\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Apresenta o id da Opera\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
 /* Apresenta o id do Credor. [optional]
  */
 @property(nonatomic) NSNumber* idCredor;
-/* Apresenta a lista de ids produtos que v\u00C3\u00A3o ter regras cadastradas. [optional]
+/* Apresenta a lista de ids produtos que v\u00E3o ter regras cadastradas. [optional]
  */
 @property(nonatomic) NSArray* /* NSNumber */ idsProduto;
-/* Remunera\u00C3\u00A7\u00C3\u00A3o Percentual. [optional]
+/* Remunera\u00E7\u00E3o Percentual. [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoPercentual;
-/* Remunera\u00C3\u00A7\u00C3\u00A3o Fixa. [optional]
+/* Remunera\u00E7\u00E3o Fixa. [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoFixa;
 /* Periodicidade (DIARIO(1), SEMANAL(2), MENSAL(3), DECENDIAL(4), QUINZENAL(5)). [optional]
@@ -44,10 +44,10 @@
 /* Flag taxa fixada. [optional]
  */
 @property(nonatomic) NSNumber* flagTaxaFixada;
-/* Plano m\u00C3\u00ADnimo da regra. [optional]
+/* Plano m\u00EDnimo da regra. [optional]
  */
 @property(nonatomic) NSNumber* planoMinimo;
-/* Plano m\u00C3\u00A1ximo da regra. [optional]
+/* Plano m\u00E1ximo da regra. [optional]
  */
 @property(nonatomic) NSNumber* planoMaximo;
 

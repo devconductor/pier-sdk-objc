@@ -18,10 +18,10 @@
 /* ID para o Tipo de Template vinculado ao template. [optional]
  */
 @property(nonatomic) NSNumber* idTipoTemplate;
-/* Template para o conte\u00C3\u00BAdo do documento. [optional]
+/* Template para o conte\u00FAdo do documento. [optional]
  */
 @property(nonatomic) NSString* template;
-/* Lista de configura\u00C3\u00A7\u00C3\u00B5es de integra\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Lista de configura\u00E7\u00F5es de integra\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSArray<PierReferenciaIdPersist>* integracoes;
 

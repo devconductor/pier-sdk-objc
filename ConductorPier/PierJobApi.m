@@ -73,7 +73,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 /// Ativar Job
 /// Este recurso adiciona o job ao agendador de tarefas.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Job (id). 
 ///
 ///  @returns PierJobResponse*
 ///
@@ -156,7 +156,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 /// Atualizar Job
 /// Este recurso permite atualizar os dados de um job cadastrado.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Job (id). 
 ///
 ///  @param descricao descricao. 
 ///
@@ -271,7 +271,7 @@ static PierJobApi* singletonAPI = nil;
 ///
 /// Desativar Job
 /// Este recurso retira o job do agendador de tarefas.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Job (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Job (id). 
 ///
 ///  @returns PierJobResponse*
 ///
@@ -356,19 +356,19 @@ static PierJobApi* singletonAPI = nil;
 /// Este recurso permite que sejam listados os jobs existentes na base do PIER.
 ///  @param groovy Script Groovy do Job (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do Job (optional)
+///  @param descricao Descri\u00E7\u00E3o do Job (optional)
 ///
 ///  @param cron Cron do Job (optional)
 ///
 ///  @param status Status do Job (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageJobResponse*
 ///
--(NSNumber*) listarUsingGET24WithGroovy: (NSString*) groovy
+-(NSNumber*) listarUsingGET26WithGroovy: (NSString*) groovy
     descricao: (NSString*) descricao
     cron: (NSString*) cron
     status: (NSString*) status

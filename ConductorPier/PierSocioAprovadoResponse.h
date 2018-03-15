@@ -15,46 +15,46 @@
 
 @interface PierSocioAprovadoResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do S\u00C3\u00B3cio (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do S\u00F3cio (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Apresenta o Nome do Socio [optional]
  */
 @property(nonatomic) NSString* nome;
-/* N\u00C3\u00BAmero do CPF, quando PF. [optional]
+/* N\u00FAmero do CPF, quando PF. [optional]
  */
 @property(nonatomic) NSString* cpf;
 /* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00C3\u00BAmero da Identidade. [optional]
+/* N\u00FAmero da Identidade. [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Org\u00C3\u00A3o expedidor do RG. [optional]
+/* Org\u00E3o expedidor do RG. [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
 /* Sigla da Unidade Federativa de onde foi expedido a Identidade [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data emiss\u00C3\u00A3o da Identidade [optional]
+/* Data emiss\u00E3o da Identidade [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* Estado civil do s\u00C3\u00B3cio [optional]
+/* Estado civil do s\u00F3cio [optional]
  */
 @property(nonatomic) NSString* estadoCivil;
-/* Profiss\u00C3\u00A3o do s\u00C3\u00B3cio [optional]
+/* Profiss\u00E3o do s\u00F3cio [optional]
  */
 @property(nonatomic) NSString* profissao;
-/* Nacionalidade do s\u00C3\u00B3cio [optional]
+/* Nacionalidade do s\u00F3cio [optional]
  */
 @property(nonatomic) NSString* nacionalidade;
-/* Email do s\u00C3\u00B3cio [optional]
+/* Email do s\u00F3cio [optional]
  */
 @property(nonatomic) NSString* email;
-/* Informa os telefones do s\u00C3\u00B3cio [optional]
+/* Informa os telefones do s\u00F3cio [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaResponse>* telefones;
 

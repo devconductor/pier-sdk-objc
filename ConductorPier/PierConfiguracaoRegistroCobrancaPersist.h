@@ -14,7 +14,7 @@
 
 @interface PierConfiguracaoRegistroCobrancaPersist : PierObject
 
-/* C\u00C3\u00B3digo do Banco. 
+/* C\u00F3digo do Banco. 
  */
 @property(nonatomic) NSNumber* codigoBanco;
 /* URL de acesso ao banco. [optional]
@@ -50,7 +50,7 @@
 /* URL adicional de acesso ao banco. [optional]
  */
 @property(nonatomic) NSString* uriAdicional;
-/* Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da configura\u00C3\u00A7\u00C3\u00A3o. 
+/* Status descrevendo a situa\u00E7\u00E3o atual da configura\u00E7\u00E3o. 
  */
 @property(nonatomic) NSString* status;
 

@@ -14,28 +14,28 @@
 
 @interface PierOperacaoResponse : PierObject
 
-/* C\u00C3\u00B3digo que identifica a opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* C\u00F3digo que identifica a opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* C\u00C3\u00B3digo de processamento usado em transa\u00C3\u00A7\u00C3\u00B5es com o autorizador [optional]
+/* C\u00F3digo de processamento usado em transa\u00E7\u00F5es com o autorizador [optional]
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* C\u00C3\u00B3digo de processamento usado para cancelar transa\u00C3\u00A7\u00C3\u00B5es no autorizador [optional]
+/* C\u00F3digo de processamento usado para cancelar transa\u00E7\u00F5es no autorizador [optional]
  */
 @property(nonatomic) NSString* codigoProcessamentoCancelamento;
-/* Nome da opera\u00C3\u00A7\u00C3\u00A3o [optional]
+/* Nome da opera\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSString* nomeOperacao;
-/* Flag indicativa para crobran\u00C3\u00A7a de juros [optional]
+/* Flag indicativa para crobran\u00E7a de juros [optional]
  */
 @property(nonatomic) NSNumber* flagCobraJuros;
-/* Flag indicativa para crobran\u00C3\u00A7a de tarifas [optional]
+/* Flag indicativa para crobran\u00E7a de tarifas [optional]
  */
 @property(nonatomic) NSNumber* flagCobraTarifa;
-/* Quantidade de meses para car\u00C3\u00AAncia [optional]
+/* Quantidade de meses para car\u00EAncia [optional]
  */
 @property(nonatomic) NSNumber* carencia;
-/* Permitir transa\u00C3\u00A7\u00C3\u00B5es parceladas [optional]
+/* Permitir transa\u00E7\u00F5es parceladas [optional]
  */
 @property(nonatomic) NSNumber* flagPermitirParcelamento;
 

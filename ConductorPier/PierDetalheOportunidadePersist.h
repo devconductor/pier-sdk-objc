@@ -14,10 +14,10 @@
 
 @interface PierDetalheOportunidadePersist : PierObject
 
-/* Nome do conte\u00C3\u00BAdo 
+/* Nome do conte\u00FAdo 
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00C3\u00BAdo do detalhe 
+/* Conte\u00FAdo do detalhe 
  */
 @property(nonatomic) NSString* conteudo;
 

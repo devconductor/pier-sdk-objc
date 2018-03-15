@@ -82,7 +82,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Altera o tipo de template
 /// Esse recurso permite alterar os dados do tipo de template.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de template (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do tipo de template (id). 
 ///
 ///  @param persist persist 
 ///
@@ -173,7 +173,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Atualizar templates dos documentos
 /// Esse recurso permite atualizar templates dos documentos.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento template (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do documento template (id). 
 ///
 ///  @param persist persist 
 ///
@@ -263,18 +263,18 @@ static PierDocumentoApi* singletonAPI = nil;
 
 ///
 /// Consulta documentos
-/// Esse recurso permite consultar um documento espec\u00C3\u00ADfico a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento (id). 
+/// Esse recurso permite consultar um documento espec\u00EDfico a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do documento (id). 
 ///
 ///  @returns PierDocumentoDetalhadoResponse*
 ///
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
     }
     
 
@@ -347,17 +347,17 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Consultar templates dos documentos
 /// Esse recurso permite consultar templates dos documentos.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento template (id). 
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o do documento template (id). 
 ///
 ///  @returns PierDocumentoTemplateResponse*
 ///
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
     }
     
 
@@ -430,17 +430,17 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Consultar tipo de template
 /// Esse recurso permite consultar um determinado tipo de template a partir do id recebido e do id do emissor.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de template (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do tipo de template (id). 
 ///
 ///  @returns PierTipoTemplateResponse*
 ///
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET38`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET39`"];
     }
     
 
@@ -511,8 +511,8 @@ static PierDocumentoApi* singletonAPI = nil;
 }
 
 ///
-/// Integra um arquivo a reposit\u00C3\u00B3rios remotos.
-/// Este recurso permite integrar um documento ao reposit\u00C3\u00B3rio pre-configurado.
+/// Integra um arquivo a reposit\u00F3rios remotos.
+/// Este recurso permite integrar um documento ao reposit\u00F3rio pre-configurado.
 ///  @param integrarDocumentoRequest integrarDocumentoRequest 
 ///
 ///  @returns PierDocumentoIntegracaoResponse*
@@ -593,13 +593,13 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Lista documentos
 /// Esse recurso permite listar documentos.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idTemplateDocumento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do template do documento. (optional)
+///  @param idTemplateDocumento C\u00F3digo de identifica\u00E7\u00E3o do template do documento. (optional)
 ///
 ///  @param nome Nome do documento. (optional)
 ///
@@ -607,7 +607,7 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDocumentoResponse*
 ///
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -709,17 +709,17 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Lista os templates dos documentos
 /// Esse recurso permite listar os templates dos documentos.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idTipoTemplate C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do template. (optional)
+///  @param idTipoTemplate C\u00F3digo de identifica\u00E7\u00E3o do tipo do template. (optional)
 ///
 ///  @returns PierPageDocumentoTemplateResponse*
 ///
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -811,15 +811,15 @@ static PierDocumentoApi* singletonAPI = nil;
 ///
 /// Lista os tipos de templates
 /// Esse recurso permite listar os tipos de templates associados ao emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageTipoTemplateResponse*
 ///
--(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET47WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler {

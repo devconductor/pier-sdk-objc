@@ -89,10 +89,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Altera Adicional de uma Conta
-/// Este m\u00C3\u00A9todo permite que seja alterado um portador Adicional de uma determinada Conta.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Este m\u00E9todo permite que seja alterado um portador Adicional de uma determinada Conta.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da conta (id). 
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da pessoa (id). 
 ///
 ///  @param adicionalUpdate adicionalUpdate 
 ///
@@ -191,28 +191,28 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Atualiza os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor os detalhes de uma determinada Pessoa.
+/// Este m\u00E9todo permite que seja alterado na base do emissor os detalhes de uma determinada Pessoa.
 ///  @param _id ID da Pessoa 
 ///
-///  @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica (optional)
+///  @param nomeMae Apresenta o nome da m\u00E3e da pessoa fisica (optional)
 ///
 ///  @param idEstadoCivil Id Estado civil da pessoa fisica (optional)
 ///
-///  @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica (optional)
+///  @param idProfissao Profiss\u00E3o da pessoa fisica (optional)
 ///
-///  @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica (optional)
+///  @param idNaturezaOcupacao Id Natureza Ocupa\u00E7\u00E3o da pessoa fisica (optional)
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
-///  @param numeroBanco N\u00C3\u00BAmero do banco. (optional)
+///  @param numeroBanco N\u00FAmero do banco. (optional)
 ///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
+///  @param numeroAgencia N\u00FAmero da ag\u00EAncia. (optional)
 ///
-///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
+///  @param numeroContaCorrente N\u00FAmero da conta corrente. (optional)
 ///
 ///  @param email Email da pessoa fisica (optional)
 ///
-///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
+///  @param nomeEmpresa Nome que deve ser impresso no cart\u00E3o (optional)
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
@@ -344,28 +344,28 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Atualiza os dados de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
+/// Este m\u00E9todo permite que seja alterado na base do emissor um registro de determinada Pessoa.
 ///  @param _id ID da Pessoa 
 ///
-///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. 
 ///
-///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
+///  @param tipo C\u00F3digo de identifica\u00E7\u00E3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00EDsica), (\"PJ\": Pessoa Jur\u00EDdica). 
 ///
 ///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. 
 ///
-///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
+///  @param cpf N\u00FAmero do CPF, quando PF. (optional)
 ///
-///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
+///  @param cnpj N\u00FAmero do CNPJ, quando PJ. (optional)
 ///
-///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
+///  @param sexo C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). (optional)
 ///
-///  @param numeroIdentidade N\u00C3\u00BAmero da Identidade. (optional)
+///  @param numeroIdentidade N\u00FAmero da Identidade. (optional)
 ///
-///  @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade. (optional)
+///  @param orgaoExpedidorIdentidade Org\u00E3o expedidor do Identidade. (optional)
 ///
 ///  @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade (optional)
 ///
-///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade. (optional)
+///  @param dataEmissaoIdentidade Data emiss\u00E3o da Identidade. (optional)
 ///
 ///  @returns PierPessoaResponse*
 ///
@@ -511,17 +511,17 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza a altera\u00C3\u00A7\u00C3\u00A3o de um determinado Telefone
-/// Este m\u00C3\u00A9todo permite que seja alterado um determinado Telefone na base de dados do Emissor.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
+/// Realiza a altera\u00E7\u00E3o de um determinado Telefone
+/// Este m\u00E9todo permite que seja alterado um determinado Telefone na base de dados do Emissor.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Telefone (id). 
 ///
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
+///  @param idTipoTelefone C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id). (optional)
 ///
-///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
+///  @param ddd C\u00F3digo DDD do telefone (id). (optional)
 ///
-///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
+///  @param telefone N\u00FAmero do telefone. (optional)
 ///
-///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
+///  @param ramal N\u00FAmero do ramal. (optional)
 ///
 ///  @returns PierTelefoneResponse*
 ///
@@ -623,23 +623,23 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Atualiza os dados de um determinado Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite que seja alterado na base do emissor um ou mais registros ligados a um determinado Endere\u00C3\u00A7o.
+/// Atualiza os dados de um determinado Endere\u00E7o
+/// Este m\u00E9todo permite que seja alterado na base do emissor um ou mais registros ligados a um determinado Endere\u00E7o.
 ///  @param _id id 
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o endere\u00E7o pertence (id) (optional)
 ///
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
+///  @param idTipoEndereco C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) (optional)
 ///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' (optional)
+///  @param cep Apresenta o C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' (optional)
 ///
 ///  @param logradouro Apresenta o nome do Logradouro (optional)
 ///
-///  @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o (optional)
+///  @param numero Apresenta o n\u00FAmero do endere\u00E7o (optional)
 ///
-///  @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o (optional)
+///  @param complemento Apresenta descri\u00E7oes complementares referente ao endere\u00E7o (optional)
 ///
-///  @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o (optional)
+///  @param pontoReferencia Apresenta a descri\u00E7\u00E3o de ponto de refer\u00EAncia do endere\u00E7o (optional)
 ///
 ///  @param bairro Apresenta nome do bairro (optional)
 ///
@@ -785,10 +785,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Permite atribuir um documento para uma Conta
-/// Este m\u00C3\u00A9todo permite que seja atribu\u00C3\u00ADdo a uma determinada Conta um documento que esteja armazenado no PIER Cloud, informando qual o tipo do documento e o seu respectivo id.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Conta 
+/// Este m\u00E9todo permite que seja atribu\u00EDdo a uma determinada Conta um documento que esteja armazenado no PIER Cloud, informando qual o tipo do documento e o seu respectivo id.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da Conta 
 ///
-///  @param body C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Arquivo 
+///  @param body C\u00F3digo de Identifica\u00E7\u00E3o do Arquivo 
 ///
 ///  @returns NSObject*
 ///
@@ -876,10 +876,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Atualiza conta integrada com o emissor
-/// Este recurso permite a atualiza\u00C3\u00A7\u00C3\u00A3o de uma conta integrada com o emissor.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Este recurso permite a atualiza\u00E7\u00E3o de uma conta integrada com o emissor.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id). 
 ///
-///  @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada (optional)
+///  @param body Descri\u00E7\u00E3o do canal de entrada (optional)
 ///
 ///  @returns PierIntegracaoEmissorResponse*
 ///
@@ -962,8 +962,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Realiza o cadastro de Adicionais para uma Conta
-/// Este m\u00C3\u00A9todo permite que sejam cadastrados um portador Adicional para uma determinada Conta.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Este m\u00E9todo permite que sejam cadastrados um portador Adicional para uma determinada Conta.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da conta (id). 
 ///
 ///  @param persist persist 
 ///
@@ -1053,26 +1053,26 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Consulta Adicional de uma Conta
-/// Este m\u00C3\u00A9todo permite que seja consultado um portador Adicional de uma determinada Conta.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Este m\u00E9todo permite que seja consultado um portador Adicional de uma determinada Conta.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da conta (id). 
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da pessoa (id). 
 ///
 ///  @returns PierAdicionalDetalheResponse*
 ///
--(NSNumber*) consultarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierAdicionalDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
     }
     
     // verify the required parameter 'idPessoa' is set
     if (idPessoa == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `consultarUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `consultarUsingGET1`"];
     }
     
 
@@ -1146,19 +1146,19 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Apresenta os dados de um determinado Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite consultar um determinado Endere\u00C3\u00A7o a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). 
+/// Apresenta os dados de um determinado Endere\u00E7o
+/// Este m\u00E9todo permite consultar um determinado Endere\u00E7o a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Endere\u00E7o (id). 
 ///
 ///  @returns PierEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
     }
     
 
@@ -1230,18 +1230,18 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Apresenta os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite a consulta dos detalhes de uma Pessoa existentes na base de dados do Emissor.
+/// Este m\u00E9todo permite a consulta dos detalhes de uma Pessoa existentes na base de dados do Emissor.
 ///  @param _id ID da Pessoa 
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET24`"];
     }
     
 
@@ -1313,18 +1313,18 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Apresenta os dados de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
+/// Este m\u00E9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
 ///  @param _id ID da Pessoa 
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET25`"];
     }
     
 
@@ -1396,18 +1396,18 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Apresenta os dados de um determinado Telefone
-/// Este m\u00C3\u00A9todo permite consultar um determinado Telefone a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). 
+/// Este m\u00E9todo permite consultar um determinado Telefone a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Telefone (id). 
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET30`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
     }
     
 
@@ -1479,10 +1479,10 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Inativa Adicional de uma Conta
-/// Este m\u00C3\u00A9todo permite que seja inativado um portador Adicional de uma determinada Conta.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Este m\u00E9todo permite que seja inativado um portador Adicional de uma determinada Conta.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da conta (id). 
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da pessoa (id). 
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da pessoa (id). 
 ///
 ///  @returns NSString*
 ///
@@ -1572,15 +1572,15 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Listar s\u00C3\u00B3cios de uma pessoa jur\u00C3\u00ADdica
-/// Lista os s\u00C3\u00B3cios vinculados \u00C3\u00A0 uma Pessoa Jur\u00C3\u00ADdica cadastrada.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Jur\u00C3\u00ADdica 
+/// Listar s\u00F3cios de uma pessoa jur\u00EDdica
+/// Lista os s\u00F3cios vinculados \u00E0 uma Pessoa Jur\u00EDdica cadastrada.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa Jur\u00EDdica 
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPagePessoaResponse*
 ///
@@ -1679,18 +1679,18 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Lista os Adicionais de uma Conta
-/// Este m\u00C3\u00A9todo permite que sejam listados portadores Adicionais de uma determinada Conta.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Este m\u00E9todo permite que sejam listados portadores Adicionais de uma determinada Conta.
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da conta (id). 
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierAdicionalResponse*
 ///
--(NSNumber*) listarUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET1WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -1699,7 +1699,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET1`"];
     }
     
 
@@ -1784,29 +1784,29 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Lista os Endere\u00C3\u00A7os cadastrados para o Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Endere\u00C3\u00A7os existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista os Endere\u00E7os cadastrados para o Emissor
+/// Este m\u00E9todo permite que sejam listados os Endere\u00E7os existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id). (optional)
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Endere\u00E7o (id). (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o endere\u00E7o pertence (id) (optional)
 ///
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
+///  @param idTipoEndereco C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) (optional)
 ///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) (optional)
+///  @param cep Apresenta o C\u00F3digo de Endere\u00E7amento Postal (CEP) (optional)
 ///
 ///  @param logradouro Apresenta o nome do Logradouro (optional)
 ///
-///  @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o (optional)
+///  @param numero Apresenta o n\u00FAmero do endere\u00E7o (optional)
 ///
-///  @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o (optional)
+///  @param complemento Apresenta descri\u00E7oes complementares referente ao endere\u00E7o (optional)
 ///
-///  @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o (optional)
+///  @param pontoReferencia Apresenta a descri\u00E7\u00E3o de ponto de refer\u00EAncia do endere\u00E7o (optional)
 ///
 ///  @param bairro Apresenta nome do bairro (optional)
 ///
@@ -1816,13 +1816,13 @@ static PierCadastroClienteApi* singletonAPI = nil;
 ///
 ///  @param pais Apresenta nome do Pais (optional)
 ///
-///  @param dataInclusao Apresenta a data em que fora cadastrado o Endere\u00C3\u00A7o (optional)
+///  @param dataInclusao Apresenta a data em que fora cadastrado o Endere\u00E7o (optional)
 ///
-///  @param dataUltimaAtualizacao Data em que fora realizada a \u00C3\u00BAltima mudan\u00C3\u00A7a neste registro de endere\u00C3\u00A7o. Quando n\u00C3\u00A3o tiver ocorrido mudan\u00C3\u00A7a, conter\u00C3\u00A1 a mesma informa\u00C3\u00A7\u00C3\u00A3o que o campo dataInclusao (optional)
+///  @param dataUltimaAtualizacao Data em que fora realizada a \u00FAltima mudan\u00E7a neste registro de endere\u00E7o. Quando n\u00E3o tiver ocorrido mudan\u00E7a, conter\u00E1 a mesma informa\u00E7\u00E3o que o campo dataInclusao (optional)
 ///
 ///  @returns PierPageEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -1978,38 +1978,38 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Lista os Detalhes das Pessoas cadastradas no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listadas od detalhes das Pessoas existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listadas od detalhes das Pessoas existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo identificador da pessoa (optional)
+///  @param idPessoa C\u00F3digo identificador da pessoa (optional)
 ///
-///  @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica (optional)
+///  @param nomeMae Apresenta o nome da m\u00E3e da pessoa fisica (optional)
 ///
 ///  @param idEstadoCivil Id Estado civil da pessoa fisica (optional)
 ///
-///  @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica (optional)
+///  @param idProfissao Profiss\u00E3o da pessoa fisica (optional)
 ///
-///  @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica (optional)
+///  @param idNaturezaOcupacao Id Natureza Ocupa\u00E7\u00E3o da pessoa fisica (optional)
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
-///  @param numeroBanco N\u00C3\u00BAmero do Banco. (optional)
+///  @param numeroBanco N\u00FAmero do Banco. (optional)
 ///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
+///  @param numeroAgencia N\u00FAmero da ag\u00EAncia. (optional)
 ///
-///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
+///  @param numeroContaCorrente N\u00FAmero da conta corrente. (optional)
 ///
 ///  @param email Email da pessoa fisica (optional)
 ///
-///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
+///  @param nomeEmpresa Nome que deve ser impresso no cart\u00E3o (optional)
 ///
 ///  @returns PierPagePessoaDetalheResponse*
 ///
--(NSNumber*) listarUsingGET29WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -2150,38 +2150,38 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Lista as Pessoas cadastradas no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listadas as Pessoas existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id). (optional)
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id). (optional)
 ///
-///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. (optional)
+///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. (optional)
 ///
-///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). (optional)
+///  @param tipo C\u00F3digo de identifica\u00E7\u00E3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00EDsica), (\"PJ\": Pessoa Jur\u00EDdica). (optional)
 ///
-///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
+///  @param cpf N\u00FAmero do CPF, quando PF. (optional)
 ///
-///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
+///  @param cnpj N\u00FAmero do CNPJ, quando PJ. (optional)
 ///
 ///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. (optional)
 ///
-///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
+///  @param sexo C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). (optional)
 ///
-///  @param numeroIdentidade N\u00C3\u00BAmero da Identidade (optional)
+///  @param numeroIdentidade N\u00FAmero da Identidade (optional)
 ///
-///  @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do RG. (optional)
+///  @param orgaoExpedidorIdentidade Org\u00E3o expedidor do RG. (optional)
 ///
 ///  @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade (optional)
 ///
-///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da identidade no formato aaaa-MM-dd (optional)
+///  @param dataEmissaoIdentidade Data emiss\u00E3o da identidade no formato aaaa-MM-dd (optional)
 ///
 ///  @returns PierPagePessoaResponse*
 ///
--(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET32WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2322,30 +2322,30 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Lista os Telefones cadastrados no Emissor
-/// Este m\u00C3\u00A9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os Telefones existentes na base de dados do Emissor.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone (id). (optional)
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Telefone (id). (optional)
 ///
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
+///  @param idTipoTelefone C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id). (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence. (optional)
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) a qual o telefone pertence. (optional)
 ///
-///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
+///  @param ddd C\u00F3digo DDD do telefone (id). (optional)
 ///
-///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
+///  @param telefone N\u00FAmero do telefone. (optional)
 ///
-///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
+///  @param ramal N\u00FAmero do ramal. (optional)
 ///
 ///  @param status Apresenta o Status do Telefone, onde: '0': Inativo e '1': Ativo (optional)
 ///
 ///  @returns PierPageTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET39WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET41WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2466,7 +2466,7 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Cadastro de Conta e Pessoa Fisica
-/// Permite realizar o cadastro de uma Conta para um cliente do tipo Pessoa F\u00C3\u00ADsica, recebendo nesta opera\u00C3\u00A7\u00C3\u00A3o todos os dados cadastrais que se fazem necess\u00C3\u00A1rios para isso. Uma vez criado, poder\u00C3\u00A1 ser acionado o m\u00C3\u00A9todo de 'Gera\u00C3\u00A7\u00C3\u00A3o de Cart\u00C3\u00A3o' para o cliente e seus adicionais.
+/// Permite realizar o cadastro de uma Conta para um cliente do tipo Pessoa F\u00EDsica, recebendo nesta opera\u00E7\u00E3o todos os dados cadastrais que se fazem necess\u00E1rios para isso. Uma vez criado, poder\u00E1 ser acionado o m\u00E9todo de 'Gera\u00E7\u00E3o de Cart\u00E3o' para o cliente e seus adicionais.
 ///  @param pessoaPersist pessoaPersist 
 ///
 ///  @returns PierPessoaFisicaAprovadaResponse*
@@ -2545,8 +2545,8 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Cadastro de Conta e Pessoa Jur\u00C3\u00ADdica
-/// Cadastro de Conta e Pessoa Jur\u00C3\u00ADdica Permite realizar o cadastro de uma Conta para um cliente do tipo Pessoa Jur\u00C3\u00ADdica, recebendo nesta opera\u00C3\u00A7\u00C3\u00A3o todos os dados cadastrais que se fazem necess\u00C3\u00A1rios para isso, inclu\u00C3\u00ADndo o registro de cada um dos s\u00C3\u00B3cios. Uma vez criado, poder\u00C3\u00A1 ser acionado o m\u00C3\u00A9todo de 'Gera\u00C3\u00A7\u00C3\u00A3o de Cart\u00C3\u00A3o' para o cliente e cada um dos s\u00C3\u00B3cios vinculados.
+/// Cadastro de Conta e Pessoa Jur\u00EDdica
+/// Cadastro de Conta e Pessoa Jur\u00EDdica Permite realizar o cadastro de uma Conta para um cliente do tipo Pessoa Jur\u00EDdica, recebendo nesta opera\u00E7\u00E3o todos os dados cadastrais que se fazem necess\u00E1rios para isso, inclu\u00EDndo o registro de cada um dos s\u00F3cios. Uma vez criado, poder\u00E1 ser acionado o m\u00E9todo de 'Gera\u00E7\u00E3o de Cart\u00E3o' para o cliente e cada um dos s\u00F3cios vinculados.
 ///  @param pessoaPersist pessoaPersist 
 ///
 ///  @returns PierPessoaJuridicaAprovadaResponse*
@@ -2625,21 +2625,21 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Realiza o cadastro de um novo Endere\u00C3\u00A7o
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Endere\u00C3\u00A7o na base de dados do Emissor.
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o endere\u00C3\u00A7o pertence (id) (optional)
+/// Realiza o cadastro de um novo Endere\u00E7o
+/// Este m\u00E9todo permite que seja cadastrado um novo Endere\u00E7o na base de dados do Emissor.
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o endere\u00E7o pertence (id) (optional)
 ///
-///  @param idTipoEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Tipo Endere\u00C3\u00A7o (id) (optional)
+///  @param idTipoEndereco C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) (optional)
 ///
-///  @param cep Apresenta o C\u00C3\u00B3digo de Endere\u00C3\u00A7amento Postal (CEP) no formaro '58800000' (optional)
+///  @param cep Apresenta o C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' (optional)
 ///
 ///  @param logradouro Apresenta o nome do Logradouro (optional)
 ///
-///  @param numero Apresenta o n\u00C3\u00BAmero do endere\u00C3\u00A7o (optional)
+///  @param numero Apresenta o n\u00FAmero do endere\u00E7o (optional)
 ///
-///  @param complemento Apresenta descri\u00C3\u00A7oes complementares referente ao endere\u00C3\u00A7o (optional)
+///  @param complemento Apresenta descri\u00E7oes complementares referente ao endere\u00E7o (optional)
 ///
-///  @param pontoReferencia Apresenta a descri\u00C3\u00A7\u00C3\u00A3o de ponto de refer\u00C3\u00AAncia do endere\u00C3\u00A7o (optional)
+///  @param pontoReferencia Apresenta a descri\u00E7\u00E3o de ponto de refer\u00EAncia do endere\u00E7o (optional)
 ///
 ///  @param bairro Apresenta nome do bairro (optional)
 ///
@@ -2774,11 +2774,11 @@ static PierCadastroClienteApi* singletonAPI = nil;
 }
 
 ///
-/// Inclui a conta como registro para integra\u00C3\u00A7\u00C3\u00A3o
-/// Este recurso permite incluir uma conta como registro para integra\u00C3\u00A7\u00C3\u00A3o.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Inclui a conta como registro para integra\u00E7\u00E3o
+/// Este recurso permite incluir uma conta como registro para integra\u00E7\u00E3o.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id). 
 ///
-///  @param body Descri\u00C3\u00A7\u00C3\u00A3o do canal de entrada (optional)
+///  @param body Descri\u00E7\u00E3o do canal de entrada (optional)
 ///
 ///  @returns PierIntegracaoEmissorResponse*
 ///
@@ -2861,28 +2861,28 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Salvar os detalhes de uma determinada Pessoa
-/// Este m\u00C3\u00A9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
-///  @param idPessoa Apresenta o c\u00C3\u00B3digo identificador da pessoa 
+/// Este m\u00E9todo permite que seja incluido na base do emissor os detalhes de uma determinada Pessoa.
+///  @param idPessoa Apresenta o c\u00F3digo identificador da pessoa 
 ///
-///  @param nomeMae Apresenta o nome da m\u00C3\u00A3e da pessoa fisica (optional)
+///  @param nomeMae Apresenta o nome da m\u00E3e da pessoa fisica (optional)
 ///
 ///  @param idEstadoCivil Id Estado civil da pessoa fisica (optional)
 ///
-///  @param idProfissao Profiss\u00C3\u00A3o da pessoa fisica (optional)
+///  @param idProfissao Profiss\u00E3o da pessoa fisica (optional)
 ///
-///  @param idNaturezaOcupacao Id Natureza Ocupa\u00C3\u00A7\u00C3\u00A3o da pessoa fisica (optional)
+///  @param idNaturezaOcupacao Id Natureza Ocupa\u00E7\u00E3o da pessoa fisica (optional)
 ///
 ///  @param idNacionalidade Id Nacionalidade da pessoa fisica (optional)
 ///
-///  @param numeroBanco N\u00C3\u00BAmero do banco. (optional)
+///  @param numeroBanco N\u00FAmero do banco. (optional)
 ///
-///  @param numeroAgencia N\u00C3\u00BAmero da ag\u00C3\u00AAncia. (optional)
+///  @param numeroAgencia N\u00FAmero da ag\u00EAncia. (optional)
 ///
-///  @param numeroContaCorrente N\u00C3\u00BAmero da conta corrente. (optional)
+///  @param numeroContaCorrente N\u00FAmero da conta corrente. (optional)
 ///
 ///  @param email Email da pessoa fisica (optional)
 ///
-///  @param nomeEmpresa Nome que deve ser impresso no cart\u00C3\u00A3o (optional)
+///  @param nomeEmpresa Nome que deve ser impresso no cart\u00E3o (optional)
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
@@ -3015,26 +3015,26 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Realiza o cadastro de um nova Pessoa
-/// Este m\u00C3\u00A9todo permite que seja cadastrado uma nova Pessoa na base de dados do Emissor.
-///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00C3\u00A3o Social (Nome Empresarial)'. 
+/// Este m\u00E9todo permite que seja cadastrado uma nova Pessoa na base de dados do Emissor.
+///  @param nome Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. 
 ///
-///  @param tipo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00C3\u00ADsica), (\"PJ\": Pessoa Jur\u00C3\u00ADdica). 
+///  @param tipo C\u00F3digo de identifica\u00E7\u00E3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00EDsica), (\"PJ\": Pessoa Jur\u00EDdica). 
 ///
 ///  @param dataNascimento Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. 
 ///
-///  @param cpf N\u00C3\u00BAmero do CPF, quando PF. (optional)
+///  @param cpf N\u00FAmero do CPF, quando PF. (optional)
 ///
-///  @param cnpj N\u00C3\u00BAmero do CNPJ, quando PJ. (optional)
+///  @param cnpj N\u00FAmero do CNPJ, quando PJ. (optional)
 ///
-///  @param sexo C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00C3\u00A3o Especificado). (optional)
+///  @param sexo C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). (optional)
 ///
-///  @param numeroIdentidade N\u00C3\u00BAmero da Identidade. (optional)
+///  @param numeroIdentidade N\u00FAmero da Identidade. (optional)
 ///
-///  @param orgaoExpedidorIdentidade Org\u00C3\u00A3o expedidor do Identidade. (optional)
+///  @param orgaoExpedidorIdentidade Org\u00E3o expedidor do Identidade. (optional)
 ///
 ///  @param unidadeFederativaIdentidade Sigla da Unidade Federativa de onde foi expedido a Identidade (optional)
 ///
-///  @param dataEmissaoIdentidade Data emiss\u00C3\u00A3o da Identidade. (optional)
+///  @param dataEmissaoIdentidade Data emiss\u00E3o da Identidade. (optional)
 ///
 ///  @returns PierPessoaResponse*
 ///
@@ -3172,16 +3172,16 @@ static PierCadastroClienteApi* singletonAPI = nil;
 
 ///
 /// Realiza o cadastro de um novo Telefone
-/// Este m\u00C3\u00A9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
-///  @param idTipoTelefone C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone (id). (optional)
+/// Este m\u00E9todo permite que seja cadastrado um novo Telefone na base de dados do Emissor.
+///  @param idTipoTelefone C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone (id). (optional)
 ///
-///  @param idPessoa C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa (id) a qual o telefone pertence. (optional)
+///  @param idPessoa C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) a qual o telefone pertence. (optional)
 ///
-///  @param ddd C\u00C3\u00B3digo DDD do telefone (id). (optional)
+///  @param ddd C\u00F3digo DDD do telefone (id). (optional)
 ///
-///  @param telefone N\u00C3\u00BAmero do telefone. (optional)
+///  @param telefone N\u00FAmero do telefone. (optional)
 ///
-///  @param ramal N\u00C3\u00BAmero do ramal. (optional)
+///  @param ramal N\u00FAmero do ramal. (optional)
 ///
 ///  @returns PierTelefoneResponse*
 ///

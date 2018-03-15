@@ -14,19 +14,19 @@
 
 @interface PierPromotorResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do promotor (id) [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do promotor (id) [optional]
  */
 @property(nonatomic) NSNumber* _id;
 /* Nome do Promotor [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Data da Inclus\u00C3\u00A3o [optional]
+/* Data da Inclus\u00E3o [optional]
  */
 @property(nonatomic) NSString* dataCadastro;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Estabelecimento [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do usu\u00C3\u00A1rio [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do usu\u00E1rio [optional]
  */
 @property(nonatomic) NSNumber* idUsuario;
 

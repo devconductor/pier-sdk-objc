@@ -74,7 +74,7 @@ static PierDispositivoApi* singletonAPI = nil;
 ///
 /// Ativa Dispositivo
 /// Esse recurso permite ativar dispositivo.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da Plataforma (id). 
 ///
 ///  @returns PierDispositivoResponse*
 ///
@@ -157,7 +157,7 @@ static PierDispositivoApi* singletonAPI = nil;
 ///
 /// Desativa Dispositivo
 /// Esse recurso permite desativar dispositivo.
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Plataforma (id). 
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o da Plataforma (id). 
 ///
 ///  @returns PierDispositivoResponse*
 ///
@@ -239,18 +239,18 @@ static PierDispositivoApi* singletonAPI = nil;
 
 ///
 /// Lista os dispositivos cadastrados
-/// Este m\u00C3\u00A9todo permite que sejam listados os dispositivos existentes na base do PIER.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os dispositivos existentes na base do PIER.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param token Token do Dispositivo (optional)
 ///
-///  @param idUsuario Identificador do Usu\u00C3\u00A1rio (optional)
+///  @param idUsuario Identificador do Usu\u00E1rio (optional)
 ///
-///  @param idAplicacaoMobile Identificador da aplica\u00C3\u00A7\u00C3\u00A3o (optional)
+///  @param idAplicacaoMobile Identificador da aplica\u00E7\u00E3o (optional)
 ///
 ///  @param dataCriacao Apresenta a data e em que o registro foi criado. (optional)
 ///
@@ -258,7 +258,7 @@ static PierDispositivoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageDispositivoResponse*
 ///
--(NSNumber*) listarUsingGET17WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token

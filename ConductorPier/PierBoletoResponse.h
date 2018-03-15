@@ -14,13 +14,13 @@
 
 @interface PierBoletoResponse : PierObject
 
-/* N\u00C3\u00BAmero do documento \u00C3\u00A9 o c\u00C3\u00B3digo informado pelo banco para identifica\u00C3\u00A7\u00C3\u00A3o do cliente [optional]
+/* N\u00FAmero do documento \u00E9 o c\u00F3digo informado pelo banco para identifica\u00E7\u00E3o do cliente [optional]
  */
 @property(nonatomic) NSString* numeroDoDocumento;
-/* Data do processamento (emiss\u00C3\u00A3o ou faturamento) do boleto [optional]
+/* Data do processamento (emiss\u00E3o ou faturamento) do boleto [optional]
  */
 @property(nonatomic) NSString* dataProcessamento;
-/* Data do documento (impress\u00C3\u00A3o) [optional]
+/* Data do documento (impress\u00E3o) [optional]
  */
 @property(nonatomic) NSString* dataDocumento;
 /* Data do vencimento [optional]
@@ -32,52 +32,52 @@
 /* Valor do Boleto. [optional]
  */
 @property(nonatomic) NSNumber* valorBoleto;
-/* Benefici\u00C3\u00A1rio \u00C3\u00A9 a pessoa/empresa que gera o boleto [optional]
+/* Benefici\u00E1rio \u00E9 a pessoa/empresa que gera o boleto [optional]
  */
 @property(nonatomic) NSString* nomeBeneficiario;
 /* Documento do Beneficiario. [optional]
  */
 @property(nonatomic) NSString* documentoBeneficiario;
-/* Ag\u00C3\u00AAncia. [optional]
+/* Ag\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* agencia;
-/* C\u00C3\u00B3digo do benefici\u00C3\u00A1rio [optional]
+/* C\u00F3digo do benefici\u00E1rio [optional]
  */
 @property(nonatomic) NSString* codigoBeneficiario;
-/* N\u00C3\u00BAmero do conv\u00C3\u00AAnio fornecido pelo banco \u00C3\u00A9 o c\u00C3\u00B3digo que identifica um emissor junto ao seu banco para associar seus boletos. [optional]
+/* N\u00FAmero do conv\u00EAnio fornecido pelo banco \u00E9 o c\u00F3digo que identifica um emissor junto ao seu banco para associar seus boletos. [optional]
  */
 @property(nonatomic) NSString* numeroConvenio;
-/* D\u00C3\u00ADgito do c\u00C3\u00B3digo do benefici\u00C3\u00A1rio [optional]
+/* D\u00EDgito do c\u00F3digo do benefici\u00E1rio [optional]
  */
 @property(nonatomic) NSString* digitoCodigoBeneficiario;
-/* Carteira \u00C3\u00A9 o c\u00C3\u00B3digo informado pelo banco pra identifica\u00C3\u00A7\u00C3\u00A3o do tipo do boleto [optional]
+/* Carteira \u00E9 o c\u00F3digo informado pelo banco pra identifica\u00E7\u00E3o do tipo do boleto [optional]
  */
 @property(nonatomic) NSString* carteira;
-/* Nosso n\u00C3\u00BAmero \u00C3\u00A9 o c\u00C3\u00B3digo que o benefici\u00C3\u00A1rio escolhe para manter controle sobre seus boletos. Esse valor serve para o cedente identificar quais boletos foram pagos ou n\u00C3\u00A3o. Recomenda-se o uso de n\u00C3\u00BAmeros sequ\u00C3\u00AAnciais, na gera\u00C3\u00A7\u00C3\u00A3o de diversos boletos, para facilitar a identifica\u00C3\u00A7\u00C3\u00A3o dos boletos pagos [optional]
+/* Nosso n\u00FAmero \u00E9 o c\u00F3digo que o benefici\u00E1rio escolhe para manter controle sobre seus boletos. Esse valor serve para o cedente identificar quais boletos foram pagos ou n\u00E3o. Recomenda-se o uso de n\u00FAmeros sequ\u00EAnciais, na gera\u00E7\u00E3o de diversos boletos, para facilitar a identifica\u00E7\u00E3o dos boletos pagos [optional]
  */
 @property(nonatomic) NSString* nossoNumero;
-/* D\u00C3\u00ADgito do nosso n\u00C3\u00BAmero [optional]
+/* D\u00EDgito do nosso n\u00FAmero [optional]
  */
 @property(nonatomic) NSString* digitoNossoNumero;
 /* Banco [optional]
  */
 @property(nonatomic) NSString* banco;
-/* Aceite informa ao banco se deve aceitar o boleto ap\u00C3\u00B3s a data de vencimento (padr\u00C3\u00A3o: \"N\") [optional]
+/* Aceite informa ao banco se deve aceitar o boleto ap\u00F3s a data de vencimento (padr\u00E3o: \"N\") [optional]
  */
 @property(nonatomic) NSNumber* aceite;
-/* Esp\u00C3\u00A9cie do documento \u00C3\u00A9 o identificador do tipo de boleto (padr\u00C3\u00A3o: \"DV\") [optional]
+/* Esp\u00E9cie do documento \u00E9 o identificador do tipo de boleto (padr\u00E3o: \"DV\") [optional]
  */
 @property(nonatomic) NSString* especieDoDocumento;
-/* Esp\u00C3\u00A9cie \u00C3\u00A9 o identificador da moeda do boleto (padr\u00C3\u00A3o: \"R$\") [optional]
+/* Esp\u00E9cie \u00E9 o identificador da moeda do boleto (padr\u00E3o: \"R$\") [optional]
  */
 @property(nonatomic) NSString* especie;
-/* Instru\u00C3\u00A7\u00C3\u00B5es para o benefici\u00C3\u00A1rio [optional]
+/* Instru\u00E7\u00F5es para o benefici\u00E1rio [optional]
  */
 @property(nonatomic) NSArray* /* NSString */ instrucoes;
 /* Locais de pagamento [optional]
  */
 @property(nonatomic) NSArray* /* NSString */ locaisDePagamento;
-/* Pagador \u00C3\u00A9 a pessoa/empresa que deve pagar o boleto [optional]
+/* Pagador \u00E9 a pessoa/empresa que deve pagar o boleto [optional]
  */
 @property(nonatomic) NSString* nomePagador;
 /* Documento do pagador (CPF ou CNPJ) [optional]
@@ -98,10 +98,10 @@
 /* Unidade federativa do pagador [optional]
  */
 @property(nonatomic) NSString* ufPagador;
-/* Valor num\u00C3\u00A9rico do c\u00C3\u00B3digo de barras [optional]
+/* Valor num\u00E9rico do c\u00F3digo de barras [optional]
  */
 @property(nonatomic) NSString* codigoDeBarras;
-/* Linha digit\u00C3\u00A1vel formatada [optional]
+/* Linha digit\u00E1vel formatada [optional]
  */
 @property(nonatomic) NSString* linhaDigitavel;
 

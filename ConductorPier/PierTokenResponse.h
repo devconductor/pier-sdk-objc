@@ -14,13 +14,10 @@
 
 @interface PierTokenResponse : PierObject
 
-/* C\u00C3\u00B3digo identificador do token [optional]
+/* C\u00F3digo identificador do token [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Token [optional]
- */
-@property(nonatomic) NSString* token;
-/* C\u00C3\u00B3digo identificador da base [optional]
+/* C\u00F3digo identificador da base [optional]
  */
 @property(nonatomic) NSNumber* base;
 /* Owner do token [optional]
@@ -29,16 +26,16 @@
 /* Status do token [optional]
  */
 @property(nonatomic) NSString* status;
-/* Descri\u00C3\u00A7\u00C3\u00A3o de quem criou o token [optional]
+/* Descri\u00E7\u00E3o de quem criou o token [optional]
  */
 @property(nonatomic) NSString* criadoPor;
-/* Data de cria\u00C3\u00A7\u00C3\u00A3o do token [optional]
+/* Data de cria\u00E7\u00E3o do token [optional]
  */
 @property(nonatomic) NSDate* dataCriacao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o de quem alterou o token [optional]
+/* Descri\u00E7\u00E3o de quem alterou o token [optional]
  */
 @property(nonatomic) NSString* alteradoPor;
-/* Data de modifica\u00C3\u00A7\u00C3\u00A3o do token [optional]
+/* Data de modifica\u00E7\u00E3o do token [optional]
  */
 @property(nonatomic) NSDate* dataModificacao;
 

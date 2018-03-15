@@ -23,7 +23,7 @@
 /* Tipo da propriedade do Documento. [optional]
  */
 @property(nonatomic) NSString* detalhesTipo;
-/* Atributo que indica se o par\u00C3\u00A2metro \u00C3\u00A9 um \u00C3\u00ADndice (default = false) [optional]
+/* Atributo que indica se o par\u00E2metro \u00E9 um \u00EDndice (default = false) [optional]
  */
 @property(nonatomic) NSNumber* flagIndice;
 

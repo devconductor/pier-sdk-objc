@@ -14,16 +14,16 @@
 
 @interface PierFaqResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da FAQ (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da FAQ (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Conte\u00C3\u00BAdo da pergunta. [optional]
+/* Conte\u00FAdo da pergunta. [optional]
  */
 @property(nonatomic) NSString* pergunta;
-/* Conte\u00C3\u00BAdo da resposta. [optional]
+/* Conte\u00FAdo da resposta. [optional]
  */
 @property(nonatomic) NSString* resposta;
-/* N\u00C3\u00ADvel de relev\u00C3\u00A2ncia da pergunta. [optional]
+/* N\u00EDvel de relev\u00E2ncia da pergunta. [optional]
  */
 @property(nonatomic) NSNumber* relevancia;
 /* Plataforma em que a FAQ se encaixa. [optional]
@@ -32,7 +32,7 @@
 /* Categoria de assunto do qual a FAQ se trata. [optional]
  */
 @property(nonatomic) NSString* categoria;
-/* Status descrevendo a situa\u00C3\u00A7\u00C3\u00A3o atual da FAQ. [optional]
+/* Status descrevendo a situa\u00E7\u00E3o atual da FAQ. [optional]
  */
 @property(nonatomic) NSString* status;
 

@@ -22,13 +22,13 @@
 +(PierAjusteFinanceiroApi*) sharedAPI;
 ///
 ///
-/// Lan\u00C3\u00A7a um ajuste para a conta informada
+/// Lan\u00E7a um ajuste para a conta informada
 /// Este recurso insere um ajuste para a conta do id informado
 ///
-/// @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste.
+/// @param idTipoAjuste C\u00F3digo identificador do tipo de ajuste.
 /// @param dataAjuste Data do ajuste no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.
 /// @param valorAjuste Valor do ajuste
-/// @param idConta C\u00C3\u00B3digo identificador da conta.
+/// @param idConta C\u00F3digo identificador da conta.
 /// @param identificadorExterno Codigo Hexadecimal
 /// 
 ///
@@ -44,13 +44,13 @@
 ///
 ///
 /// Apresenta dados de um determinado ajuste financeiro
-/// Este m\u00C3\u00A9todo permite consultar dados de um determinado ajuste a partir de seu codigo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Este m\u00E9todo permite consultar dados de um determinado ajuste a partir de seu codigo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do ajuste (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do ajuste (id).
 /// 
 ///
 /// @return PierAjusteFinanceiroResponse*
--(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler;
 
 
@@ -59,18 +59,18 @@
 /// Lista ajustes existentes na base de dados do Emissor
 /// Este recurso permite listar ajustes existentes na base de dados do Emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idTipoAjuste C\u00C3\u00B3digo identificador do tipo de ajuste.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idTipoAjuste C\u00F3digo identificador do tipo de ajuste.
 /// @param dataAjuste Data do ajuste no formato yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ.
 /// @param valorAjuste Valor do ajuste
 /// @param identificadorExterno Codigo Hexadecimal
-/// @param idConta C\u00C3\u00B3digo identificador da conta.
+/// @param idConta C\u00F3digo identificador da conta.
 /// 
 ///
 /// @return PierPageAjusteResponse*
--(NSNumber*) listarUsingGET1WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET2WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoAjuste: (NSNumber*) idTipoAjuste

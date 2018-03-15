@@ -17,7 +17,7 @@
 /* Nome que identifica o detalhe do arquivo 
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00C3\u00BAdo do nomeCampo 
+/* Conte\u00FAdo do nomeCampo 
  */
 @property(nonatomic) NSString* conteudo;
 

@@ -72,20 +72,20 @@ static PierServicoContaApi* singletonAPI = nil;
 
 ///
 /// Atribuir Anuidade
-/// Esse recurso permite configurar qual a regra de Anuidade que ser\u00C3\u00A1 atribu\u00C3\u00ADda a uma determinada Conta.
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Esse recurso permite configurar qual a regra de Anuidade que ser\u00E1 atribu\u00EDda a uma determinada Conta.
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id). 
 ///
 ///  @param idAnuidade Identificador da anuidade 
 ///
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param dDD DDD do celular (optional)
 ///
-///  @param celular N\u00C3\u00BAmero do celular (optional)
+///  @param celular N\u00FAmero do celular (optional)
 ///
 ///  @param idOperadora Identificador da operadora do celular (optional)
 ///
@@ -217,9 +217,9 @@ static PierServicoContaApi* singletonAPI = nil;
 }
 
 ///
-///  Ativa o servi\u00C3\u00A7o de envio de fatura por email
-/// Este recurso ativa o servi\u00C3\u00A7o de envio de fatura por email
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+///  Ativa o servi\u00E7o de envio de fatura por email
+/// Este recurso ativa o servi\u00E7o de envio de fatura por email
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id). 
 ///
 ///  @returns NSObject*
 ///
@@ -300,9 +300,9 @@ static PierServicoContaApi* singletonAPI = nil;
 }
 
 ///
-/// Desativa o servi\u00C3\u00A7o de envio de fatura por email
-/// Este recurso desativa o servi\u00C3\u00A7o de envio de fatura por email
-///  @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta (id). 
+/// Desativa o servi\u00E7o de envio de fatura por email
+/// Este recurso desativa o servi\u00E7o de envio de fatura por email
+///  @param _id C\u00F3digo de identifica\u00E7\u00E3o da conta (id). 
 ///
 ///  @returns NSObject*
 ///
@@ -385,11 +385,11 @@ static PierServicoContaApi* singletonAPI = nil;
 ///
 /// Listar Anuidades
 /// Lista as anuidades
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageAnuidadeResponse*
 ///
@@ -480,11 +480,11 @@ static PierServicoContaApi* singletonAPI = nil;
 ///
 /// Listar Operadoras
 /// Lista as operadoras.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @returns PierPageOperadoraResponse*
 ///

@@ -21,8 +21,8 @@
 +(PierEnderecoNacionalApi*) sharedAPI;
 ///
 ///
-/// Consultar Endere\u00C3\u00A7o
-/// Este recurso permite consultar endere\u00C3\u00A7os atrav\u00C3\u00A9s do CEP.
+/// Consultar Endere\u00E7o
+/// Este recurso permite consultar endere\u00E7os atrav\u00E9s do CEP.
 ///
 /// @param cEP CEP
 /// 

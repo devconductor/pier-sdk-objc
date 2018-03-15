@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"servidor": @"servidor", @"usuario": @"usuario", @"senha": @"senha", @"nomeBase": @"nomeBase", @"senhaCriptografada": @"senhaCriptografada", @"domain": @"domain", @"nomeBaseControleAcesso": @"nomeBaseControleAcesso", @"idEmissor": @"idEmissor", @"servidorControleAcesso": @"servidorControleAcesso" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"servidor": @"servidor", @"usuario": @"usuario", @"nomeBase": @"nomeBase", @"senhaCriptografada": @"senhaCriptografada", @"domain": @"domain", @"nomeBaseControleAcesso": @"nomeBaseControleAcesso", @"idEmissor": @"idEmissor", @"servidorControleAcesso": @"servidorControleAcesso", @"nomeBaseUsuarios": @"nomeBaseUsuarios", @"servidorUsuarios": @"servidorUsuarios", @"flagCluster": @"flagCluster" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idEmissor", ];
+  NSArray *optionalProperties = @[@"idEmissor", @"flagCluster"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -14,34 +14,34 @@
 
 @interface PierRiscoFraudeResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do risco de fraude [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do risco de fraude [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de resolu\u00C3\u00A7\u00C3\u00A3o atribu\u00C3\u00ADdo ao registro [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de resolu\u00E7\u00E3o atribu\u00EDdo ao registro [optional]
  */
 @property(nonatomic) NSNumber* idTipoResolucao;
-/* Descri\u00C3\u00A7\u00C3\u00A3o do tipo de resolu\u00C3\u00A7\u00C3\u00A3o atribu\u00C3\u00ADdo ao registro [optional]
+/* Descri\u00E7\u00E3o do tipo de resolu\u00E7\u00E3o atribu\u00EDdo ao registro [optional]
  */
 @property(nonatomic) NSString* descricaoTipoResolucao;
-/* Quando ativa, indica que a transa\u00C3\u00A7\u00C3\u00A3o possui um alto risco de fraude e que todas as transa\u00C3\u00A7\u00C3\u00B5es seguintes a ela ser\u00C3\u00A3o negadas at\u00C3\u00A9 que todas as transa\u00C3\u00A7\u00C3\u00B5es classificadas com risco de fraude sejam analisadas [optional]
+/* Quando ativa, indica que a transa\u00E7\u00E3o possui um alto risco de fraude e que todas as transa\u00E7\u00F5es seguintes a ela ser\u00E3o negadas at\u00E9 que todas as transa\u00E7\u00F5es classificadas com risco de fraude sejam analisadas [optional]
  */
 @property(nonatomic) NSNumber* flagAltoRisco;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transa\u00C3\u00A7\u00C3\u00A3o [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da transa\u00E7\u00E3o [optional]
  */
 @property(nonatomic) NSNumber* idTransacao;
-/* Data em que a transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude foi realizada [optional]
+/* Data em que a transa\u00E7\u00E3o classificada com risco de fraude foi realizada [optional]
  */
 @property(nonatomic) NSString* dataTransacao;
-/* Valor da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude [optional]
+/* Valor da transa\u00E7\u00E3o classificada com risco de fraude [optional]
  */
 @property(nonatomic) NSNumber* valorTransacao;
-/* Valor da transa\u00C3\u00A7\u00C3\u00A3o classificada com risco de fraude [optional]
+/* Valor da transa\u00E7\u00E3o classificada com risco de fraude [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
 

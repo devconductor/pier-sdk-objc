@@ -14,28 +14,28 @@
 
 @interface PierTransferenciaDetalheResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da transfer\u00C3\u00AAncia (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da transfer\u00EAncia (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Data estabelecida para ocorrer a transfer\u00C3\u00AAncia. [optional]
+/* Data estabelecida para ocorrer a transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* dataTransferencia;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta em que o valor ser\u00C3\u00A1 debitado para a transfer\u00C3\u00AAncia. (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta em que o valor ser\u00E1 debitado para a transfer\u00EAncia. (id). [optional]
  */
 @property(nonatomic) NSNumber* idContaOrigem;
-/* Apresenta o nome completo da pessoa que realizou a Transfer\u00C3\u00AAncia. [optional]
+/* Apresenta o nome completo da pessoa que realizou a Transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* nomePessoaOrigem;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o da conta em que o valor ser\u00C3\u00A1 creditado para a transfer\u00C3\u00AAncia. (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o da conta em que o valor ser\u00E1 creditado para a transfer\u00EAncia. (id). [optional]
  */
 @property(nonatomic) NSNumber* idContaDestino;
-/* Apresenta o nome completo da pessoa que recebeu a Transfer\u00C3\u00AAncia. [optional]
+/* Apresenta o nome completo da pessoa que recebeu a Transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSString* nomePessoaDestino;
 /* Valor estabelecido para ser transferido. [optional]
  */
 @property(nonatomic) NSNumber* valorTransferencia;
-/* Valor estabelecido da tarifa para a transfer\u00C3\u00AAncia. [optional]
+/* Valor estabelecido da tarifa para a transfer\u00EAncia. [optional]
  */
 @property(nonatomic) NSNumber* valorTarifa;
 

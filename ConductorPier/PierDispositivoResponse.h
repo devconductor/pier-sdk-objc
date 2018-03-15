@@ -20,10 +20,10 @@
 /* Token do dispositivo. [optional]
  */
 @property(nonatomic) NSString* token;
-/* Identificador da Aplica\u00C3\u00A7\u00C3\u00A3o. [optional]
+/* Identificador da Aplica\u00E7\u00E3o. [optional]
  */
 @property(nonatomic) NSNumber* idAplicacaoMobile;
-/* Identificador do usu\u00C3\u00A1rio. [optional]
+/* Identificador do usu\u00E1rio. [optional]
  */
 @property(nonatomic) NSNumber* idUsuario;
 

@@ -34,7 +34,7 @@
 /// Altera o tipo de template
 /// Esse recurso permite alterar os dados do tipo de template.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de template (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do tipo de template (id).
 /// @param persist persist
 /// 
 ///
@@ -49,7 +49,7 @@
 /// Atualizar templates dos documentos
 /// Esse recurso permite atualizar templates dos documentos.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento template (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do documento template (id).
 /// @param persist persist
 /// 
 ///
@@ -62,13 +62,13 @@
 ///
 ///
 /// Consulta documentos
-/// Esse recurso permite consultar um documento espec\u00C3\u00ADfico a partir do seu c\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o (id).
+/// Esse recurso permite consultar um documento espec\u00EDfico a partir do seu c\u00F3digo de identifica\u00E7\u00E3o (id).
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do documento (id).
 /// 
 ///
 /// @return PierDocumentoDetalhadoResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -77,11 +77,11 @@
 /// Consultar templates dos documentos
 /// Esse recurso permite consultar templates dos documentos.
 ///
-/// @param _id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do documento template (id).
+/// @param _id C\u00F3digo de identifica\u00E7\u00E3o do documento template (id).
 /// 
 ///
 /// @return PierDocumentoTemplateResponse*
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
 
 
@@ -90,18 +90,18 @@
 /// Consultar tipo de template
 /// Esse recurso permite consultar um determinado tipo de template a partir do id recebido e do id do emissor.
 ///
-/// @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do tipo de template (id).
+/// @param _id C\u00F3digo de Identifica\u00E7\u00E3o do tipo de template (id).
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 
 ///
 ///
-/// Integra um arquivo a reposit\u00C3\u00B3rios remotos.
-/// Este recurso permite integrar um documento ao reposit\u00C3\u00B3rio pre-configurado.
+/// Integra um arquivo a reposit\u00F3rios remotos.
+/// Este recurso permite integrar um documento ao reposit\u00F3rio pre-configurado.
 ///
 /// @param integrarDocumentoRequest integrarDocumentoRequest
 /// 
@@ -116,16 +116,16 @@
 /// Lista documentos
 /// Esse recurso permite listar documentos.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idTemplateDocumento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do template do documento.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idTemplateDocumento C\u00F3digo de identifica\u00E7\u00E3o do template do documento.
 /// @param nome Nome do documento.
 /// @param extensao Extensao do documento.
 /// 
 ///
 /// @return PierPageDocumentoResponse*
--(NSNumber*) listarUsingGET18WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTemplateDocumento: (NSNumber*) idTemplateDocumento
@@ -139,14 +139,14 @@
 /// Lista os templates dos documentos
 /// Esse recurso permite listar os templates dos documentos.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
-/// @param idTipoTemplate C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo do template.
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
+/// @param idTipoTemplate C\u00F3digo de identifica\u00E7\u00E3o do tipo do template.
 /// 
 ///
 /// @return PierPageDocumentoTemplateResponse*
--(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idTipoTemplate: (NSNumber*) idTipoTemplate
@@ -158,13 +158,13 @@
 /// Lista os tipos de templates
 /// Esse recurso permite listar os tipos de templates associados ao emissor.
 ///
-/// @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
-/// @param page P\u00C3\u00A1gina solicitada (Default = 0)
-/// @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
+/// @param sort Tipo de ordena\u00E7\u00E3o dos registros.
+/// @param page P\u00E1gina solicitada (Default = 0)
+/// @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50)
 /// 
 ///
 /// @return PierPageTipoTemplateResponse*
--(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET47WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTipoTemplateResponse* output, NSError* error)) handler;

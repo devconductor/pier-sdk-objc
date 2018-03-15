@@ -14,22 +14,22 @@
 
 @interface PierTelefoneResponse : PierObject
 
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Telefone. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Telefone. [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do Telefone. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Telefone. [optional]
  */
 @property(nonatomic) NSNumber* idTipoTelefone;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa a qual o telefone pertence. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o telefone pertence. [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo DDD do telefone. [optional]
+/* C\u00F3digo DDD do telefone. [optional]
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00C3\u00BAmero do telefone. [optional]
+/* N\u00FAmero do telefone. [optional]
  */
 @property(nonatomic) NSString* telefone;
-/* N\u00C3\u00BAmero do ramal. [optional]
+/* N\u00FAmero do ramal. [optional]
  */
 @property(nonatomic) NSString* ramal;
 /* Apresenta o Status do Telefone, onde: '0': Inativo e '1': Ativo [optional]

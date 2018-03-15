@@ -73,8 +73,8 @@ static PierWebhookApi* singletonAPI = nil;
 
 ///
 /// Alterar Webhook
-/// Este m\u00C3\u00A9todo permite que seja modificado um webhooks j\u00C3\u00A1 cadastrado
-///  @param _id C\u00C3\u00B3digo identificador do Webhook 
+/// Este m\u00E9todo permite que seja modificado um webhooks j\u00E1 cadastrado
+///  @param _id C\u00F3digo identificador do Webhook 
 ///
 ///  @param webhook webhook 
 ///
@@ -171,18 +171,18 @@ static PierWebhookApi* singletonAPI = nil;
 
 ///
 /// Consultar Webhook
-/// Este m\u00C3\u00A9todo permite que sejam consultado um webhook do emissor atrav\u00C3\u00A9s de um id especifico
-///  @param _id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id). 
+/// Este m\u00E9todo permite que sejam consultado um webhook do emissor atrav\u00E9s de um id especifico
+///  @param _id C\u00F3digo de Identifica\u00E7\u00E3o do Webhook (id). 
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) consultarUsingGET44WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET45WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET44`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET45`"];
     }
     
 
@@ -254,24 +254,24 @@ static PierWebhookApi* singletonAPI = nil;
 
 ///
 /// Lista os Webhooks
-/// Este m\u00C3\u00A9todo permite que sejam listados os webhooks existentes
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Este m\u00E9todo permite que sejam listados os webhooks existentes
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
 ///  @param _id Id do WebHook (optional)
 ///
 ///  @param tipoEvento TipoEvento a ser chamado pelo WebHook (optional)
 ///
-///  @param metodo M\u00C3\u00A9todo que a ser chamado pelo WebHook (optional)
+///  @param metodo M\u00E9todo que a ser chamado pelo WebHook (optional)
 ///
 ///  @param url URL que a ser consumida pelo WebHook (optional)
 ///
 ///  @returns PierPageWebHookResponse*
 ///
--(NSNumber*) listarUsingGET53WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET55WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -377,7 +377,7 @@ static PierWebhookApi* singletonAPI = nil;
 
 ///
 /// Salvar Webhook
-/// Este m\u00C3\u00A9todo permite que seja adicionado um novo webhook
+/// Este m\u00E9todo permite que seja adicionado um novo webhook
 ///  @param webhook webhook 
 ///
 ///  @returns PierWebHookResponse*

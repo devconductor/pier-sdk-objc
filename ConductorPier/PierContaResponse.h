@@ -14,19 +14,19 @@
 
 @interface PierContaResponse : PierObject
 
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o de conta (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o de conta (id). [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do produto ao qual a conta faz parte. (id). [optional]
+/* C\u00F3digo de identifica\u00E7\u00E3o do produto ao qual a conta faz parte. (id). [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Origem Comercial (id) que deu origem a Conta. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Origem Comercial (id) que deu origem a Conta. [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Pessoa Titular da Conta (id). [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa Titular da Conta (id). [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do status atribuido a conta. [optional]
+/* C\u00F3digo de Identifica\u00E7\u00E3o do status atribuido a conta. [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
 /* Apresenta o dia de vencimento. [optional]
@@ -35,13 +35,13 @@
 /* Apresenta o melhor dia de compra. [optional]
  */
 @property(nonatomic) NSNumber* melhorDiaCompra;
-/* Apresenta a data em que o idStatusConta atual fora atribu\u00C3\u00ADdo para ela. [optional]
+/* Apresenta a data em que o idStatusConta atual fora atribu\u00EDdo para ela. [optional]
  */
 @property(nonatomic) NSString* dataStatusConta;
-/* Apresenta a data em que o cart\u00C3\u00A3o foi gerado. [optional]
+/* Apresenta a data em que o cart\u00E3o foi gerado. [optional]
  */
 @property(nonatomic) NSString* dataCadastro;
-/* Apresenta a data da ultima altera\u00C3\u00A7\u00C3\u00A3o de vencimento. [optional]
+/* Apresenta a data da ultima altera\u00E7\u00E3o de vencimento. [optional]
  */
 @property(nonatomic) NSString* dataUltimaAlteracaoVencimento;
 /* Apresenta o valor da renda comprovada [optional]

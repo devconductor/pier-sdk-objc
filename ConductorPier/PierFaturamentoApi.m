@@ -76,7 +76,7 @@ static PierFaturamentoApi* singletonAPI = nil;
 
 ///
 /// Alterar Faturamento
-/// Alterar as configura\u00C3\u00A7\u00C3\u00B5es de um determinado tipo de faturamento
+/// Alterar as configura\u00E7\u00F5es de um determinado tipo de faturamento
 ///  @param _id Id 
 ///
 ///  @param tipoFaturamentoPersist tipoFaturamentoPersist 
@@ -166,8 +166,8 @@ static PierFaturamentoApi* singletonAPI = nil;
 }
 
 ///
-/// Adiciona uma nova configura\u00C3\u00A7\u00C3\u00A3o de faturamento para uma conta
-/// Este m\u00C3\u00A9todo permite adicionar uma nova configura\u00C3\u00A7\u00C3\u00A3o de tipo de faturamento para um conta espec\u00C3\u00ADfica.
+/// Adiciona uma nova configura\u00E7\u00E3o de faturamento para uma conta
+/// Este m\u00E9todo permite adicionar uma nova configura\u00E7\u00E3o de tipo de faturamento para um conta espec\u00EDfica.
 ///  @param tipoFaturamentoPorContaPersist tipoFaturamentoPorContaPersist 
 ///
 ///  @returns PierTipoFaturamentoPorContaResponse*
@@ -247,7 +247,7 @@ static PierFaturamentoApi* singletonAPI = nil;
 
 ///
 /// Adiciona um novo faturamento
-/// Adiciona uma nova configura\u00C3\u00A7\u00C3\u00A3o de tipo de faturamento
+/// Adiciona uma nova configura\u00E7\u00E3o de tipo de faturamento
 ///  @param tipoFaturamentoPersist tipoFaturamentoPersist 
 ///
 ///  @returns PierTipoFaturamentoResponse*
@@ -409,8 +409,8 @@ static PierFaturamentoApi* singletonAPI = nil;
 }
 
 ///
-/// Desativar uma configura\u00C3\u00A7\u00C3\u00A3o de tipo de faturamento por conta atrav\u00C3\u00A9s do id
-/// Desativa uma configura\u00C3\u00A7\u00C3\u00A3o de tipo de faturamento de uma determinada conta.
+/// Desativar uma configura\u00E7\u00E3o de tipo de faturamento por conta atrav\u00E9s do id
+/// Desativa uma configura\u00E7\u00E3o de tipo de faturamento de uma determinada conta.
 ///  @param _id Id 
 ///
 ///  @param modificadoPor modificadoPor 
@@ -500,8 +500,8 @@ static PierFaturamentoApi* singletonAPI = nil;
 }
 
 ///
-/// Desativar uma configura\u00C3\u00A7\u00C3\u00A3o de tipo de faturamento atrav\u00C3\u00A9s do id
-/// Desativa uma configura\u00C3\u00A7\u00C3\u00A3o de tipo de faturamento.
+/// Desativar uma configura\u00E7\u00E3o de tipo de faturamento atrav\u00E9s do id
+/// Desativa uma configura\u00E7\u00E3o de tipo de faturamento.
 ///  @param _id Id 
 ///
 ///  @returns PierTipoFaturamentoResponse*
@@ -583,27 +583,27 @@ static PierFaturamentoApi* singletonAPI = nil;
 }
 
 ///
-/// Lista as configura\u00C3\u00A7\u00C3\u00B5es de tipos de faturamento por conta
-/// Este m\u00C3\u00A9todo permite listar as configura\u00C3\u00A7\u00C3\u00B5es de tipos de faturamento registrados a uma conta.
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista as configura\u00E7\u00F5es de tipos de faturamento por conta
+/// Este m\u00E9todo permite listar as configura\u00E7\u00F5es de tipos de faturamento registrados a uma conta.
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idTipoFaturamentoPorConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de faturamento por conta (id). (optional)
+///  @param idTipoFaturamentoPorConta C\u00F3digo de identifica\u00E7\u00E3o do tipo de faturamento por conta (id). (optional)
 ///
-///  @param status Representa se a configura\u00C3\u00A7\u00C3\u00A3o est\u00C3\u00A1 ativada ou desativada para a conta. (optional)
+///  @param status Representa se a configura\u00E7\u00E3o est\u00E1 ativada ou desativada para a conta. (optional)
 ///
-///  @param idConta C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de faturamento por conta (id). (optional)
+///  @param idConta C\u00F3digo de identifica\u00E7\u00E3o do tipo de faturamento por conta (id). (optional)
 ///
-///  @param idTipoFaturamento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de faturamento relacionada (id). (optional)
+///  @param idTipoFaturamento C\u00F3digo de identifica\u00E7\u00E3o do tipo de faturamento relacionada (id). (optional)
 ///
-///  @param dataHoraInclusao Data da inclus\u00C3\u00A3o da configura\u00C3\u00A7\u00C3\u00A3o, deve ser informada no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///  @param dataHoraInclusao Data da inclus\u00E3o da configura\u00E7\u00E3o, deve ser informada no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
-///  @param dataHoraCancelamento Data do cancelamento da configura\u00C3\u00A7\u00C3\u00A3o, deve ser informada no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
+///  @param dataHoraCancelamento Data do cancelamento da configura\u00E7\u00E3o, deve ser informada no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. (optional)
 ///
-///  @param modificadoPor Identificador do respons\u00C3\u00A1vel pela modifica\u00C3\u00A7\u00C3\u00A3o do registro. (optional)
+///  @param modificadoPor Identificador do respons\u00E1vel pela modifica\u00E7\u00E3o do registro. (optional)
 ///
 ///  @returns PierPageTipoFaturamentoPorContaResponse*
 ///
@@ -728,20 +728,20 @@ static PierFaturamentoApi* singletonAPI = nil;
 
 ///
 /// Lista Tipos de Faturamento
-/// Lista todas as configura\u00C3\u00A7\u00C3\u00B5es dos tipos de faturamento
-///  @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros. (optional)
+/// Lista todas as configura\u00E7\u00F5es dos tipos de faturamento
+///  @param sort Tipo de ordena\u00E7\u00E3o dos registros. (optional)
 ///
-///  @param page P\u00C3\u00A1gina solicitada (Default = 0) (optional)
+///  @param page P\u00E1gina solicitada (Default = 0) (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50) (optional)
+///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
 ///
-///  @param idTipoFaturamento C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do tipo de faturamento (id). (optional)
+///  @param idTipoFaturamento C\u00F3digo de identifica\u00E7\u00E3o do tipo de faturamento (id). (optional)
 ///
-///  @param descricao Descri\u00C3\u00A7\u00C3\u00A3o do tipo de faturamento. (optional)
+///  @param descricao Descri\u00E7\u00E3o do tipo de faturamento. (optional)
 ///
-///  @param flagApenasDemonstrativo Flag que representa que o faturamento ser\u00C3\u00A1 apenas demonstrativo. (optional)
+///  @param flagApenasDemonstrativo Flag que representa que o faturamento ser\u00E1 apenas demonstrativo. (optional)
 ///
-///  @param idConvenio C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do conv\u00C3\u00AAnio relacionado ao tipo de faturamento. (optional)
+///  @param idConvenio C\u00F3digo de identifica\u00E7\u00E3o do conv\u00EAnio relacionado ao tipo de faturamento. (optional)
 ///
 ///  @returns PierPageTipoFaturamentoResponse*
 ///
