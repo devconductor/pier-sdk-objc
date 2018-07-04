@@ -14,28 +14,28 @@
 
 @interface PierStatusOportunidadeAUDResponse : PierObject
 
-/* C\u00F3digo identificador da auditoria dos tipos oportunidades [optional]
+/* {{{status_oportunidade_a_u_d_response_rev_value}}} [optional]
  */
 @property(nonatomic) NSNumber* rev;
-/* C\u00F3digo que representa o tipo de a\u00E7\u00E3o realizada no recurso de tipos oportunidades [optional]
+/* {{{status_oportunidade_a_u_d_response_rev_type_value}}} [optional]
  */
 @property(nonatomic) NSNumber* revType;
-/* Data da a\u00E7\u00E3o realizada no recurso de tipos oportunidades [optional]
+/* {{{status_oportunidade_a_u_d_response_rev_date_value}}} [optional]
  */
 @property(nonatomic) NSString* revDate;
-/* C\u00F3digo identificador do StatusOportunidade [optional]
+/* {{{status_oportunidade_a_u_d_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador do TipoOportunidade [optional]
+/* {{{status_oportunidade_a_u_d_response_id_tipo_oportunidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoOportunidade;
-/* Nome do status oportunidade [optional]
+/* {{{status_oportunidade_a_u_d_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descricao do StatusOportunidade [optional]
+/* {{{status_oportunidade_a_u_d_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Flag que representa se o tipo oportunidade est\u00E1 ativo [optional]
+/* {{{status_oportunidade_a_u_d_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

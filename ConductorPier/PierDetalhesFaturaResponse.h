@@ -16,10 +16,10 @@
 
 @interface PierDetalhesFaturaResponse : PierObject
 
-/* Apresenta os detalhes da fatura [optional]
+/* {{{detalhes_fatura_response_fatura_value}}} [optional]
  */
 @property(nonatomic) PierFaturaFechadaResponse* fatura;
-/* Apresenta as transa\u00E7\u00F5es relacionadas a fatura. [optional]
+/* {{{detalhes_fatura_response_transacoes_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTransacoesCorrentesResponse>* transacoes;
 

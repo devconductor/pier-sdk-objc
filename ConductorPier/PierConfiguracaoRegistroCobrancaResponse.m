@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idEmissor": @"idEmissor", @"codigoBanco": @"codigoBanco", @"uri": @"uri", @"keyStoreName": @"keyStoreName", @"keyStorePassword": @"keyStorePassword", @"keystoreAlias": @"keystoreAlias", @"keyStorePrivateKeyPassword": @"keyStorePrivateKeyPassword", @"typeKeystore": @"typeKeystore", @"trustStoreName": @"trustStoreName", @"trustStorePassword": @"trustStorePassword", @"truststoreAlias": @"truststoreAlias", @"typeTruststore": @"typeTruststore", @"uriAdicional": @"uriAdicional", @"status": @"status" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idEmissor": @"idEmissor", @"codigoBanco": @"codigoBanco", @"uri": @"uri", @"keyStoreName": @"keyStoreName", @"keyStorePassword": @"keyStorePassword", @"keystoreAlias": @"keystoreAlias", @"keyStorePrivateKeyPassword": @"keyStorePrivateKeyPassword", @"typeKeystore": @"typeKeystore", @"trustStoreName": @"trustStoreName", @"trustStorePassword": @"trustStorePassword", @"truststoreAlias": @"truststoreAlias", @"typeTruststore": @"typeTruststore", @"uriAdicional": @"uriAdicional", @"status": @"status", @"secret": @"secret", @"clientID": @"clientID" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"idEmissor", @"codigoBanco", @"uri", @"keyStoreName", @"keyStorePassword", @"keystoreAlias", @"keyStorePrivateKeyPassword", @"typeKeystore", @"trustStoreName", @"trustStorePassword", @"truststoreAlias", @"typeTruststore", @"uriAdicional", @"status"];
+  NSArray *optionalProperties = @[@"_id", @"idEmissor", @"codigoBanco", @"uri", @"keyStoreName", @"keyStorePassword", @"keystoreAlias", @"keyStorePrivateKeyPassword", @"typeKeystore", @"trustStoreName", @"trustStorePassword", @"truststoreAlias", @"typeTruststore", @"uriAdicional", @"status", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

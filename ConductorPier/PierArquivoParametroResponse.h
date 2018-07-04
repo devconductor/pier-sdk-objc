@@ -14,13 +14,13 @@
 
 @interface PierArquivoParametroResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do detalhe do arquivo. [optional]
+/* {{{arquivo_parametro_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome que identifica o detalhe do arquivo 
+/* {{{arquivo_parametro_response_nome_campo_value}}} 
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00FAdo do nomeCampo 
+/* {{{arquivo_parametro_response_conteudo_value}}} 
  */
 @property(nonatomic) NSString* conteudo;
 

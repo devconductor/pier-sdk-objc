@@ -14,28 +14,28 @@
 
 @interface PierOperacaoResponse : PierObject
 
-/* C\u00F3digo que identifica a opera\u00E7\u00E3o [optional]
+/* {{{operacao_response_id_operacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* C\u00F3digo de processamento usado em transa\u00E7\u00F5es com o autorizador [optional]
+/* {{{operacao_response_codigo_processamento_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* C\u00F3digo de processamento usado para cancelar transa\u00E7\u00F5es no autorizador [optional]
+/* {{{operacao_response_codigo_processamento_cancelamento_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoProcessamentoCancelamento;
-/* Nome da opera\u00E7\u00E3o [optional]
+/* {{{operacao_response_nome_operacao_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeOperacao;
-/* Flag indicativa para crobran\u00E7a de juros [optional]
+/* {{{operacao_response_flag_cobra_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCobraJuros;
-/* Flag indicativa para crobran\u00E7a de tarifas [optional]
+/* {{{operacao_response_flag_cobra_tarifa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCobraTarifa;
-/* Quantidade de meses para car\u00EAncia [optional]
+/* {{{operacao_response_carencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* carencia;
-/* Permitir transa\u00E7\u00F5es parceladas [optional]
+/* {{{operacao_response_flag_permitir_parcelamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagPermitirParcelamento;
 

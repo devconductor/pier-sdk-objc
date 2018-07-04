@@ -14,52 +14,52 @@
 
 @interface PierTipoOperacaoResponse : PierObject
 
-/* C\u00F3digo identificador do TipoOperacao 
+/* {{{tipo_operacao_response_id_value}}} 
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo do TipoOperacao 
+/* {{{tipo_operacao_response_tipo_operacao_value}}} 
  */
 @property(nonatomic) NSString* tipoOperacao;
-/* Nome do TipoOperacao 
+/* {{{tipo_operacao_response_nome_value}}} 
  */
 @property(nonatomic) NSString* nome;
-/* Decri\u00E7\u00E3o do TipoOperacao 
+/* {{{tipo_operacao_response_descricao_value}}} 
  */
 @property(nonatomic) NSString* descricao;
-/* Excedente permitido para o TipoOperacao [optional]
+/* {{{tipo_operacao_response_excedente_permitido_value}}} [optional]
  */
 @property(nonatomic) NSNumber* excedentePermitido;
-/* Tipo do Excedente permitido para o TipoOperacao [optional]
+/* {{{tipo_operacao_response_tipo_excedente_permitido_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoExcedentePermitido;
-/* Valor minimo para a transa\u00E7\u00E3o do TipoOperacao 
+/* {{{tipo_operacao_response_valor_minimo_value}}} 
  */
 @property(nonatomic) NSNumber* valorMinimo;
-/* Valor maximo para a transa\u00E7\u00E3o do TipoOperacao 
+/* {{{tipo_operacao_response_valor_maximo_value}}} 
  */
 @property(nonatomic) NSNumber* valorMaximo;
-/* Valor TAC da transa\u00E7\u00E3o do TipoOperacao [optional]
+/* {{{tipo_operacao_response_valor_t_a_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTAC;
-/* Flag Tira TAC do TipoOperacao [optional]
+/* {{{tipo_operacao_response_flag_tira_tac_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagTiraTac;
-/* Identificador do Produto do TipoOperacao 
+/* {{{tipo_operacao_response_id_produto_value}}} 
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Identificador do Estabelecimento do TipoOperacao 
+/* {{{tipo_operacao_response_id_estabelecimento_value}}} 
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* Tarifa do TipoOperacao [optional]
+/* {{{tipo_operacao_response_tarifa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* tarifa;
-/* Remunera\u00E7\u00E3o do Emissor para o TipoOperacao [optional]
+/* {{{tipo_operacao_response_remuneracao_emissor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoEmissor;
-/* Plano m\u00E1ximo do TipoOperacao 
+/* {{{tipo_operacao_response_plano_maximo_value}}} 
  */
 @property(nonatomic) NSNumber* planoMaximo;
-/* Plano minimo do TipoOperacao 
+/* {{{tipo_operacao_response_plano_minimo_value}}} 
  */
 @property(nonatomic) NSNumber* planoMinimo;
 

@@ -14,113 +14,110 @@
 
 @interface PierTransacaoNaoProcessadaResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo da Transa\u00E7\u00E3o. [optional]
- */
-@property(nonatomic) NSNumber* idTipoTransacaoNaoProcessada;
-/* Descri\u00E7\u00E3o do Tipo da Transa\u00E7\u00E3o n\u00E3o Processada. [optional]
- */
-@property(nonatomic) NSString* descricaoTipoTransacaoNaoProcessada;
-/* Descri\u00E7\u00E3o Abreviada da Transa\u00E7\u00E3o. [optional]
- */
-@property(nonatomic) NSString* descricaoAbreviada;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id). [optional]
- */
-@property(nonatomic) NSNumber* idConta;
-/* N\u00FAmero do Cart\u00E3o em Formato 0000XXXXXXXX0000. [optional]
+/* {{{transacao_nao_processada_response_cartao_mascarado_value}}} [optional]
  */
 @property(nonatomic) NSString* cartaoMascarado;
-/* Nome completo do Portador do Cart\u00E3o. [optional]
- */
-@property(nonatomic) NSString* nomePortador;
-/* Data em que a Transa\u00E7\u00E3o foi realizada. [optional]
- */
-@property(nonatomic) NSString* dataOrigem;
-/* Data de Faturamento da Transa\u00E7\u00E3o. [optional]
- */
-@property(nonatomic) NSString* dataFaturamento;
-/* Data de Vencimento da Fatura. [optional]
- */
-@property(nonatomic) NSString* dataVencimento;
-/* Descreve o modo utilizado para realizar a leitura dos dados do cart\u00E3o para realizar a Transa\u00E7\u00E3o. [optional]
- */
-@property(nonatomic) NSString* modoEntradaTransacao;
-/* Valor da Taxa de Embarque em Real (BRL) quando a transa\u00E7\u00E3o for relacionada a Compra de Passagens A\u00E9reas. [optional]
- */
-@property(nonatomic) NSNumber* valorTaxaEmbarque;
-/* Valor da Entrada em Real (BRL) quando a transa\u00E7\u00E3o for do tipo Parcelada com o pagamento de um valor de Entrada. [optional]
- */
-@property(nonatomic) NSNumber* valorEntrada;
-/* Valor da Transa\u00E7\u00E3o em Real (BRL). [optional]
- */
-@property(nonatomic) NSNumber* valorBRL;
-/* Valor da Transa\u00E7\u00E3o em D\u00F3lar Americano (USD). [optional]
- */
-@property(nonatomic) NSNumber* valorUSD;
-/* Valor do D\u00F3lar Americano (USD) convertido em Real (BRL). [optional]
- */
-@property(nonatomic) NSNumber* cotacaoUSD;
-/* Data de Fechamento da Cota\u00E7\u00E3o do D\u00F3lar Americano (USD). [optional]
- */
-@property(nonatomic) NSString* dataCotacaoUSD;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Moeda utilizada na Transa\u00E7\u00E3o, seguindo padr\u00E3o ISO 4217. [optional]
- */
-@property(nonatomic) NSString* codigoMoedaOrigem;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Moeda da Transa\u00E7\u00E3o ap\u00F3s a convers\u00E3o, seguindo padr\u00E3o ISO 4217. [optional]
- */
-@property(nonatomic) NSString* codigoMoedaDestino;
-/* C\u00F3digo de Autoriza\u00E7\u00E3o da Transa\u00E7\u00E3o. [optional]
+/* {{{transacao_nao_processada_response_codigo_autorizacao_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoAutorizacao;
-/* C\u00F3digo de Refer\u00EAncia da Transa\u00E7\u00E3o quando utilizado Cart\u00E3o Bandeirado. [optional]
- */
-@property(nonatomic) NSString* codigoReferencia;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da origem da captura da Transa\u00E7\u00E3o. [optional]
- */
-@property(nonatomic) NSString* codigoTerminal;
-/* C\u00F3digo de identifica\u00E7\u00E3o da categoria do Estabelecimento. [optional]
+/* {{{transacao_nao_processada_response_codigo_mcc_value}}} [optional]
  */
 @property(nonatomic) NSNumber* codigoMCC;
-/* C\u00F3digo de identifica\u00E7\u00E3o do grupo do Estabelecimento. [optional]
+/* {{{transacao_nao_processada_response_codigo_moeda_destino_value}}} [optional]
  */
-@property(nonatomic) NSNumber* grupoMCC;
-/* Descri\u00E7\u00E3o do grupo do Estabelecimento. [optional]
+@property(nonatomic) NSString* codigoMoedaDestino;
+/* {{{transacao_nao_processada_response_codigo_moeda_origem_value}}} [optional]
  */
-@property(nonatomic) NSString* grupoDescricaoMCC;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento (id). [optional]
+@property(nonatomic) NSString* codigoMoedaOrigem;
+/* {{{transacao_nao_processada_response_codigo_referencia_value}}} [optional]
  */
-@property(nonatomic) NSNumber* idEstabelecimento;
-/* Nome do Estabelecimento. [optional]
+@property(nonatomic) NSString* codigoReferencia;
+/* {{{transacao_nao_processada_response_codigo_terminal_value}}} [optional]
  */
-@property(nonatomic) NSString* nomeEstabelecimento;
-/* Nome Fantasia do Estabelecimento. [optional]
+@property(nonatomic) NSString* codigoTerminal;
+/* {{{transacao_nao_processada_response_cotacao_usd_value}}} [optional]
  */
-@property(nonatomic) NSString* nomeFantasiaEstabelecimento;
-/* Localidade do Estabelecimento. [optional]
+@property(nonatomic) NSNumber* cotacaoUSD;
+/* {{{transacao_nao_processada_response_data_cotacao_usd_value}}} [optional]
  */
-@property(nonatomic) NSString* localidadeEstabelecimento;
-/* Quando a Transa\u00E7\u00E3o for do tipo Parcelada, apresenta o n\u00FAmero total de Parcelas. [optional]
+@property(nonatomic) NSString* dataCotacaoUSD;
+/* {{{transacao_nao_processada_response_data_faturamento_value}}} [optional]
  */
-@property(nonatomic) NSNumber* planoParcelamento;
-/* Quando a Transa\u00E7\u00E3o for do tipo Parcelada, apresenta o n\u00FAmero da Parcela. [optional]
+@property(nonatomic) NSString* dataFaturamento;
+/* {{{transacao_nao_processada_response_data_origem_value}}} [optional]
  */
-@property(nonatomic) NSNumber* numeroParcela;
-/* Detalhes complementares a respeito da Transa\u00E7\u00E3o. [optional]
+@property(nonatomic) NSString* dataOrigem;
+/* {{{transacao_nao_processada_response_data_vencimento_value}}} [optional]
+ */
+@property(nonatomic) NSString* dataVencimentoReal;
+/* {{{transacao_nao_processada_response_descricao_abreviada_value}}} [optional]
+ */
+@property(nonatomic) NSString* descricaoAbreviada;
+/* {{{transacao_nao_processada_response_descricao_tipo_transacao_nao_processada_value}}} [optional]
+ */
+@property(nonatomic) NSString* descricaoTipoTransacaoNaoProcessada;
+/* {{{transacao_nao_processada_response_detalhes_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* detalhesTransacao;
-/* Quando ativa, indica que a Transa\u00E7\u00E3o \u00E9 do Tipo 'Cr\u00E9dito'. [optional]
+/* {{{transacao_nao_processada_response_flag_credito_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCredito;
-/* Quando ativa, indica que a Transa\u00E7\u00E3o foi consolidada em uma Fatura. [optional]
+/* {{{transacao_nao_processada_response_flag_faturado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagFaturado;
-/* Quando ativa, indica que a Transa\u00E7\u00E3o foi estornada. [optional]
+/* {{{transacao_nao_processada_response_grupo_descricao_mcc_value}}} [optional]
  */
-@property(nonatomic) NSNumber* flagEstorno;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Transa\u00E7\u00E3o (id) que gerou o estorno. [optional]
+@property(nonatomic) NSString* grupoDescricaoMCC;
+/* {{{transacao_nao_processada_response_grupo_mcc_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* grupoMCC;
+/* {{{transacao_nao_processada_response_id_conta_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idConta;
+/* {{{transacao_nao_processada_response_id_estabelecimento_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idEstabelecimento;
+/* {{{transacao_nao_processada_response_id_tipo_transacao_nao_processada_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idTipoTransacaoNaoProcessada;
+/* {{{transacao_nao_processada_response_id_transacao_estorno_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTransacaoEstorno;
-/* Atributo que representa o c\u00F3digo identificador do status da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_nao_processada_response_localidade_estabelecimento_value}}} [optional]
+ */
+@property(nonatomic) NSString* localidadeEstabelecimento;
+/* {{{transacao_nao_processada_response_modo_entrada_transacao_value}}} [optional]
+ */
+@property(nonatomic) NSString* modoEntradaTransacao;
+/* {{{transacao_nao_processada_response_nome_estabelecimento_value}}} [optional]
+ */
+@property(nonatomic) NSString* nomeEstabelecimento;
+/* {{{transacao_nao_processada_response_nome_fantasia_estabelecimento_value}}} [optional]
+ */
+@property(nonatomic) NSString* nomeFantasiaEstabelecimento;
+/* {{{transacao_nao_processada_response_nome_portador_value}}} [optional]
+ */
+@property(nonatomic) NSString* nomePortador;
+/* {{{transacao_nao_processada_response_numero_parcela_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* parcela;
+/* {{{transacao_nao_processada_response_plano_parcelamento_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* plano;
+/* {{{transacao_nao_processada_response_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* status;
+/* {{{transacao_nao_processada_response_valor_taxa_embarque_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* taxaEmbarque;
+/* {{{transacao_nao_processada_response_valor_brl_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* valorBRL;
+/* {{{transacao_nao_processada_response_valor_entrada_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* valorEntrada;
+/* {{{transacao_nao_processada_response_valor_usd_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* valorUSD;
 
 @end

@@ -15,46 +15,46 @@
 
 @interface PierSocioAprovadoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do S\u00F3cio (id) [optional]
+/* {{{socio_aprovado_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o Nome do Socio [optional]
+/* {{{socio_aprovado_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* N\u00FAmero do CPF, quando PF. [optional]
+/* {{{socio_aprovado_response_cpf_value}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
+/* {{{socio_aprovado_response_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
+/* {{{socio_aprovado_response_sexo_value}}} [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00FAmero da Identidade. [optional]
+/* {{{socio_aprovado_response_numero_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Org\u00E3o expedidor do RG. [optional]
+/* {{{socio_aprovado_response_orgao_expedidor_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
-/* Sigla da Unidade Federativa de onde foi expedido a Identidade [optional]
+/* {{{socio_aprovado_response_unidade_federativa_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data emiss\u00E3o da Identidade [optional]
+/* {{{socio_aprovado_response_data_emissao_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* Estado civil do s\u00F3cio [optional]
+/* {{{socio_aprovado_response_estado_civil_value}}} [optional]
  */
 @property(nonatomic) NSString* estadoCivil;
-/* Profiss\u00E3o do s\u00F3cio [optional]
+/* {{{socio_aprovado_response_profissao_value}}} [optional]
  */
 @property(nonatomic) NSString* profissao;
-/* Nacionalidade do s\u00F3cio [optional]
+/* {{{socio_aprovado_response_nacionalidade_value}}} [optional]
  */
 @property(nonatomic) NSString* nacionalidade;
-/* Email do s\u00F3cio [optional]
+/* {{{socio_aprovado_response_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Informa os telefones do s\u00F3cio [optional]
+/* {{{socio_aprovado_response_telefones_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaResponse>* telefones;
 

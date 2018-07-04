@@ -14,10 +14,10 @@
 
 @interface PierStatusImpressaoResponse : PierObject
 
-/* Id do est\u00E1gio cart\u00E3o [optional]
+/* {{{status_impressao_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do status impress\u00E3o [optional]
+/* {{{status_impressao_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
 

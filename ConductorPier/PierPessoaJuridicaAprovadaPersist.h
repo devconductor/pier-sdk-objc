@@ -7,10 +7,10 @@
  * Do not edit the class manually.
  */
 
-#import "PierEnderecoAprovadoPersist.h"
-#import "PierPessoaPersist.h"
-#import "PierRefenciaComercialAprovadoPersist.h"
-#import "PierTelefonePessoaAprovadaPersist.h"
+#import "PierEnderecoAprovadoPersistValue_.h"
+#import "PierReferenciaComercialAprovadoPersistValue_.h"
+#import "PierSocioAprovadoPersistValue_.h"
+#import "PierTelefonePessoaAprovadaPersistValue_.h"
 
 
 @protocol PierPessoaJuridicaAprovadaPersist
@@ -18,70 +18,73 @@
 
 @interface PierPessoaJuridicaAprovadaPersist : PierObject
 
-/* Apresenta o nome completo da raz\u00E3o social (nome empresarial)'. 
+/* {{{pessoa_juridica_aprovada_persist_razao_social_value}}} 
  */
 @property(nonatomic) NSString* razaoSocial;
-/* Apresenta o nome fantasia da empresa. [optional]
+/* {{{pessoa_juridica_aprovada_persist_nome_fantasia_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasia;
-/* N\u00FAmero do Cadastro Nacional de Pessoa Juridica (CNPJ) 
+/* {{{pessoa_juridica_aprovada_persist_cnpj_value}}} 
  */
 @property(nonatomic) NSString* cnpj;
-/* N\u00FAmero da Inscri\u00E7\u00E3o Estadual (IE). [optional]
+/* {{{pessoa_juridica_aprovada_persist_inscricao_estadual_value}}} [optional]
  */
 @property(nonatomic) NSString* inscricaoEstadual;
-/* Data de abertura da empresa, essa data deve ser informada no formato: aaaa-MM-dd. 
+/* {{{pessoa_juridica_aprovada_persist_data_abertura_empresa_value}}} 
  */
 @property(nonatomic) NSString* dataAberturaEmpresa;
-/* Id da origem comercial 
+/* {{{pessoa_juridica_aprovada_persist_id_origem_comercial_value}}} 
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* Id do produto 
+/* {{{pessoa_juridica_aprovada_persist_id_produto_value}}} 
  */
 @property(nonatomic) NSNumber* idProduto;
-/* N\u00FAmero da ag\u00EAncia. [optional]
+/* {{{pessoa_juridica_aprovada_persist_numero_banco_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* numeroBanco;
+/* {{{pessoa_juridica_aprovada_persist_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00FAmero da conta corrente. [optional]
+/* {{{pessoa_juridica_aprovada_persist_numero_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
-/* Email da empresa [optional]
+/* {{{pessoa_juridica_aprovada_persist_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Dia vencimento 
+/* {{{pessoa_juridica_aprovada_persist_dia_vencimento_value}}} 
  */
 @property(nonatomic) NSNumber* diaVencimento;
-/* Nome que deve ser impresso no cart\u00E3o [optional]
+/* {{{pessoa_juridica_aprovada_persist_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Apresenta o valor da renda compravada [optional]
+/* {{{pessoa_juridica_aprovada_persist_valor_renda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorRenda;
-/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+/* {{{pessoa_juridica_aprovada_persist_canal_entrada_value}}} [optional]
  */
 @property(nonatomic) NSString* canalEntrada;
-/* Indica o valor da pontua\u00E7\u00E3o atribuido ao cliente (caso n\u00E3o informado ser\u00E1 atribuido o valor = 0) [optional]
+/* {{{pessoa_juridica_aprovada_persist_valor_pontuacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPontuacao;
-/* Apresenta os telefones da empresa [optional]
+/* {{{pessoa_juridica_aprovada_persist_telefones_value}}} [optional]
  */
-@property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersist>* telefones;
-/* Pode ser informado os seguintes tipos de endere\u00E7o: Residencial, Comercial, e Outros 
+@property(nonatomic) NSArray<PierTelefonePessoaAprovadaPersistValue_>* telefones;
+/* {{{pessoa_juridica_aprovada_persist_enderecos_value}}} 
  */
-@property(nonatomic) NSArray<PierEnderecoAprovadoPersist>* enderecos;
-/* Apresenta os dados dos s\u00F3cios da empresa, caso exista [optional]
+@property(nonatomic) NSArray<PierEnderecoAprovadoPersistValue_>* enderecos;
+/* {{{pessoa_juridica_aprovada_persist_socios_value}}} [optional]
  */
-@property(nonatomic) NSArray<PierPessoaPersist>* socios;
-/* Apresenta os dados das refer\u00EAncias comerciais [optional]
+@property(nonatomic) NSArray<PierSocioAprovadoPersistValue_>* socios;
+/* {{{pessoa_juridica_aprovada_persist_referencias_comerciais_value}}} [optional]
  */
-@property(nonatomic) NSArray<PierRefenciaComercialAprovadoPersist>* referenciasComerciais;
-/* Valor do Limite Global 
+@property(nonatomic) NSArray<PierReferenciaComercialAprovadoPersistValue_>* referenciasComerciais;
+/* {{{pessoa_juridica_aprovada_persist_limite_global_value}}} 
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* Valor m\u00E1ximo do limite de cr\u00E9dito para realizar transa\u00E7\u00F5es 
+/* {{{pessoa_juridica_aprovada_persist_limite_maximo_value}}} 
  */
 @property(nonatomic) NSNumber* limiteMaximo;
-/* Valor do limite de cr\u00E9dito acumulado da soma das parcelas das compras 
+/* {{{pessoa_juridica_aprovada_persist_limite_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* limiteParcelas;
 

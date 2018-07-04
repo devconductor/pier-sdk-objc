@@ -14,22 +14,22 @@
 
 @interface PierControleVencimentoResponse : PierObject
 
-/*  Indica a data de vencimento das faturas [optional]
+/* {{{controle_vencimento_response_data_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimento;
-/*  Indica a data prevista para a realiza\u00E7\u00E3o do Corte das faturas [optional]
+/* {{{controle_vencimento_response_data_prevista_corte_value}}} [optional]
  */
 @property(nonatomic) NSString* dataPrevistaCorte;
-/* Indica a data e a hora que fora realizada a realiza\u00E7\u00E3o do Corte das faturas [optional]
+/* {{{controle_vencimento_response_data_hora_realizacao_corte_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraRealizacaoCorte;
-/* Indica a data prevista para a realiza\u00E7\u00E3o do faturamento [optional]
+/* {{{controle_vencimento_response_data_prevista_faturamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataPrevistaFaturamento;
-/* Indica a data e a hora que fora realizado o faturamento [optional]
+/* {{{controle_vencimento_response_data_hora_realizacao_faturamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraRealizacaoFaturamento;
-/* Indica o dia \u00FAtil que ser\u00E1 considerado como a data de vencimento [optional]
+/* {{{controle_vencimento_response_data_real_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataRealVencimento;
 

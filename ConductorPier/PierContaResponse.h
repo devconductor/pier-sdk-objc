@@ -14,37 +14,37 @@
 
 @interface PierContaResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o de conta (id). [optional]
+/* {{{conta_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o do produto ao qual a conta faz parte. (id). [optional]
+/* {{{conta_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Origem Comercial (id) que deu origem a Conta. [optional]
+/* {{{conta_response_id_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa Titular da Conta (id). [optional]
+/* {{{conta_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do status atribuido a conta. [optional]
+/* {{{conta_response_id_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Apresenta o dia de vencimento. [optional]
+/* {{{conta_response_dia_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diaVencimento;
-/* Apresenta o melhor dia de compra. [optional]
+/* {{{conta_response_melhor_dia_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* melhorDiaCompra;
-/* Apresenta a data em que o idStatusConta atual fora atribu\u00EDdo para ela. [optional]
+/* {{{conta_response_data_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* dataStatusConta;
-/* Apresenta a data em que o cart\u00E3o foi gerado. [optional]
+/* {{{conta_response_data_cadastro_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCadastro;
-/* Apresenta a data da ultima altera\u00E7\u00E3o de vencimento. [optional]
+/* {{{conta_response_data_ultima_alteracao_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataUltimaAlteracaoVencimento;
-/* Apresenta o valor da renda comprovada [optional]
+/* {{{conta_response_valor_renda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorRenda;
 

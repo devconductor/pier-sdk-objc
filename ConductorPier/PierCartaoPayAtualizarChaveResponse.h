@@ -14,28 +14,28 @@
 
 @interface PierCartaoPayAtualizarChaveResponse : PierObject
 
-/* Id do cart\u00E3o [optional]
+/* {{{cartao_pay_base_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* N\u00FAmero do cart\u00E3o real criptografado [optional]
+/* {{{cartao_pay_base_response_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Data de validade do cart\u00E3o [optional]
+/* {{{cartao_pay_base_response_data_validade_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidadeCartao;
-/* Nome impresso no cart\u00E3o criptografado [optional]
+/* {{{cartao_pay_base_response_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Identificador do emissor do cart\u00E3o [optional]
+/* {{{cartao_pay_base_response_id_entidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEntidade;
-/* Nome do emissor do cart\u00E3o [optional]
+/* {{{cartao_pay_base_response_nome_entidade_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEntidade;
-/* Status do cart\u00E3o [optional]
+/* {{{cartao_pay_base_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Chave de gera\u00E7\u00E3o de transa\u00E7\u00E3o criptograda [optional]
+/* {{{cartao_pay_atualizar_chave_response_chave_criptograma_value}}} [optional]
  */
 @property(nonatomic) NSString* chaveCriptograma;
 

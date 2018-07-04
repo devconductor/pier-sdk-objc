@@ -14,28 +14,28 @@
 
 @interface PierAcordoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do acordo (id). [optional]
+/* {{{acordo_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da conta. [optional]
+/* {{{acordo_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Status do acordo. [optional]
+/* {{{acordo_response_status_acordo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* statusAcordo;
-/* Valor do Acordo. [optional]
+/* {{{acordo_response_valor_acordo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorAcordo;
-/* Data e Hora do acordo. [optional]
+/* {{{acordo_response_data_acordo_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAcordo;
-/* Quantidade de parcelas do acordo. [optional]
+/* {{{acordo_response_quantidade_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Saldo atual final. [optional]
+/* {{{acordo_response_saldo_atual_final_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoAtualFinal;
-/* Dias em atraso. [optional]
+/* {{{acordo_response_dias_em_atraso_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasEmAtraso;
 

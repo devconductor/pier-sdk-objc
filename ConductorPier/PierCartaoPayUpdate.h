@@ -14,7 +14,7 @@
 
 @interface PierCartaoPayUpdate : PierObject
 
-/* Status do cart\u00E3o 
+/* {{{cartao_pay_update_status_value}}} 
  */
 @property(nonatomic) NSString* status;
 

@@ -14,25 +14,25 @@
 
 @interface PierArquivoParametroAUDResponse : PierObject
 
-/* Identificador da auditoria arquivo [optional]
+/* {{{arquivo_parametro_a_u_d_response_rev_value}}} [optional]
  */
 @property(nonatomic) NSNumber* rev;
-/* Identificador do tipo de auditoria (0 - Criado, 1 - Alterado, 2 - Exclu\u00EDdo) [optional]
+/* {{{arquivo_parametro_a_u_d_response_rev_type_value}}} [optional]
  */
 @property(nonatomic) NSNumber* revType;
-/* Identificador do par\u00E2metro [optional]
+/* {{{arquivo_parametro_a_u_d_response_id_value}}} [optional]
  */
 @property(nonatomic) NSString* _id;
-/* Nome do par\u00E2metro [optional]
+/* {{{arquivo_parametro_a_u_d_response_parametro_value}}} [optional]
  */
 @property(nonatomic) NSString* parametro;
-/* Conte\u00FAdo do par\u00E2metro [optional]
+/* {{{arquivo_parametro_a_u_d_response_conteudo_value}}} [optional]
  */
 @property(nonatomic) NSString* conteudo;
-/* Data de inclus\u00E3o do par\u00E2metro [optional]
+/* {{{arquivo_parametro_a_u_d_response_data_hora_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraInclusao;
-/* Data de altera\u00E7\u00E3o do par\u00E2metro [optional]
+/* {{{arquivo_parametro_a_u_d_response_data_hora_alteracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraAlteracao;
 

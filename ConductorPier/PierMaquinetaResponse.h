@@ -14,28 +14,28 @@
 
 @interface PierMaquinetaResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Maquineta. [optional]
+/* {{{maquineta_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do EStabelecimento. [optional]
+/* {{{maquineta_response_id_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo Maquineta. [optional]
+/* {{{maquineta_response_id_tipo_maquineta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoMaquineta;
-/* Valor de manuten\u00E7\u00E3o da Maquineta. [optional]
+/* {{{maquineta_response_valor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* Data de implanta\u00E7\u00E3o da Maquineta. [optional]
+/* {{{maquineta_response_data_hora_implantacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraImplantacao;
-/* Data de cadastramento da Maquineta. [optional]
+/* {{{maquineta_response_data_hora_cadastramento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraCadastramento;
-/* N\u00FAmero do terminal vinculado a Maquineta. [optional]
+/* {{{maquineta_response_terminal_value}}} [optional]
  */
 @property(nonatomic) NSString* terminal;
-/* Usu\u00E1rio da aplica\u00E7\u00E3o. [optional]
+/* {{{maquineta_response_usuario_apl_value}}} [optional]
  */
 @property(nonatomic) NSString* usuarioApl;
 

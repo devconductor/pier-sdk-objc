@@ -14,19 +14,19 @@
 
 @interface PierValidaSenhaCartaoResponse : PierObject
 
-/* Mensagem [optional]
+/* {{{valida_senha_cartao_response_mensagem_value}}} [optional]
  */
 @property(nonatomic) NSString* mensagem;
-/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
+/* {{{valida_senha_cartao_response_id_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusCartao;
-/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
+/* {{{valida_senha_cartao_response_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* statusCartao;
-/* Quantidade tentativas [optional]
+/* {{{valida_senha_cartao_response_quantidade_tentativas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeTentativas;
-/* Quantidade m\u00E1xima tentativas permitidas [optional]
+/* {{{valida_senha_cartao_response_quantidade_maxima_tentativas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeMaximaTentativas;
 

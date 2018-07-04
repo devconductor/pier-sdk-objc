@@ -14,28 +14,28 @@
 
 @interface PierDadosPortadorRequest : PierObject
 
-/* N\u00FAmero do cart\u00E3o. 
+/* {{{dados_portador_request_cartao_value}}} 
  */
 @property(nonatomic) NSString* cartao;
-/* N\u00FAmero do CPF. 
+/* {{{dados_portador_request_cpf_value}}} 
  */
 @property(nonatomic) NSString* cpf;
-/* Nome do portador. [optional]
+/* {{{dados_portador_request_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Data de nascimento do portador do cart\u00E3o. [optional]
+/* {{{dados_portador_request_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* CEP da resid\u00EAncia do portador da conta. 
+/* {{{dados_portador_request_cep_residencial_value}}} 
  */
 @property(nonatomic) NSString* cepResidencial;
-/* E-mail do portador do cart\u00E3o. 
+/* {{{dados_portador_request_email_value}}} 
  */
 @property(nonatomic) NSString* email;
-/* DDD do n\u00FAmero de telefone do portador do cart\u00E3o. [optional]
+/* {{{dados_portador_request_ddd_value}}} [optional]
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00FAmero do telefone do portador do cart\u00E3o. [optional]
+/* {{{dados_portador_request_telefone_value}}} [optional]
  */
 @property(nonatomic) NSString* telefone;
 

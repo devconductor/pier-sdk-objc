@@ -14,16 +14,16 @@
 
 @interface PierAnuidadeResponse : PierObject
 
-/* Identificador do Tipo de anuidade de b\u00F4nus de celular [optional]
+/* {{{anuidade_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de anuidade de b\u00F4nus de celular [optional]
+/* {{{anuidade_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Valor do tipo de anuidade de b\u00F4nus de celular [optional]
+/* {{{anuidade_response_valor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* Se o tipo de anuidade de b\u00F4nus de celular \u00E9 bonificada [optional]
+/* {{{anuidade_response_flag_anuidade_bonificada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAnuidadeBonificada;
 

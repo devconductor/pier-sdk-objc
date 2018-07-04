@@ -14,10 +14,10 @@
 
 @interface PierNotificacaoResponse : PierObject
 
-/* N\u00FAmero do protocolo de envio de notifica\u00E7\u00F5es [optional]
+/* {{{notificacao_response_protocolo_value}}} [optional]
  */
 @property(nonatomic) NSString* protocolo;
-/* Mensagem de resposta da solicita\u00E7\u00F5es de envio [optional]
+/* {{{notificacao_response_mensagem_value}}} [optional]
  */
 @property(nonatomic) NSString* mensagem;
 

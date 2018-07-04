@@ -14,25 +14,25 @@
 
 @interface PierVinculoEstabelecimentoAdquirenteResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do VinculoEstabelecimentoAdquirente (id). [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento (id). [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_id_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Adquirente (id). [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_id_adquirente_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idAdquirente;
-/* C\u00F3digo do v\u00EDnculo entre o estabelecimento e o adquirente. [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_codigo_estabelecimento_adquirente_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoEstabelecimentoAdquirente;
-/* Data de cadastro do v\u00EDnculo. [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_data_hora_cadastro_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraCadastro;
-/* Data de cadastro do v\u00EDnculo. [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_mensagem_value}}} [optional]
  */
 @property(nonatomic) NSString* mensagem;
-/* Data de cadastro do v\u00EDnculo. [optional]
+/* {{{vinculo_estabelecimento_adquirente_response_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* status;
 

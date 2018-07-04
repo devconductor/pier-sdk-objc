@@ -15,13 +15,13 @@
 
 @interface PierCampanhaPersist : PierObject
 
-/* Nome da campanha. [optional]
+/* {{{campanha_persist_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do tipo da campanha. [optional]
+/* {{{campanha_persist_id_tipo_campanha_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoCampanha;
-/* Lista com os planos de campanha. [optional]
+/* {{{campanha_persist_planos_campanhas_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierPlanoCampanhaPersist>* planosCampanhas;
 

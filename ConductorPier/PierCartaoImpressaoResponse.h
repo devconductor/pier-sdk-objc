@@ -14,76 +14,76 @@
 
 @interface PierCartaoImpressaoResponse : PierObject
 
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id) a qual o cart\u00E3o gerado pertence. [optional]
+/* {{{cartao_impressao_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) portadora do cart\u00E3o gerado. [optional]
+/* {{{cartao_impressao_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o (id) que foi gerado. [optional]
+/* {{{cartao_impressao_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Bandeira (id) a qual o Cart\u00E3o pertence, quando bandeirado. [optional]
+/* {{{cartao_impressao_response_id_bandeira_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idBandeira;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Cart\u00E3o (id) atribu\u00EDdo ao Cart\u00E3o. [optional]
+/* {{{cartao_impressao_response_id_tipo_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoCartao;
-/* Apresenta o n\u00FAmero do cart\u00E3o. [optional]
+/* {{{cartao_impressao_response_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Apresenta o nome do Portador do Cart\u00E3o. [optional]
+/* {{{cartao_impressao_response_nome_plastico_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePlastico;
-/* Apresenta o n\u00FAmero do CVV a ser impresso no Cart\u00E3o [optional]
+/* {{{cartao_impressao_response_cvv2_value}}} [optional]
  */
 @property(nonatomic) NSString* cvv2;
-/* Apresenta a data de emiss\u00E3o do Cart\u00E3o. [optional]
+/* {{{cartao_impressao_response_data_geracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataGeracao;
-/* Apresenta a data de Validade do Cart\u00E3o. [optional]
+/* {{{cartao_impressao_response_data_validade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* Apresenta o nome da Origem Comercial que realizou o cadastro do Titular da Conta a qual o Cart\u00E3o pertence. [optional]
+/* {{{cartao_impressao_response_nome_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeOrigemComercial;
-/* Apresenta o nome da Empresa (Pessoa Jur\u00EDdica) titular do Cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{cartao_impressao_response_nome_empresa_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEmpresa;
-/* Apresenta o n\u00FAmero da Ag\u00EAncia a ser impresso no Cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{cartao_impressao_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* Apresenta o n\u00FAmero da Conta Corrente a ser impresso no Cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{cartao_impressao_response_numero_conta_corente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorente;
-/* Apresenta o nome da Pessoa F\u00EDsica ou Jur\u00EDdica que contratou servi\u00E7os de benef\u00EDcio para o portador do cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{cartao_impressao_response_nome_empresa_beneficio_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEmpresaBeneficio;
-/* Apresenta o CPF do Portador do Cart\u00E3o. [optional]
+/* {{{cartao_impressao_response_cpf_value}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* Apresenta o tipo do Portador do cart\u00E3o, sendo: ('T': Titular, 'A': Adicional). [optional]
+/* {{{cartao_impressao_response_tipo_portador_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoPortador;
-/* Apresenta o nome da Pessoa F\u00EDsica ou Jur\u00EDdica a ser impresso no cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{cartao_impressao_response_nome_empregador_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEmpregador;
-/* Apresenta os dados da Trilha1, seguindo as regras de trilha do emissor. [optional]
+/* {{{cartao_impressao_response_trilha1_value}}} [optional]
  */
 @property(nonatomic) NSString* trilha1;
-/* Apresenta os dados da Trilha2, seguindo as regras de trilha do emissor. [optional]
+/* {{{cartao_impressao_response_trilha2_value}}} [optional]
  */
 @property(nonatomic) NSString* trilha2;
-/* Apresenta os dados da TrilhaCVV01, seguindo as regras de trilha do emissor. [optional]
+/* {{{cartao_impressao_response_trilha_c_v_v1_value}}} [optional]
  */
 @property(nonatomic) NSString* trilhaCVV1;
-/* Apresenta os dados da TrilhaCVV02, seguindo as regras de trilha do emissor. [optional]
+/* {{{cartao_impressao_response_trilha_c_v_v2_value}}} [optional]
  */
 @property(nonatomic) NSString* trilhaCVV2;
-/* Apresenta o status que informa se o cart\u00E3o \u00E9 virtual  [optional]
+/* {{{cartao_impressao_response_flag_virtual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagVirtual;
-/* Apresenta o numero da hash do cart\u00E3o  [optional]
+/* {{{cartao_impressao_response_numero_cartao_hash_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroCartaoHash;
 

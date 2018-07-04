@@ -14,13 +14,13 @@
 
 @interface PierCodigoSegurancaSMSRequest : PierObject
 
-/* C\u00F3digo DDD do telefone (id). [optional]
+/* {{{codigo_seguranca_s_m_s_request_ddd_value}}} [optional]
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00FAmero do telefone. [optional]
+/* {{{codigo_seguranca_s_m_s_request_telefone_value}}} [optional]
  */
 @property(nonatomic) NSString* telefone;
-/* Token para valida\u00E7\u00E3o. [optional]
+/* {{{codigo_seguranca_s_m_s_request_codigo_seguranca_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoSeguranca;
 

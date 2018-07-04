@@ -15,16 +15,16 @@
 
 @interface PierCampanhaResponse : PierObject
 
-/* Identificador da campanha [optional]
+/* {{{campanha_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome da campanha [optional]
+/* {{{campanha_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do tipo de campanha a qual a a Campanha pertence [optional]
+/* {{{campanha_response_id_tipo_campanha_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoCampanha;
-/* Lista de planos associados a Campanha 
+/* {{{campanha_response_planos_campanhas_value}}} 
  */
 @property(nonatomic) NSArray<PierPlanoCampanhaResponse>* planosCampanhas;
 

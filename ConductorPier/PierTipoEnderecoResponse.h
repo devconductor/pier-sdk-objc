@@ -14,10 +14,10 @@
 
 @interface PierTipoEnderecoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Endere\u00E7o (id) [optional]
+/* {{{tipo_endereco_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do Tipo do Endere\u00E7o [optional]
+/* {{{tipo_endereco_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
 

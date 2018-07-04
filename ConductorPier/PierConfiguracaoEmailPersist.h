@@ -14,34 +14,34 @@
 
 @interface PierConfiguracaoEmailPersist : PierObject
 
-/* IP (Host) do servidor de e-mail. [optional]
+/* {{{configuracao_email_persist_host_value}}} [optional]
  */
 @property(nonatomic) NSString* host;
-/* Porta usada pelo servidor de e-mail. [optional]
+/* {{{configuracao_email_persist_port_value}}} [optional]
  */
 @property(nonatomic) NSString* port;
-/* Porta usada pelo servi\u00E7o TLS/STARTTLS. [optional]
+/* {{{configuracao_email_persist_port_t_l_s_s_t_a_r_t_t_l_s_value}}} [optional]
  */
 @property(nonatomic) NSString* portTLSSTARTTLS;
-/* Porta usada pelo servi\u00E7o SSL. [optional]
+/* {{{configuracao_email_persist_port_s_s_l_value}}} [optional]
  */
 @property(nonatomic) NSString* portSSL;
-/* Protocolo de comunica\u00E7\u00E3o usado pelo servi\u00E7o de e-mail. [optional]
+/* {{{configuracao_email_persist_protocolo_value}}} [optional]
  */
 @property(nonatomic) NSString* protocolo;
-/* O servi\u00E7o de e-mail requer autentica\u00E7\u00E3o. [optional]
+/* {{{configuracao_email_persist_requer_autenticacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* requerAutenticacao;
-/* O servi\u00E7o de e-mail requer SSL. [optional]
+/* {{{configuracao_email_persist_requer_s_s_l_value}}} [optional]
  */
 @property(nonatomic) NSNumber* requerSSL;
-/* O servi\u00E7o de e-mail requer TLS. [optional]
+/* {{{configuracao_email_persist_requer_t_l_s_value}}} [optional]
  */
 @property(nonatomic) NSNumber* requerTLS;
-/* Usuario do servi\u00E7o de e-mail. [optional]
+/* {{{configuracao_email_persist_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
-/* Senha de usu\u00E1rio do servi\u00E7o de e-mail. [optional]
+/* {{{configuracao_email_persist_senha_value}}} [optional]
  */
 @property(nonatomic) NSString* senha;
 

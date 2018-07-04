@@ -14,19 +14,19 @@
 
 @interface PierStatusOportunidadeResponse : PierObject
 
-/* C\u00F3digo identificador do StatusOportunidade [optional]
+/* {{{status_oportunidade_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador do TipoOportunidade [optional]
+/* {{{status_oportunidade_response_id_tipo_oportunidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoOportunidade;
-/* Nome do status oportunidade [optional]
+/* {{{status_oportunidade_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descricao do StatusOportunidade [optional]
+/* {{{status_oportunidade_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Flag que representa se o tipo oportunidade est\u00E1 ativo [optional]
+/* {{{status_oportunidade_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

@@ -15,16 +15,16 @@
 
 @interface PierNotificacaoEmailRequest : PierObject
 
-/* ID para o template da notifica\u00E7\u00E3o. [optional]
+/* {{{notificacao_email_request_id_template_notificacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTemplateNotificacao;
-/* Lista de email(s) do(s) destinat\u00E1rio(s). [optional]
+/* {{{notificacao_email_request_destinatarios_value}}} [optional]
  */
 @property(nonatomic) NSArray* /* NSString */ destinatarios;
-/* Lista de ids dos anexos a serem enviados. [optional]
+/* {{{notificacao_email_request_anexos_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierAnexoNotificacaoEmailRequest>* anexos;
-/* Mapa de par\u00E2metros para montagem da notifica\u00E7\u00E3o. [optional]
+/* {{{notificacao_email_request_parametros_conteudo_value}}} [optional]
  */
 @property(nonatomic) NSDictionary* /* NSString, NSObject */ parametrosConteudo;
 

@@ -14,13 +14,13 @@
 
 @interface PierDetalheOportunidadeResponse : PierObject
 
-/* C\u00F3digo identificador do detalhe [optional]
+/* {{{detalhe_oportunidade_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do conte\u00FAdo [optional]
+/* {{{detalhe_oportunidade_response_nome_campo_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00FAdo do detalhe [optional]
+/* {{{detalhe_oportunidade_response_conteudo_value}}} [optional]
  */
 @property(nonatomic) NSString* conteudo;
 

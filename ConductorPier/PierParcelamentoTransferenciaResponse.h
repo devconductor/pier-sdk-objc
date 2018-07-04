@@ -14,25 +14,25 @@
 
 @interface PierParcelamentoTransferenciaResponse : PierObject
 
-/* N\u00FAmero de parcelas dispon\u00EDveis. [optional]
+/* {{{parcelamento_transferencia_response_numero_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcela;
-/* Valor das demais parcelas. [optional]
+/* {{{parcelamento_transferencia_response_valor_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcelas;
-/* Valor total do financiamento. [optional]
+/* {{{parcelamento_transferencia_response_valor_total_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotal;
-/* Valor da tarifa de contrata\u00E7\u00E3o. [optional]
+/* {{{parcelamento_transferencia_response_valor_t_a_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTAC;
-/* IOF calculado para o cliente [optional]
+/* {{{parcelamento_transferencia_response_valor_i_o_f_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorIOF;
-/* Valor da taxa de juros. [optional]
+/* {{{parcelamento_transferencia_response_taxa_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* CET anual. [optional]
+/* {{{parcelamento_transferencia_response_cet_anual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* cetAnual;
 

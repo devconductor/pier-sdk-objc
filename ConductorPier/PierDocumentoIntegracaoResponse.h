@@ -14,13 +14,13 @@
 
 @interface PierDocumentoIntegracaoResponse : PierObject
 
-/* ID do Documento Integrado. [optional]
+/* {{{documento_integracao_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* ID do Template de Documento associado. [optional]
+/* {{{documento_integracao_response_id_template_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTemplate;
-/* Nome do Documento. [optional]
+/* {{{documento_integracao_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
 

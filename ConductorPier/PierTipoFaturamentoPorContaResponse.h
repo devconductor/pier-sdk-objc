@@ -14,25 +14,25 @@
 
 @interface PierTipoFaturamentoPorContaResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de faturamento por conta (id). [optional]
+/* {{{tipo_faturamento_por_conta_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta relacionada ao tipo de faturamento. [optional]
+/* {{{tipo_faturamento_por_conta_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Status da configura\u00E7\u00E3o que representa que se o tipo de faturamento por conta est\u00E1 ativo ou cancelado. [optional]
+/* {{{tipo_faturamento_por_conta_response_status_value}}} [optional]
  */
-@property(nonatomic) NSNumber* status;
-/* C\u00F3digo de identifica\u00E7\u00E3o da tipo de faturamento referenciado. [optional]
+@property(nonatomic) NSNumber* ativo;
+/* {{{tipo_faturamento_por_conta_response_id_tipo_faturamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoFaturamento;
-/* Data de inclus\u00E3o da configura\u00E7\u00E3o de tipo de faturamento por conta. [optional]
+/* {{{tipo_faturamento_por_conta_response_data_hora_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraInclusao;
-/* Data de cancelamento da configura\u00E7\u00E3o de tipo de faturamento por conta. [optional]
+/* {{{tipo_faturamento_por_conta_response_data_hora_cancelamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraCancelamento;
-/* Descri\u00E7\u00E3o do respons\u00E1vel pela \u00FAltima modifica\u00E7\u00E3o da configura\u00E7\u00E3o. [optional]
+/* {{{tipo_faturamento_por_conta_response_modificado_por_value}}} [optional]
  */
 @property(nonatomic) NSString* modificadoPor;
 

@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"descricao": @"descricao", @"valor": @"valor", @"flagAtivo": @"flagAtivo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"flagAnuidadeBonificada": @"flagAnuidadeBonificada", @"id": @"_id", @"nome": @"nome", @"valor": @"valor", @"flagAtivo": @"flagAtivo", @"valorBonus": @"valorBonus", @"numeroParcelas": @"numeroParcelas", @"flagAdereAutomatico": @"flagAdereAutomatico", @"flagGeraNumeroSorte": @"flagGeraNumeroSorte", @"faixaEtaria": @"faixaEtaria", @"flagSeguro": @"flagSeguro", @"sorteiosMensais": @"sorteiosMensais", @"flagAdesaoAutomatica": @"flagAdesaoAutomatica", @"flagDependente": @"flagDependente", @"quantidadeDependente": @"quantidadeDependente", @"idTermoSeguroServico": @"idTermoSeguroServico", @"idadeMinima": @"idadeMinima", @"idadeMaxima": @"idadeMaxima", @"flagDebitoIncondicional": @"flagDebitoIncondicional", @"flagExtratoIncondicional": @"flagExtratoIncondicional", @"flagEstornoAutomatico": @"flagEstornoAutomatico", @"valorRepassadoSeguradora": @"valorRepassadoSeguradora", @"flagLancaTransacao": @"flagLancaTransacao", @"flagTransferenciaAutomatica": @"flagTransferenciaAutomatica", @"idProduto": @"idProduto", @"idGrupoDebitoRecorrente": @"idGrupoDebitoRecorrente", @"quantidadeTentativasCobranca": @"quantidadeTentativasCobranca", @"idAjuste": @"idAjuste" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"descricao", @"valor", @"flagAtivo"];
+  NSArray *optionalProperties = @[@"flagAnuidadeBonificada", @"_id", @"nome", @"valor", @"flagAtivo", @"valorBonus", @"numeroParcelas", @"flagAdereAutomatico", @"flagGeraNumeroSorte", @"faixaEtaria", @"flagSeguro", @"sorteiosMensais", @"flagAdesaoAutomatica", @"flagDependente", @"quantidadeDependente", @"idTermoSeguroServico", @"idadeMinima", @"idadeMaxima", @"flagDebitoIncondicional", @"flagExtratoIncondicional", @"flagEstornoAutomatico", @"valorRepassadoSeguradora", @"flagLancaTransacao", @"flagTransferenciaAutomatica", @"idProduto", @"idGrupoDebitoRecorrente", @"quantidadeTentativasCobranca", @"idAjuste"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

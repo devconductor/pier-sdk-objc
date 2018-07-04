@@ -14,31 +14,31 @@
 
 @interface PierFaturaResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
+/* {{{fatura_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Situa\u00E7\u00E3o de Processamento da fatura. [optional]
+/* {{{fatura_response_situacao_processamento_value}}} [optional]
  */
 @property(nonatomic) NSString* situacaoProcessamento;
-/* Status de pagamento efetuado. [optional]
+/* {{{fatura_response_pagamento_efetuado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoEfetuado;
-/* Data de vencimento da fatura. [optional]
+/* {{{fatura_response_data_vencimento_fatura_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoFatura;
-/* Data de vencimento real da fatura. [optional]
+/* {{{fatura_response_data_vencimento_real_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoReal;
-/* Data de fechamento da fatura. [optional]
+/* {{{fatura_response_data_fechamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataFechamento;
-/* Valor total da fatura. [optional]
+/* {{{fatura_response_valor_total_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotal;
-/* Valor do pagamento m\u00EDnimo. [optional]
+/* {{{fatura_response_valor_pagamento_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoMinimo;
-/* Valor do saldo anterior. [optional]
+/* {{{fatura_response_saldo_anterior_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoAnterior;
 

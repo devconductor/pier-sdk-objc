@@ -14,50 +14,56 @@
 
 @interface PierConfiguracaoRegistroCobrancaResponse : PierObject
 
-/* C\u00F3digo identificador da configura\u00E7\u00E3o. [optional]
+/* {{{configuracao_registro_cobranca_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo do emissor. [optional]
+/* {{{configuracao_registro_cobranca_response_id_emissor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* C\u00F3digo do Banco. [optional]
+/* {{{configuracao_registro_cobranca_response_codigo_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* codigoBanco;
-/* URL de acesso ao banco. [optional]
+/* {{{configuracao_registro_cobranca_response_uri_value}}} [optional]
  */
 @property(nonatomic) NSString* uri;
-/* Caminho do certificado digital do emissor. [optional]
+/* {{{configuracao_registro_cobranca_response_key_store_name_value}}} [optional]
  */
 @property(nonatomic) NSString* keyStoreName;
-/* Senha do certificado digital do emissor. [optional]
+/* {{{configuracao_registro_cobranca_response_key_store_password_value}}} [optional]
  */
 @property(nonatomic) NSString* keyStorePassword;
-/* Alias do certificado digital do emissor. [optional]
+/* {{{configuracao_registro_cobranca_response_keystore_alias_value}}} [optional]
  */
 @property(nonatomic) NSString* keystoreAlias;
-/* Senha da chave privada do certificado digital do emissor. [optional]
+/* {{{configuracao_registro_cobranca_response_key_store_private_key_password_value}}} [optional]
  */
 @property(nonatomic) NSString* keyStorePrivateKeyPassword;
-/* Tipo do certificado digital do emissor. [optional]
+/* {{{configuracao_registro_cobranca_response_type_keystore_value}}} [optional]
  */
 @property(nonatomic) NSString* typeKeystore;
-/* Caminho do certificado digital do banco. [optional]
+/* {{{configuracao_registro_cobranca_response_trust_store_name_value}}} [optional]
  */
 @property(nonatomic) NSString* trustStoreName;
-/* Senha do certificado digital do banco. [optional]
+/* {{{configuracao_registro_cobranca_response_trust_store_password_value}}} [optional]
  */
 @property(nonatomic) NSString* trustStorePassword;
-/* Alias do certificado digital do banco. [optional]
+/* {{{configuracao_registro_cobranca_response_truststore_alias_value}}} [optional]
  */
 @property(nonatomic) NSString* truststoreAlias;
-/* Tipo do certificado digital do banco. [optional]
+/* {{{configuracao_registro_cobranca_response_type_truststore_value}}} [optional]
  */
 @property(nonatomic) NSString* typeTruststore;
-/* URL adicional de acesso ao banco. [optional]
+/* {{{configuracao_registro_cobranca_response_uri_adicional_value}}} [optional]
  */
 @property(nonatomic) NSString* uriAdicional;
-/* Status indicador se a configura\u00E7\u00E3o est\u00E1 ativa. [optional]
+/* {{{configuracao_registro_cobranca_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
+/* {{{configuracao_registro_cobranca_persist_secret_value}}} 
+ */
+@property(nonatomic) NSString* secret;
+/* {{{configuracao_registro_cobranca_persist_client_id_value}}} 
+ */
+@property(nonatomic) NSString* clientID;
 
 @end

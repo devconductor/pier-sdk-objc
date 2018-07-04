@@ -16,10 +16,10 @@
 
 @interface PierDetalhesFaturaConsignadaResponse : PierObject
 
-/* Apresenta os detalhes da fatura [optional]
+/* {{{detalhes_fatura_consignada_response_fatura_consignada_response_value}}} [optional]
  */
 @property(nonatomic) PierFaturaConsignadaResponse* faturaConsignadaResponse;
-/* Apresenta as transa\u00E7\u00F5es relacionadas a fatura. [optional]
+/* {{{detalhes_fatura_consignada_response_transacoes_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTransacoesCorrentesResponse>* transacoes;
 

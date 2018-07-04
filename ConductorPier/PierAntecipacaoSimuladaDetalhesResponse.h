@@ -14,16 +14,16 @@
 
 @interface PierAntecipacaoSimuladaDetalhesResponse : PierObject
 
-/* Quantidade de parcelas do plano de parcelamento simulado. [optional]
+/* {{{antecipacao_simulada_detalhes_response_quantidade_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Valor total das parcelas do plano de parcelamento. [optional]
+/* {{{antecipacao_simulada_detalhes_response_valor_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcelas;
-/* Valor do desconto para o plano de parcelamento. [optional]
+/* {{{antecipacao_simulada_detalhes_response_valor_desconto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorDesconto;
-/* Valor total da parcela ap\u00F3s a aplica\u00E7\u00E3o do desconto. [optional]
+/* {{{antecipacao_simulada_detalhes_response_valor_parcelas_desconto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcelasDesconto;
 

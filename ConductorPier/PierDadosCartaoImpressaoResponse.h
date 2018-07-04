@@ -14,149 +14,155 @@
 
 @interface PierDadosCartaoImpressaoResponse : PierObject
 
-/* O C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id) a qual o cart\u00E3o gerado pertence. [optional]
+/* {{{dados_cartao_impressao_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* O C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) portadora do cart\u00E3o gerado. [optional]
+/* {{{dados_cartao_impressao_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* O C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o (id) que foi gerado. [optional]
+/* {{{dados_cartao_impressao_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* O C\u00F3digo de Identifica\u00E7\u00E3o da Bandeira (id) a qual o Cart\u00E3o pertence, quando bandeirado. [optional]
+/* {{{dados_cartao_impressao_response_id_bandeira_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idBandeira;
-/* O C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Cart\u00E3o (id) atribu\u00EDdo ao Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_id_tipo_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoCartao;
-/* O n\u00FAmero do cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* O nome do Portador do Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_nome_plastico_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePlastico;
-/* O n\u00FAmero do CVV a ser impresso no Cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_cvv2_value}}} [optional]
  */
 @property(nonatomic) NSString* cvv2;
-/* Apresenta a data de emiss\u00E3o do Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_data_geracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataGeracao;
-/* Apresenta a data de Validade do Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_data_validade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* O CPF do Portador do Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_cpf_value}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* O tipo do Portador do cart\u00E3o, sendo: ('T': Titular, 'A': Adicional). [optional]
+/* {{{dados_cartao_impressao_response_tipo_portador_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoPortador;
-/* Os dados da Trilha1, seguindo as regras de trilha do emissor. [optional]
+/* {{{dados_cartao_impressao_response_trilha1_value}}} [optional]
  */
 @property(nonatomic) NSString* trilha1;
-/* Os dados da Trilha2, seguindo as regras de trilha do emissor. [optional]
+/* {{{dados_cartao_impressao_response_trilha2_value}}} [optional]
  */
 @property(nonatomic) NSString* trilha2;
-/* Os dados da TrilhaCVV01, seguindo as regras de trilha do emissor. [optional]
+/* {{{dados_cartao_impressao_response_trilha_c_v_v1_value}}} [optional]
  */
 @property(nonatomic) NSString* trilhaCVV1;
-/* Os dados da TrilhaCVV02, seguindo as regras de trilha do emissor. [optional]
+/* {{{dados_cartao_impressao_response_trilha_c_v_v2_value}}} [optional]
  */
 @property(nonatomic) NSString* trilhaCVV2;
-/* O status que informa se o cart\u00E3o \u00E9 virtual  [optional]
+/* {{{dados_cartao_impressao_response_flag_virtual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagVirtual;
-/* Nome da Bandeira [optional]
+/* {{{dados_cartao_impressao_response_nome_bandeira_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeBandeira;
-/* Flag Indicativo de Titularidade da Conta [optional]
+/* {{{dados_cartao_impressao_response_flag_titular_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagTitular;
-/* C\u00F3digo Sequencial do Cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_sequencial_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* sequencialCartao;
-/* Identificador do Status do Cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_id_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatus;
-/* Descri\u00E7\u00E3o do Status do Cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_descricao_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoStatusCartao;
-/* Apresenta a data em que o idStatusCartao atual do cart\u00E3o fora aplicado, quando houver. [optional]
+/* {{{dados_cartao_impressao_response_data_status_value}}} [optional]
  */
 @property(nonatomic) NSString* dataStatus;
-/* Identificador do Est\u00E1gio do Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_id_estagio_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstagio;
-/* Descri\u00E7\u00E3o do Estagio do Cart\u00E3o. [optional]
+/* {{{dados_cartao_impressao_response_descricao_estagio_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoEstagio;
-/* Apresenta a data em que o idEstagioCartao atual do cart\u00E3o fora aplicado, quando houver. [optional]
+/* {{{dados_cartao_impressao_response_data_estagio_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEstagio;
-/* N\u00FAmero do Bin do Cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_numero_bin_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroBin;
-/* Identificador do Produto Associado a Conta [optional]
+/* {{{dados_cartao_impressao_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Descri\u00E7\u00E3o do produto [optional]
+/* {{{dados_cartao_impressao_response_descricao_produto_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoProduto;
-/* Identificador do Status da Conta [optional]
+/* {{{dados_cartao_impressao_response_id_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00E7\u00E3o do status da conta [optional]
+/* {{{dados_cartao_impressao_response_descricao_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* descricaoStatusConta;
-/* Data que o cart\u00E3o foi embossado [optional]
+/* {{{dados_cartao_impressao_response_data_embossing_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmbossing;
-/* C\u00F3digo de desbloqueio do cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_codigo_desbloqueio_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoDesbloqueio;
-/* O 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. [optional]
+/* {{{dados_cartao_impressao_response_nome_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePessoa;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo da Pessoa, sendo: (\"PF\": Pessoa F\u00EDsica), (\"PJ\": Pessoa Jur\u00EDdica). [optional]
+/* {{{dados_cartao_impressao_response_tipo_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoPessoa;
-/* Data de Nascimento da Pessoa, quando PF, ou a Data de Abertura da Empresa, quando PJ. [optional]
+/* {{{dados_cartao_impressao_response_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* Identificador do Endere\u00E7o do titular do cart\u00E3o [optional]
+/* {{{dados_cartao_impressao_response_id_endereco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEndereco;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) [optional]
+/* {{{dados_cartao_impressao_response_id_tipo_endereco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoEndereco;
-/* Descri\u00E7\u00E3o do Tipo de Endere\u00E7o [optional]
+/* {{{dados_cartao_impressao_response_descricao_tipo_endereco_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoTipoEndereco;
-/* O C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' [optional]
+/* {{{dados_cartao_impressao_response_cep_value}}} [optional]
  */
 @property(nonatomic) NSString* cep;
-/* Nome do Logradouro [optional]
+/* {{{dados_cartao_impressao_response_logradouro_value}}} [optional]
  */
 @property(nonatomic) NSString* logradouro;
-/* N\u00FAmero do endere\u00E7o [optional]
+/* {{{dados_cartao_impressao_response_numero_endereco_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroEndereco;
-/* Descri\u00E7oes complementares referente ao endere\u00E7o [optional]
+/* {{{dados_cartao_impressao_response_complemento_endereco_value}}} [optional]
  */
 @property(nonatomic) NSString* complementoEndereco;
-/* Nome do bairro [optional]
+/* {{{dados_cartao_impressao_response_bairro_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Nome do cidade [optional]
+/* {{{dados_cartao_impressao_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Unidade federativa [optional]
+/* {{{dados_cartao_impressao_response_uf_value}}} [optional]
  */
 @property(nonatomic) NSString* uf;
-/* Nome do pa\u00EDs [optional]
+/* {{{dados_cartao_impressao_response_pais_value}}} [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Senha Criptografada [optional]
+/* {{{dados_cartao_impressao_response_senha_criptografada_value}}} [optional]
  */
 @property(nonatomic) NSString* senhaCriptografada;
+/* {{{dados_cartao_impressao_response_icvv_value}}} [optional]
+ */
+@property(nonatomic) NSString* icvv;
+/* {{{dados_cartao_impressao_response_id_status_impressao_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idStatusImpressao;
 
 @end

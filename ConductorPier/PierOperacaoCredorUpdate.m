@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idOperacao": @"idOperacao", @"idCredor": @"idCredor", @"idProduto": @"idProduto", @"remuneracaoPercentual": @"remuneracaoPercentual", @"remuneracaoFixa": @"remuneracaoFixa", @"periodicidade": @"periodicidade", @"vencimentoPrimeiraParcela": @"vencimentoPrimeiraParcela", @"diasAfastamento": @"diasAfastamento", @"fatorMultiplicador": @"fatorMultiplicador", @"flagTaxaFixada": @"flagTaxaFixada", @"planoMinimo": @"planoMinimo", @"planoMaximo": @"planoMaximo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idOperacao": @"idOperacao", @"idGrupoEconomico": @"idGrupoEconomico", @"idProduto": @"idProduto", @"remuneracaoPercentual": @"remuneracaoPercentual", @"remuneracaoFixa": @"remuneracaoFixa", @"periodicidade": @"periodicidade", @"vencimentoPrimeiraParcela": @"vencimentoPrimeiraParcela", @"diasAfastamento": @"diasAfastamento", @"fatorMultiplicador": @"fatorMultiplicador", @"flagTaxaFixada": @"flagTaxaFixada", @"planoMinimo": @"planoMinimo", @"planoMaximo": @"planoMaximo" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idOperacao", @"idCredor", @"idProduto", @"remuneracaoPercentual", @"remuneracaoFixa", @"periodicidade", @"vencimentoPrimeiraParcela", @"diasAfastamento", @"fatorMultiplicador", @"flagTaxaFixada", @"planoMinimo", @"planoMaximo"];
+  NSArray *optionalProperties = @[@"idProduto", @"remuneracaoPercentual", @"remuneracaoFixa", @"periodicidade", @"vencimentoPrimeiraParcela", @"diasAfastamento", @"fatorMultiplicador", @"flagTaxaFixada", ];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

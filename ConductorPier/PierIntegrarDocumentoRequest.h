@@ -15,16 +15,16 @@
 
 @interface PierIntegrarDocumentoRequest : PierObject
 
-/* Identificador do template de documento [optional]
+/* {{{integrar_documento_request_id_template_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTemplate;
-/* Conte\u00FAdo do arquivo convertido em Base 64 [optional]
+/* {{{integrar_documento_request_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSString* arquivo;
-/* Nome do arquivo. [optional]
+/* {{{integrar_documento_request_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Lista de par\u00E2metros para montagem do documento. [optional]
+/* {{{integrar_documento_request_propriedades_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierPropriedadeDocumentoRequest>* propriedades;
 

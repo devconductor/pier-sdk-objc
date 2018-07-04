@@ -14,13 +14,13 @@
 
 @interface PierEntidadeResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o da entidade. [optional]
+/* {{{entidade_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o da entidade. [optional]
+/* {{{entidade_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Flag que indica se a entidade est\u00E1 ativa. [optional]
+/* {{{entidade_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

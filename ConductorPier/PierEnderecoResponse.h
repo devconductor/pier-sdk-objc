@@ -14,47 +14,50 @@
 
 @interface PierEnderecoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Endere\u00E7o (id). [optional]
+/* {{{endereco_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o endere\u00E7o pertence (id) [optional]
+/* {{{endereco_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) [optional]
+/* {{{endereco_response_id_tipo_endereco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoEndereco;
-/* Apresenta o C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' [optional]
+/* {{{endereco_response_cep_value}}} [optional]
  */
 @property(nonatomic) NSString* cep;
-/* Apresenta o nome do Logradouro [optional]
+/* {{{endereco_response_logradouro_value}}} [optional]
  */
 @property(nonatomic) NSString* logradouro;
-/* Apresenta o n\u00FAmero do endere\u00E7o [optional]
+/* {{{endereco_response_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numero;
-/* Apresenta descri\u00E7oes complementares referente ao endere\u00E7o [optional]
+/* {{{endereco_response_complemento_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento;
-/* Apresenta a descri\u00E7\u00E3o de ponto de refer\u00EAncia do endere\u00E7o [optional]
+/* {{{endereco_response_ponto_referencia_value}}} [optional]
  */
 @property(nonatomic) NSString* pontoReferencia;
-/* Apresenta nome do bairro [optional]
+/* {{{endereco_response_bairro_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Apresenta nome da cidade [optional]
+/* {{{endereco_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Apresenta sigla da Unidade Federativa [optional]
+/* {{{endereco_response_uf_value}}} [optional]
  */
 @property(nonatomic) NSString* uf;
-/* Apresenta nome do Pais [optional]
+/* {{{endereco_response_pais_value}}} [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Apresenta a data em que fora cadastrado o Endere\u00E7o [optional]
+/* {{{endereco_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data em que fora realizada a \u00FAltima mudan\u00E7a neste registro de endere\u00E7o. Quando n\u00E3o tiver ocorrido mudan\u00E7a, conter\u00E1 a mesma informa\u00E7\u00E3o que o campo dataInclusao [optional]
+/* {{{endereco_response_data_ultima_atualizacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataUltimaAtualizacao;
+/* {{{endereco_response_flag_correspondencia_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagCorrespondencia;
 
 @end

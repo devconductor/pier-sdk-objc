@@ -14,118 +14,118 @@
 
 @interface PierTransacoesCorrentesResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o da transfer\u00EAncia (id). [optional]
+/* {{{transacoes_correntes_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_id_tipo_transacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoTransacao;
-/* Descri\u00E7\u00E3o Abreviada da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_descricao_abreviada_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoAbreviada;
-/* Status de Processamento da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_status_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* statusTransacao;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Evento que originou a Transa\u00E7\u00E3o (id). [optional]
+/* {{{transacoes_correntes_response_id_evento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEvento;
-/* Descri\u00E7\u00E3o do Evento que representa a Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_tipo_evento_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoEvento;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id). [optional]
+/* {{{transacoes_correntes_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* N\u00FAmero do Cart\u00E3o em Formato 0000XXXXXXXX0000. [optional]
+/* {{{transacoes_correntes_response_cartao_mascarado_value}}} [optional]
  */
 @property(nonatomic) NSString* cartaoMascarado;
-/* Nome completo do Portador do Cart\u00E3o. [optional]
+/* {{{transacoes_correntes_response_nome_portador_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePortador;
-/* Data em que a Transa\u00E7\u00E3o foi realizada. [optional]
+/* {{{transacoes_correntes_response_data_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataTransacao;
-/* Data de Faturamento da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_data_faturamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataFaturamento;
-/* Data de Vencimento da Fatura. [optional]
+/* {{{transacoes_correntes_response_data_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimento;
-/* Descreve o modo utilizado para realizar a leitura dos dados do cart\u00E3o para realizar a Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_modo_entrada_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* modoEntradaTransacao;
-/* Valor da Taxa de Embarque em Real (BRL) quando a transa\u00E7\u00E3o for relacionada a Compra de Passagens A\u00E9reas. [optional]
+/* {{{transacoes_correntes_response_valor_taxa_embarque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTaxaEmbarque;
-/* Valor da Entrada em Real (BRL) quando a transa\u00E7\u00E3o for do tipo Parcelada com o pagamento de um valor de Entrada. [optional]
+/* {{{transacoes_correntes_response_valor_entrada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorEntrada;
-/* Valor da Transa\u00E7\u00E3o em Real (BRL). [optional]
+/* {{{transacoes_correntes_response_valor_b_r_l_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorBRL;
-/* Valor da Transa\u00E7\u00E3o em D\u00F3lar Americano (USD). [optional]
+/* {{{transacoes_correntes_response_valor_u_s_d_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorUSD;
-/* Valor do D\u00F3lar Americano (USD) convertido em Real (BRL). [optional]
+/* {{{transacoes_correntes_response_cotacao_u_s_d_value}}} [optional]
  */
 @property(nonatomic) NSNumber* cotacaoUSD;
-/* Data de Fechamento da Cota\u00E7\u00E3o do D\u00F3lar Americano (USD). [optional]
+/* {{{transacoes_correntes_response_data_cotacao_u_s_d_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCotacaoUSD;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Moeda utilizada na Transa\u00E7\u00E3o, seguindo padr\u00E3o ISO 4217. [optional]
+/* {{{transacoes_correntes_response_codigo_moeda_origem_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoMoedaOrigem;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Moeda da Transa\u00E7\u00E3o ap\u00F3s a convers\u00E3o, seguindo padr\u00E3o ISO 4217. [optional]
+/* {{{transacoes_correntes_response_codigo_moeda_destino_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoMoedaDestino;
-/* C\u00F3digo de Autoriza\u00E7\u00E3o da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_codigo_autorizacao_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoAutorizacao;
-/* C\u00F3digo de Refer\u00EAncia da Transa\u00E7\u00E3o quando utilizado Cart\u00E3o Bandeirado. [optional]
+/* {{{transacoes_correntes_response_codigo_referencia_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoReferencia;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da origem da captura da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_codigo_terminal_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoTerminal;
-/* C\u00F3digo de identifica\u00E7\u00E3o da categoria do Estabelecimento. [optional]
+/* {{{transacoes_correntes_response_codigo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* codigoMCC;
-/* C\u00F3digo de identifica\u00E7\u00E3o do grupo do Estabelecimento. [optional]
+/* {{{transacoes_correntes_response_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* grupoMCC;
-/* Descri\u00E7\u00E3o do grupo do Estabelecimento. [optional]
+/* {{{transacoes_correntes_response_grupo_descricao_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSString* grupoDescricaoMCC;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento (id). [optional]
+/* {{{transacoes_correntes_response_id_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* Nome do Estabelecimento. [optional]
+/* {{{transacoes_correntes_response_nome_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Nome Fantasia do Estabelecimento. [optional]
+/* {{{transacoes_correntes_response_nome_fantasia_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaEstabelecimento;
-/* Localidade do Estabelecimento. [optional]
+/* {{{transacoes_correntes_response_localidade_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* localidadeEstabelecimento;
-/* Quando a Transa\u00E7\u00E3o for do tipo Parcelada, apresenta o n\u00FAmero total de Parcelas. [optional]
+/* {{{transacoes_correntes_response_plano_parcelamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* planoParcelamento;
-/* Quando a Transa\u00E7\u00E3o for do tipo Parcelada, apresenta o n\u00FAmero da Parcela. [optional]
+/* {{{transacoes_correntes_response_numero_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcela;
-/* Detalhes complementares a respeito da Transa\u00E7\u00E3o. [optional]
+/* {{{transacoes_correntes_response_detalhes_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* detalhesTransacao;
-/* Quando ativa, indica que a Transa\u00E7\u00E3o \u00E9 do Tipo 'Cr\u00E9dito'. [optional]
+/* {{{transacoes_correntes_response_flag_credito_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCredito;
-/* Quando ativa, indica que a Transa\u00E7\u00E3o foi consolidada em uma Fatura. [optional]
+/* {{{transacoes_correntes_response_flag_faturado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagFaturado;
-/* Quando ativa, indica que a Transa\u00E7\u00E3o foi estornada. [optional]
+/* {{{transacoes_correntes_response_flag_estorno_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagEstorno;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Transa\u00E7\u00E3o (id) que gerou o estorno. [optional]
+/* {{{transacoes_correntes_response_id_transacao_estorno_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTransacaoEstorno;
 

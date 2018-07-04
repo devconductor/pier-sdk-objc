@@ -15,16 +15,16 @@
 
 @interface PierAntecipacaoSimuladaLoteResponse : PierObject
 
-/* Valor total antecipado. [optional]
+/* {{{antecipacao_simulada_lote_response_valor_total_antecipado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalAntecipado;
-/* Valor total do desconto. [optional]
+/* {{{antecipacao_simulada_lote_response_valor_total_desconto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalDesconto;
-/* Valor total antecipado com o desconto. [optional]
+/* {{{antecipacao_simulada_lote_response_valor_total_com_desconto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalComDesconto;
-/* Antecipa\u00E7\u00F5es Simuladas. [optional]
+/* {{{antecipacao_simulada_lote_response_antecipacoes_simuladas_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierAntecipacaoSimuladaResponse>* antecipacoesSimuladas;
 

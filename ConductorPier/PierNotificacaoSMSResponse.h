@@ -14,55 +14,55 @@
 
 @interface PierNotificacaoSMSResponse : PierObject
 
-/* C\u00F3digo Identificador. [optional]
+/* {{{notificacao_s_m_s_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* N\u00FAmero sequencial \u00FAnico. [optional]
+/* {{{notificacao_s_m_s_response_nsu_value}}} [optional]
  */
 @property(nonatomic) NSNumber* nsu;
-/* C\u00F3digo de identifica\u00E7\u00E3o do emissor (id). [optional]
+/* {{{notificacao_s_m_s_response_id_emissor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* TipoEvento de notifica\u00E7\u00E3o [optional]
+/* {{{notificacao_s_m_s_response_tipo_evento_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoEvento;
-/* Status de envio da notifica\u00E7\u00E3o 
+/* {{{notificacao_s_m_s_response_status_value}}} 
  */
 @property(nonatomic) NSString* status;
-/* Descri\u00E7\u00E3o do status de envio da notifica\u00E7\u00E3o 
+/* {{{notificacao_s_m_s_response_descricao_status_value}}} 
  */
 @property(nonatomic) NSString* descricaoStatus;
-/* C\u00F3digo identificado da pessoa 
+/* {{{notificacao_s_m_s_response_id_pessoa_value}}} 
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* C\u00F3digo identificador da conta 
+/* {{{notificacao_s_m_s_response_id_conta_value}}} 
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o celular a ser eviado o SMS no formato 5588999999999 ou 5588999999999 
+/* {{{notificacao_s_m_s_response_celular_value}}} 
  */
 @property(nonatomic) NSString* celular;
-/* Apresenta a operadora do celular a ser eviado o SMS 
+/* {{{notificacao_s_m_s_response_operadora_value}}} 
  */
 @property(nonatomic) NSString* operadora;
-/* Apresenta o texto da notifica\u00E7\u00E3o a ser enviado 
+/* {{{notificacao_s_m_s_response_conteudo_value}}} 
  */
 @property(nonatomic) NSString* conteudo;
-/* Apresenta o texto da resposta da notifica\u00E7\u00E3o que foi enviada 
+/* {{{notificacao_s_m_s_response_resposta_value}}} 
  */
 @property(nonatomic) NSString* resposta;
-/* Apresenta a data e hora em que ser\u00E1 enviado a notifica\u00E7\u00E3o 
+/* {{{notificacao_s_m_s_response_data_agendamento_value}}} 
  */
 @property(nonatomic) NSString* dataAgendamento;
-/* Quantidade de tentativas e envio da notifica\u00E7\u00E3o 
+/* {{{notificacao_s_m_s_response_quantidade_tentativas_envio_value}}} 
  */
 @property(nonatomic) NSNumber* quantidadeTentativasEnvio;
-/* Apresenta a data e em que o registro foi inclu\u00EDdo na base para ser enviado 
+/* {{{notificacao_s_m_s_response_data_inclusao_value}}} 
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Apresenta a data e em que o Stattjus do registro foi modificado 
+/* {{{notificacao_s_m_s_response_data_alteracao_status_value}}} 
  */
 @property(nonatomic) NSString* dataAlteracaoStatus;
-/* N\u00FAmero do protocolo de envio de notifica\u00E7\u00F5es [optional]
+/* {{{notificacao_s_m_s_response_protocolo_value}}} [optional]
  */
 @property(nonatomic) NSString* protocolo;
 

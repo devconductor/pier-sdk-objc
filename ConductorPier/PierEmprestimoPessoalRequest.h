@@ -14,22 +14,22 @@
 
 @interface PierEmprestimoPessoalRequest : PierObject
 
-/* Valor do empr\u00E9stimo/financiamento 
+/* {{{emprestimo_pessoal_request_valor_solicitado_value}}} 
  */
 @property(nonatomic) NSNumber* valorSolicitado;
-/* N\u00FAmero total de parcelas do empr\u00E9stimo/financiamento 
+/* {{{emprestimo_pessoal_request_numero_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* Valor percentual da taxa de juros a ser aplicada 
+/* {{{emprestimo_pessoal_request_taxa_juros_value}}} 
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* Per\u00EDodo de aplica da taxa de juros 
+/* {{{emprestimo_pessoal_request_periodo_taxa_value}}} 
  */
 @property(nonatomic) NSString* periodoTaxa;
-/* Sistema para amortiza\u00E7\u00E3o do valor das parcelas 
+/* {{{emprestimo_pessoal_request_sistema_amortizacao_value}}} 
  */
 @property(nonatomic) NSString* sistemaAmortizacao;
-/* N\u00FAmero de meses para cobran\u00E7a da primeira parcela [optional]
+/* {{{emprestimo_pessoal_request_numero_meses_carencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroMesesCarencia;
 

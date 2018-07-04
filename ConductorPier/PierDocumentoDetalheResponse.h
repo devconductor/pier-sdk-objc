@@ -14,13 +14,13 @@
 
 @interface PierDocumentoDetalheResponse : PierObject
 
-/* ID de identifica\u00E7\u00E3o do detalhamento do documento. [optional]
+/* {{{documento_detalhe_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Propriedade do detalhamento do documento. [optional]
+/* {{{documento_detalhe_response_propriedade_value}}} [optional]
  */
 @property(nonatomic) NSString* propriedade;
-/* Conte\u00FAdo do detalhamento do documento. [optional]
+/* {{{documento_detalhe_response_conteudo_value}}} [optional]
  */
 @property(nonatomic) NSString* conteudo;
 

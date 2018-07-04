@@ -14,10 +14,10 @@
 
 @interface PierMCCResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do MCC (id). [optional]
+/* {{{m_c_c_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* descricao do MCC. [optional]
+/* {{{m_c_c_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

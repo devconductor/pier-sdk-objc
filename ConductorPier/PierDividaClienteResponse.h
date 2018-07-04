@@ -14,55 +14,55 @@
 
 @interface PierDividaClienteResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta (id) [optional]
+/* {{{divida_cliente_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Data de vencimento da cobran\u00E7a [optional]
+/* {{{divida_cliente_response_data_vencimento_fatura_atraso_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoFaturaAtraso;
-/* Quantidade de dias em atraso at\u00E9 a data de vencimento da cobran\u00E7a [optional]
+/* {{{divida_cliente_response_quantidade_dias_atraso_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeDiasAtraso;
-/* Data de vencimento do acordo [optional]
+/* {{{divida_cliente_response_data_vencimento_acordo_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoAcordo;
-/* Quantidade de dias em atraso at\u00E9 a data de vencimento do acordo [optional]
+/* {{{divida_cliente_response_quantidade_dias_atraso_corrigido_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeDiasAtrasoCorrigido;
-/* Valor do saldo devedor at\u00E9 a data de vencimento da cobran\u00E7a [optional]
+/* {{{divida_cliente_response_valor_saldo_devedor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorSaldoDevedor;
-/* Percentual de corre\u00E7\u00E3o [optional]
+/* {{{divida_cliente_response_taxa_correcao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaCorrecao;
-/* Valor da corre\u00E7\u00E3o [optional]
+/* {{{divida_cliente_response_valor_correcao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorCorrecao;
-/* Valor do IOF devido [optional]
+/* {{{divida_cliente_response_valor_i_o_f_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorIOF;
-/* Valor do saldo devedor corrido da d\u00EDvida at\u00E9 a data de vencimento do acordo [optional]
+/* {{{divida_cliente_response_valor_saldo_corrigido_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorSaldoCorrigido;
-/* C\u00F3digo de identifica\u00E7\u00E3o do status da conta (id) [optional]
+/* {{{divida_cliente_response_id_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00E7\u00E3o do status da conta [optional]
+/* {{{divida_cliente_response_descricao_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoStatusConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o do status do acordo (id) [optional]
+/* {{{divida_cliente_response_id_status_acordo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusAcordo;
-/* Descri\u00E7\u00E3o do status do acordo [optional]
+/* {{{divida_cliente_response_descricao_status_acordo_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoStatusAcordo;
-/* C\u00F3digo de identifica\u00E7\u00E3o do escrit\u00F3rio de cobran\u00E7a [optional]
+/* {{{divida_cliente_response_id_escritorio_cobranca_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEscritorioCobranca;
-/* Nome do escrit\u00F3rio de cobran\u00E7a [optional]
+/* {{{divida_cliente_response_nome_escritorio_cobranca_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEscritorioCobranca;
-/* Email do devedor [optional]
+/* {{{divida_cliente_response_email_pessoa_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* emailPessoaConta;
 

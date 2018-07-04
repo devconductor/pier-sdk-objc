@@ -14,16 +14,16 @@
 
 @interface PierTelefoneEstabelecimentoPersist : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Estabelecimento (id). 
+/* {{{telefone_estabelecimento_persist_id_estabelecimento_value}}} 
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00F3digo DDD do telefone. 
+/* {{{telefone_estabelecimento_persist_ddd_value}}} 
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00FAmero do telefone. 
+/* {{{telefone_estabelecimento_persist_telefone_value}}} 
  */
 @property(nonatomic) NSString* telefone;
-/* N\u00FAmero do ramal. [optional]
+/* {{{telefone_estabelecimento_persist_ramal_value}}} [optional]
  */
 @property(nonatomic) NSString* ramal;
 

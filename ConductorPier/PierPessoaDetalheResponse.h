@@ -14,37 +14,37 @@
 
 @interface PierPessoaDetalheResponse : PierObject
 
-/* C\u00F3digo identificador da pessoa [optional]
+/* {{{pessoa_detalhe_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o nome da m\u00E3e da pessoa fisica [optional]
+/* {{{pessoa_detalhe_response_nome_mae_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeMae;
-/* Id Estado civil da pessoa fisica [optional]
+/* {{{pessoa_detalhe_response_id_estado_civil_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;
-/* Profiss\u00E3o da pessoa fisica [optional]
+/* {{{pessoa_detalhe_response_id_profissao_value}}} [optional]
  */
 @property(nonatomic) NSString* idProfissao;
-/* Id Natureza Ocupa\u00E7\u00E3o da pessoa fisica [optional]
+/* {{{pessoa_detalhe_response_id_natureza_ocupacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;
-/* Id Nacionalidade da pessoa fisica [optional]
+/* {{{pessoa_detalhe_response_id_nacionalidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
-/* N\u00FAmero do banco. [optional]
+/* {{{pessoa_detalhe_response_numero_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroBanco;
-/* N\u00FAmero da ag\u00EAncia. [optional]
+/* {{{pessoa_detalhe_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00FAmero da conta corrente. [optional]
+/* {{{pessoa_detalhe_response_numero_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
-/* Email da pessoa fisica [optional]
+/* {{{pessoa_detalhe_response_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Nome que deve ser impresso no cart\u00E3o [optional]
+/* {{{pessoa_detalhe_response_nome_empresa_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEmpresa;
 

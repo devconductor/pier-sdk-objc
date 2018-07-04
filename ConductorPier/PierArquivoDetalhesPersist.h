@@ -14,10 +14,10 @@
 
 @interface PierArquivoDetalhesPersist : PierObject
 
-/* Nome que identifica o detalhe do arquivo 
+/* {{{arquivo_detalhes_persist_nome_campo_value}}} 
  */
 @property(nonatomic) NSString* nomeCampo;
-/* Conte\u00FAdo do nomeCampo 
+/* {{{arquivo_detalhes_persist_conteudo_value}}} 
  */
 @property(nonatomic) NSString* conteudo;
 

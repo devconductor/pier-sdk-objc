@@ -14,13 +14,13 @@
 
 @interface PierHistoricoAssessoriaResponse : PierObject
 
-/* Apresenta a data e hora do hist\u00F3rico [optional]
+/* {{{historico_assessoria_response_data_hora_historico_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraHistorico;
-/* Apresenta o tipo do hist\u00F3rico podendo ser ENTRADA ou SAIDA [optional]
+/* {{{historico_assessoria_response_tipo_historico_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoHistorico;
-/* Apresenta o nome da Assessoria de Cobran\u00E7a relacionada ao hist\u00F3rico [optional]
+/* {{{historico_assessoria_response_nome_assessoria_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeAssessoria;
 

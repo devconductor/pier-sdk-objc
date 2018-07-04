@@ -14,19 +14,19 @@
 
 @interface PierParametroProdutoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id). 
+/* {{{parametro_produto_response_id_produto_value}}} 
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Tipo da Transa\u00E7\u00E3o (ON_US ou OFF_US). 
+/* {{{parametro_produto_response_tipo_origem_transacao_value}}} 
  */
 @property(nonatomic) NSString* tipoOrigemTransacao;
-/* Descri\u00E7\u00E3o do Tipo da Transa\u00E7\u00E3o. 
+/* {{{parametro_produto_response_descricao_value}}} 
  */
 @property(nonatomic) NSString* descricao;
-/* Valor do Par\u00E2metro. 
+/* {{{parametro_produto_response_valor_parametro_value}}} 
  */
 @property(nonatomic) NSNumber* valorParametro;
-/* Data de Validade do Par\u00E2metro do Produto. 
+/* {{{parametro_produto_response_data_validade_value}}} 
  */
 @property(nonatomic) NSString* dataValidade;
 

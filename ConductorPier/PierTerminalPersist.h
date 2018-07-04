@@ -14,13 +14,13 @@
 
 @interface PierTerminalPersist : PierObject
 
-/* Apresenta o id do estabelecimento. 
+/* {{{terminal_persist_id_estabelecimento_value}}} 
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* Flag indicando se permite consultar extrato, sendo: (true: Sim), (false: N\u00E3o)). 
+/* {{{terminal_persist_flag_consulta_extrato_value}}} 
  */
 @property(nonatomic) NSNumber* flagConsultaExtrato;
-/* Flag indicando se o terminal \u00E9 f\u00EDsico ou virtual, sendo: (true: Sim), (false: N\u00E3o)). 
+/* {{{terminal_persist_flag_terminal_virtual_value}}} 
  */
 @property(nonatomic) NSNumber* flagTerminalVirtual;
 

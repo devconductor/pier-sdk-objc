@@ -14,10 +14,10 @@
 
 @interface PierDocumentoTemplateResponse : PierObject
 
-/* ID do Template do Documento. [optional]
+/* {{{documento_template_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* ID do Tipo de Template. [optional]
+/* {{{documento_template_response_id_tipo_template_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoTemplate;
 

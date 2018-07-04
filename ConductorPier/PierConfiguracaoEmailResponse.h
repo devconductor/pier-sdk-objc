@@ -14,43 +14,43 @@
 
 @interface PierConfiguracaoEmailResponse : PierObject
 
-/* Id da Configura\u00E7\u00E3o EMAIL. [optional]
+/* {{{configuracao_email_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* IP (Host) do servidor de e-mail. [optional]
+/* {{{configuracao_email_response_host_value}}} [optional]
  */
 @property(nonatomic) NSString* host;
-/* Porta usada pelo servidor de e-mail. [optional]
+/* {{{configuracao_email_response_port_value}}} [optional]
  */
 @property(nonatomic) NSString* port;
-/* Porta usada pelo servi\u00E7o TLS/STARTTLS. [optional]
+/* {{{configuracao_email_response_port_t_l_s_s_t_a_r_t_t_l_s_value}}} [optional]
  */
 @property(nonatomic) NSString* portTLSSTARTTLS;
-/* Porta usada pelo servi\u00E7o SSL. [optional]
+/* {{{configuracao_email_response_port_s_s_l_value}}} [optional]
  */
 @property(nonatomic) NSString* portSSL;
-/* Protocolo de comunica\u00E7\u00E3o usado pelo servi\u00E7o de e-mail (Ex: smtp). [optional]
+/* {{{configuracao_email_response_protocolo_value}}} [optional]
  */
 @property(nonatomic) NSString* protocolo;
-/* O servi\u00E7o de e-mail requer autentica\u00E7\u00E3o. [optional]
+/* {{{configuracao_email_response_requer_autenticacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* requerAutenticacao;
-/* O servi\u00E7o de e-mail requer SSL. [optional]
+/* {{{configuracao_email_response_requer_s_s_l_value}}} [optional]
  */
 @property(nonatomic) NSNumber* requerSSL;
-/* O servi\u00E7o de e-mail requer TLS. [optional]
+/* {{{configuracao_email_response_requer_t_l_s_value}}} [optional]
  */
 @property(nonatomic) NSNumber* requerTLS;
-/* Usuario do servi\u00E7o de e-mail. [optional]
+/* {{{configuracao_email_response_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
-/* Senha de usu\u00E1rio do servi\u00E7o de e-mail. [optional]
+/* {{{configuracao_email_response_senha_value}}} [optional]
  */
 @property(nonatomic) NSString* senha;
-/* Data de inclus\u00E3o. [optional]
+/* {{{configuracao_email_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data de altera\u00E7\u00E3o. [optional]
+/* {{{configuracao_email_response_data_alteracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAlteracao;
 

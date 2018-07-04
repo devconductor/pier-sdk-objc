@@ -14,79 +14,79 @@
 
 @interface PierLancamentoFaturaResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o da transa\u00E7\u00E3o [optional]
+/* {{{lancamento_fatura_response_id_transacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTransacao;
-/* Descri\u00E7\u00E3o do tipo da transa\u00E7\u00E3o [optional]
+/* {{{lancamento_fatura_response_descricao_tipo_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoTipoTransacao;
-/* C\u00F3digo identificador do tipo do evento [optional]
+/* {{{lancamento_fatura_response_id_tipo_evento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoEvento;
-/* Descri\u00E7\u00E3o do tipo do evento [optional]
+/* {{{lancamento_fatura_response_descricao_tipo_evento_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoTipoEvento;
-/* C\u00F3digo identificador do evento [optional]
+/* {{{lancamento_fatura_response_id_evento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEvento;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
+/* {{{lancamento_fatura_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Descri\u00E7\u00E3o complementar do evento [optional]
+/* {{{lancamento_fatura_response_complemento_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento;
-/* Valor em reais [optional]
+/* {{{lancamento_fatura_response_valor_b_r_l_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorBRL;
-/* Valor em dolar [optional]
+/* {{{lancamento_fatura_response_valor_u_s_d_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorUSD;
-/* N\u00FAmero da parcela [optional]
+/* {{{lancamento_fatura_response_numero_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcela;
-/* Quantidade de parcelas [optional]
+/* {{{lancamento_fatura_response_quantidade_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Data da transa\u00E7\u00E3o [optional]
+/* {{{lancamento_fatura_response_data_hora_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraTransacao;
-/* Nome do estabelecimento [optional]
+/* {{{lancamento_fatura_response_nome_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Descri\u00E7\u00E3o do estabelecimento [optional]
+/* {{{lancamento_fatura_response_descricao_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoEstabelecimento;
-/* Nome fantasia do estabelecimento [optional]
+/* {{{lancamento_fatura_response_nome_fantasia_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaEstabelecimento;
-/* Flag que indica se o lan\u00E7amento \u00E9 de cr\u00E9dito [optional]
+/* {{{lancamento_fatura_response_flag_credito_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCredito;
-/* C\u00F3digo identificador do MCC (Merchant Category Codes) [optional]
+/* {{{lancamento_fatura_response_id_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idMCC;
-/* C\u00F3digo identificador do grupo MCC [optional]
+/* {{{lancamento_fatura_response_id_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Descri\u00E7\u00E3o do grupo MCC [optional]
+/* {{{lancamento_fatura_response_descricao_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoGrupoMCC;
-/* Indica se o portador do cart\u00E3o \u00E9 o titular da conta [optional]
+/* {{{lancamento_fatura_response_titular_value}}} [optional]
  */
 @property(nonatomic) NSNumber* titular;
-/* Nome impresso no cart\u00E3o [optional]
+/* {{{lancamento_fatura_response_nome_portador_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePortador;
-/* N\u00FAmero do cart\u00E3o mascarado [optional]
+/* {{{lancamento_fatura_response_numero_cartao_mascarado_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartaoMascarado;
-/* Flag que indica se o cliente solicitou contesta\u00E7\u00E3o da transa\u00E7\u00E3o [optional]
+/* {{{lancamento_fatura_response_flag_solicitou_contestacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagSolicitouContestacao;
-/* Valor da taxa de embarque [optional]
+/* {{{lancamento_fatura_response_valor_taxa_embarque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTaxaEmbarque;
-/* Descri\u00E7\u00E3o abreviada da transa\u00E7\u00E3o [optional]
+/* {{{lancamento_fatura_response_descricao_abreviada_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoAbreviada;
 

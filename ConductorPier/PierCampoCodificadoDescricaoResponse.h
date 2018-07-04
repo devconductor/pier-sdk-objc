@@ -14,10 +14,10 @@
 
 @interface PierCampoCodificadoDescricaoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o da descri\u00E7\u00E3o. [optional]
+/* {{{campo_codificado_descricao_response_codigo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* codigo;
-/* Descri\u00E7\u00E3o do campo codificado. [optional]
+/* {{{campo_codificado_descricao_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

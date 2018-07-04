@@ -17,28 +17,28 @@
 
 
 @property(nonatomic) NSArray<PierPlanoParcelamentoEmprestimoResponse>* planosParcelamentos;
-/* Valor solicitado do empr\u00E9stimo/financiamento [optional]
+/* {{{emprestimo_pessoal_response_valor_solicitado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorSolicitado;
-/* Valor m\u00E1ximo de empr\u00E9stimo pelo valor limite de parcela [optional]
+/* {{{emprestimo_pessoal_response_valor_maximo_solicitacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorMaximoSolicitacao;
-/* N\u00FAmero de parcelas solicitado [optional]
+/* {{{emprestimo_pessoal_response_numero_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* Limite m\u00E1ximo de parcela permitido [optional]
+/* {{{emprestimo_pessoal_response_valor_maximo_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorMaximoParcela;
-/* Data do desconto da primeira parcela [optional]
+/* {{{emprestimo_pessoal_response_data_primeira_parcela_value}}} [optional]
  */
 @property(nonatomic) NSString* dataPrimeiraParcela;
-/* Per\u00EDodo de aplica da taxa de juros [optional]
+/* {{{emprestimo_pessoal_response_periodo_taxa_value}}} [optional]
  */
 @property(nonatomic) NSString* periodoTaxa;
-/* Sistema para amortiza\u00E7\u00E3o do valor das parcelas [optional]
+/* {{{emprestimo_pessoal_response_sistema_amortizacao_value}}} [optional]
  */
 @property(nonatomic) NSString* sistemaAmortizacao;
-/* Valor percentual da taxa de juros a ser aplicada [optional]
+/* {{{emprestimo_pessoal_response_taxa_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
 

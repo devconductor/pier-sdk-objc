@@ -14,10 +14,10 @@
 
 @interface PierPlataformaMobileResponse : PierObject
 
-/* Identificador da Plataforma [optional]
+/* {{{plataforma_mobile_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome da Plataforma [optional]
+/* {{{plataforma_mobile_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
 

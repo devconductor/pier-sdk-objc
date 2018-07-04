@@ -14,64 +14,64 @@
 
 @interface PierPlanoParcelamentoResponse : PierObject
 
-/* Identificador do parcelamento [optional]
+/* {{{plano_parcelamento_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Data de fechamento da fatura [optional]
+/* {{{plano_parcelamento_response_data_fechamento_fatura_value}}} [optional]
  */
 @property(nonatomic) NSString* dataFechamentoFatura;
-/* Data de vencimento padr\u00E3o [optional]
+/* {{{plano_parcelamento_response_data_vencimento_padrao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoPadrao;
-/* Valor total da fatura [optional]
+/* {{{plano_parcelamento_response_valor_total_fatura_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalFatura;
-/* Quantidade de parcelas [optional]
+/* {{{plano_parcelamento_response_quantidade_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Valor da parcela [optional]
+/* {{{plano_parcelamento_response_valor_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Valor de entrada [optional]
+/* {{{plano_parcelamento_response_valor_entrada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorEntrada;
-/* Taxa de refinanciamento [optional]
+/* {{{plano_parcelamento_response_taxa_refinanciamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaRefinanciamento;
-/* Custo efetivo total [optional]
+/* {{{plano_parcelamento_response_custo_efetivo_total_value}}} [optional]
  */
 @property(nonatomic) NSNumber* custoEfetivoTotal;
-/* Valor total de refinanciamento [optional]
+/* {{{plano_parcelamento_response_valor_total_refinanciamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalRefinanciamento;
-/* Valor do IOF [optional]
+/* {{{plano_parcelamento_response_valor_i_o_f_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorIOF;
-/* Valor do TAC [optional]
+/* {{{plano_parcelamento_response_valor_t_a_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTAC;
-/* Status da ades\u00E3o [optional]
+/* {{{plano_parcelamento_response_status_adesao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* statusAdesao;
-/* Data de inclus\u00E3o [optional]
+/* {{{plano_parcelamento_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data de processamento da ades\u00E3o [optional]
+/* {{{plano_parcelamento_response_data_processamento_adesao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataProcessamentoAdesao;
-/* Identificador da conta [optional]
+/* {{{plano_parcelamento_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de servi\u00E7o [optional]
+/* {{{plano_parcelamento_response_id_servico_tipo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idServicoTipo;
-/* Descri\u00E7\u00E3o do tipo de servi\u00E7o [optional]
+/* {{{plano_parcelamento_response_descricao_servico_tipo_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoServicoTipo;
-/* Indica se a fatura foi com entrada [optional]
+/* {{{plano_parcelamento_response_com_entrada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* comEntrada;
-/* Nome da campanha [optional]
+/* {{{plano_parcelamento_response_nome_campanha_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeCampanha;
 

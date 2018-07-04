@@ -14,13 +14,13 @@
 
 @interface PierTipoTemplateRequest : PierObject
 
-/* Nome do tipo de template. [optional]
+/* {{{tipo_template_request_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00E7\u00E3o do tipo de template. [optional]
+/* {{{tipo_template_request_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Sigla do tipo de template. [optional]
+/* {{{tipo_template_request_sigla_value}}} [optional]
  */
 @property(nonatomic) NSString* sigla;
 

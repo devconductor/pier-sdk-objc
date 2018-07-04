@@ -14,88 +14,88 @@
 
 @interface PierFaturaFechadaResponse : PierObject
 
-/* C\u00F3digo identificador da fatura. [optional]
+/* {{{fatura_fechada_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador da conta. [optional]
+/* {{{fatura_fechada_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo identificador da conta a qual a fatura se refere. [optional]
+/* {{{fatura_fechada_response_flag_emite_fatura_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagEmiteFatura;
-/* Data de vencimento da fatura. [optional]
+/* {{{fatura_fechada_response_data_vencimento_fatura_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoFatura;
-/* Valor para pagamento total da fatura. [optional]
+/* {{{fatura_fechada_response_valor_total_fatura_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalFatura;
-/* Valor total da fatura anterior. [optional]
+/* {{{fatura_fechada_response_valor_fatura_anterior_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorFaturaAnterior;
-/* Valor m\u00EDnimo para pagamento da fatura. [optional]
+/* {{{fatura_fechada_response_valor_pagamento_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoMinimo;
-/* Valor total das compras nacionais lan\u00E7adas na fatura. [optional]
+/* {{{fatura_fechada_response_total_compras_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalComprasNacionais;
-/* Valor total das compras internacionais lan\u00E7adas na fatura. [optional]
+/* {{{fatura_fechada_response_total_compras_internacionas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalComprasInternacionas;
-/* Valor total dos saques nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_saques_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalSaquesNacionais;
-/* Valor total dos saques internacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_saques_internacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalSaquesInternacionais;
-/* Valor total dos d\u00E9bitos nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_debitos_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosNacionais;
-/* Valor total dos d\u00E9bitos recorrentes lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_debitos_recorrentes_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosRecorrentes;
-/* Valor total dos d\u00E9bitos internacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_debitos_internacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosInternacionais;
-/* Valor total dos d\u00E9bitos diversos nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_debitos_diversos_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosDiversosNacionais;
-/* Valor total dos d\u00E9bitos diversos opcionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_debitos_opcionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosOpcionais;
-/* Valor total dos pagamentos lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_pagamentos_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalPagamentos;
-/* Valor total dos cr\u00E9ditos nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_creditos_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalCreditosNacionais;
-/* Valor total dos ajustes lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_ajustes_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalAjustes;
-/* Valor total das tarifas lan\u00E7adas na fatura. [optional]
+/* {{{fatura_fechada_response_total_tarifas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalTarifas;
-/* Valor total da multa lan\u00E7ada na fatura. [optional]
+/* {{{fatura_fechada_response_total_multa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalMulta;
-/* Valor total dos juros de mora lan\u00E7ados na fatura. [optional]
+/* {{{fatura_fechada_response_total_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalJuros;
-/* Valor percentual da taxa de juros rotativos. [optional]
+/* {{{fatura_fechada_response_taxa_rotativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaRotativo;
-/* Valor percentual da taxa de saque. [optional]
+/* {{{fatura_fechada_response_taxa_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaSaque;
-/* Valor m\u00E1ximo percentual da taxa de encargos para o pr\u00F3ximo per\u00EDodo. [optional]
+/* {{{fatura_fechada_response_taxa_maxima_proximo_periodo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaProximoPeriodo;
-/* Apresenta a soma de todos os seguros cobrados na fatura do cliente. 
+/* {{{fatura_fechada_response_total_servicos_value}}} 
  */
 @property(nonatomic) NSNumber* totalServicos;
-/* Apresenta a soma de todos os valores parcelados + compras nacionais. 
+/* {{{fatura_fechada_response_total_parcelado_nacionais_value}}} 
  */
 @property(nonatomic) NSNumber* totalParceladoNacionais;
-/* Apresenta a soma de todos os valores parcelados + compras internacionais. 
+/* {{{fatura_fechada_response_total_parcelado_internacionais_value}}} 
  */
 @property(nonatomic) NSNumber* totalParceladoInternacionais;
 

@@ -14,19 +14,19 @@
 
 @interface PierJobResponse : PierObject
 
-/* Identificador do Job [optional]
+/* {{{job_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descricao do Job [optional]
+/* {{{job_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Script Groovy do Job [optional]
+/* {{{job_response_groovy_value}}} [optional]
  */
 @property(nonatomic) NSString* groovy;
-/* Cron do Job [optional]
+/* {{{job_response_cron_value}}} [optional]
  */
 @property(nonatomic) NSString* cron;
-/* Status do Job no agendador de tarefas [optional]
+/* {{{job_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
 

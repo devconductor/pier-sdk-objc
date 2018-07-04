@@ -14,10 +14,10 @@
 
 @interface PierTipoResolucaoResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de resolu\u00E7\u00E3o [optional]
+/* {{{tipo_resolucao_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de resolu\u00E7\u00E3o [optional]
+/* {{{tipo_resolucao_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

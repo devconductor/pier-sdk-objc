@@ -14,16 +14,16 @@
 
 @interface PierPlanoCampanhaResponse : PierObject
 
-/* Identificador do plano de campanha [optional]
+/* {{{plano_campanha_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Quantidade de parcelas [optional]
+/* {{{plano_campanha_response_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* parcelas;
-/* Taxa de juros [optional]
+/* {{{plano_campanha_response_taxa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxa;
-/* Nome do usu\u00E1rio [optional]
+/* {{{plano_campanha_response_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
 

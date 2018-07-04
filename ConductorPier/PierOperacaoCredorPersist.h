@@ -14,40 +14,40 @@
 
 @interface PierOperacaoCredorPersist : PierObject
 
-/* Apresenta o id da Opera\u00E7\u00E3o. [optional]
+/* {{{operacao_credor_persist_id_operacao_value}}} 
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* Apresenta o id do Credor. [optional]
+/* {{{operacao_credor_persist_id_grupo_economico_value}}} 
  */
-@property(nonatomic) NSNumber* idCredor;
-/* Apresenta a lista de ids produtos que v\u00E3o ter regras cadastradas. [optional]
+@property(nonatomic) NSNumber* idGrupoEconomico;
+/* {{{operacao_credor_persist_ids_produto_value}}} 
  */
 @property(nonatomic) NSArray* /* NSNumber */ idsProduto;
-/* Remunera\u00E7\u00E3o Percentual. [optional]
+/* {{{operacao_credor_persist_remuneracao_percentual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoPercentual;
-/* Remunera\u00E7\u00E3o Fixa. [optional]
+/* {{{operacao_credor_persist_remuneracao_fixa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoFixa;
-/* Periodicidade (DIARIO(1), SEMANAL(2), MENSAL(3), DECENDIAL(4), QUINZENAL(5)). [optional]
+/* {{{operacao_credor_persist_periodicidade_value}}} [optional]
  */
 @property(nonatomic) NSString* periodicidade;
-/* Vencimento da primeira parcela. [optional]
+/* {{{operacao_credor_persist_vencimento_primeira_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* vencimentoPrimeiraParcela;
-/* Dias afastamento. [optional]
+/* {{{operacao_credor_persist_dias_afastamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasAfastamento;
-/* Fator multiplicador (FORA_AGENDA(0), AGENDA(1)). [optional]
+/* {{{operacao_credor_persist_fator_multiplicador_value}}} [optional]
  */
 @property(nonatomic) NSString* fatorMultiplicador;
-/* Flag taxa fixada. [optional]
+/* {{{operacao_credor_persist_flag_taxa_fixada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagTaxaFixada;
-/* Plano m\u00EDnimo da regra. [optional]
+/* {{{operacao_credor_persist_plano_minimo_value}}} 
  */
 @property(nonatomic) NSNumber* planoMinimo;
-/* Plano m\u00E1ximo da regra. [optional]
+/* {{{operacao_credor_persist_plano_maximo_value}}} 
  */
 @property(nonatomic) NSNumber* planoMaximo;
 

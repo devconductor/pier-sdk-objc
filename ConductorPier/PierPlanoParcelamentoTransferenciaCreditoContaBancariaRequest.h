@@ -14,13 +14,13 @@
 
 @interface PierPlanoParcelamentoTransferenciaCreditoContaBancariaRequest : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o. 
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_request_id_cartao_value}}} 
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Valor da transa\u00E7\u00E3o com duas casas decimais para os centavos. 
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_request_valor_transacao_value}}} 
  */
 @property(nonatomic) NSNumber* valorTransacao;
-/* Representa o N\u00FAmero de Meses concedido como car\u00EAncia. 
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_request_numero_meses_carencia_value}}} 
  */
 @property(nonatomic) NSNumber* numeroMesesCarencia;
 

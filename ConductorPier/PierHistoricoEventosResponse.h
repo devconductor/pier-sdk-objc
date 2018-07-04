@@ -14,19 +14,19 @@
 
 @interface PierHistoricoEventosResponse : PierObject
 
-/* C\u00F3digo identificador do evento 
+/* {{{historico_eventos_response_id_historico_value}}} 
  */
 @property(nonatomic) NSNumber* idHistorico;
-/* Data do evento 
+/* {{{historico_eventos_response_data_historico_value}}} 
  */
 @property(nonatomic) NSString* dataHistorico;
-/* Nome do campo alterado 
+/* {{{historico_eventos_response_tipo_historico_value}}} 
  */
 @property(nonatomic) NSString* tipoHistorico;
-/* Valor anterior a modifica\u00E7\u00E3o [optional]
+/* {{{historico_eventos_response_valor_anterior_value}}} [optional]
  */
 @property(nonatomic) NSString* valorAnterior;
-/* Valor atribu\u00EDdo na modifica\u00E7\u00E3o 
+/* {{{historico_eventos_response_valor_atribuido_value}}} 
  */
 @property(nonatomic) NSString* valorAtribuido;
 

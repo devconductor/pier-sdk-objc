@@ -15,13 +15,13 @@
 
 @interface PierDocumentoTemplatePersist : PierObject
 
-/* ID para o Tipo de Template vinculado ao template. [optional]
+/* {{{documento_template_persist_id_tipo_template_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoTemplate;
-/* Template para o conte\u00FAdo do documento. [optional]
+/* {{{documento_template_persist_template_value}}} [optional]
  */
 @property(nonatomic) NSString* template;
-/* Lista de configura\u00E7\u00F5es de integra\u00E7\u00E3o [optional]
+/* {{{documento_template_persist_integracoes_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierReferenciaIdPersist>* integracoes;
 

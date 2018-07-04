@@ -15,121 +15,121 @@
 
 @interface PierEstabelecimentoPersist : PierObject
 
-/* Indica se \u00E9 matriz ou filial. [optional]
+/* {{{estabelecimento_persist_flag_matriz_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagMatriz;
-/* Apresenta o n\u00FAmero de identifica\u00E7\u00E3o do Grupo Econ\u00F4mico. [optional]
+/* {{{estabelecimento_persist_id_grupo_economico_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoEconomico;
-/* Apresenta o n\u00FAmero de identifica\u00E7\u00E3o do Estabelecimento na Receita Federal. [optional]
+/* {{{estabelecimento_persist_numero_receita_federal_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* Nome do Estabelecimento. [optional]
+/* {{{estabelecimento_persist_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Raz\u00E3o Social do Estabelecimento. [optional]
+/* {{{estabelecimento_persist_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* T\u00EDtulo Comercial do Estabelecimento. [optional]
+/* {{{estabelecimento_persist_nome_fantasia_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasia;
-/* C\u00F3digo de Endere\u00E7amento Postal (CEP). [optional]
+/* {{{estabelecimento_persist_cep_value}}} [optional]
  */
 @property(nonatomic) NSString* cep;
-/* Nome do Logradouro. [optional]
+/* {{{estabelecimento_persist_nome_logradouro_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeLogradouro;
-/* N\u00FAmero do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_numero_endereco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroEndereco;
-/* Nome do bairro do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_bairro_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Nome da cidade do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Descri\u00E7\u00F5es complementares referente ao endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_complemento_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento;
-/* Sigla de identifica\u00E7\u00E3o da Unidade Federativa do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_uf_value}}} [optional]
  */
 @property(nonatomic) NSString* uf;
-/* C\u00F3digo de Endere\u00E7amento Postal (CEP). [optional]
+/* {{{estabelecimento_persist_cep2_value}}} [optional]
  */
 @property(nonatomic) NSString* cep2;
-/* Nome do Logradouro . [optional]
+/* {{{estabelecimento_persist_nome_logradouro2_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeLogradouro2;
-/* N\u00FAmero do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_numero_endereco2_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroEndereco2;
-/* Nome do bairro do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_bairro2_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro2;
-/* Nome da cidade do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_cidade2_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade2;
-/* Descri\u00E7\u00F5es complementares referente ao endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_complemento2_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento2;
-/* Sigla de identifica\u00E7\u00E3o da Unidade Federativa do endere\u00E7o. [optional]
+/* {{{estabelecimento_persist_uf2_value}}} [optional]
  */
 @property(nonatomic) NSString* uf2;
-/* Detalhes espec\u00EDficos quanto ao Cadastro do Estabelecimento. [optional]
+/* {{{estabelecimento_persist_obs_value}}} [optional]
  */
 @property(nonatomic) NSString* obs;
-/* Nome da pessoa para contato com o Estabelecimento. [optional]
+/* {{{estabelecimento_persist_contato_value}}} [optional]
  */
 @property(nonatomic) NSString* contato;
-/* E-mail da pessoa para contato com o Estabelecimento. [optional]
+/* {{{estabelecimento_persist_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Indica se o estabelecimento ser\u00E1 inclu\u00EDdo no arquivo de registro para a Secretaria da Fazenda Estadual. [optional]
+/* {{{estabelecimento_persist_flag_arquivo_secr_fazenda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagArquivoSecrFazenda;
-/* Indica se o estabelecimento poder\u00E1 originar transa\u00E7\u00F5es sem a leitura da tarja ou do chip do cart\u00E3o. [optional]
+/* {{{estabelecimento_persist_flag_cartao_digitado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCartaoDigitado;
-/* Indica se o estabelecimento est\u00E1 inativo. [optional]
+/* {{{estabelecimento_persist_inativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* inativo;
-/* C\u00F3digo identificador da moeda. [optional]
+/* {{{estabelecimento_persist_id_moeda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idMoeda;
-/* Identificador de Pa\u00EDs. [optional]
+/* {{{estabelecimento_persist_id_pais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPais;
-/* N\u00FAmero do associado ao SPCBrasil. [optional]
+/* {{{estabelecimento_persist_associado_s_p_c_brasil_value}}} [optional]
  */
 @property(nonatomic) NSNumber* associadoSPCBrasil;
-/* C\u00F3digo de Categoria de Mercado. [optional]
+/* {{{estabelecimento_persist_mcc_value}}} [optional]
  */
 @property(nonatomic) NSNumber* mcc;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de Estabelecimento. [optional]
+/* {{{estabelecimento_persist_id_tipo_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoEstabelecimento;
-/* Indicador para qual endere\u00E7o as correspond\u00EAncias ser\u00E3o enviadas, onde 1 \u00E9 ORIGEM e 2 ENDERE\u00C7O DE CORRESPOND\u00CANCIA. [optional]
+/* {{{estabelecimento_persist_correspondencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* correspondencia;
-/* Cargo do contato do estabelecimento. [optional]
+/* {{{estabelecimento_persist_cargo_contato_value}}} [optional]
  */
 @property(nonatomic) NSString* cargoContato;
-/* Tipo do regime de pagamento do estabelecimento. [optional]
+/* {{{estabelecimento_persist_tipo_pagamento_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoPagamento;
-/* Consulta de cadastro n\u00FAmero um. [optional]
+/* {{{estabelecimento_persist_consulta_value}}} [optional]
  */
 @property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta;
-/* Consulta de cadastro n\u00FAmero dois. [optional]
+/* {{{estabelecimento_persist_consulta2_value}}} [optional]
  */
 @property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta2;
-/* Consulta de cadastro n\u00FAmero tr\u00EAs. [optional]
+/* {{{estabelecimento_persist_consulta3_value}}} [optional]
  */
 @property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta3;
-/* Flag indicando se o terminal \u00E9 f\u00EDsico ou virtual, sendo: (true: Sim), (false: N\u00E3o)). 
+/* {{{estabelecimento_persist_flag_terminal_virtual_value}}} 
  */
 @property(nonatomic) NSNumber* flagTerminalVirtual;
-/* Flag indicando se o terminal permite consultar extrato, sendo: (true: Sim), (false: N\u00E3o)). 
+/* {{{estabelecimento_persist_flag_consulta_extrato_value}}} 
  */
 @property(nonatomic) NSNumber* flagConsultaExtrato;
 

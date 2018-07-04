@@ -14,7 +14,7 @@
 
 @interface PierAtribuirAssinaturaClientePersist : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do Arquivo [optional]
+/* {{{atribuir_assinatura_cliente_persist_id_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idArquivo;
 

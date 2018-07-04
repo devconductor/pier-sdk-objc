@@ -15,49 +15,49 @@
 
 @interface PierAdicionalPersist : PierObject
 
-/* Nome completo do Adicional. 
+/* {{{adicional_persist_nome_value}}} 
  */
 @property(nonatomic) NSString* nome;
-/* Nome do Adicional que ser\u00E1 gravado no Cart\u00E3o. [optional]
+/* {{{adicional_persist_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* N\u00FAmero do CPF ou CNPJ do Adicional. 
+/* {{{adicional_persist_numero_receita_federal_value}}} 
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* Data de Nascimento do Adicional em formato yyyy-MM-dd. [optional]
+/* {{{adicional_persist_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
+/* {{{adicional_persist_sexo_value}}} [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00FAmero do Documento de Identidade do Adicional. [optional]
+/* {{{adicional_persist_numero_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Nome do Org\u00E3o Emissor do Documento de Identidade do Adicional. [optional]
+/* {{{adicional_persist_orgao_expedidor_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
-/* Sigla da Unidade Federativa onde o Documento de Identidade do Adicional foi emitido. [optional]
+/* {{{adicional_persist_unidade_federativa_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data de emiss\u00E3o do Documento de Identidade do Adicional em formato yyyy-MM-dd. [optional]
+/* {{{adicional_persist_data_emissao_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Estado Civil do Adicional. [optional]
+/* {{{adicional_persist_id_estado_civil_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;
-/* C\u00F3digo de identifica\u00E7\u00E3o da Profissao do Adicional. [optional]
+/* {{{adicional_persist_id_profissao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProfissao;
-/* C\u00F3digo de identifica\u00E7\u00E3o da Nacionalidade do Adicional. [optional]
+/* {{{adicional_persist_id_nacionalidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Parentesco do Adicional com o Titular. [optional]
+/* {{{adicional_persist_id_parentesco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Parentesco do Adicional com o Titular. [optional]
+/* {{{adicional_persist_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Lista de telefones do adicional. [optional]
+/* {{{adicional_persist_telefones_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTelefoneAdicionalPersist>* telefones;
 

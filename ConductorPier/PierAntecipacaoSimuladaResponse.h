@@ -19,73 +19,73 @@
 @property(nonatomic) NSNumber* mcc;
 
 @property(nonatomic) NSString* uf;
-/* C\u00F3digo identificador da simula\u00E7\u00E3o de antecipa\u00E7\u00E3o. [optional]
+/* {{{antecipacao_simulada_response_id_antecipacao_simulada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idAntecipacaoSimulada;
-/* C\u00F3digo identificador da conta. [optional]
+/* {{{antecipacao_simulada_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo identificador do evento compra. [optional]
+/* {{{antecipacao_simulada_response_id_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCompra;
-/* C\u00F3digo identificador do tipo do evento compra. [optional]
+/* {{{antecipacao_simulada_response_id_tipo_transacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoTransacao;
-/* Quantidade de parcelas antecip\u00E1veis. [optional]
+/* {{{antecipacao_simulada_response_quantidade_parcelas_antecipaveis_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelasAntecipaveis;
-/* Valor da parcela. [optional]
+/* {{{antecipacao_simulada_response_valor_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Data e hora em que a simula\u00E7\u00E3o foi feita. [optional]
+/* {{{antecipacao_simulada_response_data_hora_simulacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraSimulacao;
-/* Taxa de antecipa\u00E7\u00E3o aplicada (ao ano). [optional]
+/* {{{antecipacao_simulada_response_taxa_antecipacao_ano_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaAntecipacaoAno;
-/* Estabelecimento onde foi realizada a transa\u00E7\u00E3o [optional]
+/* {{{antecipacao_simulada_response_nome_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Descri\u00E7\u00E3o do status da autoriza\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_simulada_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Data da compra. [optional]
+/* {{{antecipacao_simulada_response_data_compra_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCompra;
-/* Tipo de transa\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_simulada_response_tipo_origem_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoOrigemTransacao;
-/* Cidade onde a compra foi realizada. [optional]
+/* {{{antecipacao_simulada_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Pa\u00EDs onde a compra foi realizada. [optional]
+/* {{{antecipacao_simulada_response_pais_value}}} [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Coordenada latitudinal da localiza\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_simulada_response_latitude_value}}} [optional]
  */
 @property(nonatomic) NSString* latitude;
-/* Coordenada longitudinal da localiza\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_simulada_response_longitude_value}}} [optional]
  */
 @property(nonatomic) NSString* longitude;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Grupo MCC da compra. [optional]
+/* {{{antecipacao_simulada_response_id_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Descri\u00E7\u00E3o do Grupo MCC da compra. [optional]
+/* {{{antecipacao_simulada_response_descricao_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoGrupoMCC;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do produto da compra. [optional]
+/* {{{antecipacao_simulada_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Descri\u00E7\u00E3o do produto da compra. [optional]
+/* {{{antecipacao_simulada_response_descricao_produto_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoProduto;
-/* Descri\u00E7\u00E3o do estabelecimento da compra. [optional]
+/* {{{antecipacao_simulada_response_descricao_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoEstabelecimento;
-/* Nome fantasia do estabelecimento da compra. [optional]
+/* {{{antecipacao_simulada_response_nome_fantasia_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaEstabelecimento;
-/* Detalhes da simula\u00E7\u00E3o. [optional]
+/* {{{antecipacao_simulada_response_detalhes_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierAntecipacaoSimuladaDetalhesResponse>* detalhes;
 

@@ -16,40 +16,40 @@
 
 
 @property(nonatomic) NSNumber* flagVirtual;
-/* N\u00FAmero do cart\u00E3o. [optional]
+/* {{{dados_cartao_response_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Data de validade. [optional]
+/* {{{dados_cartao_response_data_validade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* CVV2 do cart\u00E3o. [optional]
+/* {{{dados_cartao_response_cvv2_value}}} [optional]
  */
 @property(nonatomic) NSString* cvv2;
-/* Nome do portador. [optional]
+/* {{{dados_cartao_response_nome_plastico_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePlastico;
-/* Identificador da conta do portador. [optional]
+/* {{{dados_cartao_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Identificador da cart\u00E3o do portador. [optional]
+/* {{{dados_cartao_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Apresenta o n\u00FAmero da Ag\u00EAncia a ser impresso no Cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{dados_cartao_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* Apresenta o n\u00FAmero da Conta Corrente a ser impresso no Cart\u00E3o, quando aplic\u00E1vel. [optional]
+/* {{{dados_cartao_response_numero_conta_corente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorente;
-/* Status da conta do portador. [optional]
+/* {{{dados_cartao_response_id_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00E7\u00E3o do status da conta do portador. [optional]
+/* {{{dados_cartao_response_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* statusConta;
-/* Status do cart\u00E3o. [optional]
+/* {{{dados_cartao_response_id_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusCartao;
-/* Descri\u00E7\u00E3o do status do cart\u00E3o. [optional]
+/* {{{dados_cartao_response_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* statusCartao;
 

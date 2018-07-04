@@ -14,34 +14,34 @@
 
 @interface PierCartaoEmbossingResponse : PierObject
 
-/* Apresenta o status que informa se o cart\u00E3o \u00E9 virtual  [optional]
+/* {{{cartao_embossing_response_flag_virtual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagVirtual;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id) a qual o cart\u00E3o gerado pertence. [optional]
+/* {{{cartao_embossing_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) portadora do cart\u00E3o gerado. [optional]
+/* {{{cartao_embossing_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o (id) que foi gerado. [optional]
+/* {{{cartao_embossing_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Bandeira (id) a qual o Cart\u00E3o pertence, quando bandeirado. [optional]
+/* {{{cartao_embossing_response_id_bandeira_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idBandeira;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o do Tipo do Cart\u00E3o (id) atribu\u00EDdo ao Cart\u00E3o. [optional]
+/* {{{cartao_embossing_response_id_tipo_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoCartao;
-/* Apresenta a data de emiss\u00E3o do Cart\u00E3o. [optional]
+/* {{{cartao_embossing_response_data_geracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataGeracao;
-/* Apresenta a data de Validade do Cart\u00E3o. [optional]
+/* {{{cartao_embossing_response_data_validade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* Apresenta o nome da Origem Comercial que realizou o cadastro do Titular da Conta a qual o Cart\u00E3o pertence. [optional]
+/* {{{cartao_embossing_response_nome_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeOrigemComercial;
-/* Apresenta o CPF do Portador do Cart\u00E3o. [optional]
+/* {{{cartao_embossing_response_cpf_value}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
 

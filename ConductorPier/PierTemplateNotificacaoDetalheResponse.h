@@ -14,34 +14,34 @@
 
 @interface PierTemplateNotificacaoDetalheResponse : PierObject
 
-/* C\u00F3digo Identificador. [optional]
+/* {{{template_notificacao_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o da configra\u00E7\u00E3o de e-mail. [optional]
+/* {{{template_notificacao_response_id_configuracao_email_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConfiguracaoEmail;
-/* Tipo do layout de e-mail. [optional]
+/* {{{template_notificacao_response_tipo_layout_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoLayout;
-/* Tipo da notifica\u00E7\u00E3o. [optional]
+/* {{{template_notificacao_response_tipo_notificacao_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoNotificacao;
-/* Template padr\u00E3o. [optional]
+/* {{{template_notificacao_response_template_padrao_value}}} [optional]
  */
 @property(nonatomic) NSString* templatePadrao;
-/* Remetente. [optional]
+/* {{{template_notificacao_response_remetente_value}}} [optional]
  */
 @property(nonatomic) NSString* remetente;
-/* Assunto do e-mail. [optional]
+/* {{{template_notificacao_response_assunto_value}}} [optional]
  */
 @property(nonatomic) NSString* assunto;
-/* Data da inclus\u00E3o. [optional]
+/* {{{template_notificacao_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data altera\u00E7\u00E3o. [optional]
+/* {{{template_notificacao_response_data_alteracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAlteracao;
-/* Conteudo do e-mail. [optional]
+/* {{{template_notificacao_detalhe_response_conteudo_value}}} [optional]
  */
 @property(nonatomic) NSString* conteudo;
 

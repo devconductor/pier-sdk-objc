@@ -14,70 +14,70 @@
 
 @interface PierCartaoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o. [optional]
+/* {{{cartao_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o tipo do Portador do cart\u00E3o, sendo: (1: Titular, 0: Adicional). [optional]
+/* {{{cartao_response_flag_titular_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagTitular;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa a qual o cart\u00E3o pertence [optional]
+/* {{{cartao_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* N\u00FAmero sequencial do cart\u00E3o [optional]
+/* {{{cartao_response_sequencial_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* sequencialCartao;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Conta a qual o cart\u00E3o pertence. [optional]
+/* {{{cartao_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Status do Cart\u00E3o. [optional]
+/* {{{cartao_response_id_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatus;
-/* Apresenta a data em que o idStatusCartao atual do cart\u00E3o fora aplicado, quando houver. [optional]
+/* {{{cartao_response_data_status_value}}} [optional]
  */
 @property(nonatomic) NSString* dataStatus;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Est\u00E1gio de Impress\u00E3o do Cart\u00E3o. [optional]
+/* {{{cartao_response_id_estagio_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstagio;
-/* Apresenta a data em que o idEstagio atual do cart\u00E3o fora aplicado, quando houver. [optional]
+/* {{{cartao_response_data_estagio_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEstagio;
-/* N\u00FAmero do bin do cart\u00E3o. [optional]
+/* {{{cartao_response_numero_bin_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroBin;
-/* Apresenta o n\u00FAmero do cart\u00E3o. [optional]
+/* {{{cartao_response_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* N\u00FAmero do cart\u00E3o hash. [optional]
+/* {{{cartao_response_numero_cartao_hash_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroCartaoHash;
-/* N\u00FAmero do cart\u00E3o criptografado. [optional]
+/* {{{cartao_response_numero_cartao_criptografado_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartaoCriptografado;
-/* Apresenta a data de emiss\u00E3o do cart\u00E3o. [optional]
+/* {{{cartao_response_data_emissao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmissao;
-/* Apresenta a data de validade do cart\u00E3o em formato yyyy-MM, quando houver. [optional]
+/* {{{cartao_response_data_validade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidade;
-/* Apresenta o status que informa se o cart\u00E3o \u00E9 virtual. Sendo: (1: True, 0: False). [optional]
+/* {{{cartao_response_cartao_virtual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* cartaoVirtual;
-/* Quando ativa, indica que o cart\u00E3o fora impresso na Origem Comercial. [optional]
+/* {{{cartao_response_impressao_avulsa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* impressaoAvulsa;
-/* Apresenta a data em que o cart\u00E3o fora impresso, caso impress\u00E3o em loja, ou a data em que ele fora inclu\u00EDdo no arquivo para impress\u00E3o via gr\u00E1fica. [optional]
+/* {{{cartao_response_data_impressao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataImpressao;
-/* Apresenta o nome do arquivo onde o cart\u00E3o fora inclu\u00EDdo para impress\u00E3o por uma gr\u00E1fica, quando houver. [optional]
+/* {{{cartao_response_nome_arquivo_impressao_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeArquivoImpressao;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Produto a qual o cart\u00E3o pertence. [optional]
+/* {{{cartao_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Apresenta o nome impresso no cart\u00E3o. [optional]
+/* {{{cartao_response_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Apresenta um c\u00F3digo espec\u00EDfico para ser utilizado como vari\u00E1vel no processo de desbloqueio do cart\u00E3o para emissores que querem usar esta funcionalidade. [optional]
+/* {{{cartao_response_codigo_desbloqueio_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoDesbloqueio;
 

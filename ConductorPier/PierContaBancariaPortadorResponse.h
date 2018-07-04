@@ -14,49 +14,49 @@
 
 @interface PierContaBancariaPortadorResponse : PierObject
 
-/* C\u00F3digo identificador da conta banc\u00E1ria [optional]
+/* {{{conta_bancaria_portador_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador da conta cart\u00E3o [optional]
+/* {{{conta_bancaria_portador_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Descri\u00E7\u00E3o da ag\u00EAncia [optional]
+/* {{{conta_bancaria_portador_response_nome_agencia_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeAgencia;
-/* C\u00F3digo do banco [optional]
+/* {{{conta_bancaria_portador_response_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* N\u00FAmero da ag\u00EAncia [optional]
+/* {{{conta_bancaria_portador_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroAgencia;
-/* D\u00EDgito da ag\u00EAncia [optional]
+/* {{{conta_bancaria_portador_response_digito_agencia_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* N\u00FAmero da conta [optional]
+/* {{{conta_bancaria_portador_response_numero_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroConta;
-/* D\u00EDgito da conta [optional]
+/* {{{conta_bancaria_portador_response_digito_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoConta;
-/* Sinaliza se conta banc\u00E1ria est\u00E1 ativa ou n\u00E3o (1: Ativa, 0: Inativa) [optional]
+/* {{{conta_bancaria_portador_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
-/* Sinaliza se origem \u00E9 DOC (1: DOC, 0: TED) [optional]
+/* {{{conta_bancaria_portador_response_flag_conta_origem_doc_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagContaOrigemDoc;
-/* C\u00F3digo da pessoa [optional]
+/* {{{conta_bancaria_portador_response_id_pessoa_fisica_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoaFisica;
-/* Sinaliza se conta banc\u00E1ria \u00E9 poupan\u00E7a (1: Poupan\u00E7a, 0: Conta corrente) [optional]
+/* {{{conta_bancaria_portador_response_flag_conta_poupanca_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagContaPoupanca;
-/* Nome do favorecido [optional]
+/* {{{conta_bancaria_portador_response_favorecido_value}}} [optional]
  */
 @property(nonatomic) NSString* favorecido;
-/* Documento do favorecido [optional]
+/* {{{conta_bancaria_portador_response_numero_receira_federal_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroReceiraFederal;
-/* Titularidade da conta (1:Portador \u00E9 o titular, 0: Portador n\u00E3o \u00E9 o t\u00EDtular [optional]
+/* {{{conta_bancaria_portador_response_titularidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* titularidade;
 

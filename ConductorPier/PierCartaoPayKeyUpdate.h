@@ -14,7 +14,7 @@
 
 @interface PierCartaoPayKeyUpdate : PierObject
 
-/* Chave de gera\u00E7\u00E3o de transa\u00E7\u00E3o criptografada 
+/* {{{cartao_pay_key_update_chave_criptograma_value}}} 
  */
 @property(nonatomic) NSString* chaveCriptograma;
 
