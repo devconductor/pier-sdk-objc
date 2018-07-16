@@ -16,56 +16,59 @@
 
 
 @property(nonatomic) NSNumber* ultimaParcelaLancada;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta (id). [optional]
+/* {{{transacao_corrente_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de transacao (id). [optional]
+/* {{{transacao_corrente_response_id_tipo_registro_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoRegistro;
-/* Representa\u00E7\u00E3o da ordena\u00E7\u00E3o da transacao (id). [optional]
+/* {{{transacao_corrente_response_ordem_value}}} [optional]
  */
 @property(nonatomic) NSNumber* ordem;
-/* C\u00F3digo de identifica\u00E7\u00E3o da transacao (id). [optional]
+/* {{{transacao_corrente_response_id_transacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTransacao;
-/* Atributo que representa a descri\u00E7\u00E3o da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Atributo que representa o c\u00F3digo identificador do status da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* status;
-/* Atributo que representa a descri\u00E7\u00E3o do status da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_descricao_status_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoStatus;
-/* Atributo que representa o valor da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_valor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* Atributo que representa o valor em D\u00F3lar da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_valor_dolar_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorDolar;
-/* Atributo que representa a quantidade de parcelas da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_quantidade_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Atributo que representa o valor da parcela da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_valor_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Atributo que representa a data de envio da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_data_evento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEvento;
-/* Atributo que representa o estabelecimento da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* estabelecimento;
-/* Atributo que identifica se a transa\u00E7\u00E3o \u00E9 um cr\u00E9dito ou d\u00E9bito. [optional]
+/* {{{transacao_corrente_response_flag_credito_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCredito;
-/* Atributo que representa o tipo de estabelecimento da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_tipo_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoEstabelecimento;
-/* Atributo que representa o grupo MCC da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_id_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Atributo que identifica se o portador solicitou contesta\u00E7\u00E3o da transa\u00E7\u00E3o. [optional]
+/* {{{transacao_corrente_response_flag_solicitou_contestacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagSolicitouContestacao;
+/* {{{transacao_corrente_response_tipo_transacao_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* tipoTransacao;
 
 @end

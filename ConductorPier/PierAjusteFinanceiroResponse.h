@@ -14,25 +14,25 @@
 
 @interface PierAjusteFinanceiroResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do ajuste (id) [optional]
+/* {{{ajuste_financeiro_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo do ajuste [optional]
+/* {{{ajuste_financeiro_response_id_tipo_ajuste_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoAjuste;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta (idConta) [optional]
+/* {{{ajuste_financeiro_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Data do ajuste [optional]
+/* {{{ajuste_financeiro_response_data_ajuste_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAjuste;
-/* Valor do ajuste [optional]
+/* {{{ajuste_financeiro_response_valor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* Descri\u00E7\u00E3o do status da autoriza\u00E7\u00E3o da compra. [optional]
+/* {{{ajuste_financeiro_response_identificador_externo_value}}} [optional]
  */
 @property(nonatomic) NSString* identificadorExterno;
-/* Status do ajuste. [optional]
+/* {{{ajuste_financeiro_response_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* status;
 

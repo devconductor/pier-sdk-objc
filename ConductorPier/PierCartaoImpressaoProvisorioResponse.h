@@ -16,22 +16,22 @@
 
 
 @property(nonatomic) NSNumber* flagVirtual;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Conta (id) a qual o cart\u00E3o gerado pertence. [optional]
+/* {{{cartao_impressao_provisorio_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa (id) portadora do cart\u00E3o gerado. [optional]
+/* {{{cartao_impressao_provisorio_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o C\u00F3digo de Identifica\u00E7\u00E3o do Cart\u00E3o (id) que foi gerado. [optional]
+/* {{{cartao_impressao_provisorio_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Apresenta o n\u00FAmero do cart\u00E3o. [optional]
+/* {{{cartao_impressao_provisorio_response_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Apresenta o nome do Portador do Cart\u00E3o. [optional]
+/* {{{cartao_impressao_provisorio_response_nome_plastico_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePlastico;
-/* Apresenta a data de Validade do Cart\u00E3o. [optional]
+/* {{{cartao_impressao_provisorio_response_data_validade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataValidade;
 

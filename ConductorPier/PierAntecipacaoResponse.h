@@ -18,73 +18,73 @@
 @property(nonatomic) NSNumber* mcc;
 
 @property(nonatomic) NSString* uf;
-/* C\u00F3digo de identifica\u00E7\u00E3o da antecipa\u00E7\u00E3o [optional]
+/* {{{antecipacao_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta [optional]
+/* {{{antecipacao_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o da compra [optional]
+/* {{{antecipacao_response_id_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCompra;
-/* Apresenta o numero total de parcelas da compra [optional]
+/* {{{antecipacao_response_quantidade_parcelas_total_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelasTotal;
-/* Apresenta o numero de parcelas antecipadas [optional]
+/* {{{antecipacao_response_quantidade_parcelas_antecipadas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelasAntecipadas;
-/* Apresenta o valor de cada parcela antecipadas [optional]
+/* {{{antecipacao_response_valor_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Apresenta o valor total do desconto [optional]
+/* {{{antecipacao_response_valor_desconto_total_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorDescontoTotal;
-/* Apresenta o valor total com desconto [optional]
+/* {{{antecipacao_response_valor_total_com_desconto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalComDesconto;
-/* Apresenta a taxa de desconto [optional]
+/* {{{antecipacao_response_taxa_desconto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaDesconto;
-/* Data da compra. [optional]
+/* {{{antecipacao_response_data_compra_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCompra;
-/* Descri\u00E7\u00E3o do status da autoriza\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Nome do estabelecimento da compra. [optional]
+/* {{{antecipacao_response_nome_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Tipo de transa\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_response_tipo_origem_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoOrigemTransacao;
-/* Cidade onde a compra foi realizada. [optional]
+/* {{{antecipacao_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Pa\u00EDs onde a compra foi realizada. [optional]
+/* {{{antecipacao_response_pais_value}}} [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Coordenada latitudinal da localiza\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_response_latitude_value}}} [optional]
  */
 @property(nonatomic) NSString* latitude;
-/* Coordenada longitudinal da localiza\u00E7\u00E3o da compra. [optional]
+/* {{{antecipacao_response_longitude_value}}} [optional]
  */
 @property(nonatomic) NSString* longitude;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Grupo MCC da compra. [optional]
+/* {{{antecipacao_response_id_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Descri\u00E7\u00E3o do Grupo MCC da compra. [optional]
+/* {{{antecipacao_response_descricao_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoGrupoMCC;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do produto da compra. [optional]
+/* {{{antecipacao_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Descri\u00E7\u00E3o do produto da compra. [optional]
+/* {{{antecipacao_response_descricao_produto_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoProduto;
-/* Descri\u00E7\u00E3o do estabelecimento da compra. [optional]
+/* {{{antecipacao_response_descricao_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoEstabelecimento;
-/* Nome fantasia do estabelecimento da compra. [optional]
+/* {{{antecipacao_response_nome_fantasia_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaEstabelecimento;
 

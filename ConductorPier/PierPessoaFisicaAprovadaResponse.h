@@ -16,100 +16,100 @@
 
 @interface PierPessoaFisicaAprovadaResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o da pessoa fisica (id) [optional]
+/* {{{pessoa_fisica_aprovada_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o nome completo da pessoa fisica. 
+/* {{{pessoa_fisica_aprovada_response_nome_value}}} 
  */
 @property(nonatomic) NSString* nome;
-/* Apresenta o nome da m\u00E3e da pessoa fisica [optional]
+/* {{{pessoa_fisica_aprovada_response_nome_mae_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeMae;
-/* Data de Nascimento da Pessoa. Essa data deve ser informada no formato aaaa-MM-dd. [optional]
+/* {{{pessoa_fisica_aprovada_response_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino). [optional]
+/* {{{pessoa_fisica_aprovada_response_sexo_value}}} [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00FAmero do Cadastro de Pessoa Fisica (CPF) 
+/* {{{pessoa_fisica_aprovada_response_cpf_value}}} 
  */
 @property(nonatomic) NSString* cpf;
-/* N\u00FAmero da identidade. [optional]
+/* {{{pessoa_fisica_aprovada_response_numero_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Org\u00E3o expedidor da Identidade. [optional]
+/* {{{pessoa_fisica_aprovada_response_orgao_expedidor_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
-/* Sigla da Unidade Federativa de onde foi expedido a Identidade [optional]
+/* {{{pessoa_fisica_aprovada_response_unidade_federativa_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data emiss\u00E3o da Identidade no formato aaaa-MM-dd [optional]
+/* {{{pessoa_fisica_aprovada_response_data_emissao_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* Id Estado civil da pessoa fisica [optional]
+/* {{{pessoa_fisica_aprovada_response_id_estado_civil_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;
-/* Profiss\u00E3o da pessoa fisica [optional]
+/* {{{pessoa_fisica_aprovada_response_id_profissao_value}}} [optional]
  */
 @property(nonatomic) NSString* idProfissao;
-/* Id Natureza Ocupa\u00E7\u00E3o da pessoa fisica [optional]
+/* {{{pessoa_fisica_aprovada_response_id_natureza_ocupacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idNaturezaOcupacao;
-/* Id Nacionalidade da pessoa fisica [optional]
+/* {{{pessoa_fisica_aprovada_response_id_nacionalidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
-/* Id da origem comercial 
+/* {{{pessoa_fisica_aprovada_response_id_origem_comercial_value}}} 
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* Id do produto 
+/* {{{pessoa_fisica_aprovada_response_id_produto_value}}} 
  */
 @property(nonatomic) NSNumber* idProduto;
-/* N\u00FAmero da ag\u00EAncia. [optional]
+/* {{{pessoa_fisica_aprovada_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00FAmero da conta corrente. [optional]
+/* {{{pessoa_fisica_aprovada_response_numero_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
-/* Email da pessoa fisica [optional]
+/* {{{pessoa_fisica_aprovada_response_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Dia vencimento 
+/* {{{pessoa_fisica_aprovada_response_dia_vencimento_value}}} 
  */
 @property(nonatomic) NSNumber* diaVencimento;
-/* Nome que deve ser impresso no cart\u00E3o [optional]
+/* {{{pessoa_fisica_aprovada_response_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* Nome da empresa [optional]
+/* {{{pessoa_fisica_aprovada_response_nome_empresa_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEmpresa;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta cadastrada [optional]
+/* {{{pessoa_fisica_aprovada_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o da proposta [optional]
+/* {{{pessoa_fisica_aprovada_response_id_proposta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProposta;
-/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+/* {{{pessoa_fisica_aprovada_response_canal_entrada_value}}} [optional]
  */
 @property(nonatomic) NSString* canalEntrada;
-/* Indica o valor da pontua\u00E7\u00E3o atribuido ao cliente (caso n\u00E3o informado ser\u00E1 atribuido o valor = 0) [optional]
+/* {{{pessoa_fisica_aprovada_response_valor_pontuacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPontuacao;
-/* Apresenta os telefones da empresa [optional]
+/* {{{pessoa_fisica_aprovada_response_telefones_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaResponse>* telefones;
-/* Pode ser informado os seguintes tipos de endere\u00E7o: Residencial, Comercial, e Outros 
+/* {{{pessoa_fisica_aprovada_response_enderecos_value}}} 
  */
 @property(nonatomic) NSArray<PierEnderecoAprovadoResponse>* enderecos;
-/* Valor do Limite Global 
+/* {{{pessoa_fisica_aprovada_response_limite_global_value}}} 
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* Valor m\u00E1ximo do limite de cr\u00E9dito para realizar transa\u00E7\u00F5es 
+/* {{{pessoa_fisica_aprovada_response_limite_maximo_value}}} 
  */
 @property(nonatomic) NSNumber* limiteMaximo;
-/* Valor do limite de cr\u00E9dito acumulado da soma das parcelas das compras 
+/* {{{pessoa_fisica_aprovada_response_limite_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* limiteParcelas;
-/* Valor do limite de margem consignado 
+/* {{{pessoa_fisica_aprovada_response_limite_consignado_value}}} 
  */
 @property(nonatomic) NSNumber* limiteConsignado;
 

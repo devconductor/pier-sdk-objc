@@ -14,17 +14,88 @@
 
 @interface PierTipoDebitoRecorrenteResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de d\u00E9bito recorrente (id). [optional]
+
+@property(nonatomic) NSNumber* flagAnuidadeBonificada;
+/* {{{tipo_debito_recorrente_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de d\u00E9bito recorrente. [optional]
+/* {{{tipo_debito_recorrente_response_descricao_value}}} [optional]
  */
-@property(nonatomic) NSString* descricao;
-/* Valor do tipo de d\u00E9bito recorrente. [optional]
+@property(nonatomic) NSString* nome;
+/* {{{tipo_debito_recorrente_response_valor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valor;
-/* Flag que identifica se o tipo d\u00E9bito recorrente est\u00E1 ativo. [optional]
+/* {{{tipo_debito_recorrente_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
+/* {{{tipo_debito_recorrente_response_valor_bonus_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* valorBonus;
+/* {{{tipo_debito_recorrente_response_numero_parcelas_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* numeroParcelas;
+/* {{{tipo_debito_recorrente_response_flag_adere_automatico_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagAdereAutomatico;
+/* {{{tipo_debito_recorrente_response_flag_gera_numero_sorte_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagGeraNumeroSorte;
+/* {{{tipo_debito_recorrente_response_faixa_etaria_value}}} [optional]
+ */
+@property(nonatomic) NSString* faixaEtaria;
+/* {{{tipo_debito_recorrente_response_flag_seguro_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagSeguro;
+/* {{{tipo_debito_recorrente_response_sorteios_mensais_value}}} [optional]
+ */
+@property(nonatomic) NSString* sorteiosMensais;
+/* {{{tipo_debito_recorrente_response_flag_adesao_automatica_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagAdesaoAutomatica;
+/* {{{tipo_debito_recorrente_response_flag_dependente_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagDependente;
+/* {{{tipo_debito_recorrente_response_quantidade_dependente_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* quantidadeDependente;
+/* {{{tipo_debito_recorrente_response_id_termo_seguro_servico_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idTermoSeguroServico;
+/* {{{tipo_debito_recorrente_response_idade_minima_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idadeMinima;
+/* {{{tipo_debito_recorrente_response_idade_maxima_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idadeMaxima;
+/* {{{tipo_debito_recorrente_response_flag_debito_incondicional_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagDebitoIncondicional;
+/* {{{tipo_debito_recorrente_response_flag_extrato_incondicional_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagExtratoIncondicional;
+/* {{{tipo_debito_recorrente_response_flag_estorno_automatico_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagEstornoAutomatico;
+/* {{{tipo_debito_recorrente_response_valor_repassado_seguradora_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* valorRepassadoSeguradora;
+/* {{{tipo_debito_recorrente_response_flag_lanca_transacao_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagLancaTransacao;
+/* {{{tipo_debito_recorrente_response_flag_transferencia_automatica_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* flagTransferenciaAutomatica;
+/* {{{tipo_debito_recorrente_response_id_produto_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idProduto;
+/* {{{tipo_debito_recorrente_response_id_grupo_debito_recorrente_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idGrupoDebitoRecorrente;
+/* {{{tipo_debito_recorrente_response_quantidade_tentativas_cobranca_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* quantidadeTentativasCobranca;
+/* {{{tipo_debito_recorrente_response_id_ajuste_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idAjuste;
 
 @end

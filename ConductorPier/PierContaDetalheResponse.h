@@ -14,82 +14,82 @@
 
 @interface PierContaDetalheResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o de conta (id). [optional]
+/* {{{conta_detalhe_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Pessoa Titular da Conta (id). [optional]
+/* {{{conta_detalhe_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Apresenta o 'Nome Completo da PF' ou o 'Nome Completo da Raz\u00E3o Social (Nome Empresarial)'. [optional]
+/* {{{conta_detalhe_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* C\u00F3digo de identifica\u00E7\u00E3o do produto ao qual a conta faz parte. (id). [optional]
+/* {{{conta_detalhe_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Origem Comercial (id) que deu origem a Conta. [optional]
+/* {{{conta_detalhe_response_id_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* Nome da origem comercial [optional]
+/* {{{conta_detalhe_response_nome_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeOrigemComercial;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Fantasia Basica (id). [optional]
+/* {{{conta_detalhe_response_id_fantasia_basica_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idFantasiaBasica;
-/* Nome da Fantasia Basica [optional]
+/* {{{conta_detalhe_response_nome_fantasia_basica_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaBasica;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do status atribuido a conta. [optional]
+/* {{{conta_detalhe_response_id_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00E7\u00E3o do status da conta [optional]
+/* {{{conta_detalhe_response_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* statusConta;
-/* Apresenta o dia de vencimento. [optional]
+/* {{{conta_detalhe_response_dia_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diaVencimento;
-/* Apresenta o melhor dia de compra. [optional]
+/* {{{conta_detalhe_response_melhor_dia_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* melhorDiaCompra;
-/* Apresenta a data em que o idStatusConta atual fora atribu\u00EDdo para ela. [optional]
+/* {{{conta_detalhe_response_data_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* dataStatusConta;
-/* Valor da renda comprovada. [optional]
+/* {{{conta_detalhe_response_valor_renda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorRenda;
-/* Apresenta a data em que o cart\u00E3o foi gerado. [optional]
+/* {{{conta_detalhe_response_data_cadastro_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCadastro;
-/* Apresenta a data da ultima altera\u00E7\u00E3o de vencimento. [optional]
+/* {{{conta_detalhe_response_data_ultima_alteracao_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataUltimaAlteracaoVencimento;
-/* Apresenta a data da ultima altera\u00E7\u00E3o de vencimento. [optional]
+/* {{{conta_detalhe_response_data_hora_ultima_compra_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraUltimaCompra;
-/* N\u00FAmero da ag\u00EAncia. [optional]
+/* {{{conta_detalhe_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00FAmero da conta corrente. [optional]
+/* {{{conta_detalhe_response_numero_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
-/* Forma de envio da fatura. [optional]
+/* {{{conta_detalhe_response_forma_envio_fatura_value}}} [optional]
  */
 @property(nonatomic) NSString* formaEnvioFatura;
-/* Apresenta se a pessoa \u00E9 titular da conta. [optional]
+/* {{{conta_detalhe_response_titular_value}}} [optional]
  */
 @property(nonatomic) NSNumber* titular;
-/* Apresenta o valor do limite de cr\u00E9dito que o portador do cart\u00E3o possui. [optional]
+/* {{{conta_detalhe_response_limite_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador pode utilizar para realizar transa\u00E7\u00F5es de Saque Nacional. [optional]
+/* {{{conta_detalhe_response_limite_saque_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteSaqueGlobal;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador possui para uso exclusivo em Compras Nacionais. [optional]
+/* {{{conta_detalhe_response_saldo_disponivel_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelGlobal;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador pode utilizar para realizar transa\u00E7\u00F5es de Saque Nacional dentro de cada ciclo de faturamento. [optional]
+/* {{{conta_detalhe_response_saldo_disponivel_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelSaque;
-/* Apresenta a quantidade de dias que a conta esta em atraso [optional]
+/* {{{conta_detalhe_response_dias_atraso_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasAtraso;
 

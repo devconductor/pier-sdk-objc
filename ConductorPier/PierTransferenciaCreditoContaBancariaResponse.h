@@ -14,97 +14,97 @@
 
 @interface PierTransferenciaCreditoContaBancariaResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o da transferencia. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_id_transferencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTransferencia;
-/* Taxa de custo efetivo total. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_c_e_t_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorCET;
-/* C\u00F3digo de identifica\u00E7\u00E3o da autoriza\u00E7\u00E3o. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_id_autorizacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idAutorizacao;
-/* C\u00F3digo da autoriza\u00E7\u00E3o. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_codigo_autorizacao_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoAutorizacao;
-/* NSU de origem. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_nsu_origem_value}}} [optional]
  */
 @property(nonatomic) NSNumber* nsuOrigem;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o do cart\u00E3o. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de opera\u00E7\u00E3o. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_id_operacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* Valor da transfer\u00EAncia. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorCompra;
-/* Valor da parcela. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Valor da transfer\u00EAncia acrescido do valor da tarifa de saque se houver tarifa de saque. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_contrato_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorContrato;
-/* N\u00FAmero de parcelas. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_numero_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* Valor do IOF. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_i_o_f_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorIOF;
-/* Valor da TAC. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_t_a_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTAC;
-/* Valor da taxa saque. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_valor_taxa_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTaxaSaque;
-/* Percentual de juros. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_taxa_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* Data da transfer\u00EAncia. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_data_compra_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCompra;
-/* Data do movimento. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_data_movimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataMovimento;
-/* Data do vencimento real da fatura. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_data_vencimento_real_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoReal;
-/* Dia do vencimento padr\u00E3o da fatura. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_data_vencimento_padrao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoPadrao;
-/* Data da autoriza\u00E7\u00E3o. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_data_autorizacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAutorizacao;
-/* C\u00F3digo do Banco. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* N\u00FAmero da Ag\u00EAncia. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroAgencia;
-/* D\u00EDgito da Ag\u00EAncia. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_digito_agencia_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* N\u00FAmero da Conta. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_numero_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroConta;
-/* D\u00EDgito da Conta. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_digito_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoConta;
-/* Tipo da Conta. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_flag_conta_poupanca_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagContaPoupanca;
-/* Documento do Favorecido. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_documento_favorecido_value}}} [optional]
  */
 @property(nonatomic) NSString* documentoFavorecido;
-/* Nome do Favorecido. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_nome_favorecido_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFavorecido;
-/* C\u00F3digo do Status [optional]
+/* {{{transferencia_credito_conta_bancaria_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Status Processamento. [optional]
+/* {{{transferencia_credito_conta_bancaria_response_status_processamento_value}}} [optional]
  */
 @property(nonatomic) NSString* statusProcessamento;
 

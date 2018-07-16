@@ -14,7 +14,7 @@
 
 @interface PierProdutoOrigemResponse : PierObject
 
-/* C\u00F3digo identificador do produto [optional]
+/* {{{produto_origem_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
 

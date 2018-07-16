@@ -14,10 +14,10 @@
 
 @interface PierCodigoSegurancaSMSPersist : PierObject
 
-/* DDD do n\u00FAmero de telefone para envio do sms. [optional]
+/* {{{codigo_seguranca_s_m_s_persist_ddd_value}}} [optional]
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00FAmero do telefone para envio do sms. [optional]
+/* {{{codigo_seguranca_s_m_s_persist_telefone_value}}} [optional]
  */
 @property(nonatomic) NSString* telefone;
 

@@ -15,22 +15,22 @@
 
 @interface PierArquivoPersist : PierObject
 
-/* Tipo do arquivo [optional]
+/* {{{arquivo_persist_id_tipo_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoArquivo;
-/* Conte\u00FAdo do arquivo convertido em Base 64 
+/* {{{arquivo_persist_arquivo_value}}} 
  */
 @property(nonatomic) NSString* arquivo;
-/* Nome do arquivo. [optional]
+/* {{{arquivo_persist_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Formato/extens\u00E3o do arquivo. [optional]
+/* {{{arquivo_persist_extensao_value}}} [optional]
  */
 @property(nonatomic) NSString* extensao;
-/* Tipo de comunica\u00E7\u00E3o. [optional]
+/* {{{arquivo_persist_tipo_comunicacao_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoComunicacao;
-/* Detalhes contendo informa\u00E7\u00F5es adicionais, relacionadas ao arquivo 
+/* {{{arquivo_persist_detalhes_value}}} 
  */
 @property(nonatomic) NSArray<PierArquivoDetalhesPersist>* detalhes;
 

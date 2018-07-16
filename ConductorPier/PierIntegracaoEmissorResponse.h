@@ -14,22 +14,22 @@
 
 @interface PierIntegracaoEmissorResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do registro na tabela Integra\u00E7\u00E3oEmissor. [optional]
+/* {{{integracao_emissor_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta. [optional]
+/* {{{integracao_emissor_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o do arquivo. [optional]
+/* {{{integracao_emissor_response_id_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idArquivo;
-/* Status do registro. [optional]
+/* {{{integracao_emissor_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Data de inclus\u00E3o do registro. [optional]
+/* {{{integracao_emissor_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data da ultima altera\u00E7\u00E3o do registro. [optional]
+/* {{{integracao_emissor_response_data_alteracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAlteracao;
 

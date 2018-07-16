@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"servidor": @"servidor", @"usuario": @"usuario", @"nomeBase": @"nomeBase", @"senhaCriptografada": @"senhaCriptografada", @"domain": @"domain", @"nomeBaseControleAcesso": @"nomeBaseControleAcesso", @"idEmissor": @"idEmissor", @"servidorControleAcesso": @"servidorControleAcesso", @"nomeBaseUsuarios": @"nomeBaseUsuarios", @"servidorUsuarios": @"servidorUsuarios", @"flagCluster": @"flagCluster" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"servidor": @"servidor", @"usuario": @"usuario", @"nomeBase": @"nomeBase", @"domain": @"domain", @"senhaCriptografada": @"senhaCriptografada", @"nomeBaseControleAcesso": @"nomeBaseControleAcesso", @"idEmissor": @"idEmissor", @"servidorControleAcesso": @"servidorControleAcesso", @"nomeBaseUsuarios": @"nomeBaseUsuarios", @"servidorUsuarios": @"servidorUsuarios", @"flagCluster": @"flagCluster" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"idEmissor", @"flagCluster"];
+  NSArray *optionalProperties = @[@"_id", @"servidor", @"usuario", @"nomeBase", @"domain", @"senhaCriptografada", @"nomeBaseControleAcesso", @"idEmissor", @"servidorControleAcesso", @"nomeBaseUsuarios", @"servidorUsuarios", @"flagCluster"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

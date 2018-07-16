@@ -14,13 +14,13 @@
 
 @interface PierTelefoneEstabelecimentoUpdate : PierObject
 
-/* C\u00F3digo DDD do telefone. 
+/* {{{telefone_estabelecimento_update_ddd_value}}} 
  */
 @property(nonatomic) NSString* ddd;
-/* N\u00FAmero do telefone. 
+/* {{{telefone_estabelecimento_update_telefone_value}}} 
  */
 @property(nonatomic) NSString* telefone;
-/* N\u00FAmero do ramal. [optional]
+/* {{{telefone_estabelecimento_update_ramal_value}}} [optional]
  */
 @property(nonatomic) NSString* ramal;
 

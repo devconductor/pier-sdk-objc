@@ -14,16 +14,16 @@
 
 @interface PierDocumentoResponse : PierObject
 
-/* ID do Documento. [optional]
+/* {{{documento_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* ID do Template de Documento associado. [optional]
+/* {{{documento_response_id_template_documento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTemplateDocumento;
-/* Nome do Documento. [optional]
+/* {{{documento_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Extens\u00E3o do Documento. [optional]
+/* {{{documento_response_extensao_value}}} [optional]
  */
 @property(nonatomic) NSString* extensao;
 

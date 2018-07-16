@@ -15,130 +15,130 @@
 
 @interface PierEstabelecimentoResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do estabelecimento (id). [optional]
+/* {{{estabelecimento_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* N\u00FAmero de identifica\u00E7\u00E3o do Estabelecimento na Conductor. [optional]
+/* {{{estabelecimento_response_numero_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroEstabelecimento;
-/* Indica se \u00E9 matriz ou filial. [optional]
+/* {{{estabelecimento_response_flag_matriz_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagMatriz;
-/* Apresenta o n\u00FAmero de identifica\u00E7\u00E3o do Grupo Econ\u00F4mico. [optional]
+/* {{{estabelecimento_response_id_grupo_economico_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoEconomico;
-/* Apresenta o n\u00FAmero de identifica\u00E7\u00E3o do Estabelecimento na Receita Federal. [optional]
+/* {{{estabelecimento_response_numero_receita_federal_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroReceitaFederal;
-/* Nome do Estabelecimento. [optional]
+/* {{{estabelecimento_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Raz\u00E3o Social do Estabelecimento. [optional]
+/* {{{estabelecimento_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* T\u00EDtulo Comercial do Estabelecimento. [optional]
+/* {{{estabelecimento_response_nome_fantasia_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasia;
-/* C\u00F3digo de Endere\u00E7amento Postal (CEP). [optional]
+/* {{{estabelecimento_response_cep_value}}} [optional]
  */
 @property(nonatomic) NSString* cep;
-/* Nome do Logradouro. [optional]
+/* {{{estabelecimento_response_nome_logradouro_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeLogradouro;
-/* N\u00FAmero do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_numero_endereco_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroEndereco;
-/* Nome do bairro do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_bairro_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Nome da cidade do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Descri\u00E7\u00F5es complementares referente ao endere\u00E7o. [optional]
+/* {{{estabelecimento_response_complemento_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento;
-/* Sigla de identifica\u00E7\u00E3o da Unidade Federativa do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_uf_value}}} [optional]
  */
 @property(nonatomic) NSString* uf;
-/* C\u00F3digo de Endere\u00E7amento Postal (CEP). [optional]
+/* {{{estabelecimento_response_cep2_value}}} [optional]
  */
 @property(nonatomic) NSString* cep2;
-/* Nome do Logradouro . [optional]
+/* {{{estabelecimento_response_nome_logradouro2_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeLogradouro2;
-/* N\u00FAmero do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_numero_endereco2_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroEndereco2;
-/* Nome do bairro do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_bairro2_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro2;
-/* Nome da cidade do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_cidade2_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade2;
-/* Descri\u00E7\u00F5es complementares referente ao endere\u00E7o. [optional]
+/* {{{estabelecimento_response_complemento2_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento2;
-/* Sigla de identifica\u00E7\u00E3o da Unidade Federativa do endere\u00E7o. [optional]
+/* {{{estabelecimento_response_uf2_value}}} [optional]
  */
 @property(nonatomic) NSString* uf2;
-/* Detalhes espec\u00EDficos quanto ao Cadastro do Estabelecimento. [optional]
+/* {{{estabelecimento_response_obs_value}}} [optional]
  */
 @property(nonatomic) NSString* obs;
-/* Nome da pessoa para contato com o Estabelecimento. [optional]
+/* {{{estabelecimento_response_contato_value}}} [optional]
  */
 @property(nonatomic) NSString* contato;
-/* E-mail da pessoa para contato com o Estabelecimento. [optional]
+/* {{{estabelecimento_response_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Indica se o estabelecimento ser\u00E1 inclu\u00EDdo no arquivo de registro para a Secretaria da Fazenda Estadual. [optional]
+/* {{{estabelecimento_response_flag_arquivo_secr_fazenda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagArquivoSecrFazenda;
-/* Indica se o estabelecimento poder\u00E1 originar transa\u00E7\u00F5es sem a leitura da tarja ou do chip do cart\u00E3o. [optional]
+/* {{{estabelecimento_response_flag_cartao_digitado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCartaoDigitado;
-/* Indica se o estabelecimento est\u00E1 inativo. [optional]
+/* {{{estabelecimento_response_inativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* inativo;
-/* C\u00F3digo identificador da moeda. [optional]
+/* {{{estabelecimento_response_id_moeda_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idMoeda;
-/* Identificador de Pa\u00EDs. [optional]
+/* {{{estabelecimento_response_id_pais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPais;
-/* N\u00FAmero do associado ao SPCBrasil. [optional]
+/* {{{estabelecimento_response_associado_s_p_c_brasil_value}}} [optional]
  */
 @property(nonatomic) NSNumber* associadoSPCBrasil;
-/* C\u00F3digo de Categoria de Mercado. [optional]
+/* {{{estabelecimento_response_mcc_value}}} [optional]
  */
 @property(nonatomic) NSNumber* mcc;
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de Estabelecimento. [optional]
+/* {{{estabelecimento_response_id_tipo_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoEstabelecimento;
-/* Tipo da Correspond\u00EAncia (ORIGEM, CORRESPONDENCIA). [optional]
+/* {{{estabelecimento_response_correspondencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* correspondencia;
-/* Cargo do contato do estabelecimento. [optional]
+/* {{{estabelecimento_response_cargo_contato_value}}} [optional]
  */
 @property(nonatomic) NSString* cargoContato;
-/* Tipo do regime de pagamento do estabelecimento. [optional]
+/* {{{estabelecimento_response_tipo_pagamento_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoPagamento;
-/* Consulta de cadastro n\u00FAmero um. [optional]
+/* {{{estabelecimento_response_consulta_value}}} [optional]
  */
 @property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta;
-/* Consulta de cadastro n\u00FAmero dois. [optional]
+/* {{{estabelecimento_response_consulta2_value}}} [optional]
  */
 @property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta2;
-/* Consulta de cadastro n\u00FAmero tr\u00EAs. [optional]
+/* {{{estabelecimento_response_consulta3_value}}} [optional]
  */
 @property(nonatomic) PierConsultaCadastroEstabelecimentoDTO* consulta3;
-/* Terminal do estabelecimento. [optional]
+/* {{{estabelecimento_response_terminal_value}}} [optional]
  */
 @property(nonatomic) NSString* terminal;
-/* Data de Cadastro do Estabelecimento. [optional]
+/* {{{estabelecimento_response_data_cadastramento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCadastramento;
-/* Usu\u00E1rio da aplica\u00E7\u00E3o. [optional]
+/* {{{estabelecimento_response_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
 

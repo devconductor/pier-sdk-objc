@@ -18,67 +18,67 @@
 @property(nonatomic) NSNumber* mcc;
 
 @property(nonatomic) NSString* uf;
-/* C\u00F3digo de identifica\u00E7\u00E3o da compra. [optional]
+/* {{{compra_response_id_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCompra;
-/* Descri\u00E7\u00E3o do status da autoriza\u00E7\u00E3o da compra. [optional]
+/* {{{compra_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Data da compra. [optional]
+/* {{{compra_response_data_compra_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCompra;
-/* Valor total da compra. [optional]
+/* {{{compra_response_valor_total_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalCompra;
-/* Valor da parcela da compra. [optional]
+/* {{{compra_response_valor_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela;
-/* Valor da primeira parcela da compra. [optional]
+/* {{{compra_response_primeira_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* primeiraParcela;
-/* N\u00FAmero de parcelas da compra. [optional]
+/* {{{compra_response_numero_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelas;
-/* N\u00FAmero de parcelas antecip\u00E1veis da compra. [optional]
+/* {{{compra_response_numero_parcelas_antecipaveis_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroParcelasAntecipaveis;
-/* Nome do estabelecimento da compra. [optional]
+/* {{{compra_response_nome_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeEstabelecimento;
-/* Tipo de transa\u00E7\u00E3o da compra. [optional]
+/* {{{compra_response_tipo_origem_transacao_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoOrigemTransacao;
-/* Cidade onde a compra foi realizada. [optional]
+/* {{{compra_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Pa\u00EDs onde a compra foi realizada. [optional]
+/* {{{compra_response_pais_value}}} [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Coordenada latitudinal da localiza\u00E7\u00E3o da compra. [optional]
+/* {{{compra_response_latitude_value}}} [optional]
  */
 @property(nonatomic) NSString* latitude;
-/* Coordenada longitudinal da localiza\u00E7\u00E3o da compra. [optional]
+/* {{{compra_response_longitude_value}}} [optional]
  */
 @property(nonatomic) NSString* longitude;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Grupo MCC da compra. [optional]
+/* {{{compra_response_id_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoMCC;
-/* Descri\u00E7\u00E3o do Grupo MCC da compra. [optional]
+/* {{{compra_response_descricao_grupo_m_c_c_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoGrupoMCC;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da conta da compra. [optional]
+/* {{{compra_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do produto da compra. [optional]
+/* {{{compra_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Descri\u00E7\u00E3o do produto da compra. [optional]
+/* {{{compra_response_descricao_produto_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoProduto;
-/* N\u00FAmero do cart\u00E3o da compra. [optional]
+/* {{{compra_response_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* cartao;
-/* Nome do portador do cart\u00E3o da compra. [optional]
+/* {{{compra_response_nome_portador_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* nomePortadorCartao;
 

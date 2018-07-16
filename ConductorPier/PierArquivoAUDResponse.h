@@ -15,43 +15,43 @@
 
 @interface PierArquivoAUDResponse : PierObject
 
-/* Identificador da auditoria arquivo [optional]
+/* {{{arquivo_a_u_d_response_rev_value}}} [optional]
  */
 @property(nonatomic) NSNumber* rev;
-/* Identificador do tipo de auditoria (0 - Criado, 1 - Alterado, 2 - Exclu\u00EDdo) [optional]
+/* {{{arquivo_a_u_d_response_rev_type_value}}} [optional]
  */
 @property(nonatomic) NSNumber* revType;
-/* Identificador do arquivo auditado [optional]
+/* {{{arquivo_a_u_d_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do arquivo auditado [optional]
+/* {{{arquivo_a_u_d_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Identificador da resposta da Acesso Digital [optional]
+/* {{{arquivo_a_u_d_response_id_resposta_acesso_digital_value}}} [optional]
  */
 @property(nonatomic) NSString* idRespostaAcessoDigital;
-/* Data de resposta da Acesso Digital [optional]
+/* {{{arquivo_a_u_d_response_data_hora_resposta_acesso_digital_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraRespostaAcessoDigital;
-/* Identificador da resposta da Neurotech [optional]
+/* {{{arquivo_a_u_d_response_id_resposta_neurotech_value}}} [optional]
  */
 @property(nonatomic) NSString* idRespostaNeurotech;
-/* Data de resposta da Neurotech [optional]
+/* {{{arquivo_a_u_d_response_data_hora_resposta_neurotech_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraRespostaNeurotech;
-/* Uri de acesso [optional]
+/* {{{arquivo_a_u_d_response_uri_value}}} [optional]
  */
 @property(nonatomic) NSString* uri;
-/* Data de inclus\u00E3o do arquivo auditado [optional]
+/* {{{arquivo_a_u_d_response_data_hora_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraInclusao;
-/* Data de altera\u00E7\u00E3o do arquivo auditado [optional]
+/* {{{arquivo_a_u_d_response_data_hora_alteracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraAlteracao;
-/* Extens\u00E3o do arquivo auditado [optional]
+/* {{{arquivo_a_u_d_response_extensao_value}}} [optional]
  */
 @property(nonatomic) NSString* extensao;
-/* Lista  de par\u00E2metros do arquivo auditado [optional]
+/* {{{arquivo_a_u_d_response_parametros_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierArquivoParametroAUDResponse>* parametros;
 

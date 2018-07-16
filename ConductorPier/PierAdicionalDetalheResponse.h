@@ -15,64 +15,64 @@
 
 @interface PierAdicionalDetalheResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o da Conta para cadastro do Adicional [optional]
+/* {{{adicional_detalhe_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o da Pessoa Adicional [optional]
+/* {{{adicional_detalhe_response_id_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* Nome completo do Adicional [optional]
+/* {{{adicional_detalhe_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Nome do Adicional que ser\u00E1 gravado no Cart\u00E3o [optional]
+/* {{{adicional_detalhe_response_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* N\u00FAmero do CPF ou CNPJ do Adicional [optional]
+/* {{{adicional_detalhe_response_numero_receita_federal_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* Data de Nascimento do Adicional [optional]
+/* {{{adicional_detalhe_response_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
+/* {{{adicional_detalhe_response_sexo_value}}} [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00FAmero do Documento de Identidade do Adicional [optional]
+/* {{{adicional_detalhe_response_numero_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Nome do Org\u00E3o Emissor do Documento de Identidade do Adicional [optional]
+/* {{{adicional_detalhe_response_orgao_expedidor_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
-/* Sigla da Unidade Federativa onde o Documento de Identidade do Adicional foi emitido [optional]
+/* {{{adicional_detalhe_response_unidade_federativa_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data de emiss\u00E3o do Documento de Identidade do Adicional [optional]
+/* {{{adicional_detalhe_response_data_emissao_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Estado Civil do Adicional [optional]
+/* {{{adicional_detalhe_response_id_estado_civil_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstadoCivil;
-/* C\u00F3digo de identifica\u00E7\u00E3o da Profissao do Adicional [optional]
+/* {{{adicional_detalhe_response_id_profissao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProfissao;
-/* C\u00F3digo de identifica\u00E7\u00E3o da Nacionalidade do Adicional [optional]
+/* {{{adicional_detalhe_response_id_nacionalidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idNacionalidade;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Parentesco do Adicional com o Titular [optional]
+/* {{{adicional_detalhe_response_id_parentesco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Parentesco do Adicional com o Titular [optional]
+/* {{{adicional_detalhe_response_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Indica se o adicional est\u00E1 ativo = 1 ou inativo = 0 [optional]
+/* {{{adicional_detalhe_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
-/* Indica a data de cadastro do adicional [optional]
+/* {{{adicional_detalhe_response_data_cadastro_portador_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCadastroPortador;
-/* Indica a data de cancelamento do adicional [optional]
+/* {{{adicional_detalhe_response_data_cancelamento_portador_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCancelamentoPortador;
-/* Lista dos telefones do adicional [optional]
+/* {{{adicional_detalhe_response_telefones_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTelefoneResponse>* telefones;
 

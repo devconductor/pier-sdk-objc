@@ -18,76 +18,79 @@
 
 @interface PierPessoaJuridicaAprovadaResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o da pessoa jur\u00EDdica (id) [optional]
+/* {{{pessoa_juridica_aprovada_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o nome completo da raz\u00E3o social (nome empresarial)'. [optional]
+/* {{{pessoa_juridica_aprovada_response_razao_social_value}}} [optional]
  */
 @property(nonatomic) NSString* razaoSocial;
-/* Apresenta o nome fantasia da empresa. [optional]
+/* {{{pessoa_juridica_aprovada_response_nome_fantasia_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasia;
-/* N\u00FAmero do Cadastro Nacional de Pessoa Juridica (CNPJ) [optional]
+/* {{{pessoa_juridica_aprovada_response_cnpj_value}}} [optional]
  */
 @property(nonatomic) NSString* cnpj;
-/* N\u00FAmero da Inscri\u00E7\u00E3o Estadual (IE). [optional]
+/* {{{pessoa_juridica_aprovada_response_inscricao_estadual_value}}} [optional]
  */
 @property(nonatomic) NSString* inscricaoEstadual;
-/* Data de abertura da empresa, essa data deve ser informada no formato: aaaa-MM-dd. [optional]
+/* {{{pessoa_juridica_aprovada_response_data_abertura_empresa_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAberturaEmpresa;
-/* Id da origem comercial [optional]
+/* {{{pessoa_juridica_aprovada_response_id_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOrigemComercial;
-/* Id do produto [optional]
+/* {{{pessoa_juridica_aprovada_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* N\u00FAmero da ag\u00EAncia. [optional]
+/* {{{pessoa_juridica_aprovada_response_numero_banco_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* numeroBanco;
+/* {{{pessoa_juridica_aprovada_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00FAmero da conta corrente. [optional]
+/* {{{pessoa_juridica_aprovada_response_numero_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
-/* Email da empresa [optional]
+/* {{{pessoa_juridica_aprovada_response_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Dia vencimento [optional]
+/* {{{pessoa_juridica_aprovada_response_dia_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diaVencimento;
-/* Nome que deve ser impresso no cart\u00E3o [optional]
+/* {{{pessoa_juridica_aprovada_response_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* C\u00F3digo de identifica\u00E7\u00E3o da conta cadastrada [optional]
+/* {{{pessoa_juridica_aprovada_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de identifica\u00E7\u00E3o da proposta [optional]
+/* {{{pessoa_juridica_aprovada_response_id_proposta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProposta;
-/* Indica o canal pelo qual o cadastro do cliente foi realizado [optional]
+/* {{{pessoa_juridica_aprovada_response_canal_entrada_value}}} [optional]
  */
 @property(nonatomic) NSString* canalEntrada;
-/* Indica o valor da pontua\u00E7\u00E3o atribuido ao cliente (caso n\u00E3o informado ser\u00E1 atribuido o valor = 0) [optional]
+/* {{{pessoa_juridica_aprovada_response_valor_pontuacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPontuacao;
-/* Apresenta os telefones da empresa [optional]
+/* {{{pessoa_juridica_aprovada_response_telefones_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTelefonePessoaAprovadaResponse>* telefones;
-/* Pode ser informado os seguintes tipos de endere\u00E7o: Residencial, Comercial, e Outros [optional]
+/* {{{pessoa_juridica_aprovada_response_enderecos_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierEnderecoAprovadoResponse>* enderecos;
-/* Apresenta os dados dos s\u00F3cios da empresa, caso exista [optional]
+/* {{{pessoa_juridica_aprovada_response_socios_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierSocioAprovadoResponse>* socios;
-/* Apresenta os dados dos s\u00F3cios da empresa, caso exista [optional]
+/* {{{pessoa_juridica_aprovada_response_referencias_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierReferenciaComercialAprovadoResponse>* referencias;
-/* Valor do Limite Global 
+/* {{{pessoa_juridica_aprovada_response_limite_global_value}}} 
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* Valor m\u00E1ximo do limite de cr\u00E9dito para realizar transa\u00E7\u00F5es 
+/* {{{pessoa_juridica_aprovada_response_limite_maximo_value}}} 
  */
 @property(nonatomic) NSNumber* limiteMaximo;
-/* Valor do limite de cr\u00E9dito acumulado da soma das parcelas das compras 
+/* {{{pessoa_juridica_aprovada_response_limite_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* limiteParcelas;
 

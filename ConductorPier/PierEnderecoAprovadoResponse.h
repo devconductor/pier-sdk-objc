@@ -14,40 +14,40 @@
 
 @interface PierEnderecoAprovadoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Endere\u00E7o (id) [optional]
+/* {{{endereco_aprovado_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Tipo Endere\u00E7o (id) [optional]
+/* {{{endereco_aprovado_response_id_tipo_endereco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoEndereco;
-/* Apresenta o C\u00F3digo de Endere\u00E7amento Postal (CEP) no formaro '58800000' [optional]
+/* {{{endereco_aprovado_response_cep_value}}} [optional]
  */
 @property(nonatomic) NSString* cep;
-/* Apresenta o nome do Logradouro [optional]
+/* {{{endereco_aprovado_response_logradouro_value}}} [optional]
  */
 @property(nonatomic) NSString* logradouro;
-/* Apresenta o n\u00FAmero do endere\u00E7o [optional]
+/* {{{endereco_aprovado_response_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numero;
-/* Apresenta descri\u00E7oes complementares referente ao endere\u00E7o [optional]
+/* {{{endereco_aprovado_response_complemento_value}}} [optional]
  */
 @property(nonatomic) NSString* complemento;
-/* Apresenta a descri\u00E7\u00E3o de ponto de refer\u00EAncia do endere\u00E7o [optional]
+/* {{{endereco_aprovado_response_ponto_referencia_value}}} [optional]
  */
 @property(nonatomic) NSString* pontoReferencia;
-/* Apresenta nome do bairro [optional]
+/* {{{endereco_aprovado_response_bairro_value}}} [optional]
  */
 @property(nonatomic) NSString* bairro;
-/* Apresenta nome da cidade [optional]
+/* {{{endereco_aprovado_response_cidade_value}}} [optional]
  */
 @property(nonatomic) NSString* cidade;
-/* Apresenta sigla da Unidade Federativa [optional]
+/* {{{endereco_aprovado_response_uf_value}}} [optional]
  */
 @property(nonatomic) NSString* uf;
-/* Apresenta nome do Pais [optional]
+/* {{{endereco_aprovado_response_pais_value}}} [optional]
  */
 @property(nonatomic) NSString* pais;
-/* Indica se o endere\u00E7o informado \u00E9 o de correspond\u00EAncia [optional]
+/* {{{endereco_aprovado_response_endereco_correspondencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* enderecoCorrespondencia;
 

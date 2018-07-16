@@ -14,10 +14,10 @@
 
 @interface PierTipoCampanhaResponse : PierObject
 
-/* Identificador do tipo de campanha [optional]
+/* {{{tipo_campanha_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de campanha [optional]
+/* {{{tipo_campanha_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

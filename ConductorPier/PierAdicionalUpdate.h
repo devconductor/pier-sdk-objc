@@ -15,37 +15,37 @@
 
 @interface PierAdicionalUpdate : PierObject
 
-/* Nome completo do Adicional. 
+/* {{{adicional_update_nome_value}}} 
  */
 @property(nonatomic) NSString* nome;
-/* Nome do Adicional que ser\u00E1 gravado no Cart\u00E3o. [optional]
+/* {{{adicional_update_nome_impresso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeImpresso;
-/* N\u00FAmero do CPF ou CNPJ do Adicional. 
+/* {{{adicional_update_numero_receita_federal_value}}} 
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* Data de Nascimento do Adicional em formato yyyy-MM-dd. [optional]
+/* {{{adicional_update_data_nascimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataNascimento;
-/* C\u00F3digo de identifica\u00E7\u00E3o do sexo da Pessoa, quando PF, sendo: (\"M\": Masculino), (\"F\": Feminino), (\"O\": Outro), (\"N\": N\u00E3o Especificado). [optional]
+/* {{{adicional_update_sexo_value}}} [optional]
  */
 @property(nonatomic) NSString* sexo;
-/* N\u00FAmero do Documento de Identidade do Adicional. [optional]
+/* {{{adicional_update_numero_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroIdentidade;
-/* Nome do Org\u00E3o Emissor do Documento de Identidade do Adicional. [optional]
+/* {{{adicional_update_orgao_expedidor_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* orgaoExpedidorIdentidade;
-/* Sigla da Unidade Federativa onde o Documento de Identidade do Adicional foi emitido. [optional]
+/* {{{adicional_update_unidade_federativa_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* unidadeFederativaIdentidade;
-/* Data de emiss\u00E3o do Documento de Identidade do Adicional em formato yyyy-MM-dd. [optional]
+/* {{{adicional_update_data_emissao_identidade_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEmissaoIdentidade;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Parentesco do Adicional com o Titular. [optional]
+/* {{{adicional_update_id_parentesco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idParentesco;
-/* Lista de telefones do adicional. [optional]
+/* {{{adicional_update_telefones_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierTelefoneAdicionalUpdate>* telefones;
 

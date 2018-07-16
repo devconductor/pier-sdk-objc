@@ -14,10 +14,10 @@
 
 @interface PierOperadoraResponse : PierObject
 
-/* Identificador da operadora [optional]
+/* {{{operadora_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome da operadora [optional]
+/* {{{operadora_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
 

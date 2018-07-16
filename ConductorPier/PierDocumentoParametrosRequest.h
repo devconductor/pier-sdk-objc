@@ -15,13 +15,13 @@
 
 @interface PierDocumentoParametrosRequest : PierObject
 
-/* ID para o template do documento. [optional]
+/* {{{documento_parametros_request_id_template_documento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTemplateDocumento;
-/* Nome para o arquivo. [optional]
+/* {{{documento_parametros_request_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Lista de par\u00E2metros para montagem do documento. [optional]
+/* {{{documento_parametros_request_parametros_conteudo_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierPropriedadeDocumentoRequest>* parametrosConteudo;
 

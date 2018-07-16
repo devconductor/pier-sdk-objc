@@ -15,19 +15,19 @@
 
 @interface PierPlanoParcelamentoTransferenciaCreditoContaBancariaResponse : PierObject
 
-/* N\u00FAmero do Cart\u00E3o que originou a transa\u00E7\u00E3o em formato mascarado. [optional]
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_response_numero_mascarado_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroMascaradoCartao;
-/* Data de vencimento da primeira parcela. [optional]
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_response_vencimento_primeira_parcela_value}}} [optional]
  */
 @property(nonatomic) NSString* vencimentoPrimeiraParcela;
-/* Valor da solicita\u00E7\u00E3o de saque. [optional]
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_response_valor_transacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTransacao;
-/* N\u00FAmero de meses para car\u00EAncia. [optional]
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_response_numero_meses_carencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroMesesCarencia;
-/* Lista com os planos de parcelamento. [optional]
+/* {{{plano_parcelamento_transferencia_credito_conta_bancaria_response_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierParcelamentoTransferenciaResponse>* parcelas;
 

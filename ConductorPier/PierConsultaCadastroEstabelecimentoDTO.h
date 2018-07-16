@@ -14,13 +14,13 @@
 
 @interface PierConsultaCadastroEstabelecimentoDTO : PierObject
 
-/* Data hora de cadastro. [optional]
+/* {{{consulta_cadastro_estabelecimento_d_t_o_data_hora_consulta_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraConsulta;
-/* Status da consulta (1 - OK, 2 - NOK). [optional]
+/* {{{consulta_cadastro_estabelecimento_d_t_o_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Tipo da entidade (1 - ATIVO, 2 - BLOQUEADO). [optional]
+/* {{{consulta_cadastro_estabelecimento_d_t_o_tipo_entidade_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoEntidade;
 

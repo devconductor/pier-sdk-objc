@@ -14,10 +14,10 @@
 
 @interface PierHistoricoAtrasoFaturaResponse : PierObject
 
-/* Data vencimento fatura. [optional]
+/* {{{historico_atraso_fatura_response_data_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimento;
-/* Quantidade de dias em atraso. [optional]
+/* {{{historico_atraso_fatura_response_dias_pagamento_apos_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasPagamentoAposVencimento;
 

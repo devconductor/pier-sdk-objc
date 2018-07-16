@@ -14,40 +14,40 @@
 
 @interface PierBaseResponse : PierObject
 
-/* C\u00F3digo identificador da base 
+/* {{{base_dto_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* IP do servidor 
+/* {{{base_dto_servidor_value}}} [optional]
  */
 @property(nonatomic) NSString* servidor;
-/* Nome do usu\u00E1rio 
+/* {{{base_dto_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
-/* Nome da base 
+/* {{{base_dto_nome_base_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeBase;
-/* senha Criptografada 
- */
-@property(nonatomic) NSNumber* senhaCriptografada;
-/* Dom\u00EDnio da base 
+/* {{{base_dto_domain_value}}} [optional]
  */
 @property(nonatomic) NSString* domain;
-/* Nome da base de controle acesso 
+/* {{{base_dto_senha_criptografada_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* senhaCriptografada;
+/* {{{base_dto_nome_base_controle_acesso_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeBaseControleAcesso;
-/* C\u00F3digo do identificador do emissor [optional]
+/* {{{base_dto_id_emissor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* Servidor do controle de acesso 
+/* {{{base_dto_servidor_controle_acesso_value}}} [optional]
  */
 @property(nonatomic) NSString* servidorControleAcesso;
-/* Nome da base de usu\u00E1rios 
+/* {{{base_dto_nome_base_usuarios_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeBaseUsuarios;
-/* Servidor do controle de acesso 
+/* {{{base_dto_servidor_usuarios_value}}} [optional]
  */
 @property(nonatomic) NSString* servidorUsuarios;
-/* Flag Cluester [optional]
+/* {{{base_dto_flag_cluster_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCluster;
 

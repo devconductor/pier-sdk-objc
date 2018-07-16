@@ -14,35 +14,38 @@
 
 @interface PierUsuarioResponse : PierObject
 
-/* Id do Usu\u00E1rio [optional]
+/* {{{usuario_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do Usu\u00E1rio [optional]
+/* {{{usuario_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Login do Usu\u00E1rio 
+/* {{{usuario_response_login_value}}} 
  */
 @property(nonatomic) NSString* login;
-/* Id do emissor do usu\u00E1rio [optional]
+/* {{{usuario_response_id_emissor_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEmissor;
-/* CPF do Usu\u00E1rio [optional]
+/* {{{usuario_response_cpf_value}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* Email do Usu\u00E1rio 
+/* {{{usuario_response_email_value}}} 
  */
 @property(nonatomic) NSString* email;
-/* Status do Usu\u00E1rio [optional]
+/* {{{usuario_response_status_value}}} [optional]
  */
 @property(nonatomic) NSString* status;
-/* Data de cria\u00E7\u00E3o do Usu\u00E1rio [optional]
+/* {{{usuario_response_data_criacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataCriacao;
-/* Data de modifica\u00E7\u00E3o do Usu\u00E1rio [optional]
+/* {{{usuario_response_data_modificacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataModificacao;
-/* N\u00FAmero de tentativas de valida\u00E7\u00E3o incorretas [optional]
+/* {{{usuario_response_tentativas_incorretas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* tentativasIncorretas;
+/* {{{usuario_response_bloquear_acesso_descricao}}} [optional]
+ */
+@property(nonatomic) NSNumber* bloquearAcesso;
 
 @end

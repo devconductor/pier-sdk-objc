@@ -14,85 +14,85 @@
 
 @interface PierGrupoEconomicoResponse : PierObject
 
-/* C\u00F3digo identificador do grupo econ\u00F4mico [optional]
+/* {{{grupo_economico_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Raz\u00E3o social da pessoa jur\u00EDdica [optional]
+/* {{{grupo_economico_response_razao_social_value}}} [optional]
  */
 @property(nonatomic) NSString* razaoSocial;
-/* Nome do credor [optional]
+/* {{{grupo_economico_response_nome_credor_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeCredor;
-/* N\u00FAmero da Receita Federal [optional]
+/* {{{grupo_economico_response_numero_receita_federal_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroReceitaFederal;
-/* N\u00FAmero da inscri\u00E7\u00E3o estadual [optional]
+/* {{{grupo_economico_response_inscricao_estadual_value}}} [optional]
  */
 @property(nonatomic) NSString* inscricaoEstadual;
-/* Nome da pessoa para entrar em contato [optional]
+/* {{{grupo_economico_response_contato_value}}} [optional]
  */
 @property(nonatomic) NSString* contato;
-/* C\u00F3digo do banco [optional]
+/* {{{grupo_economico_response_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* C\u00F3digo da ag\u00EAncia [optional]
+/* {{{grupo_economico_response_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* agencia;
-/* D\u00EDgito verificador da ag\u00EAncia [optional]
+/* {{{grupo_economico_response_digito_agencia_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoAgencia;
-/* C\u00F3digo da Conta Corrente [optional]
+/* {{{grupo_economico_response_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* contaCorrente;
-/* D\u00EDgito Verificador da Conta Corrente [optional]
+/* {{{grupo_economico_response_digito_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoContaCorrente;
-/* Login do usu\u00E1rio para registro da inser\u00E7\u00E3o [optional]
+/* {{{grupo_economico_response_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
-/* Periodicidade do pagamento [optional]
+/* {{{grupo_economico_response_periodicidade_value}}} [optional]
  */
 @property(nonatomic) NSString* periodicidade;
-/* Dia para pagamento semanal [optional]
+/* {{{grupo_economico_response_pagamento_semanal_value}}} [optional]
  */
 @property(nonatomic) NSString* pagamentoSemanal;
-/* Dia da data para o pagamento mensal [optional]
+/* {{{grupo_economico_response_pagamento_mensal_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoMensal;
-/* Dia da data para o primeiro pagamento decendial [optional]
+/* {{{grupo_economico_response_pagamento_decendial_primeiro_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoDecendialPrimeiro;
-/* Dia da data para o segundo pagamento decendial [optional]
+/* {{{grupo_economico_response_pagamento_decendial_segundo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoDecendialSegundo;
-/* Dia da data para o terceiro pagamento decendial [optional]
+/* {{{grupo_economico_response_pagamento_decendial_terceiro_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoDecendialTerceiro;
-/* Dia da data para o primeiro pagamento quinzenal [optional]
+/* {{{grupo_economico_response_pagamento_quinzenal_primeiro_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoQuinzenalPrimeiro;
-/* Dia da data para o segundo pagamento quinzenal [optional]
+/* {{{grupo_economico_response_pagamento_quinzenal_segundo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* pagamentoQuinzenalSegundo;
-/* Identificador do credor RAV [optional]
+/* {{{grupo_economico_response_id_credor_r_a_v_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCredorRAV;
-/* Valor percentual do RAV do credor [optional]
+/* {{{grupo_economico_response_percentual_r_a_v_value}}} [optional]
  */
 @property(nonatomic) NSNumber* percentualRAV;
-/* Indica se o credor recebe RAV e o tipo [optional]
+/* {{{grupo_economico_response_recebe_r_a_v_value}}} [optional]
  */
 @property(nonatomic) NSString* recebeRAV;
-/* Percentual Multiplica [optional]
+/* {{{grupo_economico_response_percentual_multiplica_value}}} [optional]
  */
 @property(nonatomic) NSNumber* percentualMultiplica;
-/* Taxa Administrativa [optional]
+/* {{{grupo_economico_response_taxa_adm_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaAdm;
-/* Taxa do Banco [optional]
+/* {{{grupo_economico_response_taxa_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaBanco;
-/* Valor limite do RAV [optional]
+/* {{{grupo_economico_response_limite_r_a_v_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteRAV;
 

@@ -14,10 +14,10 @@
 
 @interface PierEstagioCartaoResponse : PierObject
 
-/* Id do est\u00E1gio cart\u00E3o 
+/* {{{estagio_cartao_response_id_value}}} 
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do est\u00E1gio cart\u00E3o 
+/* {{{estagio_cartao_response_nome_value}}} 
  */
 @property(nonatomic) NSString* nome;
 

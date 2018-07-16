@@ -14,16 +14,16 @@
 
 @interface PierMaquinetaPersist : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Terminal (id). 
+/* {{{maquineta_persist_id_terminal_value}}} 
  */
 @property(nonatomic) NSNumber* idTerminal;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo Maquineta (id). 
+/* {{{maquineta_persist_id_tipo_maquineta_value}}} 
  */
 @property(nonatomic) NSNumber* idTipoMaquineta;
-/* Valor de Manuten\u00E7\u00E3o da Maquineta. 
+/* {{{maquineta_persist_valor_value}}} 
  */
 @property(nonatomic) NSNumber* valor;
-/* Data da implanta\u00E7\u00E3o da Maquineta, inserir no formato yyyy-MM-dd'T'HH:mm:ss.SSS'Z'. 
+/* {{{maquineta_persist_data_hora_implantacao_value}}} 
  */
 @property(nonatomic) NSString* dataHoraImplantacao;
 

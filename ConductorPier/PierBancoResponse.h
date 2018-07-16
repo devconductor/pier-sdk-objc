@@ -14,16 +14,16 @@
 
 @interface PierBancoResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Banco (id). [optional]
+/* {{{banco_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do banco [optional]
+/* {{{banco_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00E7\u00E3o do banco [optional]
+/* {{{banco_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Digito do banco [optional]
+/* {{{banco_response_digito_banco_value}}} [optional]
  */
 @property(nonatomic) NSString* digitoBanco;
 

@@ -14,70 +14,70 @@
 
 @interface PierLimiteDisponibilidadeResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o de Limite e Disponibilidade (id). [optional]
+/* {{{limite_disponibilidade_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Valor do limite de cr\u00E9dito. [optional]
+/* {{{limite_disponibilidade_response_limite_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* Valor do limite de cr\u00E9dito para uso exclusivo em compras nacionais. [optional]
+/* {{{limite_disponibilidade_response_limite_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteCompra;
-/* Valor do limite de cr\u00E9dito para transa\u00E7\u00F5es de compras parceladas. [optional]
+/* {{{limite_disponibilidade_response_limite_parcelado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteParcelado;
-/* Valor do limite de cr\u00E9dito acumulado da soma das parcelas das compras que forem realizadas nesta modalidade. [optional]
+/* {{{limite_disponibilidade_response_limite_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteParcelas;
-/* Valor do limite de cr\u00E9dito para transa\u00E7\u00F5es de Saque Nacional. [optional]
+/* {{{limite_disponibilidade_response_limite_saque_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteSaqueGlobal;
-/* Valor do limite de cr\u00E9dito para transa\u00E7\u00F5es de Saque Nacional dentro de cada ciclo de faturamento. [optional]
+/* {{{limite_disponibilidade_response_limite_saque_periodo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteSaquePeriodo;
-/* Valor da margem de cr\u00E9dito para consigna\u00E7\u00F5es (desconto em folha). [optional]
+/* {{{limite_disponibilidade_response_limite_consignado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteConsignado;
-/* Valor do limite de cr\u00E9dito para uso exclusivo em compras internacionais. [optional]
+/* {{{limite_disponibilidade_response_limite_internacional_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteInternacionalCompra;
-/* Valor do limite de cr\u00E9dito para transa\u00E7\u00F5es internacionais de compras parceladas. [optional]
+/* {{{limite_disponibilidade_response_limite_internacional_parcelado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteInternacionalParcelado;
-/* Valor do limite de cr\u00E9dito acumulado da soma das parcelas das compras internacionais que forem realizadas nesta modalidade. [optional]
+/* {{{limite_disponibilidade_response_limite_internacional_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteInternacionalParcelas;
-/* Valor do limite de cr\u00E9dito para transa\u00E7\u00F5es de saque internacional. [optional]
+/* {{{limite_disponibilidade_response_limite_internacional_saque_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteInternacionalSaqueGlobal;
-/* Valor do limite de cr\u00E9dito para transa\u00E7\u00F5es de saque internacional dentro de cada ciclo de faturamento. [optional]
+/* {{{limite_disponibilidade_response_limite_internacional_saque_periodo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteInternacionalSaquePeriodo;
-/* Valor m\u00E1ximo do limite de cr\u00E9dito para realizar transa\u00E7\u00F5es. [optional]
+/* {{{limite_disponibilidade_response_limite_maximo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* limiteMaximo;
-/* Valor de cr\u00E9dito dispon\u00EDvel para transa\u00E7\u00F5es. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_global_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelGlobal;
-/* Valor de cr\u00E9dito dispon\u00EDvel para transa\u00E7\u00F5es de compra nacional. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_compra_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelCompra;
-/* Valor de cr\u00E9dito dispon\u00EDvel para transa\u00E7\u00F5es de compra nacional parcelada. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_parcelado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelParcelado;
-/* Valor de cr\u00E9dito dispon\u00EDvel para utilizar como valor de parcelas Nacionais em um determinado ciclo de faturamento. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelParcelas;
-/* Valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es de Saque Nacional. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelSaque;
-/* Saldo atual de pontos do programa de fidelidade. [optional]
+/* {{{limite_disponibilidade_response_saldo_pontos_fidelidade_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoPontosFidelidade;
-/* Valor de cr\u00E9dito dispon\u00EDvel para transa\u00E7\u00F5es de compra internacional. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_compra_internacional_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelCompraInternacional;
-/* Valor de cr\u00E9dito dispon\u00EDvel para transa\u00E7\u00F5es de saque internacional. [optional]
+/* {{{limite_disponibilidade_response_saldo_disponivel_saque_internacional_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoDisponivelSaqueInternacional;
 

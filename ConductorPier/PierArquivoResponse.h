@@ -15,34 +15,34 @@
 
 @interface PierArquivoResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do arquivo [optional]
+/* {{{arquivo_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Tipo do arquivo [optional]
+/* {{{arquivo_response_id_tipo_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoArquivo;
-/* Descri\u00E7\u00E3o do tipo do arquivo [optional]
+/* {{{arquivo_response_nome_tipo_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeTipoArquivo;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Status do arquivo [optional]
+/* {{{arquivo_response_id_status_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusArquivo;
-/* Desci\u00E7\u00E3o do status do arquivo [optional]
+/* {{{arquivo_response_nome_status_arquivo_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeStatusArquivo;
-/* Nome do arquivo [optional]
+/* {{{arquivo_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Formato/Extens\u00E3o do arquivo [optional]
+/* {{{arquivo_response_extensao_value}}} [optional]
  */
 @property(nonatomic) NSString* extensao;
-/* Data de inclus\u00E3o do arquivo. [optional]
+/* {{{arquivo_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
-/* Data da \u00FAltima altera\u00E7\u00E3o do aquivo. [optional]
+/* {{{arquivo_response_data_alteracao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAlteracao;
-/* Detalhes contendo informa\u00E7\u00F5es adicionais, relacionadas ao arquivo. [optional]
+/* {{{arquivo_response_detalhes_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierArquivoParametroResponse>* detalhes;
 

@@ -14,16 +14,16 @@
 
 @interface PierMaquinetaUpdate : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Terminal (id). 
+/* {{{maquineta_update_id_terminal_value}}} 
  */
 @property(nonatomic) NSNumber* idTerminal;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo Maquineta (id). 
+/* {{{maquineta_update_id_tipo_maquineta_value}}} 
  */
 @property(nonatomic) NSNumber* idTipoMaquineta;
-/* Valor de Manuten\u00E7\u00E3o da Maquineta. 
+/* {{{maquineta_update_valor_value}}} 
  */
 @property(nonatomic) NSNumber* valor;
-/* Data da implanta\u00E7\u00E3o da Maquineta. 
+/* {{{maquineta_update_data_hora_implantacao_value}}} 
  */
 @property(nonatomic) NSString* dataHoraImplantacao;
 

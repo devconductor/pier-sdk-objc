@@ -14,46 +14,46 @@
 
 @interface PierAtendimentoClienteResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Atendimento (id) [optional]
+/* {{{atendimento_cliente_response_id_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idAtendimento;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Conta a qual o Atendimento est\u00E1 associado [optional]
+/* {{{atendimento_cliente_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo de Atendimento (id) [optional]
+/* {{{atendimento_cliente_response_id_tipo_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoAtendimento;
-/* Apresenta a descri\u00E7\u00E3o do Tipo de Atendimento [optional]
+/* {{{atendimento_cliente_response_descricao_tipo_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoTipoAtendimento;
-/* Apresenta as informa\u00E7\u00F5es que foram utilizadas para consultar, cadastrar ou alterar informa\u00E7\u00F5es relacionadas ao Atendimento. [optional]
+/* {{{atendimento_cliente_response_conteudo_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSString* conteudoAtendimento;
-/* Apresenta os detalhes lan\u00E7ados pelo sistema ou pelo Atendente durante relacionados ao Atendimento. [optional]
+/* {{{atendimento_cliente_response_detalhes_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSString* detalhesAtendimento;
-/* Apresenta o nome do Atendente que registrou o Atendimento. [optional]
+/* {{{atendimento_cliente_response_nome_atendente_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeAtendente;
-/* Apresenta o nome do Sistema, Servidor, M\u00F3dulo ou M\u00E9todo REST que originou o registro do Atendimento. [optional]
+/* {{{atendimento_cliente_response_nome_sistema_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeSistema;
-/* Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. [optional]
+/* {{{atendimento_cliente_response_data_hora_inicio_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraInicioAtendimento;
-/* Apresenta a data e hora em que o Atendimento foi iniciado. Quando utilizado, serve para medir a performance dos Atendimentos. [optional]
+/* {{{atendimento_cliente_response_data_hora_fim_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataHoraFimAtendimento;
-/* Apresenta a data e hora em que o Atendimento foi realizado. [optional]
+/* {{{atendimento_cliente_response_data_atendimento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAtendimento;
-/* Quando utilizado, de acordo com o Tipo de Atendimento, apresenta a data e hora para processamento ou a data para retorno do Atendimento. [optional]
+/* {{{atendimento_cliente_response_data_agendamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAgendamento;
-/* Quando utilizado, apresenta a data e hora em que a solicita\u00E7\u00E3o registrada no Atendimento fora processada. [optional]
+/* {{{atendimento_cliente_response_data_processamento_value}}} [optional]
  */
 @property(nonatomic) NSString* dataProcessamento;
-/* Quando aplic\u00E1vel, de acordo com o Indica se o Processamento da solicita\u00E7\u00E3o fora realizado. [optional]
+/* {{{atendimento_cliente_response_flag_processamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagProcessamento;
 

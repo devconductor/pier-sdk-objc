@@ -14,10 +14,10 @@
 
 @interface PierTipoTerminalResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo Terminal (id). [optional]
+/* {{{tipo_terminal_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do Tipo Terminal. [optional]
+/* {{{tipo_terminal_response_descricao_terminal_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoTerminal;
 

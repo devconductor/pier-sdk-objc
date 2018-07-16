@@ -14,22 +14,22 @@
 
 @interface PierProdutoDetalhesResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Produto (id). 
+/* {{{produto_response_id_value}}} 
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do Nome do Produto. 
+/* {{{produto_response_nome_value}}} 
  */
 @property(nonatomic) NSString* nome;
-/* Representa o Status do Produto, onde: (\"0\": Inativo), (\"1\": Ativo). 
+/* {{{produto_response_status_value}}} 
  */
 @property(nonatomic) NSNumber* status;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da Fantasia B\u00E1sica (id) a qual o produto pertence. [optional]
+/* {{{produto_response_id_fantasia_basica_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idFantasiaBasica;
-/* Descri\u00E7\u00E3o da Fantasia B\u00E1sica a qual o produto pertence. [optional]
+/* {{{produto_detalhes_response_fantasia_basica_value}}} [optional]
  */
 @property(nonatomic) NSString* fantasiaBasica;
-/* Par\u00E2metro que indica se o produto est\u00E1 habilitado para compras no exterior. [optional]
+/* {{{produto_detalhes_response_uso_exterior_value}}} [optional]
  */
 @property(nonatomic) NSNumber* usoExterior;
 

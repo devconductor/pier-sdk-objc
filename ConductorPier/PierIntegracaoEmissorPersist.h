@@ -14,7 +14,7 @@
 
 @interface PierIntegracaoEmissorPersist : PierObject
 
-/* Canal de entrada onde deve ser informado o dispositivo usado na comunica\u00E7\u00E3o. [optional]
+/* {{{integracao_emissor_persist_canal_entrada_value}}} [optional]
  */
 @property(nonatomic) NSString* canalEntrada;
 

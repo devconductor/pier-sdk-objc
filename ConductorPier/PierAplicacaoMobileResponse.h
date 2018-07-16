@@ -14,28 +14,28 @@
 
 @interface PierAplicacaoMobileResponse : PierObject
 
-/* Apresenta o identificador da aplicacao. [optional]
+/* {{{aplicacao_mobile_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o identificador da plataforma. [optional]
+/* {{{aplicacao_mobile_response_id_plataforma_mobile_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPlataformaMobile;
-/* Apresenta o token da aplicacao. [optional]
+/* {{{aplicacao_mobile_response_token_value}}} [optional]
  */
 @property(nonatomic) NSString* token;
-/* Apresenta a cor da mensagem da aplicacao. [optional]
+/* {{{aplicacao_mobile_response_cor_value}}} [optional]
  */
 @property(nonatomic) NSString* cor;
-/* Apresenta o som da mensagem da aplicacao [optional]
+/* {{{aplicacao_mobile_response_som_value}}} [optional]
  */
 @property(nonatomic) NSString* som;
-/* Apresenta o icone da mensagem da aplica\u00E7\u00E3o. [optional]
+/* {{{aplicacao_mobile_response_icone_value}}} [optional]
  */
 @property(nonatomic) NSString* icone;
-/* Apresenta o certificado da aplica\u00E7\u00E3o. [optional]
+/* {{{aplicacao_mobile_response_certificado_base64_value}}} [optional]
  */
 @property(nonatomic) NSString* certificadoBase64;
-/* Apresenta a senha da aplica\u00E7\u00E3o. [optional]
+/* {{{aplicacao_mobile_response_senha_value}}} [optional]
  */
 @property(nonatomic) NSString* senha;
 

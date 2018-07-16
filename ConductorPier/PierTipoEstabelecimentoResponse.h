@@ -14,10 +14,10 @@
 
 @interface PierTipoEstabelecimentoResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo estabelecimento (id). [optional]
+/* {{{tipo_estabelecimento_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de estabelecimento. [optional]
+/* {{{tipo_estabelecimento_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

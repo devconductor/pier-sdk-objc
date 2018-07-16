@@ -14,16 +14,16 @@
 
 @interface PierTipoFaturamentoResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do tipo de faturamento (id). [optional]
+/* {{{tipo_faturamento_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Desci\u00E7\u00E3o do tipo de faturamento. [optional]
+/* {{{tipo_faturamento_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Flag que representa que o faturamento ser\u00E1 apenas demonstrativo. [optional]
+/* {{{tipo_faturamento_response_flag_apenas_demonstrativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagApenasDemonstrativo;
-/* C\u00F3digo de identifica\u00E7\u00E3o do conv\u00EAnio relacionado ao tipo de faturamento. [optional]
+/* {{{tipo_faturamento_response_id_convenio_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConvenio;
 

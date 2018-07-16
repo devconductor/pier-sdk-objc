@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "PierTipoTransacaoAjusteResponse.h"
 
 
 @protocol PierTipoAjusteResponse
@@ -14,11 +15,14 @@
 
 @interface PierTipoAjusteResponse : PierObject
 
-/* C\u00F3digo identificador do tipo de ajuste. [optional]
+/* {{{tipo_ajuste_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de ajuste. [optional]
+/* {{{tipo_ajuste_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
+/* {{{tipo_ajuste_response_transacoes_value}}} [optional]
+ */
+@property(nonatomic) NSArray<PierTipoTransacaoAjusteResponse>* transacoes;
 
 @end

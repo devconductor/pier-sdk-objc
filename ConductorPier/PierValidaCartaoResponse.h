@@ -14,28 +14,28 @@
 
 @interface PierValidaCartaoResponse : PierObject
 
-/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
+/* {{{valida_cartao_response_id_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusCartao;
-/* Descri\u00E7\u00E3o do status do cart\u00E3o [optional]
+/* {{{valida_cartao_response_status_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* statusCartao;
-/* Descri\u00E7\u00E3o do status da conta [optional]
+/* {{{valida_cartao_response_id_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idStatusConta;
-/* Descri\u00E7\u00E3o do status da conta [optional]
+/* {{{valida_cartao_response_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSString* statusConta;
-/* C\u00F3digo identificador da conta. [optional]
+/* {{{valida_cartao_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* N\u00FAmero da ag\u00EAncia. [optional]
+/* {{{valida_cartao_response_numero_agencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* numeroAgencia;
-/* N\u00FAmero da conta corrente. [optional]
+/* {{{valida_cartao_response_numero_conta_corrente_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroContaCorrente;
-/* Criptograma de resposta [optional]
+/* {{{valida_cartao_response_criptograma_resposta_value}}} [optional]
  */
 @property(nonatomic) NSString* criptogramaResposta;
 

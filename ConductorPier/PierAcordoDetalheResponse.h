@@ -14,55 +14,55 @@
 
 @interface PierAcordoDetalheResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do acordo (id). [optional]
+/* {{{acordo_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo de Identifica\u00E7\u00E3o da conta. [optional]
+/* {{{acordo_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Status do acordo. [optional]
+/* {{{acordo_response_status_acordo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* statusAcordo;
-/* Valor do Acordo. [optional]
+/* {{{acordo_response_valor_acordo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorAcordo;
-/* Data e Hora do acordo. [optional]
+/* {{{acordo_response_data_acordo_value}}} [optional]
  */
 @property(nonatomic) NSString* dataAcordo;
-/* Quantidade de parcelas do acordo. [optional]
+/* {{{acordo_response_quantidade_parcelas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* quantidadeParcelas;
-/* Saldo atual final. [optional]
+/* {{{acordo_response_saldo_atual_final_value}}} [optional]
  */
 @property(nonatomic) NSNumber* saldoAtualFinal;
-/* Dias em atraso. [optional]
+/* {{{acordo_response_dias_em_atraso_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasEmAtraso;
-/* Status da conta. [optional]
+/* {{{acordo_detalhe_response_status_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* statusConta;
-/* Assessoria atual. [optional]
+/* {{{acordo_detalhe_response_assessoria_atual_value}}} [optional]
  */
 @property(nonatomic) NSString* assessoriaAtual;
-/* Total de pagamentos. [optional]
+/* {{{acordo_detalhe_response_total_pagamentos_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalPagamentos;
-/* Data do vencimento da cobran\u00E7a. [optional]
+/* {{{acordo_detalhe_response_data_vencimento_cobranca_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoCobranca;
-/* Data da quebra do acordo. [optional]
+/* {{{acordo_detalhe_response_data_quebra_acordo_value}}} [optional]
  */
 @property(nonatomic) NSString* dataQuebraAcordo;
-/* Valor da parcela 1. [optional]
+/* {{{acordo_detalhe_response_valor_parcela1_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcela1;
-/* Valor da parcela N. [optional]
+/* {{{acordo_detalhe_response_valor_parcela_n_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorParcelaN;
-/* Parcela pedida. [optional]
+/* {{{acordo_detalhe_response_parcela_pedida_value}}} [optional]
  */
 @property(nonatomic) NSNumber* parcelaPedida;
-/* Data de vencimento da parcela pedida. [optional]
+/* {{{acordo_detalhe_response_vencimento_parcela_pedida_value}}} [optional]
  */
 @property(nonatomic) NSString* vencimentoParcelaPedida;
 

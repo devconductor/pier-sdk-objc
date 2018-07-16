@@ -14,61 +14,61 @@
 
 @interface PierDetalheOperacaoResponse : PierObject
 
-/* C\u00F3digo que identifica a opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_id_operacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* C\u00F3digo de processamento usado em transa\u00E7\u00F5es com o autorizador [optional]
+/* {{{detalhe_operacao_response_codigo_processamento_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* C\u00F3digo de processamento usado para cancelar transa\u00E7\u00F5es no autorizador [optional]
+/* {{{detalhe_operacao_response_codigo_processamento_cancelamento_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoProcessamentoCancelamento;
-/* Nome da opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_nome_operacao_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeOperacao;
-/* Descri\u00E7\u00E3o da opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_descricao_operacao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricaoOperacao;
-/* Quantidade m\u00EDnima de meses permitido para opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_plano_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* planoMinimo;
-/* Quantidade M\u00E1ximo de meses permitido para opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_plano_maximo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* planoMaximo;
-/*  Valor m\u00EDnimo permitido permitido para opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_valor_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorMinimo;
-/*  Valor m\u00E1ximo permitido permitido para opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_valor_maximo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorMaximo;
-/* Flag indicativa para crobran\u00E7a de juros [optional]
+/* {{{detalhe_operacao_response_flag_cobra_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCobraJuros;
-/* Valor do juros a ser cobrado, caso opera\u00E7\u00E3o cobre juros [optional]
+/* {{{detalhe_operacao_response_taxa_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaJuros;
-/* Flag indicativa para crobran\u00E7a de tarifas [optional]
+/* {{{detalhe_operacao_response_flag_cobra_tarifa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCobraTarifa;
-/* Valor da tarifa a ser cobrado, caso opera\u00E7\u00E3o cobre tarifas [optional]
+/* {{{detalhe_operacao_response_taxa_tarifa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaTarifa;
-/* Valor da taxa de abertura de conta [optional]
+/* {{{detalhe_operacao_response_valor_tac_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTac;
-/* Percentual da taxa de abertura de conta [optional]
+/* {{{detalhe_operacao_response_percentual_tac_value}}} [optional]
  */
 @property(nonatomic) NSNumber* percentualTac;
-/* Valor da opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_valor_operacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorOperacao;
-/* Quantidade de meses para car\u00EAncia [optional]
+/* {{{detalhe_operacao_response_carencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* carencia;
-/* Valor excedente permitido para opera\u00E7\u00E3o [optional]
+/* {{{detalhe_operacao_response_excedente_permitido_value}}} [optional]
  */
 @property(nonatomic) NSNumber* excedentePermitido;
-/* Permitir transa\u00E7\u00F5es parceladas [optional]
+/* {{{detalhe_operacao_response_flag_permitir_parcelamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagPermitirParcelamento;
 

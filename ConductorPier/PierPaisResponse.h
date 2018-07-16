@@ -14,22 +14,22 @@
 
 @interface PierPaisResponse : PierObject
 
-/* C\u00F3digo identificador \u00FAnico do pa\u00EDs na base [optional]
+/* {{{pais_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador do pa\u00EDs [optional]
+/* {{{pais_response_codigo_value}}} [optional]
  */
 @property(nonatomic) NSString* codigo;
-/* Sigla do pa\u00EDs [optional]
+/* {{{pais_response_sigla_value}}} [optional]
  */
 @property(nonatomic) NSString* sigla;
-/* Nome do pa\u00EDs [optional]
+/* {{{pais_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Continente no qual o pa\u00EDs faz parte [optional]
+/* {{{pais_response_continente_value}}} [optional]
  */
 @property(nonatomic) NSString* continente;
-/* Atributo que representa se o pa\u00EDs est\u00E1 ativo [optional]
+/* {{{pais_response_flag_ativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAtivo;
 

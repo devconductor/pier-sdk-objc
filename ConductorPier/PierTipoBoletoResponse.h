@@ -14,28 +14,28 @@
 
 @interface PierTipoBoletoResponse : PierObject
 
-/* C\u00F3digo identificador do tipo de boleto. [optional]
+/* {{{tipo_boleto_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Descri\u00E7\u00E3o do tipo de boleto. [optional]
+/* {{{tipo_boleto_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* C\u00F3digo identificador do banco. [optional]
+/* {{{tipo_boleto_response_banco_value}}} [optional]
  */
 @property(nonatomic) NSNumber* banco;
-/* Faixa permitida para cria\u00E7\u00E3o do nosso n\u00FAmero. [optional]
+/* {{{tipo_boleto_response_faixa_nosso_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* faixaNossoNumero;
-/* N\u00FAmero minimo para o nosso n\u00FAmero. [optional]
+/* {{{tipo_boleto_response_min_nosso_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* minNossoNumero;
-/* N\u00FAmero m\u00E1ximo para o nosso n\u00FAmero. [optional]
+/* {{{tipo_boleto_response_max_nosso_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* maxNossoNumero;
-/* Tamanho do nosso n\u00FAmero. [optional]
+/* {{{tipo_boleto_response_tam_nosso_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* tamNossoNumero;
-/* \u00DAltimo nosso n\u00FAmero utilizado. [optional]
+/* {{{tipo_boleto_response_ultimo_nosso_numero_value}}} [optional]
  */
 @property(nonatomic) NSNumber* ultimoNossoNumero;
 

@@ -14,34 +14,34 @@
 
 @interface PierDesfazimentoTransacaoOnUsRequest : PierObject
 
-/* N\u00FAmero Sequencial \u00DAnico que identifica a transa\u00E7\u00E3o no sistema que a originou. 
+/* {{{transacao_on_us_request_nsu_origem_value}}} 
  */
 @property(nonatomic) NSString* nsuOrigem;
-/* N\u00FAmero Sequencial \u00DAnico que identifica a transa\u00E7\u00E3o no sistema a ser cancelada. 
+/* {{{desfazimento_transacao_on_us_request_nsu_origem_transacao_cancelada_value}}} 
  */
 @property(nonatomic) NSString* nsuOrigemTransacaoCancelada;
-/* C\u00F3digo de Processamento que identifica o Tipo da Transa\u00E7\u00E3o. 
+/* {{{transacao_on_us_request_codigo_processamento_value}}} 
  */
 @property(nonatomic) NSString* codigoProcessamento;
-/* Apresenta a data e hora local da transa\u00E7\u00E3o a ser cancelada yyyy-MM-dd'T'HH:mm:ss.SSSZ. Ex: 2000-10-31T01:30:00.000-05:00 
+/* {{{desfazimento_transacao_on_us_request_data_hora_transacao_cancelada_value}}} 
  */
 @property(nonatomic) NSString* dataHoraTransacaoCancelada;
-/* Valor da transa\u00E7\u00E3o com duas casas decimais para os centavos. 
+/* {{{transacao_on_us_request_valor_transacao_value}}} 
  */
 @property(nonatomic) NSNumber* valorTransacao;
-/* N\u00FAmero Real do Cart\u00E3o. 
+/* {{{transacao_on_us_request_numero_real_cartao_value}}} 
  */
 @property(nonatomic) NSString* numeroRealCartao;
-/* Data de Validade do Cart\u00E3o. Ex: AAMM 
+/* {{{transacao_on_us_request_data_validade_cartao_value}}} 
  */
 @property(nonatomic) NSString* dataValidadeCartao;
-/* N\u00FAmero do Estabelecimento (N\u00FAmero+DV). 
+/* {{{transacao_on_us_request_numero_estabelecimento_value}}} 
  */
 @property(nonatomic) NSNumber* numeroEstabelecimento;
-/* Apresenta a data e hora local da consulta yyyy-MM-dd'T'HH:mm:ss.SSSZ. Ex: 2000-10-31T01:30:00.000-05:00 
+/* {{{transacao_on_us_request_data_hora_terminal_value}}} 
  */
 @property(nonatomic) NSString* dataHoraTerminal;
-/* Apresenta a identifica\u00E7\u00E3o do terminal requisitante 
+/* {{{transacao_on_us_request_terminal_requisitante_value}}} 
  */
 @property(nonatomic) NSString* terminalRequisitante;
 

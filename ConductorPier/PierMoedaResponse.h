@@ -14,16 +14,16 @@
 
 @interface PierMoedaResponse : PierObject
 
-/* Identificador do tipo de moeda. [optional]
+/* {{{moeda_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador do tipo de moeda. [optional]
+/* {{{moeda_response_codigo_moeda_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoMoeda;
-/* S\u00EDmbolo da Moeda. [optional]
+/* {{{moeda_response_simbolo_value}}} [optional]
  */
 @property(nonatomic) NSString* simbolo;
-/* Descri\u00E7\u00E3o do tipo da moeda. [optional]
+/* {{{moeda_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

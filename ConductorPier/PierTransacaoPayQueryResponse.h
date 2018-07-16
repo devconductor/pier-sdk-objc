@@ -14,10 +14,10 @@
 
 @interface PierTransacaoPayQueryResponse : PierObject
 
-/* Resultado de consulta de conta [optional]
+/* {{{transacao_pay_query_response_codigo_value}}} [optional]
  */
 @property(nonatomic) NSString* codigo;
-/* Mensagem descrevendo resposta. [optional]
+/* {{{transacao_pay_query_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

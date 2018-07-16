@@ -14,16 +14,16 @@
 
 @interface PierPropriedadeDocumentoRequest : PierObject
 
-/* Valor da propriedade do Documento. [optional]
+/* {{{propriedade_documento_request_chave_value}}} [optional]
  */
 @property(nonatomic) NSString* chave;
-/* Valor da propriedade do Documento. [optional]
+/* {{{propriedade_documento_request_valor_value}}} [optional]
  */
 @property(nonatomic) NSString* valor;
-/* Tipo da propriedade do Documento. [optional]
+/* {{{propriedade_documento_request_detalhes_tipo_value}}} [optional]
  */
 @property(nonatomic) NSString* detalhesTipo;
-/* Atributo que indica se o par\u00E2metro \u00E9 um \u00EDndice (default = false) [optional]
+/* {{{propriedade_documento_request_flag_indice_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagIndice;
 

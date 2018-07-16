@@ -14,16 +14,16 @@
 
 @interface PierTipoTemplateResponse : PierObject
 
-/* ID do Tipo de Template. [optional]
+/* {{{tipo_template_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do Tipo de Template. [optional]
+/* {{{tipo_template_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00E7\u00E3o do Tipo de Template. [optional]
+/* {{{tipo_template_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Sigla do Tipo de Template. [optional]
+/* {{{tipo_template_response_sigla_value}}} [optional]
  */
 @property(nonatomic) NSString* sigla;
 

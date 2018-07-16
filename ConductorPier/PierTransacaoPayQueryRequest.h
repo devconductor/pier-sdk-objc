@@ -14,16 +14,16 @@
 
 @interface PierTransacaoPayQueryRequest : PierObject
 
-/* Numero do cartao (criptografado) [optional]
+/* {{{transacao_pay_generic_request_numero_cartao_value}}} [optional]
  */
 @property(nonatomic) NSString* numeroCartao;
-/* Id do cart\u00E3o [optional]
+/* {{{transacao_pay_generic_request_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
-/* Origem [optional]
+/* {{{transacao_pay_query_request_origem_value}}} [optional]
  */
 @property(nonatomic) NSString* origem;
-/* Tipo de ordena\u00E7\u00E3o dos registros. [optional]
+/* {{{global_menssagem_sort_sort}}} [optional]
  */
 @property(nonatomic) NSArray* /* NSString */ sort;
 

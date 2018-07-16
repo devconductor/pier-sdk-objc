@@ -14,10 +14,10 @@
 
 @interface PierCodigoSegurancaEMAILPersist : PierObject
 
-/* E-mail usado para envio do c\u00F3digo de seguran\u00E7a. [optional]
+/* {{{codigo_seguranca_e_m_a_i_l_persist_email_value}}} [optional]
  */
 @property(nonatomic) NSString* email;
-/* Token para valida\u00E7\u00E3o. [optional]
+/* {{{codigo_seguranca_e_m_a_i_l_persist_codigo_seguranca_value}}} [optional]
  */
 @property(nonatomic) NSString* codigoSeguranca;
 

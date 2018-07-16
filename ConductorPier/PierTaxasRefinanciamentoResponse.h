@@ -14,70 +14,70 @@
 
 @interface PierTaxasRefinanciamentoResponse : PierObject
 
-/* ID das taxas [optional]
+/* {{{taxas_refinanciamento_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* ID da conta [optional]
+/* {{{taxas_refinanciamento_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* ID do produto [optional]
+/* {{{taxas_refinanciamento_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* ID do plano de contas [optional]
+/* {{{taxas_refinanciamento_response_id_plano_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPlanoConta;
-/* ID do plano PCT [optional]
+/* {{{taxas_refinanciamento_response_id_plano_pct_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPlanoPct;
-/* ID do plano credito taxa [optional]
+/* {{{taxas_refinanciamento_response_id_plano_credito_taxa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idPlanoCreditoTaxa;
-/* Data de entrada [optional]
+/* {{{taxas_refinanciamento_response_data_entrada_value}}} [optional]
  */
 @property(nonatomic) NSString* dataEntrada;
-/* Vencimento das taxas [optional]
+/* {{{taxas_refinanciamento_response_vencimento_value}}} [optional]
  */
 @property(nonatomic) NSString* vencimento;
-/* Recupera\u00E7\u00E3o de encargos financeiro [optional]
+/* {{{taxas_refinanciamento_response_recuperacao_encargos_financeiros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* recuperacaoEncargosFinanceiros;
-/* Descri\u00E7\u00E3o da comiss\u00E3o de garantia [optional]
+/* {{{taxas_refinanciamento_response_comissao_garantia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* comissaoGarantia;
-/* Descri\u00E7\u00E3o do agenciamento [optional]
+/* {{{taxas_refinanciamento_response_agenciamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* agenciamento;
-/* Taxa m\u00E1xima do proximo per\u00EDodo [optional]
+/* {{{taxas_refinanciamento_response_taxa_maxima_proximo_periodo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaProximoPeriodo;
-/* Taxa de encargos do financiamento [optional]
+/* {{{taxas_refinanciamento_response_taxa_encargos_financiamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaEncargosFinanciamento;
-/* Taxa m\u00E1xima de saque [optional]
+/* {{{taxas_refinanciamento_response_taxa_maxima_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaSaque;
-/* Taxa de saque [optional]
+/* {{{taxas_refinanciamento_response_taxa_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaSaque;
-/* Taxa m\u00E1xima de compras juros [optional]
+/* {{{taxas_refinanciamento_response_taxa_maxima_compra_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaCompraJuros;
-/* Taxa de juros compra [optional]
+/* {{{taxas_refinanciamento_response_taxa_compra_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaCompraJuros;
-/* Taxa de permanencia [optional]
+/* {{{taxas_refinanciamento_response_taxa_permanencia_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaPermanencia;
-/* Taxa de permanencia [optional]
+/* {{{taxas_refinanciamento_response_taxa_refinanciamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaRefinanciamento;
-/* Taxa de permanencia [optional]
+/* {{{taxas_refinanciamento_response_taxa_recuperacao_refinanciamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaRecuperacaoRefinanciamento;
-/* Taxa Percelamento pagamento minimo [optional]
+/* {{{taxas_refinanciamento_response_taxa_perc_calc_pagamento_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaPercCalcPagamentoMinimo;
-/* Plano de taxa padr\u00E3o [optional]
+/* {{{taxas_refinanciamento_response_plano_taxa_default_value}}} [optional]
  */
 @property(nonatomic) NSNumber* planoTaxaDefault;
 

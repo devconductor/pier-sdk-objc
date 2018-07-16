@@ -14,10 +14,10 @@
 
 @interface PierTipoOrigemComercialResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Tipo de Origem Comercial. [optional]
+/* {{{tipo_origem_comercial_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do tipo de origem comercial [optional]
+/* {{{tipo_origem_comercial_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
 

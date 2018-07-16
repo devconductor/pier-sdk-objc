@@ -14,16 +14,16 @@
 
 @interface PierDispositivoResponse : PierObject
 
-/* Identificador do dispositivo. [optional]
+/* {{{dispositivo_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Token do dispositivo. [optional]
+/* {{{dispositivo_response_token_value}}} [optional]
  */
 @property(nonatomic) NSString* token;
-/* Identificador da Aplica\u00E7\u00E3o. [optional]
+/* {{{dispositivo_response_id_aplicacao_mobile_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idAplicacaoMobile;
-/* Identificador do usu\u00E1rio. [optional]
+/* {{{dispositivo_response_id_usuario_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idUsuario;
 

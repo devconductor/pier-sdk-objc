@@ -14,19 +14,19 @@
 
 @interface PierWebHookResponse : PierObject
 
-/* Id do WebHook 
+/* {{{web_hook_response_id_value}}} 
  */
 @property(nonatomic) NSNumber* _id;
-/* TipoEvento a ser chamado pelo WebHook 
+/* {{{web_hook_response_tipo_evento_value}}} 
  */
 @property(nonatomic) NSString* tipoEvento;
-/* M\u00E9todo que a ser chamado pelo WebHook 
+/* {{{web_hook_response_metodo_value}}} 
  */
 @property(nonatomic) NSString* metodo;
-/* URL que a ser consumida pelo WebHook 
+/* {{{web_hook_response_url_value}}} 
  */
 @property(nonatomic) NSString* url;
-/* Status do WebHook 
+/* {{{web_hook_response_status_value}}} 
  */
 @property(nonatomic) NSString* status;
 

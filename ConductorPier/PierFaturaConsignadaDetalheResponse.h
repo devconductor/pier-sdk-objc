@@ -14,148 +14,148 @@
 
 @interface PierFaturaConsignadaDetalheResponse : PierObject
 
-/* C\u00F3digo identificador da fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* C\u00F3digo identificador da conta (id). [optional]
+/* {{{fatura_consignada_detalhe_response_id_conta_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idConta;
-/* Apresenta o valor do limite de cr\u00E9dito que o portador do cart\u00E3o possui. 
+/* {{{fatura_consignada_detalhe_response_limite_global_value}}} 
  */
 @property(nonatomic) NSNumber* limiteGlobal;
-/* C\u00F3digo identificador da conta a qual a fatura se refere. [optional]
+/* {{{fatura_consignada_detalhe_response_flag_emite_fatura_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagEmiteFatura;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador possui para uso exclusivo em Compras Nacionais. 
+/* {{{fatura_consignada_detalhe_response_limite_compra_value}}} 
  */
 @property(nonatomic) NSNumber* limiteCompra;
-/* Data de vencimento da fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_data_vencimento_fatura_value}}} [optional]
  */
 @property(nonatomic) NSString* dataVencimentoFatura;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador possui para realizar transa\u00E7\u00F5es de compras parceladas. 
+/* {{{fatura_consignada_detalhe_response_limite_parcelado_value}}} 
  */
 @property(nonatomic) NSNumber* limiteParcelado;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que portador pode acumular a partir da soma das parcelas das compras que forem realizadas nesta modalidade. 
+/* {{{fatura_consignada_detalhe_response_limite_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* limiteParcelas;
-/* Valor para pagamento total da fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_valor_total_fatura_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorTotalFatura;
-/* Valor total da fatura anterior. [optional]
+/* {{{fatura_consignada_detalhe_response_valor_fatura_anterior_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorFaturaAnterior;
-/* Valor m\u00EDnimo para pagamento da fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_valor_pagamento_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoMinimo;
-/* Valor da fatura pago atrav\u00E9s de desconto em folha. [optional]
+/* {{{fatura_consignada_detalhe_response_valor_pagamento_consignado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoConsignado;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador pode utilizar para realizar transa\u00E7\u00F5es de Saque Nacional. 
+/* {{{fatura_consignada_detalhe_response_limite_saque_global_value}}} 
  */
 @property(nonatomic) NSNumber* limiteSaqueGlobal;
-/* Valor complementar para considerar o pagamento m\u00EDnimo da fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_valor_pagamento_complementar_value}}} [optional]
  */
 @property(nonatomic) NSNumber* valorPagamentoComplementar;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador pode utilizar para realizar transa\u00E7\u00F5es de Saque Nacional dentro de cada ciclo de faturamento. 
+/* {{{fatura_consignada_detalhe_response_limite_saque_periodo_value}}} 
  */
 @property(nonatomic) NSNumber* limiteSaquePeriodo;
-/* Valor total das compras nacionais lan\u00E7adas na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_compras_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalComprasNacionais;
-/* Quando utilizado pelo emissor, este campo apresenta o valor da margem de cr\u00E9dito que ele poder\u00E1 utilizar para ser cobrado de forma consignada (desconto em folha) em seu sal\u00E1rio/vencimentos. 
+/* {{{fatura_consignada_detalhe_response_limite_consignado_value}}} 
  */
 @property(nonatomic) NSNumber* limiteConsignado;
-/* Valor total das compras internacionais lan\u00E7adas na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_compras_internacionas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalComprasInternacionas;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador possui para uso exclusivo em Compras Internacionais. 
+/* {{{fatura_consignada_detalhe_response_limite_internacional_compra_value}}} 
  */
 @property(nonatomic) NSNumber* limiteInternacionalCompra;
-/* Valor total dos saques nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_saques_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalSaquesNacionais;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador possui para realizar transa\u00E7\u00F5es Internacionais de Compras Parceladas. 
+/* {{{fatura_consignada_detalhe_response_limite_internacional_parcelado_value}}} 
  */
 @property(nonatomic) NSNumber* limiteInternacionalParcelado;
-/* Valor total dos saques internacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_saques_internacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalSaquesInternacionais;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que portador pode acumular a partir da soma das parcelas das compras internacionais que forem realizadas nesta modalidade. 
+/* {{{fatura_consignada_detalhe_response_limite_internacional_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* limiteInternacionalParcelas;
-/* Valor total dos d\u00E9bitos nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_debitos_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosNacionais;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador pode utilizar para realizar transa\u00E7\u00F5es de Saque Internacional. 
+/* {{{fatura_consignada_detalhe_response_limite_internacional_saque_global_value}}} 
  */
 @property(nonatomic) NSNumber* limiteInternacionalSaqueGlobal;
-/* Valor total dos d\u00E9bitos recorrentes lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_debitos_recorrentes_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosRecorrentes;
-/* Quando utilizado pelo emissor, este campo apresenta o valor do limite de cr\u00E9dito que o portador pode utilizar para realizar transa\u00E7\u00F5es de Saque Internacional dentro de cada ciclo de faturamento. 
+/* {{{fatura_consignada_detalhe_response_limite_internacional_saque_periodo_value}}} 
  */
 @property(nonatomic) NSNumber* limiteInternacionalSaquePeriodo;
-/* Valor total dos d\u00E9bitos internacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_debitos_internacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosInternacionais;
-/* Apresenta o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_global_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelGlobal;
-/* Valor total dos d\u00E9bitos diversos nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_debitos_diversos_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosDiversosNacionais;
-/* Quando utilizado pelo emissor a modalidade limiteCompra, este campo apresentar\u00E1 o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es de compra Nacional. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_compra_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelCompra;
-/* Valor total dos d\u00E9bitos diversos opcionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_debitos_opcionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalDebitosOpcionais;
-/* Quando utilizado pelo emissor a modalidade limiteParcelado, este campo apresentar\u00E1 o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es de compra Nacional. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_parcelado_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelParcelado;
-/* Valor total dos pagamentos lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_pagamentos_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalPagamentos;
-/* Quando utilizado pelo emissor a modalidade limiteParcelas, este campo apresentar\u00E1 o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para utilizar como valor de parcelas Nacionais em um determinado ciclo de faturamento. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_parcelas_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelParcelas;
-/* Valor total dos cr\u00E9ditos nacionais lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_creditos_nacionais_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalCreditosNacionais;
-/* Valor total dos ajustes lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_ajustes_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalAjustes;
-/* Valor total das tarifas lan\u00E7adas na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_tarifas_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalTarifas;
-/* Valor total da multa lan\u00E7ada na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_multa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalMulta;
-/* Quando utilizado pelo emissor a modalidade limiteSaque, este campo apresentar\u00E1 o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es de Saque Nacional. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_saque_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelSaque;
-/* Valor total dos juros de mora lan\u00E7ados na fatura. [optional]
+/* {{{fatura_consignada_detalhe_response_total_juros_value}}} [optional]
  */
 @property(nonatomic) NSNumber* totalJuros;
-/* Quando utilizado um programa de fidelidade pelo emissor, este campo apresentar\u00E1 o saldo atual de pontos que o portador possui. 
+/* {{{fatura_consignada_detalhe_response_saldo_pontos_fidelidade_value}}} 
  */
 @property(nonatomic) NSNumber* saldoPontosFidelidade;
-/* Valor percentual da taxa de juros rotativos. [optional]
+/* {{{fatura_consignada_detalhe_response_taxa_rotativo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaRotativo;
-/* Quando utilizado pelo emissor a modalidade limiteCompraInternacional, este campo apresentar\u00E1 o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es de Compra Internacional. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_compra_internacional_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelCompraInternacional;
-/* Valor percentual da taxa de saque. [optional]
+/* {{{fatura_consignada_detalhe_response_taxa_saque_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaSaque;
-/* Quando utilizado pelo emissor a modalidade limiteSaqueInternacional, este campo apresentar\u00E1 o valor de cr\u00E9dito que o portador possui dispon\u00EDvel para realizar transa\u00E7\u00F5es de Saque Internacional. 
+/* {{{fatura_consignada_detalhe_response_saldo_disponivel_saque_internacional_value}}} 
  */
 @property(nonatomic) NSNumber* saldoDisponivelSaqueInternacional;
-/* Valor m\u00E1ximo percentual da taxa de encargos para o pr\u00F3ximo per\u00EDodo. [optional]
+/* {{{fatura_consignada_detalhe_response_taxa_maxima_proximo_periodo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* taxaMaximaProximoPeriodo;
-/* Apresenta a soma de todos os seguros cobrados na fatura do cliente. 
+/* {{{fatura_consignada_detalhe_response_total_servicos_value}}} 
  */
 @property(nonatomic) NSNumber* totalServicos;
 

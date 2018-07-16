@@ -14,13 +14,13 @@
 
 @interface PierFantasiaBasicaResponse : PierObject
 
-/* Identificador da fantasia b\u00E1sica [optional]
+/* {{{fantasia_basica_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome da fantasia b\u00E1sica [optional]
+/* {{{fantasia_basica_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00E7\u00E3o da fantasia b\u00E1sica [optional]
+/* {{{fantasia_basica_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

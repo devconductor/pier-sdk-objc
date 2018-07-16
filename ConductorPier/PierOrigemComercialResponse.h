@@ -15,82 +15,82 @@
 
 @interface PierOrigemComercialResponse : PierObject
 
-/* C\u00F3digo identificador do OrigemComercial [optional]
+/* {{{origem_comercial_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome da origem comercial [optional]
+/* {{{origem_comercial_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00E7\u00E3o completa do nome da Origem Comercial [optional]
+/* {{{origem_comercial_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
-/* Produtos da origem comercial [optional]
+/* {{{origem_comercial_response_produtos_origem_value}}} [optional]
  */
 @property(nonatomic) NSArray<PierProdutoOrigemResponse>* produtosOrigem;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Estabelecimento [optional]
+/* {{{origem_comercial_response_id_estabelecimento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idEstabelecimento;
-/* C\u00F3digo de identifica\u00E7\u00E3o do Tipo da Origem Comercial [optional]
+/* {{{origem_comercial_response_id_tipo_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoOrigemComercial;
-/* Nome do Tipo da Origem Comercial [optional]
+/* {{{origem_comercial_response_nome_tipo_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeTipoOrigemComercial;
-/* Identificador do grupo da origem comercial [optional]
+/* {{{origem_comercial_response_id_grupo_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idGrupoOrigemComercial;
-/* Nome do grupo da origem comercial [optional]
+/* {{{origem_comercial_response_nome_grupo_origem_comercial_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeGrupoOrigemComercial;
-/* Indica o status da origem comercial [optional]
+/* {{{origem_comercial_response_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* status;
-/* Indica se permite pr\u00E9 aprova\u00E7\u00E3o [optional]
+/* {{{origem_comercial_response_flag_pre_aprovado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagPreAprovado;
-/* Indica se permite aprova\u00E7\u00E3o imediata [optional]
+/* {{{origem_comercial_response_flag_aprovacao_imediata_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagAprovacaoImediata;
-/* Nome fantasia impresso no pl\u00E1stico [optional]
+/* {{{origem_comercial_response_nome_fantasia_plastico_value}}} [optional]
  */
 @property(nonatomic) NSString* nomeFantasiaPlastico;
-/* Indica se permite cart\u00E3o provis\u00F3rio [optional]
+/* {{{origem_comercial_response_flag_cartao_provisorio_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCartaoProvisorio;
-/* Indica se permite cart\u00E3o definitivo [optional]
+/* {{{origem_comercial_response_flag_cartao_definitivo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCartaoDefinitivo;
-/* Usu\u00E1rio para autentica\u00E7\u00E3o [optional]
+/* {{{origem_comercial_response_usuario_value}}} [optional]
  */
 @property(nonatomic) NSString* usuario;
-/* Senha para autentica\u00E7\u00E3o [optional]
+/* {{{origem_comercial_response_senha_value}}} [optional]
  */
 @property(nonatomic) NSString* senha;
-/* Indica se \u00E9 origem externa [optional]
+/* {{{origem_comercial_response_flag_origem_externa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagOrigemExterna;
-/* Indica se h\u00E1 modifica\u00E7\u00E3o [optional]
+/* {{{origem_comercial_response_flag_modificado_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagModificado;
-/* Indica se envia fatura [optional]
+/* {{{origem_comercial_response_flag_envia_fatura_usuario_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagEnviaFaturaUsuario;
-/* Indica se permite cr\u00E9dito de faturamento [optional]
+/* {{{origem_comercial_response_flag_credito_faturamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagCreditoFaturamento;
-/* Indica se concede limite provis\u00F3rio [optional]
+/* {{{origem_comercial_response_flag_concede_limite_provisorio_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagConcedeLimiteProvisorio;
-/* Indica se digitaliza documento [optional]
+/* {{{origem_comercial_response_flag_digitalizar_doc_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagDigitalizarDoc;
-/* Indica se realiza embossing em loja [optional]
+/* {{{origem_comercial_response_flag_embossing_loja_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagEmbossingLoja;
-/* Indica se realiza consulta pr\u00E9via [optional]
+/* {{{origem_comercial_response_flag_consulta_previa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagConsultaPrevia;
-/* Tipo de pessoa [optional]
+/* {{{origem_comercial_response_tipo_pessoa_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoPessoa;
 

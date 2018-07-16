@@ -14,13 +14,13 @@
 
 @interface PierStatusArquivoResponse : PierObject
 
-/* C\u00F3digo de identifica\u00E7\u00E3o do status do arquivo [optional]
+/* {{{status_arquivo_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Nome do status do arquivo [optional]
+/* {{{status_arquivo_response_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* Descri\u00E7\u00E3o do status do arquivo [optional]
+/* {{{status_arquivo_response_descricao_value}}} [optional]
  */
 @property(nonatomic) NSString* descricao;
 

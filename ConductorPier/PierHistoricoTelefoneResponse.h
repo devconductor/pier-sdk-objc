@@ -14,19 +14,19 @@
 
 @interface PierHistoricoTelefoneResponse : PierObject
 
-/* C\u00F3digo de Identifica\u00E7\u00E3o do Telefone (id). [optional]
+/* {{{historico_telefone_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o N\u00FAmero do telefone. [optional]
+/* {{{historico_telefone_response_telefone_value}}} [optional]
  */
 @property(nonatomic) NSString* telefone;
-/* Apresenta o id do tipo do telefone. [optional]
+/* {{{historico_telefone_response_id_tipo_telefone_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idTipoTelefone;
-/* Apresenta a descri\u00E7\u00E3o do tipo do telefone. [optional]
+/* {{{historico_telefone_response_tipo_telefone_value}}} [optional]
  */
 @property(nonatomic) NSString* tipoTelefone;
-/* Apresenta a data que o telefone fora alterado. [optional]
+/* {{{historico_telefone_response_data_modificacao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataModificacao;
 

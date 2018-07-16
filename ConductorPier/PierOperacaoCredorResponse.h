@@ -14,43 +14,43 @@
 
 @interface PierOperacaoCredorResponse : PierObject
 
-/* Apresenta o id da OperacaoCredor. [optional]
+/* {{{operacao_credor_response_id_value}}} [optional]
  */
 @property(nonatomic) NSNumber* _id;
-/* Apresenta o id da Opera\u00E7\u00E3o. [optional]
+/* {{{operacao_credor_response_id_operacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idOperacao;
-/* Apresenta o id do Credor. [optional]
+/* {{{operacao_credor_response_id_grupo_economico_value}}} [optional]
  */
-@property(nonatomic) NSNumber* idCredor;
-/* Apresenta o id do produto. [optional]
+@property(nonatomic) NSNumber* idGrupoEconomico;
+/* {{{operacao_credor_response_id_produto_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idProduto;
-/* Remunera\u00E7\u00E3o Percentual. [optional]
+/* {{{operacao_credor_response_remuneracao_percentual_value}}} [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoPercentual;
-/* Remunera\u00E7\u00E3o Fixa. [optional]
+/* {{{operacao_credor_response_remuneracao_fixa_value}}} [optional]
  */
 @property(nonatomic) NSNumber* remuneracaoFixa;
-/* Periodicidade (DIARIO(1), SEMANAL(2), MENSAL(3), DECENDIAL(4), QUINZENAL(5)). [optional]
+/* {{{operacao_credor_response_periodicidade_value}}} [optional]
  */
 @property(nonatomic) NSString* periodicidade;
-/* Vencimento da primeira parcela. [optional]
+/* {{{operacao_credor_response_vencimento_primeira_parcela_value}}} [optional]
  */
 @property(nonatomic) NSNumber* vencimentoPrimeiraParcela;
-/* Dias afastamento. [optional]
+/* {{{operacao_credor_response_dias_afastamento_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasAfastamento;
-/* Fator multiplicador (FORA_AGENDA(0), AGENDA(1)). [optional]
+/* {{{operacao_credor_response_fator_multiplicador_value}}} [optional]
  */
 @property(nonatomic) NSString* fatorMultiplicador;
-/* Flag taxa fixada. [optional]
+/* {{{operacao_credor_response_flag_taxa_fixada_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagTaxaFixada;
-/* Plano m\u00EDnimo da regra. [optional]
+/* {{{operacao_credor_response_plano_minimo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* planoMinimo;
-/* Plano m\u00E1ximo da regra. [optional]
+/* {{{operacao_credor_response_plano_maximo_value}}} [optional]
  */
 @property(nonatomic) NSNumber* planoMaximo;
 
