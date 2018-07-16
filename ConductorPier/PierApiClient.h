@@ -14,6 +14,7 @@
 
 #import "PierAcordoDetalheResponse.h"
 #import "PierAcordoResponse.h"
+#import "PierAdesaoPagamentoSabadoResponse.h"
 #import "PierAdicionalDetalheResponse.h"
 #import "PierAdicionalPersist.h"
 #import "PierAdicionalResponse.h"
@@ -379,6 +380,9 @@
 #import "PierStatusPropostaResponse.h"
 #import "PierStatusPropostaUpdate.h"
 #import "PierTaxaAntecipacaoRequest.h"
+#import "PierTaxaJurosContaListaResponse.h"
+#import "PierTaxaJurosContaPersistValue_.h"
+#import "PierTaxaJurosContaResponse.h"
 #import "PierTaxasRefinanciamentoResponse.h"
 #import "PierTelefoneAdicionalPersist.h"
 #import "PierTelefoneAdicionalUpdate.h"

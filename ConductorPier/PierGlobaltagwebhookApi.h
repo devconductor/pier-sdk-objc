@@ -47,7 +47,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) consultarUsingGET52WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET53WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 

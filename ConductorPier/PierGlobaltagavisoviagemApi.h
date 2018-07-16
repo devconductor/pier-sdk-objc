@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierAvisoViagemResponse*
--(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler;
 
 

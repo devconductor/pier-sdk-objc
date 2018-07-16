@@ -650,7 +650,7 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierPageControleSegurancaDispositivoResponse*
 ///
--(NSNumber*) consultarUsingGET14WithIdUsuario: (NSNumber*) idUsuario
+-(NSNumber*) consultarUsingGET15WithIdUsuario: (NSNumber*) idUsuario
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -659,7 +659,7 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
     
     // verify the required parameter 'idUsuario' is set
     if (idUsuario == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idUsuario` when calling `consultarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idUsuario` when calling `consultarUsingGET15`"];
     }
     
 
@@ -751,13 +751,13 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) consultarUsingGET50WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET50`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET51`"];
     }
     
 

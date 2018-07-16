@@ -67,5 +67,8 @@
 /* {{{transacao_corrente_response_flag_solicitou_contestacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* flagSolicitouContestacao;
+/* {{{transacao_corrente_response_tipo_transacao_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* tipoTransacao;
 
 @end

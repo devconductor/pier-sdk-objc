@@ -46,7 +46,7 @@
 /// 
 ///
 /// @return PierPropostaResponse*
--(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPropostaResponse* output, NSError* error)) handler;
 
 

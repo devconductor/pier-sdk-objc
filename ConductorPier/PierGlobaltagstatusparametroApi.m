@@ -249,13 +249,13 @@ static PierGlobaltagstatusparametroApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusContaResponse*
 ///
--(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET35`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET36`"];
     }
     
 
@@ -332,13 +332,13 @@ static PierGlobaltagstatusparametroApi* singletonAPI = nil;
 ///
 ///  @returns PierStatusImpressaoResponse*
 ///
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET36`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET37`"];
     }
     
 

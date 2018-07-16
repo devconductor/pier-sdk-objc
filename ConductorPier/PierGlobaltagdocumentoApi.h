@@ -68,7 +68,7 @@
 /// 
 ///
 /// @return PierDocumentoDetalhadoResponse*
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler;
 
 
@@ -81,7 +81,7 @@
 /// 
 ///
 /// @return PierDocumentoTemplateResponse*
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler;
 
 
@@ -94,7 +94,7 @@
 /// 
 ///
 /// @return PierTipoTemplateResponse*
--(NSNumber*) consultarUsingGET46WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET47WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler;
 
 

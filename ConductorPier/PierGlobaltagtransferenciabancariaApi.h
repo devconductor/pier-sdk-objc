@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "PierTaxaJurosContaResponse.h"
+#import "PierTaxaJurosContaPersistValue_.h"
 #import "PierContaBancariaPortadorResponse.h"
 #import "PierContaBancariaPortadorUpdateValue_.h"
 #import "PierTransferenciaCreditoContaBancariaResponse.h"
@@ -30,6 +32,21 @@
 -(unsigned long) requestQueueSize;
 +(PierGlobaltagtransferenciabancariaApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
 +(PierGlobaltagtransferenciabancariaApi*) sharedAPI;
+///
+///
+/// {{{transferencia_bancaria_resource_atualizar_taxas_juros_contas}}}
+/// {{{transferencia_bancaria_resource_atualizar_taxas_juros_contas_notes}}}
+///
+/// @param _id {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_param_id}}}
+/// @param update update
+/// 
+///
+/// @return PierTaxaJurosContaResponse*
+-(NSNumber*) atualizarTaxasJurosContasUsingPUTWithId: (NSNumber*) _id
+    update: (PierTaxaJurosContaPersistValue_*) update
+    completionHandler: (void (^)(PierTaxaJurosContaResponse* output, NSError* error)) handler;
+
+
 ///
 ///
 /// {{{conta_bancaria_resource_atualizar}}}
@@ -73,6 +90,21 @@
 
 ///
 ///
+/// {{{transferencia_bancaria_resource_consultar_taxas_juros_contas}}}
+/// {{{transferencia_bancaria_resource_consultar_taxas_juros_contas_notes}}}
+///
+/// @param _id {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_param_id}}}
+/// @param numeroMesesCarencia numeroMesesCarencia
+/// 
+///
+/// @return PierTaxaJurosContaResponse*
+-(NSNumber*) consultarTaxasJurosContasUsingGETWithId: (NSNumber*) _id
+    numeroMesesCarencia: (NSNumber*) numeroMesesCarencia
+    completionHandler: (void (^)(PierTaxaJurosContaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// {{{transferencia_bancaria_resource_consultar_transferencia_bancaria}}}
 /// {{{transferencia_bancaria_resource_consultar_transferencia_bancaria_notes}}}
 ///
@@ -93,7 +125,7 @@
 /// 
 ///
 /// @return PierContaBancariaPortadorResponse*
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
 
@@ -108,7 +140,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET47WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET48WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -195,6 +227,21 @@
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageTransferenciaBancariaResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{transferencia_bancaria_resource_salvar_taxas_juros_contas}}}
+/// {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_notes}}}
+///
+/// @param _id {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_param_id}}}
+/// @param persist persist
+/// 
+///
+/// @return PierTaxaJurosContaResponse*
+-(NSNumber*) salvarTaxasJurosContasUsingPOSTWithId: (NSNumber*) _id
+    persist: (PierTaxaJurosContaPersistValue_*) persist
+    completionHandler: (void (^)(PierTaxaJurosContaResponse* output, NSError* error)) handler;
 
 
 ///

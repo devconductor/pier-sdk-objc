@@ -61,7 +61,7 @@
 /// 
 ///
 /// @return PierStatusContaResponse*
--(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusContaResponse* output, NSError* error)) handler;
 
 
@@ -74,7 +74,7 @@
 /// 
 ///
 /// @return PierStatusImpressaoResponse*
--(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierStatusImpressaoResponse* output, NSError* error)) handler;
 
 

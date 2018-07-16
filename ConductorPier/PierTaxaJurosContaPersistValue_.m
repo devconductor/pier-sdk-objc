@@ -1,6 +1,6 @@
-#import "PierSMSEnvioResponse.h"
+#import "PierTaxaJurosContaPersistValue_.h"
 
-@implementation PierSMSEnvioResponse
+@implementation PierTaxaJurosContaPersistValue_
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"status": @"status", @"idConta": @"idConta", @"celular": @"celular", @"conteudo": @"conteudo", @"quantidadeTentativasEnvio": @"quantidadeTentativasEnvio", @"dataInclusao": @"dataInclusao", @"cpf": @"cpf" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"numeroMesesCarencia": @"numeroMesesCarencia", @"taxaJuros": @"taxaJuros" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"status", @"idConta", @"celular", @"conteudo", @"quantidadeTentativasEnvio", @"dataInclusao", @"cpf"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

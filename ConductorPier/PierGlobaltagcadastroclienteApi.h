@@ -231,23 +231,8 @@
 /// 
 ///
 /// @return PierAdicionalDetalheResponse*
--(NSNumber*) cadastrarUsingPOSTWithId: (NSNumber*) _id
+-(NSNumber*) cadastrarUsingPOST1WithId: (NSNumber*) _id
     persist: (PierAdicionalPersist*) persist
-    completionHandler: (void (^)(PierAdicionalDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// {{{adicional_resource_consultar}}}
-/// {{{adicional_resource_consultar_notes}}}
-///
-/// @param _id {{{adicional_resource_consultar_param_id_conta}}}
-/// @param idPessoa {{{adicional_resource_consultar_param_id_pessoa}}}
-/// 
-///
-/// @return PierAdicionalDetalheResponse*
--(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
-    idPessoa: (NSNumber*) idPessoa
     completionHandler: (void (^)(PierAdicionalDetalheResponse* output, NSError* error)) handler;
 
 
@@ -260,8 +245,23 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{adicional_resource_consultar}}}
+/// {{{adicional_resource_consultar_notes}}}
+///
+/// @param _id {{{adicional_resource_consultar_param_id_conta}}}
+/// @param idPessoa {{{adicional_resource_consultar_param_id_pessoa}}}
+/// 
+///
+/// @return PierAdicionalDetalheResponse*
+-(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+    idPessoa: (NSNumber*) idPessoa
+    completionHandler: (void (^)(PierAdicionalDetalheResponse* output, NSError* error)) handler;
 
 
 ///
@@ -273,7 +273,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET29WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -286,7 +286,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -299,7 +299,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 

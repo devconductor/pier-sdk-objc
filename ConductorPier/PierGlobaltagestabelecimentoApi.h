@@ -187,7 +187,7 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) cadastrarUsingPOST2WithPersist: (PierEstabelecimentoPersist*) persist
+-(NSNumber*) cadastrarUsingPOST3WithPersist: (PierEstabelecimentoPersist*) persist
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -200,7 +200,7 @@
 /// 
 ///
 /// @return PierGrupoEconomicoResponse*
--(NSNumber*) cadastrarUsingPOST3WithGrupoEconomicoDTO: (PierGrupoEconomicoDTO*) grupoEconomicoDTO
+-(NSNumber*) cadastrarUsingPOST4WithGrupoEconomicoDTO: (PierGrupoEconomicoDTO*) grupoEconomicoDTO
     completionHandler: (void (^)(PierGrupoEconomicoResponse* output, NSError* error)) handler;
 
 
@@ -239,7 +239,7 @@
 /// 
 ///
 /// @return PierEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET20WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -252,7 +252,7 @@
 /// 
 ///
 /// @return PierGrupoEconomicoResponse*
--(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET22WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierGrupoEconomicoResponse* output, NSError* error)) handler;
 
 
@@ -265,7 +265,7 @@
 /// 
 ///
 /// @return PierMaquinetaResponse*
--(NSNumber*) consultarUsingGET23WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierMaquinetaResponse* output, NSError* error)) handler;
 
 
@@ -278,7 +278,7 @@
 /// 
 ///
 /// @return PierOperacaoCredorResponse*
--(NSNumber*) consultarUsingGET24WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOperacaoCredorResponse* output, NSError* error)) handler;
 
 
@@ -291,7 +291,7 @@
 /// 
 ///
 /// @return PierTelefoneEstabelecimentoResponse*
--(NSNumber*) consultarUsingGET37WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET38WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneEstabelecimentoResponse* output, NSError* error)) handler;
 
 
@@ -304,7 +304,7 @@
 /// 
 ///
 /// @return PierTerminalResponse*
--(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTerminalResponse* output, NSError* error)) handler;
 
 
@@ -317,7 +317,7 @@
 /// 
 ///
 /// @return PierVinculoEstabelecimentoAdquirenteResponse*
--(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET52WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierVinculoEstabelecimentoAdquirenteResponse* output, NSError* error)) handler;
 
 

@@ -35,5 +35,8 @@
 /* {{{s_m_s_envio_response_data_inclusao_value}}} [optional]
  */
 @property(nonatomic) NSString* dataInclusao;
+/* {{{sms_envio_response_cpf_value}}} [optional]
+ */
+@property(nonatomic) NSString* cpf;
 
 @end

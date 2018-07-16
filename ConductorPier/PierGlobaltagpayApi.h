@@ -86,7 +86,7 @@
 /// 
 ///
 /// @return PierCartaoPayDetalheResponse*
--(NSNumber*) consultarUsingGET8WithDeviceId: (NSString*) deviceId
+-(NSNumber*) consultarUsingGET9WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoPayDetalheResponse* output, NSError* error)) handler;
 

@@ -176,13 +176,13 @@ static PierGlobaltagwebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) consultarUsingGET52WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET53WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET52`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET53`"];
     }
     
 

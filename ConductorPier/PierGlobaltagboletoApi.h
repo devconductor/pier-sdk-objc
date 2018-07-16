@@ -31,7 +31,7 @@
 /// 
 ///
 /// @return PierBoletoResponse*
--(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler;
 
 

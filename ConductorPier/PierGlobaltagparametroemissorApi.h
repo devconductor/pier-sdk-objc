@@ -28,7 +28,7 @@
 /// 
 ///
 /// @return PierParametroEmissorResponse*
--(NSNumber*) consultarUsingGET26WithCodigo: (NSString*) codigo
+-(NSNumber*) consultarUsingGET27WithCodigo: (NSString*) codigo
     completionHandler: (void (^)(PierParametroEmissorResponse* output, NSError* error)) handler;
 
 

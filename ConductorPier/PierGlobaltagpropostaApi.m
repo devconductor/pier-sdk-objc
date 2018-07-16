@@ -170,13 +170,13 @@ static PierGlobaltagpropostaApi* singletonAPI = nil;
 ///
 ///  @returns PierPropostaResponse*
 ///
--(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPropostaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET32`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET33`"];
     }
     
 

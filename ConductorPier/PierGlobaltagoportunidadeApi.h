@@ -102,7 +102,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) consultarUsingGET25WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -115,7 +115,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) consultarUsingGET44WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET45WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 

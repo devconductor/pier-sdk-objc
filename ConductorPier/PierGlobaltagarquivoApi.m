@@ -82,13 +82,13 @@ static PierGlobaltagarquivoApi* singletonAPI = nil;
 ///
 ///  @returns PierArquivoDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET4WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierArquivoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET4`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
     }
     
 

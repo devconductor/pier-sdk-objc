@@ -211,13 +211,13 @@ static PierGlobaltagajustefinanceiroApi* singletonAPI = nil;
 ///
 ///  @returns PierAjusteFinanceiroResponse*
 ///
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET3`"];
     }
     
 

@@ -132,7 +132,7 @@
 /// 
 ///
 /// @return PierPageControleSegurancaDispositivoResponse*
--(NSNumber*) consultarUsingGET14WithIdUsuario: (NSNumber*) idUsuario
+-(NSNumber*) consultarUsingGET15WithIdUsuario: (NSNumber*) idUsuario
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -148,7 +148,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) consultarUsingGET50WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 

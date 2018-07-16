@@ -2,6 +2,7 @@
 #import "PierAjusteFinanceiroResponse.h"
 #import "PierAlterarProdutoRequest.h"
 #import "PierContaResponse.h"
+#import "PierAdesaoPagamentoSabadoResponse.h"
 #import "PierBeneficioPagamentoAtrasoResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
@@ -184,6 +185,19 @@
 
 ///
 ///
+/// {{{aderir_pagamento_sabado_recurso_cadastrar}}}
+/// {{{aderir_pagamento_sabado_recurso_cadastrar_notas}}}
+///
+/// @param _id {{{aderir_pagamento_sabado_recurso_cadastrar_param_id}}}
+/// 
+///
+/// @return PierAdesaoPagamentoSabadoResponse*
+-(NSNumber*) cadastrarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAdesaoPagamentoSabadoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// {{{conta_resource_cancelar}}}
 /// {{{conta_resource_cancelar_notes}}}
 ///
@@ -277,6 +291,21 @@
 
 ///
 ///
+/// {{{aderir_pagamento_sabado_recurso_consultar}}}
+/// {{{aderir_pagamento_sabado_recurso_consultar_notas}}}
+///
+/// @param _id {{{aderir_pagamento_sabado_recurso_consultar_param_id}}}
+/// @param dataVencimento {{{aderir_pagamento_sabado_recurso_consultar_param_data_vencimento}}}
+/// 
+///
+/// @return PierAdesaoPagamentoSabadoResponse*
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(PierAdesaoPagamentoSabadoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// {{{conta_resource_consultar}}}
 /// {{{conta_resource_consultar_notes}}}
 ///
@@ -285,7 +314,7 @@
 /// 
 ///
 /// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
@@ -300,7 +329,7 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET48WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET49WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
 
@@ -506,6 +535,7 @@
 /// @param dataInicio {{{transacoes_processadas_request_data_inicio_value}}}
 /// @param dataFim {{{transacoes_processadas_request_data_fim_value}}}
 /// @param idTipoTransacao {{{transacoes_processadas_request_tipo_transacao}}}
+/// @param recuperaEncargos {{{transacoes_processadas_request_recupera_encargos}}}
 /// 
 ///
 /// @return PierPageTransacoesCorrentesResponse*
@@ -517,6 +547,7 @@
     dataInicio: (NSString*) dataInicio
     dataFim: (NSString*) dataFim
     idTipoTransacao: (NSNumber*) idTipoTransacao
+    recuperaEncargos: (NSNumber*) recuperaEncargos
     completionHandler: (void (^)(PierPageTransacoesCorrentesResponse* output, NSError* error)) handler;
 
 

@@ -52,7 +52,7 @@
 /// 
 ///
 /// @return PierAjusteFinanceiroResponse*
--(NSNumber*) consultarUsingGET2WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET3WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler;
 
 

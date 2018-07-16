@@ -3,6 +3,7 @@
 #import "PierAjusteFinanceiroResponse.h"
 #import "PierAlterarProdutoRequest.h"
 #import "PierContaResponse.h"
+#import "PierAdesaoPagamentoSabadoResponse.h"
 #import "PierBeneficioPagamentoAtrasoResponse.h"
 #import "PierBoletoResponse.h"
 #import "PierDividaClienteResponse.h"
@@ -874,6 +875,90 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 }
 
 ///
+/// {{{aderir_pagamento_sabado_recurso_cadastrar}}}
+/// {{{aderir_pagamento_sabado_recurso_cadastrar_notas}}}
+///  @param _id {{{aderir_pagamento_sabado_recurso_cadastrar_param_id}}} 
+///
+///  @returns PierAdesaoPagamentoSabadoResponse*
+///
+-(NSNumber*) cadastrarUsingPOSTWithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierAdesaoPagamentoSabadoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `cadastrarUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/adesoes-pagamentos-sabados"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAdesaoPagamentoSabadoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAdesaoPagamentoSabadoResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{conta_resource_cancelar}}}
 /// {{{conta_resource_cancelar_notes}}}
 ///  @param _id {{{conta_resource_cancelar_param_id}}} 
@@ -1391,6 +1476,102 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 }
 
 ///
+/// {{{aderir_pagamento_sabado_recurso_consultar}}}
+/// {{{aderir_pagamento_sabado_recurso_consultar_notas}}}
+///  @param _id {{{aderir_pagamento_sabado_recurso_consultar_param_id}}} 
+///
+///  @param dataVencimento {{{aderir_pagamento_sabado_recurso_consultar_param_data_vencimento}}} 
+///
+///  @returns PierAdesaoPagamentoSabadoResponse*
+///
+-(NSNumber*) consultarUsingGET1WithId: (NSNumber*) _id
+    dataVencimento: (NSString*) dataVencimento
+    completionHandler: (void (^)(PierAdesaoPagamentoSabadoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET1`"];
+    }
+    
+    // verify the required parameter 'dataVencimento' is set
+    if (dataVencimento == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataVencimento` when calling `consultarUsingGET1`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/adesoes-pagamentos-sabados"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (dataVencimento != nil) {
+        
+        queryParams[@"dataVencimento"] = dataVencimento;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAdesaoPagamentoSabadoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAdesaoPagamentoSabadoResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{conta_resource_consultar}}}
 /// {{{conta_resource_consultar_notes}}}
 ///  @param _id {{{conta_resource_consultar_param_id}}} 
@@ -1399,14 +1580,14 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
     authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
     }
     
 
@@ -1488,19 +1669,19 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET48WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET49WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET48`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET49`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET48`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET49`"];
     }
     
 
@@ -2644,6 +2825,8 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param idTipoTransacao {{{transacoes_processadas_request_tipo_transacao}}} (optional)
 ///
+///  @param recuperaEncargos {{{transacoes_processadas_request_recupera_encargos}}} (optional)
+///
 ///  @returns PierPageTransacoesCorrentesResponse*
 ///
 -(NSNumber*) listarProcessadasUsingGETWithId: (NSNumber*) _id
@@ -2654,6 +2837,7 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     dataInicio: (NSString*) dataInicio
     dataFim: (NSString*) dataFim
     idTipoTransacao: (NSNumber*) idTipoTransacao
+    recuperaEncargos: (NSNumber*) recuperaEncargos
     completionHandler: (void (^)(PierPageTransacoesCorrentesResponse* output, NSError* error)) handler {
 
     
@@ -2706,6 +2890,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     if (idTipoTransacao != nil) {
         
         queryParams[@"idTipoTransacao"] = idTipoTransacao;
+    }
+    if (recuperaEncargos != nil) {
+        
+        queryParams[@"recuperaEncargos"] = recuperaEncargos;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];

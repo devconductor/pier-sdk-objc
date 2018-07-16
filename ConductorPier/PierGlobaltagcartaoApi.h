@@ -241,7 +241,7 @@
 /// 
 ///
 /// @return PierCartaoDetalheResponse*
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
     authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler;
 

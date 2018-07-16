@@ -1,5 +1,7 @@
 #import "PierGlobaltagtransferenciabancariaApi.h"
 #import "PierQueryParamCollection.h"
+#import "PierTaxaJurosContaResponse.h"
+#import "PierTaxaJurosContaPersistValue_.h"
 #import "PierContaBancariaPortadorResponse.h"
 #import "PierContaBancariaPortadorUpdateValue_.h"
 #import "PierTransferenciaCreditoContaBancariaResponse.h"
@@ -79,6 +81,97 @@ static PierGlobaltagtransferenciabancariaApi* singletonAPI = nil;
 }
 
 #pragma mark - Api Methods
+
+///
+/// {{{transferencia_bancaria_resource_atualizar_taxas_juros_contas}}}
+/// {{{transferencia_bancaria_resource_atualizar_taxas_juros_contas_notes}}}
+///  @param _id {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_param_id}}} 
+///
+///  @param update update 
+///
+///  @returns PierTaxaJurosContaResponse*
+///
+-(NSNumber*) atualizarTaxasJurosContasUsingPUTWithId: (NSNumber*) _id
+    update: (PierTaxaJurosContaPersistValue_*) update
+    completionHandler: (void (^)(PierTaxaJurosContaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarTaxasJurosContasUsingPUT`"];
+    }
+    
+    // verify the required parameter 'update' is set
+    if (update == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `atualizarTaxasJurosContasUsingPUT`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/taxas-transferencias"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = update;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"PUT"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTaxaJurosContaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTaxaJurosContaResponse*)data, error);
+                           }
+          ];
+}
 
 ///
 /// {{{conta_bancaria_resource_atualizar}}}
@@ -338,6 +431,101 @@ static PierGlobaltagtransferenciabancariaApi* singletonAPI = nil;
 }
 
 ///
+/// {{{transferencia_bancaria_resource_consultar_taxas_juros_contas}}}
+/// {{{transferencia_bancaria_resource_consultar_taxas_juros_contas_notes}}}
+///  @param _id {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_param_id}}} 
+///
+///  @param numeroMesesCarencia numeroMesesCarencia 
+///
+///  @returns PierTaxaJurosContaResponse*
+///
+-(NSNumber*) consultarTaxasJurosContasUsingGETWithId: (NSNumber*) _id
+    numeroMesesCarencia: (NSNumber*) numeroMesesCarencia
+    completionHandler: (void (^)(PierTaxaJurosContaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarTaxasJurosContasUsingGET`"];
+    }
+    
+    // verify the required parameter 'numeroMesesCarencia' is set
+    if (numeroMesesCarencia == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `numeroMesesCarencia` when calling `consultarTaxasJurosContasUsingGET`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/taxas-transferencias"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (numeroMesesCarencia != nil) {
+        
+        queryParams[@"numeroMesesCarencia"] = numeroMesesCarencia;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTaxaJurosContaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTaxaJurosContaResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{transferencia_bancaria_resource_consultar_transferencia_bancaria}}}
 /// {{{transferencia_bancaria_resource_consultar_transferencia_bancaria_notes}}}
 ///  @param idTransferencia {{{transferencia_bancaria_resource_consultar_transferencia_bancaria_param_id_transferencia}}} 
@@ -427,13 +615,13 @@ static PierGlobaltagtransferenciabancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierContaBancariaPortadorResponse*
 ///
--(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET13`"];
     }
     
 
@@ -514,7 +702,7 @@ static PierGlobaltagtransferenciabancariaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaBancariaResponse*
 ///
--(NSNumber*) consultarUsingGET47WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET48WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler {
@@ -522,12 +710,12 @@ static PierGlobaltagtransferenciabancariaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET47`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET48`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET47`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET48`"];
     }
     
 
@@ -1001,6 +1189,97 @@ static PierGlobaltagtransferenciabancariaApi* singletonAPI = nil;
                               responseType: @"PierPageTransferenciaBancariaResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierPageTransferenciaBancariaResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// {{{transferencia_bancaria_resource_salvar_taxas_juros_contas}}}
+/// {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_notes}}}
+///  @param _id {{{transferencia_bancaria_resource_salvar_taxas_juros_contas_param_id}}} 
+///
+///  @param persist persist 
+///
+///  @returns PierTaxaJurosContaResponse*
+///
+-(NSNumber*) salvarTaxasJurosContasUsingPOSTWithId: (NSNumber*) _id
+    persist: (PierTaxaJurosContaPersistValue_*) persist
+    completionHandler: (void (^)(PierTaxaJurosContaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `salvarTaxasJurosContasUsingPOST`"];
+    }
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarTaxasJurosContasUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/taxas-transferencias"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierTaxaJurosContaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierTaxaJurosContaResponse*)data, error);
                            }
           ];
 }

@@ -268,13 +268,13 @@ static PierGlobaltagdocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierDocumentoDetalhadoResponse*
 ///
--(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoDetalhadoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
     }
     
 
@@ -351,13 +351,13 @@ static PierGlobaltagdocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierDocumentoTemplateResponse*
 ///
--(NSNumber*) consultarUsingGET17WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET18WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierDocumentoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET17`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET18`"];
     }
     
 
@@ -434,13 +434,13 @@ static PierGlobaltagdocumentoApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTemplateResponse*
 ///
--(NSNumber*) consultarUsingGET46WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET47WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTemplateResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET46`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET47`"];
     }
     
 

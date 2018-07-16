@@ -555,13 +555,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierConfiguracaoRegistroCobrancaResponse*
 ///
--(NSNumber*) cadastrarUsingPOST1WithConfiguracaoPersist: (PierConfiguracaoRegistroCobrancaPersist*) configuracaoPersist
+-(NSNumber*) cadastrarUsingPOST2WithConfiguracaoPersist: (PierConfiguracaoRegistroCobrancaPersist*) configuracaoPersist
     completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'configuracaoPersist' is set
     if (configuracaoPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `configuracaoPersist` when calling `cadastrarUsingPOST1`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `configuracaoPersist` when calling `cadastrarUsingPOST2`"];
     }
     
 
@@ -987,13 +987,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierConfiguracaoRegistroCobrancaResponse*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConfiguracaoRegistroCobrancaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -1070,13 +1070,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierConfiguracaoRotativoDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET11WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierConfiguracaoRotativoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
     }
     
 
@@ -1153,13 +1153,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierProdutoDetalhesResponse*
 ///
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierProdutoDetalhesResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET32`"];
     }
     
 
@@ -1236,13 +1236,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoAjusteResponse*
 ///
--(NSNumber*) consultarUsingGET40WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET41WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoAjusteResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET40`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET41`"];
     }
     
 
@@ -1329,7 +1329,7 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTipoBoletoResponse*
 ///
--(NSNumber*) consultarUsingGET41WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) consultarUsingGET42WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -1435,13 +1435,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoEnderecoResponse*
 ///
--(NSNumber*) consultarUsingGET42WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET43WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoEnderecoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET42`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET43`"];
     }
     
 
@@ -1522,7 +1522,7 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoOperacaoResponse*
 ///
--(NSNumber*) consultarUsingGET43WithIdCartao: (NSNumber*) idCartao
+-(NSNumber*) consultarUsingGET44WithIdCartao: (NSNumber*) idCartao
     idEstabelecimento: (NSNumber*) idEstabelecimento
     codigoProcessamento: (NSString*) codigoProcessamento
     completionHandler: (void (^)(PierTipoOperacaoResponse* output, NSError* error)) handler {
@@ -1530,17 +1530,17 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
     
     // verify the required parameter 'idCartao' is set
     if (idCartao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET43`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idCartao` when calling `consultarUsingGET44`"];
     }
     
     // verify the required parameter 'idEstabelecimento' is set
     if (idEstabelecimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET43`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idEstabelecimento` when calling `consultarUsingGET44`"];
     }
     
     // verify the required parameter 'codigoProcessamento' is set
     if (codigoProcessamento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET43`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigoProcessamento` when calling `consultarUsingGET44`"];
     }
     
 
@@ -1626,13 +1626,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierTipoTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET45WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET46WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET45`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET46`"];
     }
     
 
@@ -1709,13 +1709,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierAtendimentoClienteResponse*
 ///
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAtendimentoClienteResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 
@@ -1792,13 +1792,13 @@ static PierGlobaltagcadastrogeralApi* singletonAPI = nil;
 ///
 ///  @returns PierBancoResponse*
 ///
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierBancoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET7`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET8`"];
     }
     
 

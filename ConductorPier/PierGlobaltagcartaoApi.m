@@ -1262,14 +1262,14 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET9WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
     authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
     }
     
 

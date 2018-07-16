@@ -251,13 +251,13 @@ static PierGlobaltaglimitedisponibilidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierLimiteDisponibilidadeResponse*
 ///
--(NSNumber*) consultarUsingGET22WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET23WithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET22`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET23`"];
     }
     
 
