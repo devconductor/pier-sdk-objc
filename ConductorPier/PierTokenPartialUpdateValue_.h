@@ -26,5 +26,8 @@
 /* {{{token_dto_alterado_por_value}}} [optional]
  */
 @property(nonatomic) NSString* alteradoPor;
+/* {{{token_dto_id_application_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idAplicacao;
 
 @end

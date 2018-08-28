@@ -25,7 +25,6 @@
 /// {{{conta_resource_listar_historico_alteracoes_limites_notes}}}
 ///
 /// @param _id {{{conta_resource_listar_historico_alteracoes_limites_param_id}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -33,7 +32,6 @@
 ///
 /// @return PierPageHistoricoEventosResponse*
 -(NSNumber*) listarHistoricoAlteracoesLimitesUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

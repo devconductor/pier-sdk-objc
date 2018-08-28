@@ -9,10 +9,10 @@
 
 
 
-@protocol PierNotificacaoPushResponseValue_
+@protocol PierNotificacaoPushResponse
 @end
 
-@interface PierNotificacaoPushResponseValue_ : PierObject
+@interface PierNotificacaoPushResponse : PierObject
 
 /* {{{notificacao_push_response_data_envio_value}}} [optional]
  */

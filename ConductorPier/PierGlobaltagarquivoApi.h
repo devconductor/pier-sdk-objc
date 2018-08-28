@@ -34,7 +34,7 @@
 /// 
 ///
 /// @return PierArquivoDetalheResponse*
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierArquivoDetalheResponse* output, NSError* error)) handler;
 
 
@@ -121,7 +121,7 @@
 /// 
 ///
 /// @return PierPageArquivoAUDResponse*
--(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET6WithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageArquivoAUDResponse* output, NSError* error)) handler;
@@ -142,7 +142,7 @@
 /// 
 ///
 /// @return PierPageArquivoResponse*
--(NSNumber*) listarUsingGET6WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

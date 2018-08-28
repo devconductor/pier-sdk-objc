@@ -74,8 +74,6 @@ static PierGlobaltaglimiteApi* singletonAPI = nil;
 /// {{{conta_resource_listar_historico_alteracoes_limites_notes}}}
 ///  @param _id {{{conta_resource_listar_historico_alteracoes_limites_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -85,7 +83,6 @@ static PierGlobaltaglimiteApi* singletonAPI = nil;
 ///  @returns PierPageHistoricoEventosResponse*
 ///
 -(NSNumber*) listarHistoricoAlteracoesLimitesUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -129,9 +126,6 @@ static PierGlobaltaglimiteApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`

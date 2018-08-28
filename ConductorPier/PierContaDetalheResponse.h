@@ -92,5 +92,8 @@
 /* {{{conta_detalhe_response_dias_atraso_value}}} [optional]
  */
 @property(nonatomic) NSNumber* diasAtraso;
+/* {{{conta_response_proximo_vencimento_padrao_value}}} [optional]
+ */
+@property(nonatomic) NSString* proximoVencimentoPadrao;
 
 @end

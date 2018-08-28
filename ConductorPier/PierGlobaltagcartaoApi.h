@@ -8,6 +8,8 @@
 #import "PierLoteCartoesPrePagosResponse.h"
 #import "PierPortadorResponse.h"
 #import "PierCartaoDetalheResponse.h"
+#import "PierCartaoMultiAppPersistValue_.h"
+#import "PierVinculoCartoesResponse.h"
 #import "PierCartaoMultiAppImpressaoResponse.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
 #import "PierPageCartaoResponse.h"
@@ -40,13 +42,11 @@
 ///
 /// @param _id {{{cartao_resource_alterar_alterar_senha_param_id}}}
 /// @param senha {{{cartao_resource_alterar_alterar_senha_param_nova_senha}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSString*
 -(NSNumber*) alterarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
@@ -57,13 +57,11 @@
 ///
 /// @param _id {{{cartao_resource_alterar_estagio_param_id}}}
 /// @param update {{{cartao_resource_alterar_estagio_param_id_estagio_cartao}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) alterarEstagioUsingPOSTWithId: (NSNumber*) _id
     update: (PierEstagioCartaoUpdate_*) update
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -74,13 +72,11 @@
 ///
 /// @param _id {{{cartao_resource_alterar_status_impressao_param_id}}}
 /// @param idStatusImpressao {{{cartao_resource_alterar_status_impressao_param_id_status_impressao}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierHistoricoImpressaoCartaoResponse*
 -(NSNumber*) alterarStatusImpressaoUsingPUTWithId: (NSNumber*) _id
     idStatusImpressao: (NSNumber*) idStatusImpressao
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierHistoricoImpressaoCartaoResponse* output, NSError* error)) handler;
 
 
@@ -91,13 +87,11 @@
 ///
 /// @param _id {{{cartao_resource_atribuir_pessoa_param_id_cartao}}}
 /// @param idPessoa {{{cartao_resource_atribuir_pessoa_param_id_pessoa}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) atribuirPessoaUsingPUTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -109,14 +103,12 @@
 /// @param _id {{{cartao_resource_bloquear_param_id}}}
 /// @param idStatus {{{cartao_resource_bloquear_param_id_status}}}
 /// @param observacao {{{cartao_resource_bloquear_param_observacao}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) bloquearUsingPOSTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -127,13 +119,11 @@
 ///
 /// @param _id {{{cartao_resource_cadastrar_alterar_senha_param_id}}}
 /// @param senha {{{cartao_resource_cadastrar_alterar_senha_param_nova_senha}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSString*
 -(NSNumber*) cadastrarAlterarSenhaUsingPOSTWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
@@ -145,14 +135,12 @@
 /// @param _id {{{cartao_resource_cancelar_param_id}}}
 /// @param idStatus {{{cartao_resource_cancelar_param_id_status}}}
 /// @param observacao {{{cartao_resource_cancelar_param_observacao}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) cancelarUsingPOSTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -162,12 +150,10 @@
 /// {{{cartao_resource_consultar_cartao_impressao_notes}}}
 ///
 /// @param _id {{{cartao_resource_consultar_cartao_impressao_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierDadosCartaoImpressaoResponse*
 -(NSNumber*) consultarCartaoImpressaoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierDadosCartaoImpressaoResponse* output, NSError* error)) handler;
 
 
@@ -177,12 +163,10 @@
 /// {{{cartao_resource_consultar_dados_reais_cartao_notes}}}
 ///
 /// @param _id id
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierDadosCartaoResponse*
 -(NSNumber*) consultarDadosReaisCartaoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierDadosCartaoResponse* output, NSError* error)) handler;
 
 
@@ -192,12 +176,10 @@
 /// {{{cartao_resource_consultar_limite_disponibilidade_notes}}}
 ///
 /// @param _id {{{cartao_resource_consultar_limite_disponibilidade_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
 -(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 
@@ -207,12 +189,10 @@
 /// {{{cartao_resource_consultar_lotes_cartoes_pre_pagos_notes}}}
 ///
 /// @param _id {{{cartao_resource_consultar_lotes_cartoes_pre_pagos_param_id_lote}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierLoteCartoesPrePagosResponse*
 -(NSNumber*) consultarLotesCartoesPrePagosUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler;
 
 
@@ -222,12 +202,10 @@
 /// {{{cartao_resource_consultar_portador_notes}}}
 ///
 /// @param _id {{{cartao_resource_consultar_portador_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierPortadorResponse*
 -(NSNumber*) consultarPortadorUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierPortadorResponse* output, NSError* error)) handler;
 
 
@@ -237,13 +215,24 @@
 /// {{{cartao_resource_consultar_notes}}}
 ///
 /// @param _id {{{cartao_resource_consultar_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoDetalheResponse*
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{conta_resource_cadastrar_cartao_multiapp}}}
+/// {{{conta_resource_cadastrar_cartao_multiapp_notes}}}
+///
+/// @param cartaoMultiAppPersist cartaoMultiAppPersist
+/// 
+///
+/// @return PierVinculoCartoesResponse*
+-(NSNumber*) criarCartoesMultiAppUsingPOSTWithCartaoMultiAppPersist: (PierCartaoMultiAppPersistValue_*) cartaoMultiAppPersist
+    completionHandler: (void (^)(PierVinculoCartoesResponse* output, NSError* error)) handler;
 
 
 ///
@@ -252,12 +241,10 @@
 /// {{{cartao_resource_desbloquear_senha_incorreta_notes}}}
 ///
 /// @param _id {{{cartao_resource_desbloquear_senha_incorreta_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) desbloquearSenhaIncorretaUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -267,12 +254,10 @@
 /// {{{cartao_resource_desbloquear_notes}}}
 ///
 /// @param _id {{{cartao_resource_desbloquear_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) desbloquearUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -281,7 +266,6 @@
 /// {{{cartao_resource_gerar_lotes_cartoes_pre_pagos}}}
 /// {{{cartao_resource_gerar_lotes_cartoes_pre_pagos_notes}}}
 ///
-/// @param authorization Authorization
 /// @param idOrigemComercial {{{lote_cartoes_pre_pagos_persist_id_origem_comercial_value}}}
 /// @param idProduto {{{lote_cartoes_pre_pagos_persist_id_produto_value}}}
 /// @param idTipoCartao {{{lote_cartoes_pre_pagos_persist_id_tipo_cartao_value}}}
@@ -292,8 +276,7 @@
 /// 
 ///
 /// @return PierLoteCartoesPrePagosResponse*
--(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithAuthorization: (NSString*) authorization
-    idOrigemComercial: (NSNumber*) idOrigemComercial
+-(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithIdOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
     idTipoCartao: (NSNumber*) idTipoCartao
     idImagem: (NSNumber*) idImagem
@@ -309,12 +292,10 @@
 /// {{{cartao_resource_gerar_nova_via_multiplo_notes}}}
 ///
 /// @param _id {{{cartao_resource_gerar_nova_via_param_id_cartao}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoMultiAppImpressaoResponse*
 -(NSNumber*) gerarNovaViaCartaoMultiAppUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoMultiAppImpressaoResponse* output, NSError* error)) handler;
 
 
@@ -324,12 +305,10 @@
 /// {{{cartao_resource_gerar_nova_via_notes}}}
 ///
 /// @param _id {{{cartao_resource_gerar_nova_via_param_id_cartao}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) gerarNovaViaUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -339,12 +318,10 @@
 /// {{{cartao_resource_lancar_tarifa_segunda_via_notes}}}
 ///
 /// @param _id {{{cartao_resource_lancar_tarifa_segunda_via_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) lancarTarifaSegundaViaUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
@@ -353,7 +330,6 @@
 /// {{{cartao_resource_listar_lotes_cartoes_pre_pagos}}}
 /// {{{cartao_resource_listar_lotes_cartoes_pre_pagos_notes}}}
 ///
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -370,8 +346,7 @@
 /// 
 ///
 /// @return PierPageLoteCartoesPrePagosResponse*
--(NSNumber*) listarLotesCartoesPrePagosUsingGETWithAuthorization: (NSString*) authorization
-    sort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarLotesCartoesPrePagosUsingGETWithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOrigemComercial: (NSNumber*) idOrigemComercial
@@ -392,7 +367,6 @@
 /// {{{cartao_resource_listar}}}
 /// {{{cartao_resource_listar_notes}}}
 ///
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -414,11 +388,11 @@
 /// @param flagProvisorio {{{cartao_request_flag_provisorio_value}}}
 /// @param codigoDesbloqueio {{{cartao_request_codigo_desbloqueio_value}}}
 /// @param sequencialCartao {{{cartao_request_sequencial_cartao_value}}}
+/// @param identificadorExterno {{{cartao_request_identificador_externo_value}}}
 /// 
 ///
 /// @return PierPageCartaoResponse*
--(NSNumber*) listarUsingGET11WithAuthorization: (NSString*) authorization
-    sort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
@@ -439,6 +413,7 @@
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     sequencialCartao: (NSNumber*) sequencialCartao
+    identificadorExterno: (NSNumber*) identificadorExterno
     completionHandler: (void (^)(PierPageCartaoResponse* output, NSError* error)) handler;
 
 
@@ -448,12 +423,10 @@
 /// {{{cartao_resource_reativar_notes}}}
 ///
 /// @param _id {{{cartao_resource_reativar_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoResponse*
 -(NSNumber*) reativarUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler;
 
 
@@ -464,13 +437,11 @@
 ///
 /// @param _id {{{cartao_resource_validar_c_v_v_param_id}}}
 /// @param validaCVV validaCVV
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSString*
 -(NSNumber*) validarCVVUsingPOSTWithId: (NSNumber*) _id
     validaCVV: (PierValidaCVVRequest*) validaCVV
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
@@ -483,7 +454,6 @@
 /// @param nomePortador {{{cartao_resource_validar_dados_impressos_bandeirado_param_nome_portador}}}
 /// @param dataValidade {{{cartao_resource_validar_dados_impressos_bandeirado_param_data_validade}}}
 /// @param codigoSeguranca {{{cartao_resource_validar_dados_impressos_bandeirado_param_codigo_seguranca}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierValidaCartaoResponse*
@@ -491,7 +461,6 @@
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
@@ -504,7 +473,6 @@
 /// @param nomePortador {{{cartao_resource_validar_dados_impressos_nao_bandeirado_param_nome_portador}}}
 /// @param dataValidade {{{cartao_resource_validar_dados_impressos_nao_bandeirado_param_data_validade}}}
 /// @param codigoSeguranca {{{cartao_resource_validar_dados_impressos_nao_bandeirado_param_codigo_seguranca}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierValidaCartaoResponse*
@@ -512,7 +480,6 @@
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
@@ -523,13 +490,11 @@
 ///
 /// @param numeroCartao {{{cartao_resource_validar_de55_cartao_mastercard_param_numero_cartao}}}
 /// @param criptograma {{{cartao_resource_validar_de55_cartao_mastercard_param_criptograma}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierValidaCartaoResponse*
 -(NSNumber*) validarDe55CartaoMastercardUsingGETWithNumeroCartao: (NSString*) numeroCartao
     criptograma: (NSString*) criptograma
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 
@@ -540,13 +505,11 @@
 ///
 /// @param _id {{{cartao_resource_validar_senha_param_id}}}
 /// @param senha {{{cartao_resource_validar_senha_param_senha}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierValidaSenhaCartaoResponse*
 -(NSNumber*) validarSenhaUsingGETWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaSenhaCartaoResponse* output, NSError* error)) handler;
 
 
@@ -558,14 +521,12 @@
 /// @param numeroCartao {{{cartao_resource_validar_tarja_param_numero_cartao}}}
 /// @param trilha1 {{{cartao_resource_validar_tarja_param_trilha1}}}
 /// @param trilha2 {{{cartao_resource_validar_tarja_param_trilha2}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierValidaCartaoResponse*
 -(NSNumber*) validarTarjaUsingGETWithNumeroCartao: (NSString*) numeroCartao
     trilha1: (NSString*) trilha1
     trilha2: (NSString*) trilha2
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler;
 
 

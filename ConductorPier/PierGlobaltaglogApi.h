@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierLogAcessoUsuarioResposta_*
--(NSNumber*) salvarUsingPOST18WithLogAcessoUsuarioPersist: (PierLogAcessoUsuarioPersistencia_*) logAcessoUsuarioPersist
+-(NSNumber*) salvarUsingPOST19WithLogAcessoUsuarioPersist: (PierLogAcessoUsuarioPersistencia_*) logAcessoUsuarioPersist
     completionHandler: (void (^)(PierLogAcessoUsuarioResposta_* output, NSError* error)) handler;
 
 

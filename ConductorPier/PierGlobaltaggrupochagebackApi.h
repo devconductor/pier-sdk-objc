@@ -25,23 +25,25 @@
 /// {{{codigo_chargeback_resource_listar}}}
 /// {{{codigo_chargeback_resource_listar_notes}}}
 ///
-/// @param _id id
+/// @param grupoChargebackId grupoChargebackId
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
+/// @param _id 
+/// @param descricao 
 /// @param flagAtm 
-/// @param idBandeira 
-/// @param groupId 
+/// @param grupoChargebackId2 
 /// 
 ///
 /// @return PierPageCodigoChargebackResponse*
--(NSNumber*) listarCodigosUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarCodigosUsingGETWithGrupoChargebackId: (NSNumber*) grupoChargebackId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    descricao: (NSString*) descricao
     flagAtm: (NSNumber*) flagAtm
-    idBandeira: (NSNumber*) idBandeira
-    groupId: (NSNumber*) groupId
+    grupoChargebackId2: (NSNumber*) grupoChargebackId2
     completionHandler: (void (^)(PierPageCodigoChargebackResponse* output, NSError* error)) handler;
 
 
@@ -56,7 +58,7 @@
 /// 
 ///
 /// @return PierPageGrupoChargebackResponse*
--(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageGrupoChargebackResponse* output, NSError* error)) handler;

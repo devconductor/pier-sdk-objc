@@ -17,16 +17,16 @@
 /* {{{usuario_persistencia_nome_descricao}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* {{{usuario_persistencia_login_descricao}}} [optional]
+/* {{{usuario_persistencia_login_descricao}}} 
  */
 @property(nonatomic) NSString* login;
 /* {{{usuario_persistencia_cpf_descricao}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* {{{usuario_persistencia_email_descricao}}} [optional]
+/* {{{usuario_persistencia_email_descricao}}} 
  */
 @property(nonatomic) NSString* email;
-/* {{{usuario_persistencia_senha_descricao}}} [optional]
+/* {{{usuario_persistencia_senha_descricao}}} 
  */
 @property(nonatomic) NSString* senha;
 /* {{{usuario_persistencia_data_validade_descricao}}} [optional]

@@ -82,13 +82,13 @@ static PierGlobaltagarquivoApi* singletonAPI = nil;
 ///
 ///  @returns PierArquivoDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET6WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierArquivoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET6`"];
     }
     
 
@@ -565,7 +565,7 @@ static PierGlobaltagarquivoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageArquivoAUDResponse*
 ///
--(NSNumber*) listarUsingGET5WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET6WithId: (NSNumber*) _id
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageArquivoAUDResponse* output, NSError* error)) handler {
@@ -573,7 +573,7 @@ static PierGlobaltagarquivoApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET6`"];
     }
     
 
@@ -670,7 +670,7 @@ static PierGlobaltagarquivoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageArquivoResponse*
 ///
--(NSNumber*) listarUsingGET6WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET7WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome

@@ -9,6 +9,8 @@
 #import "PierLoteCartoesPrePagosResponse.h"
 #import "PierPortadorResponse.h"
 #import "PierCartaoDetalheResponse.h"
+#import "PierCartaoMultiAppPersistValue_.h"
+#import "PierVinculoCartoesResponse.h"
 #import "PierCartaoMultiAppImpressaoResponse.h"
 #import "PierPageLoteCartoesPrePagosResponse.h"
 #import "PierPageCartaoResponse.h"
@@ -90,13 +92,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param senha {{{cartao_resource_alterar_alterar_senha_param_nova_senha}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSString*
 ///
 -(NSNumber*) alterarAlterarSenhaUsingPUTWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
@@ -128,9 +127,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     if (senha != nil) {
         headerParams[@"senha"] = senha;
     }
@@ -190,13 +186,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param update {{{cartao_resource_alterar_estagio_param_id_estagio_cartao}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) alterarEstagioUsingPOSTWithId: (NSNumber*) _id
     update: (PierEstagioCartaoUpdate_*) update
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -228,9 +221,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -287,13 +277,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param idStatusImpressao {{{cartao_resource_alterar_status_impressao_param_id_status_impressao}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierHistoricoImpressaoCartaoResponse*
 ///
 -(NSNumber*) alterarStatusImpressaoUsingPUTWithId: (NSNumber*) _id
     idStatusImpressao: (NSNumber*) idStatusImpressao
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierHistoricoImpressaoCartaoResponse* output, NSError* error)) handler {
 
     
@@ -329,9 +316,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -388,13 +372,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param idPessoa {{{cartao_resource_atribuir_pessoa_param_id_pessoa}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) atribuirPessoaUsingPUTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -430,9 +411,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -491,14 +469,11 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param observacao {{{cartao_resource_bloquear_param_observacao}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) bloquearUsingPOSTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -543,9 +518,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -602,13 +574,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param senha {{{cartao_resource_cadastrar_alterar_senha_param_nova_senha}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSString*
 ///
 -(NSNumber*) cadastrarAlterarSenhaUsingPOSTWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
@@ -640,9 +609,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     if (senha != nil) {
         headerParams[@"senha"] = senha;
     }
@@ -704,14 +670,11 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param observacao {{{cartao_resource_cancelar_param_observacao}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) cancelarUsingPOSTWithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
     observacao: (NSString*) observacao
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -756,9 +719,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -813,12 +773,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_consultar_cartao_impressao_notes}}}
 ///  @param _id {{{cartao_resource_consultar_cartao_impressao_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierDadosCartaoImpressaoResponse*
 ///
 -(NSNumber*) consultarCartaoImpressaoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierDadosCartaoImpressaoResponse* output, NSError* error)) handler {
 
     
@@ -845,9 +802,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -902,12 +856,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_consultar_dados_reais_cartao_notes}}}
 ///  @param _id id 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierDadosCartaoResponse*
 ///
 -(NSNumber*) consultarDadosReaisCartaoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierDadosCartaoResponse* output, NSError* error)) handler {
 
     
@@ -934,9 +885,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -991,12 +939,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_consultar_limite_disponibilidade_notes}}}
 ///  @param _id {{{cartao_resource_consultar_limite_disponibilidade_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierLimiteDisponibilidadeResponse*
 ///
 -(NSNumber*) consultarLimiteDisponibilidadeUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
@@ -1023,9 +968,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1080,12 +1022,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_consultar_lotes_cartoes_pre_pagos_notes}}}
 ///  @param _id {{{cartao_resource_consultar_lotes_cartoes_pre_pagos_param_id_lote}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierLoteCartoesPrePagosResponse*
 ///
 -(NSNumber*) consultarLotesCartoesPrePagosUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierLoteCartoesPrePagosResponse* output, NSError* error)) handler {
 
     
@@ -1112,9 +1051,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1169,12 +1105,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_consultar_portador_notes}}}
 ///  @param _id {{{cartao_resource_consultar_portador_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierPortadorResponse*
 ///
 -(NSNumber*) consultarPortadorUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierPortadorResponse* output, NSError* error)) handler {
 
     
@@ -1201,9 +1134,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1258,18 +1188,15 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_consultar_notes}}}
 ///  @param _id {{{cartao_resource_consultar_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
+-(NSNumber*) consultarUsingGET12WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET12`"];
     }
     
 
@@ -1290,9 +1217,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1343,16 +1267,93 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 }
 
 ///
+/// {{{conta_resource_cadastrar_cartao_multiapp}}}
+/// {{{conta_resource_cadastrar_cartao_multiapp_notes}}}
+///  @param cartaoMultiAppPersist cartaoMultiAppPersist 
+///
+///  @returns PierVinculoCartoesResponse*
+///
+-(NSNumber*) criarCartoesMultiAppUsingPOSTWithCartaoMultiAppPersist: (PierCartaoMultiAppPersistValue_*) cartaoMultiAppPersist
+    completionHandler: (void (^)(PierVinculoCartoesResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'cartaoMultiAppPersist' is set
+    if (cartaoMultiAppPersist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cartaoMultiAppPersist` when calling `criarCartoesMultiAppUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/cartoes/gerar-cartoes-multiapp"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = cartaoMultiAppPersist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierVinculoCartoesResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierVinculoCartoesResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{cartao_resource_desbloquear_senha_incorreta}}}
 /// {{{cartao_resource_desbloquear_senha_incorreta_notes}}}
 ///  @param _id {{{cartao_resource_desbloquear_senha_incorreta_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) desbloquearSenhaIncorretaUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -1379,9 +1380,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1436,12 +1434,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_desbloquear_notes}}}
 ///  @param _id {{{cartao_resource_desbloquear_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) desbloquearUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -1468,9 +1463,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1523,8 +1515,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 /// {{{cartao_resource_gerar_lotes_cartoes_pre_pagos}}}
 /// {{{cartao_resource_gerar_lotes_cartoes_pre_pagos_notes}}}
-///  @param authorization Authorization (optional)
-///
 ///  @param idOrigemComercial {{{lote_cartoes_pre_pagos_persist_id_origem_comercial_value}}} (optional)
 ///
 ///  @param idProduto {{{lote_cartoes_pre_pagos_persist_id_produto_value}}} (optional)
@@ -1541,8 +1531,7 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierLoteCartoesPrePagosResponse*
 ///
--(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithAuthorization: (NSString*) authorization
-    idOrigemComercial: (NSNumber*) idOrigemComercial
+-(NSNumber*) gerarLotesCartoesPrePagosUsingPOSTWithIdOrigemComercial: (NSNumber*) idOrigemComercial
     idProduto: (NSNumber*) idProduto
     idTipoCartao: (NSNumber*) idTipoCartao
     idImagem: (NSNumber*) idImagem
@@ -1595,9 +1584,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1652,12 +1638,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_gerar_nova_via_multiplo_notes}}}
 ///  @param _id {{{cartao_resource_gerar_nova_via_param_id_cartao}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoMultiAppImpressaoResponse*
 ///
 -(NSNumber*) gerarNovaViaCartaoMultiAppUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoMultiAppImpressaoResponse* output, NSError* error)) handler {
 
     
@@ -1684,9 +1667,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1741,12 +1721,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_gerar_nova_via_notes}}}
 ///  @param _id {{{cartao_resource_gerar_nova_via_param_id_cartao}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) gerarNovaViaUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -1773,9 +1750,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1830,12 +1804,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_lancar_tarifa_segunda_via_notes}}}
 ///  @param _id {{{cartao_resource_lancar_tarifa_segunda_via_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSObject*
 ///
 -(NSNumber*) lancarTarifaSegundaViaUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
@@ -1862,9 +1833,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1917,8 +1885,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 /// {{{cartao_resource_listar_lotes_cartoes_pre_pagos}}}
 /// {{{cartao_resource_listar_lotes_cartoes_pre_pagos_notes}}}
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -1947,8 +1913,7 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageLoteCartoesPrePagosResponse*
 ///
--(NSNumber*) listarLotesCartoesPrePagosUsingGETWithAuthorization: (NSString*) authorization
-    sort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarLotesCartoesPrePagosUsingGETWithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idOrigemComercial: (NSNumber*) idOrigemComercial
@@ -2033,9 +1998,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2088,8 +2050,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 /// {{{cartao_resource_listar}}}
 /// {{{cartao_resource_listar_notes}}}
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -2132,10 +2092,11 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param sequencialCartao {{{cartao_request_sequencial_cartao_value}}} (optional)
 ///
+///  @param identificadorExterno {{{cartao_request_identificador_externo_value}}} (optional)
+///
 ///  @returns PierPageCartaoResponse*
 ///
--(NSNumber*) listarUsingGET11WithAuthorization: (NSString*) authorization
-    sort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusCartao: (NSNumber*) idStatusCartao
@@ -2156,6 +2117,7 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     flagProvisorio: (NSNumber*) flagProvisorio
     codigoDesbloqueio: (NSString*) codigoDesbloqueio
     sequencialCartao: (NSNumber*) sequencialCartao
+    identificadorExterno: (NSNumber*) identificadorExterno
     completionHandler: (void (^)(PierPageCartaoResponse* output, NSError* error)) handler {
 
     
@@ -2257,12 +2219,13 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
         
         queryParams[@"sequencialCartao"] = sequencialCartao;
     }
+    if (identificadorExterno != nil) {
+        
+        queryParams[@"identificadorExterno"] = identificadorExterno;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2317,12 +2280,9 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 /// {{{cartao_resource_reativar_notes}}}
 ///  @param _id {{{cartao_resource_reativar_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoResponse*
 ///
 -(NSNumber*) reativarUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoResponse* output, NSError* error)) handler {
 
     
@@ -2349,9 +2309,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2408,13 +2365,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param validaCVV validaCVV 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSString*
 ///
 -(NSNumber*) validarCVVUsingPOSTWithId: (NSNumber*) _id
     validaCVV: (PierValidaCVVRequest*) validaCVV
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
@@ -2446,9 +2400,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2509,15 +2460,12 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param codigoSeguranca {{{cartao_resource_validar_dados_impressos_bandeirado_param_codigo_seguranca}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarDadosImpressosBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
@@ -2572,9 +2520,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2635,15 +2580,12 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param codigoSeguranca {{{cartao_resource_validar_dados_impressos_nao_bandeirado_param_codigo_seguranca}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarDadosImpressosNaoBandeiradoUsingGETWithNumeroCartao: (NSString*) numeroCartao
     nomePortador: (NSString*) nomePortador
     dataValidade: (NSString*) dataValidade
     codigoSeguranca: (NSString*) codigoSeguranca
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
@@ -2698,9 +2640,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2757,13 +2696,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param criptograma {{{cartao_resource_validar_de55_cartao_mastercard_param_criptograma}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarDe55CartaoMastercardUsingGETWithNumeroCartao: (NSString*) numeroCartao
     criptograma: (NSString*) criptograma
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
@@ -2800,9 +2736,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2859,13 +2792,10 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param senha {{{cartao_resource_validar_senha_param_senha}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierValidaSenhaCartaoResponse*
 ///
 -(NSNumber*) validarSenhaUsingGETWithId: (NSNumber*) _id
     senha: (NSString*) senha
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaSenhaCartaoResponse* output, NSError* error)) handler {
 
     
@@ -2897,9 +2827,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     if (senha != nil) {
         headerParams[@"senha"] = senha;
     }
@@ -2961,14 +2888,11 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
 ///
 ///  @param trilha2 {{{cartao_resource_validar_tarja_param_trilha2}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierValidaCartaoResponse*
 ///
 -(NSNumber*) validarTarjaUsingGETWithNumeroCartao: (NSString*) numeroCartao
     trilha1: (NSString*) trilha1
     trilha2: (NSString*) trilha2
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierValidaCartaoResponse* output, NSError* error)) handler {
 
     
@@ -3014,9 +2938,6 @@ static PierGlobaltagcartaoApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`

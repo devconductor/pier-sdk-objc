@@ -9,6 +9,8 @@
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierContaDetalheResponse.h"
 #import "PierTransferenciaDetalheResponse.h"
+#import "PierContaMultiAppPersistValue_.h"
+#import "PierContaMultiAppResponse.h"
 #import "PierCartaoEmbossingResponse.h"
 #import "PierCartaoEmbossingRequest.h"
 #import "PierCartaoImpressaoProvisorioResponse.h"
@@ -53,7 +55,6 @@
 /// @param idTipoAjuste {{{ajuste_persist_id_tipo_ajuste_value}}}
 /// @param dataAjuste {{{ajuste_persist_data_ajuste_value}}}
 /// @param valorAjuste {{{ajuste_persist_valor_ajuste_value}}}
-/// @param authorization Authorization
 /// @param identificadorExterno {{{ajuste_persist_identificador_externo_value}}}
 /// @param idTransacaoOriginal {{{ajuste_persist_id_transacao_original}}}
 /// 
@@ -63,7 +64,6 @@
     idTipoAjuste: (NSNumber*) idTipoAjuste
     dataAjuste: (NSString*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
-    authorization: (NSString*) authorization
     identificadorExterno: (NSString*) identificadorExterno
     idTransacaoOriginal: (NSNumber*) idTransacaoOriginal
     completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler;
@@ -76,13 +76,11 @@
 ///
 /// @param _id {{{conta_resource_alterar_produto_param_id}}}
 /// @param request request
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSString*
 -(NSNumber*) alterarProdutoUsingPOSTWithId: (NSNumber*) _id
     request: (PierAlterarProdutoRequest*) request
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
@@ -93,13 +91,11 @@
 ///
 /// @param _id {{{conta_resource_alterar_titular_param_id_conta}}}
 /// @param idPessoa {{{conta_resource_alterar_titular_param_id_pessoa}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierContaResponse*
 -(NSNumber*) alterarTitularUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
@@ -110,13 +106,11 @@
 ///
 /// @param _id {{{conta_resource_alterar_vencimento_param_id}}}
 /// @param novoDiaVencimento {{{conta_resource_alterar_vencimento_param_novo_dia_vencimento}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierContaResponse*
 -(NSNumber*) alterarVencimentoUsingPUTWithId: (NSNumber*) _id
     novoDiaVencimento: (NSNumber*) novoDiaVencimento
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
@@ -127,7 +121,6 @@
 ///
 /// @param _id {{{conta_resource_ativar_anuidade_param_id}}}
 /// @param idAnuidade {{{anuidade_request_id_anuidade_value}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -140,7 +133,6 @@
 /// @return NSObject*
 -(NSNumber*) ativarAnuidadeUsingPOSTWithId: (NSNumber*) _id
     idAnuidade: (NSNumber*) idAnuidade
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -157,12 +149,10 @@
 /// {{{conta_resource_ativar_envio_fatura_email_notes}}}
 ///
 /// @param _id {{{conta_resource_ativar_envio_fatura_email_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) ativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
@@ -173,13 +163,11 @@
 ///
 /// @param _id {{{conta_resource_bloquear_param_id}}}
 /// @param idStatus {{{conta_resource_bloquear_param_id_status}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierContaResponse*
 -(NSNumber*) bloquearUsingPOST1WithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
@@ -203,13 +191,11 @@
 ///
 /// @param _id {{{conta_resource_cancelar_param_id}}}
 /// @param idStatus {{{conta_resource_cancelar_param_id_status}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierContaResponse*
 -(NSNumber*) cancelarUsingPOST1WithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
@@ -219,12 +205,10 @@
 /// {{{conta_resource_consultar_beneficio_pagamento_atraso_notes}}}
 ///
 /// @param _id {{{conta_resource_consultar_beneficio_pagamento_atraso_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierBeneficioPagamentoAtrasoResponse*
 -(NSNumber*) consultarBeneficioPagamentoAtrasoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierBeneficioPagamentoAtrasoResponse* output, NSError* error)) handler;
 
 
@@ -234,12 +218,10 @@
 /// {{{conta_resource_consultar_boleto_emitido_notes}}}
 ///
 /// @param _id {{{conta_resource_consultar_boleto_emitido_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierBoletoResponse*
 -(NSNumber*) consultarBoletoEmitidoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler;
 
 
@@ -249,7 +231,6 @@
 /// {{{conta_resource_consultar_divida_atualizada_cliente_notes}}}
 ///
 /// @param _id {{{conta_resource_consultar_divida_atualizada_cliente_param_id}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -259,7 +240,6 @@
 ///
 /// @return PierDividaClienteResponse*
 -(NSNumber*) consultarDividaAtualizadaClienteUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -274,7 +254,6 @@
 /// {{{conta_resource_consultar_taxas_tarifas_notes}}}
 ///
 /// @param _id {{{conta_resource_consultar_taxas_tarifas_param_id_conta}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -282,7 +261,6 @@
 ///
 /// @return PierPageTaxasRefinanciamentoResponse*
 -(NSNumber*) consultarTaxasTarifasUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -310,12 +288,10 @@
 /// {{{conta_resource_consultar_notes}}}
 ///
 /// @param _id {{{conta_resource_consultar_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierContaDetalheResponse*
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -329,9 +305,22 @@
 /// 
 ///
 /// @return PierTransferenciaDetalheResponse*
--(NSNumber*) consultarUsingGET49WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{conta_resource_cadastrar_conta_multiapp}}}
+/// {{{conta_resource_cadastrar_conta_multiapp_notes}}}
+///
+/// @param contaMultiAppPersist contaMultiAppPersist
+/// 
+///
+/// @return PierContaMultiAppResponse*
+-(NSNumber*) criarContasMultiAppUsingPOSTWithContaMultiAppPersist: (PierContaMultiAppPersistValue_*) contaMultiAppPersist
+    completionHandler: (void (^)(PierContaMultiAppResponse* output, NSError* error)) handler;
 
 
 ///
@@ -340,12 +329,10 @@
 /// {{{conta_resource_desativar_envio_fatura_email_notes}}}
 ///
 /// @param _id {{{conta_resource_desativar_envio_fatura_email_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) desativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
@@ -357,14 +344,12 @@
 /// @param _id {{{conta_resource_gerar_boleto_recarga_param_id}}}
 /// @param valor {{{boleto_recarga_request_valor_value}}}
 /// @param dataVencimento {{{boleto_recarga_request_data_vencimento_value}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierBoletoResponse*
 -(NSNumber*) gerarBoletoRecargaUsingPOSTWithId: (NSNumber*) _id
     valor: (NSNumber*) valor
     dataVencimento: (NSString*) dataVencimento
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler;
 
 
@@ -375,13 +360,11 @@
 ///
 /// @param _id {{{conta_resource_gerar_cartao_embossing_param_id}}}
 /// @param cartaoEmbossingRequest cartaoEmbossingRequest
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoEmbossingResponse*
 -(NSNumber*) gerarCartaoEmbossingUsingPOSTWithId: (NSNumber*) _id
     cartaoEmbossingRequest: (PierCartaoEmbossingRequest*) cartaoEmbossingRequest
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoEmbossingResponse* output, NSError* error)) handler;
 
 
@@ -391,12 +374,10 @@
 /// {{{conta_resource_gerar_cartao_provisorio_notes}}}
 ///
 /// @param _id {{{conta_resource_gerar_cartao_provisorio_param_id_conta}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoImpressaoProvisorioResponse*
 -(NSNumber*) gerarCartaoProvisorioUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoImpressaoProvisorioResponse* output, NSError* error)) handler;
 
 
@@ -407,14 +388,12 @@
 ///
 /// @param _id {{{conta_resource_gerar_cartao_param_id}}}
 /// @param idPessoa {{{conta_resource_gerar_cartao_param_id_pessoa}}}
-/// @param authorization Authorization
 /// @param idTipoPlastico {{{conta_resource_gerar_cartao_param_id_tipo_plastico}}}
 /// 
 ///
 /// @return PierCartaoImpressaoResponse*
 -(NSNumber*) gerarCartaoUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    authorization: (NSString*) authorization
     idTipoPlastico: (NSNumber*) idTipoPlastico
     completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler;
 
@@ -426,13 +405,11 @@
 ///
 /// @param _id {{{conta_resource_gerar_cartao_virtual_param_id}}}
 /// @param dataValidade {{{conta_resource_gerar_cartao_virtual_param_data_validade}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierCartaoImpressaoResponse*
 -(NSNumber*) gerarCartaoVirtualUsingPOSTWithId: (NSNumber*) _id
     dataValidade: (NSString*) dataValidade
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler;
 
 
@@ -442,7 +419,6 @@
 /// {{{conta_resource_listar_historico_alteracoes_limites_notes}}}
 ///
 /// @param _id {{{conta_resource_listar_historico_alteracoes_limites_param_id}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -450,7 +426,6 @@
 ///
 /// @return PierPageHistoricoEventosResponse*
 -(NSNumber*) listarHistoricoAlteracoesLimitesUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -463,7 +438,6 @@
 /// {{{conta_resource_listar_historico_assessoria_notes}}}
 ///
 /// @param _id {{{conta_resource_listar_historico_assessoria_param_id}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -471,7 +445,6 @@
 ///
 /// @return PierPageHistoricoAssessoriaResponse*
 -(NSNumber*) listarHistoricoAssessoriaUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -484,7 +457,6 @@
 /// {{{conta_resource_listar_historico_atrasos_faturas_notes}}}
 ///
 /// @param _id {{{conta_resource_listar_historico_atrasos_faturas_param_id}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -492,7 +464,6 @@
 ///
 /// @return PierPageHistoricoAtrasoFaturaResponse*
 -(NSNumber*) listarHistoricoAtrasosFaturasUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -556,7 +527,6 @@
 /// {{{conta_resource_listar}}}
 /// {{{conta_resource_listar_notes}}}
 ///
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -572,8 +542,7 @@
 /// 
 ///
 /// @return PierPageContaResponse*
--(NSNumber*) listarUsingGET18WithAuthorization: (NSString*) authorization
-    sort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
@@ -604,7 +573,7 @@
 /// 
 ///
 /// @return PierPageTransacaoProcessadaNaoProcessadaResponse*
--(NSNumber*) listarUsingGET58WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET61WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -632,7 +601,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaResponse*
--(NSNumber*) listarUsingGET60WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET63WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -650,12 +619,10 @@
 /// {{{conta_resource_reativar_notes}}}
 ///
 /// @param _id {{{conta_resource_reativar_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) reativarUsingPOST1WithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
@@ -665,12 +632,10 @@
 /// {{{conta_resource_salvar_notes}}}
 ///
 /// @param contaPersist contaPersist
-/// @param authorization Authorization
 /// 
 ///
 /// @return PierContaResponse*
--(NSNumber*) salvarUsingPOST8WithContaPersist: (PierContaPersistValue_*) contaPersist
-    authorization: (NSString*) authorization
+-(NSNumber*) salvarUsingPOST9WithContaPersist: (PierContaPersistValue_*) contaPersist
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler;
 
 
@@ -695,7 +660,6 @@
 /// {{{conta_resource_transacoes_notes}}}
 ///
 /// @param _id {{{conta_resource_transacoes_param_id}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -703,7 +667,6 @@
 ///
 /// @return PierPageTransacaoResponse*
 -(NSNumber*) transacoesUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit

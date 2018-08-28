@@ -73,7 +73,7 @@ static PierGlobaltaggrupochagebackApi* singletonAPI = nil;
 ///
 /// {{{codigo_chargeback_resource_listar}}}
 /// {{{codigo_chargeback_resource_listar_notes}}}
-///  @param _id id 
+///  @param grupoChargebackId grupoChargebackId 
 ///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
@@ -81,31 +81,34 @@ static PierGlobaltaggrupochagebackApi* singletonAPI = nil;
 ///
 ///  @param limit {{{global_menssagem_sort_limit}}} (optional)
 ///
+///  @param _id  (optional)
+///
+///  @param descricao  (optional)
+///
 ///  @param flagAtm  (optional)
 ///
-///  @param idBandeira  (optional)
-///
-///  @param groupId  (optional)
+///  @param grupoChargebackId2  (optional)
 ///
 ///  @returns PierPageCodigoChargebackResponse*
 ///
--(NSNumber*) listarCodigosUsingGETWithId: (NSNumber*) _id
+-(NSNumber*) listarCodigosUsingGETWithGrupoChargebackId: (NSNumber*) grupoChargebackId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    _id: (NSNumber*) _id
+    descricao: (NSString*) descricao
     flagAtm: (NSNumber*) flagAtm
-    idBandeira: (NSNumber*) idBandeira
-    groupId: (NSNumber*) groupId
+    grupoChargebackId2: (NSNumber*) grupoChargebackId2
     completionHandler: (void (^)(PierPageCodigoChargebackResponse* output, NSError* error)) handler {
 
     
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarCodigosUsingGET`"];
+    // verify the required parameter 'grupoChargebackId' is set
+    if (grupoChargebackId == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `grupoChargebackId` when calling `listarCodigosUsingGET`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/grupos-chargeback/{id}/codigos"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/grupos-chargeback/{grupoChargebackId}/codigos"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -113,8 +116,8 @@ static PierGlobaltaggrupochagebackApi* singletonAPI = nil;
     }
 
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
+    if (grupoChargebackId != nil) {
+        pathParams[@"grupoChargebackId"] = grupoChargebackId;
     }
     
 
@@ -133,17 +136,21 @@ static PierGlobaltaggrupochagebackApi* singletonAPI = nil;
         
         queryParams[@"limit"] = limit;
     }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (descricao != nil) {
+        
+        queryParams[@"descricao"] = descricao;
+    }
     if (flagAtm != nil) {
         
         queryParams[@"flagAtm"] = flagAtm;
     }
-    if (idBandeira != nil) {
+    if (grupoChargebackId2 != nil) {
         
-        queryParams[@"idBandeira"] = idBandeira;
-    }
-    if (groupId != nil) {
-        
-        queryParams[@"groupId"] = groupId;
+        queryParams[@"grupoChargebackId"] = grupoChargebackId2;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -208,7 +215,7 @@ static PierGlobaltaggrupochagebackApi* singletonAPI = nil;
 ///
 ///  @returns PierPageGrupoChargebackResponse*
 ///
--(NSNumber*) listarUsingGET27WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET28WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     completionHandler: (void (^)(PierPageGrupoChargebackResponse* output, NSError* error)) handler {

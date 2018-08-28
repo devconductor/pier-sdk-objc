@@ -51,7 +51,7 @@
 /// 
 ///
 /// @return PierPageInscricaoAPNResponse*
--(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
     idCartoes: (NSArray* /* NSNumber */) idCartoes
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -72,7 +72,7 @@
 /// 
 ///
 /// @return NSArray<PierInscricaoAPNResponse>*
--(NSNumber*) salvarUsingPOST14WithInscricaoPersist: (PierInscricaoApnPersistencia_*) inscricaoPersist
+-(NSNumber*) salvarUsingPOST15WithInscricaoPersist: (PierInscricaoApnPersistencia_*) inscricaoPersist
     completionHandler: (void (^)(NSArray<PierInscricaoAPNResponse>* output, NSError* error)) handler;
 
 

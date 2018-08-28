@@ -17,6 +17,9 @@
 /* {{{compra_contestada_cartao_response_id_cartao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* idCartao;
+/* {{{compra_contestada_cartao_response_aging_compras_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* agingCompras;
 /* {{{compra_contestada_cartao_response_aging_contestacao_value}}} [optional]
  */
 @property(nonatomic) NSNumber* agingContestacao;
@@ -29,5 +32,8 @@
 /* {{{compra_contestada_cartao_response_bandeira_value}}} [optional]
  */
 @property(nonatomic) NSString* bandeira;
+/* {{{compra_contestada_cartao_response_valor_compra_value}}} [optional]
+ */
+@property(nonatomic) NSString* valorCompra;
 
 @end

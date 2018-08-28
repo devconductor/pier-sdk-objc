@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PierLimiteDisponibilidadeResponse.h"
+#import "PierSensibilizarSaldoGlobalUpdateValue_.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
 
@@ -67,7 +68,22 @@
 /// 
 ///
 /// @return PierLimiteDisponibilidadeResponse*
--(NSNumber*) consultarUsingGET23WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET25WithIdConta: (NSNumber*) idConta
+    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{limite_disponibilidade_resource_sensibilizar_credito_disponivel}}}
+/// {{{limite_disponibilidade_resource_sensibilizar_credito_disponivel_notes}}}
+///
+/// @param _id {{{sensibilizar_saldo_global_param_id}}}
+/// @param sensibilizarSaldoGlobal sensibilizarSaldoGlobal
+/// 
+///
+/// @return PierLimiteDisponibilidadeResponse*
+-(NSNumber*) sensibilizarSaldoDisponivelGlobalUsingPOSTWithId: (NSNumber*) _id
+    sensibilizarSaldoGlobal: (PierSensibilizarSaldoGlobalUpdateValue_*) sensibilizarSaldoGlobal
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler;
 
 

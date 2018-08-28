@@ -10,6 +10,8 @@
 #import "PierPageTaxasRefinanciamentoResponse.h"
 #import "PierContaDetalheResponse.h"
 #import "PierTransferenciaDetalheResponse.h"
+#import "PierContaMultiAppPersistValue_.h"
+#import "PierContaMultiAppResponse.h"
 #import "PierCartaoEmbossingResponse.h"
 #import "PierCartaoEmbossingRequest.h"
 #import "PierCartaoImpressaoProvisorioResponse.h"
@@ -105,8 +107,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param valorAjuste {{{ajuste_persist_valor_ajuste_value}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param identificadorExterno {{{ajuste_persist_identificador_externo_value}}} (optional)
 ///
 ///  @param idTransacaoOriginal {{{ajuste_persist_id_transacao_original}}} (optional)
@@ -117,7 +117,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     idTipoAjuste: (NSNumber*) idTipoAjuste
     dataAjuste: (NSString*) dataAjuste
     valorAjuste: (NSNumber*) valorAjuste
-    authorization: (NSString*) authorization
     identificadorExterno: (NSString*) identificadorExterno
     idTransacaoOriginal: (NSNumber*) idTransacaoOriginal
     completionHandler: (void (^)(PierAjusteFinanceiroResponse* output, NSError* error)) handler {
@@ -181,9 +180,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -240,13 +236,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param request request 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSString*
 ///
 -(NSNumber*) alterarProdutoUsingPOSTWithId: (NSNumber*) _id
     request: (PierAlterarProdutoRequest*) request
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSString* output, NSError* error)) handler {
 
     
@@ -278,9 +271,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -337,13 +327,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param idPessoa {{{conta_resource_alterar_titular_param_id_pessoa}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierContaResponse*
 ///
 -(NSNumber*) alterarTitularUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler {
 
     
@@ -379,9 +366,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -438,13 +422,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param novoDiaVencimento {{{conta_resource_alterar_vencimento_param_novo_dia_vencimento}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierContaResponse*
 ///
 -(NSNumber*) alterarVencimentoUsingPUTWithId: (NSNumber*) _id
     novoDiaVencimento: (NSNumber*) novoDiaVencimento
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler {
 
     
@@ -480,9 +461,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -539,8 +517,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param idAnuidade {{{anuidade_request_id_anuidade_value}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -559,7 +535,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 -(NSNumber*) ativarAnuidadeUsingPOSTWithId: (NSNumber*) _id
     idAnuidade: (NSNumber*) idAnuidade
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -632,9 +607,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -689,12 +661,9 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_ativar_envio_fatura_email_notes}}}
 ///  @param _id {{{conta_resource_ativar_envio_fatura_email_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSObject*
 ///
 -(NSNumber*) ativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
@@ -721,9 +690,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -780,13 +746,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param idStatus {{{conta_resource_bloquear_param_id_status}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierContaResponse*
 ///
 -(NSNumber*) bloquearUsingPOST1WithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler {
 
     
@@ -822,9 +785,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -965,13 +925,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param idStatus {{{conta_resource_cancelar_param_id_status}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierContaResponse*
 ///
 -(NSNumber*) cancelarUsingPOST1WithId: (NSNumber*) _id
     idStatus: (NSNumber*) idStatus
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler {
 
     
@@ -1007,9 +964,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1064,12 +1018,9 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_consultar_beneficio_pagamento_atraso_notes}}}
 ///  @param _id {{{conta_resource_consultar_beneficio_pagamento_atraso_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierBeneficioPagamentoAtrasoResponse*
 ///
 -(NSNumber*) consultarBeneficioPagamentoAtrasoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierBeneficioPagamentoAtrasoResponse* output, NSError* error)) handler {
 
     
@@ -1096,9 +1047,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1153,12 +1101,9 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_consultar_boleto_emitido_notes}}}
 ///  @param _id {{{conta_resource_consultar_boleto_emitido_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierBoletoResponse*
 ///
 -(NSNumber*) consultarBoletoEmitidoUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler {
 
     
@@ -1185,9 +1130,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1242,8 +1184,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_consultar_divida_atualizada_cliente_notes}}}
 ///  @param _id {{{conta_resource_consultar_divida_atualizada_cliente_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -1257,7 +1197,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///  @returns PierDividaClienteResponse*
 ///
 -(NSNumber*) consultarDividaAtualizadaClienteUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -1311,9 +1250,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1368,8 +1304,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_consultar_taxas_tarifas_notes}}}
 ///  @param _id {{{conta_resource_consultar_taxas_tarifas_param_id_conta}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -1379,7 +1313,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///  @returns PierPageTaxasRefinanciamentoResponse*
 ///
 -(NSNumber*) consultarTaxasTarifasUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -1423,9 +1356,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1576,18 +1506,15 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_consultar_notes}}}
 ///  @param _id {{{conta_resource_consultar_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierContaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET14WithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
+-(NSNumber*) consultarUsingGET16WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET16`"];
     }
     
 
@@ -1608,9 +1535,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1669,19 +1593,19 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @returns PierTransferenciaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET49WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     completionHandler: (void (^)(PierTransferenciaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET49`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET51`"];
     }
     
     // verify the required parameter 'idTransferencia' is set
     if (idTransferencia == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET49`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idTransferencia` when calling `consultarUsingGET51`"];
     }
     
 
@@ -1755,16 +1679,93 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 }
 
 ///
+/// {{{conta_resource_cadastrar_conta_multiapp}}}
+/// {{{conta_resource_cadastrar_conta_multiapp_notes}}}
+///  @param contaMultiAppPersist contaMultiAppPersist 
+///
+///  @returns PierContaMultiAppResponse*
+///
+-(NSNumber*) criarContasMultiAppUsingPOSTWithContaMultiAppPersist: (PierContaMultiAppPersistValue_*) contaMultiAppPersist
+    completionHandler: (void (^)(PierContaMultiAppResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'contaMultiAppPersist' is set
+    if (contaMultiAppPersist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `contaMultiAppPersist` when calling `criarContasMultiAppUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/cadastrar-conta-multiapp"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = contaMultiAppPersist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierContaMultiAppResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierContaMultiAppResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{conta_resource_desativar_envio_fatura_email}}}
 /// {{{conta_resource_desativar_envio_fatura_email_notes}}}
 ///  @param _id {{{conta_resource_desativar_envio_fatura_email_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSObject*
 ///
 -(NSNumber*) desativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
@@ -1791,9 +1792,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1852,14 +1850,11 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param dataVencimento {{{boleto_recarga_request_data_vencimento_value}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierBoletoResponse*
 ///
 -(NSNumber*) gerarBoletoRecargaUsingPOSTWithId: (NSNumber*) _id
     valor: (NSNumber*) valor
     dataVencimento: (NSString*) dataVencimento
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler {
 
     
@@ -1904,9 +1899,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -1963,13 +1955,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param cartaoEmbossingRequest cartaoEmbossingRequest 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoEmbossingResponse*
 ///
 -(NSNumber*) gerarCartaoEmbossingUsingPOSTWithId: (NSNumber*) _id
     cartaoEmbossingRequest: (PierCartaoEmbossingRequest*) cartaoEmbossingRequest
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoEmbossingResponse* output, NSError* error)) handler {
 
     
@@ -2001,9 +1990,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2058,12 +2044,9 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_gerar_cartao_provisorio_notes}}}
 ///  @param _id {{{conta_resource_gerar_cartao_provisorio_param_id_conta}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoImpressaoProvisorioResponse*
 ///
 -(NSNumber*) gerarCartaoProvisorioUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoImpressaoProvisorioResponse* output, NSError* error)) handler {
 
     
@@ -2090,9 +2073,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2149,15 +2129,12 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param idPessoa {{{conta_resource_gerar_cartao_param_id_pessoa}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param idTipoPlastico {{{conta_resource_gerar_cartao_param_id_tipo_plastico}}} (optional)
 ///
 ///  @returns PierCartaoImpressaoResponse*
 ///
 -(NSNumber*) gerarCartaoUsingPOSTWithId: (NSNumber*) _id
     idPessoa: (NSNumber*) idPessoa
-    authorization: (NSString*) authorization
     idTipoPlastico: (NSNumber*) idTipoPlastico
     completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler {
 
@@ -2197,9 +2174,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2256,13 +2230,10 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @param dataValidade {{{conta_resource_gerar_cartao_virtual_param_data_validade}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierCartaoImpressaoResponse*
 ///
 -(NSNumber*) gerarCartaoVirtualUsingPOSTWithId: (NSNumber*) _id
     dataValidade: (NSString*) dataValidade
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(PierCartaoImpressaoResponse* output, NSError* error)) handler {
 
     
@@ -2298,9 +2269,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2355,8 +2323,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_listar_historico_alteracoes_limites_notes}}}
 ///  @param _id {{{conta_resource_listar_historico_alteracoes_limites_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -2366,7 +2332,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///  @returns PierPageHistoricoEventosResponse*
 ///
 -(NSNumber*) listarHistoricoAlteracoesLimitesUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -2410,9 +2375,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2467,8 +2429,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_listar_historico_assessoria_notes}}}
 ///  @param _id {{{conta_resource_listar_historico_assessoria_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -2478,7 +2438,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///  @returns PierPageHistoricoAssessoriaResponse*
 ///
 -(NSNumber*) listarHistoricoAssessoriaUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -2522,9 +2481,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2579,8 +2535,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_listar_historico_atrasos_faturas_notes}}}
 ///  @param _id {{{conta_resource_listar_historico_atrasos_faturas_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -2590,7 +2544,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///  @returns PierPageHistoricoAtrasoFaturaResponse*
 ///
 -(NSNumber*) listarHistoricoAtrasosFaturasUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -2634,9 +2587,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -2950,8 +2900,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 /// {{{conta_resource_listar}}}
 /// {{{conta_resource_listar_notes}}}
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -2978,8 +2926,7 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageContaResponse*
 ///
--(NSNumber*) listarUsingGET18WithAuthorization: (NSString*) authorization
-    sort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET19WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idProduto: (NSNumber*) idProduto
@@ -3059,9 +3006,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -3132,7 +3076,7 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransacaoProcessadaNaoProcessadaResponse*
 ///
--(NSNumber*) listarUsingGET58WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET61WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -3145,7 +3089,7 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET58`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET61`"];
     }
     
 
@@ -3268,7 +3212,7 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTransferenciaResponse*
 ///
--(NSNumber*) listarUsingGET60WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET63WithId: (NSNumber*) _id
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -3282,7 +3226,7 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET60`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `listarUsingGET63`"];
     }
     
 
@@ -3391,12 +3335,9 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_reativar_notes}}}
 ///  @param _id {{{conta_resource_reativar_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSObject*
 ///
 -(NSNumber*) reativarUsingPOST1WithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
@@ -3423,9 +3364,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -3480,18 +3418,15 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_salvar_notes}}}
 ///  @param contaPersist contaPersist 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns PierContaResponse*
 ///
--(NSNumber*) salvarUsingPOST8WithContaPersist: (PierContaPersistValue_*) contaPersist
-    authorization: (NSString*) authorization
+-(NSNumber*) salvarUsingPOST9WithContaPersist: (PierContaPersistValue_*) contaPersist
     completionHandler: (void (^)(PierContaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'contaPersist' is set
     if (contaPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `contaPersist` when calling `salvarUsingPOST8`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `contaPersist` when calling `salvarUsingPOST9`"];
     }
     
 
@@ -3509,9 +3444,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -3657,8 +3589,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 /// {{{conta_resource_transacoes_notes}}}
 ///  @param _id {{{conta_resource_transacoes_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -3668,7 +3598,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
 ///  @returns PierPageTransacaoResponse*
 ///
 -(NSNumber*) transacoesUsingGETWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -3712,9 +3641,6 @@ static PierGlobaltagcontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`

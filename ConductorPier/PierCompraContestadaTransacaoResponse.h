@@ -39,6 +39,8 @@
 
 @property(nonatomic) NSDate* dataTransacao;
 
+@property(nonatomic) NSString* historico;
+
 @property(nonatomic) NSNumber* idCompraContestada;
 
 @property(nonatomic) NSNumber* internacional;

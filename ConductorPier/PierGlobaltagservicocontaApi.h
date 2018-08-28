@@ -27,7 +27,6 @@
 ///
 /// @param _id {{{conta_resource_ativar_anuidade_param_id}}}
 /// @param idAnuidade {{{anuidade_request_id_anuidade_value}}}
-/// @param authorization Authorization
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
@@ -40,7 +39,6 @@
 /// @return NSObject*
 -(NSNumber*) ativarAnuidadeUsingPOSTWithId: (NSNumber*) _id
     idAnuidade: (NSNumber*) idAnuidade
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -57,12 +55,10 @@
 /// {{{conta_resource_ativar_envio_fatura_email_notes}}}
 ///
 /// @param _id {{{conta_resource_ativar_envio_fatura_email_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) ativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
@@ -72,12 +68,10 @@
 /// {{{conta_resource_desativar_envio_fatura_email_notes}}}
 ///
 /// @param _id {{{conta_resource_desativar_envio_fatura_email_param_id}}}
-/// @param authorization Authorization
 /// 
 ///
 /// @return NSObject*
 -(NSNumber*) desativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 

@@ -6,8 +6,8 @@
 #import "PierPageUsuarioContasResponse.h"
 #import "PierPageControleSegurancaDispositivoResponse.h"
 #import "PierPageUsuarioResponse.h"
-#import "PierUsuarioPersistencia_.h"
 #import "PierControleSegurancaDispositivoPersistencia_.h"
+#import "PierUsuarioPersistencia_.h"
 #import "PierUsuarioSenhaFortePersistencia_.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -97,7 +97,7 @@
 /// 
 ///
 /// @return PierControleSegurancaDispositivoResponse*
--(NSNumber*) atualizarUsingPUT2WithUpdate: (PierControleSegurancaDispositivoUpdateValor_*) update
+-(NSNumber*) atualizarUsingPUT3WithUpdate: (PierControleSegurancaDispositivoUpdateValor_*) update
     completionHandler: (void (^)(PierControleSegurancaDispositivoResponse* output, NSError* error)) handler;
 
 
@@ -132,7 +132,7 @@
 /// 
 ///
 /// @return PierPageControleSegurancaDispositivoResponse*
--(NSNumber*) consultarUsingGET15WithIdUsuario: (NSNumber*) idUsuario
+-(NSNumber*) consultarUsingGET17WithIdUsuario: (NSNumber*) idUsuario
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -148,7 +148,7 @@
 /// 
 ///
 /// @return PierUsuarioResponse*
--(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET53WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
@@ -180,7 +180,7 @@
 /// 
 ///
 /// @return PierPageUsuarioResponse*
--(NSNumber*) listarUsingGET62WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET65WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -205,19 +205,6 @@
 
 ///
 ///
-/// {{{usuario_resource_salvar}}}
-/// {{{usuario_resource_salvar_notes}}}
-///
-/// @param persist persist
-/// 
-///
-/// @return PierUsuarioResponse*
--(NSNumber*) salvarUsingPOST33WithPersist: (PierUsuarioPersistencia_*) persist
-    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
-
-
-///
-///
 /// {{{controle_seguranca_dispositivo_salvar}}}
 /// {{{controle_seguranca_dispositivo_salvar_notas}}}
 ///
@@ -225,8 +212,21 @@
 /// 
 ///
 /// @return PierControleSegurancaDispositivoResponse*
--(NSNumber*) salvarUsingPOST9WithPersist: (PierControleSegurancaDispositivoPersistencia_*) persist
+-(NSNumber*) salvarUsingPOST10WithPersist: (PierControleSegurancaDispositivoPersistencia_*) persist
     completionHandler: (void (^)(PierControleSegurancaDispositivoResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{usuario_resource_salvar}}}
+/// {{{usuario_resource_salvar_notes}}}
+///
+/// @param persist persist
+/// 
+///
+/// @return PierUsuarioResponse*
+-(NSNumber*) salvarUsingPOST34WithPersist: (PierUsuarioPersistencia_*) persist
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler;
 
 
 ///

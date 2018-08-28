@@ -76,13 +76,13 @@ static PierGlobaltagparametroemissorApi* singletonAPI = nil;
 ///
 ///  @returns PierParametroEmissorResponse*
 ///
--(NSNumber*) consultarUsingGET27WithCodigo: (NSString*) codigo
+-(NSNumber*) consultarUsingGET29WithCodigo: (NSString*) codigo
     completionHandler: (void (^)(PierParametroEmissorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'codigo' is set
     if (codigo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigo` when calling `consultarUsingGET27`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `codigo` when calling `consultarUsingGET29`"];
     }
     
 

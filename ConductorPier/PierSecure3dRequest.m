@@ -1,6 +1,6 @@
-#import "PierUsuarioldapUpdateObjectDescription_.h"
+#import "PierSecure3dRequest.h"
 
-@implementation PierUsuarioldapUpdateObjectDescription_
+@implementation PierSecure3dRequest
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"nome": @"nome", @"login": @"login", @"cpf": @"cpf", @"email": @"email", @"perfis": @"perfis", @"status": @"status" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idCartao": @"idCartao", @"otp": @"otp" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"nome", @"login", @"cpf", @"email", @"perfis", @"status"];
+  NSArray *optionalProperties = @[@"idCartao", @"otp"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

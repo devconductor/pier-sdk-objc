@@ -17,13 +17,13 @@
 /* {{{usuario_update_nome_value}}} [optional]
  */
 @property(nonatomic) NSString* nome;
-/* {{{usuario_update_login_value}}} [optional]
+/* {{{usuario_update_login_value}}} 
  */
 @property(nonatomic) NSString* login;
 /* {{{usuario_update_cpf_value}}} [optional]
  */
 @property(nonatomic) NSString* cpf;
-/* {{{usuario_update_email_value}}} [optional]
+/* {{{usuario_update_email_value}}} 
  */
 @property(nonatomic) NSString* email;
 /* {{{usuario_update_status_value}}} [optional]

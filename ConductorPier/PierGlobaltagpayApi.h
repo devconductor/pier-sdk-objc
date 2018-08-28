@@ -53,7 +53,7 @@
 /// 
 ///
 /// @return PierCartaoPayResponse*
--(NSNumber*) atualizarUsingPUTWithDeviceId: (NSString*) deviceId
+-(NSNumber*) atualizarUsingPUT1WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     update: (PierCartaoPayUpdate*) update
     completionHandler: (void (^)(PierCartaoPayResponse* output, NSError* error)) handler;
@@ -86,7 +86,7 @@
 /// 
 ///
 /// @return PierCartaoPayDetalheResponse*
--(NSNumber*) consultarUsingGET9WithDeviceId: (NSString*) deviceId
+-(NSNumber*) consultarUsingGET11WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoPayDetalheResponse* output, NSError* error)) handler;
 
@@ -165,7 +165,7 @@
 /// 
 ///
 /// @return PierPageCartaoPayResponse*
--(NSNumber*) listarUsingGET10WithDeviceId: (NSString*) deviceId
+-(NSNumber*) listarUsingGET11WithDeviceId: (NSString*) deviceId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -184,7 +184,7 @@
 /// 
 ///
 /// @return PierCartaoPayCadastroResponse*
--(NSNumber*) salvarUsingPOST5WithDeviceId: (NSString*) deviceId
+-(NSNumber*) salvarUsingPOST6WithDeviceId: (NSString*) deviceId
     persist: (PierCartaoPayPersist*) persist
     completionHandler: (void (^)(PierCartaoPayCadastroResponse* output, NSError* error)) handler;
 

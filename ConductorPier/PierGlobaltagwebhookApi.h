@@ -47,7 +47,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) consultarUsingGET53WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET55WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 
@@ -66,7 +66,7 @@
 /// 
 ///
 /// @return PierPageWebHookResponse*
--(NSNumber*) listarUsingGET66WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET69WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -85,7 +85,7 @@
 /// 
 ///
 /// @return PierWebHookResponse*
--(NSNumber*) salvarUsingPOST35WithWebhook: (PierWebHookPersistValue_*) webhook
+-(NSNumber*) salvarUsingPOST36WithWebhook: (PierWebHookPersistValue_*) webhook
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler;
 
 

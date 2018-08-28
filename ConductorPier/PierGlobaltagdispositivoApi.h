@@ -63,7 +63,7 @@
 /// 
 ///
 /// @return PierPageDispositivoResponse*
--(NSNumber*) listarUsingGET20WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET21WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     token: (NSString*) token
@@ -83,7 +83,7 @@
 /// 
 ///
 /// @return PierDispositivoResponse*
--(NSNumber*) salvarUsingPOST10WithPersist: (PierDispositivoPersistValue_*) persist
+-(NSNumber*) salvarUsingPOST11WithPersist: (PierDispositivoPersistValue_*) persist
     completionHandler: (void (^)(PierDispositivoResponse* output, NSError* error)) handler;
 
 

@@ -57,7 +57,7 @@
 /// 
 ///
 /// @return PierContaBancariaPortadorResponse*
--(NSNumber*) atualizarUsingPUT1WithId: (NSNumber*) _id
+-(NSNumber*) atualizarUsingPUT2WithId: (NSNumber*) _id
     update: (PierContaBancariaPortadorUpdateValue_*) update
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
@@ -125,7 +125,7 @@
 /// 
 ///
 /// @return PierContaBancariaPortadorResponse*
--(NSNumber*) consultarUsingGET13WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET15WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
 
@@ -140,7 +140,7 @@
 /// 
 ///
 /// @return PierTransferenciaBancariaResponse*
--(NSNumber*) consultarUsingGET48WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET50WithId: (NSNumber*) _id
     idTransferencia: (NSNumber*) idTransferencia
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     completionHandler: (void (^)(PierTransferenciaBancariaResponse* output, NSError* error)) handler;
@@ -192,7 +192,7 @@
 /// 
 ///
 /// @return PierPageContaBancariaPortadorResponse*
--(NSNumber*) listarUsingGET16WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET17WithIdConta: (NSNumber*) idConta
     nomeAgencia: (NSString*) nomeAgencia
     banco: (NSNumber*) banco
     numeroAgencia: (NSString*) numeroAgencia
@@ -221,7 +221,7 @@
 /// 
 ///
 /// @return PierPageTransferenciaBancariaResponse*
--(NSNumber*) listarUsingGET59WithId: (NSNumber*) _id
+-(NSNumber*) listarUsingGET62WithId: (NSNumber*) _id
     idContaBancariaDestino: (NSNumber*) idContaBancariaDestino
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -253,7 +253,7 @@
 /// 
 ///
 /// @return PierContaBancariaPortadorResponse*
--(NSNumber*) salvarUsingPOST7WithPersist: (PierContaBancariaPortadorPersistValue_*) persist
+-(NSNumber*) salvarUsingPOST8WithPersist: (PierContaBancariaPortadorPersistValue_*) persist
     completionHandler: (void (^)(PierContaBancariaPortadorResponse* output, NSError* error)) handler;
 
 

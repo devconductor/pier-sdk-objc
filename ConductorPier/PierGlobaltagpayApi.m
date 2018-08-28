@@ -182,7 +182,7 @@ static PierGlobaltagpayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayResponse*
 ///
--(NSNumber*) atualizarUsingPUTWithDeviceId: (NSString*) deviceId
+-(NSNumber*) atualizarUsingPUT1WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     update: (PierCartaoPayUpdate*) update
     completionHandler: (void (^)(PierCartaoPayResponse* output, NSError* error)) handler {
@@ -190,17 +190,17 @@ static PierGlobaltagpayApi* singletonAPI = nil;
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `atualizarUsingPUT1`"];
     }
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPUT1`"];
     }
     
     // verify the required parameter 'update' is set
     if (update == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `atualizarUsingPUT`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `atualizarUsingPUT1`"];
     }
     
 
@@ -384,19 +384,19 @@ static PierGlobaltagpayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET9WithDeviceId: (NSString*) deviceId
+-(NSNumber*) consultarUsingGET11WithDeviceId: (NSString*) deviceId
     _id: (NSNumber*) _id
     completionHandler: (void (^)(PierCartaoPayDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `consultarUsingGET11`"];
     }
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET11`"];
     }
     
 
@@ -851,7 +851,7 @@ static PierGlobaltagpayApi* singletonAPI = nil;
 ///
 ///  @returns PierPageCartaoPayResponse*
 ///
--(NSNumber*) listarUsingGET10WithDeviceId: (NSString*) deviceId
+-(NSNumber*) listarUsingGET11WithDeviceId: (NSString*) deviceId
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -958,19 +958,19 @@ static PierGlobaltagpayApi* singletonAPI = nil;
 ///
 ///  @returns PierCartaoPayCadastroResponse*
 ///
--(NSNumber*) salvarUsingPOST5WithDeviceId: (NSString*) deviceId
+-(NSNumber*) salvarUsingPOST6WithDeviceId: (NSString*) deviceId
     persist: (PierCartaoPayPersist*) persist
     completionHandler: (void (^)(PierCartaoPayCadastroResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'deviceId' is set
     if (deviceId == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `salvarUsingPOST5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `deviceId` when calling `salvarUsingPOST6`"];
     }
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST5`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST6`"];
     }
     
 

@@ -7,7 +7,7 @@
  * Do not edit the class manually.
  */
 
-#import "PierNotificacaoPushResponseValue_.h"
+#import "PierNotificacaoPushResponse.h"
 
 
 @protocol PierPagePushResponse
@@ -16,7 +16,7 @@
 @interface PierPagePushResponse : PierObject
 
 
-@property(nonatomic) NSArray<PierNotificacaoPushResponseValue_>* content;
+@property(nonatomic) NSArray<PierNotificacaoPushResponse>* content;
 
 @property(nonatomic) NSNumber* first;
 

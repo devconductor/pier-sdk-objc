@@ -1,6 +1,6 @@
-#import "PierNotificacaoPushResponseValue_.h"
+#import "PierUsuarioLdapUpdate.h"
 
-@implementation PierNotificacaoPushResponseValue_
+@implementation PierUsuarioLdapUpdate
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"dataEnvio": @"dataEnvio", @"idEmissor": @"idEmissor", @"tipoEvento": @"tipoEvento", @"status": @"status", @"idPessoa": @"idPessoa", @"idConta": @"idConta", @"tokenDispositivo": @"tokenDispositivo", @"titulo": @"titulo", @"conteudo": @"conteudo", @"plataforma": @"plataforma", @"protocolo": @"protocolo" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"cpf": @"cpf", @"email": @"email", @"idEmissor": @"idEmissor", @"login": @"login", @"nome": @"nome", @"perfis": @"perfis", @"status": @"status" }];
 }
 
 /**
@@ -30,7 +30,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"dataEnvio", @"idEmissor", @"tipoEvento", @"status", @"plataforma", @"protocolo"];
+  NSArray *optionalProperties = @[@"cpf", @"email", @"idEmissor", @"login", @"nome", @"perfis", @"status"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

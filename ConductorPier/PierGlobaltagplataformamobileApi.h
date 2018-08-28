@@ -49,7 +49,7 @@
 /// 
 ///
 /// @return PierPagePlataformaMobileResponse*
--(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET42WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -65,7 +65,7 @@
 /// 
 ///
 /// @return PierPlataformaMobileResponse*
--(NSNumber*) salvarUsingPOST26WithPersist: (PierPlataformaMobilePersistValue_*) persist
+-(NSNumber*) salvarUsingPOST27WithPersist: (PierPlataformaMobilePersistValue_*) persist
     completionHandler: (void (^)(PierPlataformaMobileResponse* output, NSError* error)) handler;
 
 

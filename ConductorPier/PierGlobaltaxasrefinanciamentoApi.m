@@ -1,15 +1,15 @@
-#import "PierGlobaltagstatuscontestacaoApi.h"
+#import "PierGlobaltaxasrefinanciamentoApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierPageStatusContestacaoResponse.h"
+#import "PierPageTaxasRefinanciamentoResponse.h"
 
 
-@interface PierGlobaltagstatuscontestacaoApi ()
+@interface PierGlobaltaxasrefinanciamentoApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierGlobaltagstatuscontestacaoApi
+@implementation PierGlobaltaxasrefinanciamentoApi
 
-static PierGlobaltagstatuscontestacaoApi* singletonAPI = nil;
+static PierGlobaltaxasrefinanciamentoApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -37,19 +37,19 @@ static PierGlobaltagstatuscontestacaoApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierGlobaltagstatuscontestacaoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierGlobaltaxasrefinanciamentoApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierGlobaltagstatuscontestacaoApi alloc] init];
+        singletonAPI = [[PierGlobaltaxasrefinanciamentoApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierGlobaltagstatuscontestacaoApi*) sharedAPI {
++(PierGlobaltaxasrefinanciamentoApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierGlobaltagstatuscontestacaoApi alloc] init];
+        singletonAPI = [[PierGlobaltaxasrefinanciamentoApi alloc] init];
     }
     return singletonAPI;
 }
@@ -70,42 +70,36 @@ static PierGlobaltagstatuscontestacaoApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// {{{status_contestacao_resource_listar_status_contestacao}}}
-/// {{{status_contestacao_resource_listar_status_contestacao_notes}}}
+/// {{{taxas_refinanciamento_listar}}}
+/// {{{taxas_refinanciamento_listar_notes}}}
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
 ///
 ///  @param limit {{{global_menssagem_sort_limit}}} (optional)
 ///
-///  @param idStatusContestacao {{{status_contestacao_request_idstatuscontestacao_value}}} (optional)
+///  @param _id {{{taxas_refinanciamento_request_id_value}}} (optional)
 ///
-///  @param idStatusContestacaoOrigem {{{status_contestacao_request_idstatuscontestacaoOrigem_value}}} (optional)
+///  @param idProduto {{{taxas_refinanciamento_request_id_produto_value}}} (optional)
 ///
-///  @param descricao {{{status_contestacao_request_descricao_value}}} (optional)
+///  @param dataEntrada {{{taxas_refinanciamento_request_data_entrada_value}}} (optional)
 ///
-///  @param flagPermiteAlteracao {{{status_contestacao_request_flagpermitealteracao_value}}} (optional)
+///  @param vencimento {{{taxas_refinanciamento_request_vencimento_value}}} (optional)
 ///
-///  @param flagSistema {{{status_contestacao_request_flagsistema_value}}} (optional)
+///  @returns PierPageTaxasRefinanciamentoResponse*
 ///
-///  @param flagAtivo {{{status_contestacao_request_flagativo_value}}} (optional)
-///
-///  @returns PierPageStatusContestacaoResponse*
-///
--(NSNumber*) listarStatusContestacaoUsingGETWithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET51WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    idStatusContestacao: (NSNumber*) idStatusContestacao
-    idStatusContestacaoOrigem: (NSNumber*) idStatusContestacaoOrigem
-    descricao: (NSString*) descricao
-    flagPermiteAlteracao: (NSNumber*) flagPermiteAlteracao
-    flagSistema: (NSNumber*) flagSistema
-    flagAtivo: (NSNumber*) flagAtivo
-    completionHandler: (void (^)(PierPageStatusContestacaoResponse* output, NSError* error)) handler {
+    _id: (NSNumber*) _id
+    idProduto: (NSNumber*) idProduto
+    dataEntrada: (NSString*) dataEntrada
+    vencimento: (NSString*) vencimento
+    completionHandler: (void (^)(PierPageTaxasRefinanciamentoResponse* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/status-contestacoes"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/taxas-refinanciamento"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -130,29 +124,21 @@ static PierGlobaltagstatuscontestacaoApi* singletonAPI = nil;
         
         queryParams[@"limit"] = limit;
     }
-    if (idStatusContestacao != nil) {
+    if (_id != nil) {
         
-        queryParams[@"idStatusContestacao"] = idStatusContestacao;
+        queryParams[@"id"] = _id;
     }
-    if (idStatusContestacaoOrigem != nil) {
+    if (idProduto != nil) {
         
-        queryParams[@"idStatusContestacaoOrigem"] = idStatusContestacaoOrigem;
+        queryParams[@"idProduto"] = idProduto;
     }
-    if (descricao != nil) {
+    if (dataEntrada != nil) {
         
-        queryParams[@"descricao"] = descricao;
+        queryParams[@"dataEntrada"] = dataEntrada;
     }
-    if (flagPermiteAlteracao != nil) {
+    if (vencimento != nil) {
         
-        queryParams[@"flagPermiteAlteracao"] = flagPermiteAlteracao;
-    }
-    if (flagSistema != nil) {
-        
-        queryParams[@"flagSistema"] = flagSistema;
-    }
-    if (flagAtivo != nil) {
-        
-        queryParams[@"flagAtivo"] = flagAtivo;
+        queryParams[@"vencimento"] = vencimento;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -199,9 +185,9 @@ static PierGlobaltagstatuscontestacaoApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageStatusContestacaoResponse*"
+                              responseType: @"PierPageTaxasRefinanciamentoResponse*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageStatusContestacaoResponse*)data, error);
+                               handler((PierPageTaxasRefinanciamentoResponse*)data, error);
                            }
           ];
 }

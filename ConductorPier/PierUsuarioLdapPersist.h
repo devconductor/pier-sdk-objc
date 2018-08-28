@@ -15,20 +15,17 @@
 
 @interface PierUsuarioLdapPersist : PierObject
 
-/* {{{usuario_persist_nome_value}}} [optional]
- */
-@property(nonatomic) NSString* nome;
-/* {{{usuario_persist_login_value}}} [optional]
- */
-@property(nonatomic) NSString* login;
-/* {{{usuario_persist_cpf_value}}} [optional]
- */
+
 @property(nonatomic) NSString* cpf;
-/* {{{usuario_persist_email_value}}} [optional]
- */
+
 @property(nonatomic) NSString* email;
-/* {{{usuario_persist_perfis_value}}} [optional]
- */
+
+@property(nonatomic) NSNumber* idEmissor;
+
+@property(nonatomic) NSString* login;
+
+@property(nonatomic) NSString* nome;
+
 @property(nonatomic) NSArray<PierReferenciaIdPersist>* perfis;
 
 @end

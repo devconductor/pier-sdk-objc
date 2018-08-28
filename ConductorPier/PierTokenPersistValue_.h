@@ -26,5 +26,8 @@
 /* {{{token_dto_criado_por_value}}} 
  */
 @property(nonatomic) NSString* criadoPor;
+/* {{{token_dto_id_application_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* idAplicacao;
 
 @end

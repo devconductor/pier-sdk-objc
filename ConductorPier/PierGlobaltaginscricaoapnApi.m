@@ -177,7 +177,7 @@ static PierGlobaltaginscricaoapnApi* singletonAPI = nil;
 ///
 ///  @returns PierPageInscricaoAPNResponse*
 ///
--(NSNumber*) listarUsingGET30WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET31WithSort: (NSArray* /* NSString */) sort
     idCartoes: (NSArray* /* NSNumber */) idCartoes
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -300,13 +300,13 @@ static PierGlobaltaginscricaoapnApi* singletonAPI = nil;
 ///
 ///  @returns NSArray<PierInscricaoAPNResponse>*
 ///
--(NSNumber*) salvarUsingPOST14WithInscricaoPersist: (PierInscricaoApnPersistencia_*) inscricaoPersist
+-(NSNumber*) salvarUsingPOST15WithInscricaoPersist: (PierInscricaoApnPersistencia_*) inscricaoPersist
     completionHandler: (void (^)(NSArray<PierInscricaoAPNResponse>* output, NSError* error)) handler {
 
     
     // verify the required parameter 'inscricaoPersist' is set
     if (inscricaoPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `inscricaoPersist` when calling `salvarUsingPOST14`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `inscricaoPersist` when calling `salvarUsingPOST15`"];
     }
     
 

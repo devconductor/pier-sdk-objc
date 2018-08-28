@@ -116,5 +116,8 @@
 /* {{{boleto_response_status_value}}} [optional]
  */
 @property(nonatomic) NSNumber* status;
+/* {{{boleto_response_registrado_value}}} [optional]
+ */
+@property(nonatomic) NSNumber* boletoRegistrado;
 
 @end

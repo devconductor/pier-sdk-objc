@@ -28,10 +28,12 @@
 /// {{{boleto_resource_consultar_notes}}}
 ///
 /// @param _id {{{boleto_resource_consultar_param_id}}}
+/// @param zeraValorCodigoBarras {{{boleto_resource_consultar_param_zera_valor_codigo_barras}}}
 /// 
 ///
 /// @return PierBoletoResponse*
--(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+    zeraValorCodigoBarras: (NSNumber*) zeraValorCodigoBarras
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler;
 
 
@@ -78,7 +80,7 @@
 /// 
 ///
 /// @return PierPageBoletoListarResponse*
--(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET47WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta

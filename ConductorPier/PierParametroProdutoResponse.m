@@ -20,7 +20,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"idProduto": @"idProduto", @"tipoOrigemTransacao": @"tipoOrigemTransacao", @"descricao": @"descricao", @"valorParametro": @"valorParametro", @"dataValidade": @"dataValidade" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"idProduto": @"idProduto", @"tipoOrigemTransacao": @"tipoOrigemTransacao", @"descricao": @"descricao", @"valorParametro": @"valorParametro", @"dataValidade": @"dataValidade" }];
 }
 
 /**

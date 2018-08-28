@@ -77,13 +77,13 @@ static PierGlobaltaglogApi* singletonAPI = nil;
 ///
 ///  @returns PierLogAcessoUsuarioResposta_*
 ///
--(NSNumber*) salvarUsingPOST18WithLogAcessoUsuarioPersist: (PierLogAcessoUsuarioPersistencia_*) logAcessoUsuarioPersist
+-(NSNumber*) salvarUsingPOST19WithLogAcessoUsuarioPersist: (PierLogAcessoUsuarioPersistencia_*) logAcessoUsuarioPersist
     completionHandler: (void (^)(PierLogAcessoUsuarioResposta_* output, NSError* error)) handler {
 
     
     // verify the required parameter 'logAcessoUsuarioPersist' is set
     if (logAcessoUsuarioPersist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `logAcessoUsuarioPersist` when calling `salvarUsingPOST18`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `logAcessoUsuarioPersist` when calling `salvarUsingPOST19`"];
     }
     
 

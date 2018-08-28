@@ -77,8 +77,6 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
 ///
 ///  @param idAnuidade {{{anuidade_request_id_anuidade_value}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
 ///  @param page {{{global_menssagem_sort_page_value}}} (optional)
@@ -97,7 +95,6 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
 ///
 -(NSNumber*) ativarAnuidadeUsingPOSTWithId: (NSNumber*) _id
     idAnuidade: (NSNumber*) idAnuidade
-    authorization: (NSString*) authorization
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -170,9 +167,6 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -227,12 +221,9 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
 /// {{{conta_resource_ativar_envio_fatura_email_notes}}}
 ///  @param _id {{{conta_resource_ativar_envio_fatura_email_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSObject*
 ///
 -(NSNumber*) ativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
@@ -259,9 +250,6 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`
@@ -316,12 +304,9 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
 /// {{{conta_resource_desativar_envio_fatura_email_notes}}}
 ///  @param _id {{{conta_resource_desativar_envio_fatura_email_param_id}}} 
 ///
-///  @param authorization Authorization (optional)
-///
 ///  @returns NSObject*
 ///
 -(NSNumber*) desativarEnvioFaturaEmailUsingPOSTWithId: (NSNumber*) _id
-    authorization: (NSString*) authorization
     completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
@@ -348,9 +333,6 @@ static PierGlobaltagservicocontaApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
-    if (authorization != nil) {
-        headerParams[@"Authorization"] = authorization;
-    }
     
 
     // HTTP header `Accept`

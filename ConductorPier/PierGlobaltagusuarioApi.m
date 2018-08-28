@@ -7,8 +7,8 @@
 #import "PierPageUsuarioContasResponse.h"
 #import "PierPageControleSegurancaDispositivoResponse.h"
 #import "PierPageUsuarioResponse.h"
-#import "PierUsuarioPersistencia_.h"
 #import "PierControleSegurancaDispositivoPersistencia_.h"
+#import "PierUsuarioPersistencia_.h"
 #import "PierUsuarioSenhaFortePersistencia_.h"
 
 
@@ -458,13 +458,13 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierControleSegurancaDispositivoResponse*
 ///
--(NSNumber*) atualizarUsingPUT2WithUpdate: (PierControleSegurancaDispositivoUpdateValor_*) update
+-(NSNumber*) atualizarUsingPUT3WithUpdate: (PierControleSegurancaDispositivoUpdateValor_*) update
     completionHandler: (void (^)(PierControleSegurancaDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'update' is set
     if (update == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `atualizarUsingPUT2`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `update` when calling `atualizarUsingPUT3`"];
     }
     
 
@@ -650,7 +650,7 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierPageControleSegurancaDispositivoResponse*
 ///
--(NSNumber*) consultarUsingGET15WithIdUsuario: (NSNumber*) idUsuario
+-(NSNumber*) consultarUsingGET17WithIdUsuario: (NSNumber*) idUsuario
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
@@ -659,7 +659,7 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
     
     // verify the required parameter 'idUsuario' is set
     if (idUsuario == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idUsuario` when calling `consultarUsingGET15`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idUsuario` when calling `consultarUsingGET17`"];
     }
     
 
@@ -751,13 +751,13 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierUsuarioResponse*
 ///
--(NSNumber*) consultarUsingGET51WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET53WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET51`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET53`"];
     }
     
 
@@ -929,7 +929,7 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 ///
 ///  @returns PierPageUsuarioResponse*
 ///
--(NSNumber*) listarUsingGET62WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET65WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     nome: (NSString*) nome
@@ -1117,99 +1117,19 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
 }
 
 ///
-/// {{{usuario_resource_salvar}}}
-/// {{{usuario_resource_salvar_notes}}}
-///  @param persist persist 
-///
-///  @returns PierUsuarioResponse*
-///
--(NSNumber*) salvarUsingPOST33WithPersist: (PierUsuarioPersistencia_*) persist
-    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter 'persist' is set
-    if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST33`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/usuarios"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = persist;
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierUsuarioResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierUsuarioResponse*)data, error);
-                           }
-          ];
-}
-
-///
 /// {{{controle_seguranca_dispositivo_salvar}}}
 /// {{{controle_seguranca_dispositivo_salvar_notas}}}
 ///  @param persist persist 
 ///
 ///  @returns PierControleSegurancaDispositivoResponse*
 ///
--(NSNumber*) salvarUsingPOST9WithPersist: (PierControleSegurancaDispositivoPersistencia_*) persist
+-(NSNumber*) salvarUsingPOST10WithPersist: (PierControleSegurancaDispositivoPersistencia_*) persist
     completionHandler: (void (^)(PierControleSegurancaDispositivoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'persist' is set
     if (persist == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST9`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST10`"];
     }
     
 
@@ -1272,6 +1192,86 @@ static PierGlobaltagusuarioApi* singletonAPI = nil;
                               responseType: @"PierControleSegurancaDispositivoResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierControleSegurancaDispositivoResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// {{{usuario_resource_salvar}}}
+/// {{{usuario_resource_salvar_notes}}}
+///  @param persist persist 
+///
+///  @returns PierUsuarioResponse*
+///
+-(NSNumber*) salvarUsingPOST34WithPersist: (PierUsuarioPersistencia_*) persist
+    completionHandler: (void (^)(PierUsuarioResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'persist' is set
+    if (persist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `persist` when calling `salvarUsingPOST34`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/usuarios"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = persist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierUsuarioResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierUsuarioResponse*)data, error);
                            }
           ];
 }

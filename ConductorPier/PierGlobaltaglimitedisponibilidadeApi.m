@@ -1,6 +1,7 @@
 #import "PierGlobaltaglimitedisponibilidadeApi.h"
 #import "PierQueryParamCollection.h"
 #import "PierLimiteDisponibilidadeResponse.h"
+#import "PierSensibilizarSaldoGlobalUpdateValue_.h"
 
 
 @interface PierGlobaltaglimitedisponibilidadeApi ()
@@ -251,13 +252,13 @@ static PierGlobaltaglimitedisponibilidadeApi* singletonAPI = nil;
 ///
 ///  @returns PierLimiteDisponibilidadeResponse*
 ///
--(NSNumber*) consultarUsingGET23WithIdConta: (NSNumber*) idConta
+-(NSNumber*) consultarUsingGET25WithIdConta: (NSNumber*) idConta
     completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'idConta' is set
     if (idConta == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET23`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idConta` when calling `consultarUsingGET25`"];
     }
     
 
@@ -312,6 +313,97 @@ static PierGlobaltaglimitedisponibilidadeApi* singletonAPI = nil;
     
     return [self.apiClient requestWithPath: resourcePath
                                     method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierLimiteDisponibilidadeResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierLimiteDisponibilidadeResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// {{{limite_disponibilidade_resource_sensibilizar_credito_disponivel}}}
+/// {{{limite_disponibilidade_resource_sensibilizar_credito_disponivel_notes}}}
+///  @param _id {{{sensibilizar_saldo_global_param_id}}} 
+///
+///  @param sensibilizarSaldoGlobal sensibilizarSaldoGlobal 
+///
+///  @returns PierLimiteDisponibilidadeResponse*
+///
+-(NSNumber*) sensibilizarSaldoDisponivelGlobalUsingPOSTWithId: (NSNumber*) _id
+    sensibilizarSaldoGlobal: (PierSensibilizarSaldoGlobalUpdateValue_*) sensibilizarSaldoGlobal
+    completionHandler: (void (^)(PierLimiteDisponibilidadeResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `sensibilizarSaldoDisponivelGlobalUsingPOST`"];
+    }
+    
+    // verify the required parameter 'sensibilizarSaldoGlobal' is set
+    if (sensibilizarSaldoGlobal == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `sensibilizarSaldoGlobal` when calling `sensibilizarSaldoDisponivelGlobalUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/limites-disponibilidades/sensibilizar-saldo-disponivel-global"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = sensibilizarSaldoGlobal;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams

@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "PierContestarCompraRequest.h"
 #import "PierPageGrupoChargebackResponse.h"
 #import "PierObject.h"
 #import "PierApiClient.h"
@@ -21,6 +22,23 @@
 +(PierGlobaltagcompracontestadaApi*) sharedAPI;
 ///
 ///
+/// {{{compra_contestada_transacoes_resource_contestar}}}
+/// {{{compra_contestada_transacoes_resource_contestar_notes}}}
+///
+/// @param idCartao idCartao
+/// @param request request
+/// @param login login
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) contestarUsingPOSTWithIdCartao: (NSNumber*) idCartao
+    request: (PierContestarCompraRequest*) request
+    login: (NSString*) login
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+
+
+///
+///
 /// {{{compra_contestada_detalhe_cartao_resource_listar}}}
 /// {{{compra_contestada_detalhe_cartao_resource_listar_notes}}}
 ///
@@ -40,12 +58,44 @@
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
+/// @param agingContestacao 
+/// @param nome 
+/// @param bandeira 
+/// @param cartao 
+/// @param cpf 
+/// @param conta 
+/// @param statusCartao 
+/// @param statusContestacao 
+/// @param dataContestacao 
+/// @param dataAlteracao 
+/// @param dataReapresentacao 
+/// @param diasContestacao 
+/// @param diasCompra 
+/// @param modoEntrada 
+/// @param motivo 
+/// @param valorCompra 
 /// 
 ///
 /// @return PierPageGrupoChargebackResponse*
--(NSNumber*) listarUsingGET12WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET13WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    agingContestacao: (NSNumber*) agingContestacao
+    nome: (NSString*) nome
+    bandeira: (NSString*) bandeira
+    cartao: (NSString*) cartao
+    cpf: (NSString*) cpf
+    conta: (NSString*) conta
+    statusCartao: (NSNumber*) statusCartao
+    statusContestacao: (NSNumber*) statusContestacao
+    dataContestacao: (NSString*) dataContestacao
+    dataAlteracao: (NSString*) dataAlteracao
+    dataReapresentacao: (NSString*) dataReapresentacao
+    diasContestacao: (NSNumber*) diasContestacao
+    diasCompra: (NSNumber*) diasCompra
+    modoEntrada: (NSString*) modoEntrada
+    motivo: (NSString*) motivo
+    valorCompra: (NSNumber*) valorCompra
     completionHandler: (void (^)(PierPageGrupoChargebackResponse* output, NSError* error)) handler;
 
 
@@ -58,6 +108,22 @@
 /// @param sort {{{global_menssagem_sort_sort}}}
 /// @param page {{{global_menssagem_sort_page_value}}}
 /// @param limit {{{global_menssagem_sort_limit}}}
+/// @param agingContestacao 
+/// @param nome 
+/// @param bandeira 
+/// @param cartao 
+/// @param cpf 
+/// @param conta 
+/// @param statusCartao 
+/// @param statusContestacao 
+/// @param dataContestacao 
+/// @param dataAlteracao 
+/// @param dataReapresentacao 
+/// @param diasContestacao 
+/// @param diasCompra 
+/// @param modoEntrada 
+/// @param motivo 
+/// @param valorCompra 
 /// 
 ///
 /// @return PierPageGrupoChargebackResponse*
@@ -65,6 +131,22 @@
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
+    agingContestacao: (NSNumber*) agingContestacao
+    nome: (NSString*) nome
+    bandeira: (NSString*) bandeira
+    cartao: (NSString*) cartao
+    cpf: (NSString*) cpf
+    conta: (NSString*) conta
+    statusCartao: (NSNumber*) statusCartao
+    statusContestacao: (NSNumber*) statusContestacao
+    dataContestacao: (NSString*) dataContestacao
+    dataAlteracao: (NSString*) dataAlteracao
+    dataReapresentacao: (NSString*) dataReapresentacao
+    diasContestacao: (NSNumber*) diasContestacao
+    diasCompra: (NSNumber*) diasCompra
+    modoEntrada: (NSString*) modoEntrada
+    motivo: (NSString*) motivo
+    valorCompra: (NSNumber*) valorCompra
     completionHandler: (void (^)(PierPageGrupoChargebackResponse* output, NSError* error)) handler;
 
 

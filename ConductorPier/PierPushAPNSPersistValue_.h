@@ -35,13 +35,13 @@
 /* {{{push_a_p_n_s_persist_conteudo_value}}} 
  */
 @property(nonatomic) NSString* conteudo;
-/* {{{push_a_p_n_s_persist_tipo_evento_value}}} 
+/* {{{push_f_c_m_g_c_m_persist_tipo_evento_value}}} 
  */
 @property(nonatomic) NSString* tipoEvento;
-/* {{{push_a_p_n_s_persist_icone_value}}} [optional]
+/* {{{push_f_c_m_g_c_m_persist_icone_value}}} [optional]
  */
 @property(nonatomic) NSString* icone;
-/* {{{push_a_p_n_s_persist_som_value}}} [optional]
+/* {{{push_f_c_m_g_c_m_persist_som_value}}} [optional]
  */
 @property(nonatomic) NSString* som;
 

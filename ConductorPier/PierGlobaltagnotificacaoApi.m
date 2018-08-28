@@ -5,6 +5,7 @@
 #import "PierTemplateNotificacaoDetalheResponse.h"
 #import "PierNotificacaoSMSResponse.h"
 #import "PierCodigoSegurancaResponse.h"
+#import "PierSecure3dRequest.h"
 #import "PierCodigoSegurancaSMSPersist.h"
 #import "PierPageConfiguracaoEmailResponse.h"
 #import "PierPageCodigoSegurancaResponse.h"
@@ -745,6 +746,86 @@ static PierGlobaltagnotificacaoApi* singletonAPI = nil;
                               responseType: @"PierTemplateNotificacaoDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierTemplateNotificacaoDetalheResponse*)data, error);
+                           }
+          ];
+}
+
+///
+/// {{{notificacao_resource_3d_secure}}}
+/// {{{notificacao_resource_3d_secure_notes}}}
+///  @param secure3dRequest secure3dRequest 
+///
+///  @returns NSObject*
+///
+-(NSNumber*) enviarOTPUsingPOSTWithSecure3dRequest: (PierSecure3dRequest*) secure3dRequest
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
+
+    
+    // verify the required parameter 'secure3dRequest' is set
+    if (secure3dRequest == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `secure3dRequest` when calling `enviarOTPUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/notificacoes/3d-secure"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = secure3dRequest;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSObject*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((NSObject*)data, error);
                            }
           ];
 }

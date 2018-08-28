@@ -4,6 +4,7 @@
 #import "PierTemplateNotificacaoDetalheResponse.h"
 #import "PierNotificacaoSMSResponse.h"
 #import "PierCodigoSegurancaResponse.h"
+#import "PierSecure3dRequest.h"
 #import "PierCodigoSegurancaSMSPersist.h"
 #import "PierPageConfiguracaoEmailResponse.h"
 #import "PierPageCodigoSegurancaResponse.h"
@@ -149,6 +150,19 @@
 /// @return PierTemplateNotificacaoDetalheResponse*
 -(NSNumber*) consultarTemplateNotificacaoUsingGETWithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTemplateNotificacaoDetalheResponse* output, NSError* error)) handler;
+
+
+///
+///
+/// {{{notificacao_resource_3d_secure}}}
+/// {{{notificacao_resource_3d_secure_notes}}}
+///
+/// @param secure3dRequest secure3dRequest
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) enviarOTPUsingPOSTWithSecure3dRequest: (PierSecure3dRequest*) secure3dRequest
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
 
 
 ///

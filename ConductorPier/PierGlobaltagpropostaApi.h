@@ -46,7 +46,7 @@
 /// 
 ///
 /// @return PierPropostaResponse*
--(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPropostaResponse* output, NSError* error)) handler;
 
 
@@ -83,7 +83,7 @@
 /// 
 ///
 /// @return PierPagePropostaResponse*
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     status: (NSNumber*) status

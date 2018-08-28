@@ -9,6 +9,8 @@
 #import "PierAtribuirAssinaturaClientePersist.h"
 #import "PierIntegracaoEmissorPersist.h"
 #import "PierIntegracaoEmissorResponse.h"
+#import "PierAdicionalContaResponse.h"
+#import "PierAdicionalContaPersist.h"
 #import "PierAdicionalPersist.h"
 #import "PierPagePessoaResponse.h"
 #import "PierAdicionalResponse.h"
@@ -1056,6 +1058,97 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 }
 
 ///
+/// {{{adicional_resource_cadastrar_adicional}}}
+/// {{{adicional_resource_cadastrar_adicional_notes}}}
+///  @param _id {{{adicional_resource_cadastrar_adicional_param_id_conta}}} 
+///
+///  @param adicionalContaPersist adicionalContaPersist 
+///
+///  @returns PierAdicionalContaResponse*
+///
+-(NSNumber*) cadastrarAdicionalUsingPOSTWithId: (NSNumber*) _id
+    adicionalContaPersist: (PierAdicionalContaPersist*) adicionalContaPersist
+    completionHandler: (void (^)(PierAdicionalContaResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `cadastrarAdicionalUsingPOST`"];
+    }
+    
+    // verify the required parameter 'adicionalContaPersist' is set
+    if (adicionalContaPersist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `adicionalContaPersist` when calling `cadastrarAdicionalUsingPOST`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/contas/{id}/adicionais"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = adicionalContaPersist;
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierAdicionalContaResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierAdicionalContaResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{adicional_resource_cadastrar}}}
 /// {{{adicional_resource_cadastrar_notes}}}
 ///  @param _id {{{adicional_resource_cadastrar_param_id_conta}}} 
@@ -1142,89 +1235,6 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
                               responseType: @"PierAdicionalDetalheResponse*"
                            completionBlock: ^(id data, NSError *error) {
                                handler((PierAdicionalDetalheResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// {{{endereco_resource_consultar}}}
-/// {{{endereco_resource_consultar_notes}}}
-///  @param _id {{{endereco_resource_consultar_param_id}}} 
-///
-///  @returns PierEnderecoResponse*
-///
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET19`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"GET"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierEnderecoResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierEnderecoResponse*)data, error);
                            }
           ];
 }
@@ -1324,19 +1334,102 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 }
 
 ///
+/// {{{endereco_resource_consultar}}}
+/// {{{endereco_resource_consultar_notes}}}
+///  @param _id {{{endereco_resource_consultar_param_id}}} 
+///
+///  @returns PierEnderecoResponse*
+///
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler {
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET21`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/enderecos/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"PierEnderecoResponse*"
+                           completionBlock: ^(id data, NSError *error) {
+                               handler((PierEnderecoResponse*)data, error);
+                           }
+          ];
+}
+
+///
 /// {{{pessoa_detalhe_resource_consultar}}}
 /// {{{pessoa_detalhe_resource_consultar_notes}}}
 ///  @param _id {{{pessoa_detalhe_resource_consultar_param_id}}} 
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET30`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET32`"];
     }
     
 
@@ -1413,13 +1506,13 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET31`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET33`"];
     }
     
 
@@ -1496,13 +1589,13 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET41WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET39`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET41`"];
     }
     
 
@@ -1917,7 +2010,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageEnderecoResponse*
 ///
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2104,7 +2197,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoaDetalheResponse*
 ///
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -2276,7 +2369,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePessoaResponse*
 ///
--(NSNumber*) listarUsingGET39WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET41WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2440,7 +2533,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPageTelefoneResponse*
 ///
--(NSNumber*) listarUsingGET50WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET53WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -2746,7 +2839,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierEnderecoResponse*
 ///
--(NSNumber*) salvarUsingPOST13WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST14WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
@@ -2877,14 +2970,14 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierIntegracaoEmissorResponse*
 ///
--(NSNumber*) salvarUsingPOST16WithId: (NSNumber*) _id
+-(NSNumber*) salvarUsingPOST17WithId: (NSNumber*) _id
     body: (PierIntegracaoEmissorPersist*) body
     completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `salvarUsingPOST16`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `salvarUsingPOST17`"];
     }
     
 
@@ -2981,7 +3074,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaDetalheResponse*
 ///
--(NSNumber*) salvarUsingPOST24WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST25WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -2997,7 +3090,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
     
     // verify the required parameter 'idPessoa' is set
     if (idPessoa == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `salvarUsingPOST24`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `idPessoa` when calling `salvarUsingPOST25`"];
     }
     
 
@@ -3133,7 +3226,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierPessoaResponse*
 ///
--(NSNumber*) salvarUsingPOST25WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST26WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
@@ -3148,17 +3241,17 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
     
     // verify the required parameter 'nome' is set
     if (nome == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `salvarUsingPOST25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `nome` when calling `salvarUsingPOST26`"];
     }
     
     // verify the required parameter 'tipo' is set
     if (tipo == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `salvarUsingPOST25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `tipo` when calling `salvarUsingPOST26`"];
     }
     
     // verify the required parameter 'dataNascimento' is set
     if (dataNascimento == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataNascimento` when calling `salvarUsingPOST25`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `dataNascimento` when calling `salvarUsingPOST26`"];
     }
     
 
@@ -3280,7 +3373,7 @@ static PierGlobaltagcadastroclienteApi* singletonAPI = nil;
 ///
 ///  @returns PierTelefoneResponse*
 ///
--(NSNumber*) salvarUsingPOST28WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST29WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone

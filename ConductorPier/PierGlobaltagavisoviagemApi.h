@@ -29,7 +29,7 @@
 /// 
 ///
 /// @return PierAvisoViagemResponse*
--(NSNumber*) consultarUsingGET7WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET8WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierAvisoViagemResponse* output, NSError* error)) handler;
 
 
@@ -75,7 +75,7 @@
 /// 
 ///
 /// @return PierPageAvisoViagemResponse*
--(NSNumber*) listarUsingGET8WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET9WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idCartao: (NSNumber*) idCartao

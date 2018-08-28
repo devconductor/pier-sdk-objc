@@ -14,6 +14,9 @@
 
 @interface PierParametroProdutoResponse : PierObject
 
+/* {{{parametro_produto_response_id_value}}} 
+ */
+@property(nonatomic) NSNumber* _id;
 /* {{{parametro_produto_response_id_produto_value}}} 
  */
 @property(nonatomic) NSNumber* idProduto;

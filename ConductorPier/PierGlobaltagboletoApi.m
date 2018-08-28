@@ -77,15 +77,18 @@ static PierGlobaltagboletoApi* singletonAPI = nil;
 /// {{{boleto_resource_consultar_notes}}}
 ///  @param _id {{{boleto_resource_consultar_param_id}}} 
 ///
+///  @param zeraValorCodigoBarras {{{boleto_resource_consultar_param_zera_valor_codigo_barras}}} (optional)
+///
 ///  @returns PierBoletoResponse*
 ///
--(NSNumber*) consultarUsingGET34WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET36WithId: (NSNumber*) _id
+    zeraValorCodigoBarras: (NSNumber*) zeraValorCodigoBarras
     completionHandler: (void (^)(PierBoletoResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET34`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET36`"];
     }
     
 
@@ -103,6 +106,10 @@ static PierGlobaltagboletoApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (zeraValorCodigoBarras != nil) {
+        
+        queryParams[@"zeraValorCodigoBarras"] = zeraValorCodigoBarras;
+    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
@@ -345,7 +352,7 @@ static PierGlobaltagboletoApi* singletonAPI = nil;
 ///
 ///  @returns PierPageBoletoListarResponse*
 ///
--(NSNumber*) listarUsingGET45WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET47WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idConta: (NSNumber*) idConta

@@ -170,13 +170,13 @@ static PierGlobaltagpropostaApi* singletonAPI = nil;
 ///
 ///  @returns PierPropostaResponse*
 ///
--(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET35WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPropostaResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET33`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET35`"];
     }
     
 
@@ -368,7 +368,7 @@ static PierGlobaltagpropostaApi* singletonAPI = nil;
 ///
 ///  @returns PierPagePropostaResponse*
 ///
--(NSNumber*) listarUsingGET44WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET46WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     status: (NSNumber*) status

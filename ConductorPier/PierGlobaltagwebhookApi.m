@@ -176,13 +176,13 @@ static PierGlobaltagwebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) consultarUsingGET53WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET55WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET53`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET55`"];
     }
     
 
@@ -271,7 +271,7 @@ static PierGlobaltagwebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierPageWebHookResponse*
 ///
--(NSNumber*) listarUsingGET66WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET69WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -382,13 +382,13 @@ static PierGlobaltagwebhookApi* singletonAPI = nil;
 ///
 ///  @returns PierWebHookResponse*
 ///
--(NSNumber*) salvarUsingPOST35WithWebhook: (PierWebHookPersistValue_*) webhook
+-(NSNumber*) salvarUsingPOST36WithWebhook: (PierWebHookPersistValue_*) webhook
     completionHandler: (void (^)(PierWebHookResponse* output, NSError* error)) handler {
 
     
     // verify the required parameter 'webhook' is set
     if (webhook == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `webhook` when calling `salvarUsingPOST35`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `webhook` when calling `salvarUsingPOST36`"];
     }
     
 

@@ -1,16 +1,16 @@
-#import "PierGlobaltagjobApi.h"
+#import "PierBinchaveresourceApi.h"
 #import "PierQueryParamCollection.h"
-#import "PierJobResponse.h"
-#import "PierPageJobResponse.h"
+#import "PierBinChaveUpdate.h"
+#import "PierBinChavePersist.h"
 
 
-@interface PierGlobaltagjobApi ()
+@interface PierBinchaveresourceApi ()
     @property (readwrite, nonatomic, strong) NSMutableDictionary *defaultHeaders;
 @end
 
-@implementation PierGlobaltagjobApi
+@implementation PierBinchaveresourceApi
 
-static PierGlobaltagjobApi* singletonAPI = nil;
+static PierBinchaveresourceApi* singletonAPI = nil;
 
 #pragma mark - Initialize methods
 
@@ -38,19 +38,19 @@ static PierGlobaltagjobApi* singletonAPI = nil;
 
 #pragma mark -
 
-+(PierGlobaltagjobApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
++(PierBinchaveresourceApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierGlobaltagjobApi alloc] init];
+        singletonAPI = [[PierBinchaveresourceApi alloc] init];
         [singletonAPI addHeader:headerValue forKey:key];
     }
     return singletonAPI;
 }
 
-+(PierGlobaltagjobApi*) sharedAPI {
++(PierBinchaveresourceApi*) sharedAPI {
 
     if (singletonAPI == nil) {
-        singletonAPI = [[PierGlobaltagjobApi alloc] init];
+        singletonAPI = [[PierBinchaveresourceApi alloc] init];
     }
     return singletonAPI;
 }
@@ -71,23 +71,39 @@ static PierGlobaltagjobApi* singletonAPI = nil;
 #pragma mark - Api Methods
 
 ///
-/// {{{job_resource_ativar_job}}}
-/// {{{job_resource_ativar_job_notes}}}
-///  @param _id {{{job_resource_ativar_job_param_id}}} 
+/// alterarBinChave
+/// 
+///  @param _id id 
 ///
-///  @returns PierJobResponse*
+///  @param request request 
 ///
--(NSNumber*) ativarJobUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
+///  @param login login 
+///
+///  @returns NSObject*
+///
+-(NSNumber*) alterarBinChaveUsingPUTWithId: (NSNumber*) _id
+    request: (PierBinChaveUpdate*) request
+    login: (NSString*) login
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `ativarJobUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `alterarBinChaveUsingPUT`"];
+    }
+    
+    // verify the required parameter 'request' is set
+    if (request == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `request` when calling `alterarBinChaveUsingPUT`"];
+    }
+    
+    // verify the required parameter 'login' is set
+    if (login == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `login` when calling `alterarBinChaveUsingPUT`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/jobs/{id}/ativar-job"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bins-chaves/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -104,6 +120,9 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
+    if (login != nil) {
+        headerParams[@"login"] = login;
+    }
     
 
     // HTTP header `Accept`
@@ -131,122 +150,7 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    
-    
-
-    
-    return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
-                                pathParams: pathParams
-                               queryParams: queryParams
-                                formParams: formParams
-                                     files: localVarFiles
-                                      body: bodyParam
-                              headerParams: headerParams
-                              authSettings: authSettings
-                        requestContentType: requestContentType
-                       responseContentType: responseContentType
-                              responseType: @"PierJobResponse*"
-                           completionBlock: ^(id data, NSError *error) {
-                               handler((PierJobResponse*)data, error);
-                           }
-          ];
-}
-
-///
-/// {{{job_resource_atualizar}}}
-/// {{{job_resource_atualizar_notes}}}
-///  @param _id {{{job_resource_atualizar_param_id}}} 
-///
-///  @param descricao {{{job_resource_atualizar_param_descricao}}} 
-///
-///  @param cron {{{job_resource_atualizar_param_cron}}} 
-///
-///  @param groovy groovy 
-///
-///  @returns PierJobResponse*
-///
--(NSNumber*) atualizarUsingPUT4WithId: (NSNumber*) _id
-    descricao: (NSString*) descricao
-    cron: (NSString*) cron
-    groovy: (NSString*) groovy
-    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
-
-    
-    // verify the required parameter '_id' is set
-    if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `atualizarUsingPUT4`"];
-    }
-    
-    // verify the required parameter 'descricao' is set
-    if (descricao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `descricao` when calling `atualizarUsingPUT4`"];
-    }
-    
-    // verify the required parameter 'cron' is set
-    if (cron == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cron` when calling `atualizarUsingPUT4`"];
-    }
-    
-    // verify the required parameter 'groovy' is set
-    if (groovy == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `groovy` when calling `atualizarUsingPUT4`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/jobs/{id}"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    if (_id != nil) {
-        pathParams[@"id"] = _id;
-    }
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (descricao != nil) {
-        
-        queryParams[@"descricao"] = descricao;
-    }
-    if (cron != nil) {
-        
-        queryParams[@"cron"] = cron;
-    }
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [PierApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"text/plain"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = groovy;
+    bodyParam = request;
     
 
     
@@ -261,31 +165,31 @@ static PierGlobaltagjobApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJobResponse*"
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJobResponse*)data, error);
+                               handler((NSObject*)data, error);
                            }
           ];
 }
 
 ///
-/// {{{job_resource_desativar_job}}}
-/// {{{job_resource_desativar_job_notes}}}
-///  @param _id {{{job_resource_desativar_job_param_id}}} 
+/// consultar
+/// 
+///  @param _id id 
 ///
-///  @returns PierJobResponse*
+///  @returns NSObject*
 ///
--(NSNumber*) desativarJobUsingPOSTWithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
+-(NSNumber*) consultarUsingGET10WithId: (NSNumber*) _id
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
     // verify the required parameter '_id' is set
     if (_id == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `desativarJobUsingPOST`"];
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `consultarUsingGET10`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/jobs/{id}/desativar-job"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bins-chaves/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -334,7 +238,7 @@ static PierGlobaltagjobApi* singletonAPI = nil;
 
     
     return [self.apiClient requestWithPath: resourcePath
-                                    method: @"POST"
+                                    method: @"GET"
                                 pathParams: pathParams
                                queryParams: queryParams
                                 formParams: formParams
@@ -344,41 +248,56 @@ static PierGlobaltagjobApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJobResponse*"
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJobResponse*)data, error);
+                               handler((NSObject*)data, error);
                            }
           ];
 }
 
 ///
-/// {{{job_resource_listar}}}
-/// {{{job_resource_listar_notes}}}
-///  @param groovy {{{job_d_t_o_groovy_value}}} (optional)
+/// listarBinChave
+/// 
+///  @param sort {{{global_menssagem_sort_sort}}} (optional)
 ///
-///  @param descricao {{{job_d_t_o_descricao_value}}} (optional)
+///  @param page {{{global_menssagem_sort_page_value}}} (optional)
 ///
-///  @param cron {{{job_d_t_o_cron_value}}} (optional)
+///  @param limit {{{global_menssagem_sort_limit}}} (optional)
 ///
-///  @param status {{{job_d_t_o_status_value}}} (optional)
+///  @param _id  (optional)
 ///
-///  @param page P\u00E1gina solicitada (Default = 0) (optional)
+///  @param idTipoChave  (optional)
 ///
-///  @param limit Limite de elementos por solicita\u00E7\u00E3o (Default = 50, Max = 50) (optional)
+///  @param idBin  (optional)
 ///
-///  @returns PierPageJobResponse*
+///  @param chave  (optional)
 ///
--(NSNumber*) listarUsingGET31WithGroovy: (NSString*) groovy
-    descricao: (NSString*) descricao
-    cron: (NSString*) cron
-    status: (NSString*) status
+///  @param checkValue  (optional)
+///
+///  @param validade  (optional)
+///
+///  @param flagDescriptografado  (optional)
+///
+///  @param label  (optional)
+///
+///  @returns NSObject*
+///
+-(NSNumber*) listarBinChaveUsingGETWithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(PierPageJobResponse* output, NSError* error)) handler {
+    _id: (NSNumber*) _id
+    idTipoChave: (NSNumber*) idTipoChave
+    idBin: (NSNumber*) idBin
+    chave: (NSString*) chave
+    checkValue: (NSString*) checkValue
+    validade: (NSString*) validade
+    flagDescriptografado: (NSNumber*) flagDescriptografado
+    label: (NSString*) label
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/jobs"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bins-chaves"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -389,21 +308,11 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (groovy != nil) {
+    if (sort != nil) {
         
-        queryParams[@"groovy"] = groovy;
-    }
-    if (descricao != nil) {
+        queryParams[@"sort"] = [[PierQueryParamCollection alloc] initWithValuesAndFormat: sort format: @"multi"];
         
-        queryParams[@"descricao"] = descricao;
-    }
-    if (cron != nil) {
         
-        queryParams[@"cron"] = cron;
-    }
-    if (status != nil) {
-        
-        queryParams[@"status"] = status;
     }
     if (page != nil) {
         
@@ -412,6 +321,38 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     if (limit != nil) {
         
         queryParams[@"limit"] = limit;
+    }
+    if (_id != nil) {
+        
+        queryParams[@"id"] = _id;
+    }
+    if (idTipoChave != nil) {
+        
+        queryParams[@"idTipoChave"] = idTipoChave;
+    }
+    if (idBin != nil) {
+        
+        queryParams[@"idBin"] = idBin;
+    }
+    if (chave != nil) {
+        
+        queryParams[@"chave"] = chave;
+    }
+    if (checkValue != nil) {
+        
+        queryParams[@"checkValue"] = checkValue;
+    }
+    if (validade != nil) {
+        
+        queryParams[@"validade"] = validade;
+    }
+    if (flagDescriptografado != nil) {
+        
+        queryParams[@"flagDescriptografado"] = flagDescriptografado;
+    }
+    if (label != nil) {
+        
+        queryParams[@"label"] = label;
     }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
@@ -458,47 +399,39 @@ static PierGlobaltagjobApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierPageJobResponse*"
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierPageJobResponse*)data, error);
+                               handler((NSObject*)data, error);
                            }
           ];
 }
 
 ///
-/// {{{job_resource_salvar}}}
-/// {{{job_resource_salvar_notes}}}
-///  @param descricao {{{job_resource_salvar_param_descricao}}} 
+/// salvar
+/// 
+///  @param binChavePersist binChavePersist 
 ///
-///  @param cron {{{job_resource_salvar_param_cron}}} 
+///  @param login login 
 ///
-///  @param groovy groovy 
+///  @returns NSObject*
 ///
-///  @returns PierJobResponse*
-///
--(NSNumber*) salvarUsingPOST17WithDescricao: (NSString*) descricao
-    cron: (NSString*) cron
-    groovy: (NSString*) groovy
-    completionHandler: (void (^)(PierJobResponse* output, NSError* error)) handler {
+-(NSNumber*) salvarUsingPOST4WithBinChavePersist: (PierBinChavePersist*) binChavePersist
+    login: (NSString*) login
+    completionHandler: (void (^)(NSObject* output, NSError* error)) handler {
 
     
-    // verify the required parameter 'descricao' is set
-    if (descricao == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `descricao` when calling `salvarUsingPOST17`"];
+    // verify the required parameter 'binChavePersist' is set
+    if (binChavePersist == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `binChavePersist` when calling `salvarUsingPOST4`"];
     }
     
-    // verify the required parameter 'cron' is set
-    if (cron == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `cron` when calling `salvarUsingPOST17`"];
-    }
-    
-    // verify the required parameter 'groovy' is set
-    if (groovy == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `groovy` when calling `salvarUsingPOST17`"];
+    // verify the required parameter 'login' is set
+    if (login == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `login` when calling `salvarUsingPOST4`"];
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/jobs"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/api/bins-chaves"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -509,17 +442,12 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if (descricao != nil) {
-        
-        queryParams[@"descricao"] = descricao;
-    }
-    if (cron != nil) {
-        
-        queryParams[@"cron"] = cron;
-    }
     
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
 
+    if (login != nil) {
+        headerParams[@"login"] = login;
+    }
     
 
     // HTTP header `Accept`
@@ -538,7 +466,7 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"text/plain"]];
+    NSString *requestContentType = [PierApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[];
@@ -547,7 +475,7 @@ static PierGlobaltagjobApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
     
-    bodyParam = groovy;
+    bodyParam = binChavePersist;
     
 
     
@@ -562,9 +490,9 @@ static PierGlobaltagjobApi* singletonAPI = nil;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"PierJobResponse*"
+                              responseType: @"NSObject*"
                            completionBlock: ^(id data, NSError *error) {
-                               handler((PierJobResponse*)data, error);
+                               handler((NSObject*)data, error);
                            }
           ];
 }

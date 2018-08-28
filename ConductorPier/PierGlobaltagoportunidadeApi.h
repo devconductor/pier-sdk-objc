@@ -102,7 +102,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) consultarUsingGET26WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET28WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -115,7 +115,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) consultarUsingGET45WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET47WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -261,7 +261,7 @@
 /// 
 ///
 /// @return PierPageOportunidadeResponse*
--(NSNumber*) listarUsingGET35WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET36WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idStatusOportunidade: (NSNumber*) idStatusOportunidade
@@ -287,7 +287,7 @@
 /// 
 ///
 /// @return PierPageTipoOportunidadeResponse*
--(NSNumber*) listarUsingGET55WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET58WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     descricao: (NSString*) descricao
@@ -319,7 +319,7 @@
 /// 
 ///
 /// @return PierOportunidadeResponse*
--(NSNumber*) salvarUsingPOST21WithPersist: (PierOportunidadePersistValue_*) persist
+-(NSNumber*) salvarUsingPOST22WithPersist: (PierOportunidadePersistValue_*) persist
     completionHandler: (void (^)(PierOportunidadeResponse* output, NSError* error)) handler;
 
 
@@ -332,7 +332,7 @@
 /// 
 ///
 /// @return PierTipoOportunidadeResponse*
--(NSNumber*) salvarUsingPOST30WithPersist: (PierTipoOportunidadePersistValue_*) persist
+-(NSNumber*) salvarUsingPOST31WithPersist: (PierTipoOportunidadePersistValue_*) persist
     completionHandler: (void (^)(PierTipoOportunidadeResponse* output, NSError* error)) handler;
 
 

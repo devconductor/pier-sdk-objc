@@ -67,7 +67,7 @@
 /// 
 ///
 /// @return PierPageContaDebitoRecorrenteResponse*
--(NSNumber*) listarUsingGET17WithIdConta: (NSNumber*) idConta
+-(NSNumber*) listarUsingGET18WithIdConta: (NSNumber*) idConta
     idTipoDebitoRecorrente: (NSNumber*) idTipoDebitoRecorrente
     sort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
@@ -94,7 +94,7 @@
 /// 
 ///
 /// @return PierPageTipoDebitoRecorrenteResponse*
--(NSNumber*) listarUsingGET53WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET56WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id

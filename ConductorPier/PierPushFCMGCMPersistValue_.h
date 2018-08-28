@@ -14,22 +14,22 @@
 
 @interface PierPushFCMGCMPersistValue_ : PierObject
 
-/* {{{push_f_c_m_g_c_m_persist_id_pessoa_value}}} 
+/* {{{push_a_p_n_s_persist_id_pessoa_value}}} 
  */
 @property(nonatomic) NSNumber* idPessoa;
-/* {{{push_f_c_m_g_c_m_persist_id_conta_value}}} 
+/* {{{push_a_p_n_s_persist_id_conta_value}}} 
  */
 @property(nonatomic) NSNumber* idConta;
-/* {{{push_f_c_m_g_c_m_persist_token_dispositivo_value}}} 
+/* {{{push_a_p_n_s_persist_token_dispositivo_value}}} 
  */
 @property(nonatomic) NSString* tokenDispositivo;
 /* {{{push_f_c_m_g_c_m_persist_token_servidor_value}}} 
  */
 @property(nonatomic) NSString* tokenServidor;
-/* {{{push_f_c_m_g_c_m_persist_titulo_value}}} 
+/* {{{push_a_p_n_s_persist_titulo_value}}} 
  */
 @property(nonatomic) NSString* titulo;
-/* {{{push_f_c_m_g_c_m_persist_conteudo_value}}} 
+/* {{{push_a_p_n_s_persist_conteudo_value}}} 
  */
 @property(nonatomic) NSString* conteudo;
 /* {{{push_f_c_m_g_c_m_persist_tipo_evento_value}}} 

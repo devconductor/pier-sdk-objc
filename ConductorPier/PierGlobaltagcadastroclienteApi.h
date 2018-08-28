@@ -8,6 +8,8 @@
 #import "PierAtribuirAssinaturaClientePersist.h"
 #import "PierIntegracaoEmissorPersist.h"
 #import "PierIntegracaoEmissorResponse.h"
+#import "PierAdicionalContaResponse.h"
+#import "PierAdicionalContaPersist.h"
 #import "PierAdicionalPersist.h"
 #import "PierPagePessoaResponse.h"
 #import "PierAdicionalResponse.h"
@@ -223,6 +225,21 @@
 
 ///
 ///
+/// {{{adicional_resource_cadastrar_adicional}}}
+/// {{{adicional_resource_cadastrar_adicional_notes}}}
+///
+/// @param _id {{{adicional_resource_cadastrar_adicional_param_id_conta}}}
+/// @param adicionalContaPersist adicionalContaPersist
+/// 
+///
+/// @return PierAdicionalContaResponse*
+-(NSNumber*) cadastrarAdicionalUsingPOSTWithId: (NSNumber*) _id
+    adicionalContaPersist: (PierAdicionalContaPersist*) adicionalContaPersist
+    completionHandler: (void (^)(PierAdicionalContaResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// {{{adicional_resource_cadastrar}}}
 /// {{{adicional_resource_cadastrar_notes}}}
 ///
@@ -234,19 +251,6 @@
 -(NSNumber*) cadastrarUsingPOST1WithId: (NSNumber*) _id
     persist: (PierAdicionalPersist*) persist
     completionHandler: (void (^)(PierAdicionalDetalheResponse* output, NSError* error)) handler;
-
-
-///
-///
-/// {{{endereco_resource_consultar}}}
-/// {{{endereco_resource_consultar_notes}}}
-///
-/// @param _id {{{endereco_resource_consultar_param_id}}}
-/// 
-///
-/// @return PierEnderecoResponse*
--(NSNumber*) consultarUsingGET19WithId: (NSNumber*) _id
-    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
 
 
 ///
@@ -266,6 +270,19 @@
 
 ///
 ///
+/// {{{endereco_resource_consultar}}}
+/// {{{endereco_resource_consultar_notes}}}
+///
+/// @param _id {{{endereco_resource_consultar_param_id}}}
+/// 
+///
+/// @return PierEnderecoResponse*
+-(NSNumber*) consultarUsingGET21WithId: (NSNumber*) _id
+    completionHandler: (void (^)(PierEnderecoResponse* output, NSError* error)) handler;
+
+
+///
+///
 /// {{{pessoa_detalhe_resource_consultar}}}
 /// {{{pessoa_detalhe_resource_consultar_notes}}}
 ///
@@ -273,7 +290,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) consultarUsingGET30WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET32WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaDetalheResponse* output, NSError* error)) handler;
 
 
@@ -286,7 +303,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) consultarUsingGET31WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET33WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierPessoaResponse* output, NSError* error)) handler;
 
 
@@ -299,7 +316,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) consultarUsingGET39WithId: (NSNumber*) _id
+-(NSNumber*) consultarUsingGET41WithId: (NSNumber*) _id
     completionHandler: (void (^)(PierTelefoneResponse* output, NSError* error)) handler;
 
 
@@ -381,7 +398,7 @@
 /// 
 ///
 /// @return PierPageEnderecoResponse*
--(NSNumber*) listarUsingGET24WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET25WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -423,7 +440,7 @@
 /// 
 ///
 /// @return PierPagePessoaDetalheResponse*
--(NSNumber*) listarUsingGET38WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET40WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     idPessoa: (NSNumber*) idPessoa
@@ -462,7 +479,7 @@
 /// 
 ///
 /// @return PierPagePessoaResponse*
--(NSNumber*) listarUsingGET39WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET41WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -497,7 +514,7 @@
 /// 
 ///
 /// @return PierPageTelefoneResponse*
--(NSNumber*) listarUsingGET50WithSort: (NSArray* /* NSString */) sort
+-(NSNumber*) listarUsingGET53WithSort: (NSArray* /* NSString */) sort
     page: (NSNumber*) page
     limit: (NSNumber*) limit
     _id: (NSNumber*) _id
@@ -555,7 +572,7 @@
 /// 
 ///
 /// @return PierEnderecoResponse*
--(NSNumber*) salvarUsingPOST13WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST14WithIdPessoa: (NSNumber*) idPessoa
     idTipoEndereco: (NSNumber*) idTipoEndereco
     cep: (NSString*) cep
     logradouro: (NSString*) logradouro
@@ -579,7 +596,7 @@
 /// 
 ///
 /// @return PierIntegracaoEmissorResponse*
--(NSNumber*) salvarUsingPOST16WithId: (NSNumber*) _id
+-(NSNumber*) salvarUsingPOST17WithId: (NSNumber*) _id
     body: (PierIntegracaoEmissorPersist*) body
     completionHandler: (void (^)(PierIntegracaoEmissorResponse* output, NSError* error)) handler;
 
@@ -603,7 +620,7 @@
 /// 
 ///
 /// @return PierPessoaDetalheResponse*
--(NSNumber*) salvarUsingPOST24WithIdPessoa: (NSNumber*) idPessoa
+-(NSNumber*) salvarUsingPOST25WithIdPessoa: (NSNumber*) idPessoa
     nomeMae: (NSString*) nomeMae
     idEstadoCivil: (NSNumber*) idEstadoCivil
     idProfissao: (NSString*) idProfissao
@@ -635,7 +652,7 @@
 /// 
 ///
 /// @return PierPessoaResponse*
--(NSNumber*) salvarUsingPOST25WithNome: (NSString*) nome
+-(NSNumber*) salvarUsingPOST26WithNome: (NSString*) nome
     tipo: (NSString*) tipo
     dataNascimento: (NSString*) dataNascimento
     cpf: (NSString*) cpf
@@ -661,7 +678,7 @@
 /// 
 ///
 /// @return PierTelefoneResponse*
--(NSNumber*) salvarUsingPOST28WithIdTipoTelefone: (NSNumber*) idTipoTelefone
+-(NSNumber*) salvarUsingPOST29WithIdTipoTelefone: (NSNumber*) idTipoTelefone
     idPessoa: (NSNumber*) idPessoa
     ddd: (NSString*) ddd
     telefone: (NSString*) telefone
